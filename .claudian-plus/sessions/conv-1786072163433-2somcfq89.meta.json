@@ -1,0 +1,24 @@
+{
+  "id": "conv-1786072163433-2somcfq89",
+  "title": "Explain what a web browser is",
+  "createdAt": 1786072163437,
+  "updatedAt": 1786075951409,
+  "providerId": "claude",
+  "titleGenerationStatus": "success",
+  "lastResponseAt": 1786072522678,
+  "sessionId": "856f48a5-3ca3-4e3c-94f6-94baee96446c",
+  "selectedModel": "opus",
+  "providerState": {
+    "providerSessionId": "856f48a5-3ca3-4e3c-94f6-94baee96446c"
+  },
+  "currentNote": "wiki/projects/Backend Introduction/Backend Introduction.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 739,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 107136,
+    "contextWindow": 1000000,
+    "contextTokens": 107875,
+    "percentage": 11
+  }
+}

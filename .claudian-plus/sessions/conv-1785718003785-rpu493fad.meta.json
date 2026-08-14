@@ -1,0 +1,26 @@
+{
+  "id": "conv-1785718003785-rpu493fad",
+  "providerId": "claude",
+  "title": "Greet the assistant",
+  "searchText": "Greet the assistant\nhi\nHi! 👋 Good to see you. I saw you linked [[calendar/2026-08-02]] — I can open it if you want to chat about anything in there, but no pressure. What's on your mind today? I can help with: - **Vault work** — organizing notes, ingesting sources, linting the wiki, or exploring what's in your knowledge base - **Research** — dig into a topic using the `/last30days` tool or the wiki - **Anything else** — just say the word What would you like to do?",
+  "titleGenerationStatus": "success",
+  "createdAt": 1785718003787,
+  "updatedAt": 1785827093882,
+  "lastResponseAt": 1785718017838,
+  "sessionId": "5cc109aa-fff3-43f7-b684-d0a232690320",
+  "selectedModel": "opus",
+  "providerState": {
+    "providerSessionId": "5cc109aa-fff3-43f7-b684-d0a232690320"
+  },
+  "currentNote": "calendar/2026-08-02.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 56548,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 1000000,
+    "contextWindowIsAuthoritative": true,
+    "contextTokens": 56548,
+    "percentage": 6
+  }
+}

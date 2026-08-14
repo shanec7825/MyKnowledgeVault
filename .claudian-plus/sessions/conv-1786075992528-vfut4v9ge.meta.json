@@ -1,0 +1,23 @@
+{
+  "id": "conv-1786075992528-vfut4v9ge",
+  "title": "Ingest Open API spec into Obsidian projects",
+  "createdAt": 1786075992533,
+  "updatedAt": 1786096525971,
+  "providerId": "claude",
+  "titleGenerationStatus": "success",
+  "lastResponseAt": 1786096513286,
+  "sessionId": "ef20fbf3-0d0c-4cad-9361-837a66e859b9",
+  "selectedModel": "opus",
+  "providerState": {
+    "providerSessionId": "ef20fbf3-0d0c-4cad-9361-837a66e859b9"
+  },
+  "usage": {
+    "model": "opus",
+    "inputTokens": 4081,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 204032,
+    "contextWindow": 1000000,
+    "contextTokens": 208113,
+    "percentage": 21
+  }
+}

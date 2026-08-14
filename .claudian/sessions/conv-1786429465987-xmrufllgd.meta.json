@@ -1,0 +1,24 @@
+{
+  "id": "conv-1786429465987-xmrufllgd",
+  "providerId": "claude",
+  "title": "Research how browsers work for backend intro",
+  "titleGenerationStatus": "success",
+  "createdAt": 1786429465988,
+  "updatedAt": 1786439283593,
+  "lastResponseAt": 1786436144279,
+  "sessionId": "f1d2a877-65d6-4ab3-b765-53f83ece0a5d",
+  "selectedModel": "opus",
+  "providerState": {
+    "providerSessionId": "f1d2a877-65d6-4ab3-b765-53f83ece0a5d"
+  },
+  "currentNote": "inbox/Populating the page how browsers work.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 208,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 151808,
+    "contextWindow": 1000000,
+    "contextTokens": 152016,
+    "percentage": 15
+  }
+}

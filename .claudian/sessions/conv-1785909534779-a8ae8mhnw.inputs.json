@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "conversationId": "conv-1785909534779-a8ae8mhnw",
+  "records": [
+    {
+      "schemaVersion": 1,
+      "id": "msg-1785909534947-d2hdqlq",
+      "userTurnOrdinal": 1,
+      "state": "accepted",
+      "localMessageId": "msg-1785909534772-1o85awr",
+      "timestamp": 1785909534772,
+      "rawDisplayText": "ingest 这个文档，它属于backend introduction 项目",
+      "canonicalText": "ingest 这个文档，它属于backend introduction 项目",
+      "context": {
+        "currentNote": {
+          "path": "inbox/How does the Internet Work.md"
+        }
+      },
+      "images": [],
+      "contentDigest": "2c536cb9fe375e46fd885a33cff4bf988cfce5183361b678acd2374e50d4794a",
+      "providerUserMessageId": "b7c67657-e8c4-474e-a5aa-62c3526e2a33",
+      "providerAssistantMessageId": "0cd435c7-a253-46e9-a9d4-c63788cc537a"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "msg-1785909957186-vbpbq68",
+      "userTurnOrdinal": 2,
+      "state": "accepted",
+      "localMessageId": "msg-1785909957180-18qqh5e",
+      "timestamp": 1785909957180,
+      "rawDisplayText": "生成的文件放windows本地；另外inbox中已消化的文档是不是要移到areas还是archieves（我不确定，瞎说的），从而防止inbox很多",
+      "canonicalText": "生成的文件放windows本地；另外inbox中已消化的文档是不是要移到areas还是archieves（我不确定，瞎说的），从而防止inbox很多",
+      "images": [],
+      "contentDigest": "991e71a90bbc1f334fc252d03ba0533c076cc11574797a5ede450a82e2f769cc",
+      "providerUserMessageId": "fa560d4b-4745-4c98-8b4a-4ee5f2774404",
+      "providerAssistantMessageId": "4ffb191b-e8cc-4f53-8d54-8f73bb6fe245"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "msg-1785910248409-q425tqu",
+      "userTurnOrdinal": 3,
+      "state": "accepted",
+      "localMessageId": "msg-1785910248405-vlhemgs",
+      "timestamp": 1785910248405,
+      "rawDisplayText": "为什么你跑一个ingest要几分钟，干了些什么，是脚手架没有搭好吗，skill和plugin完整吗",
+      "canonicalText": "为什么你跑一个ingest要几分钟，干了些什么，是脚手架没有搭好吗，skill和plugin完整吗",
+      "images": [],
+      "contentDigest": "7ab8e20055cb09a8f9fe238f51abd153746b177ea69f3005cf0a753beeac61bf",
+      "providerUserMessageId": "59e05eae-e0d9-4cbe-802c-f664ec5bd85c",
+      "providerAssistantMessageId": "fd6d644e-1818-4c8e-9a41-12f45692a77e"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "msg-1785910478625-hjnxng7",
+      "userTurnOrdinal": 4,
+      "state": "accepted",
+      "localMessageId": "msg-1785910478622-ivgroxw",
+      "timestamp": 1785910478622,
+      "rawDisplayText": "写入.claudian是个不错的选择，要求可复用性，利用成本低，比如一个对话窗口读一次，同时可以零负荷删去，不会影响现有架构",
+      "canonicalText": "写入.claudian是个不错的选择，要求可复用性，利用成本低，比如一个对话窗口读一次，同时可以零负荷删去，不会影响现有架构",
+      "images": [],
+      "contentDigest": "e3369f519db5ee14dec1d3a7cd344614de91cec8a8ad50cb1d36dee6fde86a4e",
+      "providerUserMessageId": "ab374cc5-a5ac-4ff6-b691-e22f239aa6a3",
+      "providerAssistantMessageId": "3105c623-94ea-4791-a7ce-94b2a5e07eb3"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "msg-1785913608015-hp4mgax",
+      "userTurnOrdinal": 5,
+      "state": "accepted",
+      "localMessageId": "msg-1785913608011-mkoe0nu",
+      "timestamp": 1785913608011,
+      "rawDisplayText": "/claude-obsidian:wiki-ingest what is http",
+      "canonicalText": "/claude-obsidian:wiki-ingest what is http",
+      "images": [],
+      "contentDigest": "c943ecdf683901e8f9bc29c0e1c31887b4785d1b662ef848f1d8f4537b14280d",
+      "providerUserMessageId": "78a89c3b-810f-454e-845e-836eb79817cf",
+      "providerAssistantMessageId": "8e68a1e3-78ea-4df3-b3c6-3fad8581edb3"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "msg-1785927032440-51j84dy",
+      "userTurnOrdinal": 6,
+      "state": "accepted",
+      "localMessageId": "msg-1785927032437-pvwchyb",
+      "timestamp": 1785927032437,
+      "rawDisplayText": "/claude-obsidian:wiki-ingest http3",
+      "canonicalText": "/claude-obsidian:wiki-ingest http3",
+      "images": [],
+      "contentDigest": "679e001911b84427c902fd537b3d77dc39ca3c8744ba23bc0993bf6ebe179b77",
+      "providerUserMessageId": "b79f8726-92a0-43ab-9508-ea076af6fb63",
+      "providerAssistantMessageId": "008d049a-0131-4d09-aaec-01df7e38144c"
+    }
+  ]
+}

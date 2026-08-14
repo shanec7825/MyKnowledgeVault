@@ -1,0 +1,24 @@
+{
+  "id": "conv-1786177305822-o40i3ulj7",
+  "title": "Ingest machine learning wiki page",
+  "createdAt": 1786177305828,
+  "updatedAt": 1786178274884,
+  "providerId": "claude",
+  "titleGenerationStatus": "success",
+  "lastResponseAt": 1786178274884,
+  "sessionId": "da6423e4-06e0-4f4c-9a5d-86899837bf0c",
+  "selectedModel": "haiku",
+  "providerState": {
+    "providerSessionId": "da6423e4-06e0-4f4c-9a5d-86899837bf0c"
+  },
+  "currentNote": "inbox/What is Machine Learning.md",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 232,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 222464,
+    "contextWindow": 200000,
+    "contextTokens": 222696,
+    "percentage": 100
+  }
+}

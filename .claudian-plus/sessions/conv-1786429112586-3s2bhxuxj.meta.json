@@ -1,0 +1,13 @@
+{
+  "id": "conv-1786429112586-3s2bhxuxj",
+  "title": "Ingest domain name wiki into backend intro",
+  "createdAt": 1786429112593,
+  "updatedAt": 1786429118813,
+  "providerId": "claude",
+  "titleGenerationStatus": "success",
+  "sessionId": "c609b2f9-694b-4221-b537-9179d30c0b10",
+  "selectedModel": "haiku",
+  "providerState": {
+    "providerSessionId": "c609b2f9-694b-4221-b537-9179d30c0b10"
+  }
+}

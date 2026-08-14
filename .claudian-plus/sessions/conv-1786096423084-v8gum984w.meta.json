@@ -1,0 +1,16 @@
+{
+  "id": "conv-1786096423084-v8gum984w",
+  "providerId": "claude",
+  "title": "Ingest PostgreSQL tutorial into Obsidian wiki",
+  "searchText": "Ingest PostgreSQL tutorial into Obsidian wiki\n/claude-obsidian:wiki-ingest\n[Request interrupted by user]",
+  "titleGenerationStatus": "success",
+  "createdAt": 1786096423084,
+  "updatedAt": 1786429301090,
+  "lastResponseAt": 1786096429169,
+  "sessionId": "57ffac1d-2663-41fd-b90d-8766095f399b",
+  "selectedModel": "haiku",
+  "providerState": {
+    "providerSessionId": "57ffac1d-2663-41fd-b90d-8766095f399b"
+  },
+  "currentNote": "inbox/PostgreSQL Tutorial.md"
+}

@@ -1,0 +1,354 @@
+{
+  "schema": "claude-obsidian.transaction.v1",
+  "operation_id": "autoresearch-cg-20260813",
+  "operation_type": "autoresearch",
+  "expected_hashes": {
+    "wiki/projects/认知表征与泛化/认知表征与泛化.md": null,
+    "wiki/resources/图式与理解力.md": null,
+    "wiki/resources/具身认知与概念隐喻.md": null,
+    "wiki/resources/元认知与迁移的可训练性.md": null,
+    "wiki/resources/泛化表征的多种格式.md": null,
+    "wiki/resources/Metaphors We Live By.md": null,
+    "wiki/resources/Perceptual Symbol Systems.md": null,
+    "wiki/resources/Where Mathematics Comes From.md": null,
+    "wiki/resources/SNARC 与心理数字线.md": null,
+    "wiki/resources/图式理论.md": null,
+    "wiki/resources/思想语言假说（LoT）.md": null,
+    "wiki/resources/结构映射与关系范畴.md": null,
+    "wiki/resources/自我调节学习训练元分析.md": null,
+    "wiki/resources/具身认知的复制危机.md": null,
+    "wiki/resources/具身认知假说的批判审视.md": null,
+    "wiki/index.md": "1081453358f95f3e3e59d922848c76a3ef689c67c073fbafa0e328fd89dcffc3",
+    "wiki/log.md": "6303ae9a6794861eaf95cab4e8182b167283ffdfe70a79863ef0b4c1871b28de",
+    "wiki/hot.md": "76daf8dcd5300545598455b9dc95a05d3ad99e112471743082e41cb203571b17",
+    "wiki/overview.md": "9fce563bf4845dc47dd7465841d13a995aa3e9aa1efd8dd85cfbb98d82c59752",
+    "wiki/meta/ledgers/source-ledger.json": "439ad9d99b6ecabeabb2b77731dcac88cb68716c6ebaa844879a635b6d5fff16",
+    "wiki/meta/ledgers/claim-ledger.json": "2df874507a2fc9eae661427559c035ba3c0db7c0d644935d38ea9a1342609186"
+  },
+  "writes": [
+    {
+      "path": "wiki/projects/认知表征与泛化/认知表征与泛化.md",
+      "mode": "create",
+      "content_file": "cg-project.md",
+      "sha256": "4fc6d5a95bab366b9e099aefa3ce110195e8b6e952ed5ff6ff6bd93a626d51ce"
+    },
+    {
+      "path": "wiki/resources/图式与理解力.md",
+      "mode": "create",
+      "content_file": "cg-con-1-schema.md",
+      "sha256": "f95945da3f546523cccaa5138bdb4b7a26cd6a2e02dd20c845a887395ddd4df6"
+    },
+    {
+      "path": "wiki/resources/具身认知与概念隐喻.md",
+      "mode": "create",
+      "content_file": "cg-con-2-embodied.md",
+      "sha256": "88dc1a9fe70aeaca25032e6ea86328452666a089abb3fa8106a2cb72a09fa75e"
+    },
+    {
+      "path": "wiki/resources/元认知与迁移的可训练性.md",
+      "mode": "create",
+      "content_file": "cg-con-3-metacog.md",
+      "sha256": "c893e29fbc8357d1da2ce81dd6569be4e60c98dd7306ff52f56e0240abf7de2d"
+    },
+    {
+      "path": "wiki/resources/泛化表征的多种格式.md",
+      "mode": "create",
+      "content_file": "cg-con-4-formats.md",
+      "sha256": "0b572994f78e2eab73d29232752b229f4697ca3032a1d14e87689b91fda8f871"
+    },
+    {
+      "path": "wiki/resources/Metaphors We Live By.md",
+      "mode": "create",
+      "content_file": "cg-src-1-metaphors.md",
+      "sha256": "05c54d6d5729168a199243b2693cac43ee10f6a6befc6188d30cca8236556611"
+    },
+    {
+      "path": "wiki/resources/Perceptual Symbol Systems.md",
+      "mode": "create",
+      "content_file": "cg-src-2-barsalou.md",
+      "sha256": "286bb3694edafa9774c0da7d834883bc55c45fc6dcd583fc8d678dab74ba03f6"
+    },
+    {
+      "path": "wiki/resources/Where Mathematics Comes From.md",
+      "mode": "create",
+      "content_file": "cg-src-3-lakoff-nunez.md",
+      "sha256": "15240e1a56215adcbc694eab19151dc3f63f98c71391f0dc6e4145fc08080366"
+    },
+    {
+      "path": "wiki/resources/SNARC 与心理数字线.md",
+      "mode": "create",
+      "content_file": "cg-src-4-snarc.md",
+      "sha256": "89d8d53943e9d14e5f433ca96151c3540eeaf7cb795d176f82071e1e3b1cbd5e"
+    },
+    {
+      "path": "wiki/resources/图式理论.md",
+      "mode": "create",
+      "content_file": "cg-src-5-schema.md",
+      "sha256": "01ba51ebad6161dc0d45e62dca4af2c415eaaf5fe5da98c1f607324316f41970"
+    },
+    {
+      "path": "wiki/resources/思想语言假说（LoT）.md",
+      "mode": "create",
+      "content_file": "cg-src-6-lot.md",
+      "sha256": "6c4228acf61e771d85b432fe9efb26b9707a948d352f718a914995734669024b"
+    },
+    {
+      "path": "wiki/resources/结构映射与关系范畴.md",
+      "mode": "create",
+      "content_file": "cg-src-7-gentner.md",
+      "sha256": "45bc6a4e7a8d7d6f34e4106ad83bc8f10951f52ebc9d04150f976246e4b08340"
+    },
+    {
+      "path": "wiki/resources/自我调节学习训练元分析.md",
+      "mode": "create",
+      "content_file": "cg-src-8-srl.md",
+      "sha256": "3704d1e7546eaae63f3e03471bae66f2e782c00cecf42df064832d9aab4dcda0"
+    },
+    {
+      "path": "wiki/resources/具身认知的复制危机.md",
+      "mode": "create",
+      "content_file": "cg-src-9-repl.md",
+      "sha256": "585ad25d3eb6fd59f95b5edc70fa323c8c525bc541bb3806cd2beca0dc085795"
+    },
+    {
+      "path": "wiki/resources/具身认知假说的批判审视.md",
+      "mode": "create",
+      "content_file": "cg-src-10-mahon.md",
+      "sha256": "79865f070e4b8cd50dd234236bd7a169a9358692da61f291b5ed83b22c8ab096"
+    },
+    {
+      "path": "wiki/index.md",
+      "mode": "replace",
+      "content_file": "cg-index-updated.md",
+      "sha256": "9e8f5850aab0ce862721ac64acd8e544869e7cd1fdbf32acc515dd4d165e961d"
+    },
+    {
+      "path": "wiki/log.md",
+      "mode": "replace",
+      "content_file": "cg-log-updated.md",
+      "sha256": "a3d1ee24176336a0ae3784861270c1d5c3ba51fda9496d32808998db7ac1322a"
+    },
+    {
+      "path": "wiki/hot.md",
+      "mode": "replace",
+      "content_file": "cg-hot-updated.md",
+      "sha256": "39b73b3cd341b0c66627ced645c94bd8cba31d4a1947b5b313e6850cd979f486"
+    },
+    {
+      "path": "wiki/overview.md",
+      "mode": "replace",
+      "content_file": "cg-overview-updated.md",
+      "sha256": "c253093efbd4096830fb54893c819c672fc69fc4386f942462828eb99a87fcd3"
+    },
+    {
+      "path": "wiki/meta/ledgers/source-ledger.json",
+      "mode": "replace",
+      "content_file": "cg-source-ledger-updated.json",
+      "sha256": "f74e1b535688d8319891f2a25097ba386bcb503d44b5d3fc8f60b74e643f54b6"
+    },
+    {
+      "path": "wiki/meta/ledgers/claim-ledger.json",
+      "mode": "replace",
+      "content_file": "cg-claim-ledger-updated.json",
+      "sha256": "87693fd1d424973abd54f60e2b73896c6d2f201cf34a85eb81dc737c7644927e"
+    }
+  ],
+  "address_requests": [
+    {
+      "path": "wiki/projects/认知表征与泛化/认知表征与泛化.md"
+    },
+    {
+      "path": "wiki/resources/图式与理解力.md"
+    },
+    {
+      "path": "wiki/resources/具身认知与概念隐喻.md"
+    },
+    {
+      "path": "wiki/resources/元认知与迁移的可训练性.md"
+    },
+    {
+      "path": "wiki/resources/泛化表征的多种格式.md"
+    },
+    {
+      "path": "wiki/resources/Metaphors We Live By.md"
+    },
+    {
+      "path": "wiki/resources/Perceptual Symbol Systems.md"
+    },
+    {
+      "path": "wiki/resources/Where Mathematics Comes From.md"
+    },
+    {
+      "path": "wiki/resources/SNARC 与心理数字线.md"
+    },
+    {
+      "path": "wiki/resources/图式理论.md"
+    },
+    {
+      "path": "wiki/resources/思想语言假说（LoT）.md"
+    },
+    {
+      "path": "wiki/resources/结构映射与关系范畴.md"
+    },
+    {
+      "path": "wiki/resources/自我调节学习训练元分析.md"
+    },
+    {
+      "path": "wiki/resources/具身认知的复制危机.md"
+    },
+    {
+      "path": "wiki/resources/具身认知假说的批判审视.md"
+    }
+  ],
+  "source_manifest_updates": {
+    "sources": {
+      "src-f019773c8199b066d8de": {
+        "authority": "primary",
+        "content_kind": "webpage",
+        "independence_key": "lakoff-metaphors-1980",
+        "ingested_at": "2026-08-13",
+        "locator": "https://press.uchicago.edu/ucp/books/book/chicago/M/bo3637992.html",
+        "pages_created": [
+          "wiki/resources/Metaphors We Live By.md"
+        ],
+        "review_status": "active",
+        "sha256": "05c54d6d5729168a199243b2693cac43ee10f6a6befc6188d30cca8236556611",
+        "title": "Metaphors We Live By"
+      },
+      "src-bee68a158a31df37bb3c": {
+        "authority": "primary",
+        "content_kind": "webpage",
+        "independence_key": "barsalou-pss-1999",
+        "ingested_at": "2026-08-13",
+        "locator": "https://doi.org/10.1017/S0140525X99002149",
+        "pages_created": [
+          "wiki/resources/Perceptual Symbol Systems.md"
+        ],
+        "review_status": "active",
+        "sha256": "286bb3694edafa9774c0da7d834883bc55c45fc6dcd583fc8d678dab74ba03f6",
+        "title": "Perceptual Symbol Systems"
+      },
+      "src-c2b74444f9a5babb0dd0": {
+        "authority": "primary",
+        "content_kind": "webpage",
+        "independence_key": "lakoff-nunez-math-2000",
+        "ingested_at": "2026-08-13",
+        "locator": "https://www.basicbooks.com/titles/george-lakoff/where-mathematics-comes-from/9780465037704/",
+        "pages_created": [
+          "wiki/resources/Where Mathematics Comes From.md"
+        ],
+        "review_status": "active",
+        "sha256": "15240e1a56215adcbc694eab19151dc3f63f98c71391f0dc6e4145fc08080366",
+        "title": "Where Mathematics Comes From"
+      },
+      "src-36ac6ce4a022cc1cc597": {
+        "authority": "primary",
+        "content_kind": "webpage",
+        "independence_key": "dehaene-snarc-1993",
+        "ingested_at": "2026-08-13",
+        "locator": "https://doi.org/10.1037/0096-3445.122.3.371",
+        "pages_created": [
+          "wiki/resources/SNARC 与心理数字线.md"
+        ],
+        "review_status": "active",
+        "sha256": "89d8d53943e9d14e5f433ca96151c3540eeaf7cb795d176f82071e1e3b1cbd5e",
+        "title": "SNARC 与心理数字线"
+      },
+      "src-221662249bad2109d994": {
+        "authority": "primary",
+        "content_kind": "webpage",
+        "independence_key": "rumelhart-schema-1980",
+        "ingested_at": "2026-08-13",
+        "locator": "https://doi.org/10.4324/9781315107493-4",
+        "pages_created": [
+          "wiki/resources/图式理论.md"
+        ],
+        "review_status": "active",
+        "sha256": "01ba51ebad6161dc0d45e62dca4af2c415eaaf5fe5da98c1f607324316f41970",
+        "title": "图式理论"
+      },
+      "src-36a5cb743223f7c79740": {
+        "authority": "primary",
+        "content_kind": "webpage",
+        "independence_key": "quilty-dunn-lot-2023",
+        "ingested_at": "2026-08-13",
+        "locator": "https://doi.org/10.1017/S0140525X22002699",
+        "pages_created": [
+          "wiki/resources/思想语言假说（LoT）.md"
+        ],
+        "review_status": "active",
+        "sha256": "6c4228acf61e771d85b432fe9efb26b9707a948d352f718a914995734669024b",
+        "title": "思想语言假说（LoT）"
+      },
+      "src-f902b481b043ca280272": {
+        "authority": "primary",
+        "content_kind": "webpage",
+        "independence_key": "gentner-structure-mapping-1983",
+        "ingested_at": "2026-08-13",
+        "locator": "https://doi.org/10.1207/s15516709cog0702_1",
+        "pages_created": [
+          "wiki/resources/结构映射与关系范畴.md"
+        ],
+        "review_status": "active",
+        "sha256": "45bc6a4e7a8d7d6f34e4106ad83bc8f10951f52ebc9d04150f976246e4b08340",
+        "title": "结构映射与关系范畴"
+      },
+      "src-af470e78bf5bfc7faca5": {
+        "authority": "primary",
+        "content_kind": "webpage",
+        "independence_key": "theobald-srl-2021",
+        "ingested_at": "2026-08-13",
+        "locator": "https://doi.org/10.1016/j.cedpsych.2021.101976",
+        "pages_created": [
+          "wiki/resources/自我调节学习训练元分析.md"
+        ],
+        "review_status": "active",
+        "sha256": "3704d1e7546eaae63f3e03471bae66f2e782c00cecf42df064832d9aab4dcda0",
+        "title": "自我调节学习训练元分析"
+      },
+      "src-cb560b47d107898981a0": {
+        "authority": "primary",
+        "content_kind": "webpage",
+        "independence_key": "montero-melis-embodiment-2022",
+        "ingested_at": "2026-08-13",
+        "locator": "https://pubmed.ncbi.nlm.nih.gov/35381469/",
+        "pages_created": [
+          "wiki/resources/具身认知的复制危机.md"
+        ],
+        "review_status": "active",
+        "sha256": "585ad25d3eb6fd59f95b5edc70fa323c8c525bc541bb3806cd2beca0dc085795",
+        "title": "具身认知的复制危机"
+      },
+      "src-859daaa73de7906d8bb9": {
+        "authority": "primary",
+        "content_kind": "webpage",
+        "independence_key": "mahon-caramazza-2008",
+        "ingested_at": "2026-08-13",
+        "locator": "https://doi.org/10.1016/j.jphysparis.2008.03.004",
+        "pages_created": [
+          "wiki/resources/具身认知假说的批判审视.md"
+        ],
+        "review_status": "active",
+        "sha256": "79865f070e4b8cd50dd234236bd7a169a9358692da61f291b5ed83b22c8ab096",
+        "title": "具身认知假说的批判审视"
+      }
+    },
+    "address_map": {
+      "wiki/projects/认知表征与泛化/认知表征与泛化.md": "c-000096",
+      "wiki/resources/图式与理解力.md": "c-000097",
+      "wiki/resources/具身认知与概念隐喻.md": "c-000098",
+      "wiki/resources/元认知与迁移的可训练性.md": "c-000099",
+      "wiki/resources/泛化表征的多种格式.md": "c-000100",
+      "wiki/resources/Metaphors We Live By.md": "c-000101",
+      "wiki/resources/Perceptual Symbol Systems.md": "c-000102",
+      "wiki/resources/Where Mathematics Comes From.md": "c-000103",
+      "wiki/resources/SNARC 与心理数字线.md": "c-000104",
+      "wiki/resources/图式理论.md": "c-000105",
+      "wiki/resources/思想语言假说（LoT）.md": "c-000106",
+      "wiki/resources/结构映射与关系范畴.md": "c-000107",
+      "wiki/resources/自我调节学习训练元分析.md": "c-000108",
+      "wiki/resources/具身认知的复制危机.md": "c-000109",
+      "wiki/resources/具身认知假说的批判审视.md": "c-000110"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "conversationId": "conv-1786429219611-ao7z5r1oy",
+  "records": [
+    {
+      "schemaVersion": 1,
+      "id": "msg-1786429219697-p90q0or",
+      "userTurnOrdinal": 1,
+      "state": "staged",
+      "localMessageId": "msg-1786429219609-puh64u8",
+      "timestamp": 1786429219609,
+      "rawDisplayText": "/claude-obsidian:wiki-ingest eyntkad,backend introduction",
+      "canonicalText": "/claude-obsidian:wiki-ingest eyntkad,backend introduction",
+      "context": {
+        "currentNote": {
+          "path": "inbox/Everything You Need to Know About DNS.md"
+        }
+      },
+      "images": [],
+      "contentDigest": "be48aa4607a72c5acf438ea79f2b7545cc971fed78771e4435ddad6dd170176b"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "msg-1786429355446-rlxqvue",
+      "userTurnOrdinal": 1,
+      "state": "accepted",
+      "localMessageId": "msg-1786429355368-tftnng8",
+      "timestamp": 1786429355368,
+      "rawDisplayText": "/claude-obsidian:wiki-ingest everything you need to know about dns, backend introduction projects",
+      "canonicalText": "/claude-obsidian:wiki-ingest everything you need to know about dns, backend introduction projects",
+      "images": [],
+      "contentDigest": "2812f736ba1d48780d1ef89003f16b3c9b50dc333268b0cc90a859346922c001",
+      "providerUserMessageId": "d29347c6-0c37-4ee4-b532-3f9d0cd6403e",
+      "providerAssistantMessageId": "7d3c5d79-f557-42fd-8e1b-c7ba1e140604"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "msg-1786429590555-lsw6s0v",
+      "userTurnOrdinal": 2,
+      "state": "accepted",
+      "localMessageId": "msg-1786429590546-3fwut0n",
+      "timestamp": 1786429590546,
+      "rawDisplayText": "继续",
+      "canonicalText": "继续",
+      "images": [],
+      "contentDigest": "65f454414e2fda4840658901f9399831363ad75712ba36b930b5ad393f72f7b7",
+      "providerUserMessageId": "1b70d44a-1bc8-46b7-b4bc-3d8196ccb0a1",
+      "providerAssistantMessageId": "6419feff-2719-4d6a-9cd4-b1a8b0a18a5f"
+    }
+  ]
+}

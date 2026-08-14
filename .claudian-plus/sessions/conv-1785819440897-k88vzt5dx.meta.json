@@ -1,0 +1,25 @@
+{
+  "id": "conv-1785819440897-k88vzt5dx",
+  "title": "**Suggested title:**\n\n> Wiki-ingest: How to Do ...",
+  "createdAt": 1785819440901,
+  "updatedAt": 1785825944520,
+  "providerId": "pi",
+  "titleGenerationStatus": "success",
+  "lastResponseAt": 1785825895491,
+  "sessionId": "019fcb83-e123-76c6-a868-d74ca8c6bb1f",
+  "selectedModel": "pi:deepseek/deepseek-v4-flash",
+  "providerState": {
+    "sessionFile": "C:\\Users\\Lenovo\\.pi\\agent\\sessions\\--C--Users-Lenovo-Documents-MyKnowledgeVault--\\2026-08-04T06-44-05-539Z_019fcb83-e123-76c6-a868-d74ca8c6bb1f.jsonl",
+    "sessionId": "019fcb83-e123-76c6-a868-d74ca8c6bb1f"
+  },
+  "usage": {
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextTokens": 36954,
+    "contextWindow": 1000000,
+    "contextWindowIsAuthoritative": true,
+    "inputTokens": 36954,
+    "model": "pi:deepseek/deepseek-v4-flash",
+    "percentage": 4
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "conv-1785752093935-odwwkk6sd",
+  "title": "Ingest Learn Python in Y Minutes wiki",
+  "createdAt": 1785752093938,
+  "updatedAt": 1785816234533,
+  "providerId": "claude",
+  "titleGenerationStatus": "success",
+  "lastResponseAt": 1785753322335,
+  "sessionId": "062f01c8-fe78-4bcd-9ee4-d44db87eb1ba",
+  "selectedModel": "haiku",
+  "providerState": {
+    "providerSessionId": "062f01c8-fe78-4bcd-9ee4-d44db87eb1ba"
+  },
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 155,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 147200,
+    "contextWindow": 200000,
+    "contextTokens": 147355,
+    "percentage": 74
+  }
+}

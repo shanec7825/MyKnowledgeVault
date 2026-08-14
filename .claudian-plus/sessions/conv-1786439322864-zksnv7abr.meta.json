@@ -1,0 +1,24 @@
+{
+  "id": "conv-1786439322864-zksnv7abr",
+  "title": "Ingest PostgreSQL tutorial into Obsidian wiki",
+  "createdAt": 1786439322866,
+  "updatedAt": 1786462645265,
+  "providerId": "claude",
+  "titleGenerationStatus": "success",
+  "lastResponseAt": 1786445530540,
+  "sessionId": "f46cd173-2c07-46f9-9d10-c47e30577eba",
+  "selectedModel": "opus",
+  "providerState": {
+    "providerSessionId": "f46cd173-2c07-46f9-9d10-c47e30577eba"
+  },
+  "currentNote": "inbox/PostgreSQL Tutorial.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 188,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 184960,
+    "contextWindow": 1000000,
+    "contextTokens": 185148,
+    "percentage": 19
+  }
+}

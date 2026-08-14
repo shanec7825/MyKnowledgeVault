@@ -1,0 +1,25 @@
+{
+  "id": "conv-1785817134532-jtk6m6tgw",
+  "title": "**「继续Vault迁移与Skill可用性检查」**\n\n备选：\n- **Vault迁移收尾：S...",
+  "createdAt": 1785817134536,
+  "updatedAt": 1785817346733,
+  "providerId": "pi",
+  "titleGenerationStatus": "success",
+  "lastResponseAt": 1785817346733,
+  "sessionId": "019fcafe-fbe6-7019-815b-6001c6394cb7",
+  "selectedModel": "pi:deepseek/deepseek-v4-flash",
+  "providerState": {
+    "sessionFile": "C:\\Users\\Lenovo\\.pi\\agent\\sessions\\--C--Users-Lenovo-Documents-MyKnowledgeVault--\\2026-08-04T04-18-56-102Z_019fcafe-fbe6-7019-815b-6001c6394cb7.jsonl",
+    "sessionId": "019fcafe-fbe6-7019-815b-6001c6394cb7"
+  },
+  "usage": {
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextTokens": 113094,
+    "contextWindow": 1000000,
+    "contextWindowIsAuthoritative": true,
+    "inputTokens": 113094,
+    "model": "pi:deepseek/deepseek-v4-flash",
+    "percentage": 11
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "conversationId": "conv-1786096440903-vbwey2yl4",
+  "records": [
+    {
+      "schemaVersion": 1,
+      "id": "msg-1786096440979-wh04snn",
+      "userTurnOrdinal": 1,
+      "state": "accepted",
+      "localMessageId": "msg-1786096440899-7tkza8s",
+      "timestamp": 1786096440899,
+      "rawDisplayText": "/claude-obsidian:wiki-ingest postgreSQL turorial ,项目relational database",
+      "canonicalText": "/claude-obsidian:wiki-ingest postgreSQL turorial ,项目relational database",
+      "context": {
+        "currentNote": {
+          "path": "inbox/PostgreSQL Tutorial.md"
+        }
+      },
+      "images": [],
+      "contentDigest": "c557b573e52dc25c4405b58bc50723500d0d8da35e928a6aa5f028dc86f32c8f"
+    }
+  ]
+}

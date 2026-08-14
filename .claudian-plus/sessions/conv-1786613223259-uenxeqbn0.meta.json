@@ -1,0 +1,23 @@
+{
+  "id": "conv-1786613223259-uenxeqbn0",
+  "title": "Research today's journal entries",
+  "createdAt": 1786613223267,
+  "updatedAt": 1786618676037,
+  "providerId": "claude",
+  "titleGenerationStatus": "success",
+  "lastResponseAt": 1786618676037,
+  "sessionId": "8ef1bb00-397e-428e-9f99-1ac2ebc20043",
+  "selectedModel": "sonnet",
+  "providerState": {
+    "providerSessionId": "8ef1bb00-397e-428e-9f99-1ac2ebc20043"
+  },
+  "usage": {
+    "model": "sonnet",
+    "inputTokens": 1061,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 249728,
+    "contextWindow": 1000000,
+    "contextTokens": 250789,
+    "percentage": 25
+  }
+}

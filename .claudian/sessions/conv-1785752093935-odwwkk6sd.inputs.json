@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "conversationId": "conv-1785752093935-odwwkk6sd",
+  "records": [
+    {
+      "schemaVersion": 1,
+      "id": "msg-1785752094019-lf4yda4",
+      "userTurnOrdinal": 1,
+      "state": "accepted",
+      "localMessageId": "msg-1785752093932-tgcrrou",
+      "timestamp": 1785752093932,
+      "rawDisplayText": "/claude-obsidian:wiki-ingest learn python in Y minutes",
+      "canonicalText": "/claude-obsidian:wiki-ingest learn python in Y minutes",
+      "images": [],
+      "contentDigest": "9b5d611464d6c1f3f1f9ad03e8e90e229d589ff5741689942ab2c735c0c27b82",
+      "providerUserMessageId": "4958c72f-608a-4343-a17d-ab729448e631",
+      "providerAssistantMessageId": "8543a215-65a9-49c4-854f-0588518b1eb8"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "msg-1785753252454-xmel1h9",
+      "userTurnOrdinal": 2,
+      "state": "accepted",
+      "localMessageId": "msg-1785753252450-yqf8f63",
+      "timestamp": 1785753252450,
+      "rawDisplayText": "这些东西不应该同步于projects中的python basics一起更新吗",
+      "canonicalText": "这些东西不应该同步于projects中的python basics一起更新吗",
+      "images": [],
+      "contentDigest": "41a1cf8731e770e283cb46d03ab1373eba0b4a1c1313fea79eec96fa8fc11375",
+      "providerUserMessageId": "3d22c9d0-c3f3-4399-a619-9aab1b782503",
+      "providerAssistantMessageId": "5fc42644-d6fb-4660-89f6-98fb4722d97b"
+    }
+  ]
+}

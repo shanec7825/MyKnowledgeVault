@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "conversationId": "conv-1785943598826-4a6nlpjc2",
+  "records": [
+    {
+      "schemaVersion": 1,
+      "id": "msg-1785943598903-dtiy1l4",
+      "userTurnOrdinal": 1,
+      "state": "accepted",
+      "localMessageId": "msg-1785943598814-oxdfh32",
+      "timestamp": 1785943598814,
+      "rawDisplayText": "/claude-obsidian:autoresearch projects/神经可塑性。我想知道神经可塑性的生物性原理，认知科学理论。以及具体问题：成年之后大脑的学习能力和可塑性是否存在，强弱差异；神经可塑性在大脑不同工作区：比如听觉，视觉逻辑方面的差异，即是否存在可塑的认知能力和不可塑的认知能力",
+      "canonicalText": "/claude-obsidian:autoresearch projects/神经可塑性。我想知道神经可塑性的生物性原理，认知科学理论。以及具体问题：成年之后大脑的学习能力和可塑性是否存在，强弱差异；神经可塑性在大脑不同工作区：比如听觉，视觉逻辑方面的差异，即是否存在可塑的认知能力和不可塑的认知能力",
+      "images": [],
+      "contentDigest": "50b79b349dda49c15a00f747cc7fb07caae3fbcd0249255932274eed756c101c",
+      "providerUserMessageId": "89b5863c-a4dd-4963-a312-ee29ddc48e6b",
+      "providerAssistantMessageId": "274d2549-c6a9-4264-af15-12c22b3a1f61"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "msg-1785991317505-73ruas9",
+      "userTurnOrdinal": 2,
+      "state": "accepted",
+      "localMessageId": "msg-1785991317500-xc7v5pj",
+      "timestamp": 1785991317500,
+      "rawDisplayText": "@wiki/resources/神经可塑性 认知科学理论.md /claude-obsidian:autoresearch 研究认知迁移能力的表现，成因，提升方法实践等",
+      "canonicalText": "@wiki/resources/神经可塑性 认知科学理论.md /claude-obsidian:autoresearch 研究认知迁移能力的表现，成因，提升方法实践等",
+      "images": [],
+      "contentDigest": "0a6467b1e768a4b2211b17204f230c02367dccf0dbb44f277c02a51179ddd159",
+      "providerUserMessageId": "095573bd-690c-4eb1-982d-cd8dca9a5edf",
+      "providerAssistantMessageId": "8d784fc3-9222-4abf-b75d-3f4f53e7e7d7"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "msg-1785992348721-9sntwlh",
+      "userTurnOrdinal": 3,
+      "state": "accepted",
+      "localMessageId": "msg-1785992348717-j67hfx8",
+      "timestamp": 1785992348717,
+      "rawDisplayText": "/claude-obsidian:wiki-query 到不同地点进行学习工作，是否能够提高认知能力。或者说能提高哪些认知能力，哪些认知能力无法提高，甚至下降",
+      "canonicalText": "/claude-obsidian:wiki-query 到不同地点进行学习工作，是否能够提高认知能力。或者说能提高哪些认知能力，哪些认知能力无法提高，甚至下降",
+      "images": [],
+      "contentDigest": "696eebb0d71fd891c34d3d4d07e5cccaf67a10641e05ca7ee2163db1e7e9f19f",
+      "providerUserMessageId": "50ffe59a-8511-44fd-b76d-96ae1fa56cbb",
+      "providerAssistantMessageId": "0821c438-2f1b-40c4-9573-587f49f17f5d"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "msg-1785992572755-iz1pv7h",
+      "userTurnOrdinal": 4,
+      "state": "accepted",
+      "localMessageId": "msg-1785992572751-tml5qtt",
+      "timestamp": 1785992572751,
+      "rawDisplayText": "/claude-obsidian:autoresearch 环境变化对于学习，工作等大脑认知行为的影响",
+      "canonicalText": "/claude-obsidian:autoresearch 环境变化对于学习，工作等大脑认知行为的影响",
+      "images": [],
+      "contentDigest": "16bdd613232c33920c36ea25dbf4e3d5bc22d306a0df75a476568b8093ec3887",
+      "providerUserMessageId": "f69ae122-1289-49f5-ae6f-cf485fcf4090",
+      "providerAssistantMessageId": "6eb4984d-08d0-4c2c-a333-e1ed1e4276a8"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "msg-1786014423799-jihu56y",
+      "userTurnOrdinal": 5,
+      "state": "accepted",
+      "localMessageId": "msg-1786014423795-ye9cvc9",
+      "timestamp": 1786014423795,
+      "rawDisplayText": "创建项目，环境变化与认知",
+      "canonicalText": "创建项目，环境变化与认知",
+      "images": [],
+      "contentDigest": "8fd95f3c8ea116274448a4442db5e42dddf4c01ad49b67523d6663c556991d53",
+      "providerUserMessageId": "bf34a75a-02bc-49fe-91c9-e7a17c670622",
+      "providerAssistantMessageId": "f1483b84-8bc9-4bda-bda3-8bb8cfc9dddb"
+    }
+  ]
+}

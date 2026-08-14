@@ -1,0 +1,23 @@
+{
+  "id": "conv-1785676484188-qlyfz03at",
+  "title": "Explain JSON API specification",
+  "createdAt": 1785676484191,
+  "updatedAt": 1785682197989,
+  "providerId": "claude",
+  "titleGenerationStatus": "success",
+  "lastResponseAt": 1785682197989,
+  "sessionId": "e1adb1a8-5667-49e8-a308-e20a42f3c326",
+  "selectedModel": "haiku",
+  "providerState": {
+    "providerSessionId": "e1adb1a8-5667-49e8-a308-e20a42f3c326"
+  },
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 190,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 343936,
+    "contextWindow": 200000,
+    "contextTokens": 344126,
+    "percentage": 100
+  }
+}

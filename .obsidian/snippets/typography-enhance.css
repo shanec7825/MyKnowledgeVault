@@ -1,0 +1,167 @@
+/* ============================================================
+   claude-obsidian typography & visual enhancements
+   Purpose: Heading hierarchy, bold emphasis, table polish,
+            callout depth — all without increasing information density.
+   ============================================================ */
+
+/* ── Color tokens ── */
+:root {
+  --co-heading-h1:     #e07850;   /* warm amber — primary headings */
+  --co-heading-h2:     #d4a259;   /* gold      — section heads     */
+  --co-heading-h3:     #7eb8da;   /* steel blue — sub-sections    */
+  --co-heading-h4:     #a0a0a0;   /* muted     — tertiary heads   */
+  --co-bold-warm:      #e8c17d;   /* warm tint for bold (dark mode) */
+  --co-bold-light:     #b45f06;   /* warm tint for bold (light mode) */
+  --co-table-head-bg:  rgba(128,128,128,0.12);
+  --co-table-stripe:   rgba(128,128,128,0.05);
+  --co-table-border:   rgba(128,128,128,0.18);
+  --co-hr-color:       rgba(160,160,160,0.35);
+  --co-blockquote-bar: #e07850;
+  --co-link-hover:     #e07850;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   HEADINGS — hierarchy through color, not size
+   ═══════════════════════════════════════════════════════════════ */
+
+/* H1 — warm amber with thin bottom rule */
+.markdown-preview-view h1,
+.markdown-source-view.mod-cm6 .cm-header-1,
+.cm-s-obsidian .cm-header-1 {
+  color: var(--co-heading-h1) !important;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(224, 120, 80, 0.35);
+  padding-bottom: 0.2em;
+}
+
+/* H2 — gold */
+.markdown-preview-view h2,
+.markdown-source-view.mod-cm6 .cm-header-2,
+.cm-s-obsidian .cm-header-2 {
+  color: var(--co-heading-h2) !important;
+  font-weight: 700;
+}
+
+/* H3 — steel blue */
+.markdown-preview-view h3,
+.markdown-source-view.mod-cm6 .cm-header-3,
+.cm-s-obsidian .cm-header-3 {
+  color: var(--co-heading-h3) !important;
+  font-weight: 600;
+}
+
+/* H4-H6 — muted, lighter weight */
+.markdown-preview-view h4,
+.markdown-source-view.mod-cm6 .cm-header-4,
+.cm-s-obsidian .cm-header-4 {
+  color: var(--co-heading-h4) !important;
+  font-weight: 600;
+}
+
+.markdown-preview-view h5,
+.markdown-source-view.mod-cm6 .cm-header-5,
+.cm-s-obsidian .cm-header-5,
+.markdown-preview-view h6,
+.markdown-source-view.mod-cm6 .cm-header-6,
+.cm-s-obsidian .cm-header-6 {
+  color: var(--co-heading-h4) !important;
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BOLD — warm tint for visual "punch"
+   ═══════════════════════════════════════════════════════════════ */
+
+.theme-dark strong,
+.theme-dark b,
+.theme-dark .cm-strong {
+  color: var(--co-bold-warm);
+}
+
+.theme-light strong,
+.theme-light b,
+.theme-light .cm-strong {
+  color: var(--co-bold-light);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TABLES — structure without noise
+   ═══════════════════════════════════════════════════════════════ */
+
+.markdown-preview-view table,
+.markdown-source-view.mod-cm6 .cm-table-widget {
+  border-collapse: collapse;
+}
+
+/* Table headers */
+.markdown-preview-view thead th,
+.markdown-rendered thead th {
+  background: var(--co-table-head-bg) !important;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Subtle alternating row stripe */
+.markdown-preview-view tbody tr:nth-child(even),
+.markdown-rendered tbody tr:nth-child(even) {
+  background: var(--co-table-stripe) !important;
+}
+
+/* Cell borders — subtle */
+.markdown-preview-view th,
+.markdown-preview-view td,
+.markdown-rendered th,
+.markdown-rendered td {
+  border-color: var(--co-table-border) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   HORIZONTAL RULE — warm accent
+   ═══════════════════════════════════════════════════════════════ */
+
+.markdown-preview-view hr,
+.markdown-source-view.mod-cm6 .cm-hr {
+  border-color: var(--co-hr-color) !important;
+  border-width: 1px 0 0 0 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BLOCKQUOTES — colored left bar
+   ═══════════════════════════════════════════════════════════════ */
+
+.markdown-preview-view blockquote,
+.markdown-rendered blockquote {
+  border-left-color: var(--co-blockquote-bar) !important;
+  border-left-width: 3px !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   LINKS — warm hover
+   ═══════════════════════════════════════════════════════════════ */
+
+.markdown-preview-view a:hover,
+.markdown-rendered a:hover {
+  color: var(--co-link-hover) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   INLINE CODE — subtle warmth
+   ═══════════════════════════════════════════════════════════════ */
+
+.theme-dark :not(pre) > code {
+  background: rgba(224, 120, 80, 0.1);
+  border-radius: 3px;
+  padding: 0.1em 0.3em;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CALLOUTS — slightly tighter, colored accent
+   ═══════════════════════════════════════════════════════════════ */
+
+.callout {
+  border-left-width: 3px;
+}
+
+.callout-title {
+  font-weight: 600;
+}

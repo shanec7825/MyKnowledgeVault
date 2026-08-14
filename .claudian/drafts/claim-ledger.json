@@ -1,0 +1,4721 @@
+{
+  "claims": {
+    "clm-jsonapi-async": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Asynchronous Processing",
+          "relation": "supports",
+          "source_id": "src-2dd7698c435fc893adfc"
+        }
+      ],
+      "location": {
+        "anchor": "Asynchronous Processing",
+        "path": "wiki/resources/JSON API.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "对耗时较长的操作，JSON:API 官方建议：创建时返回 202 Accepted 并附 Content-Location，处理中返回 200 OK 并可用 Retry-After，完成时返回 303 See Other 并附 Location。"
+    },
+    "clm-jsonapi-filtering": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Filtering",
+          "relation": "supports",
+          "source_id": "src-2dd7698c435fc893adfc"
+        }
+      ],
+      "location": {
+        "anchor": "Filtering",
+        "path": "wiki/resources/JSON API.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "JSON:API 规范保留 filter 查询参数族作为过滤策略的基础，并建议用 filter[关联名] 过滤关联资源。"
+    },
+    "clm-jsonapi-member-names": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Naming",
+          "relation": "supports",
+          "source_id": "src-2dd7698c435fc893adfc"
+        }
+      ],
+      "location": {
+        "anchor": "Naming Conventions",
+        "path": "wiki/resources/JSON API.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "JSON:API 官方建议成员（键）名称使用驼峰命名法、以 a-z 开头和结尾、且仅包含 ASCII 字母数字。"
+    },
+    "clm-jsonapi-profiles": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Authoring Profiles",
+          "relation": "supports",
+          "source_id": "src-2dd7698c435fc893adfc"
+        }
+      ],
+      "location": {
+        "anchor": "Profiles",
+        "path": "wiki/resources/JSON API.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "JSON:API Profile 允许文档发送者在不改动规范基本语义的前提下，对文档内容做出额外承诺。"
+    },
+    "clm-jsonapi-relationship-urls": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Relationship URLs and Related Resource URLs",
+          "relation": "supports",
+          "source_id": "src-2dd7698c435fc893adfc"
+        }
+      ],
+      "location": {
+        "anchor": "Relationship and Related-Resource URLs",
+        "path": "wiki/resources/JSON API.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "JSON:API 官方建议关系 URL 形如 /photos/1/relationships/comments，相关资源 URL 形如 /photos/1/comments。"
+    },
+    "clm-jsonapi-spec-compound": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Compound Documents",
+          "relation": "supports",
+          "source_id": "src-642854a6e0721e6b87b1"
+        }
+      ],
+      "location": {
+        "anchor": "复合文档（Compound Documents）",
+        "path": "wiki/resources/JSON API Specification.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "复合文档的 included 必须是资源对象数组，且所有 included 资源必须与 primary data 存在直接或间接关系链（完整 linkage）。"
+    },
+    "clm-jsonapi-spec-crud": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Creating, Updating and Deleting Resources",
+          "relation": "supports",
+          "source_id": "src-642854a6e0721e6b87b1"
+        }
+      ],
+      "location": {
+        "anchor": "创建、更新、删除（CRUD）",
+        "path": "wiki/resources/JSON API Specification.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "JSON:API 中创建资源用 POST（201/202/204），更新用 PATCH，删除用 DELETE；请求必须整体成功或整体失败，不允许部分更新。"
+    },
+    "clm-jsonapi-spec-errors": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Error Objects",
+          "relation": "supports",
+          "source_id": "src-642854a6e0721e6b87b1"
+        }
+      ],
+      "location": {
+        "anchor": "错误对象",
+        "path": "wiki/resources/JSON API Specification.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "错误对象在顶层 errors 数组中返回，每个错误对象必须至少包含 id、links、status、code、title、detail、source、meta 中的一个成员。"
+    },
+    "clm-jsonapi-spec-fetch": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Fetching Resources",
+          "relation": "supports",
+          "source_id": "src-642854a6e0721e6b87b1"
+        }
+      ],
+      "location": {
+        "anchor": "获取数据（Fetching）",
+        "path": "wiki/resources/JSON API Specification.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "获取资源成功返回 200 OK；请求不存在的单个资源返回 404 Not Found（除非对应 URL 本应返回 null）。"
+    },
+    "clm-jsonapi-spec-media-type": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Content Negotiation",
+          "relation": "supports",
+          "source_id": "src-642854a6e0721e6b87b1"
+        }
+      ],
+      "location": {
+        "anchor": "媒体类型与内容协商",
+        "path": "wiki/resources/JSON API Specification.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "JSON:API 要求所有数据交换使用 application/vnd.api+json 媒体类型，客户端与服务器必须在 Content-Type 中指定。"
+    },
+    "clm-jsonapi-spec-member-names": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Member Names",
+          "relation": "supports",
+          "source_id": "src-642854a6e0721e6b87b1"
+        }
+      ],
+      "location": {
+        "anchor": "成员命名规则",
+        "path": "wiki/resources/JSON API Specification.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "JSON:API 成员名区分大小写，仅允许 a-z、A-Z、0-9 及有限字符，大量 URL 保留字符被禁止用于实现/配置定义的成员名。"
+    },
+    "clm-jsonapi-spec-query-params": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Inclusion of Related Resources",
+          "relation": "supports",
+          "source_id": "src-642854a6e0721e6b87b1"
+        }
+      ],
+      "location": {
+        "anchor": "查询参数（include / fields / sort / page / filter）",
+        "path": "wiki/resources/JSON API Specification.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "include、fields[TYPE]、sort、page、filter 是规范定义/保留的查询参数，分别用于关联、稀疏字段集、排序、分页与过滤。"
+    },
+    "clm-jsonapi-spec-resource-object": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Resource Objects",
+          "relation": "supports",
+          "source_id": "src-642854a6e0721e6b87b1"
+        }
+      ],
+      "location": {
+        "anchor": "资源对象",
+        "path": "wiki/resources/JSON API Specification.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "资源对象必须包含 type 与 id；客户端新建资源时可省略 id，改用 lid 在文档内做局部唯一标识。"
+    },
+    "clm-jsonapi-spec-top-level": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Top Level",
+          "relation": "supports",
+          "source_id": "src-642854a6e0721e6b87b1"
+        }
+      ],
+      "location": {
+        "anchor": "文档结构",
+        "path": "wiki/resources/JSON API Specification.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "JSON:API 文档顶层必须包含 data、errors、meta 或扩展成员之一，且 data 与 errors 不得共存。"
+    },
+    "clm-jsonapi-url-design": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "URLs for Resource Collections",
+          "relation": "supports",
+          "source_id": "src-2dd7698c435fc893adfc"
+        }
+      ],
+      "location": {
+        "anchor": "URL Design",
+        "path": "wiki/resources/JSON API.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "JSON:API 官方建议资源集合 URL 由资源类型构成，单个资源 URL 在集合 URL 后追加资源 ID。"
+    },
+    "clm-python-comments": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Comments in Python",
+          "relation": "supports",
+          "source_id": "src-09c1d93a9a8ed6942d12"
+        }
+      ],
+      "location": {
+        "anchor": "注释（Comments）",
+        "path": "wiki/resources/Python Syntax.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Python 中 # 号（不在字符串内）开始注释直到行尾，被解释器忽略；三引号字符串也可用作多行注释。"
+    },
+    "clm-python-identifiers": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Python Identifiers",
+          "relation": "supports",
+          "source_id": "src-09c1d93a9a8ed6942d12"
+        }
+      ],
+      "location": {
+        "anchor": "标识符（Identifiers）",
+        "path": "wiki/resources/Python Syntax.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Python 标识符以字母或下划线开头，后跟字母、数字、下划线，不允许标点字符，且区分大小写。"
+    },
+    "clm-python-indentation": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Python Lines and Indentation",
+          "relation": "supports",
+          "source_id": "src-09c1d93a9a8ed6942d12"
+        }
+      ],
+      "location": {
+        "anchor": "缩进与代码块",
+        "path": "wiki/resources/Python Syntax.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Python 不使用花括号表示代码块，而是用行缩进表示；同一块内语句必须缩进相同数量空格。"
+    },
+    "clm-python-keywords": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Python Reserved Words",
+          "relation": "supports",
+          "source_id": "src-09c1d93a9a8ed6942d12"
+        }
+      ],
+      "location": {
+        "anchor": "保留字（Keywords）",
+        "path": "wiki/resources/Python Syntax.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Python 有一组小写保留字（如 and/as/assert/class/def/if/while 等），不能用作标识符。"
+    },
+    "clm-python-multiline": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Python Multi-Line Statements",
+          "relation": "supports",
+          "source_id": "src-09c1d93a9a8ed6942d12"
+        }
+      ],
+      "location": {
+        "anchor": "多行语句",
+        "path": "wiki/resources/Python Syntax.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Python 长语句可用反斜杠 \\\\ 续行；在 []、{}、() 括号内的语句无需续行符。"
+    },
+    "clm-python-quotes": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Quotations in Python",
+          "relation": "supports",
+          "source_id": "src-09c1d93a9a8ed6942d12"
+        }
+      ],
+      "location": {
+        "anchor": "引号与字符串",
+        "path": "wiki/resources/Python Syntax.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Python 字符串可用单引号、双引号或三引号表示，只要起止引号类型一致；三引号可跨多行。"
+    },
+    "clm-python-suite": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Multiple Statement Groups as Suites",
+          "relation": "supports",
+          "source_id": "src-09c1d93a9a8ed6942d12"
+        }
+      ],
+      "location": {
+        "anchor": "语句组（Suites）",
+        "path": "wiki/resources/Python Syntax.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Python 复合语句（if/while/def/class 等）由以冒号结尾的头部行加一组缩进语句（suite）组成。"
+    },
+    "clm-restful-async": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Implement asynchronous methods",
+          "relation": "supports",
+          "source_id": "src-e9fef744a1c563d1a4e9"
+        }
+      ],
+      "location": {
+        "anchor": "异步方法",
+        "path": "wiki/resources/RESTful API Design.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "耗时操作应返回 202 Accepted，在 Location 提供状态端点；异步创建资源完成时返回 303 See Other 指向新资源。"
+    },
+    "clm-restful-collection-plural": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Resource URI naming conventions",
+          "relation": "supports",
+          "source_id": "src-e9fef744a1c563d1a4e9"
+        }
+      ],
+      "location": {
+        "anchor": "资源 URI 设计",
+        "path": "wiki/resources/RESTful API Design.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "集合 URI 应使用复数名词并组织成层级，如 /customers 与 /customers/5。"
+    },
+    "clm-restful-hateoas": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Implement HATEOAS",
+          "relation": "supports",
+          "source_id": "src-e9fef744a1c563d1a4e9"
+        }
+      ],
+      "location": {
+        "anchor": "HATEOAS",
+        "path": "wiki/resources/RESTful API Design.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "HATEOAS 要求每个响应携带访问相关资源所需的超链接与可用操作信息，客户端无需预知 URI 结构。"
+    },
+    "clm-restful-methods": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Define RESTful web API methods",
+          "relation": "supports",
+          "source_id": "src-e9fef744a1c563d1a4e9"
+        }
+      ],
+      "location": {
+        "anchor": "HTTP 方法",
+        "path": "wiki/resources/RESTful API Design.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "RESTful API 中 GET 检索、POST 创建、PUT 整体替换、PATCH 局部更新、DELETE 删除，各方法有对应的状态码约定。"
+    },
+    "clm-restful-openapi": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "OpenAPI Initiative",
+          "relation": "supports",
+          "source_id": "src-e9fef744a1c563d1a4e9"
+        }
+      ],
+      "location": {
+        "anchor": "OpenAPI",
+        "path": "wiki/resources/RESTful API Design.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "OpenAPI（前身 Swagger）以契约优先方式标准化 REST API 描述，可从契约生成客户端库与文档。"
+    },
+    "clm-restful-pagination": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Implement data pagination and filtering",
+          "relation": "supports",
+          "source_id": "src-e9fef744a1c563d1a4e9"
+        }
+      ],
+      "location": {
+        "anchor": "分页与过滤",
+        "path": "wiki/resources/RESTful API Design.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "分页建议使用 limit/offset 查询参数并提供默认值，同时支持 sort、过滤与 fields 字段投影。"
+    },
+    "clm-restful-patch-formats": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "PATCH requests",
+          "relation": "supports",
+          "source_id": "src-e9fef744a1c563d1a4e9"
+        }
+      ],
+      "location": {
+        "anchor": "PATCH 格式（JSON Patch / Merge Patch）",
+        "path": "wiki/resources/RESTful API Design.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "PATCH 的两种主流 JSON 补丁格式是 JSON merge patch（application/merge-patch+json）与 JSON patch（application/json-patch+json）。"
+    },
+    "clm-restful-rmm": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Web API maturity model",
+          "relation": "supports",
+          "source_id": "src-e9fef744a1c563d1a4e9"
+        }
+      ],
+      "location": {
+        "anchor": "Richardson 成熟度模型（RMM）",
+        "path": "wiki/resources/RESTful API Design.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Richardson 成熟度模型定义 0-3 级：单一 URI 全 POST、资源 URI、HTTP 方法、超媒体（HATEOAS），只有 Level 3 才是真正 RESTful。"
+    },
+    "clm-restful-uri-nouns": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Define RESTful web API resource URIs",
+          "relation": "supports",
+          "source_id": "src-e9fef744a1c563d1a4e9"
+        }
+      ],
+      "location": {
+        "anchor": "资源 URI 设计",
+        "path": "wiki/resources/RESTful API Design.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "RESTful API 的 URI 应以名词表示资源、避免动词，例如用 /orders 而不是 /create-order。"
+    },
+    "clm-restful-versioning": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Implement versioning",
+          "relation": "supports",
+          "source_id": "src-e9fef744a1c563d1a4e9"
+        }
+      ],
+      "location": {
+        "anchor": "版本化",
+        "path": "wiki/resources/RESTful API Design.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-02",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "API 版本化常见方案包括 URI、查询字符串、自定义头与媒体类型四种，各有取舍。"
+    },
+    "clm-python-division-float": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "1. 原始数据类型和运算符",
+          "relation": "supports",
+          "source_id": "src-db5fc7055d41147f87b8"
+        }
+      ],
+      "location": {
+        "anchor": "1. 数据类型与运算符",
+        "path": "wiki/resources/Python 快速入门.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-03",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Python 3 中除法 / 即使操作数均为整数也返回浮点数，如 35 / 5 == 7.0。"
+    },
+    "clm-python-floordiv-floor": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "1. 原始数据类型和运算符",
+          "relation": "supports",
+          "source_id": "src-db5fc7055d41147f87b8"
+        }
+      ],
+      "location": {
+        "anchor": "1. 数据类型与运算符",
+        "path": "wiki/resources/Python 快速入门.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-03",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Python 整除 // 的结果向下取整（向负无穷方向），如 -5 // 3 == -2。"
+    },
+    "clm-python-mod-sign": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "1. 原始数据类型和运算符",
+          "relation": "supports",
+          "source_id": "src-db5fc7055d41147f87b8"
+        }
+      ],
+      "location": {
+        "anchor": "1. 数据类型与运算符",
+        "path": "wiki/resources/Python 快速入门.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-03",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Python 模运算 % 结果的符号与除数（右操作数）相同，如 -7 % 3 == 2。"
+    },
+    "clm-python-bool-int": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "1. 原始数据类型和运算符",
+          "relation": "supports",
+          "source_id": "src-db5fc7055d41147f87b8"
+        }
+      ],
+      "location": {
+        "anchor": "1. 数据类型与运算符",
+        "path": "wiki/resources/Python 快速入门.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-03",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Python 中 True/False 本质上是整数 1/0，可参与算术运算，如 True + True == 2。"
+    },
+    "clm-python-is-vs-eq": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "1. 原始数据类型和运算符",
+          "relation": "supports",
+          "source_id": "src-db5fc7055d41147f87b8"
+        }
+      ],
+      "location": {
+        "anchor": "1. 数据类型与运算符",
+        "path": "wiki/resources/Python 快速入门.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-03",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Python 中 is 判断两个变量是否引用同一对象，== 判断值是否相等；与 None 比较应使用 is。"
+    },
+    "clm-python-fstring": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "1. 原始数据类型和运算符",
+          "relation": "supports",
+          "source_id": "src-db5fc7055d41147f87b8"
+        }
+      ],
+      "location": {
+        "anchor": "1. 数据类型与运算符",
+        "path": "wiki/resources/Python 快速入门.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-03",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "f-string 自 Python 3.6+ 可用，可在花括号内嵌入任意 Python 表达式并格式化为字符串。"
+    },
+    "clm-python-truthiness": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "1. 原始数据类型和运算符",
+          "relation": "supports",
+          "source_id": "src-db5fc7055d41147f87b8"
+        }
+      ],
+      "location": {
+        "anchor": "1. 数据类型与运算符",
+        "path": "wiki/resources/Python 快速入门.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-03",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "None、0、空字符串、空列表、空字典、空元组在布尔上下文中均为 False，其余值均为 True。"
+    },
+    "clm-python-tuple-single": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "2. 变量和集合",
+          "relation": "supports",
+          "source_id": "src-db5fc7055d41147f87b8"
+        }
+      ],
+      "location": {
+        "anchor": "2. 变量与集合",
+        "path": "wiki/resources/Python 快速入门.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-03",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "单元素元组必须在元素后加逗号，(1,) 才是 tuple，否则 (1) 是 int。"
+    },
+    "clm-python-dict-hashable": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "2. 变量和集合",
+          "relation": "supports",
+          "source_id": "src-db5fc7055d41147f87b8"
+        }
+      ],
+      "location": {
+        "anchor": "2. 变量与集合",
+        "path": "wiki/resources/Python 快速入门.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-03",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "字典的键必须为不可变（可哈希）类型；以列表等可变类型为键会抛 TypeError: unhashable type。"
+    },
+    "clm-python-dict-order": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "2. 变量和集合",
+          "relation": "supports",
+          "source_id": "src-db5fc7055d41147f87b8"
+        }
+      ],
+      "location": {
+        "anchor": "2. 变量与集合",
+        "path": "wiki/resources/Python 快速入门.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-03",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Python 3.7 起字典项按插入顺序排列；3.7 之前字典键的顺序未定义。"
+    },
+    "clm-python-extended-unpack": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "2. 变量和集合",
+          "relation": "supports",
+          "source_id": "src-db5fc7055d41147f87b8"
+        }
+      ],
+      "location": {
+        "anchor": "2. 变量与集合",
+        "path": "wiki/resources/Python 快速入门.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-03",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Python 支持扩展解包，如 a, *b, c = (1, 2, 3, 4) 中 b 收集中间元素为列表 [2, 3]。"
+    },
+    "clm-python-args-kwargs": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "4. 函数",
+          "relation": "supports",
+          "source_id": "src-db5fc7055d41147f87b8"
+        }
+      ],
+      "location": {
+        "anchor": "4. 函数",
+        "path": "wiki/resources/Python 快速入门.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-03",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "定义函数时 *args 将多余位置参数收集为元组、**kwargs 将关键字参数收集为字典；调用时可用 *seq 与 **map 展开。"
+    },
+    "clm-python-firstclass": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "4. 函数",
+          "relation": "supports",
+          "source_id": "src-db5fc7055d41147f87b8"
+        }
+      ],
+      "location": {
+        "anchor": "4. 函数",
+        "path": "wiki/resources/Python 快速入门.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-03",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Python 函数是一等公民：可在函数内定义并返回新函数（闭包），如 create_adder(10) 返回 adder。"
+    },
+    "clm-python-comprehensions": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "4. 函数",
+          "relation": "supports",
+          "source_id": "src-db5fc7055d41147f87b8"
+        }
+      ],
+      "location": {
+        "anchor": "4. 函数",
+        "path": "wiki/resources/Python 快速入门.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-03",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "列表推导式 [f(x) for x in xs if cond] 可替代 map/filter；集合与字典也有推导式 {x for x in ...} 与 {k: v for ...}。"
+    },
+    "clm-python-class-decorators": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "6. 类",
+          "relation": "supports",
+          "source_id": "src-db5fc7055d41147f87b8"
+        }
+      ],
+      "location": {
+        "anchor": "6. 类与面向对象",
+        "path": "wiki/resources/Python 快速入门.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-03",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "类可定义 @classmethod、@staticmethod 与 @property（含 setter/deleter）；类属性由所有实例共享。"
+    },
+    "clm-python-super-mro": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "6.2 多重继承",
+          "relation": "supports",
+          "source_id": "src-db5fc7055d41147f87b8"
+        }
+      ],
+      "location": {
+        "anchor": "6. 类与面向对象",
+        "path": "wiki/resources/Python 快速入门.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-03",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "多重继承中 super() 只返回 MRO 的下一个类，通常需显式调用各父类 __init__；__mro__ 记录方法解析顺序。"
+    },
+    "clm-python-generators": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "7. 高级用法",
+          "relation": "supports",
+          "source_id": "src-db5fc7055d41147f87b8"
+        }
+      ],
+      "location": {
+        "anchor": "7. 高级用法",
+        "path": "wiki/resources/Python 快速入门.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-03",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "生成器用 yield 惰性求值，每次迭代只计算一个值；range 的返回值也是惰性可迭代对象。"
+    },
+    "clm-python-decorators": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "7. 高级用法",
+          "relation": "supports",
+          "source_id": "src-db5fc7055d41147f87b8"
+        }
+      ],
+      "location": {
+        "anchor": "7. 高级用法",
+        "path": "wiki/resources/Python 快速入门.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-03",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "装饰器用 @ 语法包装函数并返回新函数；functools.wraps 可保留被包装函数的元信息。"
+    },
+    "clm-greatwork-four-steps": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Four steps",
+          "relation": "supports",
+          "source_id": "src-2fb7a511d9f966de0204"
+        }
+      ],
+      "location": {
+        "anchor": "四步法",
+        "path": "wiki/resources/如何做出伟大工作.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-04",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "做出伟大工作几乎总是遵循四步：选择领域、学到知识前沿、注意前沿的缺口、探索有希望的缺口；从画家到物理学家莫不如此。"
+    },
+    "clm-greatwork-work-choice": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "decide what to work on",
+          "relation": "supports",
+          "source_id": "src-2fb7a511d9f966de0204"
+        }
+      ],
+      "location": {
+        "anchor": "选择工作",
+        "path": "wiki/resources/如何做出伟大工作.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-04",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "选择工作只需两个条件：天生擅长与深度兴趣（scope 维度野心家通常已足够保守）；摸索方法是直接去做、拿不准就猜一个开始。"
+    },
+    "clm-greatwork-motives": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "The three most powerful motives",
+          "relation": "supports",
+          "source_id": "src-2fb7a511d9f966de0204"
+        }
+      ],
+      "location": {
+        "anchor": "选择工作",
+        "path": "wiki/resources/如何做出伟大工作.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-04",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "三种最强大的动力是好奇心、愉悦与做出令人印象深刻之事的欲望；三者汇聚时最强大。"
+    },
+    "clm-greatwork-upwind": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "staying upwind",
+          "relation": "supports",
+          "source_id": "src-2fb7a511d9f966de0204"
+        }
+      ],
+      "location": {
+        "anchor": "规划与顺风",
+        "path": "wiki/resources/如何做出伟大工作.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-04",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "规划只适用于能预先描述的成就（金牌、财富），无法用来发现自然选择；正确策略是'保持顺风'——每个阶段做最有趣且给自己最好未来选项的事。"
+    },
+    "clm-greatwork-consistency": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "If you do work that compounds",
+          "relation": "supports",
+          "source_id": "src-2fb7a511d9f966de0204"
+        }
+      ],
+      "location": {
+        "anchor": "工作技巧",
+        "path": "wiki/resources/如何做出伟大工作.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-04",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "复利式工作产生指数增长：每天写一页一年即成一本书；学习与受众增长都是指数增长，早期曲线平缓但值得为之付出非凡努力。"
+    },
+    "clm-greatwork-procrastination": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "two forms of procrastination",
+          "relation": "supports",
+          "source_id": "src-2fb7a511d9f966de0204"
+        }
+      ],
+      "location": {
+        "anchor": "工作技巧",
+        "path": "wiki/resources/如何做出伟大工作.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-04",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "项目级拖延远比日级拖延危险，因为它伪装成勤奋工作、不触发警报；应对方法是定期自问'我在做我最想做的事吗'，且越老越危险。"
+    },
+    "clm-greatwork-earnest": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "The core of being earnest is being intellectually honest",
+          "relation": "supports",
+          "source_id": "src-2fb7a511d9f966de0204"
+        }
+      ],
+      "location": {
+        "anchor": "瞄准最好",
+        "path": "wiki/resources/如何做出伟大工作.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-04",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "真诚（earnest）是伟大工作的正面要求：核心是智力诚实——主动承认错误是力量的来源；矫饰与正式感消耗用于'看起来怎样'的能量。"
+    },
+    "clm-greatwork-best": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "if you don't try to be the best, you won't even be good",
+          "relation": "supports",
+          "source_id": "src-2fb7a511d9f966de0204"
+        }
+      ],
+      "location": {
+        "anchor": "瞄准最好",
+        "path": "wiki/resources/如何做出伟大工作.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-04",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "不瞄准最好就连好都做不到（ambition 的误差几乎全部落在'不够'一侧）；一个高目标是做出百年后人们仍在意的东西。"
+    },
+    "clm-greatwork-originality": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Originality isn't a process, but a habit of mind",
+          "relation": "supports",
+          "source_id": "src-2fb7a511d9f966de0204"
+        }
+      ],
+      "location": {
+        "anchor": "原创性与新想法",
+        "path": "wiki/resources/如何做出伟大工作.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-04",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "原创不是过程而是思维习惯；新想法来自尝试构建或理解略微太难的东西，把想法说/写出来会制造真空吸出新想法。"
+    },
+    "clm-greatwork-broken-models": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "discover broken models",
+          "relation": "supports",
+          "source_id": "src-2fb7a511d9f966de0204"
+        }
+      ],
+      "location": {
+        "anchor": "原创性与新想法",
+        "path": "wiki/resources/如何做出伟大工作.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-04",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "新想法往往同时显得新颖又显而易见，因为看见它需要修复破损的世界模型：对模型破损线索更严格（爱因斯坦式），并愿意打破规则（激进式或被动式独立思维）。"
+    },
+    "clm-greatwork-problem-choice": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Originality in choosing problems",
+          "relation": "supports",
+          "source_id": "src-2fb7a511d9f966de0204"
+        }
+      ],
+      "location": {
+        "anchor": "原创性与新想法",
+        "path": "wiki/resources/如何做出伟大工作.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-04",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "选择问题的原创性比解决问题的原创性更重要；好问题本身就是部分发现，问题与答案的比值被普遍低估，随身携带未答问题是巨大优势。"
+    },
+    "clm-greatwork-start-small": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "successive versions",
+          "relation": "supports",
+          "source_id": "src-2fb7a511d9f966de0204"
+        }
+      ],
+      "location": {
+        "anchor": "小步迭代与风险",
+        "path": "wiki/resources/如何做出伟大工作.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-04",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "伟大作品几乎都是从小处开始、连续版本迭代而来；先做最简单可行的事，别在一个版本里塞太多新东西（初版拖太久与第二系统效应均属此原则）。"
+    },
+    "clm-greatwork-risk": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Take as much risk as you can afford",
+          "relation": "supports",
+          "source_id": "src-2fb7a511d9f966de0204"
+        }
+      ],
+      "location": {
+        "anchor": "小步迭代与风险",
+        "path": "wiki/resources/如何做出伟大工作.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-04",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "应承担自己承受得起的风险：不偶尔失败说明过于保守（年轻人最保守但也最承受得起）；失败的项目也有价值——穿越少有人走的领地、遇到少有人问的问题。"
+    },
+    "clm-greatwork-morale": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Husband your morale",
+          "relation": "supports",
+          "source_id": "src-2fb7a511d9f966de0204"
+        }
+      ],
+      "location": {
+        "anchor": "士气与环境",
+        "path": "wiki/resources/如何做出伟大工作.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-04",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "士气是一切的基础且通过工作复利：要把挫折视为流程的一部分，伟大工作是深度优先搜索、永不放弃根节点；一小群真正热爱你作品的观众就足以支撑士气。"
+    },
+    "clm-greatwork-curiosity": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Curiosity is the key to all four steps",
+          "relation": "supports",
+          "source_id": "src-2fb7a511d9f966de0204"
+        }
+      ],
+      "location": {
+        "anchor": "好奇心",
+        "path": "wiki/resources/如何做出伟大工作.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-04",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "如果神谕只用一词回答伟大工作的秘诀，答案是'好奇心'：它选择领域、带到前沿、发现缺口并驱动探索，全流程是与好奇心的舞蹈。"
+    },
+    "clm-greatwork-factors": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "factors in the literal, mathematical sense",
+          "relation": "supports",
+          "source_id": "src-2fb7a511d9f966de0204"
+        }
+      ],
+      "location": {
+        "anchor": "概述",
+        "path": "wiki/resources/如何做出伟大工作.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-04",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "伟大工作的因子（数学意义）是能力、兴趣、努力与运气：运气不可控、努力可假定，问题归结为找到一种工作让能力与兴趣结合并爆发新想法。"
+    },
+    "clm-internet-network-of-networks": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Introduction to the Internet",
+          "relation": "supports",
+          "source_id": "src-18a31a1c73c51e63b45c"
+        }
+      ],
+      "location": {
+        "anchor": "概述",
+        "path": "wiki/resources/互联网工作原理.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "互联网是网络的网络（network of networks）：家庭、办公室等本地小网络互相连接，形成全球范围的互联网。"
+    },
+    "clm-internet-dod-origin": {
+      "assessment": "accepted",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "locator": "Introduction to the Internet",
+          "relation": "supports",
+          "source_id": "src-18a31a1c73c51e63b45c"
+        }
+      ],
+      "location": {
+        "anchor": "概述",
+        "path": "wiki/resources/互联网工作原理.md"
+      },
+      "notes": "常见的历史简化叙述：ARPANET 的历史比“为抵御核打击”更复杂，动机存在学界争议。",
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "互联网于 1960 年代末由美国国防部（ARPANET）发起，目标是构建去中心化、可抵御核打击的通信网络。"
+    },
+    "clm-internet-packet-routing": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "How the Internet Works: An Overview",
+          "relation": "supports",
+          "source_id": "src-18a31a1c73c51e63b45c"
+        }
+      ],
+      "location": {
+        "anchor": "工作原理概览",
+        "path": "wiki/resources/互联网工作原理.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "发送数据时，数据被拆分为小数据包，经路由器逐跳检查并转发，直到到达最终目的地。"
+    },
+    "clm-internet-ip-tcp": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "How the Internet Works: An Overview",
+          "relation": "supports",
+          "source_id": "src-18a31a1c73c51e63b45c"
+        }
+      ],
+      "location": {
+        "anchor": "工作原理概览",
+        "path": "wiki/resources/互联网工作原理.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "IP 负责把数据包路由到正确目的地，TCP 保证数据包可靠、按正确顺序传输。"
+    },
+    "clm-internet-dns": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Understanding IP Addresses and Domain Names",
+          "relation": "supports",
+          "source_id": "src-18a31a1c73c51e63b45c"
+        }
+      ],
+      "location": {
+        "anchor": "IP 地址与域名",
+        "path": "wiki/resources/互联网工作原理.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "DNS 把域名翻译成 IP 地址：浏览器向 DNS 服务器发送查询，收到对应 IP 后用其连接目标资源。"
+    },
+    "clm-internet-http-https": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Introduction to HTTP and HTTPS",
+          "relation": "supports",
+          "source_id": "src-18a31a1c73c51e63b45c"
+        }
+      ],
+      "location": {
+        "anchor": "HTTP 与 HTTPS",
+        "path": "wiki/resources/互联网工作原理.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "HTTP 在客户端（浏览器）与服务器之间传输数据（请求/响应）；HTTPS 用 SSL/TLS 加密传输，保护登录凭据、支付信息等敏感数据。"
+    },
+    "clm-internet-ports-sockets": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Building Applications with TCP/IP",
+          "relation": "supports",
+          "source_id": "src-18a31a1c73c51e63b45c"
+        }
+      ],
+      "location": {
+        "anchor": "用 TCP/IP 构建应用",
+        "path": "wiki/resources/互联网工作原理.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "TCP/IP 中端口标识设备上运行的应用/服务，socket 是 IP 地址与端口号的组合；连接建立后数据以带序号与元数据的段传输。"
+    },
+    "clm-internet-tls-trust": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Securing Internet Communication with SSL/TLS",
+          "relation": "supports",
+          "source_id": "src-18a31a1c73c51e63b45c"
+        }
+      ],
+      "location": {
+        "anchor": "SSL/TLS 安全通信",
+        "path": "wiki/resources/互联网工作原理.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "SSL/TLS 用 CA 签名的证书建立客户端与服务器之间的信任，握手协商加密算法与参数，之后数据按约定算法加密传输。"
+    },
+    "clm-http-applayer": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "The Hypertext Transfer Protocol (HTTP) is the foundation of the World Wide Web",
+          "relation": "supports",
+          "source_id": "src-b83f0474abdd7c25a8c4"
+        }
+      ],
+      "location": {
+        "anchor": "概述",
+        "path": "wiki/resources/HTTP 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "HTTP 是应用层协议，基于超文本链接加载网页，是万维网的基础；典型流程是客户端发出请求、服务器返回响应消息。"
+    },
+    "clm-http-request-parts": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "What is in an HTTP request?",
+          "relation": "supports",
+          "source_id": "src-b83f0474abdd7c25a8c4"
+        }
+      ],
+      "location": {
+        "anchor": "HTTP 请求",
+        "path": "wiki/resources/HTTP 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "每个 HTTP 请求携带：HTTP 版本类型、URL、HTTP 方法、HTTP 请求头、可选的请求体。"
+    },
+    "clm-http-methods": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "What is an HTTP method?",
+          "relation": "supports",
+          "source_id": "src-b83f0474abdd7c25a8c4"
+        }
+      ],
+      "location": {
+        "anchor": "HTTP 方法",
+        "path": "wiki/resources/HTTP 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "HTTP 方法（动词）指示请求期望服务器执行的动作：GET 期望返回信息，POST 表示客户端提交信息（如表单的用户名与密码）。"
+    },
+    "clm-http-headers": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "What are HTTP request headers?",
+          "relation": "supports",
+          "source_id": "src-b83f0474abdd7c25a8c4"
+        }
+      ],
+      "location": {
+        "anchor": "请求头与响应头",
+        "path": "wiki/resources/HTTP 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "HTTP 头部是键值对形式的文本信息，请求与响应都携带；请求头传达浏览器类型、请求的数据等，响应头传达响应体语言与格式等信息。"
+    },
+    "clm-http-response-parts": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "What is in an HTTP response?",
+          "relation": "supports",
+          "source_id": "src-b83f0474abdd7c25a8c4"
+        }
+      ],
+      "location": {
+        "anchor": "HTTP 响应",
+        "path": "wiki/resources/HTTP 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "HTTP 响应包含状态码、响应头与可选的响应体；GET 的成功响应体通常是被请求的信息，多数网页请求中是 HTML 数据。"
+    },
+    "clm-http-status-codes": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "What's an HTTP status code?",
+          "relation": "supports",
+          "source_id": "src-b83f0474abdd7c25a8c4"
+        }
+      ],
+      "location": {
+        "anchor": "HTTP 状态码",
+        "path": "wiki/resources/HTTP 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "状态码是 3 位数字，分 5 类：1xx 信息、2xx 成功、3xx 重定向、4xx 客户端错误、5xx 服务器错误；200 OK 表示成功，404 常见于 URL 错误。"
+    },
+    "clm-http-stateless": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Can DDoS attacks be launched over HTTP?",
+          "relation": "supports",
+          "source_id": "src-b83f0474abdd7c25a8c4"
+        }
+      ],
+      "location": {
+        "anchor": "无状态与持久连接",
+        "path": "wiki/resources/HTTP 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "HTTP 是无状态协议，每条命令独立运行；HTTP/1.1 及以上的持久连接允许多个请求复用同一条 TCP 连接，改善资源消耗。"
+    },
+    "clm-http-l7-ddos": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Can DDoS attacks be launched over HTTP?",
+          "relation": "supports",
+          "source_id": "src-b83f0474abdd7c25a8c4"
+        }
+      ],
+      "location": {
+        "anchor": "DDoS 与 L7（来源补充）",
+        "path": "wiki/resources/HTTP 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "大量 HTTP 请求可对目标设备发起 DoS/DDoS 攻击，属于应用层（layer 7）攻击。"
+    },
+    "clm-http3-tcp2": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Why Do We Need HTTP/3?",
+          "relation": "supports",
+          "source_id": "src-7a0924d11f40c0a5e7ef"
+        }
+      ],
+      "location": {
+        "anchor": "为什么需要 HTTP/3：TCP 的困境",
+        "path": "wiki/resources/HTTP3 核心概念.md"
+      },
+      "notes": "作者立场：HTTP/3 是温和而有用的演进，性能宣传普遍过度。",
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "HTTP/3 本质是 HTTP/2-over-QUIC：HTTP/2 仅做小幅调整以兼容 QUIC，真正需要的是'TCP/2'；更快建连、更少 HoL 阻塞、连接迁移等亮点全部来自 QUIC，HTTP/1.1→2 的差异远大于 HTTP/2→3。"
+    },
+    "clm-http3-middlebox": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Why Do We Need HTTP/3?",
+          "relation": "supports",
+          "source_id": "src-7a0924d11f40c0a5e7ef"
+        }
+      ],
+      "location": {
+        "anchor": "为什么需要 HTTP/3：TCP 的困境",
+        "path": "wiki/resources/HTTP3 核心概念.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "TCP 几乎无法在互联网规模上演进：防火墙、负载均衡、路由器、代理等中间盒携带各自的 TCP 实现，难以更新且对未知扩展保守；新 TCP 扩展（如 TCP Fast Open、Multipath TCP）普及常需数年甚至十余年，因此需要替代协议而非直接升级。"
+    },
+    "clm-http3-quic-udp": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "What Is QUIC?",
+          "relation": "supports",
+          "source_id": "src-7a0924d11f40c0a5e7ef"
+        }
+      ],
+      "location": {
+        "anchor": "QUIC 是什么",
+        "path": "wiki/resources/HTTP3 核心概念.md"
+      },
+      "notes": "作者明确反驳'UDP 因为性能'的常见误解。",
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "QUIC 跑在 UDP 之上主要是为了部署便利（UDP 已被几乎所有网络设备支持），而非性能；QUIC 在 UDP 之上重新实现了 TCP 的可靠性（确认与重传）、握手、流控与拥塞控制，实现方式更高效。"
+    },
+    "clm-http3-four-changes": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "The Big Changes",
+          "relation": "supports",
+          "source_id": "src-7a0924d11f40c0a5e7ef"
+        }
+      ],
+      "location": {
+        "anchor": "四大根本变化",
+        "path": "wiki/resources/HTTP3 核心概念.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "QUIC 相比 TCP 的四大根本变化：与 TLS 深度集成、支持多个独立字节流、使用连接 ID（CID）、使用帧（framing）承载元数据。"
+    },
+    "clm-http3-tls": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "There Is No QUIC Without TLS",
+          "relation": "supports",
+          "source_id": "src-7a0924d11f40c0a5e7ef"
+        }
+      ],
+      "location": {
+        "anchor": "变化一：与 TLS 深度集成（没有 TLS 就没有 QUIC）",
+        "path": "wiki/resources/HTTP3 核心概念.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "QUIC 没有明文模式、默认全加密：内嵌 TLS 1.3 并把传输握手与加密握手合并，比 TLS-over-TCP 少一个往返；几乎整个包（含传输层元数据）都被加密，中间盒无法解读，演进只需更新端设备。"
+    },
+    "clm-http3-hol": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "QUIC Knows About Multiple Byte Streams",
+          "relation": "supports",
+          "source_id": "src-7a0924d11f40c0a5e7ef"
+        }
+      ],
+      "location": {
+        "anchor": "变化二：多独立字节流（按流处理丢包）",
+        "path": "wiki/resources/HTTP3 核心概念.md"
+      },
+      "notes": "HTTP/1.1 浏览器并发连接限制约 6-30 条。",
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "TCP 把连接内数据视为单一字节流，丢包时整个连接被阻塞（HoL blocking）；QUIC 在传输层感知多个独立字节流并按流恢复丢包，只阻塞受影响流；HTTP/3 因此移除 HTTP 层的流逻辑、直接复用 QUIC 流。"
+    },
+    "clm-http3-cid": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "QUIC Supports Connection Migration",
+          "relation": "supports",
+          "source_id": "src-7a0924d11f40c0a5e7ef"
+        }
+      ],
+      "location": {
+        "anchor": "变化三：连接 ID（CID）与连接迁移",
+        "path": "wiki/resources/HTTP3 核心概念.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "TCP 用 4 元组（客户端 IP+端口、服务器 IP+端口）标识连接，任一变化（如 Wi-Fi 切 4G）连接即失效；QUIC 引入连接 ID（CID），4 元组变化时连接仍可继续（连接迁移，无需新握手）；为防跨网跟踪，客户端与服务器协商多个随机 CID 并在换网时轮换。"
+    },
+    "clm-http3-frames": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "QUIC Is Flexible And Evolvable",
+          "relation": "supports",
+          "source_id": "src-7a0924d11f40c0a5e7ef"
+        }
+      ],
+      "location": {
+        "anchor": "变化四：帧机制与可演进性",
+        "path": "wiki/resources/HTTP3 核心概念.md"
+      },
+      "notes": "QUIC 被视为 v1，v2 已明确在规划中。",
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "QUIC 用短包头 + 各种帧（ACK、NEW_CONNECTION_ID、STREAM、DATAGRAM 等）承载元数据而非固定大包头；结合默认全加密，演进只需更新端设备，定义新帧类型做扩展非常容易；实现多在用户态（TCP 多在内核态）。"
+    },
+    "clm-np-ltp-1973": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-34f9b1db8700497c6191"
+        }
+      ],
+      "location": {
+        "anchor": "长时程增强（LTP）与长时程抑制（LTD）",
+        "path": "wiki/resources/神经可塑性 生物机制.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "1973 年 Bliss 与 Lømo 证明：对海马穿通纤维给予短暂高频刺激，可在麻醉兔齿状回产生持续 30 分钟至 10 小时的突触电位增强（长时程增强，LTP）。"
+    },
+    "clm-np-ltp-minimal": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-9bab17699ee522e5dd36"
+        }
+      ],
+      "location": {
+        "anchor": "长时程增强（LTP）与长时程抑制（LTD）",
+        "path": "wiki/resources/神经可塑性 生物机制.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "LTP 的核心机制可归纳为：NMDA 受体激活 → CaMKII 激活 → AMPA 受体快速募集到突触；此前文献中的大量蛋白只是调节阈值或幅度而非必需。"
+    },
+    "clm-np-ltp-silent": {
+      "assessment": "provisional",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "locator": "full-text key points (search-rendered)",
+          "relation": "supports",
+          "source_id": "src-9bab17699ee522e5dd36"
+        }
+      ],
+      "location": {
+        "anchor": "长时程增强（LTP）与长时程抑制（LTD）",
+        "path": "wiki/resources/神经可塑性 生物机制.md"
+      },
+      "notes": "引语经检索渲染获取，未逐字核验原文全文。",
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "LTP 是突触后表达：只含 NMDA 受体的静默突触在 LTP 后获得 AMPA 受体反应，并伴随树突棘体积增大。"
+    },
+    "clm-np-neurogenesis-positive": {
+      "assessment": "contested",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-ac1717d7716e35113383"
+        },
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-5c5efd2de7ca800dab2c"
+        },
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-e2c9afe93371816dbf64"
+        },
+        {
+          "locator": "abstract",
+          "relation": "contradicts",
+          "source_id": "src-a72480ff68c6a636d8ce"
+        },
+        {
+          "locator": "letter body",
+          "relation": "context",
+          "source_id": "src-1ad61a47a94f8022d68e"
+        }
+      ],
+      "location": {
+        "anchor": "成人海马神经发生（争议）",
+        "path": "wiki/resources/神经可塑性 生物机制.md"
+      },
+      "notes": "Sorrells 2018 报告成人齿状回神经发生不存在或极其罕见；争议未决，并列保留。",
+      "reviewed_at": "2026-08-05",
+      "risk": "high",
+      "supersedes": null,
+      "text": "成人海马齿状回神经发生在健康成人中持续存在：Eriksson 1998 首次在人脑证明，Boldrini 2018（14–79 岁）与 Moreno-Jiménez 2019（43–87 岁）进一步支持。"
+    },
+    "clm-np-neurogenesis-negative": {
+      "assessment": "contested",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-a72480ff68c6a636d8ce"
+        },
+        {
+          "locator": "abstract",
+          "relation": "contradicts",
+          "source_id": "src-ac1717d7716e35113383"
+        },
+        {
+          "locator": "abstract",
+          "relation": "contradicts",
+          "source_id": "src-5c5efd2de7ca800dab2c"
+        }
+      ],
+      "location": {
+        "anchor": "成人海马神经发生（争议）",
+        "path": "wiki/resources/神经可塑性 生物机制.md"
+      },
+      "notes": "与 Eriksson 1998 / Boldrini 2018 直接矛盾；方法学批评见 clm-np-neurogenesis-method。",
+      "reviewed_at": "2026-08-05",
+      "risk": "high",
+      "supersedes": null,
+      "text": "成人齿状回神经发生'不存在或极其罕见'：年轻神经元募集在生命头几年急剧下降，18–77 岁成人样本中检测不到。"
+    },
+    "clm-np-neurogenesis-method": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "methods/results",
+          "relation": "supports",
+          "source_id": "src-e2c9afe93371816dbf64"
+        },
+        {
+          "locator": "letter body",
+          "relation": "supports",
+          "source_id": "src-1ad61a47a94f8022d68e"
+        }
+      ],
+      "location": {
+        "anchor": "成人海马神经发生（争议）",
+        "path": "wiki/resources/神经可塑性 生物机制.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "成人神经发生争议的关键方法学变量是死后间隔与组织固定时长：脑库组织延长固定会破坏 DCX 抗原，可导致假阴性。"
+    },
+    "clm-np-cp-brakes": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-cc1a0d0d4d4aad7bd3de"
+        }
+      ],
+      "location": {
+        "anchor": "可塑性刹车：抑制性回路与细胞外基质",
+        "path": "wiki/resources/神经可塑性 生物机制.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "感觉皮层关键期由晚成熟抑制性中间神经元（PV 阳性大篮状细胞）的功能成熟触发，由仅在关键期发生的细胞外基质蛋白水解重组关闭。"
+    },
+    "clm-np-pnn-reactivation": {
+      "assessment": "provisional",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "locator": "full-text evidence list (search-rendered)",
+          "relation": "supports",
+          "source_id": "src-cc1a0d0d4d4aad7bd3de"
+        }
+      ],
+      "location": {
+        "anchor": "可塑性刹车：抑制性回路与细胞外基质",
+        "path": "wiki/resources/神经可塑性 生物机制.md"
+      },
+      "notes": "原文全文未逐字核验；人体证据缺失。",
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "包裹 PV 神经元的周缘神经元网（PNN）随年龄成熟并限制可塑性；成年期用软骨素酶去除 PNN 可重新激活眼优势可塑性（小鼠模型）。"
+    },
+    "clm-np-merzenich-map": {
+      "assessment": "provisional",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "locator": "abstract (search-rendered)",
+          "relation": "supports",
+          "source_id": "src-b64eb3f9cdf6104f1ebc"
+        }
+      ],
+      "location": {
+        "anchor": "系统层面的地图重组",
+        "path": "wiki/resources/神经可塑性 生物机制.md"
+      },
+      "notes": "引语经检索渲染获取，未逐字核验原文。",
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "成年猴体感皮层（3b 区）在截指后数月内发生拓扑重排：相邻手指与掌面的皮层代表区扩张，占据原被截指区域。"
+    },
+    "clm-np-hebb-history": {
+      "assessment": "accepted",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "locator": "retrospective quoting Bliss 2016 email",
+          "relation": "supports",
+          "source_id": "src-b2eae20359c35486e05f"
+        }
+      ],
+      "location": {
+        "anchor": "赫布学习与联结主义",
+        "path": "wiki/resources/神经可塑性 认知科学理论.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "LTP 的发现并非源自赫布理论：Bliss 与 Lømo 的 1973 论文未引用 Hebb，Bliss 本人确认实验构思时未考虑赫布。"
+    },
+    "clm-np-hebb-rule": {
+      "assessment": "provisional",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-8af08cd9f6c70f927856"
+        }
+      ],
+      "location": {
+        "anchor": "赫布学习与联结主义",
+        "path": "wiki/resources/神经可塑性 认知科学理论.md"
+      },
+      "notes": "格言通常另归 Shatz 1992；对 Hebb 1949 原始假设的归属未经直接核验。",
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "细胞水平学习规则'同步放电的神经元连接在一起'（fire together, wire together）作为生物学格言，被现代无监督神经网络学习规则直接引用。"
+    },
+    "clm-np-critical-debate": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-f0deb6fc7180071a1a7c"
+        }
+      ],
+      "location": {
+        "anchor": "关键期与敏感期",
+        "path": "wiki/resources/神经可塑性 认知科学理论.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "语音知觉调谐（perceptual attunement）是否为关键期现象仍是争议问题（原作者 Werker 2024 回顾确认）。"
+    },
+    "clm-np-owen-null": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-5ee63ad845c78dbd9e5c"
+        }
+      ],
+      "location": {
+        "anchor": "训练迁移之争（脑力训练）",
+        "path": "wiki/resources/神经可塑性 认知科学理论.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "11,430 人六周在线认知训练（推理/记忆/计划/视空间/注意）：所有训练任务都进步，但对未训练任务——即使认知上高度相近——没有迁移。"
+    },
+    "clm-np-nback-transfer": {
+      "assessment": "contested",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-3887af8f9491abbb605c"
+        },
+        {
+          "locator": "abstract",
+          "relation": "contradicts",
+          "source_id": "src-e8382e7260603f1cd7fa"
+        },
+        {
+          "locator": "abstract",
+          "relation": "contradicts",
+          "source_id": "src-9a0fb6b555dadabd348b"
+        }
+      ],
+      "location": {
+        "anchor": "训练迁移之争（脑力训练）",
+        "path": "wiki/resources/神经可塑性 认知科学理论.md"
+      },
+      "notes": "高功效安慰剂对照复现（Redick 2013）与元分析（Melby-Lervåg & Hulme 2013）均未复现正迁移。",
+      "reviewed_at": "2026-08-05",
+      "risk": "high",
+      "supersedes": null,
+      "text": "双 n-back 工作记忆训练可提升流体智力（Gf）且呈剂量依赖（训练越多提升越多）。"
+    },
+    "clm-np-redick-null": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-e8382e7260603f1cd7fa"
+        }
+      ],
+      "location": {
+        "anchor": "训练迁移之争（脑力训练）",
+        "path": "wiki/resources/神经可塑性 认知科学理论.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "随机、活性安慰剂对照、高统计功效的复现研究：双 n-back 训练改善训练任务本身，但对流体智力、工作记忆容量、晶体智力、知觉速度等任何认知能力测验均无正迁移。"
+    },
+    "clm-np-wm-meta": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-9a0fb6b555dadabd348b"
+        }
+      ],
+      "location": {
+        "anchor": "训练迁移之争（脑力训练）",
+        "path": "wiki/resources/神经可塑性 认知科学理论.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "元分析（23 项研究）：工作记忆训练只产生短期、任务特异效应，无令人信服的向其他技能的泛化证据。"
+    },
+    "clm-np-deliberate-practice": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-c2864f0d6ab01c98717c"
+        }
+      ],
+      "location": {
+        "anchor": "刻意练习与专长",
+        "path": "wiki/resources/神经可塑性 认知科学理论.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "刻意练习解释的成绩方差比例：游戏 26%、音乐 21%、体育 18%、教育 4%、职业 <1%——练习重要，但不如'10,000 小时法则'式强主张所说的重要。"
+    },
+    "clm-np-deliberate-12": {
+      "assessment": "provisional",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "locator": "press release body",
+          "relation": "supports",
+          "source_id": "src-95276df4b968c69f7e7a"
+        }
+      ],
+      "location": {
+        "anchor": "刻意练习与专长",
+        "path": "wiki/resources/神经可塑性 认知科学理论.md"
+      },
+      "notes": "需论文正文/表格确认总体数字的精确表述。",
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "'总体约 12% 方差'的表述来自 APS 官方新闻稿对 Macnamara 2014 元分析的转述，论文摘要本身只报告分领域百分比。"
+    },
+    "clm-np-cr-disjunction": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Introduction",
+          "relation": "supports",
+          "source_id": "src-30b04608f726c7033d34"
+        }
+      ],
+      "location": {
+        "anchor": "认知储备",
+        "path": "wiki/resources/神经可塑性 认知科学理论.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "认知储备（cognitive reserve）概念用于解释脑损伤/病理程度与临床后果之间的分离：任务表现背后的认知过程或神经网络差异使人更能耐受脑损伤。"
+    },
+    "clm-np-cr-life": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Brain Reserve and Cognitive Reserve section",
+          "relation": "supports",
+          "source_id": "src-30b04608f726c7033d34"
+        }
+      ],
+      "location": {
+        "anchor": "认知储备",
+        "path": "wiki/resources/神经可塑性 认知科学理论.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "教育、职业暴露与休闲活动等生活经历与痴呆风险降低及正常老化中记忆衰退减慢相关。"
+    },
+    "clm-np-fluid-crystal": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-b8168df755a7132fa906"
+        }
+      ],
+      "location": {
+        "anchor": "流体智力与晶体智力",
+        "path": "wiki/resources/神经可塑性 认知科学理论.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "老化中流体认知（受控加工/推理）下降，而晶体知识（关于自我与世界的知识）持续增长——认知由流体主导转向晶体化。"
+    },
+    "clm-np-maguire": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-4bd0f1de017185983d3c"
+        }
+      ],
+      "location": {
+        "anchor": "成人结构性可塑性的直接证据",
+        "path": "wiki/resources/成人脑可塑性.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "伦敦出租车司机后海马体积显著大于对照组，且后海马体积与驾驶年限正相关（前海马负相关）——健康成人大脑存在对环境需求作出局部结构改变的容量。"
+    },
+    "clm-np-draganski": {
+      "assessment": "provisional",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "locator": "secondary coverage (no abstract)",
+          "relation": "supports",
+          "source_id": "src-b5190c1e922f78c9ba28"
+        }
+      ],
+      "location": {
+        "anchor": "成人结构性可塑性的直接证据",
+        "path": "wiki/resources/成人脑可塑性.md"
+      },
+      "notes": "原文为 Nature brief communication，无摘要且页面被拦截；数值经二手转述核验。",
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "24 名年轻人 3 个月抛球训练后 hMT/V5 等脑区灰质体积增加约 3%，停止训练 3 个月后消退至约高出基线 2%。"
+    },
+    "clm-np-active-2y": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "abstract Results",
+          "relation": "supports",
+          "source_id": "src-0dc3bd8a5a3673d639af"
+        }
+      ],
+      "location": {
+        "anchor": "老年人认知训练：ACTIVE 试验",
+        "path": "wiki/resources/成人脑可塑性.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "ACTIVE 试验（2,832 名 65–94 岁老人）：记忆/推理/处理速度训练均提升目标能力并保持 2 年，但未检测到对日常生活功能的迁移。"
+    },
+    "clm-np-active-effect": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "abstract Conclusions",
+          "relation": "supports",
+          "source_id": "src-0dc3bd8a5a3673d639af"
+        }
+      ],
+      "location": {
+        "anchor": "老年人认知训练：ACTIVE 试验",
+        "path": "wiki/resources/成人脑可塑性.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "ACTIVE 训练效应量级相当于无痴呆老人 7–14 年的自然认知衰退量——收益真实但有限。"
+    },
+    "clm-np-active-10y": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "news release",
+          "relation": "supports",
+          "source_id": "src-208afa7b40d72db24f81"
+        }
+      ],
+      "location": {
+        "anchor": "老年人认知训练：ACTIVE 试验",
+        "path": "wiki/resources/成人脑可塑性.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "ACTIVE 10 年随访：推理与处理速度训练收益保留（高于基线者显著多于对照组），记忆训练效应消失，标准功能测验各训练组与对照组无差异。"
+    },
+    "clm-np-active-transfer": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Chapter 4C ACTIVE summary",
+          "relation": "supports",
+          "source_id": "src-e46b5b8ed577ef238293"
+        }
+      ],
+      "location": {
+        "anchor": "老年人认知训练：ACTIVE 试验",
+        "path": "wiki/resources/成人脑可塑性.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "ACTIVE 中训练之间无显著交叉迁移：接受记忆训练者未在处理速度上改善，反之亦然——训练收益领域特异。"
+    },
+    "clm-np-jn1989": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-289592de425a778f781c"
+        }
+      ],
+      "location": {
+        "anchor": "语言习得的年龄效应",
+        "path": "wiki/resources/成人脑可塑性.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "二语英语语法成绩与到达年龄在青春期前呈线性下降；青春期后成绩低、高度可变且与到达年龄无关（46 名韩语/汉语母语移民）。"
+    },
+    "clm-np-htp2018": {
+      "assessment": "contested",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-9cd17cf192de7846ecf4"
+        },
+        {
+          "locator": "abstract",
+          "relation": "contradicts",
+          "source_id": "src-289592de425a778f781c"
+        }
+      ],
+      "location": {
+        "anchor": "语言习得的年龄效应",
+        "path": "wiki/resources/成人脑可塑性.md"
+      },
+      "notes": "Johnson & Newport 1989 描述青春期后为平台期且与到达年龄无关；两文对曲线形状不一致。共同点：儿童确实比成人更容易学语言。",
+      "reviewed_at": "2026-08-05",
+      "risk": "high",
+      "supersedes": null,
+      "text": "语法学习能力并非在青春期骤降，而是保留至约 17.4 岁（成年开端）后持续下降（约 67 万英语使用者的大规模证据）。"
+    },
+    "clm-np-async-peaks": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-ac09891af085a490c07b"
+        }
+      ],
+      "location": {
+        "anchor": "认知能力的异步峰值",
+        "path": "wiki/resources/成人脑可塑性.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "不同认知能力的峰值年龄异步：有的在高中毕业前后见顶并开始下降，有的在 30 多岁开始下降，有的到 40 多岁甚至更晚才达峰（48,537 名在线被试）。"
+    },
+    "clm-np-iom-slower": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Chapter 4C",
+          "relation": "supports",
+          "source_id": "src-e46b5b8ed577ef238293"
+        }
+      ],
+      "location": {
+        "anchor": "强弱差异的总体判断",
+        "path": "wiki/resources/成人脑可塑性.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "官方共识（美国国家科学院）：老年人确实能从认知训练中获益，但获益速率通常慢于年轻人。"
+    },
+    "clm-np-amblyopia-cp": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Neural plasticity and the critical period section",
+          "relation": "supports",
+          "source_id": "src-8f2f1bcb427ab23f0708"
+        }
+      ],
+      "location": {
+        "anchor": "视觉系统：关键期与成年残存可塑性",
+        "path": "wiki/resources/可塑性 脑区与认知域差异.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "传统观点：关键期关闭后成人弱视不可治疗（缺乏足够皮层可塑性），9 岁后几乎不再提供治疗。"
+    },
+    "clm-np-amblyopia-windows": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Neural plasticity and the critical period section",
+          "relation": "supports",
+          "source_id": "src-8f2f1bcb427ab23f0708"
+        }
+      ],
+      "location": {
+        "anchor": "视觉系统：关键期与成年残存可塑性",
+        "path": "wiki/resources/可塑性 脑区与认知域差异.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "视觉系统不存在单一关键期：9 岁前的童年期是一组起止点各异的重叠窗口的包络。"
+    },
+    "clm-np-amblyopia-adult": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-8158f05471e705570cd4"
+        }
+      ],
+      "location": {
+        "anchor": "视觉系统：关键期与成年残存可塑性",
+        "path": "wiki/resources/可塑性 脑区与认知域差异.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "成人弱视视皮层仍有显著可塑性，但被来自对侧眼的抑制性信号门控；双视训练（dichoptic training）解除抑制后可恢复学习能力。"
+    },
+    "clm-np-pedic": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Beyond the critical period: traditional treatment",
+          "relation": "supports",
+          "source_id": "src-8f2f1bcb427ab23f0708"
+        }
+      ],
+      "location": {
+        "anchor": "视觉系统：关键期与成年残存可塑性",
+        "path": "wiki/resources/可塑性 脑区与认知域差异.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "PEDIG 大样本随机试验：屈光矫正+遮盖+阿托品联用使 53% 的 7–12 岁弱视患儿视力改善；屈光矫正单独使 25% 改善。"
+    },
+    "clm-np-perceptual-learning": {
+      "assessment": "accepted",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "locator": "perceptual learning vs occlusion",
+          "relation": "supports",
+          "source_id": "src-8f2f1bcb427ab23f0708"
+        }
+      ],
+      "location": {
+        "anchor": "视觉系统：关键期与成年残存可塑性",
+        "path": "wiki/resources/可塑性 脑区与认知域差异.md"
+      },
+      "notes": "综述转述的研究数据；作者呼吁 RCT 验证。",
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "知觉学习使成人弱视眼平均提升 0.25 logMAR，耗时约为等效遮盖疗法（385 小时）所需时间的 1/13。"
+    },
+    "clm-np-phoneme-narrowing": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-c9c880b308ff93bee807"
+        }
+      ],
+      "location": {
+        "anchor": "听觉系统：语音窄化与音乐训练",
+        "path": "wiki/resources/可塑性 脑区与认知域差异.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "婴儿出生时能区分非母语语音对立，但该能力在出生后第一年内下降，且下降取决于特定语言经验（语音知觉窄化）。"
+    },
+    "clm-np-phoneme-attention": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-2e11aee8d7c7efb1f4f8"
+        }
+      ],
+      "location": {
+        "anchor": "听觉系统：语音窄化与音乐训练",
+        "path": "wiki/resources/可塑性 脑区与认知域差异.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "成人难以区分非母语语音对立并非感觉神经能力丧失，而是注意焦点/加工策略的转变——原则上可再训练习得。"
+    },
+    "clm-np-ci-sensitive": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Conclusions/abstract",
+          "relation": "supports",
+          "source_id": "src-e982c4410a014137e1da"
+        }
+      ],
+      "location": {
+        "anchor": "听觉系统：语音窄化与音乐训练",
+        "path": "wiki/resources/可塑性 脑区与认知域差异.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "人工耳蜗：缺乏正常刺激时，中枢听觉系统约 3.5 年内保持最大可塑性，部分儿童维持至约 7 岁，7 岁后可塑性大幅降低。"
+    },
+    "clm-np-ap-critical": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-5e05c2d5b2b5586f3de0"
+        },
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-474510acc62c5c7bfbda"
+        }
+      ],
+      "location": {
+        "anchor": "听觉系统：语音窄化与音乐训练",
+        "path": "wiki/resources/可塑性 脑区与认知域差异.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "绝对音感存在约 6 岁前关闭的关键期：训练起始年龄越早发生率越高；普通话（声调语言）被试在各起始年龄组均显著更高。"
+    },
+    "clm-np-musician-model": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-bbf3cf051c22801b21df"
+        }
+      ],
+      "location": {
+        "anchor": "听觉系统：语音窄化与音乐训练",
+        "path": "wiki/resources/可塑性 脑区与认知域差异.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "音乐家是研究经验驱动神经可塑性的理想模型：音乐刺激的复杂性与暴露时长可造成可测量的脑结构/功能差异。"
+    },
+    "clm-np-kuhl-levels": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-5e82369f9494d3234c23"
+        }
+      ],
+      "location": {
+        "anchor": "语言各层面：不同关键期",
+        "path": "wiki/resources/可塑性 脑区与认知域差异.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-05",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "语言三层面时间窗不同：语音学习的关键期在 1 岁末前关闭，句法在 18–36 个月繁荣，词汇可终身学习。"
+    },
+    "clm-tr-near-far": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "taxonomy",
+          "relation": "supports",
+          "source_id": "src-d61e131298e8f17f6f77"
+        }
+      ],
+      "location": {
+        "anchor": "近迁移与远迁移",
+        "path": "wiki/resources/认知迁移能力.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "近迁移发生在训练情境与迁移情境高度相似时；远迁移发生在情境差异显著时，需要洞察、判断和类比推理。"
+    },
+    "clm-tr-low-high": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "low-road/high-road definitions",
+          "relation": "supports",
+          "source_id": "src-d61e131298e8f17f6f77"
+        }
+      ],
+      "location": {
+        "anchor": "Perkins & Salomon 的低路与高路",
+        "path": "wiki/resources/认知迁移能力.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "低路迁移依赖大量练习形成的自动化行为在感知相似情境中自动触发；高路迁移需要有意识的抽象和反思。"
+    },
+    "clm-tr-thorndike": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "original paper",
+          "relation": "supports",
+          "source_id": "src-abe8e84ebf986af76074"
+        }
+      ],
+      "location": {
+        "anchor": "共同要素理论（Thorndike, 1901）",
+        "path": "wiki/resources/认知迁移能力.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Thorndike 的共同要素理论（1901）认为迁移只在两个任务共享相同成分时发生，迁移量与共享成分数量成正比。"
+    },
+    "clm-tr-judd": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "critique of Thorndike",
+          "relation": "supports",
+          "source_id": "src-ad1b9e8db329dc0949cf"
+        }
+      ],
+      "location": {
+        "anchor": "概括化理论（Judd, 1908）",
+        "path": "wiki/resources/认知迁移能力.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Judd 的概括化理论（1908）认为迁移取决于学习者是否意识到可概括的抽象原理，而非客观上共享的元素。"
+    },
+    "clm-tr-actr": {
+      "assessment": "accepted",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "locator": "monograph",
+          "relation": "supports",
+          "source_id": "src-620188ecffe5dcb07662"
+        }
+      ],
+      "location": {
+        "anchor": "Singley & Anderson 的 ACT-R 产生式理论（1989）",
+        "path": "wiki/resources/认知迁移能力.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Singley & Anderson 的 ACT-R 理论认为认知技能迁移取决于共享的产生式规则而非表面特征。"
+    },
+    "clm-tr-pennington": {
+      "assessment": "accepted",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "locator": "experimental results",
+          "relation": "supports",
+          "source_id": "src-6c022cab437c2ec94b01"
+        }
+      ],
+      "location": {
+        "anchor": "Singley & Anderson 的 ACT-R 产生式理论（1989）",
+        "path": "wiki/resources/认知迁移能力.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "ACT-R 低估了迁移量——陈述性知识的精加工贡献了额外的迁移通道。"
+    },
+    "clm-tr-structure-mapping": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "original paper",
+          "relation": "supports",
+          "source_id": "src-e0efb44a8e60bd3da92f"
+        }
+      ],
+      "location": {
+        "anchor": "结构映射与类比推理",
+        "path": "wiki/resources/认知迁移能力.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Gentner 结构映射理论（1983）：类比的核心是关系结构对齐而非表面属性匹配。"
+    },
+    "clm-tr-gick-retrieval": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Experiment IV results",
+          "relation": "supports",
+          "source_id": "src-e1cf18fa3018c0ffa653"
+        }
+      ],
+      "location": {
+        "anchor": "结构映射与类比推理",
+        "path": "wiki/resources/认知迁移能力.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Gick & Holyoak（1980）发现类比迁移的主要瓶颈是自发提取远域类比源——约 30% 无提示自发提取，约 75% 提示后成功映射。"
+    },
+    "clm-tr-gick-schema": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Part II schema quality analysis",
+          "relation": "supports",
+          "source_id": "src-c095394e1c78c26d37c3"
+        }
+      ],
+      "location": {
+        "anchor": "结构映射与类比推理",
+        "path": "wiki/resources/认知迁移能力.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "两个类比源比一个有效得多：无提示自发解决率从 ~20% 提升到 ~45%；优良图式者 91% 无提示解决，差图式者 30%。"
+    },
+    "clm-tr-pfl": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "abstract/key arguments",
+          "relation": "supports",
+          "source_id": "src-96a4c306ec99b418ecc4"
+        }
+      ],
+      "location": {
+        "anchor": "Bransford & Schwartz 的 PFL 框架（1999）",
+        "path": "wiki/resources/认知迁移能力.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Bransford & Schwartz（1999）的 PFL 框架将迁移重新定义为学习者准备好从未来经验中学习，而非直接应用已有知识。"
+    },
+    "clm-tr-selfexplain": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "experimental results",
+          "relation": "supports",
+          "source_id": "src-3b54b51d9c206c92f063"
+        }
+      ],
+      "location": {
+        "anchor": "自我解释效应",
+        "path": "wiki/resources/认知迁移能力.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Chi 等（1989）发现自我解释与迁移成功高度正相关——好学生在学习范例时自发产生推论。"
+    },
+    "clm-tr-selfexplain-train": {
+      "assessment": "accepted",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "locator": "results summary",
+          "relation": "supports",
+          "source_id": "src-8570be9d3dffaf4ef90f"
+        }
+      ],
+      "location": {
+        "anchor": "自我解释效应",
+        "path": "wiki/resources/认知迁移能力.md"
+      },
+      "notes": "N=24, Lisp 编程；跨领域通用性未验证。",
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "显式训练自我解释 + 自调节策略可因果性提升问题解决——仅暴露于榜样模型不够。"
+    },
+    "clm-tr-analogical-encoding": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "3 experiments",
+          "relation": "supports",
+          "source_id": "src-32b28cfd494ce053b474"
+        }
+      ],
+      "location": {
+        "anchor": "类比编码与图式抽象",
+        "path": "wiki/resources/认知迁移能力.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "比较两个案例使学习者对齐结构、排除表面细节，诱导可迁移的抽象图式——类比编码效应。"
+    },
+    "clm-tr-bootstrapping": {
+      "assessment": "accepted",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "locator": "experimental results",
+          "relation": "supports",
+          "source_id": "src-4f7d2501446a61334ce9"
+        }
+      ],
+      "location": {
+        "anchor": "类比编码与图式抽象",
+        "path": "wiki/resources/认知迁移能力.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "类比比较即使在学习者尚未充分理解两个范例时仍然有效——类比自举（analogical bootstrapping）。"
+    },
+    "clm-tr-butler-testing": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "all experiments",
+          "relation": "supports",
+          "source_id": "src-b268bd8f5af8f299ab12"
+        }
+      ],
+      "location": {
+        "anchor": "提取练习的迁移效应",
+        "path": "wiki/resources/认知迁移能力.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "反复测试不仅增强记忆保持，还增强向新推理问题和跨知识领域的远迁移（Butler 2010，4 项实验一致）。"
+    },
+    "clm-tr-pan-meta": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "overall result",
+          "relation": "supports",
+          "source_id": "src-d2e56f497369df5054b5"
+        }
+      ],
+      "location": {
+        "anchor": "提取练习的迁移效应",
+        "path": "wiki/resources/认知迁移能力.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "提取练习对迁移的整体效应 d=0.40（Pan & Rickard 2018 元分析，192 个效应量 / ~10,400 名被试），在应用/推理问题上最强。"
+    },
+    "clm-tr-testing-boundary": {
+      "assessment": "accepted",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "locator": "4 experiments",
+          "relation": "supports",
+          "source_id": "src-577a2771df8c03796aaa"
+        }
+      ],
+      "location": {
+        "anchor": "提取练习的迁移效应",
+        "path": "wiki/resources/认知迁移能力.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "提取练习改善了前提记忆，但对演绎推理问题无迁移收益——迁移效应有任务边界（Tran 等 2015）。"
+    },
+    "clm-tr-wmc": {
+      "assessment": "accepted",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "locator": "individual differences framework",
+          "relation": "supports",
+          "source_id": "src-a2b26871de25e7f5d478"
+        }
+      ],
+      "location": {
+        "anchor": "执行功能的个体差异",
+        "path": "wiki/resources/认知迁移能力.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "工作记忆容量的个体差异本质上是执行注意差异；高 WMC 者在需抑制干扰的迁移任务中表现更优。"
+    },
+    "clm-tr-sleep": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-b770b4bcdd0c89783a46"
+        }
+      ],
+      "location": {
+        "anchor": "睡眠与巩固",
+        "path": "wiki/resources/认知迁移能力.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "睡眠依赖的记忆分类通过项目整合与多项泛化两条路径促进记忆泛化（Stickgold & Walker 2013 triage 模型）。"
+    },
+    "clm-tr-interleaving": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Experiment 2",
+          "relation": "supports",
+          "source_id": "src-22f498b29ead385aa162"
+        }
+      ],
+      "location": {
+        "anchor": "交错练习与间隔学习",
+        "path": "wiki/resources/认知迁移能力.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "交错练习将一周后数学测试成绩翻三倍（63% vs 20%，d=1.34），尽管练习时准确率更差——机制是增强问题-程序配对能力。"
+    },
+    "clm-tr-spacing-induction": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "3 experiments",
+          "relation": "supports",
+          "source_id": "src-af38145ee82837c40c50"
+        }
+      ],
+      "location": {
+        "anchor": "交错练习与间隔学习",
+        "path": "wiki/resources/认知迁移能力.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "间隔/交错增强归纳学习；78% 受试者获益但 78% 认为集中学习更好——强大的元认知错觉。"
+    },
+    "clm-tr-analogy-visual": {
+      "assessment": "accepted",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "locator": "main findings",
+          "relation": "supports",
+          "source_id": "src-a041bd9d2ad7547dbcdd"
+        }
+      ],
+      "location": {
+        "anchor": "类比比较 + 视觉支持",
+        "path": "wiki/resources/认知迁移能力.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "同时可见的类比比较促进概念学习；顺序呈现反而增加认知负荷和错误概念——类比视觉是双刃剑。"
+    },
+    "clm-tr-analogy-support": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "experiment results",
+          "relation": "supports",
+          "source_id": "src-c5924290e46b1731c6e3"
+        }
+      ],
+      "location": {
+        "anchor": "类比比较 + 视觉支持",
+        "path": "wiki/resources/认知迁移能力.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "认知支持（比较手势、可见对齐、同时可见）将误导性相似问题上的远迁移从 41% 提升到 62%。"
+    },
+    "clm-tr-metacog-prompt": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "far-transfer results",
+          "relation": "supports",
+          "source_id": "src-a23115f4c019d7d8e980"
+        }
+      ],
+      "location": {
+        "anchor": "元认知提示",
+        "path": "wiki/resources/认知迁移能力.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "嵌入'为什么/如何/何时'的推理提示比基于规则或情绪的提示更能促进远迁移——改善指数 42。"
+    },
+    "clm-tr-active-learning": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "results summary",
+          "relation": "supports",
+          "source_id": "src-267a592ac6ced4826447"
+        }
+      ],
+      "location": {
+        "anchor": "什么方法证据不足或有争议",
+        "path": "wiki/resources/认知迁移能力.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "主动学习提升 STEM 考试成绩 d≈0.47（Freeman 2014 元分析，225 项研究），但证据限于课内表现，未单独评估远迁移。"
+    },
+    "clm-tr-pbl-debate": {
+      "assessment": "contested",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "locator": "position paper",
+          "relation": "supports",
+          "source_id": "src-c80eeb03a4d0c83882ff"
+        },
+        {
+          "locator": "rebuttal",
+          "relation": "contradicts",
+          "source_id": "src-71cbf0bc050c2915f899"
+        }
+      ],
+      "location": {
+        "anchor": "什么方法证据不足或有争议",
+        "path": "wiki/resources/认知迁移能力.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "high",
+      "supersedes": null,
+      "text": "PBL 有效性存在争议：Kirschner 等（2006）批评指导不足；Hmelo-Silver 等（2007）反驳 PBL 是高度支架化的。争议部分源于'PBL'标签混杂了质量差异巨大的实施。"
+    },
+    "clm-tr-music-null": {
+      "assessment": "contested",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-4670fa703a51f2a38c8f"
+        },
+        {
+          "locator": "parallel bilingual null finding",
+          "relation": "context",
+          "source_id": "src-a2b26871de25e7f5d478"
+        }
+      ],
+      "location": {
+        "anchor": "历史上\"迁移不存在\"的经典证据",
+        "path": "wiki/resources/认知迁移能力.md"
+      },
+      "notes": "Bigand & Tillmann (2021) 用同一数据重新分析发现 g≈0.20——争议未决。",
+      "reviewed_at": "2026-08-06",
+      "risk": "high",
+      "supersedes": null,
+      "text": "音乐训练对非音乐认知能力的因果远迁移为零（Sala & Gobet 2020 元分析，控制设计质量后 g≈0）。"
+    },
+    "clm-tr-bilingual-null": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-a2b26871de25e7f5d478"
+        }
+      ],
+      "location": {
+        "anchor": "历史上\"迁移不存在\"的经典证据",
+        "path": "wiki/resources/认知迁移能力.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "双语执行控制优势在发表偏倚校正后消失（Lehtonen 2018 元分析，152 项研究 / 891 个效应量）。"
+    },
+    "clm-env-encoding-spec": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "p.359",
+          "relation": "supports",
+          "source_id": "src-1ccc77b306c9b2281faa"
+        }
+      ],
+      "location": {
+        "anchor": "上下文依赖记忆：同一地点 vs 变换地点",
+        "path": "wiki/resources/环境变化与认知.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "编码特异性原则：提取线索的有效性取决于其与编码时存储的记忆痕迹之间的信息重叠，而非线索本身的强度。"
+    },
+    "clm-env-godden": {
+      "assessment": "contested",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-f37615ad24842fe68106"
+        },
+        {
+          "locator": "results",
+          "relation": "contradicts",
+          "source_id": "src-e58176b9cfc16f1bf086"
+        }
+      ],
+      "location": {
+        "anchor": "经典证据：潜水员研究",
+        "path": "wiki/resources/环境变化与认知.md"
+      },
+      "notes": "Murre (2021) 预注册直接重复失败 (F=1.999, p=0.163)；原始效应可能被极端条件放大。",
+      "reviewed_at": "2026-08-06",
+      "risk": "high",
+      "supersedes": null,
+      "text": "Godden & Baddeley (1975) 的潜水员研究首次证明环境上下文依赖记忆效应——匹配学习与测试环境促进自由回忆。"
+    },
+    "clm-env-meta-d": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "abstract",
+          "relation": "supports",
+          "source_id": "src-833cd26e32e7a72c9e5f"
+        }
+      ],
+      "location": {
+        "anchor": "元分析全貌",
+        "path": "wiki/resources/环境变化与认知.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "环境上下文依赖记忆的元分析整体效应量 d=0.28，属于小到中等但可靠；非关联编码 d=0.33，关联编码 d=0.13。"
+    },
+    "clm-env-mental": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Experiment 2-3",
+          "relation": "supports",
+          "source_id": "src-aa04f50425b1187f1b6b"
+        }
+      ],
+      "location": {
+        "anchor": "房间变化实验",
+        "path": "wiki/resources/环境变化与认知.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "心理复原（想象原学习环境）可完全消除上下文效应——与物理回到原房间同等有效；但多个竞争环境时失效。"
+    },
+    "clm-env-varied": {
+      "assessment": "accepted",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "locator": "Experiment 1",
+          "relation": "supports",
+          "source_id": "src-1e40439d0bd3af259e20"
+        }
+      ],
+      "location": {
+        "anchor": "变化效应 vs 匹配效应：核心矛盾",
+        "path": "wiki/resources/环境变化与认知.md"
+      },
+      "notes": "N=16; 实验1混淆了房间变化与学习模态变化。",
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "在两个不同房间学习同一材料比在同一房间学习两次的回忆更好 (24/40 vs 16/40)——变化编码增强记忆。"
+    },
+    "clm-env-irrelevant-speech": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "experimental results",
+          "relation": "supports",
+          "source_id": "src-230f6ba9902b6388cd4e"
+        }
+      ],
+      "location": {
+        "anchor": "噪声",
+        "path": "wiki/resources/环境变化与认知.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "背景语音专一性地干扰序列言语工作记忆——即使被忽略。声学-语音相似性驱动干扰，白噪声不产生显著干扰。"
+    },
+    "clm-env-noise-creativity": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "5 experiments",
+          "relation": "supports",
+          "source_id": "src-2f3578d9b594113faf3a"
+        }
+      ],
+      "location": {
+        "anchor": "噪声",
+        "path": "wiki/resources/环境变化与认知.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "适度环境噪声 (~70dB，咖啡厅水平) 提升创造性认知，低噪声 (50dB) 和高噪声 (85dB) 效果差——倒U曲线。"
+    },
+    "clm-env-openplan": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "results",
+          "relation": "supports",
+          "source_id": "src-f1c823060badf9587279"
+        }
+      ],
+      "location": {
+        "anchor": "开放办公室",
+        "path": "wiki/resources/环境变化与认知.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "开放办公室平面布局降低隐私和工作满意度——~42,000人调查中互动满意度在私人办公室更高。"
+    },
+    "clm-env-sick-leave": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "results",
+          "relation": "supports",
+          "source_id": "src-560101ca1fc65a2488ae"
+        }
+      ],
+      "location": {
+        "anchor": "开放办公室",
+        "path": "wiki/resources/环境变化与认知.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "开放办公室 (>6人) 比单人办公室病假天数高 62%；即使是 2 人共用办公室也高 50%——剂量-反应关系明确。"
+    },
+    "clm-env-temperature-null": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "results",
+          "relation": "supports",
+          "source_id": "src-62e61f2eaefd496be3bc"
+        }
+      ],
+      "location": {
+        "anchor": "温度",
+        "path": "wiki/resources/环境变化与认知.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Porras-Salazar 等 (2021) 重新分析 35 项研究未发现 20-30°C 范围内温度与办公表现的显著关系；广泛引用的 Seppänen (2006) 22°C 最优温度模型预测精度 R²=0.05。"
+    },
+    "clm-env-art-framework": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "framework",
+          "relation": "supports",
+          "source_id": "src-de93a0181a69e8dba838"
+        }
+      ],
+      "location": {
+        "anchor": "注意恢复理论（ART）",
+        "path": "wiki/resources/环境变化与认知.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Kaplan (1995) 提出注意恢复理论：自然环境通过软着迷恢复定向注意。四个必要成分：离开感、软着迷、范围感、兼容性。核心机制'软着迷'从未被直接测量。"
+    },
+    "clm-env-berman": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Experiment 1-2",
+          "relation": "supports",
+          "source_id": "src-26abf810d981884d7f6b"
+        }
+      ],
+      "location": {
+        "anchor": "公园散步研究",
+        "path": "wiki/resources/环境变化与认知.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "50-55 分钟公园散步改善倒背数字广度——非临床样本 η²p=.14；MDD 患者 η²p=.53；情绪与认知改善不相关。"
+    },
+    "clm-env-art-meta": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Ohly 2016; Stevenson 2018",
+          "relation": "supports",
+          "source_id": "src-ae31b5b622bdabe84a31"
+        }
+      ],
+      "location": {
+        "anchor": "系统综述全貌",
+        "path": "wiki/resources/环境变化与认知.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "系统综述：13 项 ART 元分析中仅 3 项显著（Digit Span F/B、Trail Making Test B）。真实自然暴露 > 虚拟暴露。"
+    },
+    "clm-env-bratman": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "results",
+          "relation": "supports",
+          "source_id": "src-36e16dc15ccc1799f9e4"
+        }
+      ],
+      "location": {
+        "anchor": "Bratman 等 (2015) 的关键发现",
+        "path": "wiki/resources/环境变化与认知.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "90 分钟自然散步减少自我报告的反刍和膝下前额叶皮层 (sgPFC) 激活——sgPFC 与抑郁有因果关系。"
+    },
+    "clm-env-novelty-vta": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "results",
+          "relation": "supports",
+          "source_id": "src-6b534100ee3fbc45ad50"
+        }
+      ],
+      "location": {
+        "anchor": "多巴胺能的新奇响应",
+        "path": "wiki/resources/环境变化与认知.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "人类 SN/VTA 绝对性地选择性编码新奇性——不响应稀有性/负效价/靶标性。新奇增强同一情境中熟悉项目的海马编码。"
+    },
+    "clm-env-behavioral-tagging": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "results",
+          "relation": "supports",
+          "source_id": "src-5515a77775dea082f40a"
+        },
+        {
+          "locator": "results",
+          "relation": "supports",
+          "source_id": "src-61e776e0e2166fcbb198"
+        }
+      ],
+      "location": {
+        "anchor": "行为标记假说",
+        "path": "wiki/resources/环境变化与认知.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "行为标记假说：弱学习可通过时间邻近 (约 1h) 的新奇体验经 D1/D5 多巴胺受体和 de novo 蛋白质合成提升为长期记忆。"
+    },
+    "clm-env-schomaker": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "framework",
+          "relation": "supports",
+          "source_id": "src-14ae903b48738a5efaf5"
+        }
+      ],
+      "location": {
+        "anchor": "三通路框架",
+        "path": "wiki/resources/环境变化与认知.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "新奇效应三通路：(i) 杏仁核瞬态知觉增强；(ii) LC-NE 短时唤醒；(iii) 中脑边缘多巴胺较长时程的学习记忆增强。"
+    },
+    "clm-env-novelty-cost": {
+      "assessment": "provisional",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "locator": "review",
+          "relation": "supports",
+          "source_id": "src-14ae903b48738a5efaf5"
+        }
+      ],
+      "location": {
+        "anchor": "环境新颖性与大脑可塑性",
+        "path": "wiki/resources/环境变化与认知.md"
+      },
+      "notes": "anchor redirected to parent section; concept page heading mismatch resolved.",
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "新奇环境需要为空间导航和威胁监控分配并发注意资源——新奇增强记忆但有注意代价。"
+    },
+    "clm-env-abroad": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "5 studies",
+          "relation": "supports",
+          "source_id": "src-3cf93450fba3d25609ae"
+        }
+      ],
+      "location": {
+        "anchor": "旅居 vs 旅行：深度适应的重要性",
+        "path": "wiki/resources/环境变化与认知.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "居住国外——而非旅行——预测创造力，中介是文化适应深度。启动外国生活经历暂时增强创造性表现。"
+    },
+    "clm-env-forest-bathing": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "results",
+          "relation": "supports",
+          "source_id": "src-9dcefef07b1328448f7c"
+        }
+      ],
+      "location": {
+        "anchor": "森林浴",
+        "path": "wiki/resources/环境变化与认知.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "森林浴 (Shinrin-yoku) 降低唾液皮质醇、脉搏、血压，增强副交感神经活动——但这些都是生理指标，非认知测量。"
+    },
+    "clm-env-varied-retrieval": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "results",
+          "relation": "supports",
+          "source_id": "src-caa7c86f054a61cd0300"
+        }
+      ],
+      "location": {
+        "anchor": "变化效应 vs 匹配效应：核心矛盾",
+        "path": "wiki/resources/环境变化与认知.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-06",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "在变化环境中做提取练习有害——失败的提取尝试被巩固。变换地点适合阅读/复习，不适合自测（除非有即时反馈）。"
+    },
+    "clm-oas-definition": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Introduction",
+          "relation": "supports",
+          "source_id": "src-9e417d18b8353afec34b"
+        }
+      ],
+      "location": {
+        "anchor": "概述",
+        "path": "wiki/resources/OpenAPI 规范.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-07",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "OpenAPI 规范（OAS）定义标准的、语言无关的 HTTP API 接口描述，让人类和计算机都能在不访问源码、文档或网络流量的情况下理解服务能力。"
+    },
+    "clm-oas-schema-superset": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Schema Object",
+          "relation": "supports",
+          "source_id": "src-9e417d18b8353afec34b"
+        }
+      ],
+      "location": {
+        "anchor": "Schema Object：JSON Schema 超集",
+        "path": "wiki/resources/OpenAPI 规范.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-07",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Schema Object 是 JSON Schema 2020-12 的超集，增加 discriminator、xml、externalDocs、example 四个 OAS 特有关键字。"
+    },
+    "clm-oas-root-object": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "OpenAPI Object",
+          "relation": "supports",
+          "source_id": "src-9e417d18b8353afec34b"
+        }
+      ],
+      "location": {
+        "anchor": "规范结构：根对象",
+        "path": "wiki/resources/OpenAPI 规范.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-07",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "OpenAPI Document 必须以 openapi 字段声明规范版本号，根对象为 OpenAPI Object，包含 info、servers、paths、webhooks、components、security、tags、externalDocs 十个固定字段。"
+    },
+    "clm-oas-security-types": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Security Scheme Object",
+          "relation": "supports",
+          "source_id": "src-9e417d18b8353afec34b"
+        }
+      ],
+      "location": {
+        "anchor": "安全方案",
+        "path": "wiki/resources/OpenAPI 规范.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-07",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "OpenAPI 定义五种安全方案类型：apiKey（API 密钥）、http（HTTP 认证）、mutualTLS（双向 TLS）、oauth2（OAuth 2.0 四种流）、openIdConnect（OpenID Connect Discovery）。"
+    },
+    "clm-oas-parameter-locations": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Parameter Object",
+          "relation": "supports",
+          "source_id": "src-9e417d18b8353afec34b"
+        }
+      ],
+      "location": {
+        "anchor": "参数系统",
+        "path": "wiki/resources/OpenAPI 规范.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-07",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "OpenAPI 参数支持四种位置：path（路径模板）、query（查询字符串）、header（请求头，大小写不敏感）、cookie（Cookie 值），序列化基于 RFC6570 支持七种风格。"
+    },
+    "clm-oas-components": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Components Object",
+          "relation": "supports",
+          "source_id": "src-9e417d18b8353afec34b"
+        }
+      ],
+      "location": {
+        "anchor": "Components：可复用组件",
+        "path": "wiki/resources/OpenAPI 规范.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-07",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Components 对象集中管理十种可复用组件：schemas、responses、parameters、examples、requestBodies、headers、securitySchemes、links、callbacks、pathItems。"
+    },
+    "clm-oas-versioning": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Versions",
+          "relation": "supports",
+          "source_id": "src-9e417d18b8353afec34b"
+        }
+      ],
+      "location": {
+        "anchor": "关键设计决策",
+        "path": "wiki/resources/OpenAPI 规范.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-07",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "OpenAPI 采用 major.minor.patch 语义版本，工具链应忽略 patch 版本差异；小版本可能包含非向后兼容变更。"
+    },
+    "clm-ml-definition": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "What is machine learning?",
+          "relation": "supports",
+          "source_id": "src-3707bb0501e7f8bcca4c"
+        }
+      ],
+      "location": {
+        "anchor": "What is machine learning?",
+        "path": "wiki/resources/What is Machine Learning.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-08",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "机器学习是 AI 的子集：算法从训练数据中“学习”模式，进而对新数据做出准确推断，无需显式硬编码指令。"
+    },
+    "clm-ml-generalization": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "What is machine learning?",
+          "relation": "supports",
+          "source_id": "src-3707bb0501e7f8bcca4c"
+        }
+      ],
+      "location": {
+        "anchor": "What is machine learning?",
+        "path": "wiki/resources/What is Machine Learning.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-08",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "训练只是手段，泛化——把训练集上的表现转化为真实场景中的有用结果——是机器学习的根本目标。"
+    },
+    "clm-ml-vs-ai": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Machine learning vs. artificial intelligence",
+          "relation": "supports",
+          "source_id": "src-3707bb0501e7f8bcca4c"
+        }
+      ],
+      "location": {
+        "anchor": "Machine learning vs. artificial intelligence",
+        "path": "wiki/resources/What is Machine Learning.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-08",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "所有机器学习都是 AI，但并非所有 AI 都是机器学习；if-then 规则系统（如恒温器、专家系统）属于 AI 而非 ML。"
+    },
+    "clm-ml-term-origin": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "What is machine learning?",
+          "relation": "supports",
+          "source_id": "src-3707bb0501e7f8bcca4c"
+        }
+      ],
+      "location": {
+        "anchor": "What is machine learning?",
+        "path": "wiki/resources/What is Machine Learning.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-08",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "“机器学习”一词常追溯至 Arthur L. Samuel 1959 年发表于 IBM Journal 的论文《Some Studies in Machine Learning Using the Game of Checkers》。"
+    },
+    "clm-ml-three-paradigms": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Types of machine learning",
+          "relation": "supports",
+          "source_id": "src-3707bb0501e7f8bcca4c"
+        }
+      ],
+      "location": {
+        "anchor": "Types of machine learning",
+        "path": "wiki/resources/What is Machine Learning.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-08",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "所有 ML 方法按训练目标可分为三大范式：监督学习、无监督学习、强化学习；混合训练流程常组合多种范式（如 LLM 的预训练 + RLHF）。"
+    },
+    "clm-ml-supervised": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Supervised learning",
+          "relation": "supports",
+          "source_id": "src-3707bb0501e7f8bcca4c"
+        }
+      ],
+      "location": {
+        "anchor": "Supervised learning",
+        "path": "wiki/resources/What is Machine Learning.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-08",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "监督学习以最小化损失函数输出为数学目标，对照外部 ground truth（通常来自标注数据），用于分类与回归任务。"
+    },
+    "clm-ml-self-supervised": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Self-supervised learning",
+          "relation": "supports",
+          "source_id": "src-3707bb0501e7f8bcca4c"
+        }
+      ],
+      "location": {
+        "anchor": "Self-supervised learning",
+        "path": "wiki/resources/What is Machine Learning.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-08",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "自监督学习从无标注数据中直接获得监督信号（如 autoencoder 重建误差、LLM 掩码词预测），是 LLM 的主要预训练方法。"
+    },
+    "clm-ml-semi-supervised": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Semi-supervised learning",
+          "relation": "supports",
+          "source_id": "src-3707bb0501e7f8bcca4c"
+        }
+      ],
+      "location": {
+        "anchor": "Semi-supervised learning",
+        "path": "wiki/resources/What is Machine Learning.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-08",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "半监督学习同时使用标注与未标注数据，用标注信息对未标注样本做假设以纳入监督工作流。"
+    },
+    "clm-ml-unsupervised": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Unsupervised learning",
+          "relation": "supports",
+          "source_id": "src-3707bb0501e7f8bcca4c"
+        }
+      ],
+      "location": {
+        "anchor": "Unsupervised learning",
+        "path": "wiki/resources/What is Machine Learning.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-08",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "无监督学习从无标注数据中发现内在模式（聚类、关联、降维），不存在外部 ground truth，无需常规损失函数。"
+    },
+    "clm-ml-rl": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Reinforcement learning (RL)",
+          "relation": "supports",
+          "source_id": "src-3707bb0501e7f8bcca4c"
+        }
+      ],
+      "location": {
+        "anchor": "Reinforcement learning (RL)",
+        "path": "wiki/resources/What is Machine Learning.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-08",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "强化学习基于相互依赖的状态-动作-奖励元组训练，目标是优化参数以最大化奖励；策略 π(s)→a；基于策略如 PPO，基于价值如 Q-learning，actor-critic 混合两者。"
+    },
+    "clm-ml-universal-approximator": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Deep learning",
+          "relation": "supports",
+          "source_id": "src-3707bb0501e7f8bcca4c"
+        }
+      ],
+      "location": {
+        "anchor": "Deep learning",
+        "path": "wiki/resources/What is Machine Learning.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-08",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "神经网络是通用逼近器：理论上任何函数都存在能复现它的网络结构。"
+    },
+    "clm-ml-backprop": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Deep learning",
+          "relation": "supports",
+          "source_id": "src-3707bb0501e7f8bcca4c"
+        }
+      ],
+      "location": {
+        "anchor": "Deep learning",
+        "path": "wiki/resources/What is Machine Learning.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-08",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "反向传播计算每个节点对损失函数的贡献，配合梯度下降可单独优化数百万至数十亿权重，因此深度学习需要大量数据与算力。"
+    },
+    "clm-ml-transformer": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Transformers",
+          "relation": "supports",
+          "source_id": "src-3707bb0501e7f8bcca4c"
+        }
+      ],
+      "location": {
+        "anchor": "Transformers",
+        "path": "wiki/resources/What is Machine Learning.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-08",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Transformer（2017 年首次提出）的注意力机制使其能选择性聚焦输入中最相关的部分，是 LLM 与生成式 AI 的基石，在大多数 ML 子领域取得 SOTA。"
+    },
+    "clm-ml-cnn-rnn": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Convolutional neural networks (CNNs)",
+          "relation": "supports",
+          "source_id": "src-3707bb0501e7f8bcca4c"
+        }
+      ],
+      "location": {
+        "anchor": "Convolutional neural networks (CNNs)",
+        "path": "wiki/resources/What is Machine Learning.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-08",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "CNN 通过卷积层提取特征（主要与计算机视觉相关）；RNN 以隐状态记忆处理序列数据。"
+    },
+    "clm-ml-mamba": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Mamba models",
+          "relation": "supports",
+          "source_id": "src-3707bb0501e7f8bcca4c"
+        }
+      ],
+      "location": {
+        "anchor": "Mamba models",
+        "path": "wiki/resources/What is Machine Learning.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-08",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Mamba（2023 年提出）基于状态空间模型变体，提供选择性优先关注最相关信息的新机制，已成为 Transformer 的竞争架构（尤其用于 LLM）。"
+    },
+    "clm-ml-mlops": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Machine learning operations (MLOps)",
+          "relation": "supports",
+          "source_id": "src-3707bb0501e7f8bcca4c"
+        }
+      ],
+      "location": {
+        "anchor": "Machine learning operations (MLOps)",
+        "path": "wiki/resources/What is Machine Learning.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-08",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "MLOps 是构建、部署与维护 ML 模型的流水线实践，需要数据策管与预处理、模型选择、训练后验证（防过拟合）、监控模型漂移与模型治理。"
+    },
+    "clm-web-browser-def": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "What is a Web Browser: Definition, Types, and Features",
+          "relation": "supports",
+          "source_id": "src-da88aea4c34ac810e0b4"
+        }
+      ],
+      "location": {
+        "anchor": "What is a Web Browser: Definition, Types, and Features",
+        "path": "wiki/resources/What is a Web Browser Definition, Types, and Features.md"
+      },
+      "notes": "修复补记：2026-08-08 从页面 key_claims 还原（原摄入未写入 ledger）",
+      "reviewed_at": "2026-08-08",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "Web 浏览器是一种软件程序，使用户能通过万维网访问互联网上的信息；核心功能是获取并显示网页、提供用户交互界面。"
+    },
+    "clm-web-browser-history": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "What is a Web Browser: Definition, Types, and Features",
+          "relation": "supports",
+          "source_id": "src-da88aea4c34ac810e0b4"
+        }
+      ],
+      "location": {
+        "anchor": "What is a Web Browser: Definition, Types, and Features",
+        "path": "wiki/resources/What is a Web Browser Definition, Types, and Features.md"
+      },
+      "notes": "修复补记：2026-08-08 从页面 key_claims 还原（原摄入未写入 ledger）",
+      "reviewed_at": "2026-08-08",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "浏览器发展史：WorldWideWeb (1990, 纯文本) → Mosaic (1993, 首个图形浏览器) → Netscape Navigator (1994) → Internet Explorer (1995, 浏览器大战) → Firefox (2004) → Chrome (2008, 当前市场主导)。"
+    },
+    "clm-web-browser-components": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "What is a Web Browser: Definition, Types, and Features",
+          "relation": "supports",
+          "source_id": "src-da88aea4c34ac810e0b4"
+        }
+      ],
+      "location": {
+        "anchor": "What is a Web Browser: Definition, Types, and Features",
+        "path": "wiki/resources/What is a Web Browser Definition, Types, and Features.md"
+      },
+      "notes": "修复补记：2026-08-08 从页面 key_claims 还原（原摄入未写入 ledger）",
+      "reviewed_at": "2026-08-08",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "浏览器由渲染引擎（Blink/WebKit/Gecko）、UI、网络组件、JavaScript 引擎、安全组件等协同工作。"
+    },
+    "clm-web-browser-types": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "What is a Web Browser: Definition, Types, and Features",
+          "relation": "supports",
+          "source_id": "src-da88aea4c34ac810e0b4"
+        }
+      ],
+      "location": {
+        "anchor": "What is a Web Browser: Definition, Types, and Features",
+        "path": "wiki/resources/What is a Web Browser Definition, Types, and Features.md"
+      },
+      "notes": "修复补记：2026-08-08 从页面 key_claims 还原（原摄入未写入 ledger）",
+      "reviewed_at": "2026-08-08",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "浏览器分为三类：桌面浏览器（功能完整）、移动浏览器（小屏触控优化）、嵌入式浏览器（应用内嵌）。"
+    },
+    "clm-web-browser-features": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "What is a Web Browser: Definition, Types, and Features",
+          "relation": "supports",
+          "source_id": "src-da88aea4c34ac810e0b4"
+        }
+      ],
+      "location": {
+        "anchor": "What is a Web Browser: Definition, Types, and Features",
+        "path": "wiki/resources/What is a Web Browser Definition, Types, and Features.md"
+      },
+      "notes": "修复补记：2026-08-08 从页面 key_claims 还原（原摄入未写入 ledger）",
+      "reviewed_at": "2026-08-08",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "现代浏览器关键功能：标签页浏览、书签、历史记录、下载管理、扩展与插件、跨设备同步、HTTPS 支持、弹窗拦截、无痕浏览。"
+    },
+    "clm-web-browser-security": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "What is a Web Browser: Definition, Types, and Features",
+          "relation": "supports",
+          "source_id": "src-da88aea4c34ac810e0b4"
+        }
+      ],
+      "location": {
+        "anchor": "What is a Web Browser: Definition, Types, and Features",
+        "path": "wiki/resources/What is a Web Browser Definition, Types, and Features.md"
+      },
+      "notes": "修复补记：2026-08-08 从页面 key_claims 还原（原摄入未写入 ledger）",
+      "reviewed_at": "2026-08-08",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "浏览器安全机制：HTTPS 加密数据传输、沙箱隔离恶意代码、跟踪器拦截、隐私设置（第三方 Cookie 管理、权限控制）。"
+    },
+    "clm-domain-readable-address": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Summary",
+          "relation": "supports",
+          "source_id": "src-e649971407a0c4c67296"
+        }
+      ],
+      "location": {
+        "anchor": "Summary",
+        "path": "wiki/resources/What is a Domain Name.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-11",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "域名是互联网基础设施的关键部分，为互联网上的任何 Web 服务器提供人类可读的地址；计算机实际通过 IP 地址（IPv4/IPv6）通信，IP 地址难记且可能变化。"
+    },
+    "clm-domain-structure": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Structure of domain names",
+          "relation": "supports",
+          "source_id": "src-0473236edd4831acc8e9"
+        }
+      ],
+      "location": {
+        "anchor": "域名结构",
+        "path": "wiki/resources/DNS 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-11",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "域名结构从右向左读：TLD（顶级域）→ 标签/组件（最多 63 字符，A-Z/0-9/连字符）→ 子域，各部分以点分隔。"
+    },
+    "clm-domain-tld": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "TLD",
+          "relation": "supports",
+          "source_id": "src-e649971407a0c4c67296"
+        }
+      ],
+      "location": {
+        "anchor": "TLD",
+        "path": "wiki/resources/What is a Domain Name.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-11",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "TLD（顶级域）位于域名最右侧，最大长度 63 字符（多数 2–3 字符）；通用 TLD（.com/.org/.net）无特别标准，.gov 仅限政府、.edu 仅限教育机构；完整 TLD 列表由 ICANN 维护。"
+    },
+    "clm-domain-label-sld": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Label (or component)",
+          "relation": "supports",
+          "source_id": "src-e649971407a0c4c67296"
+        }
+      ],
+      "location": {
+        "anchor": "Label (or component)",
+        "path": "wiki/resources/What is a Domain Name.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-11",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "标签（label）大小写不敏感，1–63 字符，仅含 A–Z、0–9 与连字符（不能作首尾字符）；紧邻 TLD 前的标签叫二级域（SLD）。"
+    },
+    "clm-domain-subdomain": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Label (or component)",
+          "relation": "supports",
+          "source_id": "src-e649971407a0c4c67296"
+        }
+      ],
+      "location": {
+        "anchor": "Label (or component)",
+        "path": "wiki/resources/What is a Domain Name.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-11",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "对于自有的域名（如 mozilla.org）可创建任意子域放置不同内容，如 developer.mozilla.org、support.mozilla.org、bugzilla.mozilla.org。"
+    },
+    "clm-domain-rental": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Who owns a domain name?",
+          "relation": "supports",
+          "source_id": "src-e649971407a0c4c67296"
+        }
+      ],
+      "location": {
+        "anchor": "Who owns a domain name?",
+        "path": "wiki/resources/What is a Domain Name.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-11",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "不能真正购买域名，而是按年付费获得使用权，可续期且有优先权；闲置域名最终会释放供他人使用。"
+    },
+    "clm-domain-registrar": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Who owns a domain name?",
+          "relation": "supports",
+          "source_id": "src-0473236edd4831acc8e9"
+        }
+      ],
+      "location": {
+        "anchor": "注册商",
+        "path": "wiki/resources/DNS 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-11",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "注册商（Registrar）通过域名注册局（Registry）管理域名的技术与行政信息；某些顶级域（如 .fire）由特定公司（如 Amazon）直接管理。"
+    },
+    "clm-domain-whois": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Finding an available domain name",
+          "relation": "supports",
+          "source_id": "src-e649971407a0c4c67296"
+        }
+      ],
+      "location": {
+        "anchor": "Finding an available domain name",
+        "path": "wiki/resources/What is a Domain Name.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-11",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "可用注册商 whois 服务或命令行 `whois <domain>` 查询域名可用性；输出 NOT FOUND 表示该域名尚未注册。"
+    },
+    "clm-domain-dns-refresh": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "DNS refreshing",
+          "relation": "supports",
+          "source_id": "src-e649971407a0c4c67296"
+        }
+      ],
+      "location": {
+        "anchor": "DNS refreshing",
+        "path": "wiki/resources/What is a Domain Name.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-11",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "DNS 数据库存储在全球每台 DNS 服务器上，并参照少数权威名称服务器；注册商更新信息后需传播刷新，因此 DNS 更新有延迟。"
+    },
+    "clm-domain-dns-request": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "How does a DNS request work?",
+          "relation": "supports",
+          "source_id": "src-e649971407a0c4c67296"
+        }
+      ],
+      "location": {
+        "anchor": "How does a DNS request work?",
+        "path": "wiki/resources/What is a Domain Name.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-11",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "DNS 请求流程：浏览器先查本地 DNS 缓存，未命中则向 DNS 服务器查询域名对应 IP，获得 IP 后浏览器与 Web 服务器协商内容。"
+    },
+    "clm-dns-phonebook": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "What is DNS?",
+          "relation": "supports",
+          "source_id": "src-46f90dd1a86d6fea2c2d"
+        }
+      ],
+      "location": {
+        "anchor": "DNS 定义",
+        "path": "wiki/resources/DNS 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-11",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "DNS 是互联网的电话簿，把域名映射为 IP 地址，让用户无需记住数字地址。"
+    },
+    "clm-dns-resolution-flow": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "How does DNS work?",
+          "relation": "supports",
+          "source_id": "src-46f90dd1a86d6fea2c2d"
+        }
+      ],
+      "location": {
+        "anchor": "DNS 解析五步流程",
+        "path": "wiki/resources/DNS 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-11",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "DNS 解析流程：本地缓存 → 递归 DNS 服务器 → 根 DNS 服务器 → TLD DNS 服务器 → 权威 DNS 服务器。"
+    },
+    "clm-dns-local-cache": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Step 1: Local Caches",
+          "relation": "supports",
+          "source_id": "src-46f90dd1a86d6fea2c2d"
+        }
+      ],
+      "location": {
+        "anchor": "本地缓存",
+        "path": "wiki/resources/DNS 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-11",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "本地缓存包含浏览器缓存、操作系统 DNS 缓存（基于 TTL）、和 hosts 文件三个来源。"
+    },
+    "clm-dns-root-servers": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Step 3: Root DNS Servers",
+          "relation": "supports",
+          "source_id": "src-46f90dd1a86d6fea2c2d"
+        }
+      ],
+      "location": {
+        "anchor": "根 DNS 服务器",
+        "path": "wiki/resources/DNS 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-11",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "根 DNS 服务器不存网站 IP，而是存 TLD 服务器的地址；TLD 服务器指向权威 DNS 服务器，权威服务器存实际 DNS 记录。"
+    },
+    "clm-dig-command": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "How does DNS work in practice?",
+          "relation": "supports",
+          "source_id": "src-46f90dd1a86d6fea2c2d"
+        }
+      ],
+      "location": {
+        "anchor": "dig 命令",
+        "path": "wiki/resources/DNS 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-11",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "dig 命令可查询 DNS 记录（+short 仅输出 IP）、追踪解析路径（+trace）、检查 DNSSEC（+dnssec）、查询特定服务器（@server）。"
+    },
+    "clm-dns-dnssec": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Checking DNSSEC validation",
+          "relation": "supports",
+          "source_id": "src-46f90dd1a86d6fea2c2d"
+        }
+      ],
+      "location": {
+        "anchor": "DNSSEC",
+        "path": "wiki/resources/DNS 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-11",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "DNSSEC 是 DNS 安全扩展，认证 DNS 数据来源和数据完整性，防止 DNS 数据在传输中被篡改。"
+    },
+    "clm-dns-errors": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Common DNS errors",
+          "relation": "supports",
+          "source_id": "src-46f90dd1a86d6fea2c2d"
+        }
+      ],
+      "location": {
+        "anchor": "常见 DNS 错误",
+        "path": "wiki/resources/DNS 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-11",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "常见 DNS 错误：NXDOMAIN（域名不存在）、NO_INTERNET（DNS 服务器不可达）、BAD_CONFIG（DNS 配置错误）。"
+    },
+    "clm-dns-flush-cache": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "How to Flush DNS Cache",
+          "relation": "supports",
+          "source_id": "src-46f90dd1a86d6fea2c2d"
+        }
+      ],
+      "location": {
+        "anchor": "刷新 DNS 缓存",
+        "path": "wiki/resources/DNS 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-11",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "可通过 ipconfig /flushdns（Windows）或 dscacheutil -flushcache（macOS）刷新本地 DNS 缓存。"
+    },
+    "clm-domain-human-readable": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Summary",
+          "relation": "supports",
+          "source_id": "src-0473236edd4831acc8e9"
+        }
+      ],
+      "location": {
+        "anchor": "域名定义",
+        "path": "wiki/resources/DNS 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-11",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "域名提供人类可读的互联网服务器地址，替代难以记忆且可能变化的 IP 地址。"
+    },
+    "clm-domain-tld-types": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "TLD",
+          "relation": "supports",
+          "source_id": "src-0473236edd4831acc8e9"
+        }
+      ],
+      "location": {
+        "anchor": "TLD 分类",
+        "path": "wiki/resources/DNS 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-11",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "TLD 的分类：通用 TLD（.com/.org/.net）、国家/地区 TLD（.us/.fr/.se）、受限 TLD（.gov 仅政府/.edu 仅教育机构），完整列表由 ICANN 维护。"
+    },
+    "clm-domain-lease": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "Who owns a domain name?",
+          "relation": "supports",
+          "source_id": "src-0473236edd4831acc8e9"
+        }
+      ],
+      "location": {
+        "anchor": "域名注册",
+        "path": "wiki/resources/DNS 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-11",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "你不能购买域名——你支付的是一定年限的使用权（可续费，享有优先续费权），你永远不会拥有域名。"
+    },
+    "clm-dns-propagation": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "DNS refreshing",
+          "relation": "supports",
+          "source_id": "src-0473236edd4831acc8e9"
+        }
+      ],
+      "location": {
+        "anchor": "DNS 传播",
+        "path": "wiki/resources/DNS 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-11",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "DNS 数据库分布在全球 DNS 服务器上，所有服务器参考权威名称服务器；域名信息变更后需传播（propagation）到所有 DNS 服务器，可能需要数小时。"
+    }
+  },
+  "generated_at": "2026-08-08T00:00:00Z",
+  "schema": "claude-obsidian.claim-ledger.v1"
+}

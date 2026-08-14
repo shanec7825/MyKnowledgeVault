@@ -1,0 +1,24 @@
+{
+  "id": "conv-1785909534779-a8ae8mhnw",
+  "title": "Ingest doc into backend introduction project",
+  "createdAt": 1785909534785,
+  "updatedAt": 1785927185055,
+  "providerId": "claude",
+  "titleGenerationStatus": "success",
+  "lastResponseAt": 1785927185055,
+  "sessionId": "80c05f18-0636-4ca4-9d6e-a0584cc68c3d",
+  "selectedModel": "opus",
+  "providerState": {
+    "providerSessionId": "80c05f18-0636-4ca4-9d6e-a0584cc68c3d"
+  },
+  "currentNote": "inbox/How does the Internet Work.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 57,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 237056,
+    "contextWindow": 1000000,
+    "contextTokens": 237113,
+    "percentage": 24
+  }
+}

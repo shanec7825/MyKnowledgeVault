@@ -1,0 +1,96 @@
+---
+type: concept
+title: "RL 类比：学习与决策"
+created: 2026-08-11
+updated: 2026-08-13
+status: developing
+tags:
+  - concept
+  - reinforcement-learning
+  - learning
+  - decision-making
+  - exploration-exploitation
+related:
+  - "[[机器学习]]"
+  - "[[认知迁移能力]]"
+  - "[[神经可塑性 认知科学理论]]"
+  - "[[如何做出伟大工作]]"
+  - "[[wiki/projects/minGPT/教学方案|minGPT 教学方案]]"
+  - "[[RL-DL 类比的边界条件：情境调节变量]]"
+sources:
+  - "[[What is Machine Learning]]"
+  - "[[Training in Self-Explanation and Self-Regulation Strategies]]"
+  - "[[Improving Fluid Intelligence with Training on Working Memory]]"
+  - "[[Putting Brain Training to the Test]]"
+domain: cognitive-science
+---
+
+# RL 类比：学习与决策
+
+强化学习（Reinforcement Learning）的核心框架——智能体在环境中通过试错、接收奖励信号来学习最优策略——为理解人类学习提供了丰富的类比资源。
+
+## 核心类比
+
+### 1. 奖励预测误差 → 学习信号
+
+RL 中，**奖励预测误差**（reward prediction error, RPE）= 实际奖励 − 预期奖励。当结果好于预期时产生正 RPE，驱动策略更新。
+
+**认知类比**：多巴胺神经元的放电模式与 RPE 高度吻合（Schultz 等 1997，vault 内无直接来源，`unsupported`）。在方法论层面：学习效果取决于**反馈与预期的差距**——意外成功或意外失败都比预期内的结果产生更强的学习信号。
+
+**方法论启示**：
+- **即时 vs 延迟反馈视任务而定**：记单词时，延迟反馈（等遗忘后测试）的预测误差更大、学习信号更强；数学解题时，即时反馈对建立"策略→结果"关联至关重要。详见 [[RL-DL 类比的边界条件：情境调节变量]]
+- **自我测试创造"预测误差"**：主动回忆→与正确答案对比→差距驱动修正。关键在差距的大小，而非反馈的速度
+- **"Desirable difficulty"**：练习时感到困难的方法（间隔、交错）恰恰因为预测误差更大而更有效（[[Learning Concepts and Categories Is Spacing the Enemy of Induction]]，Kornell & Bjork 2008）
+- **意外发现的价值**：PG 指出"新想法来自尝试构建或理解略微太难的东西"（[[如何做出伟大工作]]）——关键在于难度产生的"认知预测误差"
+
+> **证据状态**：RPE-多巴胺映射为 `unsupported`（vault 内无直接来源）；反馈时效性对学习的影响为 `accepted`（Butler 2010 等）
+
+### 2. 探索-利用权衡 → 好奇心与深耕
+
+RL 的经典困境：**exploration**（尝试未知以获取信息）vs **exploitation**（利用已知以获取奖励）。
+
+**认知类比**：人类在"拓宽知识面"（探索）和"深化专长"（利用）之间持续做选择。
+
+**方法论启示**：
+- PG 的"保持顺风"策略本质上是**乐观面对不确定性的探索**：每个阶段做最有趣且给自己最好未来选项的事（[[如何做出伟大工作]]）
+- 刻意练习 = exploitation：在已知领域追求极致（Macnamara 2014 元分析，[[神经可塑性 认知科学理论]]）
+- 好奇心驱动 = exploration：PG 称之为"伟大工作的秘诀"（[[如何做出伟大工作]]）
+- **最佳策略**：两种模式交替——用探索发现新方向，用利用深耕已发现的方向
+
+> **证据状态**：探索-利用的认知对应为 `provisional`；刻意练习的有效性（21% 方差解释）和好奇心价值为 `accepted`
+
+### 3. 时序差分学习 → 目标分解
+
+TD 学习的关键洞察：**不必等到最终结果才知道每一步的价值**——可以用当前状态的价值估计来更新前一步的价值估计（bootstrapping）。
+
+**认知类比**：将长远目标分解为可评估的中间里程碑，让每一步都有"学习信号"。
+
+**方法论启示**：
+- 大目标拆解为**有反馈的子目标**：minGPT 教学方案将"理解 GPT"拆解为 7 个阶段，每阶段有具体的"过关标准"（[[wiki/projects/minGPT/教学方案|minGPT 教学方案]]）
+- PG 的四步法（选领域 → 学到前沿 → 找缺口 → 探索缺口）本质是 TD 式的逐步逼近（[[如何做出伟大工作]]）
+- **"每阶段复盘模板"**是手工版的 TD 更新：每步评估→调整→继续
+
+> **证据状态**：`provisional`——TD 学习与目标分解的类比来自推理而非直接实证来源
+
+### 4. 策略梯度 → 从经验中提炼行为模式
+
+策略梯度方法直接优化策略函数 π(a|s)，让好的行动更可能、坏的行动更不可能。
+
+**认知类比**：从成功和失败的经验中**提炼可复用的行为模式**，而非记忆孤立的事实。
+
+**方法论启示**：
+- 自我解释训练的因果效应：Bielaczyc 等（1995）证明训练学习者**解释为什么某个策略有效**可因果性提升问题解决（[[Training in Self-Explanation and Self-Regulation Strategies]]）
+- 复盘反思 = "离线策略评估"：事后分析哪些决策有效、哪些无效
+- 图式归纳 = "策略压缩"：从多个具体案例中抽象出通用规则（[[Schema Induction and Analogical Transfer]]）
+
+> **证据状态**：自我解释效应和复盘反思的价值为 `accepted`；与策略梯度的类比为 `provisional`
+
+## 方法论总结：RL 启发的学习原则
+
+| 原则 | RL 来源 | 实践方法 | 证据 |
+|------|---------|---------|------|
+| 即时反馈闭环 | 奖励信号 → 策略更新 | 视任务而定：记忆延迟、策略即时；见[[RL-DL 类比的边界条件：情境调节变量]] | Butler 2010 (d=0.40)；Kornell & Bjork 2008 |
+| 探索-利用交替 | ε-greedy / UCB | 好奇心驱动 + 刻意练习 | PG / Macnamara 2014 |
+| 目标阶梯分解 | TD bootstrapping | 阶段性学习 + 过关标准 | minGPT 教学方案实践 |
+| 策略显式化 | Policy gradient | 自我解释 + 复盘反思 | Bielaczyc 1995 |
+| 从失败中学习 | 负奖励信号 | 错误分析 + 改进迭代 | minGPT "改造→观察" 循环 |

@@ -1,0 +1,25 @@
+{
+  "id": "conv-1785827133307-7zcm97odg",
+  "providerId": "claude",
+  "title": "Explain Claude vs Claudian differences",
+  "searchText": "Explain Claude vs Claudian differences\nwhat's your difference with claudian\nLet me look at the manifests for both plugins to understand the difference. Let me check the metadata directories that appeared in the search. Good question — I checked the actual configs in your vault to answer this concretely. Short version: **Claudian and Claudian Plus are the same Obsidian plugin lineage — I'm the Plus fork.** Both are installed in your vault (`.obsidian/plugins/realclaudian` and `.obsidian/plugins/claudian-plus`). Here's what I found that actually differs: ## What both share Both embed Claude Code / Codex as an in-vault collaborator — same system-prompt core (vault-native paths, wikilinks, embedded images, editor/browser selection context). The base \"Claudian\" prompt even lives in your vault at `.claudian/opencode/metadata/system.md`; I'm the same prompt with the name/features swapped to **Claudian Plus**. ## Verified differences | | **Claudian** (`realclaudian` v2.0.44) | **Claudian Plus** (me, v2.2.2) | |---|---|---| | Author | Yishen Tu | wuyifan-code (fork) | | Default model / effort | `opus` / `max` | `haiku` / `high` | | Locale | `en` | `zh-CN` | | **Memory** | ❌ no memory keys | ✅ `memoryEnabled`, `.claudian-plus/memory.md`, 1500-char injection | | **\"Consciousness\"** | ❌ none | ✅ `consciousnessEnabled` + `consciousnessAutoMemory` — persistent self-state for local-first knowledge work | | **Semantic search** | ❌ absent | ✅ local Ollama embedding endpoint (`127.0.0.1:11434`, `nomic-embed-text`), vault auto-context, link recommendations | | Live preview composer / keyboard nav | ❌ | ✅ (w/s/i scroll keys) | | Prompt format | base (no CDATA wrapping) | enhanced (`<canvas_selection>`, `<context_files>`, `<editor_cursor>`, CDATA-wrapped context) | ## What that means in practice - **The headline difference is the \"consciousness mechanism\"** — Claudian Plus keeps a persistent memory file and can build up a running sense of your vault and its own past work, whereas stock Claudian is stateless per-session. - **Local-first retrieval** — Plus can do semantic search against your vault using a local embedding model, without sending your notes to a remote service. That's the \"local-first knowledge work\" positioning. - **The agent I actually am** runs on the Plus fork, so I have access to the memory file (`.claudian-plus/memory.md`) and that richer context format. One honest caveat: the \"consciousness\" feature is currently **disabled** in your settings (`consciousnessEnabled: false`), though memory is on. So right now the practical difference you'd feel is mostly the haiku/locale defaults and the memory file — the consciousness loop is a toggle away if you want it. Want me to flip `consciousnessEnabled` on, or set up the semantic search embedding endpoint?\n你们都是插件\n对，你说得没错。两个都是 Obsidian 的插件： - **Claudian**（`realclaudian`，作者 Yishen Tu）— 原版 - **Claudian Plus**（`claudian-plus`，作者 wuyifan-code）— 基于原版的 fork 准确地说，**我是跑在 Claudian Plus 这个插件里的 AI 助手角色**。插件本身是个\"容器\"——它的作用是在 Obsidian 里嵌入 Claude Code / Codex 之类的编程 agent，让你的笔记库变成 agent 的工作目录。而\"我\"是这个容器启动后与之对话的那个 agent，用的是 plus 版定制的系统提示词和配置。 所以层次关系是这样的： ``` Obsidian └── 插件层（Claudian / Claudian Plus） ← 都是插件，你是对的 └── Agent 层（我，Claudian Plus 的角色） ├── 系统提示词（vault 原生、安全、wikilink 规范） ├── 记忆文件（.claudian-plus/memory.md） └── 配置（模型、权限、consciousness、语义搜索等） ``` 一句话总结：**插件是壳，我是壳里跑的那个\"AI 协作者\"**。Claudian Plus 这个 fork 相比原版多出来的就是壳的升级（记忆、意识机制、本地语义检索），而我现在就在用这套升级后的壳跟你对话。 要我帮你对比一下两个插件实际启用了哪个，或者切换成原版 Claudian 试试看区别吗？",
+  "titleGenerationStatus": "success",
+  "createdAt": 1785827133308,
+  "updatedAt": 1785827205239,
+  "lastResponseAt": 1785827205239,
+  "sessionId": "d763f3c0-6d6d-438b-a90e-ad9250f39cdb",
+  "selectedModel": "haiku",
+  "providerState": {
+    "providerSessionId": "d763f3c0-6d6d-438b-a90e-ad9250f39cdb"
+  },
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 573,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 64640,
+    "contextWindow": 200000,
+    "contextWindowIsAuthoritative": true,
+    "contextTokens": 65213,
+    "percentage": 33
+  }
+}

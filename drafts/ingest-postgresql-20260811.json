@@ -1,0 +1,95 @@
+{
+  "schema": "claude-obsidian.transaction.v1",
+  "operation_id": "ingest-postgresql-20260811",
+  "operation_type": "ingest",
+  "expected_hashes": {
+    "wiki/resources/PostgreSQL 教程.md": null,
+    "wiki/resources/PostgreSQL Tutorial.md": null,
+    "wiki/projects/Backend Introduction/Backend Introduction.md": "1895fc3495ab1ac54b33c3a9973024b800b44d774ff53a0248da4bea4a066cd6",
+    "wiki/index.md": "a266278dc020e2efbf0184215e5bdf31cd4eafa9c3faadfc690543af29f03dca",
+    "wiki/log.md": "b16f99181c74d77e1e8c811f7ed30c8e7e9acc8082ea5be85482daa57f2a29cb",
+    "wiki/hot.md": "d93c6f8bc11ea2ef051290e25476cfedec22d418dea4c64832f6a69287f26fdf",
+    "wiki/meta/ledgers/source-ledger.json": "8845083776b6c261844a597fa77fad615ca7e2656e898f74e0fb85f8d81aad24",
+    "wiki/meta/ledgers/claim-ledger.json": "fcb759534a0d26d578f6b0d9638e2dbe551b8cf6b68984207957ed07f748017f"
+  },
+  "writes": [
+    {
+      "path": "wiki/resources/PostgreSQL 教程.md",
+      "mode": "create",
+      "content_file": "postgresql-tutorial-concept.md",
+      "sha256": "04f769fe7a45f6a44ce8a4f7c618196a5651213be5db221fc180494489b84be6"
+    },
+    {
+      "path": "wiki/resources/PostgreSQL Tutorial.md",
+      "mode": "create",
+      "content_file": "postgresql-tutorial-source.md",
+      "sha256": "01b1f57e151a5490eefc964ec09c047e9892921f84a25b9ebe8099959177d1bf"
+    },
+    {
+      "path": "wiki/projects/Backend Introduction/Backend Introduction.md",
+      "mode": "replace",
+      "content_file": "backend-intro-updated.md",
+      "sha256": "a3b8805b2e35f3be29bc7b31c813143d40b31470797948b555efdcd3d192e089"
+    },
+    {
+      "path": "wiki/index.md",
+      "mode": "replace",
+      "content_file": "index-updated.md",
+      "sha256": "75d1d5561eeef91a71835d1b2ff955583f69a0da006c39f90e645b96849ed8e9"
+    },
+    {
+      "path": "wiki/log.md",
+      "mode": "replace",
+      "content_file": "log-updated.md",
+      "sha256": "a8d6e3fa2b8ed764c0a803aee73a10229cf1f7eb8dc4627a0fcc8118b48f4593"
+    },
+    {
+      "path": "wiki/hot.md",
+      "mode": "replace",
+      "content_file": "hot-updated.md",
+      "sha256": "cbb1b480813789ab4525397ac186d78b2289cba5a0106598deeadf69648f05d7"
+    },
+    {
+      "path": "wiki/meta/ledgers/source-ledger.json",
+      "mode": "replace",
+      "content_file": "source-ledger-updated.json",
+      "sha256": "8845083776b6c261844a597fa77fad615ca7e2656e898f74e0fb85f8d81aad24"
+    },
+    {
+      "path": "wiki/meta/ledgers/claim-ledger.json",
+      "mode": "replace",
+      "content_file": "claim-ledger-updated.json",
+      "sha256": "fcb759534a0d26d578f6b0d9638e2dbe551b8cf6b68984207957ed07f748017f"
+    }
+  ],
+  "address_requests": [
+    {
+      "path": "wiki/resources/PostgreSQL 教程.md"
+    },
+    {
+      "path": "wiki/resources/PostgreSQL Tutorial.md"
+    }
+  ],
+  "source_manifest_updates": {
+    "sources": {
+      "src-745bf9d2a619b15ef29d": {
+        "authority": "secondary",
+        "content_kind": "webpage",
+        "independence_key": "neon-postgresql-tutorial",
+        "ingested_at": "2026-08-11",
+        "locator": "inbox/PostgreSQL Tutorial.md",
+        "pages_created": [
+          "wiki/resources/PostgreSQL 教程.md",
+          "wiki/resources/PostgreSQL Tutorial.md"
+        ],
+        "review_status": "active",
+        "sha256": "5f7e8e4898bda5d87c0ea0425857fd9dcf17b916bb4a9f2fa72aa52e2af649f8",
+        "title": "PostgreSQL Tutorial"
+      }
+    },
+    "address_map": {
+      "wiki/resources/PostgreSQL 教程.md": "c-000078",
+      "wiki/resources/PostgreSQL Tutorial.md": "c-000079"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "conversationId": "conv-1786075992528-vfut4v9ge",
+  "records": [
+    {
+      "schemaVersion": 1,
+      "id": "msg-1786075992660-w5heemb",
+      "userTurnOrdinal": 1,
+      "state": "accepted",
+      "localMessageId": "msg-1786075992525-lfy0cqp",
+      "timestamp": 1786075992525,
+      "rawDisplayText": "/claude-obsidian:wiki-ingest open api specification \\projects",
+      "canonicalText": "/claude-obsidian:wiki-ingest open api specification \\projects",
+      "context": {
+        "currentNote": {
+          "path": "inbox/OpenAPI Specification - Version 3.1.0.md"
+        }
+      },
+      "images": [],
+      "contentDigest": "1a2b3ad9bdfcf66a9364b964c3c70776b33012718187a149426dce53fa22962a",
+      "providerUserMessageId": "a1b8113e-7a18-483c-87e5-0fee2bd18ee4",
+      "providerAssistantMessageId": "0cc1973b-edcb-450e-876c-746b795d8aa6"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "msg-1786076132004-ui6en53",
+      "userTurnOrdinal": 2,
+      "state": "accepted",
+      "localMessageId": "msg-1786076132001-b9wm5p1",
+      "timestamp": 1786076132001,
+      "rawDisplayText": "继续",
+      "canonicalText": "继续",
+      "images": [],
+      "contentDigest": "65f454414e2fda4840658901f9399831363ad75712ba36b930b5ad393f72f7b7",
+      "providerUserMessageId": "5c8d77ab-d295-4c73-aa56-1f6ab30bf4e0",
+      "providerAssistantMessageId": "ea552dc3-6ec6-493f-bc61-17c36ec08dce"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "msg-1786096477497-fjmnxqv",
+      "userTurnOrdinal": 3,
+      "state": "accepted",
+      "localMessageId": "msg-1786096477495-ywhjljo",
+      "timestamp": 1786096477495,
+      "rawDisplayText": "/claude-obsidian:wiki-ingest postgreSQL turorial ,项目relational database",
+      "canonicalText": "/claude-obsidian:wiki-ingest postgreSQL turorial ,项目relational database",
+      "images": [],
+      "contentDigest": "c557b573e52dc25c4405b58bc50723500d0d8da35e928a6aa5f028dc86f32c8f",
+      "providerUserMessageId": "ff4065ce-ee1b-4abe-b550-0cdc332d6617",
+      "providerAssistantMessageId": "8929a386-d40c-4f60-9123-69a21dfb9310"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "msg-1786096525249-ed1pvus",
+      "userTurnOrdinal": 4,
+      "state": "accepted",
+      "localMessageId": "msg-1786096525246-27mzvwq",
+      "timestamp": 1786096525246,
+      "rawDisplayText": "继续",
+      "canonicalText": "继续",
+      "images": [],
+      "contentDigest": "65f454414e2fda4840658901f9399831363ad75712ba36b930b5ad393f72f7b7",
+      "providerUserMessageId": "33e312ef-3b40-4276-8d96-2bc02d7a66db"
+    }
+  ]
+}

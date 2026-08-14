@@ -1,0 +1,23 @@
+{
+  "id": "conv-1785825987060-f7lvmmp9o",
+  "title": "Evaluate moving inbox docs to resources/archives",
+  "createdAt": 1785825987065,
+  "updatedAt": 1785827015794,
+  "providerId": "claude",
+  "titleGenerationStatus": "success",
+  "lastResponseAt": 1785826791784,
+  "sessionId": "e41b997b-9b3c-4a11-90a7-1aef9eade1f8",
+  "selectedModel": "opus",
+  "providerState": {
+    "providerSessionId": "e41b997b-9b3c-4a11-90a7-1aef9eade1f8"
+  },
+  "usage": {
+    "model": "opus",
+    "inputTokens": 1468,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 111616,
+    "contextWindow": 1000000,
+    "contextTokens": 113084,
+    "percentage": 11
+  }
+}

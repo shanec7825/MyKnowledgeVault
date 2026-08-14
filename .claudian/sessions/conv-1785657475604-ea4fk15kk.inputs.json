@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "conversationId": "conv-1785657475604-ea4fk15kk",
+  "records": [
+    {
+      "schemaVersion": 1,
+      "id": "msg-1785657475863-y7995xh",
+      "userTurnOrdinal": 1,
+      "state": "accepted",
+      "localMessageId": "msg-1785657475601-xmmw99b",
+      "timestamp": 1785657475601,
+      "rawDisplayText": "你好",
+      "canonicalText": "你好",
+      "images": [],
+      "contentDigest": "815b1925f3db319cfc8ef8cad8a91b3f8b512f630d8f82635cb105e93e666c2a",
+      "providerUserMessageId": "0cd573f1-0fc4-4cdc-9a4a-e638e9a134d7",
+      "providerAssistantMessageId": "8f6f15f0-485b-4de6-8de2-eafc8695461e"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "msg-1785663188632-q2hwpf7",
+      "userTurnOrdinal": 2,
+      "state": "accepted",
+      "localMessageId": "msg-1785663188629-k1vb404",
+      "timestamp": 1785663188629,
+      "rawDisplayText": "/claude-obsidian:wiki-mode para模式",
+      "canonicalText": "/claude-obsidian:wiki-mode para模式",
+      "images": [],
+      "contentDigest": "53ab8453c4fc90cc9b94270dadc20cf97b1017087d84a9137cdb57120185e86e",
+      "providerUserMessageId": "4e78204d-034a-4e28-bfb5-450c9ebc575c",
+      "providerAssistantMessageId": "da31e92b-6f48-40a5-9ffb-a7a177de1d56"
+    }
+  ]
+}

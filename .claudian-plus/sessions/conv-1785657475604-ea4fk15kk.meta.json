@@ -1,0 +1,23 @@
+{
+  "id": "conv-1785657475604-ea4fk15kk",
+  "title": "Greet user",
+  "createdAt": 1785657475610,
+  "updatedAt": 1785676390379,
+  "providerId": "claude",
+  "titleGenerationStatus": "success",
+  "lastResponseAt": 1785663284742,
+  "sessionId": "9fe62479-73df-45fb-bd75-4e7a13323704",
+  "selectedModel": "fable",
+  "providerState": {
+    "providerSessionId": "9fe62479-73df-45fb-bd75-4e7a13323704"
+  },
+  "usage": {
+    "model": "fable",
+    "inputTokens": 360,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 64000,
+    "contextWindow": 1000000,
+    "contextTokens": 64360,
+    "percentage": 6
+  }
+}

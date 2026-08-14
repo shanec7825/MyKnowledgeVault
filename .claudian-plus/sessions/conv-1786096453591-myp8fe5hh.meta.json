@@ -1,0 +1,24 @@
+{
+  "id": "conv-1786096453591-myp8fe5hh",
+  "title": "Ingest PostgreSQL relational database tutorial",
+  "createdAt": 1786096453595,
+  "updatedAt": 1786096518373,
+  "providerId": "claude",
+  "titleGenerationStatus": "success",
+  "lastResponseAt": 1786096518373,
+  "sessionId": "c3718158-6599-4620-a438-edd59bf6be74",
+  "selectedModel": "opus",
+  "providerState": {
+    "providerSessionId": "c3718158-6599-4620-a438-edd59bf6be74"
+  },
+  "currentNote": "inbox/PostgreSQL Tutorial.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 3261,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 91520,
+    "contextWindow": 1000000,
+    "contextTokens": 94781,
+    "percentage": 9
+  }
+}

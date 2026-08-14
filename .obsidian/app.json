@@ -1,0 +1,10 @@
+{
+  "userIgnoreFilters": [
+    ".raw/",
+    ".vault-meta/"
+  ],
+  "newFileLocation": "current",
+  "attachmentFolderPath": "./",
+  "promptDelete": false,
+  "alwaysUpdateLinks": true
+}

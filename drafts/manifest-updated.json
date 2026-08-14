@@ -1,0 +1,1360 @@
+{
+  "address_map": {
+    "wiki/concepts/JSON API.md": "c-000002",
+    "wiki/projects/API Styles.md": "c-000009",
+    "wiki/projects/Backend Introduction/Backend Introduction.md": "c-000019",
+    "wiki/projects/What is ML and its types/What is ML and its types.md": "c-000071",
+    "wiki/projects/pythonBasics/pythonBasics.md": "c-000012",
+    "wiki/projects/神经可塑性/神经可塑性.md": "c-000024",
+    "wiki/resources/Absolute Coding of Stimulus Novelty in the Human Substantia Nigra VTA.md": "c-000058",
+    "wiki/resources/Active Learning Increases Student Performance in STEM.md": "c-000045",
+    "wiki/resources/Analogical Problem Solving.md": "c-000040",
+    "wiki/resources/Attention Restoration Theory Systematic Reviews.md": "c-000064",
+    "wiki/resources/Cognitive Reserve.md": "c-000036",
+    "wiki/resources/Context-Dependent Memory in Two Natural Environments.md": "c-000053",
+    "wiki/resources/Critical Period Plasticity in Local Cortical Circuits.md": "c-000032",
+    "wiki/resources/Cultural Borders and Mental Barriers Living Abroad and Creativity.md": "c-000063",
+    "wiki/resources/Effects of Cognitive Training Interventions with Older Adults.md": "c-000038",
+    "wiki/resources/Environmental Context-Dependent Memory A Review and Meta-Analysis.md": "c-000054",
+    "wiki/resources/HTTP 详解.md": "c-000021",
+    "wiki/resources/HTTP3 From A To Z Core Concepts.md": "c-000022",
+    "wiki/resources/HTTP3 核心概念.md": "c-000023",
+    "wiki/resources/How does the Internet Work.md": "c-000017",
+    "wiki/resources/How to Do Great Work.md": "c-000015",
+    "wiki/resources/Human Hippocampal Neurogenesis Drops Sharply in Children.md": "c-000030",
+    "wiki/resources/Human Hippocampal Neurogenesis Persists throughout Aging.md": "c-000031",
+    "wiki/resources/Improving Fluid Intelligence with Training on Working Memory.md": "c-000034",
+    "wiki/resources/Is Noise Always Bad Exploring the Effects of Ambient Noise on Creative Cognition.md": "c-000059",
+    "wiki/resources/JSON API Recommendations.md": "c-000003",
+    "wiki/resources/JSON API Specification (v1.1).md": "c-000005",
+    "wiki/resources/JSON API Specification.md": "c-000006",
+    "wiki/resources/JSON API.md": "c-000004",
+    "wiki/resources/Learn Python in Y Minutes.md": "c-000013",
+    "wiki/resources/Learning Concepts and Categories Is Spacing the Enemy of Induction.md": "c-000048",
+    "wiki/resources/Learning by Analogy Discriminating Between Potential Analogs.md": "c-000050",
+    "wiki/resources/Nature Experience Reduces Rumination and sgPFC Activation.md": "c-000057",
+    "wiki/resources/Navigation-related Structural Change in the Hippocampi of Taxi Drivers.md": "c-000037",
+    "wiki/resources/Neurogenesis in the Adult Human Hippocampus.md": "c-000029",
+    "wiki/resources/No Evidence of Intelligence Improvement after Working Memory Training.md": "c-000035",
+    "wiki/resources/OpenAPI Specification (v3.1).md": "c-000067",
+    "wiki/resources/OpenAPI 规范.md": "c-000068",
+    "wiki/resources/Putting Brain Training to the Test.md": "c-000033",
+    "wiki/resources/Python Syntax Tutorial.md": "c-000010",
+    "wiki/resources/Python Syntax.md": "c-000011",
+    "wiki/resources/Python 快速入门.md": "c-000014",
+    "wiki/resources/RESTful API Design.md": "c-000008",
+    "wiki/resources/Remembering In and Out of Context.md": "c-000055",
+    "wiki/resources/Repeated Testing Produces Superior Transfer of Learning Relative to Repeated Studying.md": "c-000042",
+    "wiki/resources/Rethinking Transfer A Simple Proposal With Multiple Implications.md": "c-000047",
+    "wiki/resources/Schema Induction and Analogical Transfer.md": "c-000041",
+    "wiki/resources/Short and Long-Lasting Consequences of Novelty Deviance and Surprise on Brain and Cognition.md": "c-000062",
+    "wiki/resources/Supporting Learning of Variable Control Effects of Prompting.md": "c-000049",
+    "wiki/resources/Teaching Mathematics by Comparison Analog Visibility as a Double-Edged Sword.md": "c-000051",
+    "wiki/resources/The Cognitive Benefits of Interacting with Nature.md": "c-000056",
+    "wiki/resources/The Restorative Benefits of Nature Toward an Integrative Framework.md": "c-000061",
+    "wiki/resources/The Shuffling of Mathematics Problems Improves Learning.md": "c-000043",
+    "wiki/resources/Training in Self-Explanation and Self-Regulation Strategies.md": "c-000046",
+    "wiki/resources/Transfer of Test-Enhanced Learning Meta-Analysis.md": "c-000044",
+    "wiki/resources/Web API Design Best Practices.md": "c-000007",
+    "wiki/resources/Web 浏览器详解.md": "c-000065",
+    "wiki/resources/What is HTTP.md": "c-000020",
+    "wiki/resources/What is Machine Learning.md": "c-000069",
+    "wiki/resources/What is a Domain Name.md": "c-000072",
+    "wiki/resources/What is a Web Browser Definition, Types, and Features.md": "c-000066",
+    "wiki/resources/Workspace Satisfaction The Privacy-Communication Trade-Off in Open-Plan Offices.md": "c-000060",
+    "wiki/resources/互联网工作原理.md": "c-000018",
+    "wiki/resources/可塑性 脑区与认知域差异.md": "c-000028",
+    "wiki/resources/域名详解.md": "c-000073",
+    "wiki/resources/如何做出伟大工作.md": "c-000016",
+    "wiki/resources/成人脑可塑性.md": "c-000027",
+    "wiki/resources/机器学习.md": "c-000070",
+    "wiki/resources/环境变化与认知.md": "c-000052",
+    "wiki/resources/神经可塑性 生物机制.md": "c-000025",
+    "wiki/resources/神经可塑性 认知科学理论.md": "c-000026",
+    "wiki/resources/认知迁移能力.md": "c-000039",
+    "wiki/sources/JSON API Recommendations.md": "c-000001",
+    "wiki/resources/DNS 详解.md": "c-000074",
+    "wiki/resources/Everything You Need to Know About DNS.md": "c-000075",
+    "wiki/resources/Populating the page how browsers work.md": "c-000076",
+    "wiki/resources/浏览器渲染原理.md": "c-000077",
+    "wiki/resources/PostgreSQL 教程.md": "c-000078",
+    "wiki/resources/PostgreSQL Tutorial.md": "c-000079"
+  },
+  "description": "Ingest delta tracker. Source payloads are create-only.",
+  "sources": {
+    "src-09c1d93a9a8ed6942d12": {
+      "authority": "secondary",
+      "content_kind": "webpage",
+      "independence_key": "tutorialspoint-python-syntax",
+      "ingested_at": "2026-08-02",
+      "locator": "inbox/Python - Syntax.md",
+      "pages_created": [
+        "wiki/resources/Python Syntax.md",
+        "wiki/resources/Python Syntax Tutorial.md"
+      ],
+      "review_status": "active",
+      "sha256": "bc2e72292f3bc6a2c23f943c93d81a3c8ab5d211f813846f28591ee11e6ff8ed",
+      "title": "Python — Syntax"
+    },
+    "src-0dc3bd8a5a3673d639af": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "active-trial-2002",
+      "ingested_at": "2026-08-05",
+      "locator": "https://pubmed.ncbi.nlm.nih.gov/12425704/",
+      "pages_created": [
+        "wiki/resources/Effects of Cognitive Training Interventions with Older Adults.md"
+      ],
+      "review_status": "active",
+      "sha256": "eb3352ec58a39da30f5e2f471c7c3d527d6b41df75cf82b85d7feb022a304467",
+      "title": "Effects of cognitive training interventions with older adults: a randomized controlled trial"
+    },
+    "src-14ae903b48738a5efaf5": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "schomaker-novelty-2015",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1016/j.neubiorev.2015.05.002",
+      "pages_created": [
+        "wiki/resources/Short and Long-Lasting Consequences of Novelty Deviance and Surprise on Brain and Cognition.md"
+      ],
+      "review_status": "active",
+      "sha256": "33da3320d78eab81b4ee367a9456e6c9282f9211030f500c21dae653e070f755",
+      "title": "Short- and long-lasting consequences of novelty, deviance and surprise on brain and cognition"
+    },
+    "src-18a31a1c73c51e63b45c": {
+      "authority": "secondary",
+      "content_kind": "webpage",
+      "independence_key": "csfyi-how-does-internet-work",
+      "ingested_at": "2026-08-05",
+      "locator": "inbox/How does the Internet Work.md",
+      "pages_created": [
+        "wiki/resources/How does the Internet Work.md",
+        "wiki/resources/互联网工作原理.md"
+      ],
+      "review_status": "active",
+      "sha256": "a016d2e293b54d8c8355c48f811c6fbacbd37a29c7d309bf1f973dba43295188",
+      "title": "How does the Internet Work?"
+    },
+    "src-1ad61a47a94f8022d68e": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "lucassen-neurogenesis-2020",
+      "ingested_at": "2026-08-05",
+      "locator": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7515796/",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "9951d7f37229801b0c98526ec473f0f013594067dfab04081b20f52f9f508894",
+      "title": "Limits to human neurogenesis—really?"
+    },
+    "src-1ccc77b306c9b2281faa": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "tulving-encoding-specificity-1973",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1037/h0077022",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "f7064576b2628a5665cd28a38f0f09aab74da911791bba179a0c1c5e7ae236b0",
+      "title": "Encoding specificity and retrieval processes in episodic memory"
+    },
+    "src-1e40439d0bd3af259e20": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "smith-glenberg-varied-1978",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.3758/BF03197465",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "eead417f442c2b5bd71b3d37c56238a281c89280ac3557bce9232a6f40c2e0ac",
+      "title": "Environmental context and human memory"
+    },
+    "src-208afa7b40d72db24f81": {
+      "authority": "official",
+      "content_kind": "webpage",
+      "independence_key": "nia-active-10y-2014",
+      "ingested_at": "2026-08-05",
+      "locator": "https://www.nia.nih.gov/news/cognitive-training-shows-staying-power",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "d36393f3cbbea0336780d082cdd40ae66346b2a5aee063e6233c99c9ff08ae5d",
+      "title": "Cognitive training shows staying power"
+    },
+    "src-22f498b29ead385aa162": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "rohrer-taylor-interleaving-2007",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1007/s11251-007-9031-8",
+      "pages_created": [
+        "wiki/resources/The Shuffling of Mathematics Problems Improves Learning.md"
+      ],
+      "review_status": "active",
+      "sha256": "1f8efaacd3f1b8e8fba90a1f788137822c5dacbd3b1b540fe2d7b91b4459d122",
+      "title": "The shuffling of mathematics problems improves learning"
+    },
+    "src-230f6ba9902b6388cd4e": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "salame-irrelevant-speech-1982",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1016/S0022-5371(82)90021-4",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "ab991d74fc9a6144cccc41fa4e9ff7c2927e9180304df065026acc9082235c83",
+      "title": "Disruption of short-term memory by unattended speech"
+    },
+    "src-267a592ac6ced4826447": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "freeman-active-learning-2014",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1073/pnas.1319030111",
+      "pages_created": [
+        "wiki/resources/Active Learning Increases Student Performance in STEM.md"
+      ],
+      "review_status": "active",
+      "sha256": "f5ecfd99155022aea1176d595101d41c767a6ae9f4a0112b9338f289bdb9be22",
+      "title": "Active learning increases student performance in science, engineering, and mathematics"
+    },
+    "src-26abf810d981884d7f6b": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "berman-nature-2008",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1111/j.1467-9280.2008.02225.x",
+      "pages_created": [
+        "wiki/resources/The Cognitive Benefits of Interacting with Nature.md"
+      ],
+      "review_status": "active",
+      "sha256": "e1e32c3cc92c3a3fdebdb3d7b14f7cb8faa23cb95805de1186f880cd49352689",
+      "title": "The cognitive benefits of interacting with nature"
+    },
+    "src-289592de425a778f781c": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "jn-l2-critical-1989",
+      "ingested_at": "2026-08-05",
+      "locator": "https://pubmed.ncbi.nlm.nih.gov/2920538/",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "b3e4c296333cc07abfa1a7a6464dc78c107eedf09cf01cbf56dd836ddff5b123",
+      "title": "Critical period effects in second language learning: the influence of maturational state on the acquisition of English as a second language"
+    },
+    "src-2dd7698c435fc893adfc": {
+      "authority": "official",
+      "content_kind": "webpage",
+      "independence_key": "jsonapi-recommendations",
+      "ingested_at": "2026-08-02",
+      "locator": "inbox/JSON_API — Recommendations.md",
+      "pages_created": [
+        "wiki/resources/JSON API.md",
+        "wiki/resources/JSON API Recommendations.md"
+      ],
+      "review_status": "active",
+      "sha256": "8318e4b8c84f021e5fecc8e3bc608a56687646616ad52694fc1ceb80c40123bc",
+      "title": "JSON:API — Recommendations"
+    },
+    "src-2e11aee8d7c7efb1f4f8": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "werker-tees-jasa-1984",
+      "ingested_at": "2026-08-05",
+      "locator": "https://pubmed.ncbi.nlm.nih.gov/6747097/",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "66e2c354fb9c56419c022f3e3d017e42071c471b962ee8753c932f26efbea4d2",
+      "title": "Phonemic and phonetic factors in adult cross-language speech perception"
+    },
+    "src-2f3578d9b594113faf3a": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "mehta-noise-creativity-2012",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1086/665048",
+      "pages_created": [
+        "wiki/resources/Is Noise Always Bad Exploring the Effects of Ambient Noise on Creative Cognition.md"
+      ],
+      "review_status": "active",
+      "sha256": "429592421204905c43a616e466769c385d60da94021ca8d89a994566bc9fcb76",
+      "title": "Is noise always bad? Exploring the effects of ambient noise on creative cognition"
+    },
+    "src-2fb7a511d9f966de0204": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "paulgraham-greatwork",
+      "ingested_at": "2026-08-04",
+      "locator": "inbox/READING/How To Do Great Work.md",
+      "pages_created": [
+        "wiki/resources/How to Do Great Work.md",
+        "wiki/resources/如何做出伟大工作.md"
+      ],
+      "review_status": "active",
+      "sha256": "85f6e44c17585f792d466cf780fea33883dd1cee5c1b14954ac841e2e4a02eb2",
+      "title": "How to Do Great Work"
+    },
+    "src-30b04608f726c7033d34": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "stern-cognitive-reserve-2009",
+      "ingested_at": "2026-08-05",
+      "locator": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2739591/",
+      "pages_created": [
+        "wiki/resources/Cognitive Reserve.md"
+      ],
+      "review_status": "active",
+      "sha256": "2282f37836393f49e3792bcf0c351834bf77fcefbbb3af79705696b4803d51c4",
+      "title": "Cognitive reserve"
+    },
+    "src-32b28cfd494ce053b474": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "gentner-analogical-encoding-2003",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1037/0022-0663.95.2.393",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "b758352b97588df88597bc02f639f99c9d358aff2bf510196ae21e76760ff494",
+      "title": "Learning and transfer: A general role for analogical encoding"
+    },
+    "src-34f9b1db8700497c6191": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "bliss-lomo-ltp-1973",
+      "ingested_at": "2026-08-05",
+      "locator": "https://pubmed.ncbi.nlm.nih.gov/4727084/",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "c8b572d3e65a5c8d66ab57825db7b23a193340df24e772ed047595eb3620111e",
+      "title": "Long-lasting potentiation of synaptic transmission in the dentate area of the anaesthetized rabbit following stimulation of the perforant path"
+    },
+    "src-36e16dc15ccc1799f9e4": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "bratman-nature-rumination-2015",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1073/pnas.1510459111",
+      "pages_created": [
+        "wiki/resources/Nature Experience Reduces Rumination and sgPFC Activation.md"
+      ],
+      "review_status": "active",
+      "sha256": "77351c29ca5ab2eedd0c22b003b177ffe1fef93a58922997f2cb3d25639c0a2a",
+      "title": "Nature experience reduces rumination and subgenual prefrontal cortex activation"
+    },
+    "src-3707bb0501e7f8bcca4c": {
+      "authority": "secondary",
+      "content_kind": "webpage",
+      "independence_key": "ibm-think-what-is-machine-learning",
+      "ingested_at": "2026-08-08",
+      "locator": "inbox/What is Machine Learning.md",
+      "pages_created": [
+        "wiki/resources/What is Machine Learning.md",
+        "wiki/resources/机器学习.md",
+        "wiki/projects/What is ML and its types/What is ML and its types.md"
+      ],
+      "review_status": "active",
+      "sha256": "85edac8373dffb4bc91f43f86b9ecfee3744593ac16bf6a8073192c6e3a73546",
+      "title": "What is Machine Learning"
+    },
+    "src-3887af8f9491abbb605c": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "jaeggi-nback-2008",
+      "ingested_at": "2026-08-05",
+      "locator": "https://www.pnas.org/doi/10.1073/pnas.0801268105",
+      "pages_created": [
+        "wiki/resources/Improving Fluid Intelligence with Training on Working Memory.md"
+      ],
+      "review_status": "active",
+      "sha256": "2bec77ceccabff13765d5fb03f771272ae1a760753ad4b1bc6c044ce50770533",
+      "title": "Improving fluid intelligence with training on working memory"
+    },
+    "src-3b54b51d9c206c92f063": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "chi-selfexplain-1989",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1207/s15516709cog1302_1",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "afcc663b7da3e82d7c33fcb71f2b3ad76451c2e8ef72d2146b567079537b6fc9",
+      "title": "Self-explanations: How students study and use examples in learning to solve problems"
+    },
+    "src-3cf93450fba3d25609ae": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "maddux-abroad-creativity-2009",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1037/a0014861",
+      "pages_created": [
+        "wiki/resources/Cultural Borders and Mental Barriers Living Abroad and Creativity.md"
+      ],
+      "review_status": "active",
+      "sha256": "e95d04246bc1352d9b6e9581daecc36af71bb70ecfcf4d9597b7f9bdde48aa57",
+      "title": "Cultural borders and mental barriers: The relationship between living abroad and creativity"
+    },
+    "src-4670fa703a51f2a38c8f": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "sala-gobet-music-2020",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.3758/s13421-020-01060-2",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "52ec780c10fa0ededba28ac350d4ea44797e0605477e4436667ef115acd2159a",
+      "title": "Cognitive and academic benefits of music training with children: A multilevel meta-analysis"
+    },
+    "src-474510acc62c5c7bfbda": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "deutsch-ap-2006",
+      "ingested_at": "2026-08-05",
+      "locator": "https://pubmed.ncbi.nlm.nih.gov/16521731/",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "a943fb9d6526274224d887e22d58d5db0135cfeb1d09cf4f799aaf804299af34",
+      "title": "Absolute pitch among American and Chinese conservatory students: prevalence differences, and evidence for a speech-related critical period"
+    },
+    "src-4bd0f1de017185983d3c": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "maguire-taxi-2000",
+      "ingested_at": "2026-08-05",
+      "locator": "https://pubmed.ncbi.nlm.nih.gov/10716738/",
+      "pages_created": [
+        "wiki/resources/Navigation-related Structural Change in the Hippocampi of Taxi Drivers.md"
+      ],
+      "review_status": "active",
+      "sha256": "4140d18d8b861efaa70f8fd6b069bee683b4003a61f9bd8e11f42439eb85ccb1",
+      "title": "Navigation-related structural change in the hippocampi of taxi drivers"
+    },
+    "src-4f7d2501446a61334ce9": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "kurtz-analogical-bootstrapping-2001",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1207/S15327809JLS1004_2",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "8c75f6458f391d15d29b881f3975074d624ccbd0b41cba7f0c4df96c7b5072ef",
+      "title": "Learning by analogical bootstrapping"
+    },
+    "src-5515a77775dea082f40a": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "moncada-behavioral-tagging-2007",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1523/JNEUROSCI.1083-07.2007",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "9830ea530140716f95e2c33171b00909dc1303ad87415e2d7bd8bab14781795e",
+      "title": "Induction of long-term memory by exposure to novelty requires protein synthesis"
+    },
+    "src-560101ca1fc65a2488ae": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "pejtersen-sick-leave-2011",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.5271/sjweh.3167",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "c5af4d9d5f579a0deb4f4d3049b995238f2abdde1f794d165b91cbbdc2788385",
+      "title": "Sickness absence associated with shared and open-plan offices"
+    },
+    "src-577a2771df8c03796aaa": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "tran-rohrer-pashler-2015",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.3758/s13423-014-0695-1",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "2df0a3c454d99b830b20ff1fe65ce61c0b4e9d54ced8b1dd3cecafbc60d23eed",
+      "title": "The testing effect is alive and well with complex materials"
+    },
+    "src-5c5efd2de7ca800dab2c": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "boldrini-neurogenesis-2018",
+      "ingested_at": "2026-08-05",
+      "locator": "https://pubmed.ncbi.nlm.nih.gov/29625071/",
+      "pages_created": [
+        "wiki/resources/Human Hippocampal Neurogenesis Persists throughout Aging.md"
+      ],
+      "review_status": "active",
+      "sha256": "519bec685996f1af127c63208c3911e697371c2aa366273490c3d0f0013025c9",
+      "title": "Human hippocampal neurogenesis persists throughout aging"
+    },
+    "src-5e05c2d5b2b5586f3de0": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "sakakibara-ap-2004",
+      "ingested_at": "2026-08-05",
+      "locator": "https://www.jstage.jst.go.jp/article/jjep1953/52/4/52_485/_article/-char/en",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "3e5b59b040e2d20a8d91976412b6b5bf95c62fcd89c6d345c6c11a924a116244",
+      "title": "Why Are People Able to Acquire Absolute Pitch Only During Early Childhood?"
+    },
+    "src-5e82369f9494d3234c23": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "kuhl-language-2010",
+      "ingested_at": "2026-08-05",
+      "locator": "https://pubmed.ncbi.nlm.nih.gov/20826304/",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "fae1caa132262ce4f277eff8da646264ddffdd06d3fbec7d7c99c5039bd1eef7",
+      "title": "Brain mechanisms in early language acquisition"
+    },
+    "src-5ee63ad845c78dbd9e5c": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "owen-brain-training-2010",
+      "ingested_at": "2026-08-05",
+      "locator": "https://www.nature.com/articles/nature09042",
+      "pages_created": [
+        "wiki/resources/Putting Brain Training to the Test.md"
+      ],
+      "review_status": "active",
+      "sha256": "0ff57dbb12fc904c485da68763877eff0849073eb8bd82806da07e304c02ad69",
+      "title": "Putting brain training to the test"
+    },
+    "src-61e776e0e2166fcbb198": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "ballarini-behavioral-tagging-2009",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1073/pnas.0907078106",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "dbe13008cc0a2468a50b8d64f4e3c4ce77a1b51c1a2a47e26ff2f0aef767e00f",
+      "title": "Behavioral tagging is a general mechanism of long-term memory formation"
+    },
+    "src-620188ecffe5dcb07662": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "singley-anderson-1989",
+      "ingested_at": "2026-08-06",
+      "locator": "https://www.hup.harvard.edu/books/9780674903401",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "2e1902a56e3a6b6c9eb20183b30341f3abb36164467dc3dd63fa65367c3440b6",
+      "title": "The transfer of cognitive skill"
+    },
+    "src-62e61f2eaefd496be3bc": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "porras-temperature-meta-2021",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1016/j.buildenv.2021.108037",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "c65d5560247f470b8c754e1f8be9020d67048559581a62169b53ddffa431cbf6",
+      "title": "Meta-analysis of 35 studies examining the effect of indoor temperature on office work performance"
+    },
+    "src-642854a6e0721e6b87b1": {
+      "authority": "official",
+      "content_kind": "webpage",
+      "independence_key": "jsonapi-spec-v1.1",
+      "ingested_at": "2026-08-02",
+      "locator": "inbox/JSONAPI — Latest Specification (v1.1).md",
+      "pages_created": [
+        "wiki/resources/JSON API Specification.md",
+        "wiki/resources/JSON API Specification (v1.1).md"
+      ],
+      "review_status": "active",
+      "sha256": "002613f7a74521d0adf68363d5f3b8c7664718cb0aa12a931ae36a814a3ff310",
+      "title": "JSON:API — Latest Specification (v1.1)"
+    },
+    "src-6b534100ee3fbc45ad50": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "bunzeck-novelty-2006",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1016/j.neuron.2006.06.021",
+      "pages_created": [
+        "wiki/resources/Absolute Coding of Stimulus Novelty in the Human Substantia Nigra VTA.md"
+      ],
+      "review_status": "active",
+      "sha256": "62fb829f0b3acaa5e8c1ef8764458244a666728880246b8faaf872b8777a14da",
+      "title": "Absolute coding of stimulus novelty in the human substantia nigra/VTA"
+    },
+    "src-6c022cab437c2ec94b01": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "pennington-transfer-1995",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1006/cogp.1995.1001",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "7d3dc2ebdf87e0c6c6412d0bc3d05e4cd894319898442d5060cc50b919f5f0d7",
+      "title": "Transfer between similar programming languages"
+    },
+    "src-71cbf0bc050c2915f899": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "hmelo-silver-response-2007",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1080/00461520701263368",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "7651b3affbe13245f21cc128ce4f9f58663472e2aa9373c56b5dcce130c1002e",
+      "title": "Scaffolding and achievement in problem-based and inquiry learning: A response to Kirschner, Sweller, and Clark (2006)"
+    },
+    "src-7a0924d11f40c0a5e7ef": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "robinmarx-http3-core-concepts",
+      "ingested_at": "2026-08-05",
+      "locator": "inbox/HTTP3 From A To Z Core Concepts.md",
+      "pages_created": [
+        "wiki/resources/HTTP3 From A To Z Core Concepts.md",
+        "wiki/resources/HTTP3 核心概念.md"
+      ],
+      "review_status": "active",
+      "sha256": "b6f2dd42b6c924de603f8d4e8c0d761e97873af6fd8e078bf96815ab7760ba2c",
+      "title": "HTTP/3 From A To Z: Core Concepts"
+    },
+    "src-8158f05471e705570cd4": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "li-dichoptic-2013",
+      "ingested_at": "2026-08-05",
+      "locator": "https://pubmed.ncbi.nlm.nih.gov/23618662/",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "505af845bfbca75e9e1c7bf132dbcd9064ae17e57ceb7a66275ef31a3b52253a",
+      "title": "Dichoptic training enables the adult amblyopic brain to learn"
+    },
+    "src-833cd26e32e7a72c9e5f": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "smith-vela-meta-2001",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.3758/BF03196157",
+      "pages_created": [
+        "wiki/resources/Environmental Context-Dependent Memory A Review and Meta-Analysis.md"
+      ],
+      "review_status": "active",
+      "sha256": "ad4fa69687d6cf4db13748d86468e4430951515139e75279fb49e9180a676f45",
+      "title": "Environmental context-dependent memory: A review and meta-analysis"
+    },
+    "src-8570be9d3dffaf4ef90f": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "bielaczyc-selfexplain-1995",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1207/s1532690xci1302_3",
+      "pages_created": [
+        "wiki/resources/Training in Self-Explanation and Self-Regulation Strategies.md"
+      ],
+      "review_status": "active",
+      "sha256": "6e578daa7a3c748fe03751108d38084ac4ebb411bd5fa327d06b43d63432bd1f",
+      "title": "Training in self-explanation and self-regulation strategies"
+    },
+    "src-8af08cd9f6c70f927856": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "hebbian-hag-2025",
+      "ingested_at": "2026-08-05",
+      "locator": "https://www.nature.com/articles/s41467-025-67137-1",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "c2e94d38886518406a0c5538212ba2a295d4527f3620f6d3ae3b9ede3561e57e",
+      "title": "Reshaping reservoirs with unsupervised Hebbian adaptation"
+    },
+    "src-8b4d033cb6693cafef70": {
+      "authority": "official",
+      "content_kind": "webpage",
+      "independence_key": "jsonapi-recommendations",
+      "ingested_at": "2026-08-02",
+      "locator": "inbox/JSON_API — Recommendations 1.md",
+      "pages_created": [
+        "wiki/resources/JSON API.md",
+        "wiki/resources/JSON API Recommendations.md"
+      ],
+      "review_status": "active",
+      "sha256": "26209690aae9b07aa2b299747fb6b20be210b40b1b3633c4eea0ce3572591a0e",
+      "title": "JSON:API — Recommendations（中文）"
+    },
+    "src-8f2f1bcb427ab23f0708": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "astle-amblyopia-2011",
+      "ingested_at": "2026-08-05",
+      "locator": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3428831/",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "5e13018b4899ced710cfe515a0d27a817e43922fbce2461313a04ddadf17df65",
+      "title": "Can perceptual learning be used to treat amblyopia beyond the critical period of visual development?"
+    },
+    "src-95276df4b968c69f7e7a": {
+      "authority": "official",
+      "content_kind": "webpage",
+      "independence_key": "aps-practice-release-2014",
+      "ingested_at": "2026-08-05",
+      "locator": "https://www.psychologicalscience.org/news/releases/becoming-an-expert-takes-more-than-practice.html",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "5e532ab315470226775f01b9561fd5ea9c72a61a89dbd2400f497783549a4fef",
+      "title": "Becoming an Expert Takes More Than Practice"
+    },
+    "src-96a4c306ec99b418ecc4": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "bransford-schwartz-pfl-1999",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.3102/0091732X024001061",
+      "pages_created": [
+        "wiki/resources/Rethinking Transfer A Simple Proposal With Multiple Implications.md"
+      ],
+      "review_status": "active",
+      "sha256": "2c55a94999a866d46977f7f4f8c61d8718e0ff6418fa00935a10d3a43b7b3c7a",
+      "title": "Rethinking transfer: A simple proposal with multiple implications"
+    },
+    "src-9a0fb6b555dadabd348b": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "melby-wm-meta-2013",
+      "ingested_at": "2026-08-05",
+      "locator": "https://pubmed.ncbi.nlm.nih.gov/22612437/",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "3b32cac73b53608b6e853bbea0ea64269b493c64ad3f7294c6f10fd489392917",
+      "title": "Is working memory training effective? A meta-analytic review"
+    },
+    "src-9bab17699ee522e5dd36": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "nicoll-ltp-review-2013",
+      "ingested_at": "2026-08-05",
+      "locator": "https://pubmed.ncbi.nlm.nih.gov/23439383/",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "6df01135f3840e895256443e0a60ff6ec6461a3e615cbb5aebdf66efeb94183c",
+      "title": "Long-term potentiation: peeling the onion"
+    },
+    "src-9cd17cf192de7846ecf4": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "htp-l2-2018",
+      "ingested_at": "2026-08-05",
+      "locator": "https://pubmed.ncbi.nlm.nih.gov/29729947/",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "b2cf7a00c1c3abf96f79f6ee17828fc2460257517e62d46d27d009e3359675fe",
+      "title": "A critical period for second language acquisition: Evidence from 2/3 million English speakers"
+    },
+    "src-9dcefef07b1328448f7c": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "park-forest-bathing-2010",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1007/s12199-009-0086-9",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "770cd0dc8ee9af4732e7c3c929ab20dbd12b155e96a68b9cf62602de9971600c",
+      "title": "The physiological effects of Shinrin-yoku"
+    },
+    "src-9e417d18b8353afec34b": {
+      "authority": "official",
+      "content_kind": "webpage",
+      "independence_key": "openapi-spec-v3.1",
+      "ingested_at": "2026-08-07",
+      "locator": "inbox/OpenAPI Specification - Version 3.1.0.md",
+      "pages_created": [
+        "wiki/resources/OpenAPI Specification (v3.1).md",
+        "wiki/resources/OpenAPI 规范.md"
+      ],
+      "review_status": "active",
+      "sha256": "7ab245829075b099ce52b8b82eec4d83f9a9dfbbcbb52a98b171e663f7311931",
+      "title": "OpenAPI Specification — Version 3.1.0"
+    },
+    "src-a041bd9d2ad7547dbcdd": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "begolli-richland-2016",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1037/edu0000067",
+      "pages_created": [
+        "wiki/resources/Teaching Mathematics by Comparison Analog Visibility as a Double-Edged Sword.md"
+      ],
+      "review_status": "active",
+      "sha256": "b812379fdda1a54d25a19b09b85b0bf3008b295c3c1e30c90a8275464f3b9fcc",
+      "title": "Teaching mathematics by comparison: Analog visibility as a double-edged sword"
+    },
+    "src-a23115f4c019d7d8e980": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "lin-lehman-prompting-1999",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1002/(SICI)1098-2736(199909)36:7%3C837::AID-TEA6%3E3.0.CO;2-U",
+      "pages_created": [
+        "wiki/resources/Supporting Learning of Variable Control Effects of Prompting.md"
+      ],
+      "review_status": "active",
+      "sha256": "15000eaa5d74e49752c43cc830c159bda2935b37e9a981f80504743a7770e608",
+      "title": "Supporting learning of variable control: Effects of prompting"
+    },
+    "src-a2b26871de25e7f5d478": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "lehtonen-bilingual-2018",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1037/bul0000142",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "3e70c741edcf2701359e5db34bed8df7b20c806164468a21deafc79655a98a4a",
+      "title": "Is bilingualism associated with enhanced executive functioning in adults? A meta-analytic review"
+    },
+    "src-a72480ff68c6a636d8ce": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "sorrells-neurogenesis-2018",
+      "ingested_at": "2026-08-05",
+      "locator": "https://pubmed.ncbi.nlm.nih.gov/29513649/",
+      "pages_created": [
+        "wiki/resources/Human Hippocampal Neurogenesis Drops Sharply in Children.md"
+      ],
+      "review_status": "active",
+      "sha256": "65df129c1e10da3e69c60873f171c25d34a803e5e33899b8fc067385f1b868e2",
+      "title": "Human hippocampal neurogenesis drops sharply in children to undetectable levels in adults"
+    },
+    "src-aa04f50425b1187f1b6b": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "smith-room-change-1979",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1037/0278-7393.5.5.460",
+      "pages_created": [
+        "wiki/resources/Remembering In and Out of Context.md"
+      ],
+      "review_status": "active",
+      "sha256": "b950bd2a2b93c1e405df8ec363751fb63cee7aa882ebda6d8c771eefee04777d",
+      "title": "Remembering in and out of context"
+    },
+    "src-abe8e84ebf986af76074": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "thorndike-woodworth-1901",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1037/h0071363",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "1027248747ac9aaff74f3e53df0e995bb1ecdfe93b1747b10614c66c1d7c597c",
+      "title": "The influence of improvement in one mental function upon the efficiency of other functions"
+    },
+    "src-ac09891af085a490c07b": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "hg-peaks-2015",
+      "ingested_at": "2026-08-05",
+      "locator": "https://pubmed.ncbi.nlm.nih.gov/25770099/",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "4d3039ea8b5c6e40e832e50fce7b444ec7f29c61d4499f58f956a37d04a18fb6",
+      "title": "When does cognitive functioning peak? The asynchronous rise and fall of different cognitive abilities across the life span"
+    },
+    "src-ac1717d7716e35113383": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "eriksson-neurogenesis-1998",
+      "ingested_at": "2026-08-05",
+      "locator": "https://pubmed.ncbi.nlm.nih.gov/9809557/",
+      "pages_created": [
+        "wiki/resources/Neurogenesis in the Adult Human Hippocampus.md"
+      ],
+      "review_status": "active",
+      "sha256": "4bc3b5c84cdadbe774460738a541e1ec0dc5f0aeacd341710b208ec781e50986",
+      "title": "Neurogenesis in the adult human hippocampus"
+    },
+    "src-ad1b9e8db329dc0949cf": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "orata-identical-elements-1928",
+      "ingested_at": "2026-08-06",
+      "locator": "https://catalog.hathitrust.org/Record/006273792",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "81375b02349143bee8bd309dd0e33f43a73e75a48898112bf981148d9a213941",
+      "title": "The theory of identical elements"
+    },
+    "src-ae31b5b622bdabe84a31": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "art-systematic-reviews",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1080/10937404.2016.1196155",
+      "pages_created": [
+        "wiki/resources/Attention Restoration Theory Systematic Reviews.md"
+      ],
+      "review_status": "active",
+      "sha256": "8bbf53767f758f275ce9334593492036857977962bec43e0c8c4a1e0ce712ab4",
+      "title": "Attention Restoration Theory: systematic reviews (Ohly 2016; Stevenson 2018)"
+    },
+    "src-af38145ee82837c40c50": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "kornell-bjork-spacing-2008",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1111/j.1467-9280.2008.02127.x",
+      "pages_created": [
+        "wiki/resources/Learning Concepts and Categories Is Spacing the Enemy of Induction.md"
+      ],
+      "review_status": "active",
+      "sha256": "ae31ede32f5d506715c6ad7d8fa117d8bd57a3a0e35ffc3d285bd249abc0ef5d",
+      "title": "Learning concepts and categories: Is spacing the 'enemy of induction'?"
+    },
+    "src-b268bd8f5af8f299ab12": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "butler-testing-transfer-2010",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1037/a0019902",
+      "pages_created": [
+        "wiki/resources/Repeated Testing Produces Superior Transfer of Learning Relative to Repeated Studying.md"
+      ],
+      "review_status": "active",
+      "sha256": "bec538ae0e2bb10b5b8b04d95b1ab6f0c3103efce5fc09ede18f5f4e47d921e2",
+      "title": "Repeated testing produces superior transfer of learning relative to repeated studying"
+    },
+    "src-b2eae20359c35486e05f": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "lomo-retrospective-2024",
+      "ingested_at": "2026-08-05",
+      "locator": "https://onlinelibrary.wiley.com/doi/full/10.1002/hipo.23664",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "267ca3c0e1e2588e239dbfcd452c9aa2f5f8c9da6d565da1093f74f313649d49",
+      "title": "Long-term potentiation: The accidental discovery"
+    },
+    "src-b5190c1e922f78c9ba28": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "draganski-juggling-2004",
+      "ingested_at": "2026-08-05",
+      "locator": "https://pubmed.ncbi.nlm.nih.gov/14737157/",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "039c053b00b8291125b0b119c00e8ff90eeafdee37c70c80d34444e6cb294ad6",
+      "title": "Neuroplasticity: changes in grey matter induced by training"
+    },
+    "src-b64eb3f9cdf6104f1ebc": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "merzenich-cortical-map-1984",
+      "ingested_at": "2026-08-05",
+      "locator": "https://pubmed.ncbi.nlm.nih.gov/6725633/",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "1711682eb737f9f1d24056f14ad5a37c6b419e45b5f0955d4d4cf8455c1ea5a3",
+      "title": "Somatosensory cortical map changes following digit amputation in adult monkeys"
+    },
+    "src-b770b4bcdd0c89783a46": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "stickgold-walker-sleep-2013",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1038/nn.3308",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "0d4e16555eeb357936f211e016cdb1926cb181b88d385ce14c370146bfe96709",
+      "title": "Sleep-dependent memory triage: evolving generalization through selective processing"
+    },
+    "src-b8168df755a7132fa906": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "spreng-aging-2019",
+      "ingested_at": "2026-08-05",
+      "locator": "https://pubmed.ncbi.nlm.nih.gov/31013206/",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "912f16d00d22f2b3cc74228dcb9251676b77c0166f0fd3d3cb7239716ad6f6cb",
+      "title": "The shifting architecture of cognition and brain function in older adulthood"
+    },
+    "src-b83f0474abdd7c25a8c4": {
+      "authority": "official",
+      "content_kind": "webpage",
+      "independence_key": "cloudflare-http-glossary",
+      "ingested_at": "2026-08-05",
+      "locator": "inbox/What is HTTP.md",
+      "pages_created": [
+        "wiki/resources/What is HTTP.md",
+        "wiki/resources/HTTP 详解.md"
+      ],
+      "review_status": "active",
+      "sha256": "3e7eba4359f644fd8b7d8c48c68accba5a054840f723a261cca11d2508528a4c",
+      "title": "What is HTTP?"
+    },
+    "src-bbf3cf051c22801b21df": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "munte-musician-2002",
+      "ingested_at": "2026-08-05",
+      "locator": "https://pubmed.ncbi.nlm.nih.gov/12042882/",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "a49ef098595dfef9875b5ce0e34c092abc58308564b711de239f0767f76d3ec9",
+      "title": "The musician's brain as a model of neuroplasticity"
+    },
+    "src-c095394e1c78c26d37c3": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "gick-holyoak-1983",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1016/0010-0285(83)90002-6",
+      "pages_created": [
+        "wiki/resources/Schema Induction and Analogical Transfer.md"
+      ],
+      "review_status": "active",
+      "sha256": "8a7e30f99530469fc9ca000f6c4cbd6407e13633487f9e15722d3ed76d4ff547",
+      "title": "Schema induction and analogical transfer"
+    },
+    "src-c2864f0d6ab01c98717c": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "macnamara-practice-meta-2014",
+      "ingested_at": "2026-08-05",
+      "locator": "https://doi.org/10.1177/0956797614535810",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "00dd9ba3ffb8043c37ad8b8ad28431b6d64e5967a876c62dc372fbb5090d9f20",
+      "title": "Deliberate practice and performance in music, games, sports, education, and professions: a meta-analysis"
+    },
+    "src-c5924290e46b1731c6e3": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "richland-analogy-2010",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1016/j.cedpsych.2009.09.001",
+      "pages_created": [
+        "wiki/resources/Learning by Analogy Discriminating Between Potential Analogs.md"
+      ],
+      "review_status": "active",
+      "sha256": "5e85fd71b96deeac0db9997489041e186f51408fdf3eedeed9047c05442490f9",
+      "title": "Learning by analogy: Discriminating between potential analogs"
+    },
+    "src-c80eeb03a4d0c83882ff": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "kirschner-sweller-clark-2006",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1207/s15326985ep4102_1",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "34082f57fd3f5499a1cb99392738dd52c148e32c71c5f9432d00effec1ebd116",
+      "title": "Why minimal guidance during instruction does not work"
+    },
+    "src-c9c880b308ff93bee807": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "werker-tees-1984",
+      "ingested_at": "2026-08-05",
+      "locator": "https://www.sciencedirect.com/science/article/abs/pii/0163638384800223",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "4234d590d4f83a50cde2a51aba86cbe9f7474cc0fafdf5af912c35f930696eba",
+      "title": "Cross-language speech perception: Evidence for perceptual reorganization during the first year of life"
+    },
+    "src-caa7c86f054a61cd0300": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "imundo-varied-retrieval-2020",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1037/xap0000321",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "db6f57e7fb6fc7dcd8bbaa6cb6a58d42ba9f98adc78b191c6cc00495fa3d941a",
+      "title": "Varied context in retrieval practice"
+    },
+    "src-cc1a0d0d4d4aad7bd3de": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "hensch-critical-period-2005",
+      "ingested_at": "2026-08-05",
+      "locator": "https://www.nature.com/articles/nrn1787",
+      "pages_created": [
+        "wiki/resources/Critical Period Plasticity in Local Cortical Circuits.md"
+      ],
+      "review_status": "active",
+      "sha256": "2d07473afa2f30980555f2f602f2e63e8ca24a99ca1b54e875ed88421aab3477",
+      "title": "Critical period plasticity in local cortical circuits"
+    },
+    "src-d2e56f497369df5054b5": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "pan-rickard-meta-2018",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1037/bul0000151",
+      "pages_created": [
+        "wiki/resources/Transfer of Test-Enhanced Learning Meta-Analysis.md"
+      ],
+      "review_status": "active",
+      "sha256": "3f66b4852b5809200952744417f3cb0dcfbe09de667fb9b47c502990b045124c",
+      "title": "Transfer of test-enhanced learning: Meta-analytic review and synthesis"
+    },
+    "src-d61e131298e8f17f6f77": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "perkins-salomon-1988",
+      "ingested_at": "2026-08-06",
+      "locator": "https://www.ascd.org/el/articles/teaching-for-transfer",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "6bcb614a9b5f71502749900141de1255f160a17b826b1356afabc24588014bfe",
+      "title": "Teaching for transfer"
+    },
+    "src-da88aea4c34ac810e0b4": {
+      "authority": "secondary",
+      "content_kind": "webpage",
+      "independence_key": "ramotion-what-is-web-browser",
+      "ingested_at": "2026-08-07",
+      "locator": "inbox/What is a Web Browser Definition, Types, and Features.md",
+      "pages_created": [
+        "wiki/resources/Web 浏览器详解.md",
+        "wiki/resources/What is a Web Browser Definition, Types, and Features.md"
+      ],
+      "review_status": "active",
+      "sha256": "7285597451f7832e3cc4360404c8409d915b5bfbca68620c5db0849f5f2f73c0",
+      "title": "What is a Web Browser: Definition, Types, and Features"
+    },
+    "src-db5fc7055d41147f87b8": {
+      "authority": "community",
+      "content_kind": "webpage",
+      "independence_key": "learnxinyminutes-python",
+      "ingested_at": "2026-08-03",
+      "locator": "inbox/Learn Python in Y Minutes.md",
+      "pages_created": [
+        "wiki/resources/Learn Python in Y Minutes.md",
+        "wiki/resources/Python 快速入门.md"
+      ],
+      "review_status": "active",
+      "sha256": "45542a97e26ac14861a46feea03dbdee2faa2e0ebbca7a68d01ed84e2b538867",
+      "title": "Learn Python in Y Minutes"
+    },
+    "src-de93a0181a69e8dba838": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "kaplan-art-1995",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1016/0272-4944(95)90001-2",
+      "pages_created": [
+        "wiki/resources/The Restorative Benefits of Nature Toward an Integrative Framework.md"
+      ],
+      "review_status": "active",
+      "sha256": "c332e0d4642124566bee6982694cdae948b359fd7284932d93ec40e6ae8ae21e",
+      "title": "The restorative benefits of nature: Toward an integrative framework"
+    },
+    "src-df46df3399e2bef1fca8": {
+      "authority": "official",
+      "content_kind": "webpage",
+      "independence_key": "jsonapi-spec-v1.1",
+      "ingested_at": "2026-08-02",
+      "locator": "inbox/JSONAPI — Latest Specification (v1.1).md",
+      "pages_created": [
+        "wiki/resources/JSON API Specification.md",
+        "wiki/resources/JSON API Specification (v1.1).md"
+      ],
+      "review_status": "active",
+      "sha256": "7bb70b6ff50d0945c8cbf1fb56360c502d744fcc4b6d88963d62a28581e224f2",
+      "title": "JSON:API — Latest Specification (v1.1)"
+    },
+    "src-e0efb44a8e60bd3da92f": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "gentner-structure-mapping-1983",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1207/s15516709cog0702_3",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "a885006ed225d13c80417bb84996fb3b32308eb90f292d8ab40784b609aea130",
+      "title": "Structure-mapping: A theoretical framework for analogy"
+    },
+    "src-e1cf18fa3018c0ffa653": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "gick-holyoak-1980",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1016/0010-0285(80)90013-4",
+      "pages_created": [
+        "wiki/resources/Analogical Problem Solving.md"
+      ],
+      "review_status": "active",
+      "sha256": "25d1cd32a6eff16bb6d7e4185fe7e60666d0d42f08d0236e8c3d397bb98fa9ef",
+      "title": "Analogical problem solving"
+    },
+    "src-e2c9afe93371816dbf64": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "moreno-neurogenesis-2019",
+      "ingested_at": "2026-08-05",
+      "locator": "https://pubmed.ncbi.nlm.nih.gov/30911133/",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "89f9723088dcd75d294ead71f4d0d48cc6037c61207d62a515a9088f92f3cd78",
+      "title": "Adult hippocampal neurogenesis is abundant in neurologically healthy subjects and drops sharply in patients with Alzheimer's disease"
+    },
+    "src-e46b5b8ed577ef238293": {
+      "authority": "official",
+      "content_kind": "webpage",
+      "independence_key": "iom-cognitive-aging-2015",
+      "ingested_at": "2026-08-05",
+      "locator": "https://nap.nationalacademies.org/read/21693/chapter/8",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "9ebcf88923360436811f2764b057cfcdcf30b3b609ea5e88e1505a7f6d04ac00",
+      "title": "Cognitive Aging: Progress in Understanding and Opportunities for Action"
+    },
+    "src-e58176b9cfc16f1bf086": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "murre-godden-replication-2021",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1098/rsos.200724",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "033863aa947f726478efa4e9eeb673898aa9ae17552ec82939e26ebf18ad1370",
+      "title": "The Godden and Baddeley (1975) experiment on context-dependent memory: a replication"
+    },
+    "src-e649971407a0c4c67296": {
+      "authority": "official",
+      "content_kind": "webpage",
+      "independence_key": "mdn-what-is-a-domain-name",
+      "ingested_at": "2026-08-11",
+      "locator": "inbox/What is a Domain Name.md",
+      "pages_created": [
+        "wiki/resources/What is a Domain Name.md",
+        "wiki/resources/域名详解.md"
+      ],
+      "review_status": "active",
+      "sha256": "0473236edd4831acc8e980660a60f90145be9e38d8e9bd962993a1b22c4cc070",
+      "title": "What is a Domain Name?"
+    },
+    "src-e8382e7260603f1cd7fa": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "redick-nback-2013",
+      "ingested_at": "2026-08-05",
+      "locator": "https://pubmed.ncbi.nlm.nih.gov/22708717/",
+      "pages_created": [
+        "wiki/resources/No Evidence of Intelligence Improvement after Working Memory Training.md"
+      ],
+      "review_status": "active",
+      "sha256": "ae588d803ae9a0f0d42817d060aabcd38f7c4e0945b48a2f94e56cc56241dc9c",
+      "title": "No evidence of intelligence improvement after working memory training: a randomized, placebo-controlled study"
+    },
+    "src-e982c4410a014137e1da": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "sharma-ci-2002",
+      "ingested_at": "2026-08-05",
+      "locator": "https://pubmed.ncbi.nlm.nih.gov/12476090/",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "eefb885f6b60792f7aa466d9450cc6baa40024de3968e199c2a1a14cff88c880",
+      "title": "A sensitive period for the development of the central auditory system in children with cochlear implants: implications for age of implantation"
+    },
+    "src-e9fef744a1c563d1a4e9": {
+      "authority": "official",
+      "content_kind": "webpage",
+      "independence_key": "azure-api-design-best-practices",
+      "ingested_at": "2026-08-02",
+      "locator": "inbox/Web API Design Best Practices - Azure Architecture Center.md",
+      "pages_created": [
+        "wiki/resources/RESTful API Design.md",
+        "wiki/resources/Web API Design Best Practices.md"
+      ],
+      "review_status": "active",
+      "sha256": "2bcc4abd7c010533f8748fce7e2ae49816afa42dd0171abe3ebbbf19458ff1c5",
+      "title": "Web API Design Best Practices — Azure Architecture Center"
+    },
+    "src-f0deb6fc7180071a1a7c": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "werker-2024-retrospective",
+      "ingested_at": "2026-08-05",
+      "locator": "https://pubmed.ncbi.nlm.nih.gov/38569416/",
+      "pages_created": [],
+      "review_status": "active",
+      "sha256": "163879f893f86c0f6f0d98d12d956a9f226a2b920ae491ecd809ef2fb9b973ca",
+      "title": "Phonetic perceptual reorganization across the first year of life: Looking back"
+    },
+    "src-f1c823060badf9587279": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "kim-openplan-2013",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1016/j.jenvp.2013.06.007",
+      "pages_created": [
+        "wiki/resources/Workspace Satisfaction The Privacy-Communication Trade-Off in Open-Plan Offices.md"
+      ],
+      "review_status": "active",
+      "sha256": "692a9b6fd61497fcbf805df4f47ee1b424ef06df4a740a12bf0c398ded8a7989",
+      "title": "Workspace satisfaction: The privacy-communication trade-off in open-plan offices"
+    },
+    "src-f37615ad24842fe68106": {
+      "authority": "primary",
+      "content_kind": "webpage",
+      "independence_key": "godden-baddeley-diving-1975",
+      "ingested_at": "2026-08-06",
+      "locator": "https://doi.org/10.1111/j.2044-8295.1975.tb01468.x",
+      "pages_created": [
+        "wiki/resources/Context-Dependent Memory in Two Natural Environments.md"
+      ],
+      "review_status": "active",
+      "sha256": "5e07d982dc7d3af5f13f65cc6838f50653b6f46f0bd2972d792ee7e2647a4d09",
+      "title": "Context-dependent memory in two natural environments"
+    },
+    "src-46f90dd1a86d6fea2c2d": {
+      "authority": "secondary",
+      "content_kind": "webpage",
+      "content_sha256": "46f90dd1a86d6fea2c2d91d4e942861658f7478e0ae583190eacb14f2be07c6b",
+      "independence_key": "csfyi-everything-about-dns",
+      "ingested_at": "2026-08-11",
+      "origin": {
+        "kind": "file",
+        "locator": "inbox/Everything You Need to Know About DNS.md"
+      },
+      "pages": [
+        "wiki/resources/DNS 详解.md",
+        "wiki/resources/Everything You Need to Know About DNS.md"
+      ],
+      "refresh_due": "2027-02-11",
+      "retrieved_at": "2026-08-11",
+      "review_status": "active",
+      "supersedes": null,
+      "title": "Everything You Need to Know About DNS"
+    },
+    "src-efaff655c94e6a54": {
+      "authority": "official",
+      "content_kind": "webpage",
+      "independence_key": "mdn-how-browsers-work",
+      "ingested_at": "2026-08-11",
+      "locator": "inbox/Populating the page how browsers work.md",
+      "pages_created": [
+        "wiki/resources/Populating the page how browsers work.md",
+        "wiki/resources/浏览器渲染原理.md"
+      ],
+      "review_status": "active",
+      "sha256": "8be743edf12e15fc0dfc16d55bfbcf3c117d6b3a420a8599af845df0c15994c1",
+      "title": "Populating the page: how browsers work"
+    },
+    "src-5f7e8e4898bda5d87c0ea": {
+      "authority": "secondary",
+      "content_kind": "webpage",
+      "independence_key": "neon-postgresql-tutorial",
+      "ingested_at": "2026-08-11",
+      "locator": "inbox/PostgreSQL Tutorial.md",
+      "pages_created": [
+        "wiki/resources/PostgreSQL 教程.md",
+        "wiki/resources/PostgreSQL Tutorial.md"
+      ],
+      "review_status": "active",
+      "sha256": "5f7e8e4898bda5d87c0ea0425857fd9dcf17b916bb4a9f2fa72aa52e2af649f8",
+      "title": "PostgreSQL Tutorial"
+    }
+  },
+  "version": 1
+}
