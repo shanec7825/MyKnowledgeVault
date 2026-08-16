@@ -1,3 +1,6 @@
 {
-  "shellPath": "C:\\msys64\\usr\\bin\\bash.exe"
+  "shellPath": "C:\\msys64\\usr\\bin\\bash.exe",
+  "enabledPlugins": {
+    "claude-obsidian@agricidaniel-claude-obsidian": true
+  }
 }

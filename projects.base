@@ -1,6 +1,70 @@
+filters: type == "project"
+formulas:
+  days_since_updated: if(updated, (now() - date(updated)).days.round(0), "")
+  status_icon: if(status == "completed", "✅", if(status == "developing", "🚧", if(status == "active", "🟢", "•")))
+  related_count: if(related, related.length, 0)
+  sources_count: if(sources, sources.length, 0)
+properties:
+  file.name:
+    displayName: File
+  title:
+    displayName: Title
+  status:
+    displayName: Status
+  complexity:
+    displayName: Complexity
+  domain:
+    displayName: Domain
+  formula.days_since_updated:
+    displayName: Days Since Update
+  formula.related_count:
+    displayName: Related
+  formula.sources_count:
+    displayName: Sources
 views:
   - type: table
     name: Table
-    filters:
-      and:
-        - type == "project"
+    order:
+      - file.name
+      - title
+      - formula.status_icon
+      - status
+      - complexity
+      - domain
+      - formula.days_since_updated
+      - formula.related_count
+      - formula.sources_count
+  - type: table
+    name: By Status
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - file.name
+      - title
+      - complexity
+      - domain
+      - formula.days_since_updated
+      - formula.related_count
+  - type: table
+    name: In Progress
+    filters: status != "completed"
+    order:
+      - file.name
+      - title
+      - formula.status_icon
+      - status
+      - complexity
+      - domain
+      - formula.days_since_updated
+      - formula.related_count
+      - formula.sources_count
+  - type: table
+    name: Completed
+    filters: status == "completed"
+    order:
+      - file.name
+      - title
+      - domain
+      - complexity
+      - updated
