@@ -14,7 +14,7 @@ related:
   - "[[wiki/resources/JavaScript 指南 介绍|JavaScript 指南：介绍]]"
   - "[[wiki/resources/JavaScript 指南 语法与类型|JavaScript 指南：语法与类型]]"
   - "[[wiki/projects/deepseek-harness/harness开发学习主线|DeepSeek Harness 开发学习主线]]"
-  - "[[Python 语法]]"
+  - "[[Python Syntax|Python 语法]]"
 sources:
   - "[[wiki/resources/JavaScript 指南 介绍|JavaScript 指南：介绍]]"
   - "[[wiki/resources/JavaScript 指南 语法与类型|JavaScript 指南：语法与类型]]"
@@ -139,7 +139,7 @@ aliases:
 ## 与后端知识体系的衔接
 
 - **[[wiki/projects/deepseek-harness/harness开发学习主线|DeepSeek Harness]]**：仓库主力语言是 **TypeScript**（JS 的超集）——变量 `let/const`、对象、函数一等值、模块 ESM、`async/await` 都建立在 JS 语法之上；本概念页是「阶段 1 语言最小补课」的 JS 语法入口。
-- 与 [[Python 语法]] 对照：JS 无 int/float 之分、`const` 不可重新赋值、对象随处可扩展。
+- 与 [[Python Syntax|Python 语法]] 对照：JS 无 int/float 之分、`const` 不可重新赋值、对象随处可扩展。
 
 ## 总结
 

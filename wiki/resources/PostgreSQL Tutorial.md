@@ -2,7 +2,7 @@
 type: source
 title: "PostgreSQL Tutorial"
 source: "https://neon.com/postgresql/tutorial"
-author: "[[Neon]]"
+author: Neon
 created: 2026-08-11
 updated: 2026-08-13
 status: active

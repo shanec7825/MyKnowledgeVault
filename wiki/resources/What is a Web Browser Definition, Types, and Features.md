@@ -8,7 +8,7 @@ status: seed
 source_type: webpage
 date_published: "2024-07-03"
 url: "https://www.ramotion.com/blog/what-is-web-browser/"
-author: "[[Alex Mika]]"
+author: Alex Mika
 source_id: "src-da88aea4c34ac810e0b4"
 sha256: "7285597451f7832e3cc4360404c8409d915b5bfbca68620c5db0849f5f2f73c0"
 authority: secondary

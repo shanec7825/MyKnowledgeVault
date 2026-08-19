@@ -18,6 +18,7 @@ tags:
 - 结构：[[wiki/projects/minGPT/教学方案|minGPT 教学方案]] 保留在 `wiki/projects/minGPT/`，源码仓库移至 `.raw/repos/minGPT/` 并加入 `.gitignore`。
 - 清理：删除空目录 `open api specification` / `version control system`；animo-cloud 4 个子文档补 `type: meta`，入口页改为项目 hub。
 - 新增：`wiki/areas/README.md`（area vs project 规则）、`templates/project.md`（统一项目模板）、`projects.base` 增加 By Domain 视图。
+- Repair：修复 3 个历史 wikilink（`Python 语法` → `[[Python Syntax|Python 语法]]`；`Neon` / `Alex Mika` 作者字段改为纯文本）。
 
 ## 2026-08-14 — Ingest MDN JavaScript Guide 控制流与循环 (ingest-js-guide-control-loops-20260814)
 
