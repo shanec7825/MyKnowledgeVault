@@ -3,7 +3,7 @@ address: c-000009
 type: project
 title: "API Styles"
 created: 2026-08-02
-updated: 2026-08-02
+updated: 2026-08-19
 status: developing
 tags:
   - project
@@ -18,6 +18,8 @@ sources:
   - "[[JSON API Specification (v1.1)]]"
   - "[[OpenAPI Specification (v3.1)]]"
 goal: "梳理并对比主流 API 风格（REST / JSON:API 等），形成可复用的选型参考。"
+domain: web-api
+complexity: intermediate
 ---
 
 # API Styles
@@ -49,6 +51,13 @@ goal: "梳理并对比主流 API 风格（REST / JSON:API 等），形成可复�
 - [x] 补充 OpenAPI 风格对照
 - [ ] 补充 GraphQL / gRPC 风格对照
 - [ ] 制作风格选型决策树
+
+## 完成标准
+
+- [ ] GraphQL 与 gRPC 各有一页对照笔记，并加入对比维度表
+- [ ] 输出《API 风格选型决策树》，可直接用于新项目选型
+- [ ] 项目内概念页与来源页互相链接，`wiki-lint` 无死链
+- [ ] 全部完成后：`status: completed`，项目移入 `wiki/archives/`
 
 ## Related
 

@@ -10,3 +10,6 @@
 .trash/
 .DS_Store
 Thumbs.db
+
+# Cloned/study repositories stored outside the visible wiki
+.raw/repos/

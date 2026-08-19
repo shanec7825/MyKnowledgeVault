@@ -3,7 +3,7 @@ type: overview
 title: Vault Overview
 status: developing
 created: 2026-08-02
-updated: 2026-08-13
+updated: 2026-08-19
 tags:
   - overview
 ---
@@ -14,6 +14,7 @@ This local-first vault compounds source-backed knowledge over time.
 
 ## Focus Areas
 
+- 项目结构审计 — 2026-08-19 为全部活跃项目补齐 `goal` / `domain` / `complexity` 与完成标准；新增 `wiki/areas/` 规则页、`templates/project.md` 统一模板，`projects.base` 增加 By Domain 视图。
 - 机器学习入门 — 2026-08-08 建立 [[What is ML and its types]] 项目页与概念页 [[机器学习]]，来源 [[wiki/resources/What is Machine Learning|What is Machine Learning]]（IBM Think，Dave Bergmann）。
 - Web API 设计 — 2026-08-02 建立概念页 [[JSON API]]、[[JSON API Specification]] 与 [[RESTful API Design]]，来源 [[JSON API Recommendations]]、[[JSON API Specification (v1.1)]] 与 [[Web API Design Best Practices]]。
 - Projects — 2026-08-02 建立 [[API Styles]] 与 [[pythonBasics]] 两个项目页（每项目一文件夹）。

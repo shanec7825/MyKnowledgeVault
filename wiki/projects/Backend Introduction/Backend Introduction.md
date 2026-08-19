@@ -3,7 +3,7 @@ address: c-000019
 type: project
 title: "Backend Introduction"
 created: 2026-08-05
-updated: 2026-08-11
+updated: 2026-08-19
 status: developing
 tags:
   - project
@@ -26,6 +26,8 @@ sources:
   - "[[wiki/resources/Everything You Need to Know About DNS|Everything You Need to Know About DNS]]"
   - "[[Populating the page how browsers work]]"
 goal: "后端入门：从网络基础起步，逐步建立后端开发所需的知识体系（网络、HTTP、DNS、服务器、数据库、API）。"
+domain: backend
+complexity: intermediate
 ---
 
 # Backend Introduction
@@ -63,6 +65,14 @@ goal: "后端入门：从网络基础起步，逐步建立后端开发所需的�
 - [ ] 补充 HTTP 缓存机制
 - [ ] （可选）HTTP/3 性能篇 Part 2 / 部署篇 Part 3
 - [ ] 补充服务器、API 设计等后端主题
+
+## 完成标准
+
+- [ ] 网络基础层收尾：HTTP 缓存机制已摄入并链接
+- [ ] 服务器 / API 设计等后续主题各有一页概念笔记
+- [ ] 输出《后端入门路线》最终导航页（当前页面可承担该职责，完成后重命名归档）
+- [ ] `wiki-lint` 无死链，来源页与概念页链接闭环
+- [ ] 全部完成后：`status: completed`，项目移入 `wiki/archives/`
 
 ## Related
 

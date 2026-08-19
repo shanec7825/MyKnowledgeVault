@@ -2,7 +2,7 @@
 type: project
 title: "DeepSeek Harness 开发学习主线"
 created: 2026-08-13
-updated: 2026-08-13
+updated: 2026-08-19
 status: developing
 tags:
   - project
@@ -11,6 +11,14 @@ tags:
   - learning-path
   - ai-agent
   - typescript
+sources: []
+goal: "按阶段完成 DeepSeek Harness 开发学习主线，达到能独立开发、测试并提交一个工具/插件 PR 的水平。"
+domain: software-engineering
+complexity: advanced
+related:
+  - "[[wiki/projects/JavaScript指南/JavaScript指南|JavaScript 指南]]"
+  - "[[wiki/projects/pythonBasics/pythonBasics|pythonBasics]]"
+  - "[[wiki/projects/minGPT/教学方案|minGPT 教学方案]]"
 ---
 
 # DeepSeek Harness 开发学习主线
@@ -252,6 +260,8 @@ flowchart LR
 - [ ] 画得出「模型 → 工具 → 观察写回」完整数据流
 - [ ] 从零写出一个可运行的 cordis.yml 组合
 - [ ] 提交并被 review 第一个 PR
+
+> **项目完成即归档**：上表 8 项全部打勾后，将 `status` 改为 `completed`，并把项目移入 `wiki/archives/`。若连续两周无进展，应拆小任务或降级为长期 area。
 
 ## 6. 建议节奏总表
 

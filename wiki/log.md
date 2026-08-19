@@ -3,13 +3,21 @@ type: meta
 title: Wiki Log
 status: evergreen
 created: 2026-08-02
-updated: 2026-08-14
+updated: 2026-08-19
 tags:
   - meta
   - log
 ---
 
 # Wiki Log
+
+## 2026-08-19 — Project structure audit (project-structure-audit-20260819)
+
+- 目标：为 14 个活跃项目补齐 `goal` / `domain` / `complexity` / 完成标准，让「学习型项目」与「研究档案」都能被 `projects.base` 正确分类和验收。
+- 项目页：deepseek-harness、minGPT、animo-cloud、学习方法验证、认知表征与泛化、RL/DL 类比等补齐 `goal`；工程/学习项目补齐 `domain` 与 `complexity`。
+- 结构：[[wiki/projects/minGPT/教学方案|minGPT 教学方案]] 保留在 `wiki/projects/minGPT/`，源码仓库移至 `.raw/repos/minGPT/` 并加入 `.gitignore`。
+- 清理：删除空目录 `open api specification` / `version control system`；animo-cloud 4 个子文档补 `type: meta`，入口页改为项目 hub。
+- 新增：`wiki/areas/README.md`（area vs project 规则）、`templates/project.md`（统一项目模板）、`projects.base` 增加 By Domain 视图。
 
 ## 2026-08-14 — Ingest MDN JavaScript Guide 控制流与循环 (ingest-js-guide-control-loops-20260814)
 
@@ -28,7 +36,7 @@ Newest completed operations appear first.
 
 ## 2026-08-13 — Lint 修复 (lint-fix-20260813)
 
-- 修复 23 处死链接：[[wiki/projects/类比于强化学习和深度学习的学习理论/项目概述|类比于强化学习和深度学习的学习理论]]（11 处）与 [[wiki/projects/minGPT/教学方案|minGPT 教学方案]]（9 处）改为路径限定链接；认知迁移能力页中无来源页的 Analogical Encoding 引用转为纯文本。
+- 修复 23 处死链接：[[wiki/projects/类比于强化学习和深度学习的学习理论/类比于强化学习和深度学习的学习理论|类比于强化学习和深度学习的学习理论]]（11 处）与 [[wiki/projects/minGPT/教学方案|minGPT 教学方案]]（9 处）改为路径限定链接；认知迁移能力页中无来源页的 Analogical Encoding 引用转为纯文本。
 - 路径限定 110 处歧义链接：inbox 与 wiki/resources 同名来源统一指向 wiki/resources；「环境变化与认知」按语境指向概念页或项目页。
 - 补齐 frontmatter 缺口：animo-cloud 教学文档与 minGPT 5 个页面补全六字段；7 个资源页补 updated。
 - 排除扫描噪音：minGPT 的 .venv 移出 vault（C:\Users\Lenovo\.venvs\minGPT），26 个第三方包页面随之退出 lint 范围。
@@ -37,14 +45,14 @@ Newest completed operations appear first.
 
 - 研究：理解力的表征基础——图式是否构成理解力、具身认知与概念隐喻（空间/颜色/语言作为思维形式）、元认知与迁移的可训练性、非空间泛化表征格式（公开网络，摘要级检索，10 来源）
 - 创建：[[认知表征与泛化]]（项目）+ [[图式与理解力]] / [[具身认知与概念隐喻]] / [[元认知与迁移的可训练性]] / [[泛化表征的多种格式]]（概念）+ 10 个来源页
-- 关联：[[学习方法的认知科学验证]]、[[认知迁移能力]]、[[wiki/projects/类比于强化学习和深度学习的学习理论/项目概述|类比于强化学习和深度学习的学习理论]]、[[加工流畅性与建构水平]]
+- 关联：[[学习方法的认知科学验证]]、[[认知迁移能力]]、[[wiki/projects/类比于强化学习和深度学习的学习理论/类比于强化学习和深度学习的学习理论|类比于强化学习和深度学习的学习理论]]、[[加工流畅性与建构水平]]
 - Ledgers: 新增 10 条 source 记录、20 条 claim 记录
 
 ## 2026-08-13 — Autoresearch 学习方法的认知科学验证 (autoresearch-lm-20260813)
 
 - 研究：日记 [[2026-08-13]] 的 5 条学习方法论断的认知科学验证——最优误差率（85% 法则 / 合意困难 / 最近发展区）、间隔与巩固（间隔效应 / 灾难性干扰 / 睡眠 / 运动）、工作记忆与遗忘（≈4 组块 / 存储-提取强度 / 知识封装 / 遗忘曲线）（公开网络，摘要级检索，12 来源）
 - 创建：[[学习方法的认知科学验证]]（项目）+ [[适度困难与最优误差率]] / [[学习率与巩固：间隔·睡眠·运动]] / [[工作记忆、封装与遗忘]]（概念）+ 12 个来源页
-- 关联：[[wiki/projects/类比于强化学习和深度学习的学习理论/项目概述|类比于强化学习和深度学习的学习理论]]（实证补充）、[[综合方法论：RL-DL 启发的认知提升框架]]、[[RL-DL 类比的边界条件：情境调节变量]]
+- 关联：[[wiki/projects/类比于强化学习和深度学习的学习理论/类比于强化学习和深度学习的学习理论|类比于强化学习和深度学习的学习理论]]（实证补充）、[[综合方法论：RL-DL 启发的认知提升框架]]、[[RL-DL 类比的边界条件：情境调节变量]]
 - Ledgers: 新增 12 条 source 记录、23 条 claim 记录
 
 ## 2026-08-11 — Ingest PostgreSQL Tutorial (ingest-postgresql-20260811)

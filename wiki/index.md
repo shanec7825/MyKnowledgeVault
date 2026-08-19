@@ -3,7 +3,7 @@ type: meta
 title: Wiki Index
 status: evergreen
 created: 2026-08-02
-updated: 2026-08-14
+updated: 2026-08-19
 tags:
   - meta
   - index
@@ -12,6 +12,26 @@ tags:
 # Wiki Index
 
 This catalog is updated by completed knowledge operations.
+
+## Projects
+
+### 学习 / 工程
+- [[wiki/projects/API Styles/API Styles|API Styles]] — 主流 Web API 风格对比与选型。
+- [[wiki/projects/Backend Introduction/Backend Introduction|Backend Introduction]] — 后端入门：网络、HTTP、DNS、浏览器、API。
+- [[wiki/projects/JavaScript指南/JavaScript指南|JavaScript 指南]] — MDN JS Guide 逐章摄入，支撑 DeepSeek Harness 补课。
+- [[wiki/projects/What is ML and its types/What is ML and its types|What is ML and its types]] — 机器学习定义与类型体系入门。
+- [[wiki/projects/pythonBasics/pythonBasics|pythonBasics]] — Python 基础语法与练习。
+- [[wiki/projects/relational databases/Relational Databases|Relational Databases]] — PostgreSQL 为主线的数据库入门。
+- [[wiki/projects/deepseek-harness/harness开发学习主线|DeepSeek Harness 开发学习主线]] — 从补课到提交第一个 PR 的工程学习主线。
+- [[wiki/projects/minGPT/教学方案|minGPT 实践教学方案]] — 跑通、逐行读懂并改造 minGPT。
+- [[wiki/projects/animo-cloud/教学文档|AnimoDoll 云端项目 · 学习与协作]] — 真实仓库的人 + Agent 协作开发学习。
+
+### 认知科学研究档案
+- [[wiki/projects/学习方法的认知科学验证/学习方法的认知科学验证|学习方法的认知科学验证]] — 验证日记 5 条学习方法论断。
+- [[wiki/projects/认知表征与泛化/认知表征与泛化|认知表征与泛化]] — 图式、具身表征、元认知与泛化格式。
+- [[wiki/projects/类比于强化学习和深度学习的学习理论/类比于强化学习和深度学习的学习理论|类比于强化学习和深度学习的学习理论]] — RL/DL 概念到学习方法的映射。
+- [[wiki/projects/环境变化与认知/环境变化与认知|环境变化与认知]] — 物理环境对认知行为的影响。
+- [[wiki/projects/神经可塑性/神经可塑性|神经可塑性]] — 可塑性的生物机制、认知理论与成人学习能力。
 
 ## Sources
 - [[wiki/resources/JavaScript 指南 介绍|JavaScript 指南：介绍]] — MDN JavaScript Guide 第一章（developer.mozilla.org/zh-CN，2025-07）
@@ -138,24 +158,6 @@ This catalog is updated by completed knowledge operations.
 - [[元认知与迁移的可训练性]] — 元认知/迁移能否练习（中文讲解）
 - [[泛化表征的多种格式]] — 空间/符号/关系/网络四格式（中文讲解）
 
-## Projects
-
-- [[wiki/projects/类比于强化学习和深度学习的学习理论/项目概述|类比于强化学习和深度学习的学习理论]] — RL/DL 理论类比认知能力研究项目（学习 / 记忆 / 推理 / 创造力）
-
-- [[What is ML and its types]] — 机器学习入门项目（What is ML and its types）
-- [[wiki/projects/JavaScript指南/JavaScript指南|JavaScript 指南]] — MDN JavaScript Guide 中文学习项目（介绍 / 语法与类型 / 控制流与错误处理 / 循环与迭代）
-- [[API Styles]] — API 风格对比项目（REST / JSON:API）
-- [[pythonBasics]] — Python 基础学习与练习
-- [[Backend Introduction]] — 后端入门学习项目（网络基础 → HTTP → HTTP/3 → 浏览器渲染 → DNS → 数据库）
-- [[Relational Databases]] — 关系数据库入门项目（PostgreSQL / SQL / 表设计 / 事务 / 索引）
-- [[wiki/projects/环境变化与认知/环境变化与认知|环境变化与认知]] — 环境变化对认知的影响专题研究（上下文记忆 / 物理环境 / 自然 / 新奇性）
-- [[神经可塑性]] — 神经可塑性专题研究项目（生物机制 / 认知理论 / 成人可塑性 / 区域差异）
-- [[wiki/projects/类比于强化学习和深度学习的学习理论/项目概述|类比于强化学习和深度学习的学习理论]] — RL/DL 理论类比认知能力研究（学习 / 记忆 / 推理 / 创造力）
-
-- [[学习方法的认知科学验证]] — 日记学习方法的认知科学验证项目（适度困难 / 间隔与巩固 / 工作记忆与遗忘）
-
-- [[认知表征与泛化]] — 理解力的表征基础与泛化建模研究项目（图式 / 具身 / 元认知可训练性 / 多格式）
-
 ## Entities
 
 - No entities indexed yet.
@@ -170,7 +172,7 @@ This catalog is updated by completed knowledge operations.
 - 神经可塑性在大脑不同工作区（听觉、视觉、逻辑）是否有差异？是否存在可塑与不可塑的认知能力？（见 [[可塑性 脑区与认知域差异]]）
 - 成人海马神经发生是否存在？（contested，见 [[神经可塑性 生物机制]]）
 - 工作记忆/脑力训练能否迁移到流体智力？（contested，见 [[神经可塑性 认知科学理论]]）
-- RL/DL 理论概念能否作为理解人类学习、记忆、推理、创造力的类比框架？能产出哪些可操作的方法论？（见 [[wiki/projects/类比于强化学习和深度学习的学习理论/项目概述|类比于强化学习和深度学习的学习理论]]）
+- RL/DL 理论概念能否作为理解人类学习、记忆、推理、创造力的类比框架？能产出哪些可操作的方法论？（见 [[wiki/projects/类比于强化学习和深度学习的学习理论/类比于强化学习和深度学习的学习理论|类比于强化学习和深度学习的学习理论]]）
 
 ## Archives
 

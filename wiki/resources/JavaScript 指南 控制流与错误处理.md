@@ -16,7 +16,7 @@ review_state: active
 key_claims:
   - "JavaScript 用块语句（由一对花括号界定）组合语句；用 var 声明的变量不是块级作用域而是函数/脚本作用域，块内 var x 会覆盖外层（输出 2，C/Java 输出 1）；用 let/const 消除该作用域穿透。"
   - "JavaScript 支持两种条件语句：if...else（含 else if 链，只执行第一个为 true 的分支）和 switch（匹配 case 标签，未命中找 default，省略 break 会贯穿下一个 case）。"
-  - "假值只有 6 个：false、undefined、null、0、NaN、空字符串（""）；其余所有值（含所有对象）在条件语句中为 true；勿混淆原始布尔值与 Boolean 对象（new Boolean(false) 为 truthy）。"
+  - '假值只有 6 个：false、undefined、null、0、NaN、空字符串（""）；其余所有值（含所有对象）在条件语句中为 true；勿混淆原始布尔值与 Boolean 对象（new Boolean(false) 为 truthy）。'
   - "throw 可抛出任意表达式；推荐使用 Error 构造函数与 ECMAScript 异常/DOMException 类型来抛出自定义异常。"
   - "try...catch...finally：finally 无论是否抛出异常都会执行，可确保资源释放（如关闭文件）；finally 若返回一个值，会覆盖 try/catch 的返回值（包括覆盖 catch 内重新抛出的异常）。"
   - "嵌套 try...catch 中，内层 try 无对应 catch 时必须有一个 finally 块，且外层 catch 会被检查能否处理该异常。"

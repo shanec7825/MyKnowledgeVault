@@ -3,7 +3,7 @@ type: meta
 title: Hot Cache
 status: developing
 created: 2026-08-02
-updated: 2026-08-14
+updated: 2026-08-19
 tags:
   - meta
   - hot-cache
@@ -13,12 +13,13 @@ tags:
 
 ## Last Updated
 
+2026-08-19 — 项目结构审计：14 个活跃 project 全部补齐 `goal` / `domain` / `complexity` 与完成标准；minGPT 源码移至 `.raw/repos/minGPT/`；animo-cloud 入口页改为项目 hub；新增 By Domain 视图与统一项目模板。
 2026-08-14 — 摄入 MDN JS Guide 第三、四章（[[wiki/resources/JavaScript 指南 控制流与错误处理|控制流与错误处理]]、[[wiki/resources/JavaScript 指南 循环与迭代|循环与迭代]]），创建 [[JavaScript 控制流与循环]] 概念页 + 建立 [[wiki/projects/JavaScript指南/JavaScript指南|JavaScript 指南]] 项目页（控制流/异常处理 + 循环/迭代）。
 2026-08-13 — Lint 修复（lint-fix-20260813）：路径限定 110 处歧义链接、修复 23 处死链接、补齐 frontmatter 缺口，minGPT 的 .venv 移出 vault。
 2026-08-13 — autoresearch「认知表征与泛化」创建项目页 [[认知表征与泛化]] + 4 概念页（图式与理解力 / 具身认知与概念隐喻 / 元认知与迁移的可训练性 / 泛化表征的多种格式）+ 10 来源页，论证日记 [[2026-08-13]] 的「理解力/区间图式」疑问（公开网络，摘要级检索）。
 2026-08-13 — autoresearch「学习方法的认知科学验证」创建项目页 [[学习方法的认知科学验证]] + 3 概念页（适度困难 / 学习率与巩固 / 工作记忆与遗忘）+ 12 来源页，论证日记 [[2026-08-13]] 的 5 条学习方法论断（公开网络，摘要级检索）。
 2026-08-11 — autoresearch 补充 [[RL-DL 类比的边界条件：情境调节变量]]（关键修正：反馈时机取决于任务类型/专长/WMC/材料结构；否定简单"即时反馈>延迟反馈"的过度简化；修正 [[RL 类比：学习与决策]] 中相关表述）。
-2026-08-11 — autoresearch「类比于强化学习和深度学习的学习理论」创建项目页 [[wiki/projects/类比于强化学习和深度学习的学习理论/项目概述|类比于强化学习和深度学习的学习理论]] + 5 个概念页（[[RL 类比：学习与决策]] / [[DL 类比：记忆与表征]] / [[训练方法论类比：推理与问题解决]] / [[生成模型类比：创造力]] / [[综合方法论：RL-DL 启发的认知提升框架]]），基于 vault 内已有认知科学来源综合。
+2026-08-11 — autoresearch「类比于强化学习和深度学习的学习理论」创建项目页 [[wiki/projects/类比于强化学习和深度学习的学习理论/类比于强化学习和深度学习的学习理论|类比于强化学习和深度学习的学习理论]] + 5 个概念页（[[RL 类比：学习与决策]] / [[DL 类比：记忆与表征]] / [[训练方法论类比：推理与问题解决]] / [[生成模型类比：创造力]] / [[综合方法论：RL-DL 启发的认知提升框架]]），基于 vault 内已有认知科学来源综合。
 2026-08-11 — 摄入 [[wiki/resources/PostgreSQL Tutorial|PostgreSQL Tutorial]]，创建 [[PostgreSQL 教程]] 概念页 + [[Relational Databases]] 项目页（PostgreSQL 知识体系：基础 17 节 + 高级 5 节，含 JSON/CTE/UPSERT/窗口函数等 8 大独特优势）。
 2026-08-11 — 摄入 [[wiki/resources/Populating the page how browsers work|Populating the page how browsers work]]，创建 [[浏览器渲染原理]] 概念页（导航/DNS/TCP/TLS → 解析/DOM/CSSOM → 渲染/布局/绘制/合成 → 交互/TTI）。
 2026-08-11 — 摄入 [[wiki/resources/Everything You Need to Know About DNS|Everything You Need to Know About DNS]]，创建 [[DNS 详解]] 概念页（DNS 解析五步流程 / 记录类型 / dig 命令 / DNSSEC）。
@@ -31,6 +32,7 @@ tags:
 
 ## Key Recent Facts
 
+- 项目结构：14 个活跃 project 现在都有 `goal` 与完成标准；学习型项目按 domain 分为 backend / database / machine-learning / programming-language / software-engineering，研究档案归入 cognitive-science / neuroscience。
 - JavaScript 指南项目建立：控制流（块/if-else/switch/假值/throw-try-catch-finally）与循环（for/while/do-while/label/break/continue/for-in/for-of）四章已摄入。
 - 认知表征与泛化：理解力 = 图式/概念结构（部分成立）；「区间」等词根植于具身经验（概念隐喻 + 心理数字线）；具身认知有复制危机（模拟非必要）；元认知/迁移可训练（SRL g≈0.38-0.48）；泛化不只有空间格式（LoT/关系范畴）。
 - 学习方法认知科学验证：日记 5 条论断中，「误差适度」与「间隔/睡眠/运动巩固」获实证支持；「深入必致遗忘」被存储/提取强度理论与节省效应部分反驳；「框架先行」与「两类概念」二分证据较弱（contested/provisional）。
@@ -45,11 +47,12 @@ tags:
 
 ## Recent Changes
 
+- Audit：项目结构审计（project-structure-audit-20260819）——补 goal/domain/complexity、统一完成标准、清理空目录、minGPT 源码移出可见 wiki、animo-cloud hub 化。
 - Ingest：摄入 MDN JS Guide 控制流与错误处理 / 循环与迭代，创建 [[JavaScript 控制流与循环]] 概念页 + 2 来源页 + [[wiki/projects/JavaScript指南/JavaScript指南|JavaScript 指南]] 项目页；ledgers +2 sources / +13 claims
 - Lint repair：修复死链接（类比于…学习理论 11 处、minGPT 教学方案 9 处）、路径限定 inbox/resources 与「环境变化与认知」歧义链接、补齐 frontmatter（animo-cloud / minGPT / 7 个资源页）、.venv 移出 vault
 - Autoresearch：创建 [[认知表征与泛化]] 项目页 + 4 概念页 + 10 来源页；更新 index / hot / overview；ledgers +10 sources / +20 claims
 - Autoresearch：创建 [[学习方法的认知科学验证]] 项目页 + 3 概念页 + 12 来源页；更新 index / hot / overview；ledgers +12 sources / +23 claims
-- Autoresearch：创建 [[wiki/projects/类比于强化学习和深度学习的学习理论/项目概述|类比于强化学习和深度学习的学习理论]] 项目页 + 5 概念页（RL 类比 / DL 类比 / 训练方法论类比 / 生成模型类比 / 综合方法论）；更新 index / hot / overview
+- Autoresearch：创建 [[wiki/projects/类比于强化学习和深度学习的学习理论/类比于强化学习和深度学习的学习理论|类比于强化学习和深度学习的学习理论]] 项目页 + 5 概念页（RL 类比 / DL 类比 / 训练方法论类比 / 生成模型类比 / 综合方法论）；更新 index / hot / overview
 - Ingest：摄入 [[wiki/resources/PostgreSQL Tutorial|PostgreSQL Tutorial]]，创建 [[PostgreSQL 教程]] 概念页 + [[wiki/resources/PostgreSQL Tutorial|PostgreSQL Tutorial]] 来源页 + [[Relational Databases]] 项目页；ledgers +1 source / +10 claims
 - Ingest：摄入 [[wiki/resources/Populating the page how browsers work|Populating the page how browsers work]]（MDN），创建 [[浏览器渲染原理]] 概念页，更新 [[Backend Introduction]]（+浏览器渲染管道）；ledgers +1 source / +11 claims
 - Ingest：摄入 [[wiki/resources/Everything You Need to Know About DNS|Everything You Need to Know About DNS]]（cs.fyi），创建 [[DNS 详解]] 概念页，更新 [[Backend Introduction]]（+DNS）；ledgers +1 source / +8 claims

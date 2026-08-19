@@ -1,3 +1,14 @@
+---
+type: meta
+title: "AnimoDoll Cloud · 学习路线与人+Agent协作开发指南"
+created: 2026-08-16
+updated: 2026-08-16
+tags:
+  - animo-cloud
+  - guide
+  - ai-agent
+---
+
 # AnimoDoll 云端仓库 · 学习路线与"人 + Agent"协作开发指南（v2）
 
 > **适用对象**：仓库主人。此前主要把开发交给 Agent，现在要：① 完全明白自己的工作流与工作内容；② 能自己动手 + 指挥 Agent 并行开发。

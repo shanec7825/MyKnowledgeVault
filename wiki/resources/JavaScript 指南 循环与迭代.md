@@ -20,7 +20,7 @@ key_claims:
   - "label 为循环/语句命名；break label 终止被标记语句（可一次跳出多层循环），continue label 跳到被标记循环继续执行。"
   - "无标签 break 终止当前 while/do-while/for/switch；无标签 continue 跳过本次迭代的剩余部分进入下一轮。"
   - "for...in 遍历对象所有可枚举属性（含自定义属性，不适合数组）；for...of 遍历可迭代对象（Array/Map/Set/arguments 等）的值。"
-  - "数组应用传统 for 或 for...of 迭代；for...in 会额外包含自定义属性（如 arr.foo = "hello"）。"
+  - '数组应用传统 for 或 for...of 迭代；for...in 会额外包含自定义属性（如 arr.foo = "hello"）。'
 tags:
   - source
   - javascript

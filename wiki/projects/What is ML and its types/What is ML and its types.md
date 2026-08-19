@@ -3,7 +3,7 @@ address: c-000071
 type: project
 title: "What is ML and its types"
 created: 2026-08-08
-updated: 2026-08-08
+updated: 2026-08-19
 status: developing
 tags:
   - project
@@ -15,6 +15,8 @@ related:
 sources:
   - "[[What is Machine Learning]]"
 goal: "机器学习入门：梳理机器学习的定义、三大类型（监督 / 无监督 / 强化）与深度学习架构，建立 AI 方向的知识起点。"
+domain: machine-learning
+complexity: beginner
 ---
 
 # What is ML and its types
@@ -41,3 +43,11 @@ goal: "机器学习入门：梳理机器学习的定义、三大类型（监督 
 - [ ] 强化学习专题：PPO / Q-learning / RLHF
 - [ ] 深度学习专题：CNN / RNN / Transformer 注意力机制 / Mamba
 - [ ] 补充损失函数、梯度下降、过拟合与正则化基础
+
+## 完成标准
+
+- [ ] 三大学习范式与深度学习架构各有独立概念页
+- [ ] 输出《机器学习类型对照表》（定义 / 代表算法 / 适用场景 / 与 Python 实践衔接）
+- [ ] 与 [[wiki/projects/pythonBasics/pythonBasics|pythonBasics]] 形成可执行的上手路径
+- [ ] `wiki-lint` 无死链
+- [ ] 全部完成后：`status: completed`，项目移入 `wiki/archives/`

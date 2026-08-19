@@ -3,7 +3,7 @@ address: c-000117
 type: project
 title: "JavaScript 指南"
 created: 2026-08-14
-updated: 2026-08-14
+updated: 2026-08-19
 status: developing
 tags:
   - project
@@ -25,6 +25,8 @@ sources:
   - "[[wiki/resources/JavaScript 指南 控制流与错误处理|JavaScript 指南：控制流与错误处理]]"
   - "[[wiki/resources/JavaScript 指南 循环与迭代|JavaScript 指南：循环与迭代]]"
 goal: "按 MDN《JavaScript 指南》（中文版）系统补齐 JavaScript 语言核心，支撑 DeepSeek Harness 开发学习主线的语言补课阶段。"
+domain: programming-language
+complexity: beginner
 ---
 
 # JavaScript 指南
@@ -48,3 +50,11 @@ goal: "按 MDN《JavaScript 指南》（中文版）系统补齐 JavaScript 语�
 
 - [[wiki/projects/deepseek-harness/harness开发学习主线|DeepSeek Harness 开发学习主线]] — 阶段 1「语言最小补课」引用本项目的概念页。
 - 语言底座是 TypeScript（JS 超集）；语法补完后再进入异步编程与插件/DI 思想。
+
+## 完成标准
+
+- [ ] 「待补章节」中的函数、对象、类、Promise、模块等核心主题均已摄入并有概念页
+- [ ] 完成阶段 1 的「用 Node 写 20 个小脚本」练习，脚本保存在本项目目录
+- [ ] [[wiki/projects/deepseek-harness/harness开发学习主线|DeepSeek Harness 开发学习主线]] 阶段 1 验收通过
+- [ ] `wiki-lint` 无死链，来源页与概念页互相链接
+- [ ] 全部完成后：`status: completed`，项目移入 `wiki/archives/`

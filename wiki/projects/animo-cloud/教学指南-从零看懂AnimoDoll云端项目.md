@@ -1,3 +1,15 @@
+---
+type: meta
+title: "AnimoDoll 云端项目 · 从零看懂教学文档"
+created: 2026-08-16
+updated: 2026-08-16
+tags:
+  - animo-cloud
+  - tutorial
+  - kotlin
+  - ktor
+---
+
 # AnimoDoll 云端项目 · 从零看懂教学文档
 
 > 写给"技术细节基本不懂、连一个普通 API 都不知道怎么实现"的你。

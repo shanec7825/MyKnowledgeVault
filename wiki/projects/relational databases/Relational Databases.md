@@ -2,7 +2,7 @@
 type: project
 title: "Relational Databases"
 created: 2026-08-11
-updated: 2026-08-11
+updated: 2026-08-19
 status: developing
 tags:
   - project
@@ -16,6 +16,8 @@ related:
 sources:
   - "[[wiki/resources/PostgreSQL Tutorial|PostgreSQL Tutorial]]"
 goal: "关系数据库入门：以 PostgreSQL 为主线，建立 SQL 查询、表设计、约束、事务、索引与存储过程的系统知识。"
+domain: database
+complexity: intermediate
 ---
 
 # Relational Databases
@@ -43,6 +45,15 @@ goal: "关系数据库入门：以 PostgreSQL 为主线，建立 SQL 查询、�
 - [ ] 探索 PostgreSQL 索引类型与 EXPLAIN
 - [ ] 对比 MySQL 与 PostgreSQL 差异
 - [ ] 补充数据库设计范式（1NF / 2NF / 3NF）
+
+## 完成标准
+
+- [ ] 待办中的 SQL 查询、表设计、事务练习全部完成并留下练习笔记
+- [ ] PostgreSQL JSON/hstore 与索引 EXPLAIN 各有一页探索笔记
+- [ ] 输出《关系数据库选型对照表》（PostgreSQL / MySQL）
+- [ ] 与 [[wiki/projects/Backend Introduction/Backend Introduction|Backend Introduction]] 的 API / 服务器主题衔接完成
+- [ ] `wiki-lint` 无死链
+- [ ] 全部完成后：`status: completed`，项目移入 `wiki/archives/`
 
 ## Related
 

@@ -47,6 +47,20 @@ views:
       - formula.days_since_updated
       - formula.related_count
   - type: table
+    name: By Domain
+    groupBy:
+      property: domain
+      direction: ASC
+    order:
+      - file.name
+      - title
+      - formula.status_icon
+      - status
+      - complexity
+      - formula.days_since_updated
+      - formula.related_count
+      - formula.sources_count
+  - type: table
     name: In Progress
     filters: status != "completed"
     order:
