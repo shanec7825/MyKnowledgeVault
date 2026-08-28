@@ -1,0 +1,9 @@
+{
+	"id": "dsh-obsidian",
+	"name": "DSH for Obsidian",
+	"version": "0.1.0",
+	"minAppVersion": "1.7.2",
+	"description": "Embeds DeepSeek Harness (dsh) in your vault. Your vault becomes dsh's working directory, with file read/write, search, bash, and multi-step workflows.",
+	"author": "DSH for Obsidian contributors",
+	"isDesktopOnly": true
+}

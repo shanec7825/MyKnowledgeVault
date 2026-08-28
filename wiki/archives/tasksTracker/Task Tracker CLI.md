@@ -5,6 +5,7 @@ type: project
 status: completed
 created: 2026-08-07
 updated: 2026-08-08
+area: "后端"
 description: "Build a command line interface (CLI) to track your tasks and manage your to-do list."
 tags:
   - project

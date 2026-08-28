@@ -1,5 +1,4 @@
 [
-  "claudian-plus",
   "templater-obsidian",
   "dataview",
   "realclaudian",
@@ -7,5 +6,7 @@
   "nutstore-sync",
   "obsidian-excalidraw-plugin",
   "table-editor-obsidian",
-  "obsidian-git"
+  "obsidian-git",
+  "dsh-obsidian",
+  "obsidian-html-plugin"
 ]

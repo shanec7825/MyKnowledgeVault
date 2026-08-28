@@ -3,7 +3,7 @@
   "permissionMode": "yolo",
   "model": "opus",
   "thinkingBudget": "off",
-  "effortLevel": "medium",
+  "effortLevel": "high",
   "serviceTier": "default",
   "enableAutoTitleGeneration": true,
   "titleGenerationLocale": "",
@@ -40,7 +40,7 @@
       "environmentHash": ""
     },
     "codex": {
-      "enabled": false,
+      "enabled": true,
       "safeMode": "workspace-write",
       "cliPath": "",
       "cliPathsByHost": {},
@@ -51,10 +51,12 @@
       "enableUltraEffort": false,
       "reasoningSummary": "detailed",
       "environmentVariables": "",
-      "environmentHash": "",
+      "environmentHash": "runtime-input:v1:ed54f4f5238abeec7f65a5da1e468c9a639e157a7d1c7753b53f54ba1196e8a0",
       "catalogTimestamp": 0,
       "catalogFingerprint": "",
-      "installationMethodsByHost": {},
+      "installationMethodsByHost": {
+        "device:5c3951e9-9f15-44d4-a635-c80585b06480": "native-windows"
+      },
       "wslDistroOverridesByHost": {}
     },
     "grok": {
@@ -130,25 +132,26 @@
         "pi:deepseek/deepseek-v4-flash": "max"
       },
       "toolMode": "all",
-      "visibleModels": [
-        "pi:deepseek/deepseek-v4-flash"
-      ]
+      "visibleModels": []
     }
   },
-  "settingsProvider": "claude",
+  "settingsProvider": "codex",
   "savedProviderModel": {
     "claude": "opus",
-    "pi": "pi:deepseek/deepseek-v4-flash"
+    "pi": "pi:deepseek/deepseek-v4-flash",
+    "codex": "opus"
   },
   "savedProviderEffort": {
     "claude": "medium",
-    "pi": "max"
+    "pi": "max",
+    "codex": "high"
   },
   "savedProviderServiceTier": {},
   "savedProviderThinkingBudget": {},
   "savedProviderPermissionMode": {
     "claude": "yolo",
-    "pi": "yolo"
+    "pi": "yolo",
+    "codex": "yolo"
   },
   "pendingProviderSessionInvalidations": {},
   "lastCustomModel": "",

@@ -15,29 +15,29 @@ tags:
 
 - 目标：为 14 个活跃项目补齐 `goal` / `domain` / `complexity` / 完成标准，让「学习型项目」与「研究档案」都能被 `projects.base` 正确分类和验收。
 - 项目页：deepseek-harness、minGPT、animo-cloud、学习方法验证、认知表征与泛化、RL/DL 类比等补齐 `goal`；工程/学习项目补齐 `domain` 与 `complexity`。
-- 结构：[[wiki/projects/minGPT/教学方案|minGPT 教学方案]] 保留在 `wiki/projects/minGPT/`，源码仓库移至 `.raw/repos/minGPT/` 并加入 `.gitignore`。
+- 结构：[[wiki/projects/minGPT教学方案|minGPT 教学方案]] 保留在 `wiki/projects/minGPT/`，源码仓库移至 `.raw/repos/minGPT/` 并加入 `.gitignore`。
 - 清理：删除空目录 `open api specification` / `version control system`；animo-cloud 4 个子文档补 `type: meta`，入口页改为项目 hub。
 - 新增：`wiki/areas/README.md`（area vs project 规则）、`templates/project.md`（统一项目模板）、`projects.base` 增加 By Domain 视图。
 - Repair：修复 3 个历史 wikilink（`Python 语法` → `[[Python Syntax|Python 语法]]`；`Neon` / `Alex Mika` 作者字段改为纯文本）。
 
 ## 2026-08-14 — Ingest MDN JavaScript Guide 控制流与循环 (ingest-js-guide-control-loops-20260814)
 
-- Sources: [[wiki/resources/JavaScript 指南 控制流与错误处理|JavaScript 指南：控制流与错误处理]]（2025-12）、[[wiki/resources/JavaScript 指南 循环与迭代|JavaScript 指南：循环与迭代]]（2026-05）（MDN Web Docs 中文版）
-- Created: [[wiki/projects/JavaScript指南/JavaScript指南|JavaScript 指南]]（项目）、[[JavaScript 控制流与循环]]（概念）、2 个 source 页
-- 关联：[[wiki/projects/deepseek-harness/harness开发学习主线|DeepSeek Harness 开发学习主线]] 语言补课阶段
+- Sources: [[wiki/resources/resource/JavaScript 指南 控制流与错误处理|JavaScript 指南：控制流与错误处理]]（2025-12）、[[wiki/resources/resource/JavaScript 指南 循环与迭代|JavaScript 指南：循环与迭代]]（2026-05）（MDN Web Docs 中文版）
+- Created: [[wiki/projects/JavaScript指南|JavaScript 指南]]（项目）、[[JavaScript 控制流与循环]]（概念）、2 个 source 页
+- 关联：[[wiki/projects/harness开发学习主线|DeepSeek Harness 开发学习主线]] 语言补课阶段
 - Ledgers: +2 source record(s), +14 claim(s)
 Newest completed operations appear first.
 
 ## 2026-08-13 — Ingest MDN JavaScript Guide chapters (ingest-js-guide-20260814)
 
-- Sources: [[wiki/resources/JavaScript 指南 介绍|JavaScript 指南：介绍]]、[[wiki/resources/JavaScript 指南 语法与类型|JavaScript 指南：语法与类型]]（MDN Web Docs 中文版，2025-07）
+- Sources: [[wiki/resources/resource/JavaScript 指南 介绍|JavaScript 指南：介绍]]、[[wiki/resources/resource/JavaScript 指南 语法与类型|JavaScript 指南：语法与类型]]（MDN Web Docs 中文版，2025-07）
 - Created: [[JavaScript 语法与类型]]（概念）、2 个 source 页
-- 关联：[[wiki/projects/deepseek-harness/harness开发学习主线|DeepSeek Harness 开发学习主线]] 语言补课阶段
+- 关联：[[wiki/projects/harness开发学习主线|DeepSeek Harness 开发学习主线]] 语言补课阶段
 - Ledgers: +2 source record(s), +12 claim(s)
 
 ## 2026-08-13 — Lint 修复 (lint-fix-20260813)
 
-- 修复 23 处死链接：[[wiki/projects/类比于强化学习和深度学习的学习理论/类比于强化学习和深度学习的学习理论|类比于强化学习和深度学习的学习理论]]（11 处）与 [[wiki/projects/minGPT/教学方案|minGPT 教学方案]]（9 处）改为路径限定链接；认知迁移能力页中无来源页的 Analogical Encoding 引用转为纯文本。
+- 修复 23 处死链接：[[wiki/projects/类比于强化学习和深度学习的学习理论|类比于强化学习和深度学习的学习理论]]（11 处）与 [[wiki/projects/minGPT教学方案|minGPT 教学方案]]（9 处）改为路径限定链接；认知迁移能力页中无来源页的 Analogical Encoding 引用转为纯文本。
 - 路径限定 110 处歧义链接：inbox 与 wiki/resources 同名来源统一指向 wiki/resources；「环境变化与认知」按语境指向概念页或项目页。
 - 补齐 frontmatter 缺口：animo-cloud 教学文档与 minGPT 5 个页面补全六字段；7 个资源页补 updated。
 - 排除扫描噪音：minGPT 的 .venv 移出 vault（C:\Users\Lenovo\.venvs\minGPT），26 个第三方包页面随之退出 lint 范围。
@@ -46,41 +46,41 @@ Newest completed operations appear first.
 
 - 研究：理解力的表征基础——图式是否构成理解力、具身认知与概念隐喻（空间/颜色/语言作为思维形式）、元认知与迁移的可训练性、非空间泛化表征格式（公开网络，摘要级检索，10 来源）
 - 创建：[[认知表征与泛化]]（项目）+ [[图式与理解力]] / [[具身认知与概念隐喻]] / [[元认知与迁移的可训练性]] / [[泛化表征的多种格式]]（概念）+ 10 个来源页
-- 关联：[[学习方法的认知科学验证]]、[[认知迁移能力]]、[[wiki/projects/类比于强化学习和深度学习的学习理论/类比于强化学习和深度学习的学习理论|类比于强化学习和深度学习的学习理论]]、[[加工流畅性与建构水平]]
+- 关联：[[学习方法的认知科学验证]]、[[认知迁移能力]]、[[wiki/projects/类比于强化学习和深度学习的学习理论|类比于强化学习和深度学习的学习理论]]、[[加工流畅性与建构水平]]
 - Ledgers: 新增 10 条 source 记录、20 条 claim 记录
 
 ## 2026-08-13 — Autoresearch 学习方法的认知科学验证 (autoresearch-lm-20260813)
 
 - 研究：日记 [[2026-08-13]] 的 5 条学习方法论断的认知科学验证——最优误差率（85% 法则 / 合意困难 / 最近发展区）、间隔与巩固（间隔效应 / 灾难性干扰 / 睡眠 / 运动）、工作记忆与遗忘（≈4 组块 / 存储-提取强度 / 知识封装 / 遗忘曲线）（公开网络，摘要级检索，12 来源）
 - 创建：[[学习方法的认知科学验证]]（项目）+ [[适度困难与最优误差率]] / [[学习率与巩固：间隔·睡眠·运动]] / [[工作记忆、封装与遗忘]]（概念）+ 12 个来源页
-- 关联：[[wiki/projects/类比于强化学习和深度学习的学习理论/类比于强化学习和深度学习的学习理论|类比于强化学习和深度学习的学习理论]]（实证补充）、[[综合方法论：RL-DL 启发的认知提升框架]]、[[RL-DL 类比的边界条件：情境调节变量]]
+- 关联：[[wiki/projects/类比于强化学习和深度学习的学习理论|类比于强化学习和深度学习的学习理论]]（实证补充）、[[综合方法论：RL-DL 启发的认知提升框架]]、[[RL-DL 类比的边界条件：情境调节变量]]
 - Ledgers: 新增 12 条 source 记录、23 条 claim 记录
 
 ## 2026-08-11 — Ingest PostgreSQL Tutorial (ingest-postgresql-20260811)
 
-- Sources: [[wiki/resources/PostgreSQL Tutorial|PostgreSQL Tutorial]]（neon.com/postgresql/tutorial）
-- Created: [[PostgreSQL 教程]]（概念）、[[wiki/resources/PostgreSQL Tutorial|PostgreSQL Tutorial]]（来源）
+- Sources: [[wiki/resources/resource/PostgreSQL Tutorial|PostgreSQL Tutorial]]（neon.com/postgresql/tutorial）
+- Created: [[PostgreSQL 教程]]（概念）、[[wiki/resources/resource/PostgreSQL Tutorial|PostgreSQL Tutorial]]（来源）
 - 关联：建立 [[Relational Databases]] 项目页；[[Backend Introduction]] 数据库 TODO → 项目引用
 - Ledgers: 新增 1 条 source 记录、10 条 claim 记录
 
 ## 2026-08-11 — Ingest MDN How browsers work (ingest-browser-render-20260811)
 
-- Sources: [[wiki/resources/Populating the page how browsers work|Populating the page how browsers work]]（MDN Web Docs，2025-12）
-- Created: [[浏览器渲染原理]]（概念）、[[wiki/resources/Populating the page how browsers work|Populating the page how browsers work]]（来源）
+- Sources: [[wiki/resources/resource/Populating the page how browsers work|Populating the page how browsers work]]（MDN Web Docs，2025-12）
+- Created: [[浏览器渲染原理]]（概念）、[[wiki/resources/resource/Populating the page how browsers work|Populating the page how browsers work]]（来源）
 - 关联：[[Backend Introduction]] 项目页补充浏览器渲染管道（导航/DNS/TCP/TLS → 解析/DOM/CSSOM → 渲染/布局/绘制/合成 → 交互/TTI），标记 TODO 完成
 - Ledgers: 新增 1 条 source 记录、11 条 claim 记录
 
 ## 2026-08-11 — Ingest DNS (ingest-dns-20260811)
 
-- Sources: [[wiki/resources/Everything You Need to Know About DNS|Everything You Need to Know About DNS]]（cs.fyi，2023-03）
-- Created: [[DNS 详解]]（概念）、[[wiki/resources/Everything You Need to Know About DNS|Everything You Need to Know About DNS]]（来源）
-- 关联：[[Backend Introduction]] 项目页补充 DNS 概念页与来源页；交叉链接 [[域名详解]]、[[wiki/resources/What is a Domain Name|What is a Domain Name]]
+- Sources: [[wiki/resources/resource/Everything You Need to Know About DNS|Everything You Need to Know About DNS]]（cs.fyi，2023-03）
+- Created: [[DNS 详解]]（概念）、[[wiki/resources/resource/Everything You Need to Know About DNS|Everything You Need to Know About DNS]]（来源）
+- 关联：[[Backend Introduction]] 项目页补充 DNS 概念页与来源页；交叉链接 [[域名详解]]、[[wiki/resources/resource/What is a Domain Name|What is a Domain Name]]
 - Ledgers: 新增 1 条 source 记录、8 条 claim 记录（DNS 系列）
 
 ## 2026-08-11 — Ingest What is a Domain Name (ingest-domain-name-20260811)
 
-- Sources: [[wiki/resources/What is a Domain Name|What is a Domain Name]]（MDN Web Docs，2025-06）
-- Created: [[域名详解]]（概念）、[[wiki/resources/What is a Domain Name|What is a Domain Name]]（来源）
+- Sources: [[wiki/resources/resource/What is a Domain Name|What is a Domain Name]]（MDN Web Docs，2025-06）
+- Created: [[域名详解]]（概念）、[[wiki/resources/resource/What is a Domain Name|What is a Domain Name]]（来源）
 - 关联：[[Backend Introduction]] 项目页补充域名与 DNS 入门知识，标记 TODO 完成
 - Ledgers: 新增 1 条 source 记录、10 条 claim 记录
 
@@ -92,8 +92,8 @@ Newest completed operations appear first.
 
 ## 2026-08-08 — Ingest What is Machine Learning (ingest-what-is-ml-20260808)
 
-- Sources: [[wiki/resources/What is Machine Learning|What is Machine Learning]]（Dave Bergmann，IBM Think）
-- Created: [[机器学习]]（概念）、[[What is ML and its types]]（项目）、[[wiki/resources/What is Machine Learning|What is Machine Learning]]（来源）
+- Sources: [[wiki/resources/resource/What is Machine Learning|What is Machine Learning]]（Dave Bergmann，IBM Think）
+- Created: [[机器学习]]（概念）、[[What is ML and its types]]（项目）、[[wiki/resources/resource/What is Machine Learning|What is Machine Learning]]（来源）
 - 关联：[[pythonBasics]] 交叉链接（ML 库多基于 Python）
 - Ledgers: 新增 1 条 source 记录、16 条 claim 记录
 
@@ -123,27 +123,27 @@ Newest completed operations appear first.
 
 ## 2026-08-07 — Ingest What is a Web Browser (ingest-web-browser-20260807)
 
-- Sources: [[wiki/resources/What is a Web Browser Definition, Types, and Features|What is a Web Browser Definition, Types, and Features]]（Alex Mika，Ramotion Blog，2024-07）
-- Created: [[Web 浏览器详解]]（概念）、[[wiki/resources/What is a Web Browser Definition, Types, and Features|What is a Web Browser Definition, Types, and Features]]（来源）
+- Sources: [[wiki/resources/resource/What is a Web Browser Definition, Types, and Features|What is a Web Browser Definition, Types, and Features]]（Alex Mika，Ramotion Blog，2024-07）
+- Created: [[Web 浏览器详解]]（概念）、[[wiki/resources/resource/What is a Web Browser Definition, Types, and Features|What is a Web Browser Definition, Types, and Features]]（来源）
 - 关联：[[Backend Introduction]] 项目页补充浏览器概念页与来源页链接，标记已摄入浏览器基础知识
 - Ledgers: 新增 1 条 source 记录、6 条 claim 记录
 
 ## 2026-08-06 — Add 加工流畅性与建构水平 concept, link from noise mechanism (concept-disfluency-construal-20260806)
 
 - Created [[加工流畅性与建构水平]]（概念）— 加工不流畅感→更高建构水平→抽象加工 的原理说明（建构水平理论 + 加工流畅性 + 倒 U 甜区解释）。
-- Updated [[wiki/resources/环境变化与认知|环境变化与认知]] → 机制句添加 wiki link 跳转原理页；[[Is Noise Always Bad Exploring the Effects of Ambient Noise on Creative Cognition]] → 机制假说行添加链接。
+- Updated [[wiki/resources/concept/环境变化与认知|环境变化与认知]] → 机制句添加 wiki link 跳转原理页；[[Is Noise Always Bad Exploring the Effects of Ambient Noise on Creative Cognition]] → 机制假说行添加链接。
 - Updated index, log, hot cache, 项目页概念清单。
 
 ## 2026-08-06 — Create 环境变化与认知 project page (project-env-cognition-20260806)
 
-- Created [[wiki/projects/环境变化与认知/环境变化与认知|环境变化与认知（项目）]] project page.
-- Updated [[wiki/resources/环境变化与认知|环境变化与认知]]（概念）→ 交叉链接到项目页；[[神经可塑性]] → 新增关联。
+- Created [[wiki/projects/环境变化与认知|环境变化与认知（项目）]] project page.
+- Updated [[wiki/resources/concept/环境变化与认知|环境变化与认知]]（概念）→ 交叉链接到项目页；[[神经可塑性]] → 新增关联。
 - Updated index, log, hot cache.
 
 ## 2026-08-06 — Autoresearch 环境变化与认知 (autoresearch-env-20260806)
 
 - 研究：环境变化对认知的影响——上下文依赖记忆 (d=0.28)、物理环境参数 (噪声/光照/温度/办公室)、自然与注意力恢复 (ART)、新奇与脑可塑性 (22 来源)
-- 创建：[[wiki/resources/环境变化与认知|环境变化与认知]]（概念）+ 12 个来源页
+- 创建：[[wiki/resources/concept/环境变化与认知|环境变化与认知]]（概念）+ 12 个来源页
 - 更新：[[神经可塑性]] 项目页、[[认知迁移能力]]（交叉链接）
 - Ledgers: 新增 22 条 source、21 条 claim
 
@@ -165,33 +165,33 @@ Newest completed operations appear first.
 
 ## 2026-08-05 — Ingest HTTP/3 From A To Z: Core Concepts (ingest-http3-20260805)
 
-- Sources: [[wiki/resources/HTTP3 From A To Z Core Concepts|HTTP3 From A To Z Core Concepts]]（Robin Marx，Smashing Magazine，2021-08）
-- Created: [[HTTP3 核心概念]]（概念）、[[wiki/resources/HTTP3 From A To Z Core Concepts|HTTP3 From A To Z Core Concepts]]（来源）
+- Sources: [[wiki/resources/resource/HTTP3 From A To Z Core Concepts|HTTP3 From A To Z Core Concepts]]（Robin Marx，Smashing Magazine，2021-08）
+- Created: [[HTTP3 核心概念]]（概念）、[[wiki/resources/resource/HTTP3 From A To Z Core Concepts|HTTP3 From A To Z Core Concepts]]（来源）
 - 关联：[[Backend Introduction]] 项目页补充 HTTP/3 概念页与来源页链接
 - Ledgers: 新增 1 条 source 记录、8 条 claim 记录
 
 ## 2026-08-05 — Ingest What is HTTP (ingest-http-20260805)
 
-- Sources: [[wiki/resources/What is HTTP|What is HTTP]]（Cloudflare Learning，glossary）
-- Created: [[HTTP 详解]]（概念）、[[wiki/resources/What is HTTP|What is HTTP]]（来源）
+- Sources: [[wiki/resources/resource/What is HTTP|What is HTTP]]（Cloudflare Learning，glossary）
+- Created: [[HTTP 详解]]（概念）、[[wiki/resources/resource/What is HTTP|What is HTTP]]（来源）
 - Ledgers: 新增 1 条 source 记录、8 条 claim 记录
 
 ## 2026-08-05 — Ingest How does the Internet Work (ingest-internet-20260805)
 
-- Sources: [[wiki/resources/How does the Internet Work|How does the Internet Work]]（cs.fyi，2023-02）
-- Created: [[互联网工作原理]]（概念）、[[wiki/resources/How does the Internet Work|How does the Internet Work]]（来源）、[[Backend Introduction]]（项目）
+- Sources: [[wiki/resources/resource/How does the Internet Work|How does the Internet Work]]（cs.fyi，2023-02）
+- Created: [[互联网工作原理]]（概念）、[[wiki/resources/resource/How does the Internet Work|How does the Internet Work]]（来源）、[[Backend Introduction]]（项目）
 - Ledgers: 新增 1 条 source 记录、8 条 claim 记录
 
 ## 2026-08-04 — Ingest How to Do Great Work (ingest-greatwork-20260804)
 
-- Sources: [[wiki/resources/How to Do Great Work|How to Do Great Work]]（Paul Graham，paulgraham.com，2023-07）
-- Created: [[如何做出伟大工作]]（概念）、[[wiki/resources/How to Do Great Work|How to Do Great Work]]（来源）
+- Sources: [[wiki/resources/resource/How to Do Great Work|How to Do Great Work]]（Paul Graham，paulgraham.com，2023-07）
+- Created: [[如何做出伟大工作]]（概念）、[[wiki/resources/resource/How to Do Great Work|How to Do Great Work]]（来源）
 - Ledgers: 新增 1 条 source 记录、16 条 claim 记录
 
 ## 2026-08-03 — Ingest Learn Python in Y Minutes (ingest-learnxinyminutes-20260803)
 
-- Sources: [[wiki/resources/Learn Python in Y Minutes|Learn Python in Y Minutes]]（learnxinyminutes.com，中文）
-- Created: [[Python 快速入门]]（概念）、[[wiki/resources/Learn Python in Y Minutes|Learn Python in Y Minutes]]（来源）
+- Sources: [[wiki/resources/resource/Learn Python in Y Minutes|Learn Python in Y Minutes]]（learnxinyminutes.com，中文）
+- Created: [[Python 快速入门]]（概念）、[[wiki/resources/resource/Learn Python in Y Minutes|Learn Python in Y Minutes]]（来源）
 - Ledgers: 新增 1 条 source 记录、18 条 claim 记录
 - 关联：[[pythonBasics]] 项目页补充新概念页链接
 

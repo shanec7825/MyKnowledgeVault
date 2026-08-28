@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>神经与认知科学 · 领域手册</title>
+<style>
+:root{--accent:#0F6E56;--soft:#E1F5EE;--ink:#085041;
+  --text:#2c2c2a;--muted:#6b6a65;--line:#e6e4dc;--bg:#faf9f5;--card:#ffffff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font:15px/1.75 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+main{max-width:960px;margin:0 auto;padding:0 28px 80px}
+.hero{position:relative;padding:56px 0 30px;border-bottom:1px solid var(--line)}
+.hero .grid-bg{position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:44px 44px;opacity:.35;mask-image:linear-gradient(#000 55%,transparent)}
+.hero-inner{position:relative;display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+.kicker{font-size:12px;letter-spacing:.28em;color:var(--accent);font-weight:600;margin-bottom:14px}
+h1{font-family:"Noto Serif SC","Source Han Serif SC",Georgia,serif;font-size:46px;line-height:1.15;
+  font-weight:600;color:var(--text);margin-bottom:12px}
+h1 .dot{color:var(--accent)}
+.tagline{max-width:560px;color:var(--muted);font-size:15px}
+.stats{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 14px;font-size:12.5px;color:var(--muted)}
+.stat b{color:var(--accent);font-weight:600}
+.motif{width:190px;flex:none;opacity:.9}
+.motif svg{width:100%;height:auto;display:block}
+section{margin-top:44px}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px}
+.sec-no{font-family:Georgia,serif;font-size:30px;color:var(--accent);font-weight:600;opacity:.9}
+.sec-title{font-family:"Noto Serif SC","Source Han Serif SC",Georgia,serif;font-size:21px;font-weight:600}
+.sec-rule{flex:1;border-bottom:1px solid var(--line);transform:translateY(-6px)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 26px}
+.ov-item{display:grid;grid-template-columns:88px 1fr;gap:16px;padding:13px 0;border-bottom:1px dashed var(--line)}
+.ov-item:last-child{border-bottom:none}
+.ov-label{color:var(--accent);font-weight:600;font-size:14px}
+.ov-body{font-size:14.5px}
+.ov-body p+p{margin-top:8px}
+.bar-wrap{margin:6px 0 22px}
+.bar-cap{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:8px}
+.bar{height:14px;border-radius:999px;background:var(--soft);overflow:hidden;display:flex}
+.bar .known{background:var(--accent);height:100%}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:720px){.duo{grid-template-columns:1fr}.hero-inner{flex-direction:column;align-items:flex-start}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 22px}
+.panel h3{font-size:13px;letter-spacing:.18em;color:var(--accent);font-weight:600;margin-bottom:12px}
+.panel ul{list-style:none}
+.panel li{padding:9px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.panel li:last-child{border-bottom:none}
+.panel li b{color:var(--text)}
+.panel li .d{color:var(--muted)}
+.panel li .term{color:var(--accent-ink,var(--ink));}
+.checks .box{display:inline-block;width:13px;height:13px;border:1.6px solid var(--accent);
+  border-radius:4px;margin-right:9px;vertical-align:-2px;opacity:.85}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.pcard{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);
+  border-radius:12px;padding:18px 20px;display:flex;flex-direction:column;gap:10px}
+.pcard h4{font-size:16px;font-weight:600}
+.pcard .goal{font-size:13.5px;color:var(--muted)}
+.pcard .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+.pill{font-size:11.5px;padding:2px 10px;border-radius:999px;background:var(--soft);color:var(--ink)}
+.pill.done{background:#EAF3DE;color:#3B6D11}
+.pcard code{background:var(--bg);padding:1px 7px;border-radius:5px;font-size:12px}
+.empty{border:1.5px dashed var(--line);border-radius:14px;padding:26px;text-align:center;color:var(--muted);font-size:14px}
+.arch{margin-bottom:14px}
+.arch .sum{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);font-size:13.5px;color:var(--muted)}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.fig{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center}
+.fig img{width:100%;border-radius:8px}
+.fig .ph{height:90px;display:flex;align-items:center;justify-content:center;color:var(--accent);opacity:.5}
+.fig .ph svg{width:54px;height:54px}
+.fig .n{font-size:12.5px;color:var(--muted);margin-top:8px;word-break:break-all}
+footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+code{font-family:ui-monospace,Consolas,monospace}
+</style>
+</head>
+<body>
+<main>
+  <header class="hero"><div class="grid-bg"></div>
+    <div class="hero-inner">
+      <div>
+        <p class="kicker">KNOWLEDGE VAULT · 领域手册</p>
+        <h1>神经与认知科学<span class="dot">.</span></h1>
+        <p class="tagline">以实证文献为地基，用「研究档案（dossier）」方式推进——每个档案锁定一个待验证问题，摄入一手论文，产出概念页与结论。</p>
+        <div class="stats">
+          <span class="stat">进行中 <b>5</b></span>
+          <span class="stat">已完结 <b>0</b></span>
+          <span class="stat">已掌握 <b>6</b> 项</span>
+          <span class="stat">待探索 <b>7</b> 项</span>
+        </div>
+      </div>
+      <div class="motif"><svg viewBox="0 0 200 140" fill="none" stroke="#0F6E56" stroke-width="1.6">
+<circle cx="70" cy="70" r="16"/>
+<path d="M58 58 C40 40 30 34 14 30M58 82 C40 96 28 104 12 108M70 54 C70 38 66 26 58 14M82 56 C92 40 104 32 118 28"/>
+<path d="M86 70 H126 C140 70 142 62 154 62 C168 62 168 78 154 78 C146 78 142 74 134 74"/>
+<circle cx="120" cy="46" r="3" stroke-dasharray="2 2"/>
+<circle cx="112" cy="98" r="3" stroke-dasharray="2 2"/>
+</svg></div>
+    </div>
+  </header>
+
+  <section>
+    <div class="sec-head"><span class="sec-no">01</span><span class="sec-title">领域概览</span><span class="sec-rule"></span></div>
+    <div class="card"><div class="ov-item"><div class="ov-label">特征</div><div class="ov-body"><p>以实证文献为地基，用「研究档案（dossier）」方式推进——每个档案锁定一个待验证问题，摄入一手论文，产出概念页与结论。结论遇到反证时<strong>明确标注 contested</strong>，不强行统一说法。</p></div></div><div class="ov-item"><div class="ov-label">目标</div><div class="ov-body"><p>建立<strong>一套经过文献检验的、属于自己的学习原则</strong>，替代道听途说的方法论。底层追问是「成年大脑还能不能学、怎么学最有效」——这套原则要能同时回答日常学习安排、长期能力建设、以及「AI 时代人该如何学习」这三个尺度的问题。凡是进入这套原则的论断，都必须标注证据强度与适用边界。</p></div></div><div class="ov-item"><div class="ov-label">范围</div><div class="ov-body"><p>神经可塑性 · 学习与记忆机制（间隔 / 睡眠 / 巩固）· 迁移与泛化 · 元认知 · 具身认知 · 环境对认知的影响 · RL/DL 类比框架。</p></div></div><div class="ov-item"><div class="ov-label">规模</div><div class="ov-body"><p>概念页 20+，来源页 50+，研究档案 5 个。</p></div></div></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-no">02</span><span class="sec-title">学习进度</span><span class="sec-rule"></span></div>
+    <div class="bar-wrap"><div class="bar-cap"><span>已掌握 <b>6</b> 项 · 待探索 <b>7</b> 项</span><span>46%</span></div><div class="bar"><div class="known" style="width:46%"></div></div></div>
+    <div class="duo">
+      <div class="panel"><h3>KNOWN · 已经掌握</h3><ul><li><span class="d"><strong>神经可塑性</strong>（档案）— 生物机制 / 认知科学理论 / 成人脑可塑性 / 脑区差异四个概念页 + 10 篇来源（Eriksson 1998、Sorrells 2018、Boldrini 2018、Hensch 2005、Owen 2010、Jaeggi 2008、Redick 2013、Stern 2009、Maguire 2000、Ball 2002）。</span></li><li><span class="d"><strong>环境变化与认知</strong>（档案）— 上下文依赖记忆 / 物理环境 / 自然恢复 / 新奇性，12+ 来源。</span></li><li><span class="d"><strong>认知迁移</strong>（概念页）— Gick & Holyoak / Butler / Rohrer & Taylor / Pan & Rickard / Bransford & Schwartz 等 12 篇迁移研究线。</span></li><li><span class="d"><strong>RL/DL 类比框架</strong>（档案）— 5 个概念页 + 边界条件修正，已提出六阶段认知流水线与十二项核心原则。</span></li><li><span class="d"><strong>学习方法验证</strong>（档案）— 日记 5 条论断的逐条验证（3 概念页 + 12 来源）。</span></li><li><span class="d"><strong>表征与泛化</strong>（档案）— 图式 / 具身表征 / 元认知 / 泛化格式（4 概念页 + 10 来源）。</span></li></ul></div>
+      <div class="panel"><h3>UNKNOWN · 待探索</h3><ul class="checks"><li><span class="box"></span>成人海马神经发生是否存在？（contested：Eriksson 1998 vs Sorrells 2018 vs Boldrini 2018）</li><li><span class="box"></span>工作记忆 / 脑力训练能否迁移到流体智力？（contested：Jaeggi 2008 vs Redick 2013 / Owen 2010）</li><li><span class="box"></span>学习在什么条件下能迁移到新情境？近迁移与远迁移的机制差异？</li><li><span class="box"></span>成年后大脑学习能力是否存在、强弱如何？哪些认知域可塑、哪些不可塑？</li><li><span class="box"></span>RL/DL 类比框架的适用边界：反馈时机、任务类型、专长水平、WMC 如何调节？</li><li><span class="box"></span>补齐神经可塑性 2020s 新证据：单细胞组学、成人弱视新疗法 RCT、二语语音原始研究。</li><li><span class="box"></span>各研究档案收口：结论沉淀为概念页，dossier 移入 <code>wiki/archives/</code>。</li></ul></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-no">03</span><span class="sec-title">进行中的项目</span><span class="sec-rule"></span></div>
+    <div class="cards"><div class="pcard"><h4>学习方法的认知科学验证</h4><div class="goal">逐条验证日记 2026-08-13 的 5 条学习方法论断，给出证据状态与边界，并沉淀为一页可操作的学习方法论结论页。</div><div class="meta"><span class="pill">active</span><span class='pill'>intermediate</span><span class="pill">2026-08-28</span></div></div><div class="pcard"><h4>环境变化与认知</h4><div class="goal">研究物理环境变化（换地点学习/工作、自然环境暴露、噪声/光照/温度/办公室布局、环境新颖性）对大脑认知行为的多维影响——包括上下文依赖记忆、注意力恢复、创造力、记忆巩固、工作满意度与健康。</div><div class="meta"><span class="pill">active</span><span class='pill'>intermediate</span><span class="pill">2026-08-28</span></div></div><div class="pcard"><h4>神经可塑性</h4><div class="goal">回答神经可塑性的生物机制、认知科学理论，以及两个具体问题：成人学习能力是否存在及其强弱；不同脑区（听觉、视觉、逻辑）是否存在可塑与不可塑的认知能力。</div><div class="meta"><span class="pill">active</span><span class='pill'>advanced</span><span class="pill">2026-08-28</span></div></div><div class="pcard"><h4>类比于强化学习和深度学习的学习理论</h4><div class="goal">把 RL/DL 核心概念映射为可操作的人类学习方法论，完成核心原则的实证校准、边界标注与最终结论页。</div><div class="meta"><span class="pill">active</span><span class='pill'>intermediate</span><span class="pill">2026-08-28</span></div></div><div class="pcard"><h4>认知表征与泛化</h4><div class="goal">回答四个子问题——图式与理解力、具身表征、元认知可训练性、非空间泛化表征——并产出一页「表征与泛化」结论页。</div><div class="meta"><span class="pill">active</span><span class='pill'>advanced</span><span class="pill">2026-08-28</span></div></div></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-no">04</span><span class="sec-title">已完结项目</span><span class="sec-rule"></span></div>
+    <div class="empty">暂无已完结项目。完成第一个项目并归档后，它会以「成果」的身份出现在这里。</div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-no">05</span><span class="sec-title">相关图示</span><span class="sec-rule"></span></div>
+    <div class="gal"><div class="fig"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 15l5-5 4 4 3-3 6 6"/><circle cx="9" cy="8" r="1.6"/></svg></div><div class="n">Drawing 2026-08-02 23.06.30</div></div><div class="fig"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 15l5-5 4 4 3-3 6 6"/><circle cx="9" cy="8" r="1.6"/></svg></div><div class="n">Drawing 2026-08-05 18.37.12</div></div><div class="fig"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 15l5-5 4 4 3-3 6 6"/><circle cx="9" cy="8" r="1.6"/></svg></div><div class="n">Drawing 2026-08-07 17.40.20</div></div><div class="fig"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 15l5-5 4 4 3-3 6 6"/><circle cx="9" cy="8" r="1.6"/></svg></div><div class="n">Drawing 2026-08-07 17.41.23</div></div><div class="fig"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 15l5-5 4 4 3-3 6 6"/><circle cx="9" cy="8" r="1.6"/></svg></div><div class="n">Drawing 2026-08-07 17.42.58</div></div><div class="fig"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 15l5-5 4 4 3-3 6 6"/><circle cx="9" cy="8" r="1.6"/></svg></div><div class="n">Drawing 2026-08-07 17.43.20</div></div><div class="fig"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 15l5-5 4 4 3-3 6 6"/><circle cx="9" cy="8" r="1.6"/></svg></div><div class="n">Drawing 2026-08-08 17.22.57</div></div><div class="fig"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 15l5-5 4 4 3-3 6 6"/><circle cx="9" cy="8" r="1.6"/></svg></div><div class="n">Drawing 2026-08-16 15.14.55</div></div></div><p style="margin-top:12px;font-size:12.5px;color:var(--muted)">把 Excalidraw 绘图导出为 PNG / SVG 并放在同目录同名文件，刷新本页即可自动嵌入。</p>
+  </section>
+
+  <footer>由 <code>scripts/gen-area-html.py</code> 自动生成于 2026-08-29 · 源文件 <code>wiki/areas/神经与认知科学.md</code> · 请勿手工编辑，改源后重跑脚本</footer>
+</main>
+</body>
+</html>

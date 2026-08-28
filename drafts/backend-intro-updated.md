@@ -49,9 +49,9 @@ goal: "后端入门：从网络基础起步，逐步建立后端开发所需的�
 - [[Web 浏览器详解]] — Web 浏览器：定义、发展史、工作原理、类型、功能与安全（概念页）
 - [[What is a Web Browser Definition, Types, and Features]] — 来源页（Ramotion Blog，2024-07）
 - [[浏览器渲染原理]] — 浏览器渲染管道：导航→解析→渲染→交互（概念页）
-- [[wiki/resources/Populating the page how browsers work|Populating the page how browsers work]] — 来源页（MDN Web Docs，2025-12）
+- [[wiki/resources/resource/Populating the page how browsers work|Populating the page how browsers work]] — 来源页（MDN Web Docs，2025-12）
 - [[域名详解]] — 域名：结构（TLD / 标签 / 子域）、购买与 DNS 解析（概念页）
-- [[wiki/resources/What is a Domain Name|What is a Domain Name]]]  — 来源页（MDN Web Docs，2025-06）
+- [[wiki/resources/resource/What is a Domain Name|What is a Domain Name]]]  — 来源页（MDN Web Docs，2025-06）
 - [[DNS 详解]] — DNS 域名系统：解析流程、记录类型、dig/whois 工具（概念页）
 - [[Everything You Need to Know About DNS]] — 来源页（cs.fyi，2023-03）
 
