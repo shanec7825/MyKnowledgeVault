@@ -6294,6 +6294,286 @@
       "risk": "normal",
       "supersedes": null,
       "text": "数组应用传统 for 或 for...of 迭代（forEach 也理想）；for...in 会额外包含自定义属性（如 arr.foo = \"hello\"）。"
+    },
+    "clm-mdn-http-overview-app-layer": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "HTTP 概述",
+          "relation": "supports",
+          "source_id": "src-ff56899f49721d88be0f"
+        }
+      ],
+      "location": {
+        "anchor": "系统组成",
+        "path": "wiki/resources/concept/HTTP 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-29",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "HTTP 是应用层协议，位于 TCP（传输层）与 IP（网络层）之上；理论上可承载于任何可靠传输协议，而非仅限 TCP。"
+    },
+    "clm-mdn-http-overview-messages": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "HTTP 概述",
+          "relation": "supports",
+          "source_id": "src-ff56899f49721d88be0f"
+        }
+      ],
+      "location": {
+        "anchor": "概述",
+        "path": "wiki/resources/concept/HTTP 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-29",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "客户端与服务端之间交换的是一个个独立的消息（请求与响应），而不是数据流。"
+    },
+    "clm-mdn-http-overview-ua-initiates": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "HTTP 概述",
+          "relation": "supports",
+          "source_id": "src-ff56899f49721d88be0f"
+        }
+      ],
+      "location": {
+        "anchor": "系统组成",
+        "path": "wiki/resources/concept/HTTP 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-29",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "浏览器等用户代理总是首先发起请求的实体，永远不会是服务端；后来的机制只是模拟服务端发起的消息。"
+    },
+    "clm-mdn-http-overview-host-header": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "HTTP 概述",
+          "relation": "supports",
+          "source_id": "src-ff56899f49721d88be0f"
+        }
+      ],
+      "location": {
+        "anchor": "系统组成",
+        "path": "wiki/resources/concept/HTTP 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-29",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "借助 HTTP/1.1 的 Host 标头，同一台机器上的多个服务器软件实例可以共用同一个 IP 地址。"
+    },
+    "clm-mdn-http-overview-proxy-roles": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "HTTP 概述",
+          "relation": "supports",
+          "source_id": "src-ff56899f49721d88be0f"
+        }
+      ],
+      "location": {
+        "anchor": "系统组成",
+        "path": "wiki/resources/concept/HTTP 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-29",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "在应用层参与消息传递的实体称为代理，可承担缓存、过滤、负载均衡、认证、日志五类作用；它既能透明转发，也能在转发前改写请求。"
+    },
+    "clm-mdn-http-overview-extensible-headers": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "HTTP 概述",
+          "relation": "supports",
+          "source_id": "src-ff56899f49721d88be0f"
+        }
+      ],
+      "location": {
+        "anchor": "HTTP 的基本性质",
+        "path": "wiki/resources/concept/HTTP 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-29",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "HTTP/1.0 引入的标头机制是协议可扩展性的来源：只要客户端与服务端就新标头的语义达成一致，就能加入新功能。"
+    },
+    "clm-mdn-http-overview-stateless-cookie": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "HTTP 概述",
+          "relation": "supports",
+          "source_id": "src-ff56899f49721d88be0f"
+        }
+      ],
+      "location": {
+        "anchor": "无状态、会话与连接",
+        "path": "wiki/resources/concept/HTTP 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-29",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "HTTP 本身无状态，同一连接中两个成功请求之间没有关系；借助 HTTP Cookie 承载上下文，可以在无状态协议之上建立有状态会话。"
+    },
+    "clm-mdn-http-overview-connection-transport": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "HTTP 概述",
+          "relation": "supports",
+          "source_id": "src-ff56899f49721d88be0f"
+        }
+      ],
+      "location": {
+        "anchor": "HTTP 的基本性质",
+        "path": "wiki/resources/concept/HTTP 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-29",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "连接由传输层控制，从根本上不属于 HTTP 范畴；HTTP 只要求底层传输可靠或不丢消息，因此在 TCP 与 UDP 之间依赖面向连接的 TCP。"
+    },
+    "clm-mdn-http-overview-persistent-conn": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "HTTP 概述",
+          "relation": "supports",
+          "source_id": "src-ff56899f49721d88be0f"
+        }
+      ],
+      "location": {
+        "anchor": "无状态、会话与连接",
+        "path": "wiki/resources/concept/HTTP 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-29",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "HTTP/1.0 默认为每对请求/响应打开一条独立 TCP 连接；HTTP/1.1 引入流水线与持久化连接，HTTP/2 改为在单条连接上用帧复用多条消息。"
+    },
+    "clm-mdn-http-overview-flow-steps": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "HTTP 概述",
+          "relation": "supports",
+          "source_id": "src-ff56899f49721d88be0f"
+        }
+      ],
+      "location": {
+        "anchor": "HTTP 流",
+        "path": "wiki/resources/concept/HTTP 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-29",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "一次 HTTP 交互分四步：打开 TCP 连接、发送 HTTP 报文、读取服务端返回的报文、关闭连接或为后续请求重用。"
+    },
+    "clm-mdn-http-overview-request-parts": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "HTTP 概述",
+          "relation": "supports",
+          "source_id": "src-ff56899f49721d88be0f"
+        }
+      ],
+      "location": {
+        "anchor": "HTTP 报文",
+        "path": "wiki/resources/concept/HTTP 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-29",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "请求报文由五部分组成：HTTP 方法、资源路径（去掉协议/域名/端口后的 URL 部分）、协议版本号、可选标头、可选请求体。"
+    },
+    "clm-mdn-http-overview-response-parts": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "HTTP 概述",
+          "relation": "supports",
+          "source_id": "src-ff56899f49721d88be0f"
+        }
+      ],
+      "location": {
+        "anchor": "HTTP 报文",
+        "path": "wiki/resources/concept/HTTP 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-29",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "响应报文由五部分组成：协议版本号、状态码、状态信息（不权威的简短描述）、标头、可选的响应主体。"
+    },
+    "clm-mdn-http-overview-frames-semantics": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "HTTP 概述",
+          "relation": "supports",
+          "source_id": "src-ff56899f49721d88be0f"
+        }
+      ],
+      "location": {
+        "anchor": "HTTP 报文",
+        "path": "wiki/resources/concept/HTTP 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-29",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "HTTP/2 把报文封装进帧这一二进制结构以支持标头压缩与多路复用，但报文语义不变，客户端会重组出原始的 HTTP/1.1 请求。"
+    },
+    "clm-mdn-http-overview-controls": {
+      "assessment": "accepted",
+      "confidence": "high",
+      "evidence": [
+        {
+          "locator": "HTTP 概述",
+          "relation": "supports",
+          "source_id": "src-ff56899f49721d88be0f"
+        }
+      ],
+      "location": {
+        "anchor": "HTTP 能控制什么",
+        "path": "wiki/resources/concept/HTTP 详解.md"
+      },
+      "notes": null,
+      "reviewed_at": "2026-08-29",
+      "risk": "normal",
+      "supersedes": null,
+      "text": "HTTP 可控制五类特性：缓存、开放同源限制、认证、代理与隧道、会话，这些能力多半经由标头实现。"
     }
   },
   "generated_at": "2026-08-11T00:00:00Z",

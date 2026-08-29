@@ -2370,6 +2370,26 @@
       "review_status": "active",
       "supersedes": null,
       "title": "JavaScript 指南：循环与迭代"
+    },
+    "src-ff56899f49721d88be0f": {
+      "authority": "official",
+      "content_kind": "webpage",
+      "content_sha256": "d871de5f6c067188ea8e0ff5ebe7d935d5431a71d01ef39c476d79e5640e49b7",
+      "independence_key": "mdn-http-overview",
+      "ingested_at": "2026-08-29",
+      "origin": {
+        "kind": "file",
+        "locator": "inbox/HTTP 概述.md"
+      },
+      "pages": [
+        "wiki/resources/resource/HTTP 概述.md",
+        "wiki/resources/concept/HTTP 详解.md"
+      ],
+      "refresh_due": "2027-02-28",
+      "retrieved_at": "2026-08-29",
+      "review_status": "active",
+      "supersedes": null,
+      "title": "HTTP 概述"
     }
   }
 }

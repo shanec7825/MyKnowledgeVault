@@ -1,37 +1,31 @@
-# Global filter applies to every view in this base
-filters: 'type == "source"'
-
+filters: type == "source"
 formulas:
-  days_since_updated: 'if(updated, (now() - date(updated)).days.round(0), "")'
-  status_icon: 'if(status == "seed", "🌰", if(status == "active", "📄", "•"))'
-  related_count: 'if(related, related.length, 0)'
-  backlinks_count: 'file.backlinks.length'
-
+  days_since_updated: if(updated, (now() - date(updated)).days.round(0), "")
+  status_icon: if(status == "seed", "🌰", if(status == "active", "📄", "•"))
+  related_count: if(related, related.length, 0)
+  backlinks_count: file.backlinks.length
 properties:
   file.name:
-    displayName: "File"
+    displayName: File
   title:
-    displayName: "Title"
+    displayName: Title
   author:
-    displayName: "Author"
+    displayName: Author
   status:
-    displayName: "Status"
+    displayName: Status
   source_type:
-    displayName: "Type"
-  formula.status_icon:
-    displayName: ""
+    displayName: Type
   formula.days_since_updated:
-    displayName: "Days Since Update"
+    displayName: Days Since Update
   formula.related_count:
-    displayName: "Related"
+    displayName: Related
   formula.backlinks_count:
-    displayName: "Referenced By"
+    displayName: Referenced By
   file.folder:
-    displayName: "Folder"
-
+    displayName: Folder
 views:
   - type: table
-    name: "Table"
+    name: Table
     order:
       - file.name
       - title
@@ -43,10 +37,9 @@ views:
       - formula.related_count
       - formula.backlinks_count
       - file.folder
-
   - type: table
-    name: "Seeds"
-    filters: 'status == "seed"'
+    name: Seeds
+    filters: status == "seed"
     order:
       - file.name
       - title
@@ -54,10 +47,9 @@ views:
       - source_type
       - formula.days_since_updated
       - formula.related_count
-
   - type: table
-    name: "Active"
-    filters: 'status == "active"'
+    name: Active
+    filters: status == "active"
     order:
       - file.name
       - title
@@ -66,10 +58,9 @@ views:
       - formula.days_since_updated
       - formula.backlinks_count
       - file.folder
-
   - type: table
-    name: "Webpages"
-    filters: 'source_type == "webpage"'
+    name: Webpages
+    filters: source_type == "webpage"
     order:
       - file.name
       - title
