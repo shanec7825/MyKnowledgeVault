@@ -1,19 +1,20 @@
 ---
 type: project
-title: "HTTP"
+title: HTTP
 created: 2026-08-29
 updated: 2026-08-29
 status: active
-area: "后端"
+area: 后端
 domain: networking
 complexity: intermediate
-goal: "深挖 HTTP 协议骨架——报文、方法、状态码、缓存、连接管理、版本演进——形成可复用的协议速查与抓包调试能力。"
+goal: 深挖 HTTP 协议骨架——报文、方法、状态码、缓存、连接管理、版本演进——形成可复用的协议速查与抓包调试能力。
 prerequisites:
   - "[[wiki/projects/Backend Introduction|Backend Introduction]]"
 code: []
 related:
   - "[[HTTP 详解]]"
   - "[[HTTP3 核心概念]]"
+  - "[[HTTP 详解|HTTP 概述]]"
 tags:
   - project
   - http
