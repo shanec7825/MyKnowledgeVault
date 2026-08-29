@@ -1,5 +1,4 @@
 ---
-address: c-000118
 type: project
 title: "HTTP"
 created: 2026-08-29
@@ -12,8 +11,6 @@ goal: "深挖 HTTP 协议骨架——报文、方法、状态码、缓存、连�
 prerequisites:
   - "[[wiki/projects/Backend Introduction|Backend Introduction]]"
 code: []
-sources:
-  - "[[HTTP 概述]]"
 related:
   - "[[HTTP 详解]]"
   - "[[HTTP3 核心概念]]"
@@ -63,42 +60,3 @@ tags:
 - **抽象层错位**：HTTP/2 把报文封进帧之后语义没变，但报文从人类可读变成二进制，可观测性骤降，抓包验证的门槛被抬高。
 - **代理的双重身份**：它既是性能手段（缓存、负载均衡），又是故障源（改写请求、缓存污染），出问题时不容易第一时间想到它。
 
-## 自动关联
-
-> 以下列表由 Dataview 自动生成，勿手工编辑。改关系请改 frontmatter 的 `sources` / `related` / `prerequisites`。
-
-### 本项目引用的知识
-
-```dataview
-LIST WITHOUT ID R
-FROM "wiki/projects"
-WHERE file.path = this.file.path
-FLATTEN (sources + related) AS R
-SORT R ASC
-```
-
-### 引用本项目的资源
-
-```dataview
-LIST
-FROM "wiki/resources"
-WHERE contains(related, this.file.link) OR contains(sources, this.file.link)
-SORT file.name ASC
-```
-
-### 前置项目
-
-```dataview
-LIST WITHOUT ID P
-FROM "wiki/projects"
-WHERE file.path = this.file.path
-FLATTEN prerequisites AS P
-```
-
-### 后继项目
-
-```dataview
-LIST
-FROM "wiki/projects"
-WHERE contains(prerequisites, this.file.link)
-```

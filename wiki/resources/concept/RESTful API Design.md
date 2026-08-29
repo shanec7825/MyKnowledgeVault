@@ -1,5 +1,4 @@
 ---
-address: c-000008
 type: concept
 title: "RESTful Web API 设计最佳实践"
 created: 2026-08-02
@@ -12,9 +11,6 @@ tags:
 related:
   - "[[JSON API]]"
   - "[[JSON API Specification]]"
-  - "[[Web API Design Best Practices]]"
-sources:
-  - "[[Web API Design Best Practices]]"
 complexity: intermediate
 domain: web-api
 aliases:
@@ -126,4 +122,4 @@ OpenAPI Initiative 标准化 REST API 描述（前身是 Swagger，后更名 Ope
 
 - [[JSON API]] — 一种具体 JSON 数据格式规范（区别于通用 REST 设计）
 - [[JSON API Specification]] — JSON:API 基础规范 v1.1
-- [[Web API Design Best Practices]] — 本文来源页
+- Web API Design Best Practices — 本文来源页

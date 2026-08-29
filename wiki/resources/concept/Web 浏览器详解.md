@@ -1,5 +1,4 @@
 ---
-address: c-000065
 type: concept
 title: "Web 浏览器详解"
 created: 2026-08-07
@@ -11,11 +10,8 @@ tags:
   - networking
   - backend
 related:
-  - "[[wiki/resources/resource/What is a Web Browser Definition, Types, and Features|What is a Web Browser Definition, Types, and Features]]"
   - "[[互联网工作原理]]"
   - "[[HTTP 详解]]"
-sources:
-  - "[[wiki/resources/resource/What is a Web Browser Definition, Types, and Features|What is a Web Browser Definition, Types, and Features]]"
 complexity: beginner
 domain: backend
 aliases:
@@ -27,7 +23,7 @@ aliases:
 
 # Web 浏览器详解
 
-本文基于 Ramotion 博客的《[[wiki/resources/resource/What is a Web Browser Definition, Types, and Features|What is a Web Browser Definition, Types, and Features]]》（2024-07）梳理 Web 浏览器的核心知识，作为 [[Backend Introduction]] 项目中客户端侧的关键一环：浏览器是什么、怎么工作、有哪些类型与功能、安全机制如何运作。
+本文基于 Ramotion 博客的《What is a Web Browser Definition, Types, and Features》（2024-07）梳理 Web 浏览器的核心知识，作为 [[Backend Introduction]] 项目中客户端侧的关键一环：浏览器是什么、怎么工作、有哪些类型与功能、安全机制如何运作。
 
 ## 概述
 
@@ -147,7 +143,7 @@ aliases:
 
 ## Related
 
-- [[wiki/resources/resource/What is a Web Browser Definition, Types, and Features|What is a Web Browser Definition, Types, and Features]] — 本次摄入的原文（Ramotion Blog，2024-07）
+- What is a Web Browser Definition, Types, and Features — 本次摄入的原文（Ramotion Blog，2024-07）
 - [[互联网工作原理]] — 网络基础概念页（浏览器运行在互联网之上）
 - [[HTTP 详解]] — HTTP 协议概念页（浏览器是 HTTP 的客户端实现）
 - [[Backend Introduction]] — 后端入门项目页

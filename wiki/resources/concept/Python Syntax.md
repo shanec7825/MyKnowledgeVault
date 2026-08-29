@@ -1,5 +1,4 @@
 ---
-address: c-000011
 type: concept
 title: "Python 基础语法"
 created: 2026-08-02
@@ -10,9 +9,6 @@ tags:
   - python
   - programming-language
 related:
-  - "[[Python Syntax Tutorial]]"
-sources:
-  - "[[Python Syntax Tutorial]]"
 complexity: beginner
 domain: programming
 aliases:
@@ -119,5 +115,5 @@ else:
 
 ## Related
 
-- [[Python Syntax Tutorial]] — 本文来源页
+- Python Syntax Tutorial — 本文来源页
 - [[CS本科学习手册]] — 综合学习笔记（可选）

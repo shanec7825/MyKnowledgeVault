@@ -19,7 +19,6 @@ related:
   - "[[神经可塑性 认知科学理论]]"
   - "[[如何做出伟大工作]]"
   - "[[wiki/projects/minGPT教学方案|minGPT 教学方案]]"
-sources: []
 domain: cognitive-science
 ---
 

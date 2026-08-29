@@ -1,5 +1,4 @@
 ---
-address: c-000068
 type: concept
 title: "OpenAPI 规范"
 created: 2026-08-07
@@ -11,12 +10,9 @@ tags:
   - api-design
   - specification
 related:
-  - "[[OpenAPI Specification (v3.1)]]"
   - "[[RESTful API Design]]"
   - "[[JSON API Specification]]"
   - "[[API Styles]]"
-sources:
-  - "[[OpenAPI Specification (v3.1)]]"
 complexity: intermediate
 domain: backend
 aliases:
@@ -28,7 +24,7 @@ aliases:
 
 # OpenAPI 规范
 
-本文基于 OpenAPI Initiative 的《[[OpenAPI Specification (v3.1)]]》（OAS 3.1.1，2024-10）梳理 OpenAPI 规范的核心架构与对象模型，作为 [[API Styles]] 项目 OpenAPI 风格对照的基石。
+本文基于 OpenAPI Initiative 的《OpenAPI Specification (v3.1)》（OAS 3.1.1，2024-10）梳理 OpenAPI 规范的核心架构与对象模型，作为 [[API Styles]] 项目 OpenAPI 风格对照的基石。
 
 ## 概述
 
@@ -307,7 +303,7 @@ OpenAPI Description 可由多个 JSON/YAML 文档组成：
 
 ## Related
 
-- [[OpenAPI Specification (v3.1)]] — 完整规范来源页
+- OpenAPI Specification (v3.1) — 完整规范来源页
 - [[RESTful API Design]] — RESTful API 通用设计最佳实践
 - [[JSON API Specification]] — JSON:API 具体规范（不同于 OpenAPI 的通用性）
 - [[API Styles]] — API 风格对比项目

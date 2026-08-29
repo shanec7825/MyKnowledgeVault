@@ -17,11 +17,6 @@ related:
   - "[[如何做出伟大工作]]"
   - "[[wiki/projects/minGPT教学方案|minGPT 教学方案]]"
   - "[[RL-DL 类比的边界条件：情境调节变量]]"
-sources:
-  - "[[What is Machine Learning]]"
-  - "[[Training in Self-Explanation and Self-Regulation Strategies]]"
-  - "[[Improving Fluid Intelligence with Training on Working Memory]]"
-  - "[[Putting Brain Training to the Test]]"
 domain: cognitive-science
 ---
 
@@ -40,7 +35,7 @@ RL 中，**奖励预测误差**（reward prediction error, RPE）= 实际奖励 
 **方法论启示**：
 - **即时 vs 延迟反馈视任务而定**：记单词时，延迟反馈（等遗忘后测试）的预测误差更大、学习信号更强；数学解题时，即时反馈对建立"策略→结果"关联至关重要。详见 [[RL-DL 类比的边界条件：情境调节变量]]
 - **自我测试创造"预测误差"**：主动回忆→与正确答案对比→差距驱动修正。关键在差距的大小，而非反馈的速度
-- **"Desirable difficulty"**：练习时感到困难的方法（间隔、交错）恰恰因为预测误差更大而更有效（[[Learning Concepts and Categories Is Spacing the Enemy of Induction]]，Kornell & Bjork 2008）
+- **"Desirable difficulty"**：练习时感到困难的方法（间隔、交错）恰恰因为预测误差更大而更有效（Learning Concepts and Categories Is Spacing the Enemy of Induction，Kornell & Bjork 2008）
 - **意外发现的价值**：PG 指出"新想法来自尝试构建或理解略微太难的东西"（[[如何做出伟大工作]]）——关键在于难度产生的"认知预测误差"
 
 > **证据状态**：RPE-多巴胺映射为 `unsupported`（vault 内无直接来源）；反馈时效性对学习的影响为 `accepted`（Butler 2010 等）
@@ -79,9 +74,9 @@ TD 学习的关键洞察：**不必等到最终结果才知道每一步的价值
 **认知类比**：从成功和失败的经验中**提炼可复用的行为模式**，而非记忆孤立的事实。
 
 **方法论启示**：
-- 自我解释训练的因果效应：Bielaczyc 等（1995）证明训练学习者**解释为什么某个策略有效**可因果性提升问题解决（[[Training in Self-Explanation and Self-Regulation Strategies]]）
+- 自我解释训练的因果效应：Bielaczyc 等（1995）证明训练学习者**解释为什么某个策略有效**可因果性提升问题解决（Training in Self-Explanation and Self-Regulation Strategies）
 - 复盘反思 = "离线策略评估"：事后分析哪些决策有效、哪些无效
-- 图式归纳 = "策略压缩"：从多个具体案例中抽象出通用规则（[[Schema Induction and Analogical Transfer]]）
+- 图式归纳 = "策略压缩"：从多个具体案例中抽象出通用规则（Schema Induction and Analogical Transfer）
 
 > **证据状态**：自我解释效应和复盘反思的价值为 `accepted`；与策略梯度的类比为 `provisional`
 

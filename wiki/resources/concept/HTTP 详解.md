@@ -1,5 +1,4 @@
 ---
-address: c-000021
 type: concept
 title: "HTTP 详解"
 created: 2026-08-05
@@ -11,14 +10,9 @@ tags:
   - networking
   - backend
 related:
-  - "[[wiki/resources/resource/What is HTTP|What is HTTP]]"
-  - "[[wiki/resources/resource/HTTP 概述|HTTP 概述]]"
   - "[[互联网工作原理]]"
   - "[[HTTP3 核心概念]]"
   - "[[wiki/projects/HTTP|HTTP]]"
-sources:
-  - "[[wiki/resources/resource/What is HTTP|What is HTTP]]"
-  - "[[wiki/resources/resource/HTTP 概述|HTTP 概述]]"
 complexity: beginner
 domain: backend
 aliases:
@@ -32,7 +26,7 @@ aliases:
 
 # HTTP 详解
 
-综合两份来源梳理 HTTP 协议的核心机制：Cloudflare《[[wiki/resources/resource/What is HTTP|What is HTTP]]》给出词汇表层级的速览（请求与响应构成、方法与状态码、无状态与持久连接），MDN《[[wiki/resources/resource/HTTP 概述|HTTP 概述]]》给出协议骨架的完整轮廓（系统组成与代理、四项基本性质、HTTP 流、报文字段、能力视角）。两者在重叠部分一致，可互为交叉验证。
+综合两份来源梳理 HTTP 协议的核心机制：Cloudflare《What is HTTP》给出词汇表层级的速览（请求与响应构成、方法与状态码、无状态与持久连接），MDN《HTTP 概述》给出协议骨架的完整轮廓（系统组成与代理、四项基本性质、HTTP 流、报文字段、能力视角）。两者在重叠部分一致，可互为交叉验证。
 
 作为 [[wiki/projects/Backend Introduction|Backend Introduction]] 项目继 [[互联网工作原理]] 之后的第二步，也是 [[wiki/projects/HTTP|HTTP]] 项目（协议深挖主线）的概念底座。
 
@@ -183,8 +177,8 @@ HTTP/1.1 及更早的报文是语义可读的；HTTP/2 中这些报文被嵌入*
 
 ## Related
 
-- [[wiki/resources/resource/What is HTTP|What is HTTP]] — 来源一（Cloudflare Learning，词汇表级速览）
-- [[wiki/resources/resource/HTTP 概述|HTTP 概述]] — 来源二（MDN，协议骨架总纲，2026-08-29 并入）
+- What is HTTP — 来源一（Cloudflare Learning，词汇表级速览）
+- HTTP 概述 — 来源二（MDN，协议骨架总纲，2026-08-29 并入）
 - [[HTTP3 核心概念]] — 承接"连接与版本演进"，HTTP/3 over QUIC
 - [[互联网工作原理]] — 网络基础概念页
 - [[wiki/projects/HTTP|HTTP]] — 以本篇为概念底座的协议深挖项目

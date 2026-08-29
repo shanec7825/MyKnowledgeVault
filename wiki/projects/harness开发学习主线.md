@@ -11,7 +11,6 @@ goal: "按阶段完成 DeepSeek Harness 开发学习主线，达到能独立开�
 prerequisites:
   - "[[wiki/projects/JavaScript指南|JavaScript 指南]]"
   - "[[wiki/projects/pythonBasics|pythonBasics]]"
-sources: []
 related:
   - "[[wiki/projects/JavaScript指南|JavaScript 指南]]"
   - "[[wiki/projects/pythonBasics|pythonBasics]]"
@@ -37,12 +36,10 @@ tags:
 > - 每完成一个阶段，在这条主线旁边写一页自己的笔记（概念用自己的话复述一遍，画图）。
 > - 本笔记是地图，不是权威：仓库会演进，指针失效时以仓库实际文件为准。仓库的权威入口是根目录 `AGENTS.md` 和 `docs/`。
 
-
 ## 前置
 **前置项目**：[[JavaScript 指南]]、[[pythonBasics]]
 
 **知识框架体系**：概念层（agent loop、插件与依赖注入、异步编程、TS 类型系统）；技能层（JS/TS 语法、Promise/async-await、Node.js、写插件与 preset、读仓库 packages/）；工具层（Node、pnpm、Vitest、GitHub PR 流程）。
-
 
 ## 目标产出
 > 按阶段完成 DeepSeek Harness 开发学习主线，达到能独立开发、测试并提交一个工具/插件 PR 的水平。
@@ -54,7 +51,6 @@ tags:
 - [ ] 向 DeepSeek Harness 提交一个可合并的 PR
 - [ ] 每完成一个阶段写一页自己的笔记（概念用自己的话复述）
 
-
 ## 项目关键点
 **核心内容**：从「只有 C 和 Python 基础」到「能参与 DeepSeek Harness 开发」的自学主线——先建立 harness（agent 运行时）图景，再按阶段补语言与思想，每阶段带验收标准。
 
@@ -63,7 +59,6 @@ tags:
 - 异步编程（Promise / 事件循环）是硬性门槛，不过关后面全部卡住。
 - 插件 / 依赖注入思想与 C、Python 的过程式思维差异大，需要换脑子。
 - 「在 harness 之上开发」和「开发 harness 本身」是两条线，别混为一谈。
-
 
 ## 0. 先建立图景：harness 是什么
 **一句话**：harness（挽具/支架）是给大模型装上「手脚、记忆、边界」的运行时框架。模型只会输出文本；harness 负责把文本解析成工具调用、执行、把结果写回日志、再喂给模型，循环直到任务完成——这个循环叫 **agent loop（智能体循环）**。
@@ -86,7 +81,6 @@ flowchart LR
   C --> D[结果写回会话日志]
   D --> A
 ```
-
 
 ## 1. 最小补课清单：外部体系知识地图
 原则：**只补到「能读懂代码、能写小程序」**，不要系统学完再回来。学不动的时候回到主线，用到再深挖。
@@ -123,7 +117,6 @@ flowchart LR
 | `async` / `await` | Python 的 async/await（若有印象） | C 无对应物，是**最需要新建的心智模型** |
 | 模块 ESM import/export | Python import / C 头文件 | 每个文件是一个模块 |
 | 泛型 | C 没有（宏勉强接近） | 类似 Python typing 的泛型思路 |
-
 
 ## 2. 主线阶段
 ### 阶段 0：把仓库跑起来（第 1 周，约 8 小时）
@@ -248,7 +241,6 @@ flowchart LR
 - **多智能体线**：读 `packages/subagent/`、`packages/workflow/`、`packages/goal/`。
 - **浏览器 UI 线**：读 `packages/client/`、`packages/host/`；外部查 React（react.dev）。
 
-
 ## 3. 概念速查表
 | 术语 | 一句话 | 详查 |
 |---|---|---|
@@ -267,7 +259,6 @@ flowchart LR
 | 快照测试（snapshot） | 无密钥固定对外行为/输出 | `docs/testing.zh.md` |
 | 目录（catalog） | 工具/配置/事件的生成式参考 | `docs/tool-catalog.md`、`docs/config-catalog.md` |
 
-
 ## 4. 常见坑与排障
 > [!warning] 三条最容易被忽视的规则
 > 1. **注册是副作用**：注册工具、监听事件都要通过 `ctx.effect()` / `ctx.on()`，返回 disposer；卸载时要能自动撤销。
@@ -282,7 +273,6 @@ flowchart LR
 
 **用 AI 辅助学习的正确姿势**：让 AI 解释概念、领读文件、指出下一段该看哪，而不是替你写代码；提问时把具体文件路径和行号喂给它。你正在用的这个环境本身就是一个 harness——边学边观察它是怎么工作的，是最好的教材。
 
-
 ## 5. 里程碑检查表
 - [ ] Node/pnpm 装好；`pnpm install / test / typecheck / build` 全绿
 - [ ] 能向别人讲清楚「一切皆插件」和 Cordis 五个核心概念
@@ -294,7 +284,6 @@ flowchart LR
 - [ ] 提交并被 review 第一个 PR
 
 > **项目完成即归档**：上表 8 项全部打勾后，将 `status` 改为 `completed`，并把项目移入 `wiki/archives/`。若连续两周无进展，应拆小任务或降级为长期 area。
-
 
 ## 6. 建议节奏总表
 | 周   | 阶段         | 约小时 | 产出            |
@@ -311,45 +300,5 @@ flowchart LR
 > [!info] 一句话总结
 > 语言补 JS/TS 与异步 → 概念读 Cordis 入门与架构 → 动手跟教程做工具 → 解剖能力缝与 agent loop → 学会组合 → 按仓库规矩贡献。地图在 `docs/`，规则在 `AGENTS.md`，答案在代码里。
 
-
 ---
 
-
-## 自动关联
-> 以下列表由 Dataview 自动生成，勿手工编辑。改关系请改 frontmatter 的 `sources` / `related` / `prerequisites`。
-
-### 本项目引用的知识
-
-```dataview
-LIST WITHOUT ID R
-FROM "wiki/projects"
-WHERE file.path = this.file.path
-FLATTEN (sources + related) AS R
-SORT R ASC
-```
-
-### 引用本项目的资源
-
-```dataview
-LIST
-FROM "wiki/resources"
-WHERE contains(related, this.file.link) OR contains(sources, this.file.link)
-SORT file.name ASC
-```
-
-### 前置项目
-
-```dataview
-LIST WITHOUT ID P
-FROM "wiki/projects"
-WHERE file.path = this.file.path
-FLATTEN prerequisites AS P
-```
-
-### 后继项目
-
-```dataview
-LIST
-FROM "wiki/projects"
-WHERE contains(prerequisites, this.file.link)
-```

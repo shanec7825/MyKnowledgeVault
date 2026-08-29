@@ -13,7 +13,6 @@ prerequisites:
   - "[[wiki/projects/API Styles|API Styles]]"
 code:
   - "D:/projects/animodoll-cloud"
-sources: []
 related:
   - "[[wiki/projects/animo-cloud#附属文档：仓库梳理与联调问题核查报告|仓库梳理与联调问题核查报告]]"
   - "[[wiki/projects/animo-cloud#附属文档：学习路线与人 Agent 协作开发指南|学习路线与人+Agent协作开发指南]]"
@@ -35,16 +34,13 @@ tags:
 
 > 项目页：目标、完成标准，以及四份交付文档（合并为本页附属章节，原文未改动）。
 
-
 ## 前置
 **前置项目**：[[Backend Introduction]]、[[API Styles]]
 
 **知识框架体系**：概念层（HTTP 请求生命周期、REST 契约、ORM、前后端分离）；技能层（Kotlin/Ktor 路由与 Store、Exposed 建表、OpenAPI 同步、Postman 联调、git PR 流程）；工具层（Gradle、Agent 派活与验收工作流）。
 
-
 ## 目标产出
 > 从能读懂 AnimoDoll 云端仓库，到能自己改动或新增一个普通 API，并完成一次可验收的联调交付。
-
 
 **具体目标**：
 
@@ -75,18 +71,15 @@ tags:
 - 联调时要能区分真错误、文档问题、客户端问题，三者处理方式完全不同。
 - 指挥 Agent 的关键在验收门禁：派活容易，判断交付是否合格难。
 
-
 ## 文档地图
 - [[wiki/projects/animo-cloud#附属文档：仓库梳理与联调问题核查报告|仓库梳理与联调问题核查报告]] — 仓库正确地图、联调问题清单、清理方案。
 - [[wiki/projects/animo-cloud#附属文档：学习路线与人 Agent 协作开发指南|学习路线与人+Agent协作开发指南]] — 指挥者/开发者两条路线、六周计划、任务模板与验收门禁。
 - [[wiki/projects/animo-cloud#附属文档：教学指南——从零看懂 AnimoDoll 云端项目|教学指南：从零看懂 AnimoDoll 云端项目]] — 零基础概念讲解 + 手把手加一个普通 API。
 - [[wiki/projects/animo-cloud#附属文档：SMS 短信服务接口说明|SMS 短信服务接口说明]] — 短信验证码服务的接口与实现说明（真实接口走读样例）。
 
-
 ## 关联知识
 - [[wiki/projects/Backend Introduction|Backend Introduction]] — 后端网络 / HTTP / DNS / 服务器基础。
 - [[wiki/projects/Relational Databases|Relational Databases]] — 本项目用到的 PostgreSQL 与 Exposed ORM。
-
 
 ## 附属文档：仓库梳理与联调问题核查报告
 # AnimoDoll Cloud · 仓库梳理与联调问题核查报告
@@ -96,7 +89,6 @@ tags:
 > 配套文档：《学习路线与人+Agent协作开发指南.md》（本目录）
 
 ---
-
 
 ## 〇、刚 pull 进来的服务端新代码是什么（2026-08-15 22:51）
 本次 `git pull`（fast-forward）带来 2 个提交，**不影响上文 A/B 联调问题清单的结论**，但影响接口总数与部署/CI：
@@ -127,7 +119,6 @@ tags:
 - `scripts/generate-postman-collection.py` 已修复旧路径（`animo-cloud-handoff` → `handoff`）并重生成 Collection（含 Portrait 目录，baseUrl=https）。
 
 ---
-
 
 ## 一、仓库到底长什么样（一张正确的地图）
 ### 1.1 一句话结论
@@ -206,7 +197,6 @@ Exposed ORM 读写表：Tables.kt（本地 H2 / 生产 PostgreSQL）
 
 ---
 
-
 ## 二、为什么仓库"感觉混乱"——五根乱源
 | #   | 乱源                  | 事实                                                                                                                                                                       |
 | --- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -219,7 +209,6 @@ Exposed ORM 读写表：Tables.kt（本地 H2 / 生产 PostgreSQL）
 `mindisle-server/` 是另一个参考项目（健康量表服务，自带 `.git` 与 `.env.release`），已在 .gitignore，属于"保留在本机但永不入库"的参考物，不要在里面改代码。
 
 ---
-
 
 ## 三、联调问题清单逐项核查（A 类是服务器/接口，B 类是客户端）
 核查方式：读 `backend/` 当前代码 + 核对 OpenAPI + 2026-08-15 线上实测（仅公开接口）。
@@ -322,7 +311,6 @@ POST   /api/v1/auth/tokens/refresh
 
 ---
 
-
 ## 四、清理方案（按安全等级排序）
 > **执行状态（2026-08-15）**：第 1 级已全部执行——`server1/`（敏感文件已备份至
 > `C:\Users\Lenovo\animodoll-secrets-backup-2026-08-15`）、根目录 zip、JVM 崩溃日志均已删除；
@@ -364,7 +352,6 @@ POST   /api/v1/auth/tokens/refresh
 
 ---
 
-
 ## 五、本轮已经顺手修正的内容
 - 新增本报告；
 - 新增《学习路线与人+Agent协作开发指南.md》；
@@ -377,7 +364,6 @@ POST   /api/v1/auth/tokens/refresh
 
 > 注意事项：`docs/superpowers/` 与 `.superpowers/sdd/` 是历史工作记录，路径保持原样（它们记录的是当时的目录结构），不要"修复"历史文档。
 
-
 ## 附属文档：学习路线与人 Agent 协作开发指南
 # AnimoDoll 云端仓库 · 学习路线与"人 + Agent"协作开发指南（v2）
 
@@ -389,7 +375,6 @@ POST   /api/v1/auth/tokens/refresh
 **目录**：§0 选路线 · §1 看懂仓库（地图/登录链路/业务全景/术语/三种流程/文档地图/每日 SOP）· §2 人+Agent 协作 · §3 学习内容分级 · §4 六周计划 · §5 排障速查 · §6 自查清单 · 附录（任务模板 / 开工前考 Agent 四题）
 
 ---
-
 
 ## 0. 按你的目标选路线（先花 30 秒）
 | 你的目标 | 走哪条路线 | 本文必读 | 可选 |
@@ -404,7 +389,6 @@ POST   /api/v1/auth/tokens/refresh
 > 这个项目里 90% 的功能都是这条流水线的重复；剩下 10%（SSE/短信/部署）是它的变体。
 
 ---
-
 
 ## 1. 把仓库看懂：地图层
 ### 1.1 仓库是三层结构，不是一堆文件
@@ -509,7 +493,6 @@ POST   /api/v1/auth/tokens/refresh
 
 ---
 
-
 ## 2. "自己 + Agent"协作工作法（核心章节）
 ### 2.1 分工原则
 
@@ -594,7 +577,6 @@ git switch -c rescue <旧hash>  # 回到某个历史提交，保命分支
 
 ---
 
-
 ## 3. 学习内容分级：学什么、去哪学、学到什么程度
 > 原则：**不为学而学，为看懂流水线而学**；每项达到"检验"标准就停。
 > 🟢 = 指挥者路线也要学；🔵 = 开发者路线再加。
@@ -654,7 +636,6 @@ git switch -c rescue <旧hash>  # 回到某个历史提交，保命分支
 
 ---
 
-
 ## 4. 六周计划（双轨：指挥者 🟢 / 开发者 🔵）
 | 周 | 🟢 指挥者路线（每天 1h） | 🔵 开发者路线（每天 2h） | 共同产出/检验 |
 |---|---|---|---|
@@ -666,7 +647,6 @@ git switch -c rescue <旧hash>  # 回到某个历史提交，保命分支
 | 6 | 综合演练：真实小需求，全流程你指挥 | 同左 + 你自己动手改一处并提交 | 完成 §2.3 的 10 步闭环 |
 
 ---
-
 
 ## 5. 排障速查表（本仓库最常遇到的 15 个）
 | # | 现象 | 最可能原因 | 怎么处理 |
@@ -689,7 +669,6 @@ git switch -c rescue <旧hash>  # 回到某个历史提交，保命分支
 
 ---
 
-
 ## 6. 自查清单：学成没有？（12 条）
 1. 能不看文档说出 `backend/`、`frontend/`、`handoff/`、`deploy/` 的职责。
 2. 能画 §1.2 登录请求的 9 步时序，并指出每步的文件。
@@ -706,7 +685,6 @@ git switch -c rescue <旧hash>  # 回到某个历史提交，保命分支
 
 ---
 
-
 ## 7. 最后一句
 你不需要成为 Kotlin 或 JS 专家。**这个仓库的主线只有一条：请求 → 路由 → 业务 → 表 → 响应。**
 你的角色是"总装和质检"：定义需求、定契约、审代码、跑验证、管密钥与部署；
@@ -714,7 +692,6 @@ Agent 的角色是"熟练工"：照你的图纸在正确的位置写代码。
 把这张图纸（本文档 + AGENTS.md + 核查报告）维护好，仓库再大也不乱。
 
 ---
-
 
 ## 附录 A：三个可直接复制的任务模板
 ### A1 让 Agent 讲懂一段代码（学习用）
@@ -750,7 +727,6 @@ Agent 的角色是"熟练工"：照你的图纸在正确的位置写代码。
 【输出】结论（1 句）+ 证据（≤5 条）+ 建议修复方（客户端还是后端）。
 ```
 
-
 ## 附录 B：给 Agent 的"仓库须知"最小清单（检查它是否真的读了）
 在派活前，可以让 Agent 先回答下面 4 题，答对再开工：
 
@@ -760,7 +736,6 @@ Agent 的角色是"熟练工"：照你的图纸在正确的位置写代码。
 4. 改完接口后，哪些交付物要重新生成、怎么生成？
 
 > 答案全部在 `AGENTS.md` 与本文档中；答不出的 Agent 没有读上下文，先让它重读，不要直接放它开工。
-
 
 ## 附属文档：教学指南——从零看懂 AnimoDoll 云端项目
 # AnimoDoll 云端项目 · 从零看懂教学文档
@@ -777,7 +752,6 @@ Agent 的角色是"熟练工"：照你的图纸在正确的位置写代码。
 
 ---
 
-
 ## 0. 这份文档怎么用
 建议按顺序读一遍第 1～5 节（大约 30～60 分钟），建立"地图感"。
 之后遇到不懂的概念，翻第 4 节"概念速查表"；遇到报错，翻第 8 节"常见问题对照表"；
@@ -788,7 +762,6 @@ Agent 的角色是"熟练工"：照你的图纸在正确的位置写代码。
 找到一个功能最像的现有代码，复制它的结构，改名字和逻辑。
 
 ---
-
 
 ## 1. 这个项目是做什么的（一分钟版）
 AnimoDoll 是一个 AI 陪伴玩偶（毛绒玩具/智能硬件）的配套云端服务，主要功能：
@@ -813,7 +786,6 @@ AnimoDoll 是一个 AI 陪伴玩偶（毛绒玩具/智能硬件）的配套云�
 > 💡 判断项目目录是否重要，先看根目录 `AGENTS.md`（本仓库的"项目使用说明书"，Codex 每次干活前都要读它）和 `docs/AnimoDoll云端服务开发概述.md`（架构图 + 模块说明）。
 
 ---
-
 
 ## 2. 技术栈"人话"版
 每个技术你只需要知道"它在这个项目里扮演什么角色"就够了。
@@ -842,7 +814,6 @@ AnimoDoll 是一个 AI 陪伴玩偶（毛绒玩具/智能硬件）的配套云�
 你不需要精通每一个，**先用"它是干嘛的"这层理解，代码读多了自然熟悉**。
 
 ---
-
 
 ## 3. 构建主线：项目是怎么搭起来的
 这一节是整个文档的核心。记住一句话：
@@ -1021,7 +992,6 @@ nginx（80/443，静态文件+反代）
 
 ---
 
-
 ## 4. 概念速查表（看代码时遇到不懂的词来查）
 按字母/使用频率排序。每一项都给了"去查什么"，具体网址见第 7 节。
 
@@ -1069,7 +1039,6 @@ nginx（80/443，静态文件+反代）
 | **.env** | 存放配置/密钥的文件，不提交 git | `backend/.env（模板见 backend/.env.example）` |
 
 ---
-
 
 ## 5. 想加一个"普通 API"怎么做（手把手）
 以"给当前用户加一个便利贴（Note）功能"为例：`GET /api/v1/notes` 查列表，`POST /api/v1/notes` 新建。
@@ -1213,7 +1182,6 @@ npm run build
 
 ---
 
-
 ## 6. 看代码时"看不懂"怎么办：阅读方法论
 1. **先看接口文档**：`handoff/endpoint-index.md` 是完整接口清单，含示例请求/响应。
 2. **在路由文件里搜路径**：`ApiV1Routes.kt` 或 `Routes.kt` 里搜 `/notes` 这样的片段，定位处理函数。
@@ -1224,7 +1192,6 @@ npm run build
 7. **不认识的库/函数**：按住 Ctrl 点击跳进定义看注释；或去官方文档搜函数名。
 
 ---
-
 
 ## 7. 需要查知识时：查什么、去哪查
 ### 7.1 项目内部资料（优先看这些）
@@ -1316,7 +1283,6 @@ npm run build
 
 ---
 
-
 ## 8. 常见问题 / 报错对照表
 | 现象 | 最常见原因 | 怎么查/怎么修 |
 |------|-----------|--------------|
@@ -1339,7 +1305,6 @@ npm run build
 
 ---
 
-
 ## 9. 想系统学：推荐学习路线
 如果你愿意花时间真正学会，按这个顺序（每阶段配"检验标准"）：
 
@@ -1354,7 +1319,6 @@ npm run build
 每个阶段结束时，回来看一眼本文档第 3 节的"构建主线"，你会发现一次比一次清楚。
 
 ---
-
 
 ## 10. 附录：关键文件快速索引（一张图看懂去哪改）
 | 想改什么 | 去改哪个文件 |
@@ -1379,7 +1343,6 @@ npm run build
 
 ---
 
-
 ## 最后的话
 这个项目看起来文件很多，但**主干的套路只有一套**：
 
@@ -1388,9 +1351,7 @@ npm run build
 你不需要一次全懂。先把第 3 节"构建主线"读熟，然后找一个你最关心的功能（比如登录），把它从页面到数据库整条线走一遍。
 走完一条线，项目对你就不再是迷宫了——剩下的都是"同一套路的重复"。
 
-
 当前代码中，短信服务分两层：**对外 HTTP 接口**（`/api/v1`）和 **Kotlin 内部服务接口**（`com.animo.cloud.sms`）。对外路由定义在 `backend/src/main/kotlin/com/animo/cloud/ApiV1AuthRoutes.kt`，服务实现分别在 `sms/SmsSender.kt` 与 `sms/SmsVerificationService.kt`。
-
 
 ## 附属文档：SMS 短信服务接口说明
 ## 一、对外 HTTP 接口
@@ -1486,7 +1447,6 @@ npm run build
 }
 ```
 
-
 ## 二、Kotlin 内部服务接口
 ### 1. `SmsSender` — 短信发送通道抽象
 
@@ -1575,7 +1535,6 @@ data class SmsCodeVerifyResponse(
 )
 ```
 
-
 ## 三、核心安全规则
 - 验证码明文不落库，只存 `SHA-256(phone:purpose:code)`。
 - 验证码绑定 `purpose`，注册码不能用于重置密码。
@@ -1584,45 +1543,5 @@ data class SmsCodeVerifyResponse(
 - 一次性：成功消费原子更新，避免并发重放。
 - 发送通道由 `ANIMO_SMS_PROVIDER` 控制：`mock`（默认）、`aliyun`/`aliyun-auth`/`pnvs`（阿里云短信认证，码由阿里云生成和校验）、`aliyun-legacy`（阿里云普通短信，码本地生成和校验）。
 
-
 ---
 
-
-## 自动关联
-> 以下列表由 Dataview 自动生成，勿手工编辑。改关系请改 frontmatter 的 `sources` / `related` / `prerequisites`。
-
-### 本项目引用的知识
-
-```dataview
-LIST WITHOUT ID R
-FROM "wiki/projects"
-WHERE file.path = this.file.path
-FLATTEN (sources + related) AS R
-SORT R ASC
-```
-
-### 引用本项目的资源
-
-```dataview
-LIST
-FROM "wiki/resources"
-WHERE contains(related, this.file.link) OR contains(sources, this.file.link)
-SORT file.name ASC
-```
-
-### 前置项目
-
-```dataview
-LIST WITHOUT ID P
-FROM "wiki/projects"
-WHERE file.path = this.file.path
-FLATTEN prerequisites AS P
-```
-
-### 后继项目
-
-```dataview
-LIST
-FROM "wiki/projects"
-WHERE contains(prerequisites, this.file.link)
-```

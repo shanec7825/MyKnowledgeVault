@@ -17,13 +17,6 @@ related:
   - "[[神经可塑性 生物机制]]"
   - "[[神经可塑性 认知科学理论]]"
   - "[[wiki/resources/concept/环境变化与认知|环境变化与认知]]"
-sources:
-  - "[[What is Machine Learning]]"
-  - "[[Schema Induction and Analogical Transfer]]"
-  - "[[Analogical Problem Solving]]"
-  - "[[Learning Concepts and Categories Is Spacing the Enemy of Induction]]"
-  - "[[Context-Dependent Memory in Two Natural Environments]]"
-  - "[[The Restorative Benefits of Nature Toward an Integrative Framework]]"
 domain: cognitive-science
 ---
 
@@ -41,8 +34,8 @@ DL 中，浅层网络学习边缘、纹理等低级特征，深层网络学习�
 
 **方法论启示**：
 - **多例比较诱导图式抽象**：比较两个案例能"对齐结构、排除表面细节，从而诱导可迁移的抽象图式"（Gentner, Loewenstein & Thompson 2003，引自 [[认知迁移能力]]）
-- 两个类比源比一个有效得多：无提示自发解决率从 ~20% 提升到 ~45%（[[Schema Induction and Analogical Transfer]]）
-- **同时可见（simultaneous visibility）促进概念学习**；顺序呈现增加认知负荷（[[Teaching Mathematics by Comparison Analog Visibility as a Double-Edged Sword]]）
+- 两个类比源比一个有效得多：无提示自发解决率从 ~20% 提升到 ~45%（Schema Induction and Analogical Transfer）
+- **同时可见（simultaneous visibility）促进概念学习**；顺序呈现增加认知负荷（Teaching Mathematics by Comparison Analog Visibility as a Double-Edged Sword）
 - **先具体后抽象**：minGPT 教学方案中"先动手跑，再读代码解释发生了什么，再改造验证理解"（[[wiki/projects/minGPT教学方案|minGPT 教学方案]]）正是从具体经验（低级特征）到抽象理解（高级特征）的层次化路径
 
 > **证据状态**：类比编码和图式抽象的证据为 `accepted`（Gentner 等 2003 / Gick & Holyoak 1983）
@@ -69,9 +62,9 @@ Transformer 的核心创新——**注意力机制**——让模型"知道该看
 
 **方法论启示**：
 - **执行注意的个体差异**：高工作记忆容量（WMC）者在需要抑制干扰、维持目标的迁移任务中表现更优（Engle & Kane 框架，引自 [[认知迁移能力]]）
-- **注意力是稀缺资源**：Kaplan 的注意恢复理论（ART）指出，定向注意会疲劳，自然环境能恢复它（[[The Restorative Benefits of Nature Toward an Integrative Framework]]）
+- **注意力是稀缺资源**：Kaplan 的注意恢复理论（ART）指出，定向注意会疲劳，自然环境能恢复它（The Restorative Benefits of Nature Toward an Integrative Framework）
 - **聚焦关键信息 > 均匀处理**：学习中应识别并优先处理"高注意力权重"的概念（核心原理、瓶颈概念），而非平均用力
-- **减少干扰**：开放办公室降低满意度（[[Workspace Satisfaction The Privacy-Communication Trade-Off in Open-Plan Offices]]）——注意力噪声 = 认知层面的"注意力分散"
+- **减少干扰**：开放办公室降低满意度（Workspace Satisfaction The Privacy-Communication Trade-Off in Open-Plan Offices）——注意力噪声 = 认知层面的"注意力分散"
 
 > **证据状态**：执行注意与 WMC 的关联为 `accepted`；ART 为 `accepted`（Kaplan 1995）；"注意力权重"学习策略为 `provisional`
 
@@ -82,8 +75,8 @@ DL 中，同样的输入在不同上下文（周围的 token、任务提示）�
 **认知类比**：记忆提取依赖于编码时的上下文匹配。
 
 **方法论启示**：
-- **上下文依赖记忆**：潜水员在水下学习的词在水下回忆更好、在陆地学习的词在陆地回忆更好（Godden & Baddeley 1975，[[Context-Dependent Memory in Two Natural Environments]]）
-- **交错练习**的有效性部分源于：在不同上下文中练习同一类问题，迫使学习者提取与上下文无关的结构性特征（[[The Shuffling of Mathematics Problems Improves Learning]]，d=1.34）
+- **上下文依赖记忆**：潜水员在水下学习的词在水下回忆更好、在陆地学习的词在陆地回忆更好（Godden & Baddeley 1975，Context-Dependent Memory in Two Natural Environments）
+- **交错练习**的有效性部分源于：在不同上下文中练习同一类问题，迫使学习者提取与上下文无关的结构性特征（The Shuffling of Mathematics Problems Improves Learning，d=1.34）
 - **变换学习环境**可能增强记忆的鲁棒性（多上下文编码 → 更泛化的"表征"）
 
 > **证据状态**：上下文依赖记忆为 `accepted`；交错练习为 `accepted`（Rohrer & Taylor 2007）

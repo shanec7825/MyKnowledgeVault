@@ -1,5 +1,4 @@
 ---
-address: c-000006
 type: concept
 title: "JSON:API 基础规范（v1.1）"
 created: 2026-08-02
@@ -11,9 +10,6 @@ tags:
   - api-design
 related:
   - "[[JSON API]]"
-  - "[[JSON API Recommendations]]"
-sources:
-  - "[[JSON API Specification (v1.1)]]"
 complexity: advanced
 domain: web-api
 aliases:
@@ -89,5 +85,5 @@ JSON:API 文档的顶层是一个 JSON 对象，**必须**包含 `data`、`error
 ## Related
 
 - [[JSON API]] — JSON:API 入门与官方建议（中文讲解）
-- [[JSON API Recommendations]] — 官方建议原文
-- [[JSON API Specification (v1.1)]] — 基础规范来源页
+- JSON API Recommendations — 官方建议原文
+- JSON API Specification (v1.1) — 基础规范来源页

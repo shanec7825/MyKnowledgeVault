@@ -1,5 +1,4 @@
 ---
-address: c-000071
 type: project
 title: "What is ML and its types"
 created: 2026-08-08
@@ -9,8 +8,6 @@ area: "人工智能"
 domain: machine-learning
 complexity: beginner
 goal: "机器学习入门：梳理机器学习的定义、三大类型（监督 / 无监督 / 强化）与深度学习架构，建立 AI 方向的知识起点。"
-sources:
-  - "[[What is Machine Learning]]"
 related:
   - "[[机器学习]]"
   - "[[pythonBasics]]"
@@ -23,16 +20,13 @@ tags:
 
 # What is ML and its types
 
-
 ## 前置
 **前置项目**：无
 
 **知识框架体系**：概念层（ML 定义与 AI 的关系、监督/无监督/强化三范式、深度学习架构）；技能层（判断一个问题属于哪类 ML 任务、为后续实践做技术选型）；工具层（Python ML 库生态认知）。
 
-
 ## 目标产出
 > 机器学习入门：梳理机器学习的定义、三大类型（监督 / 无监督 / 强化）与深度学习架构，建立 AI 方向的知识起点。
-
 
 **具体目标**：
 
@@ -62,11 +56,9 @@ tags:
 - 架构要理解「为什么需要它」而不是背名字——CNN 为空间、RNN 为序列、Transformer 为长程依赖。
 - 选型直觉要靠后续实践喂养，单靠综述建不起来。
 
-
 ## 内容
 - [[机器学习]] — 机器学习概念页：定义、类型体系、深度学习架构、应用与 MLOps（中文讲解）
-- [[wiki/resources/resource/What is Machine Learning|What is Machine Learning]] — 来源页（IBM Think，Dave Bergmann）
-
+- What is Machine Learning — 来源页（IBM Think，Dave Bergmann）
 
 ## 待办
 - [x] 摄入 IBM Think《What is machine learning?》综述
@@ -77,42 +69,3 @@ tags:
 - [ ] 深度学习专题：CNN / RNN / Transformer 注意力机制 / Mamba
 - [ ] 补充损失函数、梯度下降、过拟合与正则化基础
 
-
-## 自动关联
-> 以下列表由 Dataview 自动生成，勿手工编辑。改关系请改 frontmatter 的 `sources` / `related` / `prerequisites`。
-
-### 本项目引用的知识
-
-```dataview
-LIST WITHOUT ID R
-FROM "wiki/projects"
-WHERE file.path = this.file.path
-FLATTEN (sources + related) AS R
-SORT R ASC
-```
-
-### 引用本项目的资源
-
-```dataview
-LIST
-FROM "wiki/resources"
-WHERE contains(related, this.file.link) OR contains(sources, this.file.link)
-SORT file.name ASC
-```
-
-### 前置项目
-
-```dataview
-LIST WITHOUT ID P
-FROM "wiki/projects"
-WHERE file.path = this.file.path
-FLATTEN prerequisites AS P
-```
-
-### 后继项目
-
-```dataview
-LIST
-FROM "wiki/projects"
-WHERE contains(prerequisites, this.file.link)
-```

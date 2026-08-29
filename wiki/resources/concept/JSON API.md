@@ -1,5 +1,4 @@
 ---
-address: c-000004
 type: concept
 title: "JSON:API"
 created: 2026-08-02
@@ -10,11 +9,8 @@ tags:
   - jsonapi
   - api-design
 related:
-  - "[[JSON API Recommendations]]"
   - "[[JSON API Specification]]"
   - "[[RESTful API Design]]"
-sources:
-  - "[[JSON API Recommendations]]"
 complexity: intermediate
 domain: web-api
 aliases:
@@ -131,6 +127,6 @@ Profile（配置文件）允许文档发送者对其内容做出额外承诺，�
 
 ## Related
 
-- [[JSON API Recommendations]] — 本次摄入的官方建议原文（英文原版 + 中文翻译）
+- JSON API Recommendations — 本次摄入的官方建议原文（英文原版 + 中文翻译）
 - [[JSON API Specification]] — 基础规范（v1.1）中文讲解
 - [[RESTful API Design]] — RESTful Web API 设计最佳实践

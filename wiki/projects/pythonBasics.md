@@ -1,5 +1,4 @@
 ---
-address: c-000012
 type: project
 title: "pythonBasics"
 created: 2026-08-02
@@ -9,7 +8,6 @@ area: "后端"
 domain: programming-language
 complexity: beginner
 goal: "通过练习掌握 Python 基础：语法、控制流、数据结构与函数。"
-sources: []
 related:
   - "[[Python Syntax]]"
   - "[[Python 快速入门]]"
@@ -21,16 +19,13 @@ tags:
 
 # pythonBasics
 
-
 ## 前置
 **前置项目**：无
 
 **知识框架体系**：概念层（语法、控制流、数据结构、函数、类、闭包/装饰器）；技能层（写可运行小脚本、读懂报错栈）；工具层（python 解释器、REPL）。
 
-
 ## 目标产出
 > 通过练习掌握 Python 基础：语法、控制流、数据结构与函数。
-
 
 **具体目标**：
 
@@ -58,22 +53,18 @@ tags:
 - 类方法、静态方法、实例方法的绑定差异容易混淆。
 - 「看懂」和「能写」之间隔着大量练习，这个项目就是用来填这条沟的。
 
-
 ## 内容
 - [[Python Syntax]] — Python 基础语法（概念页）
 - [[Python 快速入门]] — Python 3 速成路线（概念页，含控制流/数据结构/函数/类）
 - 练习代码：本页末尾「附：练习代码」，可复制运行
 
-
 ## 待办
 - [ ] 补充控制流 / 数据结构 / 函数练习
 - [ ] 摄入 Python 控制流、数据结构等概念页（已由 [[Python 快速入门]] 部分覆盖）
 
-
 ## Related
 - [[Python Syntax]]
 - [[Python 快速入门]]
-
 
 ## 附：练习代码
 > 原 `wiki/projects/pythonBasics/` 下的练习脚本合并至此。
@@ -113,7 +104,6 @@ print(Student.is_pass(stu1.age))
 class Adult(Student):
     def is_light(self):
         print("hi~")
-
 
 A = Adult("A",19)
 
@@ -180,7 +170,6 @@ def add(a,b):
 
 print(add(3, 5))
 
-
 #修饰器带参数
 def repeat(times):
     def decorator(func):
@@ -226,10 +215,8 @@ print(syntax["int"])
 
 list(syntax.keys())
 
-
 for animo in ["dog", "tiger", "lion"]:
     print("catch you {}".format(animo))
-
 
 try:
     raise IndexError("this is an index error")
@@ -278,45 +265,5 @@ import math
 dir(math)
 ```
 
-
 ---
 
-
-## 自动关联
-> 以下列表由 Dataview 自动生成，勿手工编辑。改关系请改 frontmatter 的 `sources` / `related` / `prerequisites`。
-
-### 本项目引用的知识
-
-```dataview
-LIST WITHOUT ID R
-FROM "wiki/projects"
-WHERE file.path = this.file.path
-FLATTEN (sources + related) AS R
-SORT R ASC
-```
-
-### 引用本项目的资源
-
-```dataview
-LIST
-FROM "wiki/resources"
-WHERE contains(related, this.file.link) OR contains(sources, this.file.link)
-SORT file.name ASC
-```
-
-### 前置项目
-
-```dataview
-LIST WITHOUT ID P
-FROM "wiki/projects"
-WHERE file.path = this.file.path
-FLATTEN prerequisites AS P
-```
-
-### 后继项目
-
-```dataview
-LIST
-FROM "wiki/projects"
-WHERE contains(prerequisites, this.file.link)
-```

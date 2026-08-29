@@ -1,5 +1,4 @@
 ---
-address: c-000074
 type: concept
 title: "DNS 详解"
 created: 2026-08-11
@@ -11,13 +10,8 @@ tags:
   - networking
   - backend
 related:
-  - "[[Everything You Need to Know About DNS]]"
-  - "[[What is a Domain Name]]"
   - "[[域名详解]]"
   - "[[互联网工作原理]]"
-sources:
-  - "[[Everything You Need to Know About DNS]]"
-  - "[[What is a Domain Name]]"
 complexity: beginner
 domain: backend
 aliases:
@@ -29,7 +23,7 @@ aliases:
 
 # DNS 详解
 
-本文基于 cs.fyi 的《[[Everything You Need to Know About DNS]]》（2023-03）与 MDN 的《[[What is a Domain Name]]》（2025-06）梳理 DNS（域名系统）的核心机制，作为 [[Backend Introduction]] 项目的第五步：域名解析、记录类型、dig 工具与域名注册。
+本文基于 cs.fyi 的《Everything You Need to Know About DNS》（2023-03）与 MDN 的《What is a Domain Name》（2025-06）梳理 DNS（域名系统）的核心机制，作为 [[Backend Introduction]] 项目的第五步：域名解析、记录类型、dig 工具与域名注册。
 
 ## 概述
 
@@ -191,8 +185,8 @@ whois afunkydomainname.org  # 返回 NOT FOUND = 可注册
 
 ## Related
 
-- [[Everything You Need to Know About DNS]] — cs.fyi DNS 全面指南（2023-03）
-- [[What is a Domain Name]] — MDN 域名详解（2025-06）
+- Everything You Need to Know About DNS — cs.fyi DNS 全面指南（2023-03）
+- What is a Domain Name — MDN 域名详解（2025-06）
 - [[域名详解]] — 域名概念页（中文综合讲解，含 MDN 来源摘要）
 - [[互联网工作原理]] — 互联网基础原理（含 DNS 在协议栈中的位置）
 - [[HTTP 详解]] — HTTP 协议（依赖 DNS 解析后建立连接）

@@ -11,11 +11,8 @@ tags:
   - sql
   - backend
 related:
-  - "[[wiki/resources/resource/PostgreSQL Tutorial|PostgreSQL Tutorial]]"
   - "[[Backend Introduction]]"
   - "[[Relational Databases]]"
-sources:
-  - "[[wiki/resources/resource/PostgreSQL Tutorial|PostgreSQL Tutorial]]"
 complexity: beginner
 domain: backend
 aliases:
@@ -27,7 +24,7 @@ aliases:
 
 # PostgreSQL 教程
 
-本文基于 neon.com 的《[[wiki/resources/resource/PostgreSQL Tutorial|PostgreSQL Tutorial]]》梳理 PostgreSQL 的知识体系，作为 [[Backend Introduction]] 项目的数据库主题：从基本查询到高级特性，构建 PostgreSQL 的系统学习路线。
+本文基于 neon.com 的《PostgreSQL Tutorial》梳理 PostgreSQL 的知识体系，作为 [[Backend Introduction]] 项目的数据库主题：从基本查询到高级特性，构建 PostgreSQL 的系统学习路线。
 
 ## 概述
 
@@ -97,5 +94,5 @@ PostgreSQL 知识体系可分为基础操作与高级特性两层：
 
 - [[Relational Databases]] — 关系数据库学习项目
 - [[Backend Introduction]] — 后端入门项目
-- [[wiki/resources/resource/PostgreSQL Tutorial|PostgreSQL Tutorial]] — 来源参考页（完整目录）
+- PostgreSQL Tutorial — 来源参考页（完整目录）
 - [[pythonBasics]] — Python 基础（PostgreSQL 常用 psycopg2 / SQLAlchemy 连接）

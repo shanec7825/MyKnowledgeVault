@@ -8,8 +8,6 @@ area: "后端"
 domain: database
 complexity: intermediate
 goal: "关系数据库入门：以 PostgreSQL 为主线，建立 SQL 查询、表设计、约束、事务、索引与存储过程的系统知识。"
-sources:
-  - "[[wiki/resources/resource/PostgreSQL Tutorial|PostgreSQL Tutorial]]"
 related:
   - "[[PostgreSQL 教程]]"
   - "[[Backend Introduction]]"
@@ -24,16 +22,13 @@ tags:
 
 # Relational Databases
 
-
 ## 前置
 **前置项目**：无
 
 **知识框架体系**：概念层（关系模型、约束、ACID 事务、索引、设计范式）；技能层（写 SELECT/JOIN/GROUP BY、设计表与约束、使用事务、看 EXPLAIN）；工具层（PostgreSQL、psql、Exposed ORM）。
 
-
 ## 目标产出
 > 关系数据库入门：以 PostgreSQL 为主线，建立 SQL 查询、表设计、约束、事务、索引与存储过程的系统知识。
-
 
 **具体目标**：
 
@@ -65,11 +60,9 @@ tags:
 - 索引不是「加上就快」，要用 EXPLAIN 验证查询计划。
 - 范式与反范式是权衡题，需要真实表设计经验才体会得到。
 
-
 ## 内容
 - [[PostgreSQL 教程]] — PostgreSQL 知识体系与学习路线（概念页，17 基础 + 5 高级模块）
-- [[wiki/resources/resource/PostgreSQL Tutorial|PostgreSQL Tutorial]] — PostgreSQL 教程完整目录（来源页，neon.com/postgresql/tutorial）
-
+- PostgreSQL Tutorial — PostgreSQL 教程完整目录（来源页，neon.com/postgresql/tutorial）
 
 ## 待办
 - [x] 摄入 PostgreSQL 教程（数据库入门）
@@ -81,51 +74,10 @@ tags:
 - [ ] 对比 MySQL 与 PostgreSQL 差异
 - [ ] 补充数据库设计范式（1NF / 2NF / 3NF）
 
-
 ## Related
 - [[Backend Introduction]] — 后端入门（网络 → 数据库 → API）
 - [[PostgreSQL 教程]]
-- [[wiki/resources/resource/PostgreSQL Tutorial|PostgreSQL Tutorial]]
-
+- PostgreSQL Tutorial
 
 ---
 
-
-## 自动关联
-> 以下列表由 Dataview 自动生成，勿手工编辑。改关系请改 frontmatter 的 `sources` / `related` / `prerequisites`。
-
-### 本项目引用的知识
-
-```dataview
-LIST WITHOUT ID R
-FROM "wiki/projects"
-WHERE file.path = this.file.path
-FLATTEN (sources + related) AS R
-SORT R ASC
-```
-
-### 引用本项目的资源
-
-```dataview
-LIST
-FROM "wiki/resources"
-WHERE contains(related, this.file.link) OR contains(sources, this.file.link)
-SORT file.name ASC
-```
-
-### 前置项目
-
-```dataview
-LIST WITHOUT ID P
-FROM "wiki/projects"
-WHERE file.path = this.file.path
-FLATTEN prerequisites AS P
-```
-
-### 后继项目
-
-```dataview
-LIST
-FROM "wiki/projects"
-WHERE contains(prerequisites, this.file.link)
-```

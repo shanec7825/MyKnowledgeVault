@@ -13,7 +13,6 @@ prerequisites:
   - "[[wiki/projects/pythonBasics|pythonBasics]]"
 code:
   - ".raw/repos/minGPT"
-sources: []
 related:
   - "[[wiki/projects/类比于强化学习和深度学习的学习理论|类比于强化学习和深度学习的学习理论]]"
   - "[[wiki/projects/harness开发学习主线|DeepSeek Harness 开发学习主线]]"
@@ -32,12 +31,10 @@ tags:
 
 > 一句话定位：本仓库是 karpathy 的 minGPT——一个约 300 行、用来"看懂"和"改造"的 GPT 教学实现。本方案的目标不是把论文读完，而是**亲手跑起来、逐行读代码、改出问题、再读回去**，最后能自己从零写出一个小 GPT。
 
-
 ## 前置
 **前置项目**：[[What is ML and its types]]、[[pythonBasics]]
 
 **知识框架体系**：概念层（Transformer 与自注意力、因果掩码、embedding、loss 与梯度下降、BPE 分词）；技能层（PyTorch 张量操作、跑训练与采样、读模型源码、改参数观察现象）；工具层（PyTorch、Jupyter、minGPT 仓库）。
-
 
 ## 目标产出
 > 亲手跑通、逐行读懂并改造 minGPT，最终能从零写一个 150–250 行的小 GPT。
@@ -50,7 +47,6 @@ tags:
 - [ ] 完成至少一个自己的改造点（训练 / 采样 / 结构）
 - [ ] 每阶段一份 notes/ 短笔记
 
-
 ## 项目关键点
 **核心内容**：以 karpathy 的 minGPT（约 300 行）为教材，按「跑通 → 逐行读懂 → 动手改造」的节奏，最终能从零写一个 150–250 行的小 GPT。
 
@@ -61,7 +57,6 @@ tags:
 - 理论与实践落差大——只有亲手改坏、再读回去，模型才真正属于自己。
 
 ---
-
 
 ## 0. 怎么用这份方案
 ### 0.1 两条学习规则（先记住）
@@ -107,7 +102,6 @@ tags:
 
 ---
 
-
 ## 1. 学习目标
 ### 1.1 学完主线 7 个阶段后，你应该能做到
 
@@ -134,7 +128,6 @@ tags:
 | `tests/` | 单元测试 |
 
 ---
-
 
 ## 2. 阶段 0：环境搭建与第一次运行
 > 本机现状（2026-08-08 检查）：PowerShell 里 `python` 命令不可用，torch 未安装。所以这一步是必须的。
@@ -217,7 +210,6 @@ pip install transformers requests
 
 ---
 
-
 ## 3. 阶段 1：跑通 demo——第一次看到 GPT 学会一件事
 ### 3.1 任务是什么
 
@@ -287,7 +279,6 @@ python demo.py
 | 不知道 `zip(x,y)`、f-string、`enumerate` | Python 基础语法                     | 任意 Python 快速教程的对应小节                |
 
 ---
-
 
 ## 4. 阶段 2：逐行拆解 model.py——GPT 的完整数据流
 这是整个方案**最重要**的阶段。目标：对 `mingpt/model.py` 的每个类、每一行关键代码都能说出"它拿到什么、输出什么"。
@@ -383,7 +374,6 @@ print("mlp:", block.mlpf(block.ln_2(x)).shape)
 
 ---
 
-
 ## 5. 阶段 3：读懂训练循环 trainer.py
 ### 5.1 动手：给训练加上"仪表盘"
 
@@ -432,7 +422,6 @@ print("iter", trainer.iter_num, "loss", trainer.loss.item(), "grad_norm", total_
 | 不知道梯度裁剪 | 把过大的梯度拉回上限，防止训练爆炸 | 搜"gradient clipping" |
 
 ---
-
 
 ## 6. 阶段 4：训练自己的字符级语言模型（chargpt）
 > 从这一阶段开始，你训练的模型"学会"的是**模仿**，而不是"做对某道题"。语言模型的目标只有一个：预测下一个字符。一切神奇都来自这一点。
@@ -501,7 +490,6 @@ python chargpt.py --trainer.max_iters=5000
 
 ---
 
-
 ## 7. 阶段 5：精确任务——加法 adder
 ### 7.1 为什么做这个
 
@@ -552,7 +540,6 @@ python adder.py --trainer.max_iters=3000
 | 不懂训练集/测试集划分 | 评估模型要考"没见过的题" | 搜"train test split" |
 
 ---
-
 
 ## 8. 阶段 6：加载预训练 GPT-2 生成文本
 ### 8.1 先改两个默认值（重要）
@@ -625,7 +612,6 @@ pip install transformers
 
 ---
 
-
 ## 9. 阶段 7（可选）：自选项目
 完成主线后，从下面挑一个（或自拟）：
 
@@ -638,7 +624,6 @@ pip install transformers
 每个项目建议 2~4 小时，做完写一页"项目报告"（目标、数据、结果、失败点、改进想法）。
 
 ---
-
 
 ## 10. 按需补充知识总索引
 出现下列问题的时候再来看这张表；没遇到就先不管。
@@ -661,7 +646,6 @@ pip install transformers
 | 好奇 GPT 和 Transformer 的关系 | Transformer 架构 | 概念 | 阶段 2 完成后自然清楚 |
 
 ---
-
 
 ## 11. 每阶段复盘模板（复制到 notes/ 使用）
 ```markdown
@@ -698,7 +682,6 @@ pip install transformers
 
 ---
 
-
 ## 附：参考资源（按需取用，不是必读清单）
 - 本仓库 README.md：GPT-1/2/3 的实现要点摘录（有中文混排，直接读英文部分也行）
 - karpathy 的 [nanoGPT](https://github.com/karpathy/nanoGPT)：minGPT 的现代版，学完后可作下一站
@@ -707,45 +690,5 @@ pip install transformers
 - GPT-1 论文《Improving Language Understanding by Generative Pre-Training》：阶段 4/5 后可读
 - GPT-2 论文《Language Models are Unsupervised Multitask Learners》：阶段 6 后可读
 
-
 ---
 
-
-## 自动关联
-> 以下列表由 Dataview 自动生成，勿手工编辑。改关系请改 frontmatter 的 `sources` / `related` / `prerequisites`。
-
-### 本项目引用的知识
-
-```dataview
-LIST WITHOUT ID R
-FROM "wiki/projects"
-WHERE file.path = this.file.path
-FLATTEN (sources + related) AS R
-SORT R ASC
-```
-
-### 引用本项目的资源
-
-```dataview
-LIST
-FROM "wiki/resources"
-WHERE contains(related, this.file.link) OR contains(sources, this.file.link)
-SORT file.name ASC
-```
-
-### 前置项目
-
-```dataview
-LIST WITHOUT ID P
-FROM "wiki/projects"
-WHERE file.path = this.file.path
-FLATTEN prerequisites AS P
-```
-
-### 后继项目
-
-```dataview
-LIST
-FROM "wiki/projects"
-WHERE contains(prerequisites, this.file.link)
-```

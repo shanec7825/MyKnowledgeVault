@@ -1,5 +1,4 @@
 ---
-address: c-000023
 type: concept
 title: "HTTP/3 核心概念"
 created: 2026-08-05
@@ -12,10 +11,7 @@ tags:
   - networking
   - backend
 related:
-  - "[[wiki/resources/resource/HTTP3 From A To Z Core Concepts|HTTP3 From A To Z Core Concepts]]"
   - "[[HTTP 详解]]"
-sources:
-  - "[[wiki/resources/resource/HTTP3 From A To Z Core Concepts|HTTP3 From A To Z Core Concepts]]"
 complexity: beginner
 domain: backend
 aliases:
@@ -27,7 +23,7 @@ aliases:
 
 # HTTP/3 核心概念
 
-本文基于 Robin Marx 的《[[wiki/resources/resource/HTTP3 From A To Z Core Concepts|HTTP3 From A To Z Core Concepts]]》（Smashing Magazine，2021-08，系列 Part 1）梳理 HTTP/3 的核心概念，承接 [[HTTP 详解]]，作为 [[Backend Introduction]] 项目「版本演进」的一环。
+本文基于 Robin Marx 的《HTTP3 From A To Z Core Concepts》（Smashing Magazine，2021-08，系列 Part 1）梳理 HTTP/3 的核心概念，承接 [[HTTP 详解]]，作为 [[Backend Introduction]] 项目「版本演进」的一环。
 
 ## 概述
 
@@ -89,6 +85,6 @@ aliases:
 
 ## Related
 
-- [[wiki/resources/resource/HTTP3 From A To Z Core Concepts|HTTP3 From A To Z Core Concepts]] — 本次摄入的原文（Robin Marx，Smashing Magazine，2021-08）
+- HTTP3 From A To Z Core Concepts — 本次摄入的原文（Robin Marx，Smashing Magazine，2021-08）
 - [[HTTP 详解]] — HTTP 协议基础（请求/响应、方法、状态码）
 - [[Backend Introduction]] — 后端入门项目页

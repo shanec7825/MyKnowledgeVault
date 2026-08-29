@@ -18,14 +18,6 @@ related:
   - "[[综合方法论：RL-DL 启发的认知提升框架]]"
   - "[[认知迁移能力]]"
   - "[[神经可塑性 认知科学理论]]"
-sources:
-  - "[[Repeated Testing Produces Superior Transfer of Learning Relative to Repeated Studying]]"
-  - "[[Transfer of Test-Enhanced Learning Meta-Analysis]]"
-  - "[[The Shuffling of Mathematics Problems Improves Learning]]"
-  - "[[Learning Concepts and Categories Is Spacing the Enemy of Induction]]"
-  - "[[Training in Self-Explanation and Self-Regulation Strategies]]"
-  - "[[Supporting Learning of Variable Control Effects of Prompting]]"
-  - "[[Schema Induction and Analogical Transfer]]"
 domain: cognitive-science
 ---
 
@@ -70,7 +62,7 @@ domain: cognitive-science
 | **专家** | 极少外部反馈，主要依赖内部校准 | 已内化评估标准；外部反馈可能干扰精细化的内部模型 |
 
 **vault 证据**：
-- 自我解释训练对新手有因果性提升（Bielaczyc 1995，[[Training in Self-Explanation and Self-Regulation Strategies]]）——但该研究受试者并非专家
+- 自我解释训练对新手有因果性提升（Bielaczyc 1995，Training in Self-Explanation and Self-Regulation Strategies）——但该研究受试者并非专家
 - 元认知提示（"为什么/如何/何时"）比"对/错"提示更能促进远迁移（Lin & Lehman 1999）——提示类型需要匹配学习者的认知水平
 - 刻意练习仅解释 21%（音乐）到 <1%（职业）的成绩方差（Macnamara 2014）——大量方差来自个体差异和情境因素
 
@@ -147,13 +139,13 @@ RL/DL → 认知的类比框架需要从**"原则列表"**升级为**"条件-策
 
 ## 来源
 
-- [[Repeated Testing Produces Superior Transfer of Learning Relative to Repeated Studying]]（Butler 2010：检索成功是关键机制）
-- [[Transfer of Test-Enhanced Learning Meta-Analysis]]（Pan & Rickard 2018：d=0.40，任务类型调节效应）
-- [[The Shuffling of Mathematics Problems Improves Learning]]（Rohrer & Taylor 2007：d=1.34，练习困难≠学习差）
-- [[Learning Concepts and Categories Is Spacing the Enemy of Induction]]（Kornell & Bjork 2008：78% 受益但 78% 不信）
-- [[Training in Self-Explanation and Self-Regulation Strategies]]（Bielaczyc 1995：自我解释因果效应）
-- [[Supporting Learning of Variable Control Effects of Prompting]]（Lin & Lehman 1999：提示类型调节效应）
-- [[Schema Induction and Analogical Transfer]]（Gick & Holyoak 1983：图式质量的个体差异 91% vs 30%）
-- [[Learning by Analogy Discriminating Between Potential Analogs]]（Richland & McDonough 2010：认知支持 41%→62%）
+- Repeated Testing Produces Superior Transfer of Learning Relative to Repeated Studying（Butler 2010：检索成功是关键机制）
+- Transfer of Test-Enhanced Learning Meta-Analysis（Pan & Rickard 2018：d=0.40，任务类型调节效应）
+- The Shuffling of Mathematics Problems Improves Learning（Rohrer & Taylor 2007：d=1.34，练习困难≠学习差）
+- Learning Concepts and Categories Is Spacing the Enemy of Induction（Kornell & Bjork 2008：78% 受益但 78% 不信）
+- Training in Self-Explanation and Self-Regulation Strategies（Bielaczyc 1995：自我解释因果效应）
+- Supporting Learning of Variable Control Effects of Prompting（Lin & Lehman 1999：提示类型调节效应）
+- Schema Induction and Analogical Transfer（Gick & Holyoak 1983：图式质量的个体差异 91% vs 30%）
+- Learning by Analogy Discriminating Between Potential Analogs（Richland & McDonough 2010：认知支持 41%→62%）
 - [[认知迁移能力]]（WMC 个体差异、演绎推理迁移边界）
 - [[神经可塑性 认知科学理论]]（刻意练习方差解释 21%以下、训练迁移之争）

@@ -1,5 +1,4 @@
 ---
-address: c-000116
 type: concept
 title: "JavaScript 控制流与循环"
 created: 2026-08-14
@@ -11,14 +10,8 @@ tags:
   - mdn
   - backend
 related:
-  - "[[wiki/resources/resource/JavaScript 指南 控制流与错误处理|JavaScript 指南：控制流与错误处理]]"
-  - "[[wiki/resources/resource/JavaScript 指南 循环与迭代|JavaScript 指南：循环与迭代]]"
-  - "[[JavaScript 语法与类型]]"
   - "[[wiki/projects/JavaScript指南|JavaScript 指南]]"
   - "[[wiki/projects/harness开发学习主线|DeepSeek Harness 开发学习主线]]"
-sources:
-  - "[[wiki/resources/resource/JavaScript 指南 控制流与错误处理|JavaScript 指南：控制流与错误处理]]"
-  - "[[wiki/resources/resource/JavaScript 指南 循环与迭代|JavaScript 指南：循环与迭代]]"
 complexity: beginner
 domain: backend
 aliases:
@@ -81,7 +74,7 @@ aliases:
 ## 与后端知识体系的衔接
 
 - **[[wiki/projects/harness开发学习主线|DeepSeek Harness]]**：仓库主力语言 TypeScript（JS 超集）中，控制流（`if/switch/for/while`）与迭代（`for...of` 遍历数组/Map）是读代码的基础；`async/await` 之后补充。本页覆盖 MDN JS Guide 的语句控制部分。
-- 与 [[JavaScript 语法与类型]] 对照：前序概念页覆盖声明与类型，本页覆盖语句与流程控制。
+- 与 JavaScript 语法与类型 对照：前序概念页覆盖声明与类型，本页覆盖语句与流程控制。
 
 ## 总结
 
@@ -92,7 +85,7 @@ aliases:
 
 ## Related
 
-- [[wiki/resources/resource/JavaScript 指南 控制流与错误处理|JavaScript 指南：控制流与错误处理]] — MDN JS Guide 第三章（中文）
-- [[wiki/resources/resource/JavaScript 指南 循环与迭代|JavaScript 指南：循环与迭代]] — MDN JS Guide 第四章（中文）
+- JavaScript 指南：控制流与错误处理 — MDN JS Guide 第三章（中文）
+- JavaScript 指南：循环与迭代 — MDN JS Guide 第四章（中文）
 - [[wiki/projects/JavaScript指南|JavaScript 指南]] — JS Guide 学习项目
 - [[wiki/projects/harness开发学习主线|DeepSeek Harness 开发学习主线]] — 语言补课阶段引用

@@ -1,5 +1,4 @@
 ---
-address: c-000014
 type: concept
 title: "Python 快速入门"
 created: 2026-08-03
@@ -10,11 +9,8 @@ tags:
   - python
   - programming-language
 related:
-  - "[[wiki/resources/resource/Learn Python in Y Minutes|Learn Python in Y Minutes]]"
   - "[[Python Syntax]]"
   - "[[pythonBasics]]"
-sources:
-  - "[[wiki/resources/resource/Learn Python in Y Minutes|Learn Python in Y Minutes]]"
 complexity: beginner
 domain: programming
 aliases:
@@ -24,7 +20,7 @@ aliases:
 
 # Python 快速入门
 
-本文基于 Learn X in Y Minutes 的《[[wiki/resources/resource/Learn Python in Y Minutes|Learn Python in Y Minutes]]》梳理一份可运行的 Python 3 速成路线：从数据类型与运算符，到集合、流程控制、函数、模块、面向对象与高级特性。词汇级语法规则（缩进、保留字、注释、字符串）见 [[Python Syntax]]。
+本文基于 Learn X in Y Minutes 的《Learn Python in Y Minutes》梳理一份可运行的 Python 3 速成路线：从数据类型与运算符，到集合、流程控制、函数、模块、面向对象与高级特性。词汇级语法规则（缩进、保留字、注释、字符串）见 [[Python Syntax]]。
 
 > 速查：以下代码基于 Python 3；`print` 是函数，`input()` 返回字符串；Python 3.7+ 字典保持插入顺序。
 
@@ -81,6 +77,6 @@ aliases:
 
 ## Related
 
-- [[wiki/resources/resource/Learn Python in Y Minutes|Learn Python in Y Minutes]] — 本文来源页
+- Learn Python in Y Minutes — 本文来源页
 - [[Python Syntax]] — 词汇级语法（缩进/保留字/注释/字符串）
 - [[pythonBasics]] — Python 基础学习与练习项目
