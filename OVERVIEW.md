@@ -9,10 +9,10 @@
 | --- | --- | --- | --- |
 | **area 领域** | `wiki/areas/` | 我想长期在这个方向保持水准（无终点） | active / dormant / evergreen |
 | **project 项目** | `wiki/projects/` | 我要交付什么、何时算完（有终点） | active / paused；完结移入 `wiki/archives/` |
-| **resource 概念** | `wiki/resources/concept/` | 消化后的可复用知识（无状态） | developing / mature |
-| **收件箱** | `inbox/` | 未消化的源文档（原文 / 剪藏），只进不出地保留原文 | — |
+| **resource 资源** | `wiki/resources/`：`concept/` 概念页 · `resource/` 精读原文 · `words/` 精读单词 | 消化后的知识 / 精读材料（无状态） | concept: developing / mature |
+| **收件箱** | `inbox/` | 未消化的源文档（原文 / 剪藏），保留原文；英文精读原文例外，迁入 `wiki/resources/resource/` | — |
 
-层间关系**只用双链**：area 页列出领域下的项目，project 页在 frontmatter `related` 与正文 Related 里挂概念页，概念页反指项目。无 Dataview、无账本、无生成脚本。
+层间关系**只用双链**：area 页列出领域下的项目，project 页在 frontmatter `related` 与正文 Related 里挂概念页，概念页反指项目；精读原文与单词页也反指所属 project。无 Dataview、无账本、无生成脚本。
 
 其他：`wiki/CS本科学习手册.md`（独立指南）、`wiki/archives/`（已完结项目）、`calendar/`（日记）、`Excalidraw/`（图示源文件）。
 
@@ -54,8 +54,16 @@
 | [[wiki/projects/神经可塑性\|神经可塑性]] | 可塑性的生物机制与脑区差异 | [[神经可塑性 生物机制]]、[[神经可塑性 认知科学理论]]、[[成人脑可塑性]]、[[可塑性 脑区与认知域差异]] |
 | [[wiki/projects/环境变化与认知\|环境变化与认知]] | 物理环境对认知的多维影响 | [[wiki/resources/concept/环境变化与认知\|环境变化与认知]] |
 
+### 英语学习
+
+> 精读英文原文：原文与单词进 resources，消化后的要点用自己的话写成概念页。详见 [[wiki/areas/英语学习|英语学习]]。
+
+| 项目 | 交付主线 | 主要概念页 |
+| --- | --- | --- |
+| [[wiki/projects/How To Do Great Work\|How To Do Great Work]] | 精读 Paul Graham《How to Do Great Work》，用自己的语言产出核心要点 + 精读词汇 | [[如何做出伟大工作]] |
+
 ## 工作流
 
 - **读**：按本文件 → area → project → concept 的顺序跳转，双链即路径。
-- **摄入**：源文档放 `inbox/`（保留原文，不删）；消化后**用自己的话**写成 `wiki/resources/concept/<主题>.md`，在相关 project 页挂双链。不复制原文、不建来源页副本。
+- **摄入**：源文档放 `inbox/`（保留原文，不删）；消化后**用自己的话**写成 `wiki/resources/concept/<主题>.md`，在相关 project 页挂双链。不复制原文、不建来源页副本。英文精读例外：原文入 `wiki/resources/resource/`，生词入 `wiki/resources/words/`，inbox 其余文件保持原位。
 - **完结**：project 交付物全部完成后 `status: completed`，`git mv` 进 `wiki/archives/`，同时更新本文件的领域地图。
