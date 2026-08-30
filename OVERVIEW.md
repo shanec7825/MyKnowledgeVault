@@ -10,9 +10,10 @@
 | **area 领域** | `wiki/areas/` | 我想长期在这个方向保持水准（无终点） | active / dormant / evergreen |
 | **project 项目** | `wiki/projects/` | 我要交付什么、何时算完（有终点） | active / paused；完结移入 `wiki/archives/` |
 | **resource 资源** | `wiki/resources/`：`concept/` 概念页 · `resource/` 精读原文 · `words/` 精读单词 | 消化后的知识 / 精读材料（无状态） | concept: developing / mature |
-| **收件箱** | `inbox/` | 未消化的源文档（原文 / 剪藏），保留原文；英文精读原文例外，迁入 `wiki/resources/resource/` | — |
+| **收件箱** | `inbox/` | 未消化的源文档（原文 / 剪藏），保留原文；按主题分子文件夹（`后端与网络/` `编程语言/` `人工智能/` `英语精读/`，分类不必执着，见 inbox/README）；英文精读原文例外，迁入 `wiki/resources/resource/` | — |
+| **交付工作区** | `D:/Projects/<项目名>/`（库外） | 每个项目的交付成果与工作文件：`README.md`（交付目标 / 清单）+ `archive/`（旧版本）+ 成果；库内存指针（project `code:` 字段） | — |
 
-层间关系**只用双链**：area 页列出领域下的项目，project 页在 frontmatter `related` 与正文 Related 里挂概念页，概念页反指项目；精读原文与单词页也反指所属 project。无 Dataview、无账本、无生成脚本。
+层间关系**只用双链**：area 页列出领域下的项目，project 页在 frontmatter `related` 与正文 Related 里挂概念页，概念页反指项目；精读原文与单词页也反指所属 project。无 Dataview、无账本、无生成脚本。代码与交付成果的库外位置见 [[wiki/meta/code-repos]]。
 
 其他：`wiki/CS本科学习手册.md`（独立指南）、`wiki/archives/`（已完结项目）、`calendar/`（日记）、`Excalidraw/`（图示源文件）。
 
@@ -65,5 +66,6 @@
 ## 工作流
 
 - **读**：按本文件 → area → project → concept 的顺序跳转，双链即路径。
-- **摄入**：源文档放 `inbox/`（保留原文，不删）；消化后**用自己的话**写成 `wiki/resources/concept/<主题>.md`，在相关 project 页挂双链。不复制原文、不建来源页副本。英文精读例外：原文入 `wiki/resources/resource/`，生词入 `wiki/resources/words/`，inbox 其余文件保持原位。
-- **完结**：project 交付物全部完成后 `status: completed`，`git mv` 进 `wiki/archives/`，同时更新本文件的领域地图。
+- **摄入**：源文档放 `inbox/`（保留原文，不删；按主题丢进子文件夹，拿不准就放根目录）；消化后**用自己的话**写成 `wiki/resources/concept/<主题>.md`，在相关 project 页挂双链。不复制原文、不建来源页副本。英文精读例外：原文入 `wiki/resources/resource/`，生词入 `wiki/resources/words/`，inbox 其余文件保持原位。
+- **交付**：每个 project 在 `D:/Projects/<项目名>/` 有交付工作区——速查表 / 练习 / 报告草稿等交付成果放这里，过时版本移入其 `archive/`；project 页「交付物」全部勾选才算完成。映射总表见 [[wiki/meta/code-repos]]。
+- **完结**：project 交付物全部完成后 `status: completed`，`git mv` 进 `wiki/archives/`，同时更新本文件的领域地图；库外工作区整体留档。

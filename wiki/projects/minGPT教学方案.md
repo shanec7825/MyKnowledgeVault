@@ -2,7 +2,7 @@
 type: project
 title: "minGPT 实践教学方案（中文版）"
 created: 2026-08-08
-updated: 2026-08-28
+updated: 2026-08-30
 status: active
 area: "人工智能"
 domain: machine-learning
@@ -13,6 +13,7 @@ prerequisites:
   - "[[wiki/projects/pythonBasics|pythonBasics]]"
 code:
   - ".raw/repos/minGPT"
+  - "D:/Projects/minGPT教学方案"
 related:
   - "[[wiki/projects/类比于强化学习和深度学习的学习理论|类比于强化学习和深度学习的学习理论]]"
   - "[[wiki/projects/harness开发学习主线|DeepSeek Harness 开发学习主线]]"
@@ -39,6 +40,8 @@ tags:
 ## 目标产出
 > 亲手跑通、逐行读懂并改造 minGPT，最终能从零写一个 150–250 行的小 GPT。
 
+**交付工作区**：`D:/Projects/minGPT教学方案`（交付成果放此；过时版本移入其 `archive/`。全局映射见 [[wiki/meta/code-repos]]）
+
 **交付物**：
 
 - [ ] 跑通 demo 排序任务，并逐行拆解 model.py
@@ -46,6 +49,7 @@ tags:
 - [ ] 训练自己的 chargpt 字符语言模型
 - [ ] 完成至少一个自己的改造点（训练 / 采样 / 结构）
 - [ ] 每阶段一份 notes/ 短笔记
+- [ ] 全部完成后：`status: completed` → 移入 `wiki/archives/`
 
 ## 项目关键点
 **核心内容**：以 karpathy 的 minGPT（约 300 行）为教材，按「跑通 → 逐行读懂 → 动手改造」的节奏，最终能从零写一个 150–250 行的小 GPT。

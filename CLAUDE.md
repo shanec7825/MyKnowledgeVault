@@ -8,14 +8,17 @@
 MyKnowledgeVault/
 ├── OVERVIEW.md            全局地图（agent 入口，领域/项目变动时同步更新）
 ├── CLAUDE.md              本规范
-├── inbox/                 源文档（原文 / 剪藏），保留原文
+├── inbox/                 源文档（原文 / 剪藏），保留原文；按主题分子文件夹（不必执着）
 ├── wiki/
 │   ├── areas/             领域页（无终点：active / dormant / evergreen）
 │   ├── projects/          项目页（有终点：active / paused / completed）
 │   ├── archives/          已完结项目
+│   ├── meta/              code-repos.md（代码与交付工作区映射总表）
 │   └── resources/         消化与精读材料：concept/ 概念页 · resource/ 精读原文 · words/ 精读单词
 ├── calendar/              日记（YYYY-MM-DD.md）
 └── Excalidraw/            图示源文件
+
+库外：`D:/Projects/<项目名>/` 为每个项目的交付工作区（README + archive/ + 交付成果），与 project 页 `code:` 字段对应。
 ```
 
 ## 2. 层级判定
@@ -44,6 +47,7 @@ type: resource / title / created / updated / related / tags
 2. **inbox 放源文档，concept 放消化产出**：源文档留在 inbox 不删；读完用自己的话写成 `wiki/resources/concept/<主题>.md`，**不复制原文、不建来源页副本、不建 entity/ 等多余分层**。英文精读例外：原文放 `wiki/resources/resource/`、配套单词放 `wiki/resources/words/`；inbox 其余源文件保持原位。
 3. **先查后建**：新建任何文件前先全局搜索，避免重复。
 4. **git 纪律**：移动用 `git mv`；一批改动完成后提交。写文件用 LF 换行（Python 脚本 `newline="\n"`）。
-5. **完结归档**：project 交付物全部勾选后 `status: completed`，`git mv` 进 `wiki/archives/`，并更新 OVERVIEW.md 的领域地图。
-6. **谨慎删除**：不做批量删除；确要清理先向用户列出清单确认。
-7. **记录**：每次整理后把做了什么追加到 `.workbuddy/memory/YYYY-MM-DD.md`。
+5. **完结归档**：project 交付物全部勾选后 `status: completed`，`git mv` 进 `wiki/archives/`，并更新 OVERVIEW.md 的领域地图；库外交付工作区整体保留。
+6. **交付工作区**：交付成果（可运行代码、速查表、练习、报告草稿）放 `D:/Projects/<项目名>/`，不拷进库；project 页 frontmatter `code:` 指向它，项目页「交付物」与工作区 README 清单同步勾选；过时版本移入该目录 `archive/`。新建项目页时同步建工作区（见 [[wiki/meta/code-repos]] 认领流程）。
+7. **谨慎删除**：不做批量删除；确要清理先向用户列出清单确认。
+8. **记录**：每次整理后把做了什么追加到 `.workbuddy/memory/YYYY-MM-DD.md`。

@@ -2,12 +2,15 @@
 type: project
 title: "DeepSeek Harness 开发学习主线"
 created: 2026-08-13
-updated: 2026-08-28
+updated: 2026-08-30
 status: active
 area: "后端"
 domain: software-engineering
 complexity: advanced
 goal: "按阶段完成 DeepSeek Harness 开发学习主线，达到能独立开发、测试并提交一个工具/插件 PR 的水平。"
+code:
+  - "D:/deepseek-harness"
+  - "D:/Projects/harness开发学习主线"
 prerequisites:
   - "[[wiki/projects/JavaScript指南|JavaScript 指南]]"
   - "[[wiki/projects/pythonBasics|pythonBasics]]"
@@ -44,12 +47,15 @@ tags:
 ## 目标产出
 > 按阶段完成 DeepSeek Harness 开发学习主线，达到能独立开发、测试并提交一个工具/插件 PR 的水平。
 
+**交付工作区**：`D:/Projects/harness开发学习主线`（交付成果放此；过时版本移入其 `archive/`。全局映射见 [[wiki/meta/code-repos]]）
+
 **交付物**：
 
 - [ ] 通过阶段 1 语言最小补课（JS / TS / 异步编程）
 - [ ] 能独立编写并测试一个工具或插件
 - [ ] 向 DeepSeek Harness 提交一个可合并的 PR
 - [ ] 每完成一个阶段写一页自己的笔记（概念用自己的话复述）
+- [ ] 全部完成后：`status: completed` → 移入 `wiki/archives/`
 
 ## 项目关键点
 **核心内容**：从「只有 C 和 Python 基础」到「能参与 DeepSeek Harness 开发」的自学主线——先建立 harness（agent 运行时）图景，再按阶段补语言与思想，每阶段带验收标准。

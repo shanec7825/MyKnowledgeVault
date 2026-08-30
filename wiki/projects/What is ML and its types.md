@@ -2,12 +2,14 @@
 type: project
 title: "What is ML and its types"
 created: 2026-08-08
-updated: 2026-08-28
+updated: 2026-08-30
 status: active
 area: "人工智能"
 domain: machine-learning
 complexity: beginner
 goal: "机器学习入门：梳理机器学习的定义、三大类型（监督 / 无监督 / 强化）与深度学习架构，建立 AI 方向的知识起点。"
+code:
+  - "D:/Projects/What is ML and its types"
 related:
   - "[[机器学习]]"
   - "[[pythonBasics]]"
@@ -34,17 +36,13 @@ tags:
 - 逐步深入各类型与架构：监督/无监督/强化学习、深度学习（CNN/RNN/Transformer/Mamba）。
 - 与 [[pythonBasics]] 衔接（ML 库多基于 Python），为后续实践打基础。
 
+**交付工作区**：`D:/Projects/What is ML and its types`（交付成果放此；过时版本移入其 `archive/`。全局映射见 [[wiki/meta/code-repos]]）
+
 **交付物**：
 
 - [ ] 三大学习范式与深度学习架构各一页概念页
 - [ ] 《机器学习类型对照表》（定义 / 代表算法 / 适用场景）
 - [ ] 与 pythonBasics 衔接的可执行上手路径
-
-- [ ] -三大学习范式与深度学习架构各有独立概念页
-- [ ] -输出《机器学习类型对照表》（定义 / 代表算法 / 适用场景 / 与 Python 实践衔接）
-- [ ] -与 [[wiki/projects/pythonBasics|pythonBasics]] 形成可执行的上手路径
-- [ ] -`wiki-lint` 无死链
-- [ ] -全部完成后：`status: completed`，项目移入 `wiki/archives/`
 - [ ] 全部完成后：`status: completed` → 移入 `wiki/archives/`
 
 ## 项目关键点
@@ -68,4 +66,3 @@ tags:
 - [ ] 强化学习专题：PPO / Q-learning / RLHF
 - [ ] 深度学习专题：CNN / RNN / Transformer 注意力机制 / Mamba
 - [ ] 补充损失函数、梯度下降、过拟合与正则化基础
-

@@ -2,12 +2,14 @@
 type: project
 title: "pythonBasics"
 created: 2026-08-02
-updated: 2026-08-28
+updated: 2026-08-30
 status: active
 area: "后端"
 domain: programming-language
 complexity: beginner
 goal: "通过练习掌握 Python 基础：语法、控制流、数据结构与函数。"
+code:
+  - "D:/Projects/pythonBasics"
 related:
   - "[[Python Syntax]]"
   - "[[Python 快速入门]]"
@@ -32,16 +34,13 @@ tags:
 - 用可运行的小脚本掌握 Python 基础：语法、控制流、数据结构、函数。
 - 沉淀可复用的练习代码与学习笔记。
 
+**交付工作区**：`D:/Projects/pythonBasics`（交付成果放此；过时版本移入其 `archive/`。全局映射见 [[wiki/meta/code-repos]]）
+
 **交付物**：
 
 - [ ] 控制流、数据结构、函数各一组可运行练习脚本并通过
 - [ ] 每个主题一页用自己的话复述的概念笔记
 - [ ] 练习代码合并附于本页（类、闭包、装饰器等已收录）
-
-- [ ] -控制流 / 数据结构 / 函数各有可运行练习脚本并通过
-- [ ] -每个主题有一页用自己的话复述的概念笔记
-- [ ] -练习代码附于本页「附：练习代码」，复制后可直接 `python` 运行
-- [ ] -全部完成后：`status: completed`，项目移入 `wiki/archives/`
 - [ ] 全部完成后：`status: completed` → 移入 `wiki/archives/`
 
 ## 项目关键点
@@ -56,7 +55,7 @@ tags:
 ## 内容
 - [[Python Syntax]] — Python 基础语法（概念页）
 - [[Python 快速入门]] — Python 3 速成路线（概念页，含控制流/数据结构/函数/类）
-- 练习代码：本页末尾「附：练习代码」，可复制运行
+- 练习代码：本页末尾「附：练习代码」，可复制运行；已落盘 `D:/Projects/pythonBasics/scripts/`（module.py 的 sys.path 误用已修）
 
 ## 待办
 - [ ] 补充控制流 / 数据结构 / 函数练习
@@ -227,12 +226,9 @@ else :
 finally:
     print("finally block executed")
     
-    
 with open("myfile.txt", "w+") as f:
     for i in f:
         print(i)
-        
-        
         
 contents = {"key1": "value1", "key2": "value2"}
 
@@ -266,4 +262,3 @@ dir(math)
 ```
 
 ---
-

@@ -2,7 +2,7 @@
 type: project
 title: "AnimoDoll 云端项目 · 学习与协作"
 created: 2026-08-12
-updated: 2026-08-28
+updated: 2026-08-30
 status: active
 area: "后端"
 domain: software-engineering
@@ -12,7 +12,7 @@ prerequisites:
   - "[[wiki/projects/Backend Introduction|Backend Introduction]]"
   - "[[wiki/projects/API Styles|API Styles]]"
 code:
-  - "D:/projects/animodoll-cloud"
+  - "D:/Projects/animodoll/animodoll-cloud"
 related:
   - "[[wiki/projects/animo-cloud#附属文档：仓库梳理与联调问题核查报告|仓库梳理与联调问题核查报告]]"
   - "[[wiki/projects/animo-cloud#附属文档：学习路线与人 Agent 协作开发指南|学习路线与人+Agent协作开发指南]]"
@@ -48,6 +48,8 @@ tags:
 2. 能自己动手或指挥 Agent 完成一个普通 API 的「路由 → Store → 表 → DTO → 前端调用」闭环。
 3. 建立「人 + Agent 协作开发」的工作流：派活、验收、排障、文档同步。
 
+**交付工作区**：`D:/Projects/animo-cloud`（交付成果放此；过时版本移入其 `archive/`。全局映射见 [[wiki/meta/code-repos]]）
+
 **交付物**：
 
 - [ ] 不看文档画出「页面 → api.js → Ktor 路由 → Store → Exposed 表 → JSON」完整链路
@@ -55,11 +57,6 @@ tags:
 - [ ] 同步更新 OpenAPI、endpoint-index、Postman Collection 等契约交付物
 - [ ] 完成一次联调问题核查：真错误 / 文档问题 / 客户端问题分得清
 - [ ] 六周计划推进到第 6 周，自查清单全部通过
-
-- [ ] -能不看文档画出「页面 → api.js → Ktor 路由 → Store → Exposed 表 → JSON 返回」的完整链路
-- [ ] -完成一次联调问题核查：真错误、文档问题、客户端问题分得清
-- [ ] -六周计划至少推进到第 6 周（自查清单全部通过）
-- [ ] -全部完成后：`status: completed`，项目移入 `wiki/archives/`
 - [ ] 全部完成后：`status: completed` → 移入 `wiki/archives/`
 
 ## 项目关键点
@@ -1354,6 +1351,7 @@ npm run build
 当前代码中，短信服务分两层：**对外 HTTP 接口**（`/api/v1`）和 **Kotlin 内部服务接口**（`com.animo.cloud.sms`）。对外路由定义在 `backend/src/main/kotlin/com/animo/cloud/ApiV1AuthRoutes.kt`，服务实现分别在 `sms/SmsSender.kt` 与 `sms/SmsVerificationService.kt`。
 
 ## 附属文档：SMS 短信服务接口说明
+
 ## 一、对外 HTTP 接口
 统一使用新 `/api/v1` 响应格式：成功 `{ "data": {...}, "meta": { "requestId": "..." } }`，失败 `{ "error": {...} }`。
 
@@ -1544,4 +1542,3 @@ data class SmsCodeVerifyResponse(
 - 发送通道由 `ANIMO_SMS_PROVIDER` 控制：`mock`（默认）、`aliyun`/`aliyun-auth`/`pnvs`（阿里云短信认证，码由阿里云生成和校验）、`aliyun-legacy`（阿里云普通短信，码本地生成和校验）。
 
 ---
-

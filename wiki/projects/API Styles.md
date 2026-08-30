@@ -2,12 +2,14 @@
 type: project
 title: "API Styles"
 created: 2026-08-02
-updated: 2026-08-28
+updated: 2026-08-30
 status: active
 area: "后端"
 domain: web-api
 complexity: intermediate
 goal: "梳理并对比主流 API 风格（REST / JSON:API 等），形成可复用的选型参考。"
+code:
+  - "D:/Projects/API Styles"
 prerequisites:
   - "[[wiki/projects/Backend Introduction|Backend Introduction]]"
 related:
@@ -35,16 +37,13 @@ tags:
 - 梳理主流 API 风格：通用 REST 最佳实践、JSON:API 具体规范，以及后续补充（GraphQL、gRPC 等）。
 - 提炼各风格的适用场景与优缺点，形成选型决策参考。
 
+**交付工作区**：`D:/Projects/API Styles`（交付成果放此；过时版本移入其 `archive/`。全局映射见 [[wiki/meta/code-repos]]）
+
 **交付物**：
 
 - [ ] REST / JSON:API / OpenAPI 三页对照笔记（已有）
 - [ ] GraphQL 与 gRPC 各一页对照笔记，并入对比维度表
 - [ ] 《API 风格选型决策树》，可直接用于新项目选型
-
-- [ ] -GraphQL 与 gRPC 各有一页对照笔记，并加入对比维度表
-- [ ] -输出《API 风格选型决策树》，可直接用于新项目选型
-- [ ] -项目内概念页与来源页互相链接，`wiki-lint` 无死链
-- [ ] -全部完成后：`status: completed`，项目移入 `wiki/archives/`
 - [ ] 全部完成后：`status: completed` → 移入 `wiki/archives/`
 
 ## 项目关键点
@@ -81,4 +80,3 @@ tags:
 - [[OpenAPI 规范]]
 
 ---
-

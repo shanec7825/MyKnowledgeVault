@@ -2,12 +2,14 @@
 type: project
 title: "Backend Introduction"
 created: 2026-08-05
-updated: 2026-08-28
+updated: 2026-08-30
 status: active
 area: "后端"
 domain: backend
 complexity: intermediate
 goal: "后端入门：从网络基础起步，逐步建立后端开发所需的知识体系（网络、HTTP、DNS、服务器、数据库、API）。"
+code:
+  - "D:/Projects/Backend Introduction"
 related:
   - "[[互联网工作原理]]"
   - "[[HTTP 详解]]"
@@ -38,18 +40,14 @@ tags:
 - 从零建立后端开发所需的基础知识：互联网原理、HTTP、DNS、服务器与部署、数据库、API 设计等。
 - 每个主题沉淀概念页与来源页，最终形成可导航的后端入门路线。
 
+**交付工作区**：`D:/Projects/Backend Introduction`（交付成果放此；过时版本移入其 `archive/`。全局映射见 [[wiki/meta/code-repos]]）
+
 **交付物**：
 
 - [ ] 网络基础层概念页闭环：互联网 / HTTP / HTTP3 / 浏览器 / 渲染 / 域名 / DNS（已完成）
 - [ ] HTTP 缓存机制一页概念笔记
 - [ ] 服务器 / API 设计等后续主题各一页概念笔记
 - [ ] 《后端入门路线》最终导航页
-
-- [ ] -网络基础层收尾：HTTP 缓存机制已摄入并链接
-- [ ] -服务器 / API 设计等后续主题各有一页概念笔记
-- [ ] -输出《后端入门路线》最终导航页（当前页面可承担该职责，完成后重命名归档）
-- [ ] -`wiki-lint` 无死链，来源页与概念页链接闭环
-- [ ] -全部完成后：`status: completed`，项目移入 `wiki/archives/`
 - [ ] 全部完成后：`status: completed` → 移入 `wiki/archives/`
 
 ## 项目关键点
@@ -94,4 +92,3 @@ tags:
 - [[DNS 详解]]
 
 ---
-

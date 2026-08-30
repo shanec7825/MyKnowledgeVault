@@ -2,10 +2,12 @@
 type: project
 title: "How To Do Great Work"
 created: 2026-08-29
-updated: 2026-08-29
+updated: 2026-08-30
 status: active
 area: "英语学习"
 goal: "精读 Paul Graham《How to Do Great Work》原文，用自己的语言生成文章的核心要点，并同步积累精读单词。"
+code:
+  - "D:/Projects/How To Do Great Work"
 related:
   - "[[wiki/resources/resource/How To Do Great Work|How To Do Great Work（原文）]]"
   - "[[如何做出伟大工作]]"
@@ -25,12 +27,15 @@ tags:
 
 领域定位：[[wiki/areas/英语学习|英语学习]] 能力模型中的**读**维度（精读 + 词汇）；听、说、写维度沿领域页「待开展」另立项目。
 
+**交付工作区**：`D:/Projects/How To Do Great Work`（交付成果放此；过时版本移入其 `archive/`。全局映射见 [[wiki/meta/code-repos]]）
+
 **交付物**：
 
 - [x] 原文归档：[[wiki/resources/resource/How To Do Great Work|How To Do Great Work（原文）]]（自 `inbox/READING/` 迁入 `wiki/resources/resource/`）
 - [x] 核心要点页（自己的话）：[[如何做出伟大工作]] — 四步法、选择工作、原创性、士气与好奇心
 - [x] 精读单词页 ×29：`wiki/resources/words/`（boldness、fractal、upwind、shoals……每页含原意 + 文中用法）
 - [ ] 后续迭代：继续补词、按需修订要点页
+- [ ] 全部完成后：`status: completed` → 移入 `wiki/archives/`
 
 ## 工作方式
 

@@ -2,7 +2,7 @@
 type: project
 title: HTTP
 created: 2026-08-29
-updated: 2026-08-29
+updated: 2026-08-30
 status: active
 area: 后端
 domain: networking
@@ -10,7 +10,8 @@ complexity: intermediate
 goal: 深挖 HTTP 协议骨架——报文、方法、状态码、缓存、连接管理、版本演进——形成可复用的协议速查与抓包调试能力。
 prerequisites:
   - "[[wiki/projects/Backend Introduction|Backend Introduction]]"
-code: []
+code:
+  - "D:/Projects/HTTP"
 related:
   - "[[HTTP 详解]]"
   - "[[HTTP3 核心概念]]"
@@ -40,6 +41,8 @@ tags:
 ## 目标产出
 
 > 深挖 HTTP 协议骨架——报文、方法、状态码、缓存、连接管理、版本演进——形成可复用的协议速查与抓包调试能力。
+
+**交付工作区**：`D:/Projects/HTTP`（交付成果放此；过时版本移入其 `archive/`。全局映射见 [[wiki/meta/code-repos]]）
 
 **交付物**：
 
