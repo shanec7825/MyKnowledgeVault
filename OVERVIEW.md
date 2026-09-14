@@ -34,6 +34,15 @@
 | [[wiki/projects/animo-cloud\|animo-cloud]] | 真实仓库（Kotlin/Ktor）联调交付 | （附属文档见项目页） |
 | [[wiki/projects/harness开发学习主线\|harness开发学习主线]] | DeepSeek Harness 开发，独立提交 PR | （依赖 pythonBasics / JavaScript指南） |
 
+### 计算机基础
+
+> CS 本科的「骨架课」群：数据结构与算法 · 计算机组成 · 操作系统 · 编译原理。网络已在「后端」领域推进，此处不重复。详见 [[wiki/areas/计算机基础|计算机基础]]。
+
+| 项目 | 交付主线 | 主要概念页 |
+| --- | --- | --- |
+| [[wiki/projects/数据结构 Introduction\|数据结构 Introduction]] | 把「逻辑关系 + 物理存储 + 操作集合 + 效率权衡」落成可操作流程：知识星图 + 六问法 + 12 个真实问题 | [[数据结构分析框架]] |
+| [[wiki/projects/线性表\|线性表]] | 实现并验证动态数组 SeqList：测试全绿 + 复杂度实测 + 选型判据 | [[线性表]]、[[顺序表]]、[[摊还分析]] |
+
 ### 人工智能
 
 > 从机器学习定义与分类入门，落到亲手实现。详见 [[wiki/areas/人工智能|人工智能]]。

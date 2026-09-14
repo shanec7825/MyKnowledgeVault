@@ -10,6 +10,7 @@
 | `编程语言/` | 语言语法与教程类来源（Python / JS / MDN 章节） | Learn Python in Y Minutes、MDN《JavaScript 指南》中文各章 |
 | `人工智能/` | ML / DL / AI 综述类来源 | What is Machine Learning（IBM） |
 | `英语精读/` | 精读材料及其译文的 inbox 原件 | How to Do Great Work 双语译文 |
+| `计算机基础/` | 数据结构 / 组成 / 操作系统 / 编译原理等 CS 核心课的来源材料 | 数据结构导学、线性表与顺序表单元 |
 
 ## 流向
 
