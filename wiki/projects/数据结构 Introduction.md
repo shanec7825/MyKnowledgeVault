@@ -63,6 +63,12 @@ tags:
 
 ## Related
 
-- [[wiki/meta/code-repos]]
-- [[wiki/areas/计算机基础|计算机基础]]
-- [[wiki/projects/线性表|线性表]] —— 下一站，第一个具体结构
+**概念页**
+
+- [[wiki/resources/concept/数据结构分析框架|数据结构分析框架]] —— 本项目交付的框架本身：四问 / 六问法 / 四步 / 五类横向边
+
+**项目 / 领域**
+
+- [[wiki/projects/线性表|线性表]] —— 下一站，第一个具体结构（框架的第一个实战对象）
+- [[wiki/areas/计算机基础|计算机基础]] —— 所属领域
+- [[wiki/meta/code-repos]] —— 交付工作区全局映射
