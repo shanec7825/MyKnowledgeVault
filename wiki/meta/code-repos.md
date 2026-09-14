@@ -44,7 +44,7 @@ tags:
 | [[wiki/projects/English Learning Teaching\|English Learning Teaching]] | `English Learning Teaching/` | 自建（dubbing_pipeline 等） | 英语视频中文配音/字幕调研 + 管线；三份报告（md+pdf） |
 | [[wiki/projects/Make$\|Make$]] | `Make$/` | — | 非代码：赚钱渠道 + 行业收入与职业壁垒调研（15 篇系列） |
 | [[wiki/projects/数据结构 Introduction\|数据结构 Introduction]] | `数据结构 Introduction/` | — | 知识星图（56 节点 + 横向边登记表）+ 六问法分析表 + 知识卡片模板 |
-| [[wiki/projects/线性表\|线性表]] | `线性表/` | 自建（C++ / g++） | `src/` 顺序表实现 · `tests/` 11 组零依赖用例 · `bench/` 三组复杂度实测 · `docs/` 报告与卡片 |
+| [[wiki/projects/线性表\|线性表]] | `线性表/` | 自建（`线性表/` 内 git；C++ / g++） | `src/` 顺序表实现 · `tests/` 11 组零依赖用例（107 断言全过）· `bench/` 三组复杂度实测 · `docs/` 报告与卡片 |
 
 ## 已归档项目的代码
 
