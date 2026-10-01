@@ -13,3 +13,7 @@ Thumbs.db
 
 # Cloned/study repositories stored outside the visible wiki
 .raw/repos/
+
+# QMD generated index and runtime state (config is tracked).
+.qmd/*
+!.qmd/index.yml

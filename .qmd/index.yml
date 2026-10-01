@@ -1,0 +1,23 @@
+global_context: "MyKnowledgeVault: Chinese-first Obsidian knowledge base. Read OVERVIEW.md and CLAUDE.md before editing; search before creating notes."
+models:
+  embed: C:/Users/Lenovo/Documents/MyKnowledgeVault/.vault-meta/search/models/Qwen3-Embedding-0.6B-Q8_0.gguf
+  generate: hf:tobil/qmd-query-expansion-1.7B-gguf/qmd-query-expansion-1.7B-q4_k_m.gguf
+  rerank: hf:ggml-org/Qwen3-Reranker-0.6B-Q8_0-GGUF/qwen3-reranker-0.6b-q8_0.gguf
+collections:
+  vault:
+    path: C:/Users/Lenovo/Documents/MyKnowledgeVault
+    pattern: wiki/**/*.md,inbox/**/*.md,calendar/**/*.md,drafts/**/*.md,*.md
+    ignore:
+      - excalidraw_capability_report.md
+    context:
+      /: Vault map, rules and root notes.
+      /wiki/areas: Long-lived learning areas and directions.
+      /wiki/projects: Active projects and goals.
+      /wiki/archives: Completed projects; historical references.
+      /wiki/resources/concept: Digested reusable concepts; prefer these for explanations.
+      /wiki/resources/resource: Original reading materials.
+      /wiki/resources/words: English vocabulary notes.
+      /wiki/meta: Vault conventions and external code workspace pointers.
+      /inbox: Original source documents and clippings; distinguish from digested knowledge.
+      /calendar: Dated personal journals.
+      /drafts: Unfinished drafts; verify against final notes.

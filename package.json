@@ -1,0 +1,10 @@
+{
+  "name": "excalidraw-tools",
+  "version": "1.0.0",
+  "dependencies": {
+    "lz-string": "^1.5.0"
+  },
+  "scripts": {
+    "qmd": "node .vault-meta/search/node_modules/@tobilu/qmd/dist/cli/qmd.js"
+  }
+}

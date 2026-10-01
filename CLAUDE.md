@@ -51,3 +51,7 @@ type: resource / title / created / updated / related / tags
 6. **交付工作区**：交付成果（可运行代码、速查表、练习、报告草稿）放 `D:/Projects/<项目名>/`，不拷进库；project 页 frontmatter `code:` 指向它，项目页「交付物」与工作区 README 清单同步勾选；过时版本移入该目录 `archive/`。新建项目页时同步建工作区（见 [[wiki/meta/code-repos]] 认领流程）。
 7. **谨慎删除**：不做批量删除；确要清理先向用户列出清单确认。
 8. **记录**：每次整理后把做了什么追加到 `.workbuddy/memory/YYYY-MM-DD.md`。
+
+## Agent 搜索入口
+
+本库已安装 QMD 本地搜索引擎；命令与维护说明见 [[wiki/meta/agent-search]]。首次检索前运行 `npm.cmd run --silent qmd -- update`，再用 `search --json -n 8` 查候选、`get` 读原文；含义检索用 `query "vec: 问题描述" --no-rerank`（先检查 vectors 状态）。`AGENTS.md` 提供跨 agent 的检索约定。
