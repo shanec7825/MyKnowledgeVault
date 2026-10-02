@@ -19,32 +19,32 @@ tags:
 
 | 项目 | 交付工作区（D:/Projects） | 代码仓库 | 备注 |
 | --- | --- | --- | --- |
-| [[wiki/projects/Backend Introduction\|Backend Introduction]] | `Backend Introduction/` | — | `后端入门路线.md` 起草处 |
-| [[wiki/projects/HTTP\|HTTP]] | `HTTP/` | — | 速查 / 判定表 / 缓存笔记 / 实操记录；`http输出笔记.md` 为个人笔记 |
-| [[wiki/projects/API Styles\|API Styles]] | `API Styles/` | — | 选型决策树 + GraphQL / gRPC 对照 |
-| [[wiki/projects/Relational Databases\|Relational Databases]] | `Relational Databases/` | 自建（psql 练习） | `exercises/` 三组 SQL + 选型对照表 |
-| [[wiki/projects/pythonBasics\|pythonBasics]] | `pythonBasics/` | 自建 | `exercises/` 三组练习 + `scripts/` 既有脚本 |
-| [[wiki/projects/JavaScript指南\|JavaScript指南]] | `JavaScript基础/` | 自建 | `exercises/` 20 计划（12 已解锁）；另有手写 HTML 练习 |
-| [[wiki/projects/animo-cloud\|animo-cloud]] | `animo-cloud/` | `animodoll/animodoll-cloud/`（Kotlin/Ktor） | 链路默画 + 联调核查模板；仓库在 `animodoll` 仓库内 |
-| [[wiki/projects/harness开发学习主线\|harness开发学习主线]] | `harness开发学习主线/` | `D:/deepseek-harness` | `阶段笔记/`；权威入口是仓库 `AGENTS.md` |
-| [[wiki/projects/What is ML and its types\|What is ML and its types]] | `What is ML and its types/` | — | 机器学习类型对照表 |
-| [[wiki/projects/minGPT教学方案\|minGPT教学方案]] | `minGPT教学方案/` | 库内 `.raw/repos/minGPT/`（Obsidian 忽略） | 最终小 GPT 交付在 `小GPT/`；阶段笔记在仓库 `notes/` |
-| [[wiki/projects/学习方法的认知科学验证\|学习方法的认知科学验证]] | `学习方法的认知科学验证/` | — | `研究档案报告.md` 结论页草稿 |
-| [[wiki/projects/类比于强化学习和深度学习的学习理论\|类比于强化学习和深度学习的学习理论]] | `类比于强化学习和深度学习的学习理论/` | — | 同上 |
-| [[wiki/projects/认知表征与泛化\|认知表征与泛化]] | `认知表征与泛化/` | — | 同上 |
-| [[wiki/projects/神经可塑性\|神经可塑性]] | `神经可塑性/` | — | 同上（含争议点清单） |
-| [[wiki/projects/环境变化与认知\|环境变化与认知]] | `环境变化与认知/` | — | 同上（含环境优化建议） |
-| [[wiki/projects/How To Do Great Work\|How To Do Great Work]] | `How To Do Great Work/` | — | 交付物已在 wiki（原文 / 要点 / 单词），D 区记进度 |
-| [[wiki/projects/informationFinding\|informationFinding]] | `informationFinding/` | 自建（Python + React） | AI 研究工作台：GitHub 热榜 + 论文速递 + 多维评分 + 中文日报 + 本地看板 |
-| [[wiki/projects/3D体素沙盘\|3D体素沙盘]] | `3D体素沙盘/` | 自建（three.js 单页） | 唐长安城体素沙盘，1280×1280 大世界 + 生命系统 |
-| [[wiki/projects/3D迷宫\|3D迷宫]] | `3D迷宫/` | 自建（three.js 单页） | 重力滚球迷宫，14 关 × 7 主题，纯离线 |
-| [[wiki/projects/Being of Me\|Being of Me]] | `Being of Me/` | 自建（React 19 + 零依赖 Node） | 个人数字生命档案馆，只监听 127.0.0.1 |
-| [[wiki/projects/HealthMap\|HealthMap]] | `HealthMap/` | 自建（React 19 + Vite） | 本地健康管理 v2.0；v1 留存 `legacy/`，数据互通 |
-| [[wiki/projects/HotKeysMap\|HotKeysMap]] | `HotKeysMap/` | 自建（Python 标准库 + React 18） | Windows 快捷键查询/修改，SSE 实时同步 |
-| [[wiki/projects/English Learning Teaching\|English Learning Teaching]] | `English Learning Teaching/` | 自建（dubbing_pipeline 等） | 英语视频中文配音/字幕调研 + 管线；三份报告（md+pdf） |
-| [[wiki/projects/Make$\|Make$]] | `Make$/` | — | 非代码：赚钱渠道 + 行业收入与职业壁垒调研（15 篇系列） |
-| [[wiki/projects/数据结构 Introduction\|数据结构 Introduction]] | `数据结构 Introduction/` | — | 知识星图（56 节点 + 横向边登记表）+ 六问法分析表 + 知识卡片模板 |
-| [[wiki/projects/线性表\|线性表]] | `线性表/` | 自建（`线性表/` 内 git；C++ / g++） | `src/` 顺序表实现 · `tests/` 11 组零依赖用例（107 断言全过）· `bench/` 三组复杂度实测 · `docs/` 报告与卡片 |
+| [[Backend Introduction\|Backend Introduction]] | `Backend Introduction/` | — | `后端入门路线.md` 起草处 |
+| [[HTTP\|HTTP]] | `HTTP/` | — | 速查 / 判定表 / 缓存笔记 / 实操记录；`http输出笔记.md` 为个人笔记 |
+| [[API Styles\|API Styles]] | `API Styles/` | — | 选型决策树 + GraphQL / gRPC 对照 |
+| [[Relational Databases\|Relational Databases]] | `Relational Databases/` | 自建（psql 练习） | `exercises/` 三组 SQL + 选型对照表 |
+| [[pythonBasics\|pythonBasics]] | `pythonBasics/` | 自建 | `exercises/` 三组练习 + `scripts/` 既有脚本 |
+| [[JavaScript指南\|JavaScript指南]] | `JavaScript基础/` | 自建 | `exercises/` 20 计划（12 已解锁）；另有手写 HTML 练习 |
+| [[animo-cloud\|animo-cloud]] | `animo-cloud/` | `animodoll/animodoll-cloud/`（Kotlin/Ktor） | 链路默画 + 联调核查模板；仓库在 `animodoll` 仓库内 |
+| [[harness开发学习主线\|harness开发学习主线]] | `harness开发学习主线/` | `D:/deepseek-harness` | `阶段笔记/`；权威入口是仓库 `AGENTS.md` |
+| [[What is ML and its types\|What is ML and its types]] | `What is ML and its types/` | — | 机器学习类型对照表 |
+| [[minGPT教学方案\|minGPT教学方案]] | `minGPT教学方案/` | 库内 `.raw/repos/minGPT/`（Obsidian 忽略） | 最终小 GPT 交付在 `小GPT/`；阶段笔记在仓库 `notes/` |
+| [[学习方法的认知科学验证\|学习方法的认知科学验证]] | `学习方法的认知科学验证/` | — | `研究档案报告.md` 结论页草稿 |
+| [[类比于强化学习和深度学习的学习理论\|类比于强化学习和深度学习的学习理论]] | `类比于强化学习和深度学习的学习理论/` | — | 同上 |
+| [[认知表征与泛化\|认知表征与泛化]] | `认知表征与泛化/` | — | 同上 |
+| [[神经可塑性\|神经可塑性]] | `神经可塑性/` | — | 同上（含争议点清单） |
+| [[wiki/archives/环境变化与认知\|环境变化与认知]] | `环境变化与认知/` | — | 同上（含环境优化建议） |
+| [[wiki/archives/How To Do Great Work\|How To Do Great Work]] | `How To Do Great Work/` | — | 交付物已在 wiki（原文 / 要点 / 单词），D 区记进度 |
+| [[informationFinding\|informationFinding]] | `informationFinding/` | 自建（Python + React） | AI 研究工作台：GitHub 热榜 + 论文速递 + 多维评分 + 中文日报 + 本地看板 |
+| [[3D体素沙盘\|3D体素沙盘]] | `3D体素沙盘/` | 自建（three.js 单页） | 唐长安城体素沙盘，1280×1280 大世界 + 生命系统 |
+| [[3D迷宫\|3D迷宫]] | `3D迷宫/` | 自建（three.js 单页） | 重力滚球迷宫，14 关 × 7 主题，纯离线 |
+| [[Being of Me\|Being of Me]] | `Being of Me/` | 自建（React 19 + 零依赖 Node） | 个人数字生命档案馆，只监听 127.0.0.1 |
+| [[HealthMap\|HealthMap]] | `HealthMap/` | 自建（React 19 + Vite） | 本地健康管理 v2.0；v1 留存 `legacy/`，数据互通 |
+| [[HotKeysMap\|HotKeysMap]] | `HotKeysMap/` | 自建（Python 标准库 + React 18） | Windows 快捷键查询/修改，SSE 实时同步 |
+| [[English Learning Teaching\|English Learning Teaching]] | `English Learning Teaching/` | 自建（dubbing_pipeline 等） | 英语视频中文配音/字幕调研 + 管线；三份报告（md+pdf） |
+| [[Make$\|Make$]] | `Make$/` | — | 非代码：赚钱渠道 + 行业收入与职业壁垒调研（15 篇系列） |
+| [[数据结构 Introduction\|数据结构 Introduction]] | `数据结构 Introduction/` | — | 知识星图（56 节点 + 横向边登记表）+ 六问法分析表 + 知识卡片模板 |
+| [[wiki/archives/线性表\|线性表]] | `线性表/` | 自建（`线性表/` 内 git；C++ / g++） | `src/` 顺序表实现 · `tests/` 11 组零依赖用例（107 断言全过）· `bench/` 三组复杂度实测 · `docs/` 报告与卡片 |
 
 ## 已归档项目的代码
 
