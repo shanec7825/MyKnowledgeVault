@@ -4,8 +4,8 @@ title: precede
 created: 2026-08-29
 updated: 2026-08-29
 related:
-  - "[[wiki/archives/How To Do Great Work|How To Do Great Work（项目）]]"
-  - "[[wiki/resource/How To Do Great Work|原文]]"
+  - "[[drafts/archives/How To Do Great Work|How To Do Great Work（项目）]]"
+  - "[[drafts/How To Do Great Work|原文]]"
 tags:
   - vocabulary
   - english
@@ -17,4 +17,4 @@ tags:
     
 - 即：你还没有真正喜欢上这件事，就已经有了要做出一番成就的雄心。
 
-Related：[[wiki/archives/How To Do Great Work|How To Do Great Work（项目）]] · [[wiki/resource/How To Do Great Work|原文]]
+Related：[[drafts/archives/How To Do Great Work|How To Do Great Work（项目）]] · [[drafts/How To Do Great Work|原文]]

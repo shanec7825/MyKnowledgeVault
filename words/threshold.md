@@ -4,8 +4,8 @@ title: threshold
 created: 2026-08-29
 updated: 2026-08-29
 related:
-  - "[[wiki/archives/How To Do Great Work|How To Do Great Work（项目）]]"
-  - "[[wiki/resource/How To Do Great Work|原文]]"
+  - "[[drafts/archives/How To Do Great Work|How To Do Great Work（项目）]]"
+  - "[[drafts/How To Do Great Work|原文]]"
 tags:
   - vocabulary
   - english
@@ -19,4 +19,4 @@ tags:
     
 - **文中用法**：比喻开始一项工作之前需要克服的心理阻力和惰性。就像进门需要跨过门槛一样，开始工作也需要跨过一道无形的障碍。一旦跨过去了，继续工作反而更容易。
 
-Related：[[wiki/archives/How To Do Great Work|How To Do Great Work（项目）]] · [[wiki/resource/How To Do Great Work|原文]]
+Related：[[drafts/archives/How To Do Great Work|How To Do Great Work（项目）]] · [[drafts/How To Do Great Work|原文]]

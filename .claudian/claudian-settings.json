@@ -253,7 +253,7 @@
     "codex": "openai-codex/gpt-6-luna"
   },
   "savedProviderEffort": {
-    "claude": "xhigh",
+    "claude": "medium",
     "deepseek": "low",
     "codex": "high"
   },

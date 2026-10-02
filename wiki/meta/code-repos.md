@@ -33,8 +33,8 @@ tags:
 | [[类比于强化学习和深度学习的学习理论\|类比于强化学习和深度学习的学习理论]] | `类比于强化学习和深度学习的学习理论/` | — | 同上 |
 | [[认知表征与泛化\|认知表征与泛化]] | `认知表征与泛化/` | — | 同上 |
 | [[神经可塑性\|神经可塑性]] | `神经可塑性/` | — | 同上（含争议点清单） |
-| [[wiki/archives/环境变化与认知\|环境变化与认知]] | `环境变化与认知/` | — | 同上（含环境优化建议） |
-| [[wiki/archives/How To Do Great Work\|How To Do Great Work]] | `How To Do Great Work/` | — | 交付物已在 wiki（原文 / 要点 / 单词），D 区记进度 |
+| [[drafts/archives/环境变化与认知\|环境变化与认知]] | `环境变化与认知/` | — | 同上（含环境优化建议） |
+| [[drafts/archives/How To Do Great Work\|How To Do Great Work]] | `How To Do Great Work/` | — | 交付物已在 wiki（原文 / 要点 / 单词），D 区记进度 |
 | [[informationFinding\|informationFinding]] | `informationFinding/` | 自建（Python + React） | AI 研究工作台：GitHub 热榜 + 论文速递 + 多维评分 + 中文日报 + 本地看板 |
 | [[3D体素沙盘\|3D体素沙盘]] | `3D体素沙盘/` | 自建（three.js 单页） | 唐长安城体素沙盘，1280×1280 大世界 + 生命系统 |
 | [[3D迷宫\|3D迷宫]] | `3D迷宫/` | 自建（three.js 单页） | 重力滚球迷宫，14 关 × 7 主题，纯离线 |
@@ -44,13 +44,13 @@ tags:
 | [[English Learning Teaching\|English Learning Teaching]] | `English Learning Teaching/` | 自建（dubbing_pipeline 等） | 英语视频中文配音/字幕调研 + 管线；三份报告（md+pdf） |
 | [[Make$\|Make$]] | `Make$/` | — | 非代码：赚钱渠道 + 行业收入与职业壁垒调研（15 篇系列） |
 | [[数据结构 Introduction\|数据结构 Introduction]] | `数据结构 Introduction/` | — | 知识星图（56 节点 + 横向边登记表）+ 六问法分析表 + 知识卡片模板 |
-| [[wiki/archives/线性表\|线性表]] | `线性表/` | 自建（`线性表/` 内 git；C++ / g++） | `src/` 顺序表实现 · `tests/` 11 组零依赖用例（107 断言全过）· `bench/` 三组复杂度实测 · `docs/` 报告与卡片 |
+| [[drafts/archives/线性表\|线性表]] | `线性表/` | 自建（`线性表/` 内 git；C++ / g++） | `src/` 顺序表实现 · `tests/` 11 组零依赖用例（107 断言全过）· `bench/` 三组复杂度实测 · `docs/` 报告与卡片 |
 
 ## 已归档项目的代码
 
 | 项目 | 位置 | 完成于 |
 | --- | --- | --- |
-| [[wiki/archives/tasksTracker/Task Tracker CLI\|Task Tracker CLI]] | Python CLI（原仓库路径随归档） | 见归档页 |
+| [[Task Tracker CLI\|Task Tracker CLI]] | Python CLI（原仓库路径随归档） | 见归档页 |
 
 ## D:/Projects 待认领目录
 
