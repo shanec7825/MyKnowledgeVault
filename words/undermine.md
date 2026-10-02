@@ -4,7 +4,7 @@ title: undermine
 created: 2026-10-02
 updated: 2026-10-02
 related:
-  - "[[EnglishLearning/2026-10-02|2026-10-02 · AI 3D Models]]"
+  - "[[EnglishLearning/2026-10-02-English-AI-3D-Models-Appearance-vs-Function|2026-10-02 · AI 3D Models]]"
 tags:
   - vocabulary
   - english
@@ -20,4 +20,4 @@ tags:
 
 > ______ can undermine my concentration.
 
-Related：[[EnglishLearning/2026-10-02|2026-10-02 · AI 3D Models]]
+Related：[[EnglishLearning/2026-10-02-English-AI-3D-Models-Appearance-vs-Function|2026-10-02 · AI 3D Models]]
