@@ -15,15 +15,15 @@ tags:
 
 ## Daily Notes
 
-- [[EnglishLearning/2026-09-24|2026-09-24 · Spider Webs × Brain-inspired Computing]]
-- [[EnglishLearning/2026-09-25|2026-09-25 · Rhythm × AI Reliability]]
-- [[EnglishLearning/2026-09-26|2026-09-26 · Explainable AI × Self-driving Cars]]
-- [[EnglishLearning/2026-09-27|2026-09-27 · REM Sleep × Evidence and Interpretation]]
-- [[EnglishLearning/2026-09-28|2026-09-28 · Decision-making × Working Memory]]
-- [[EnglishLearning/2026-09-29|2026-09-29 · AI × RNA Vaccine Stability]]
-- [[EnglishLearning/2026-09-30|2026-09-30 · Biohybrid Robot × Mechanism]]
-- [[EnglishLearning/2026-10-01|2026-10-01 · Strategic AI × Hidden Information]]
-- [[EnglishLearning/2026-10-02|2026-10-02 · AI 3D Models · Appearance vs Function]]
+- [[EnglishLearning/2026-09-24-English-Spider-Webs-Brain-inspired-Computing|2026-09-24 · Spider Webs × Brain-inspired Computing]]
+- [[EnglishLearning/2026-09-25-English-Rhythm-AI-Reliability|2026-09-25 · Rhythm × AI Reliability]]
+- [[EnglishLearning/2026-09-26-English-Explainable-AI-Self-driving-Cars|2026-09-26 · Explainable AI × Self-driving Cars]]
+- [[EnglishLearning/2026-09-27-English-REM-Sleep-Evidence-and-Interpretation|2026-09-27 · REM Sleep × Evidence and Interpretation]]
+- [[EnglishLearning/2026-09-28-English-Decision-making-Working-Memory|2026-09-28 · Decision-making × Working Memory]]
+- [[EnglishLearning/2026-09-29-English-AI-RNA-Vaccine-Stability|2026-09-29 · AI × RNA Vaccine Stability]]
+- [[EnglishLearning/2026-09-30-English-Biohybrid-Robot-Mechanism|2026-09-30 · Biohybrid Robot × Mechanism]]
+- [[EnglishLearning/2026-10-01-English-Strategic-AI-Hidden-Information|2026-10-01 · Strategic AI × Hidden Information]]
+- [[EnglishLearning/2026-10-02-English-AI-3D-Models-Appearance-vs-Function|2026-10-02 · AI 3D Models · Appearance vs Function]]
 
 ## Core Training Loop
 
