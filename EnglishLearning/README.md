@@ -15,6 +15,14 @@ tags:
 
 ## Daily Notes
 
+- [[EnglishLearning/2026-09-24|2026-09-24 · Spider Webs × Brain-inspired Computing]]
+- [[EnglishLearning/2026-09-25|2026-09-25 · Rhythm × AI Reliability]]
+- [[EnglishLearning/2026-09-26|2026-09-26 · Explainable AI × Self-driving Cars]]
+- [[EnglishLearning/2026-09-27|2026-09-27 · REM Sleep × Evidence and Interpretation]]
+- [[EnglishLearning/2026-09-28|2026-09-28 · Decision-making × Working Memory]]
+- [[EnglishLearning/2026-09-29|2026-09-29 · AI × RNA Vaccine Stability]]
+- [[EnglishLearning/2026-09-30|2026-09-30 · Biohybrid Robot × Mechanism]]
+- [[EnglishLearning/2026-10-01|2026-10-01 · Strategic AI × Hidden Information]]
 - [[EnglishLearning/2026-10-02|2026-10-02 · AI 3D Models · Appearance vs Function]]
 
 ## Core Training Loop
