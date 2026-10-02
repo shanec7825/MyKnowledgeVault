@@ -1,0 +1,114 @@
+---
+type: daily-english
+title: 2026-09-29 · AI × RNA Vaccine Stability
+topic: "AI × RNA Vaccine Stability"
+created: 2026-09-29
+updated: 2026-10-02
+tags:
+  - english
+  - daily-learning
+  - reading
+  - speaking
+related:
+  - "[[EnglishLearning/README|English Learning Hub]]"
+  - "[[EnglishLearning/Connections|Connections]]"
+---
+
+# 2026-09-29 · AI × RNA Vaccine Stability
+
+← [[EnglishLearning/README|English Learning Hub]]
+
+## Today's Focus
+
+**从“别人给框架”过渡到“自己识别 Background / Problem / Approach / Result / Implication”。**
+
+## 1. Extensive Listening · 6 min
+
+**Source:** [VOA Learning English](https://learningenglish.voanews.com/)
+
+听 2–3 分钟，第一遍只回答：
+> What was the speaker mainly trying to tell me?
+
+第二遍主动分段：
+> idea 1 / idea 2 / example / result
+
+## 2. Intensive Reading · 11 min
+
+**Source:** [MIT News — New formulation helps RNA vaccines withstand high temperatures](https://news.mit.edu/2026/new-formulation-helps-rna-vaccines-withstand-high-temperatures-0928)
+
+### Self-identification task
+
+先自己标每段：
+**Background / Problem / Approach / Result / Implication**
+
+再对照：
+
+```text
+BACKGROUND
+RNA vaccines are useful but RNA is fragile
+        ↓
+PROBLEM
+ultracold storage
+        ↓
+QUESTION
+can formulation become more heat-resistant?
+        ↓
+APPROACH
+AI searches candidate formulations
+        ↓
+RESULT
+higher-temperature stability
+        ↓
+IMPLICATION
+easier distribution / new delivery possibilities
+```
+
+## 3. Active Expressions
+
+- **withstand** — remain functional under heat, pressure or stress.
+- **cut down** — reduce an amount.
+- **get stuck** — be unable to move forward.
+
+Retrieval cue:
+> “昨天写代码推进不下去了。” → try to produce **got stuck** before checking notes.
+
+## 4. Sentence Skill
+
+Relative clause:
+> an algorithm **that can make predictions based on small datasets**
+
+理解为：
+**algorithm [what kind? → small-data prediction]**
+
+## 5. Speaking
+
+**When is AI useful for scientific experiments?**
+
+1. Why did the researchers get stuck?
+2. How did AI change their approach?
+3. Why is reducing experiments valuable?
+4. Where can AI reduce trial and error in programming?
+
+## Reflection
+
+> Article structure: I lost the main idea when ______.  
+> Active vocabulary: I could / couldn't retrieve **get stuck**.
+
+## Connections
+
+- [[EnglishLearning/2026-09-28-English-Decision-making-Working-Memory|Decision-making]]：从“保留选项”转为“搜索候选方案”。
+- [[EnglishLearning/2026-09-30-English-Biohybrid-Robot-Mechanism|Biohybrid Robot]]：两篇都需要区分 **method** 和 **mechanism**。
+
+
+## 8-minute Busy Version
+
+1. **2 min** — 泛听，只保留 3–4 个意义节点。
+2. **3 min** — 精读，识别文章关系/框架。
+3. **1 min** — 关闭文章复述 main idea。
+4. **1 min** — 反向调用一个主动表达。
+5. **1 min** — 把今天的表达换到生活或计算机场景。
+
+## Previous / Next
+
+- Previous: [[EnglishLearning/2026-09-28-English-Decision-making-Working-Memory|2026-09-28]]
+- Next: [[EnglishLearning/2026-09-30-English-Biohybrid-Robot-Mechanism|2026-09-30]]
