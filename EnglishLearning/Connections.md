@@ -83,6 +83,77 @@ Connections:
 - code that passes a superficial check vs robust behavior
 - fluent AI output vs correct AI output
 
+
+## Backfilled Daily Timeline
+
+- [[EnglishLearning/2026-09-24|09-24]] — **Observation → Contrast → Question → Direction** · spider-web listening + brain-inspired computing
+- [[EnglishLearning/2026-09-25|09-25]] — **Problem → Requirement → Method → Result** · rhythm + AI hard constraints
+- [[EnglishLearning/2026-09-26|09-26]] — **Problem → Why it matters → Method → Goal** · explainable AI / CW-Net
+- [[EnglishLearning/2026-09-27|09-27]] — **Known fact → Question → Measurement → Result → Interpretation** · REM sleep
+- [[EnglishLearning/2026-09-28|09-28]] — **Options → Interference → Representation → Reorganization** · decision-making brain
+- [[EnglishLearning/2026-09-29|09-29]] — **Background → Problem → Approach → Result → Implication** · AI + RNA vaccines
+- [[EnglishLearning/2026-09-30|09-30]] — **Design → Stimulus → Response → Movement → Control** · biohybrid robot
+- [[EnglishLearning/2026-10-01|10-01]] — **Task → Difficulty → Limitation → New system → Result → Application** · Stratego AI
+- [[EnglishLearning/2026-10-02|10-02]] — **Expectation → Failure → Cause → Solution** · AI 3D models
+
+## Expression Retrieval Map
+
+### Causality / response
+- **lead to**
+- **in response to**
+- **causing ...**
+- **suggest that** — interpretation, not proof
+
+### Comparison / trade-off
+- **not by A, but by B**
+- **rather than**
+- **without sacrificing**
+- **while + -ing / clause**
+
+### Keeping information organized
+- **keep track of**
+- **interfere with**
+- **distinguish A from B**
+- **underlying**
+
+### Problems / robustness
+- **satisfy a requirement**
+- **get stuck**
+- **rely on**
+- **scale**
+- **withstand**
+- [[words/undermine|undermine]]
+- [[words/refine|refine]]
+
+## Weekly Synthesis · 2026-09-24 → 2026-09-30
+
+### Main reading bottleneck to keep testing
+**Local comprehension may be stronger than global-model retention.**  
+训练重点不是强迫记住原句，而是持续回答：
+
+> What is the writer doing here?  
+> What relationship connects this paragraph to the previous one?
+
+### Frameworks practiced
+1. Question / Method / Result / Interpretation
+2. Evidence vs Interpretation
+3. Before vs After
+4. Method vs Mechanism
+5. Cause → Effect
+6. Expectation → Failure → Cause → Solution
+
+### Retrieval strategy
+新表达不只做 English → meaning，而要重复做：
+
+**context / meaning → English**
+
+并在至少三个不同情境中复用：原文、生活、计算机/学习。
+
+### Expressions to retest rather than assume mastered
+**get stuck · keep track of · underlying · suggest that · in response to · scale · without sacrificing**
+
+> 是否进入主动词汇，要以后续“不给英文提示时能否调用”为准。
+
 ## Review Rule
 
 每天新文档至少完成三种连接：
