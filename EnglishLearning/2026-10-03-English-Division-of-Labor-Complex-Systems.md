@@ -15,7 +15,7 @@ related:
   - "[[EnglishLearning/README|English Learning Hub]]"
   - "[[EnglishLearning/Connections|Connections]]"
   - "[[words/complementary|complementary]]"
-  - "[[words/division of labor|division of labor]]"
+  - "**division of labor**"
 ---
 
 # 2026-10-03 · Division of Labor × Complex Systems
@@ -126,7 +126,7 @@ Examples:
 
 > Frontend and backend development require ______ skills.
 
-### [[words/division of labor|division of labor]]
+### **division of labor**
 
 ```text
 one complex task
@@ -193,7 +193,7 @@ NEW MODEL: focus on B
 - “规模变大后仍然有效” → **scale**
 - “需要另一个东西才能工作” → **rely on**
 
-前三个答案：[[words/complementary|complementary]] · [[words/division of labor|division of labor]] · [[words/refine|refine]]
+前三个答案：[[words/complementary|complementary]] · **division of labor** · [[words/refine|refine]]
 
 ## 7. Reflection · 1 min
 
