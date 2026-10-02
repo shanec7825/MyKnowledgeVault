@@ -75,7 +75,7 @@ Implication
 
 ### Appearance vs Function
 
-[[EnglishLearning/2026-10-02|2026-10-02]]  
+[[EnglishLearning/2026-10-02-English-AI-3D-Models-Appearance-vs-Function|2026-10-02]]  
 AI-generated objects may look correct while failing functionally.
 
 Connections:
@@ -86,15 +86,15 @@ Connections:
 
 ## Backfilled Daily Timeline
 
-- [[EnglishLearning/2026-09-24|09-24]] — **Observation → Contrast → Question → Direction** · spider-web listening + brain-inspired computing
-- [[EnglishLearning/2026-09-25|09-25]] — **Problem → Requirement → Method → Result** · rhythm + AI hard constraints
-- [[EnglishLearning/2026-09-26|09-26]] — **Problem → Why it matters → Method → Goal** · explainable AI / CW-Net
-- [[EnglishLearning/2026-09-27|09-27]] — **Known fact → Question → Measurement → Result → Interpretation** · REM sleep
-- [[EnglishLearning/2026-09-28|09-28]] — **Options → Interference → Representation → Reorganization** · decision-making brain
-- [[EnglishLearning/2026-09-29|09-29]] — **Background → Problem → Approach → Result → Implication** · AI + RNA vaccines
-- [[EnglishLearning/2026-09-30|09-30]] — **Design → Stimulus → Response → Movement → Control** · biohybrid robot
-- [[EnglishLearning/2026-10-01|10-01]] — **Task → Difficulty → Limitation → New system → Result → Application** · Stratego AI
-- [[EnglishLearning/2026-10-02|10-02]] — **Expectation → Failure → Cause → Solution** · AI 3D models
+- [[EnglishLearning/2026-09-24-English-Spider-Webs-Brain-inspired-Computing|09-24]] — **Observation → Contrast → Question → Direction** · spider-web listening + brain-inspired computing
+- [[EnglishLearning/2026-09-25-English-Rhythm-AI-Reliability|09-25]] — **Problem → Requirement → Method → Result** · rhythm + AI hard constraints
+- [[EnglishLearning/2026-09-26-English-Explainable-AI-Self-driving-Cars|09-26]] — **Problem → Why it matters → Method → Goal** · explainable AI / CW-Net
+- [[EnglishLearning/2026-09-27-English-REM-Sleep-Evidence-and-Interpretation|09-27]] — **Known fact → Question → Measurement → Result → Interpretation** · REM sleep
+- [[EnglishLearning/2026-09-28-English-Decision-making-Working-Memory|09-28]] — **Options → Interference → Representation → Reorganization** · decision-making brain
+- [[EnglishLearning/2026-09-29-English-AI-RNA-Vaccine-Stability|09-29]] — **Background → Problem → Approach → Result → Implication** · AI + RNA vaccines
+- [[EnglishLearning/2026-09-30-English-Biohybrid-Robot-Mechanism|09-30]] — **Design → Stimulus → Response → Movement → Control** · biohybrid robot
+- [[EnglishLearning/2026-10-01-English-Strategic-AI-Hidden-Information|10-01]] — **Task → Difficulty → Limitation → New system → Result → Application** · Stratego AI
+- [[EnglishLearning/2026-10-02-English-AI-3D-Models-Appearance-vs-Function|10-02]] — **Expectation → Failure → Cause → Solution** · AI 3D models
 
 ## Expression Retrieval Map
 
