@@ -1,0 +1,33 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>计算机系统基础实验地图</title>
+<style>
+:root{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;color:#1f2937;background:#f8fafc}
+body{margin:0;padding:24px}.wrap{max-width:1100px;margin:auto}.hint{color:#64748b;margin:0 0 18px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}.card{background:#fff;border:1px solid #cbd5e1;border-radius:12px;padding:14px;cursor:pointer}.card:hover,.card.active{border-color:#475569;background:#f1f5f9}.n{font-size:12px;color:#64748b}.t{font-weight:700;margin:4px 0}.q{font-size:13px;color:#475569}.detail{margin-top:18px;background:#fff;border:1px solid #cbd5e1;border-radius:12px;padding:18px}.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}.step{padding:7px 10px;background:#e2e8f0;border-radius:999px;font-size:13px}.arrow{color:#64748b}.meta{display:grid;grid-template-columns:120px 1fr;gap:8px;margin-top:14px;font-size:14px}@media(max-width:520px){body{padding:14px}.meta{grid-template-columns:1fr}}
+</style>
+<div class="wrap">
+  <p class="hint">点击项目，观察“核心问题—证据工具—与前后项目的连接”。建议在做实验前先说出自己的预测，再打开对应文档。</p>
+  <div id="grid" class="grid"></div>
+  <section id="detail" class="detail" aria-live="polite"></section>
+</div>
+<script>
+const data=[
+["0","系统观察与工具入门","源代码怎样变成正在运行的进程？","gcc / gdb / objdump / strace / /proc","源代码 → 预处理 → 汇编 → 目标文件 → ELF → 进程"],
+["1","数据表示与位运算","同一串位为什么能有不同含义？","show_bytes / 边界输入 / 十六进制","位模式 → 类型解释 → C 行为 → 字节证据"],
+["2","机器级程序与函数栈","C 的控制流和函数调用怎样改变机器状态？","objdump / gdb / 寄存器 / stack","C → 指令 → 寄存器 → 栈帧 → 返回"],
+["3","简化 CPU 模拟","CPU 如何按指令改变状态？","逐步 trace / PC / reg / memory","取指 → 译码 → 执行 → 写回 → 下一 PC"],
+["4","链接与装载","多个目标文件怎样变成一个可执行程序？","nm / readelf / objdump / ld","符号 → 解析 → 重定位 → ELF → loader"],
+["5","程序优化与 Cache","为什么同复杂度代码速度仍不同？","计时 / 汇编 / perf(可选)","访问模式 → 局部性 → Cache → 流水/依赖 → 时间"],
+["6","进程与异常控制流","程序怎样启动程序，OS 怎样改变控制流？","fork / exec / wait / signals / ps","shell → fork → child exec；parent wait → 回收"],
+["7","虚拟内存与动态分配","虚拟地址怎样落到物理内存，堆怎样管理？","/proc/maps / mmap / 页表模拟","VA → TLB → 页表 → PA；heap → block split/coalesce"],
+["8","文件与系统 I/O","read/write 背后数据经过哪些层？","open/read/write/close / strace","用户缓冲区 → syscall → fd/VFS → 文件"],
+["9","Socket 与 HTTP","一个 HTTP 请求怎样从客户端到服务器再返回？","curl / socket / strace","TCP bytes → socket → parse → file → response"],
+["10","并发与同步","多个请求同时推进时如何保持共享状态正确？","pthread / mutex / cond / race test","accept → queue → workers；mutex + condition"],
+["综合","Mini Linux Web Server","能否沿一次请求解释整个系统？","gdb / objdump / strace / /proc / 测量","network → I/O → memory → process/thread → machine"]
+];
+const g=document.getElementById("grid"),d=document.getElementById("detail");
+function render(x){
+  d.innerHTML='<div class="n">项目 '+x[0]+'</div><div class="t">'+x[1]+'</div><p>'+x[2]+'</p><div class="flow">'+x[4].split(" → ").map((s,i)=>'<span class="step">'+s+'</span>'+(i<x[4].split(" → ").length-1?'<span class="arrow">→</span>':'')).join("")+'</div><div class="meta"><b>主要证据</b><span>'+x[3]+'</span><b>学习动作</b><span>先预测，再做最小实验；保存证据；解释差异；改变一个条件复测。</span></div>';
+}
+data.forEach((x,i)=>{const b=document.createElement("button");b.className="card";b.type="button";b.innerHTML='<div class="n">项目 '+x[0]+'</div><div class="t">'+x[1]+'</div><div class="q">'+x[2]+'</div>';b.onclick=()=>{document.querySelectorAll(".card").forEach(c=>c.classList.remove("active"));b.classList.add("active");render(x)};g.appendChild(b);if(i===0){b.classList.add("active");render(x)}});
+</script>
