@@ -742,3 +742,63 @@ CSAPP 性能部分 → CS61C → 流水线 / Cache
 系统能力不是“知道更多名词”，而是：
 
 > 面对陌生系统问题时，能分层提出假设，选择合适工具收集证据，再修正自己的模型。
+
+
+---
+
+# 学习导航：资料、图解与扩展
+
+> [!tip] 综合项目的学习策略
+> 不再按章节学习，而是按**一次请求的生命周期**回查：网络 → fd/I/O → 文件 → 内存 → 线程/同步 → 机器级执行。哪个环节解释不完整，就回到对应项目的 A 级资料和实验记录。
+
+## A. 回看主线
+
+- CS:APP Ch.10 System-Level I/O：请求与文件的 fd/读写。
+- CS:APP Ch.11 Network Programming：socket、HTTP、Tiny Web Server。
+- CS:APP Ch.12 Concurrent Programming：线程池、共享状态、同步。
+- 遇到链接/装载问题回看 Ch.7；进程/信号回看 Ch.8；地址/分配回看 Ch.9；性能问题回看 Ch.5–6。
+- 总索引：[[实验参考指南与可视化索引]]
+
+## B. 验证资料
+
+- CS:APP 官方 Tiny Web Server / labs：https://csapp.cs.cmu.edu/3e/students.html
+- Linux man-pages：https://man7.org/linux/man-pages/
+- strace：https://strace.io/
+- GDB：https://sourceware.org/gdb/current/onlinedocs/gdb.html
+- Beej Network Guide：https://beej.us/guide/bgnet/
+
+## 机制图：沿一次请求解释整个系统
+
+```mermaid
+flowchart LR
+    C[curl] --> TCP[TCP/IP kernel]
+    TCP --> S[socket fd]
+    S --> Q[bounded work queue]
+    Q --> T[worker thread]
+    T --> PARSE[parse HTTP]
+    PARSE --> F[file fd]
+    F --> IO[read file]
+    IO --> BUF[heap/stack buffers]
+    BUF --> SEND[send/write loop]
+    SEND --> TCP
+    T -.machine instructions.-> CPU[CPU registers/cache]
+    BUF -.virtual addresses.-> VM[VM/page tables]
+    L[linker/loader] -.formed process image.-> T
+```
+
+## 最终“解释链”验收
+
+完成后随机挑一次请求，不看笔记说明：
+
+1. 客户端字节何时进入内核、何时被用户线程看到？
+2. 该线程此时拥有哪些私有状态，和其他 worker 共享哪些对象？
+3. 文件描述符分别指向哪些内核对象，谁负责关闭？
+4. 请求/响应 buffer 位于哪里，它们的虚拟地址由谁翻译？
+5. 关键函数最终如何成为机器指令，Cache/访问模式可能怎样影响性能？
+6. 若客户端中途断开，错误从哪一层出现，资源如何回收？
+7. 你有哪些**观测证据**支持上述解释，而不只是“教材说如此”？
+
+> [!success] 综合项目真正完成的标准
+> 不是“浏览器能打开页面”，而是你能沿整条路径做预测、用工具取证、解释异常，并在改变一个条件后重新验证。
+
+[打开交互式实验总览](visuals/计算机系统实验总览.html)
