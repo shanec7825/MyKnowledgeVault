@@ -816,3 +816,50 @@ JZ
 ~~~
 
 这三层对齐以后，数字逻辑、汇编和计算机系统才真正连在一起。
+
+
+---
+
+# 学习导航：资料、图解与扩展
+
+> [!tip] 阅读策略
+> 本项目目标不是“造真实 CPU”，而是把项目 2 看到的机器指令，落实成**状态机：当前状态 + 指令 → 下一状态**。
+
+## A. 实验前必读
+
+- **CS:APP 3e Ch.4**：§4.1 Y86-64 ISA、§4.2 Logic Design、§4.3 Sequential Implementation。
+- 先不读流水线 §4.4–4.5；等顺序模拟器完全正确后再扩展。
+- 总索引：[[实验参考指南与可视化索引]]
+
+## B. 做实验时按需查
+
+- CS:APP Y86-64 tools/documentation：https://csapp.cs.cmu.edu/3e/students.html
+- Nand2Tetris Projects 4–5（Machine Language / Computer Architecture）：https://www.nand2tetris.org/course
+
+## C. 视频/扩展
+
+- Nand2Tetris Part I 对 CPU/数据通路的可视化非常适合本项目。
+- 若想联系真实处理器，再回看 MIT 6.172 Lecture 4；不要把真实 x86 复杂度直接塞进教学 ISA。
+
+## 机制图：CPU 是“状态转移器”
+
+```mermaid
+flowchart LR
+    PC[PC] --> F[Fetch 取指]
+    MEM[Instruction Memory] --> F
+    F --> D[Decode 译码]
+    D --> R[读取寄存器/立即数]
+    R --> X[Execute ALU/比较]
+    X --> M[Memory 可选]
+    M --> W[Write Back 写回]
+    W --> N[计算 next PC]
+    N --> PC
+    REG[(Registers)] <--> R
+    REG <--> W
+    DATA[(Data Memory)] <--> M
+```
+
+> [!question] 迁移检查
+> 对一个 5–8 条指令的小循环，不运行模拟器，先逐步写出每一步 PC、寄存器和内存变化；再让 trace 找出第一处预测错误。
+
+[打开交互式实验总览](visuals/计算机系统实验总览.html)
