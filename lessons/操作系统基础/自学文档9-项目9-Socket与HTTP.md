@@ -962,3 +962,54 @@ int serve_file(
 
 > [!success] 通过标准
 > 你能沿一次 curl 请求，从 TCP 字节进入 socket 开始，一直解释到 request buffer、HTTP parser、file fd、send loop 和资源关闭，而不是把网络通信理解成“调用一个接口就得到一个请求对象”。
+
+
+---
+
+# 学习导航：资料、图解与扩展
+
+> [!tip] 阅读策略
+> 先做 echo server，只解决 **TCP 字节流 + socket API**；再加 HTTP 文本格式。不要一开始同时处理 TCP、HTTP、文件、安全路径与并发。
+
+## A. 实验前必读
+
+- **CS:APP 3e Ch.11**：§11.1 Client-Server Model、§11.3 Internet Connections、§11.4 Sockets Interface；HTTP 再读 §11.5–11.6。
+- Beej's Guide to Network Programming：https://beej.us/guide/bgnet/
+- 总索引：[[实验参考指南与可视化索引]]
+
+## B. 做实验时按需查
+
+- Linux sockets 总入口：https://man7.org/linux/man-pages/man7/socket.7.html
+- `socket(2)`：https://man7.org/linux/man-pages/man2/socket.2.html
+- `bind(2)` / `listen(2)` / `accept(2)`：在 man-pages 中按函数名查。
+- HTTP/1.0（本实验简化协议的历史参考）：https://www.rfc-editor.org/rfc/rfc1945
+- 当前 HTTP 语义：RFC 9110：https://www.rfc-editor.org/rfc/rfc9110
+
+## C. 视频/扩展
+
+- MIT 6.1810（2026）Networking 讲次：https://pdos.csail.mit.edu/6.S081/2026/schedule.html
+- CS:APP 官方 Tiny Web Server 资料可在学生站找到：https://csapp.cs.cmu.edu/3e/students.html
+
+## 机制图：TCP 是字节流，HTTP 是字节流上的协议
+
+```mermaid
+sequenceDiagram
+    participant C as curl/client
+    participant K as Kernel TCP
+    participant S as server socket
+    participant P as HTTP parser
+    participant F as file
+    C->>K: TCP bytes
+    K->>S: read()/recv() 可能分段
+    S->>P: 累积到完整请求
+    P->>F: open/read static file
+    F-->>P: bytes
+    P->>S: status + headers + body
+    S->>K: write()/send() 可能部分完成
+    K-->>C: TCP bytes
+```
+
+> [!question] 迁移检查
+> 把一条 HTTP 请求拆成两次甚至多次发送。先预测服务器哪里会出错；修复后再测试“响应一次 write 不能全部发送”的情况。
+
+[打开交互式实验总览](visuals/计算机系统实验总览.html)
