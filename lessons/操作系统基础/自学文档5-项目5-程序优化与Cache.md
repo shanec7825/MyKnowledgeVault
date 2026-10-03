@@ -617,3 +617,51 @@ C[i][j] += A[i][k] * B[k][j]
 
 > [!success] 通过标准
 > 你面对一个“程序为什么慢”的问题，不会立即给原因，而会先设计可测量、可复现、能区分假设的实验。
+
+
+---
+
+# 学习导航：资料、图解与扩展
+
+> [!tip] 阅读策略
+> 性能实验最容易“看见差异就编故事”。固定流程是：**先保证结果正确 → 控制变量 → 重复测量 → 看汇编/计数器 → 再解释**。
+
+## A. 实验前必读
+
+- **CS:APP 3e Ch.5**：§5.2–5.14，重点是性能表达、循环优化、并行性、瓶颈定位。
+- **CS:APP Ch.6**：§6.2 Locality、§6.3 Memory Hierarchy、§6.4 Cache、§6.5–6.6 Cache-Friendly Code。
+- 总索引：[[实验参考指南与可视化索引]]
+
+## B. 做实验时按需查
+
+- 编译器优化：GCC Optimize Options：https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html
+- 汇编证据：GNU objdump：https://sourceware.org/binutils/docs/binutils.html
+- Linux 可尝试 `perf stat` / `perf record`；若 WSL/权限下计数器不可用，明确记录“只能凭时间与汇编推断”的证据边界。
+
+## C. 视频/扩展
+
+- MIT 6.172 Lecture 10 Measurement and Timing。
+- MIT 6.172 Lecture 14 Caching and Cache-Efficient Algorithms。
+  https://ocw.mit.edu/courses/6-172-performance-engineering-of-software-systems-fall-2018/
+
+## 机制图：性能结论需要证据链
+
+```mermaid
+flowchart LR
+    Code[代码/访问模式] --> Inst[编译后指令]
+    Inst --> CPU[流水/依赖/执行单元]
+    Code --> Local[时间/空间局部性]
+    Local --> Cache[Cache hit/miss 行为]
+    Cache --> Mem[更低层内存]
+    CPU --> Time[测得时间]
+    Mem --> Time
+    Env[输入规模/编译选项/系统负载] --> Time
+    Time --> Hyp[原因假设]
+    ASM[汇编/性能计数器] --> Hyp
+    Hyp --> Retest[改变一个变量复测]
+```
+
+> [!question] 迁移检查
+> 对矩阵按行/按列遍历，先画出内存访问顺序，再预测在“小到能进 Cache”和“大到明显超出 Cache”时差异是否一样。
+
+[打开交互式实验总览](visuals/计算机系统实验总览.html)
