@@ -2,7 +2,7 @@
 type: index
 title: English Learning Hub
 created: 2026-10-02
-updated: 2026-10-05
+updated: 2026-10-06
 tags:
   - english
   - learning
@@ -27,6 +27,8 @@ tags:
 - [[EnglishLearning/2026-10-03-English-Division-of-Labor-Complex-Systems|2026-10-03 · Division of Labor × Complex Systems]]
 - [[EnglishLearning/2026-10-04-English-Worker-Voice-Tech-Responsibility|2026-10-04 · Worker Voice × Tech Responsibility]]
 - [[EnglishLearning/2026-10-05-English-Music-Meaning-Making|2026-10-05 · Music × Meaning-Making]]
+
+- [[EnglishLearning/2026-10-06-English-Wind-Farms-Scaling-Evidence|2026-10-06 · Wind Farms × Scaling Evidence]]
 
 ## Core Training Loop
 
