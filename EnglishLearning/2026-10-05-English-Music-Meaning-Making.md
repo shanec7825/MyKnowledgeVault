@@ -252,4 +252,4 @@ organize + understand it
 ## Previous / Next
 
 - Previous: [[EnglishLearning/2026-10-04-English-Worker-Voice-Tech-Responsibility|2026-10-04 · Worker Voice × Tech Responsibility]]
-- Next: 明日文档创建后自动补链
+- Next: [[EnglishLearning/2026-10-06-English-Wind-Farms-Scaling-Evidence|2026-10-06 · Wind Farms × Scaling Evidence]]
