@@ -176,4 +176,4 @@ Retrieval cue：**“解释或计算时不能漏掉这个因素。”**
 ## Previous / Next
 
 - Previous: [[EnglishLearning/2026-10-05-English-Music-Meaning-Making|2026-10-05 · Music × Meaning-Making]]
-- Next: 明日文档创建后自动补链
+- Next: [[EnglishLearning/2026-10-07-English-Practice-Consolidation-Lasting-Learning|2026-10-07 · Practice × Consolidation × Lasting Learning]]
