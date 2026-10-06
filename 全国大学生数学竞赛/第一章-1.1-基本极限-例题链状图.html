@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>第一章 1.1 基本极限：例题链状图</title>
+<style>
+:root{--bg:#f7f5ef;--ink:#1e293b;--muted:#64748b;--line:#94a3b8;--main:#0f766e;--a:#b45309;--b:#7c3aed;--c:#0369a1;--soft:#ffffffcc}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans SC","Microsoft YaHei",system-ui,sans-serif}
+.page{max-width:1420px;margin:0 auto;padding:38px 24px 30px}
+h1{margin:0;text-align:center;font-size:30px;letter-spacing:.03em;font-weight:800}
+.sub{margin:9px 0 24px;text-align:center;color:var(--muted);font-size:14px}
+.canvas{position:relative;width:1280px;height:760px;margin:0 auto;transform-origin:top center}
+svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.path{fill:none;stroke:var(--line);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.path.a{stroke:var(--a)} .path.b{stroke:var(--b)} .path.c{stroke:var(--c)} .path.main{stroke:var(--main);stroke-width:4}
+.node{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border-radius:999px;background:var(--soft);box-shadow:0 7px 24px rgba(15,23,42,.08);border:2px solid currentColor;padding:13px 18px;line-height:1.35;backdrop-filter:blur(4px)}
+.node strong{font-size:16px}.node span{font-size:12.5px;color:var(--muted);margin-top:3px}
+.hub{width:185px;height:185px;color:var(--main);background:#ecfdf5;border-width:3px}
+.hub strong{font-size:23px}.hub .formula{font-size:14px;color:#0f766e;margin-top:8px;line-height:1.55}
+.small{min-width:160px;max-width:220px;min-height:74px}.ex{min-width:220px;max-width:245px;min-height:94px}
+.a{color:var(--a)} .b{color:var(--b)} .c{color:var(--c)} .mainc{color:var(--main)}
+.tag{position:absolute;transform:translate(-50%,-50%);font-size:12px;color:#475569;background:#f8fafc;border:1px dashed #cbd5e1;padding:5px 10px;border-radius:999px;white-space:nowrap}
+.summary{position:absolute;left:640px;top:695px;transform:translateX(-50%);font-size:15px;font-weight:700;color:#334155;text-align:center}
+.summary b{color:var(--main)}
+.legend{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:6px;color:#64748b;font-size:12px}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:0}
+.foot{margin-top:6px;text-align:center;color:#94a3b8;font-size:11px}
+@media(max-width:1320px){.canvas{transform:scale(calc((100vw - 36px)/1280));margin-bottom:calc(-760px * (1 - ((100vw - 36px)/1280)))}}
+</style>
+</head>
+<body>
+<div class="page">
+<h1>1.1 利用基本极限：例题之间的链</h1>
+<div class="sub">看题时先识别“结构”，再把它压缩成可调用的基本极限。</div>
+<div class="canvas">
+<svg viewBox="0 0 1280 760" aria-hidden="true">
+<defs>
+<marker id="arrowA" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#b45309"/></marker>
+<marker id="arrowB" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#7c3aed"/></marker>
+<marker id="arrowC" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#0369a1"/></marker>
+<marker id="arrowM" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#0f766e"/></marker>
+</defs>
+<path class="path a" marker-end="url(#arrowA)" d="M160 160 C300 160,365 205,480 285"/>
+<path class="path a" marker-end="url(#arrowA)" d="M480 285 C545 330,565 350,592 372"/>
+<path class="path b" marker-end="url(#arrowB)" d="M160 380 C310 380,365 380,485 380"/>
+<path class="path b" marker-end="url(#arrowB)" d="M485 380 C535 380,565 380,592 380"/>
+<path class="path c" marker-end="url(#arrowC)" d="M160 595 C300 595,365 545,480 470"/>
+<path class="path c" marker-end="url(#arrowC)" d="M480 470 C545 430,566 408,592 392"/>
+<path class="path main" marker-end="url(#arrowM)" d="M732 380 C820 380,842 380,900 380"/>
+<path class="path main" marker-end="url(#arrowM)" d="M1035 380 C1110 380,1140 380,1190 380"/>
+<path class="path" stroke-dasharray="7 8" d="M370 225 C400 270,410 300,405 338"/>
+<path class="path" stroke-dasharray="7 8" d="M390 425 C410 455,420 490,400 525"/>
+</svg>
+
+<div class="node ex a" style="left:160px;top:160px"><strong>例 1.1</strong><span>根式差 + 三角函数</span></div>
+<div class="node small a" style="left:480px;top:285px"><strong>代数拆解</strong><span>aⁿ−bⁿ 因式分解<br>把根式差压成 cos x−1</span></div>
+
+<div class="node ex b" style="left:160px;top:380px"><strong>例 1.2</strong><span>递推数列极限</span></div>
+<div class="node small b" style="left:485px;top:380px"><strong>三角参数化</strong><span>a₀ = cos θ<br>递推 → 半角缩放</span></div>
+
+<div class="node ex c" style="left:160px;top:595px"><strong>例 1.3</strong><span>三角求和 / Putnam</span></div>
+<div class="node small c" style="left:480px;top:470px"><strong>三角恒等变形</strong><span>和式 → 差式 → 望远镜</span></div>
+
+<div class="node hub" style="left:650px;top:380px"><strong>基本极限</strong><div class="formula">sin t / t → 1<br>(1−cos t) / t² → 1/2<br>tan t / t → 1</div></div>
+<div class="node small mainc" style="left:965px;top:380px;min-width:210px"><strong>统一动作：尺度缩小</strong><span>把复杂式变成 t→0 时的局部小量</span></div>
+<div class="node small mainc" style="left:1190px;top:380px;min-width:155px"><strong>完成极限</strong><span>常数 × 基本极限</span></div>
+
+<div class="tag" style="left:355px;top:252px">共同出现：1−cos t</div>
+<div class="tag" style="left:362px;top:500px">共同本质：三角结构 → 小角量</div>
+<div class="tag" style="left:650px;top:210px">常见函数：sin · cos · tan · 根式</div>
+
+<div class="summary"><b>题型不同，核心相同：</b> 先“结构降维”，再把问题送到基本极限。</div>
+</div>
+
+<div class="legend">
+<span><i class="dot" style="background:#b45309"></i>代数拆解</span>
+<span><i class="dot" style="background:#7c3aed"></i>递推参数化</span>
+<span><i class="dot" style="background:#0369a1"></i>三角求和</span>
+<span><i class="dot" style="background:#0f766e"></i>共同核心</span>
+</div>
+<div class="foot">基于《全国大学生数学竞赛解析教程（非数学专业类）（上册）（第2版）》第 1.1 节开头例 1.1–1.3 整理；题目仅做结构化概括。</div>
+</div>
+</body>
+</html>
