@@ -222,4 +222,4 @@ NEW MODEL: focus on B
 ## Previous / Next
 
 - Previous: [[EnglishLearning/2026-10-02-English-AI-3D-Models-Appearance-vs-Function|2026-10-02 · AI 3D Models · Appearance vs Function]]
-- Next: 明日文档创建后自动补链
+- Next: [[EnglishLearning/2026-10-04-English-Worker-Voice-Tech-Responsibility|2026-10-04 · Worker Voice × Tech Responsibility]]
