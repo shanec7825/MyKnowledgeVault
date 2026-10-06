@@ -1164,8 +1164,12 @@ var DEFAULT_SETTINGS = {
   zoomByWheelAndGesture: true,
   zoomValue: 1,
   extraFileExt: "",
-  mhtmlSupport: false
+  mhtmlSupport: false,
   // Support MHTML, Feature request #19
+  saveFormState: false,
+  // Persist form input values into the HTML file
+  autoReloadOnChange: true
+  // Reload the view when the file changes on disk
 };
 var HtmlSettingTab = class extends import_obsidian.PluginSettingTab {
   constructor(app2, plugin) {
@@ -1187,10 +1191,10 @@ var HtmlSettingTab = class extends import_obsidian.PluginSettingTab {
         await this.plugin.saveSettings();
       });
     });
-    if (!this.opModeInfoFrag || this.opModeInfoFrag.childNodes.length <= 0) {
-      this.opModeInfoFrag = new Range().createContextualFragment(OP_MODE_INFO_HTML);
-    }
-    opModeSetting.infoEl.appendChild(this.opModeInfoFrag.cloneNode(true));
+    let opModeInfo = new DOMParser().parseFromString(OP_MODE_INFO_HTML, "text/html");
+    opModeSetting.infoEl.appendChild(opModeInfo.head.childNodes[0]);
+    opModeSetting.infoEl.appendChild(opModeInfo.body.childNodes[0]);
+    opModeSetting.infoEl.appendChild(opModeInfo.body.childNodes[1]);
     const bgColorSetting = new import_obsidian.Setting(containerEl);
     bgColorSetting.setName("Background Color").setDesc("Set HTML <body> element background color forcely.").addColorPicker((picker) => {
       picker.setValue(this.plugin.settings.bgColor).onChange(async (newColor) => {
@@ -1214,6 +1218,20 @@ var HtmlSettingTab = class extends import_obsidian.PluginSettingTab {
     mhtmlSupportedSetting.setName("MHTML File Format Support").setDesc("Support with MHTML file format (.mht and .mhtml). Enable this option would convert the MHTML file format to HTML file format on the fly each time while opening the MHTML file. Therefore it would waste time on converting MHTML content! This option would override the 'Extra File Extensions' setting, and it also might cause other plugins un-workable. Remember to relaunch the Obsidian app after change this setting.").addToggle((toggle) => {
       toggle.setValue(this.plugin.settings.mhtmlSupport).onChange(async (enabled) => {
         this.plugin.settings.mhtmlSupport = enabled;
+        await this.plugin.saveSettings();
+      });
+    });
+    const saveFormStateSetting = new import_obsidian.Setting(containerEl);
+    saveFormStateSetting.setName("Save Form State into HTML File").setDesc("Persist values of inputs, sliders, checkboxes, textareas and selects into the HTML file itself (as a small JSON block before </body>), and restore them next time the file is opened. Works in all Operating Modes except High Restricted and Text. Only applies to plain .html/.htm files (not SingleFileZ or MHTML).").addToggle((toggle) => {
+      toggle.setValue(this.plugin.settings.saveFormState).onChange(async (enabled) => {
+        this.plugin.settings.saveFormState = enabled;
+        await this.plugin.saveSettings();
+      });
+    });
+    const autoReloadSetting = new import_obsidian.Setting(containerEl);
+    autoReloadSetting.setName("Auto Reload On File Change").setDesc("Reload the opened file automatically when it is modified outside of this view (by another app, a script, or vault sync). The scroll position is preserved. Writes made by the 'Save Form State into HTML File' feature do not trigger a reload.").addToggle((toggle) => {
+      toggle.setValue(this.plugin.settings.autoReloadOnChange).onChange(async (enabled) => {
+        this.plugin.settings.autoReloadOnChange = enabled;
         await this.plugin.saveSettings();
       });
     });
@@ -17066,7 +17084,7 @@ var treeAdapter = {
     return element;
   }
 };
-var DOMParser = class {
+var DOMParser2 = class {
   parseFromString(html) {
     const document2 = parse(html, { treeAdapter });
     if (!document2.head) {
@@ -17433,12 +17451,12 @@ function decodeMimeHeader(encodedSubject) {
   }
   return encodedSubject || "";
 }
-function parseDOM(asset, contentType = "text/html", DOMParser2 = globalThis.DOMParser) {
+function parseDOM(asset, contentType = "text/html", DOMParser3 = globalThis.DOMParser) {
   let document2;
   try {
-    document2 = new DOMParser2().parseFromString(asset, contentType);
+    document2 = new DOMParser3().parseFromString(asset, contentType);
   } catch (_2) {
-    document2 = new DOMParser2().parseFromString(asset, "text/html");
+    document2 = new DOMParser3().parseFromString(asset, "text/html");
   }
   return {
     document: document2,
@@ -22023,7 +22041,7 @@ async function fetchAndConvert(mhtml, config2, failedResources = []) {
     return convert(mhtml, config2);
   }
 }
-function convert({ headers, frames, resources, unfoundResources = /* @__PURE__ */ new Set(), index: index2, id }, { DOMParser: DOMParser2, enableScripts, fetchMissingResources } = { DOMParser: globalThis.DOMParser }) {
+function convert({ headers, frames, resources, unfoundResources = /* @__PURE__ */ new Set(), index: index2, id }, { DOMParser: DOMParser3, enableScripts, fetchMissingResources } = { DOMParser: globalThis.DOMParser }) {
   let resource = resources[index2];
   if (!resource) {
     throw new Error(INDEX_PAGE_NOT_FOUND_ERROR);
@@ -22034,7 +22052,7 @@ function convert({ headers, frames, resources, unfoundResources = /* @__PURE__ *
     resource.data = decodeBase64(resource.data, getCharset(resource.contentType));
   }
   const contentType = resource.contentType.split(CONTENT_TYPE_SEPARATOR)[0];
-  const dom = parseDOM(resource.data, contentType, DOMParser2);
+  const dom = parseDOM(resource.data, contentType, DOMParser3);
   const document2 = dom.document;
   let nodes = [document2];
   const baseElement = document2.getElementsByTagName(BASE_TAG)[0];
@@ -22282,7 +22300,7 @@ function convert({ headers, frames, resources, unfoundResources = /* @__PURE__ *
                   frames,
                   index: id2,
                   id: resource.id
-                }, { DOMParser: DOMParser2, enableScripts, fetchMissingResources });
+                }, { DOMParser: DOMParser3, enableScripts, fetchMissingResources });
                 if (fetchMissingResources) {
                   for (const missingResource of result) {
                     if (!missingResources.find((resource2) => resource2.id === missingResource.id)) {
@@ -22527,7 +22545,7 @@ var AT_RULE2 = "Atrule";
 var CHARSET_IDENTIFIER = "charset";
 var RANDOM_ID_PREFIX = "_";
 var parse_default = parse3;
-function parse3(mhtml, { DOMParser: DOMParser2 } = { DOMParser: globalThis.DOMParser }, context = { resources: {}, frames: {} }) {
+function parse3(mhtml, { DOMParser: DOMParser3 } = { DOMParser: globalThis.DOMParser }, context = { resources: {}, frames: {} }) {
   if (typeof mhtml === STRING_TYPE) {
     mhtml = encodeString(mhtml);
   }
@@ -22689,7 +22707,7 @@ function parse3(mhtml, { DOMParser: DOMParser2 } = { DOMParser: globalThis.DOMPa
     } else if (endsWithLF(mhtml)) {
       indexEnd--;
     }
-    parse3(mhtml.slice(indexStartEmbeddedMhtml, indexEnd), { DOMParser: DOMParser2 }, context2);
+    parse3(mhtml.slice(indexStartEmbeddedMhtml, indexEnd), { DOMParser: DOMParser3 }, context2);
     return context2.index;
   }
   function processResource() {
@@ -22727,7 +22745,7 @@ function parse3(mhtml, { DOMParser: DOMParser2 } = { DOMParser: globalThis.DOMPa
   }
   function processDocumentCharset(charset) {
     const contentType = resource.contentType.split(";")[0];
-    let dom = parseDOM(resource.data, contentType, DOMParser2);
+    let dom = parseDOM(resource.data, contentType, DOMParser3);
     let charserMetaElement = getMetaCharsetElement(dom.document.documentElement);
     if (charserMetaElement) {
       let htmlCharset = charserMetaElement.getAttribute(CHARSET_ATTRIBUTE2);
@@ -22735,7 +22753,7 @@ function parse3(mhtml, { DOMParser: DOMParser2 } = { DOMParser: globalThis.DOMPa
         htmlCharset = htmlCharset.toLowerCase();
         if (htmlCharset !== UTF8_CHARSET2 && htmlCharset !== charset) {
           resource.data = decodeString(resource.rawData, charset);
-          dom = parseDOM(resource.data, contentType, DOMParser2);
+          dom = parseDOM(resource.data, contentType, DOMParser3);
           charserMetaElement = getMetaCharsetElement(dom.document);
         }
       }
@@ -22748,7 +22766,7 @@ function parse3(mhtml, { DOMParser: DOMParser2 } = { DOMParser: globalThis.DOMPa
       const htmlCharset = getCharset(contentType2);
       if (htmlCharset && htmlCharset !== UTF8_CHARSET2 && htmlCharset !== charset) {
         resource.data = decodeString(resource.rawData, htmlCharset);
-        dom = parseDOM(resource.data, contentType2, DOMParser2);
+        dom = parseDOM(resource.data, contentType2, DOMParser3);
         metaElement = getMetaContentTypeElement(dom.document.documentElement);
       }
       metaElement.remove();
@@ -22784,7 +22802,7 @@ function parse4(data, config2 = {}) {
 
 // node_modules/mhtml-to-html/lib/mod-node.js
 function convert3(mhtml, config2 = {}) {
-  return convert2(mhtml, { ...config2, DOMParser });
+  return convert2(mhtml, { ...config2, DOMParser: DOMParser2 });
 }
 
 // src/HtmlView.ts
@@ -22887,6 +22905,9 @@ var HtmlView = class extends import_obsidian2.FileView {
   constructor(leaf, settings) {
     super(leaf);
     this.settings = settings;
+    this.watcher = null;
+    this.watcherRegistered = false;
+    this.pendingScrollY = 0;
     this.settings = settings;
   }
   async onLoadFile(file) {
@@ -22894,6 +22915,7 @@ var HtmlView = class extends import_obsidian2.FileView {
     try {
       const contents = await this.app.vault.readBinary(file);
       let htmlStr = null;
+      let isPlainHtml = false;
       if (this.settings.mhtmlSupport && MHTML_FILE_EXTENSIONS.indexOf(file.extension) >= 0) {
         const { data, title, favicons } = await convert3(new Uint8Array(contents));
         htmlStr = data;
@@ -22905,19 +22927,23 @@ var HtmlView = class extends import_obsidian2.FileView {
         } catch {
           const decoder = new TextDecoder();
           htmlStr = decoder.decode(contents);
+          isPlainHtml = true;
         }
       }
       index_es_default.enableBoundaryChecking(false);
+      let parser = new DOMParser();
       this.mainView = this.contentEl.createDiv();
       this.mainView.setAttribute("style", "display: flex; flex-direction: column; height: 100%; padding: 0;");
-      this.mainView.innerHTML = MAINVIEW_HTML;
+      let mainViewEl = parser.parseFromString(MAINVIEW_HTML, "text/html");
+      this.mainView.appendChild(mainViewEl.body.childNodes[0]);
+      this.mainView.appendChild(mainViewEl.body.childNodes[1]);
       const searchBar = this.mainView.querySelector("#ohpMainView");
       const iframe = this.mainView.querySelector("#ohpIframe");
       const baseHref = getHtmlBaseHref(this.app, file);
       let dom = null, applyAnchorFix = true;
       switch (this.settings.opMode) {
         case "BalanceMode" /* Balance */:
-          dom = new window.DOMParser().parseFromString(htmlStr, "text/html");
+          dom = parser.parseFromString(htmlStr, "text/html");
           ensureBaseHref(dom, baseHref);
           await removeScriptTagsAndExtScripts(dom);
           await sanitizeAndApplyPatches(dom);
@@ -22926,7 +22952,7 @@ var HtmlView = class extends import_obsidian2.FileView {
           iframe.srcdoc = dom.documentElement.outerHTML;
           break;
         case "LowRestrictedMode" /* LowRestricted */:
-          dom = new window.DOMParser().parseFromString(htmlStr, "text/html");
+          dom = parser.parseFromString(htmlStr, "text/html");
           ensureBaseHref(dom, baseHref);
           await removeScriptTagsAndExtScripts(dom);
           await restoreStateBySettings(dom, this.settings);
@@ -22936,14 +22962,14 @@ var HtmlView = class extends import_obsidian2.FileView {
           iframe.srcdoc = injectBaseHrefToHtml(htmlStr, baseHref);
           break;
         case "HighRestrictedMode" /* HighRestricted */:
-          const purifier = new window.DOMPurify();
+          const purifier = new DOMPurify();
           purifier.addHook("afterSanitizeAttributes", ohpAfterSanitizeAttributes);
           const cleanHtmlHR = purifier.sanitize(injectBaseHrefToHtml(htmlStr, baseHref), hrModeConfig);
           iframe.csp = "default-src 'none'; script-src 'none'; object-src 'none'; frame-src https: http: mediastream: blob:; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; ";
           iframe.srcdoc = cleanHtmlHR;
           break;
         case "TextMode" /* Text */:
-          const cleanHtmlText = new window.DOMPurify().sanitize(injectBaseHrefToHtml(htmlStr, baseHref), textModeConfig);
+          const cleanHtmlText = new DOMPurify().sanitize(injectBaseHrefToHtml(htmlStr, baseHref), textModeConfig);
           iframe.sandbox = "allow-same-origin";
           iframe.csp = "default-src 'none'; script-src 'none'; object-src 'none'; frame-src 'none'; font-src 'self' data:; img-src 'none'; style-src 'unsafe-inline'; media-src 'none'; ";
           iframe.srcdoc = cleanHtmlText;
@@ -22955,6 +22981,12 @@ var HtmlView = class extends import_obsidian2.FileView {
       this.mainView.settings = this.settings;
       this.mainView.searchBar = searchBar;
       this.mainView.iframe = iframe;
+      this.mainView.file = file;
+      this.mainView.formStateEligible = isPlainHtml && this.settings.saveFormState && this.settings.opMode !== "HighRestrictedMode" /* HighRestricted */ && this.settings.opMode !== "TextMode" /* Text */;
+      this.mainView.onSelfWrite = (text) => this.watcher?.noteSelfWrite(text);
+      this.mainView.pendingScrollY = this.pendingScrollY;
+      this.pendingScrollY = 0;
+      this.setupExternalChangeWatcher(file, isPlainHtml);
       iframe.onload = async function() {
         if (applyAnchorFix) {
           applyUserInteractivePatches(iframe.contentDocument);
@@ -22963,9 +22995,16 @@ var HtmlView = class extends import_obsidian2.FileView {
         }
         await restoreStateBySettings(iframe.contentWindow.document, iframe.mainView.settings);
         buildUserInteractiveFacilities(iframe.mainView);
+        if (iframe.mainView.formStateEligible)
+          await setupFormStatePersistence(iframe.mainView);
+        if (iframe.mainView.pendingScrollY > 0)
+          iframe.contentWindow.scrollTo(0, iframe.mainView.pendingScrollY);
         iframe.contentWindow.addEventListener("keydown", (evt) => {
           iframe.dispatchEvent(new evt.constructor(evt.type, evt));
         }, false);
+        iframe.contentWindow.document.body.instanceOf = (typeObject) => {
+          return false;
+        };
       };
       dispatchEvent(new CustomEvent("DOMContentLoaded"));
     } catch (error) {
@@ -22973,6 +23012,58 @@ var HtmlView = class extends import_obsidian2.FileView {
     }
   }
   onunload() {
+    this.watcher?.dispose();
+    this.watcher = null;
+  }
+  async onUnloadFile(file) {
+    this.watcher?.dispose();
+    this.watcher = null;
+    const mv = this.mainView;
+    if (mv && mv.flushFormState) {
+      try {
+        await mv.flushFormState();
+      } catch {
+      }
+    }
+    return super.onUnloadFile(file);
+  }
+  // watch the opened file and reload the view when it is modified outside of it
+  setupExternalChangeWatcher(file, isPlainHtml) {
+    this.watcher?.dispose();
+    this.watcher = createExternalChangeWatcher({
+      // only plain HTML files can be self-written by the form state feature,
+      // so only those need the self-write comparison
+      readFile: isPlainHtml ? () => this.app.vault.read(file) : null,
+      onReload: () => this.reloadFile()
+    });
+    if (this.watcherRegistered)
+      return;
+    this.watcherRegistered = true;
+    this.registerEvent(this.app.vault.on("modify", (modified) => {
+      if (!this.settings.autoReloadOnChange || !this.file)
+        return;
+      if (!(modified instanceof import_obsidian2.TFile) || modified.path !== this.file.path)
+        return;
+      this.watcher?.handleModify();
+    }));
+  }
+  async reloadFile() {
+    const file = this.file;
+    if (!file)
+      return;
+    const mv = this.mainView;
+    if (mv && mv.cancelFormState)
+      mv.cancelFormState();
+    try {
+      this.pendingScrollY = mv?.iframe?.contentWindow?.scrollY || 0;
+    } catch {
+      this.pendingScrollY = 0;
+    }
+    await this.onLoadFile(file);
+  }
+  // F5 / "Reload file" - reload on demand
+  reloadFileOnDemand() {
+    this.reloadFile();
   }
   onPaneMenu(menu, source) {
     if (source !== "more-options")
@@ -23030,7 +23121,7 @@ function ensureBaseHref(doc, baseHref) {
 function injectBaseHrefToHtml(htmlStr, baseHref) {
   if (!htmlStr || !baseHref) return htmlStr;
   try {
-    const doc = new window.DOMParser().parseFromString(htmlStr, "text/html");
+    const doc = new DOMParser().parseFromString(htmlStr, "text/html");
     ensureBaseHref(doc, baseHref);
     return doc.documentElement.outerHTML;
   } catch {
@@ -23039,8 +23130,8 @@ function injectBaseHrefToHtml(htmlStr, baseHref) {
 }
 async function showError(e2) {
   const notice = new import_obsidian2.Notice("", 8e3);
-  notice.noticeEl.createEl("strong", { text: "HTML Reader error" });
-  notice.noticeEl.createDiv({ text: `${e2.message}` });
+  notice.messageEl.createEl("strong", { text: "HTML Reader error" });
+  notice.messageEl.createDiv({ text: `${e2.message}` });
 }
 function sdFixAnchorClickHandler(evt) {
   const aElm = evt.composedPath().find((elm) => elm.nodeName === "A");
@@ -23087,10 +23178,11 @@ async function sanitizeAndApplyPatches(doc) {
   for (const elm of doc.all) {
     let illSet = /* @__PURE__ */ new Set();
     for (const attr of elm.attributes) {
-      let name = attr.name;
-      if (name.indexOf("-") > 0)
-        name = `${name.split("-")[0]}-*`;
-      if (!BM_ALLOWED_ATTRS.contains(name) && !illSet.has(attr.name))
+      const lowerName = attr.name.toLowerCase();
+      let allowed = lowerName !== "http-equiv" && BM_ALLOWED_ATTRS.contains(lowerName);
+      if (!allowed && lowerName.indexOf("-") > 0)
+        allowed = BM_ALLOWED_ATTRS.contains(`${lowerName.split("-")[0]}-*`);
+      if (!allowed && !illSet.has(attr.name))
         illSet.add(attr.name);
     }
     for (const attrName of illSet) {
@@ -23138,6 +23230,8 @@ function applyUserInteractivePatches(doc) {
 async function removeScriptTagsAndExtScripts(doc) {
   let allNodes = doc.querySelectorAll("script");
   for (var node of allNodes) {
+    if (node.id === OHP_STATE_ID && node.getAttribute("type") === "application/json")
+      continue;
     node.parentNode.removeChild(node);
   }
   allNodes = doc.querySelectorAll("link");
@@ -23189,6 +23283,185 @@ async function restoreStateBySettings(doc, settings) {
     doc.body.setAttribute("bgColor", settings.bgColor);
     doc.body.style.backgroundColor = settings.bgColor;
   }
+}
+var RELOAD_DEBOUNCE_MS = 300;
+function createExternalChangeWatcher(opts) {
+  const delay = opts.delay ?? RELOAD_DEBOUNCE_MS;
+  let timer = 0;
+  let lastSelfWrittenText = null;
+  let disposed = false;
+  const reload = async () => {
+    timer = 0;
+    if (disposed)
+      return;
+    if (lastSelfWrittenText !== null && opts.readFile) {
+      try {
+        if (await opts.readFile() === lastSelfWrittenText)
+          return;
+      } catch {
+      }
+    }
+    if (!disposed)
+      await opts.onReload();
+  };
+  return {
+    noteSelfWrite: (text) => {
+      lastSelfWrittenText = text;
+    },
+    // external editors and sync often write a file in several steps,
+    // so coalesce bursts of events into a single reload
+    handleModify: () => {
+      if (disposed)
+        return;
+      if (timer)
+        window.clearTimeout(timer);
+      timer = window.setTimeout(reload, delay);
+    },
+    dispose: () => {
+      disposed = true;
+      if (timer) {
+        window.clearTimeout(timer);
+        timer = 0;
+      }
+    }
+  };
+}
+var OHP_STATE_ID = "ohp-form-state";
+var OHP_STATE_RE = /<script type="application\/json" id="ohp-form-state">[\s\S]*?<\/script>/i;
+function ohpFormStateKey(elm, idx) {
+  return elm.id ? `#${elm.id}` : `@${idx}`;
+}
+function collectFormState(doc) {
+  const state = {};
+  const elms = doc.querySelectorAll("input, textarea, select");
+  for (let idx = 0; idx < elms.length; ++idx) {
+    const elm = elms[idx];
+    const key = ohpFormStateKey(elm, idx);
+    switch (elm.tagName) {
+      case "INPUT": {
+        const type = (elm.getAttribute("type") || "text").toLowerCase();
+        if (type === "password" || type === "file" || type === "hidden")
+          break;
+        if (type === "checkbox" || type === "radio")
+          state[key] = { c: !!elm.checked };
+        else
+          state[key] = { v: elm.value };
+        break;
+      }
+      case "TEXTAREA":
+        state[key] = { v: elm.value };
+        break;
+      case "SELECT":
+        if (elm.multiple)
+          state[key] = { m: Array.prototype.map.call(elm.selectedOptions, (o) => o.value) };
+        else
+          state[key] = { v: elm.value };
+        break;
+    }
+  }
+  return state;
+}
+function restoreFormState(doc, state) {
+  if (!state)
+    return;
+  const win = doc.defaultView;
+  const elms = doc.querySelectorAll("input, textarea, select");
+  for (let idx = 0; idx < elms.length; ++idx) {
+    const elm = elms[idx];
+    const entry = state[ohpFormStateKey(elm, idx)];
+    if (!entry)
+      continue;
+    let changed = false;
+    if ("c" in entry && elm.tagName === "INPUT") {
+      if (elm.checked !== entry.c) {
+        elm.checked = entry.c;
+        changed = true;
+      }
+    } else if ("m" in entry && elm.tagName === "SELECT") {
+      for (const opt of elm.options) {
+        const sel = entry.m.indexOf(opt.value) >= 0;
+        if (opt.selected !== sel) {
+          opt.selected = sel;
+          changed = true;
+        }
+      }
+    } else if ("v" in entry) {
+      if (elm.value !== entry.v) {
+        elm.value = entry.v;
+        changed = true;
+      }
+    }
+    if (changed) {
+      elm.dispatchEvent(new win.Event("input", { bubbles: true }));
+      elm.dispatchEvent(new win.Event("change", { bubbles: true }));
+    }
+  }
+}
+async function setupFormStatePersistence(mainView) {
+  const iframe = mainView.iframe;
+  const doc = iframe.contentDocument || iframe.contentWindow?.document;
+  const app2 = mainView.app;
+  const file = mainView.file;
+  if (!doc || !app2 || !file)
+    return;
+  const stateElm = doc.getElementById(OHP_STATE_ID);
+  if (stateElm) {
+    await new Promise((resolve) => setTimeout(resolve, 150));
+    try {
+      restoreFormState(doc, JSON.parse(stateElm.textContent));
+    } catch (e2) {
+      console.warn("HTML Reader: could not restore form state", e2);
+    }
+  }
+  let saveTimer = 0;
+  let lastSavedJson = null;
+  const saveNow = async () => {
+    saveTimer = 0;
+    try {
+      const json = JSON.stringify(collectFormState(doc)).replace(/</g, "\\u003c");
+      if (json === lastSavedJson)
+        return;
+      const block = `<script type="application/json" id="${OHP_STATE_ID}">${json}<\/script>`;
+      const text = await app2.vault.read(file);
+      let newText;
+      if (OHP_STATE_RE.test(text))
+        newText = text.replace(OHP_STATE_RE, () => block);
+      else if (/<\/body>/i.test(text))
+        newText = text.replace(/<\/body>/i, () => `${block}
+</body>`);
+      else
+        newText = `${text}
+${block}`;
+      if (newText !== text) {
+        if (mainView.onSelfWrite)
+          mainView.onSelfWrite(newText);
+        await app2.vault.modify(file, newText);
+      }
+      lastSavedJson = json;
+    } catch (e2) {
+      console.warn("HTML Reader: could not save form state", e2);
+    }
+  };
+  const schedule = () => {
+    if (saveTimer)
+      window.clearTimeout(saveTimer);
+    saveTimer = window.setTimeout(saveNow, 1e3);
+  };
+  doc.addEventListener("input", schedule, true);
+  doc.addEventListener("change", schedule, true);
+  mainView.flushFormState = async () => {
+    if (saveTimer) {
+      window.clearTimeout(saveTimer);
+      saveTimer = 0;
+      await saveNow();
+    }
+  };
+  mainView.cancelFormState = () => {
+    if (saveTimer) {
+      window.clearTimeout(saveTimer);
+      saveTimer = 0;
+    }
+  };
 }
 function isUnselectableElement(elm) {
   var style = getComputedStyle(elm);
@@ -23539,7 +23812,7 @@ async function buildUserInteractiveFacilities(mainView) {
       if (isSearchBarVisible)
         next.click();
     } else if (evt.key === "F5") {
-      this.app.workspace.getActiveViewOfType(HtmlView)?.leaf.rebuildView();
+      mainView.app.workspace.getActiveViewOfType(HtmlView)?.reloadFileOnDemand();
     } else if (evt.key === "Escape") {
       if (isSearchBarVisible)
         exit.click();
