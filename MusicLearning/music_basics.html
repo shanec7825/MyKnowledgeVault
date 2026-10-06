@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>音乐基础：把声音变成可以看见的结构</title>
+<style>
+  :root{
+    --bg:#0b1020; --panel:#131a2d; --panel2:#0f1527; --text:#eef2ff;
+    --muted:#9ba7c7; --accent:#7dd3fc; --accent2:#c4b5fd; --line:#2a3555;
+    --good:#86efac; --warm:#fcd34d;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; font-family:Inter,"Noto Sans SC","Microsoft YaHei",sans-serif;
+    color:var(--text); background:
+    radial-gradient(circle at 15% 0%,#18234a 0,transparent 34%),
+    radial-gradient(circle at 90% 12%,#2b1846 0,transparent 28%),var(--bg);
+    line-height:1.65;
+  }
+  header{max-width:1100px;margin:auto;padding:58px 24px 28px}
+  h1{font-size:clamp(2rem,5vw,4rem);line-height:1.08;margin:.2rem 0 1rem}
+  h2{font-size:1.7rem;margin:0 0 14px}
+  h3{margin:8px 0}
+  .lead{font-size:1.1rem;color:#c8d2ee;max-width:780px}
+  .pill{display:inline-block;border:1px solid #3b4b77;border-radius:999px;padding:5px 11px;color:#b9c7ee;font-size:.86rem}
+  main{max-width:1100px;margin:auto;padding:0 24px 80px}
+  section{margin-top:28px;background:linear-gradient(145deg,rgba(19,26,45,.95),rgba(12,18,34,.93));border:1px solid #24304e;border-radius:22px;padding:24px;box-shadow:0 20px 60px #0004}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+  .card{background:#10172a;border:1px solid #263352;border-radius:16px;padding:18px}
+  .card b{font-size:1.04rem}
+  .muted{color:var(--muted)}
+  .equation{font-family:ui-monospace,Consolas,monospace;background:#0a1020;border:1px solid #283554;border-radius:12px;padding:10px 14px;display:inline-block}
+  .two{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr);gap:22px;align-items:center}
+  @media(max-width:820px){.two{grid-template-columns:1fr}}
+  canvas{width:100%;aspect-ratio:1/1;display:block;background:radial-gradient(circle,#151f39,#090e1b 68%);border-radius:18px;border:1px solid #29385c;touch-action:none}
+  button,input{font:inherit}
+  button{
+    color:var(--text);background:#17233d;border:1px solid #355077;border-radius:12px;padding:9px 13px;cursor:pointer
+  }
+  button:hover{background:#203054}
+  button.primary{background:#1e4f70;border-color:#4cb4de}
+  .controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+  input[type=range]{width:170px}
+  .legend{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+  .chip{padding:5px 9px;border:1px solid #334264;border-radius:999px;font-size:.82rem;color:#c9d4ef}
+  .beat-row{display:grid;grid-template-columns:repeat(16,1fr);gap:5px;margin-top:14px}
+  .beat-cell{height:40px;border-radius:8px;border:1px solid #31415f;display:grid;place-items:center;color:#93a4c8;background:#0d1425}
+  .beat-cell.strong{border-color:#7295cf;color:white;background:#172641}
+  .kbd{position:relative;height:165px;display:flex;margin-top:16px;user-select:none}
+  .white{flex:1;background:#eef3ff;border:1px solid #8792a9;border-radius:0 0 8px 8px;color:#182032;display:flex;align-items:flex-end;justify-content:center;padding-bottom:9px}
+  .black{position:absolute;width:8%;height:95px;background:#111827;border:1px solid #000;border-radius:0 0 6px 6px;z-index:2}
+  .tiny{font-size:.85rem}
+  .waveButtons{display:flex;gap:10px;flex-wrap:wrap}
+  .timeline{height:130px;position:relative;background:#0b1221;border-radius:14px;border:1px solid #263554;overflow:hidden;margin-top:14px}
+  .axis{position:absolute;left:0;right:0;top:50%;height:1px;background:#42506f}
+  svg{width:100%;height:100%}
+  footer{max-width:1100px;margin:auto;padding:0 24px 60px;color:#8290b5}
+</style>
+</head>
+<body>
+<header>
+  <span class="pill">MusicLearning · 交互式音乐基础</span>
+  <h1>把音乐理解成<br>“声音事件 × 时间结构”</h1>
+  <p class="lead">你不需要先会乐器。先建立四个坐标：<b>什么时候响（节拍/节奏）</b>、<b>有多高（音高）</b>、<b>听起来是什么质地（音色）</b>、<b>有多强（响度）</b>。下面所有图都围绕这四件事。</p>
+</header>
+
+<main>
+<section>
+  <h2>01 · 一眼看懂几个核心概念</h2>
+  <div class="grid">
+    <div class="card"><b>节拍 Beat</b><p class="muted">稳定的“时间脉搏”。你跟着歌点头时，常常跟的就是 beat。</p></div>
+    <div class="card"><b>节奏 Rhythm</b><p class="muted">声音究竟落在哪些时刻，以及每个声音持续多久。它是在节拍网格上的排列。</p></div>
+    <div class="card"><b>音高 Pitch</b><p class="muted">声音高低的感觉。物理上与基频密切相关；频率翻倍，通常听成高一个八度。</p></div>
+    <div class="card"><b>音色 Timbre</b><p class="muted">同样是 A4，同样响，钢琴、吉他、正弦波仍然不同；关键在泛音与声音随时间的形状。</p></div>
+    <div class="card"><b>响度 Dynamics</b><p class="muted">声音强弱及其变化。它不是音高：高音也可以很轻，低音也可以很响。</p></div>
+    <div class="card"><b>旋律 / 和声</b><p class="muted">旋律像“音高随时间画出的线”；和声则研究同时或相邻音高之间的关系。</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>02 · 节拍、节奏、拍号：先把“时间”听明白</h2>
+  <p>把音乐想成一张时间网格。<b>节拍</b>是等距刻度，<b>节奏</b>是你决定在哪些刻度上发声；<b>拍号</b>则告诉你这些刻度如何分组。</p>
+  <div class="beat-row" id="beatGrid"></div>
+  <div class="controls">
+    <button id="beatPlay" class="primary">▶ 播放 4/4 节拍</button>
+    <label>BPM <input id="bpm" type="range" min="50" max="180" value="96"><span id="bpmValue">96</span></label>
+  </div>
+  <p class="muted tiny">上面 16 格可理解成一个 4/4 小节被切成 16 个十六分音符位置。第 1、5、9、13 格是四个主要拍点。</p>
+</section>
+
+<section>
+  <h2>03 · 环形音序器：把一小节“卷成一个圆”</h2>
+  <div class="two">
+    <div>
+      <canvas id="circle" width="720" height="720"></canvas>
+      <div class="controls">
+        <button class="primary" id="circlePlay">▶ 开始旋转</button>
+        <button id="clearPattern">清空</button>
+        <button id="demoPattern">示例旋律</button>
+      </div>
+    </div>
+    <div>
+      <h3>你描述的就是这一类：Circular Sequencer</h3>
+      <p class="muted">它也可以叫“环形步进音序器”。核心思想不是某个固定软件，而是一种时间可视化方式：</p>
+      <p><b>角度 → 时间</b><br><span class="muted">一整圈就是一个小节；越往顺时针，时间越往后。</span></p>
+      <p><b>半径 → 音高</b><br><span class="muted">每条同心圆代表一个音。这里从内到外是 C4、D4、E4、G4、A4。</span></p>
+      <p><b>圆点 → 音符事件</b><br><span class="muted">旋转指针扫过圆点时，浏览器会发出对应音高。</span></p>
+      <p><b>直接点击圆周格点</b><br><span class="muted">你可以自己放置和删除音符，马上看到“节奏 + 旋律”如何组合。</span></p>
+      <div class="legend" id="legend"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>04 · 音高：频率不是“音名”，但它是底层坐标</h2>
+  <div class="two">
+    <div>
+      <p>常用参考：<span class="equation">A4 = 440 Hz</span></p>
+      <p>高一个八度，频率约翻倍：</p>
+      <p><span class="equation">A3 = 220 Hz → A4 = 440 Hz → A5 = 880 Hz</span></p>
+      <p class="muted">我们对音高更接近“比例”感知，而不是看频率差值。例如 220→440 和 440→880 都听成一个八度。</p>
+      <div class="controls">
+        <button onclick="playTone(220,'sine',.7)">听 A3 · 220Hz</button>
+        <button onclick="playTone(440,'sine',.7)">听 A4 · 440Hz</button>
+        <button onclick="playTone(880,'sine',.7)">听 A5 · 880Hz</button>
+      </div>
+    </div>
+    <div>
+      <div class="kbd" id="keyboard">
+        <div class="white">C</div><div class="white">D</div><div class="white">E</div><div class="white">F</div><div class="white">G</div><div class="white">A</div><div class="white">B</div>
+        <div class="black" style="left:10%"></div><div class="black" style="left:24.4%"></div><div class="black" style="left:52.9%"></div><div class="black" style="left:67.2%"></div><div class="black" style="left:81.5%"></div>
+      </div>
+      <p class="muted tiny">钢琴一个八度里有 12 个半音；白键只是其中 7 个常用音名位置。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>05 · 音色：为什么同一个 A4 可以像完全不同的声音？</h2>
+  <p>音色可以先抓住两个关键词：<b>泛音结构</b>与<b>包络（声音随时间如何出现、保持、消失）</b>。下面四个按钮都播放同一个 220Hz，但波形不同。</p>
+  <div class="waveButtons">
+    <button onclick="playTone(220,'sine',1)">正弦波 Sine</button>
+    <button onclick="playTone(220,'triangle',1)">三角波 Triangle</button>
+    <button onclick="playTone(220,'square',1)">方波 Square</button>
+    <button onclick="playTone(220,'sawtooth',1)">锯齿波 Sawtooth</button>
+  </div>
+  <div class="timeline">
+    <svg viewBox="0 0 1000 130" preserveAspectRatio="none">
+      <line x1="0" y1="65" x2="1000" y2="65" stroke="#405073" stroke-width="1"/>
+      <path d="M0,65 C35,8 65,8 100,65 S165,122 200,65 S265,8 300,65 S365,122 400,65 S465,8 500,65 S565,122 600,65 S665,8 700,65 S765,122 800,65 S865,8 900,65 S965,122 1000,65" fill="none" stroke="#7dd3fc" stroke-width="3"/>
+    </svg>
+  </div>
+  <p class="muted tiny">现实乐器的波形更复杂，而且“起音、衰减、持续、释放”的时间过程也强烈影响我们对音色的判断。</p>
+</section>
+
+<section>
+  <h2>06 · 你接下来真正该练什么</h2>
+  <div class="grid">
+    <div class="card"><b>第 1 周：时间感</b><p class="muted">每天听歌时找稳定拍点；能分清“拍子”和“具体鼓点/歌词节奏”。</p></div>
+    <div class="card"><b>第 2 周：音高方向</b><p class="muted">先不猜具体音名，只判断第二个音是更高、更低还是相同，再逐渐学习音程。</p></div>
+    <div class="card"><b>第 3 周：音色拆解</b><p class="muted">比较人声、钢琴、弦乐、鼓，描述它是明亮/暗、硬/软、短促/绵长，而不是只说“好听”。</p></div>
+    <div class="card"><b>第 4 周：整合</b><p class="muted">选一首熟悉的歌，分别回答：拍号/BPM 大致怎样？主旋律怎么走？有哪些主要音色？哪里变强或变弱？</p></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  这份页面的目标不是一次塞满乐理，而是先建立“可听、可看、可操作”的直觉。建议先反复玩环形音序器，再去学音程、音阶与和弦。
+</footer>
+
+<script>
+let audioCtx;
+function ctx(){
+  if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  if(audioCtx.state === 'suspended') audioCtx.resume();
+  return audioCtx;
+}
+function playTone(freq, type, duration){
+  const c = ctx(), o = c.createOscillator(), g = c.createGain();
+  o.type = type || 'sine'; o.frequency.value = freq;
+  const t = c.currentTime;
+  g.gain.setValueAtTime(0.0001,t);
+  g.gain.exponentialRampToValueAtTime(0.18,t+0.015);
+  g.gain.exponentialRampToValueAtTime(0.0001,t+duration);
+  o.connect(g); g.connect(c.destination); o.start(t); o.stop(t+duration+0.03);
+}
+function clickSound(accent){
+  const c=ctx(), o=c.createOscillator(), g=c.createGain(), t=c.currentTime;
+  o.frequency.value = accent ? 1050 : 720; o.type='square';
+  g.gain.setValueAtTime(accent ? .11 : .055,t);
+  g.gain.exponentialRampToValueAtTime(.0001,t+.045);
+  o.connect(g);g.connect(c.destination);o.start(t);o.stop(t+.05);
+}
+
+const beatGrid=document.getElementById('beatGrid');
+for(let i=0;i<16;i++){
+  const d=document.createElement('div'); d.className='beat-cell'+(i%4===0?' strong':''); d.textContent=i+1; beatGrid.appendChild(d);
+}
+let beatTimer=null, beatIndex=0;
+const bpm=document.getElementById('bpm'), bpmValue=document.getElementById('bpmValue');
+bpm.oninput=()=>bpmValue.textContent=bpm.value;
+document.getElementById('beatPlay').onclick=function(){
+  if(beatTimer){clearInterval(beatTimer);beatTimer=null;this.textContent='▶ 播放 4/4 节拍';return;}
+  ctx(); this.textContent='■ 停止节拍';
+  const run=()=>{
+    const cells=[...beatGrid.children];
+    cells.forEach((x,j)=>x.style.transform=j===beatIndex?'translateY(-4px)':'');
+    clickSound(beatIndex%4===0); beatIndex=(beatIndex+1)%16;
+  };
+  run();
+  const start=()=>{ if(beatTimer)clearInterval(beatTimer); beatTimer=setInterval(run,60000/(Number(bpm.value)*4)); };
+  start(); bpm.onchange=start;
+};
+
+const canvas=document.getElementById('circle'), g2=canvas.getContext('2d');
+const cx=360,cy=360,rings=[105,150,195,240,285];
+const notes=[
+  {name:'C4',freq:261.63,color:'#86efac'},
+  {name:'D4',freq:293.66,color:'#7dd3fc'},
+  {name:'E4',freq:329.63,color:'#c4b5fd'},
+  {name:'G4',freq:392.00,color:'#f9a8d4'},
+  {name:'A4',freq:440.00,color:'#fcd34d'}
+];
+let pattern=Array.from({length:5},()=>Array(16).fill(false));
+let angle=0, playing=false, lastStep=-1, raf=0, lastTs=0;
+const demo=[
+ [0,4,8,12],[2,6,10,14],[1,5,9,13],[3,7,11,15],[0,6,8,14]
+];
+function setDemo(){pattern=Array.from({length:5},(_,r)=>Array.from({length:16},(_,s)=>demo[r].includes(s)));draw();}
+setDemo();
+const legend=document.getElementById('legend');
+notes.forEach(n=>{const s=document.createElement('span');s.className='chip';s.textContent=n.name+' · '+Math.round(n.freq)+'Hz';s.style.borderColor=n.color;legend.appendChild(s);});
+
+function pt(r,step){const a=-Math.PI/2 + step*Math.PI*2/16;return [cx+Math.cos(a)*r,cy+Math.sin(a)*r];}
+function draw(){
+  g2.clearRect(0,0,720,720);
+  g2.save();
+  for(let s=0;s<16;s++){
+    const a=-Math.PI/2+s*Math.PI*2/16;
+    g2.beginPath();g2.moveTo(cx,cy);g2.lineTo(cx+Math.cos(a)*315,cy+Math.sin(a)*315);
+    g2.strokeStyle=s%4===0?'#41557e':'#202d49';g2.lineWidth=s%4===0?2:1;g2.stroke();
+  }
+  rings.forEach((r,ri)=>{
+    g2.beginPath();g2.arc(cx,cy,r,0,Math.PI*2);g2.strokeStyle='#3a496c';g2.lineWidth=2;g2.stroke();
+    for(let s=0;s<16;s++){
+      const [x,y]=pt(r,s);g2.beginPath();g2.arc(x,y,pattern[ri][s]?8:4,0,Math.PI*2);
+      g2.fillStyle=pattern[ri][s]?notes[ri].color:'#34415d';g2.fill();
+    }
+    g2.fillStyle=notes[ri].color;g2.font='15px sans-serif';g2.fillText(notes[ri].name,cx+r+8,cy+5);
+  });
+  const a=-Math.PI/2+angle;
+  g2.beginPath();g2.moveTo(cx,cy);g2.lineTo(cx+Math.cos(a)*320,cy+Math.sin(a)*320);
+  g2.strokeStyle='#ffffff';g2.lineWidth=3;g2.stroke();
+  g2.beginPath();g2.arc(cx,cy,9,0,Math.PI*2);g2.fillStyle='#fff';g2.fill();
+  g2.restore();
+}
+function triggerStep(step){
+  pattern.forEach((row,ri)=>{if(row[step])playTone(notes[ri].freq,'sine',.16);});
+}
+function loop(ts){
+  if(!playing)return;
+  if(!lastTs)lastTs=ts;
+  const dt=(ts-lastTs)/1000;lastTs=ts;
+  const beatsPerSec=Number(bpm.value)/60;
+  const revPerSec=beatsPerSec/4;
+  angle=(angle+dt*revPerSec*Math.PI*2)%(Math.PI*2);
+  const step=Math.floor((angle/(Math.PI*2))*16)%16;
+  if(step!==lastStep){lastStep=step;triggerStep(step);}
+  draw();raf=requestAnimationFrame(loop);
+}
+document.getElementById('circlePlay').onclick=function(){
+  ctx();playing=!playing;lastTs=0;lastStep=-1;
+  this.textContent=playing?'■ 停止旋转':'▶ 开始旋转';
+  if(playing)raf=requestAnimationFrame(loop);else cancelAnimationFrame(raf);
+};
+document.getElementById('clearPattern').onclick=()=>{pattern=Array.from({length:5},()=>Array(16).fill(false));draw();};
+document.getElementById('demoPattern').onclick=setDemo;
+canvas.addEventListener('pointerdown',e=>{
+  const rect=canvas.getBoundingClientRect(), sx=720/rect.width, sy=720/rect.height;
+  const x=(e.clientX-rect.left)*sx,y=(e.clientY-rect.top)*sy,dx=x-cx,dy=y-cy;
+  const dist=Math.hypot(dx,dy);
+  let ri=0,best=1e9;
+  rings.forEach((r,i)=>{const d=Math.abs(dist-r);if(d<best){best=d;ri=i;}});
+  if(best>24)return;
+  let a=Math.atan2(dy,dx)+Math.PI/2;if(a<0)a+=Math.PI*2;
+  const step=Math.round(a/(Math.PI*2)*16)%16;
+  pattern[ri][step]=!pattern[ri][step]; if(pattern[ri][step])playTone(notes[ri].freq,'sine',.2);draw();
+});
+draw();
+</script>
+</body>
+</html>
