@@ -1,0 +1,9 @@
+{
+  "id": "mimo-english-coach",
+  "name": "MiMo English Coach",
+  "version": "0.1.0",
+  "minAppVersion": "1.5.0",
+  "description": "Overview EnglishLearning notes, review daily progress, and use Xiaomi MiMo Token Plan for coaching and TTS.",
+  "author": "Personal workspace",
+  "isDesktopOnly": true
+}
