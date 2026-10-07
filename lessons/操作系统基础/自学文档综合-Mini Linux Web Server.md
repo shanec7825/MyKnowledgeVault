@@ -40,7 +40,7 @@
 
 ---
 
-# 二、建议目录
+## 二、建议目录
 
 ~~~text
 mini-linux-web-server/
@@ -70,7 +70,7 @@ mini-linux-web-server/
 
 ---
 
-# 三、一次请求的完整生命周期
+## 三、一次请求的完整生命周期
 
 你必须能够不看代码画出：
 
@@ -127,7 +127,7 @@ worker 回到 queue
 
 ---
 
-# 四、把项目 0—10 映射到综合项目
+## 四、把项目 0—10 映射到综合项目
 
 | 项目 | 在服务器中的体现 |
 | --- | --- |
@@ -147,7 +147,7 @@ worker 回到 queue
 
 ---
 
-# 五、资源 Ownership 表
+## 五、资源 Ownership 表
 
 在 README 中长期维护：
 
@@ -164,7 +164,7 @@ worker 回到 queue
 
 ---
 
-# 六、共享状态表
+## 六、共享状态表
 
 | Object | Shared? | Writers | Protection |
 | --- | --- | --- | --- |
@@ -181,7 +181,7 @@ worker 回到 queue
 
 ---
 
-# 七、构建要求
+## 七、构建要求
 
 建议 Makefile 支持：
 
@@ -212,9 +212,9 @@ make clean
 
 ---
 
-# 八、核心模块边界
+## 八、核心模块边界
 
-## net.c
+### net.c
 
 负责：
 
@@ -226,7 +226,7 @@ make clean
 
 不解析 HTTP。
 
-## http.c
+### http.c
 
 负责：
 
@@ -239,7 +239,7 @@ make clean
 
 不负责线程同步。
 
-## io.c
+### io.c
 
 负责：
 
@@ -248,15 +248,15 @@ make clean
 - EINTR；
 - partial I/O。
 
-## queue.c
+### queue.c
 
 只负责线程安全有界队列。
 
-## thread_pool.c
+### thread_pool.c
 
 负责 worker 生命周期和 queue 消费。
 
-## main.c
+### main.c
 
 负责配置、初始化、accept 循环和最终 shutdown。
 
@@ -265,9 +265,9 @@ make clean
 
 ---
 
-# 九、功能测试矩阵
+## 九、功能测试矩阵
 
-## 正常请求
+### 正常请求
 
 - GET /；
 - GET /hello.txt；
@@ -275,7 +275,7 @@ make clean
 - 空文件；
 - 较大文件。
 
-## HTTP 错误
+### HTTP 错误
 
 - 不存在文件 → 404；
 - POST → 405；
@@ -283,20 +283,20 @@ make clean
 - header 超限；
 - 不支持的 version。
 
-## Path
+### Path
 
 - /../secret；
 - /a/../../secret；
 - 超长路径；
 - query string 按 README 中声明的策略处理。
 
-## Transport
+### Transport
 
 - 请求拆成多段；
 - 只发半个请求就断开；
 - 响应过程中客户端断开。
 
-## Concurrency
+### Concurrency
 
 - 1 client；
 - 10 clients；
@@ -316,9 +316,9 @@ evidence
 
 ---
 
-# 十、系统工具验收
+## 十、系统工具验收
 
-## GDB
+### GDB
 
 在 handle_client 设置断点：
 
@@ -338,7 +338,7 @@ p client_fd
 - request buffer 在栈还是 heap；
 - 返回后资源由谁处理。
 
-## objdump
+### objdump
 
 选择：
 
@@ -356,7 +356,7 @@ p client_fd
 - call；
 - 返回值。
 
-## strace
+### strace
 
 一次 GET 中定位：
 
@@ -373,7 +373,7 @@ close
 
 给每个 fd 加注释。
 
-## /proc
+### /proc
 
 ~~~bash
 cat /proc/<PID>/status
@@ -391,7 +391,7 @@ ls /proc/<PID>/task
 
 ---
 
-# 十一、一次请求的数据流图
+## 十一、一次请求的数据流图
 
 在最终报告中画一张：
 
@@ -425,7 +425,7 @@ client
 
 ---
 
-# 十二、一次请求的控制流图
+## 十二、一次请求的控制流图
 
 ~~~text
 main thread
@@ -448,7 +448,7 @@ worker
 
 ---
 
-# 十三、错误路径清单
+## 十三、错误路径清单
 
 对每一步都问“失败怎么办”：
 
@@ -468,7 +468,7 @@ worker
 
 ---
 
-# 十四、故障注入
+## 十四、故障注入
 
 有意识测试：
 
@@ -488,7 +488,7 @@ worker
 
 ---
 
-# 十五、正确性验证
+## 十五、正确性验证
 
 静态二进制文件：
 
@@ -526,7 +526,7 @@ wait
 
 ---
 
-# 十六、性能实验
+## 十六、性能实验
 
 固定相同请求集合，分别测试：
 
@@ -569,7 +569,7 @@ large file
 
 ---
 
-# 十七、先预测，再测量
+## 十七、先预测，再测量
 
 至少完成一次完整科学式循环。
 
@@ -602,7 +602,7 @@ large file
 
 ---
 
-# 十八、资源泄漏验证
+## 十八、资源泄漏验证
 
 压力测试前：
 
@@ -628,7 +628,7 @@ ls /proc/<PID>/task | wc -l
 
 ---
 
-# 十九、Sanitizer 验证
+## 十九、Sanitizer 验证
 
 开发构建：
 
@@ -655,46 +655,46 @@ gcc ... -fsanitize=address,undefined ...
 
 ---
 
-# 二十、最终完成标准
+## 二十、最终完成标准
 
-## Correctness
+### Correctness
 
 - 功能测试通过；
 - 二进制文件完整一致；
 - HTTP 长度正确。
 
-## Robustness
+### Robustness
 
 - malformed 请求不会崩服务器；
 - client disconnect 不会终止进程；
 - 错误路径明确。
 
-## Resource Safety
+### Resource Safety
 
 - ownership 清楚；
 - 无明显 fd leak；
 - 动态资源生命周期可解释。
 
-## Concurrency Safety
+### Concurrency Safety
 
 - queue 不变量明确；
 - 共享状态同步明确；
 - 压力测试稳定。
 
-## Observability
+### Observability
 
 - gdb 有运行时证据；
 - objdump 有机器级证据；
 - strace 有系统调用证据；
 - /proc 有进程资源证据。
 
-## Explainability
+### Explainability
 
 - 能沿一次请求讲清所有主要层次。
 
 ---
 
-# 二十一、最终答辩问题
+## 二十一、最终答辩问题
 
 1. 从 curl 到 accept，中间大致发生了什么？
 2. 为什么 accept 返回一个新的 fd？
@@ -722,7 +722,7 @@ gcc ... -fsanitize=address,undefined ...
 
 ---
 
-# 二十二、课程完成后的方向
+## 二十二、课程完成后的方向
 
 完成综合项目后再分流：
 
@@ -746,12 +746,12 @@ CSAPP 性能部分 → CS61C → 流水线 / Cache
 
 ---
 
-# 学习导航：资料、图解与扩展
+## 学习导航：资料、图解与扩展
 
 > [!tip] 综合项目的学习策略
 > 不再按章节学习，而是按**一次请求的生命周期**回查：网络 → fd/I/O → 文件 → 内存 → 线程/同步 → 机器级执行。哪个环节解释不完整，就回到对应项目的 A 级资料和实验记录。
 
-## A. 回看主线
+### A. 回看主线
 
 - CS:APP Ch.10 System-Level I/O：请求与文件的 fd/读写。
 - CS:APP Ch.11 Network Programming：socket、HTTP、Tiny Web Server。
@@ -759,7 +759,7 @@ CSAPP 性能部分 → CS61C → 流水线 / Cache
 - 遇到链接/装载问题回看 Ch.7；进程/信号回看 Ch.8；地址/分配回看 Ch.9；性能问题回看 Ch.5–6。
 - 总索引：[[实验参考指南与可视化索引]]
 
-## B. 验证资料
+### B. 验证资料
 
 - CS:APP 官方 Tiny Web Server / labs：https://csapp.cs.cmu.edu/3e/students.html
 - Linux man-pages：https://man7.org/linux/man-pages/
@@ -767,7 +767,7 @@ CSAPP 性能部分 → CS61C → 流水线 / Cache
 - GDB：https://sourceware.org/gdb/current/onlinedocs/gdb.html
 - Beej Network Guide：https://beej.us/guide/bgnet/
 
-## 机制图：沿一次请求解释整个系统
+### 机制图：沿一次请求解释整个系统
 
 ```mermaid
 flowchart LR
@@ -786,7 +786,7 @@ flowchart LR
     L[linker/loader] -.formed process image.-> T
 ```
 
-## 最终“解释链”验收
+### 最终“解释链”验收
 
 完成后随机挑一次请求，不看笔记说明：
 
