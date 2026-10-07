@@ -43,7 +43,7 @@ related:
 
 注意：今天精读涉及小鼠实验。练习重点是读懂研究证据，**不要把动物实验直接改写成人类学习建议**。
 
-## 1. Extensive Listening · 8 min
+## 1. Extensive Listening · 6 min
 
 **Source:** [VOA Learning English — Review of Lessons 20–24](https://learningenglish.voanews.com/a/review-lesson-20-24/3450511.html)
 
@@ -81,7 +81,7 @@ related:
 
 > One idea from the audio that I could actually use is ...
 
-## 2. Intensive Reading · 11 min
+## 2. Intensive Reading · 9 min
 
 **Source:** [ScienceDaily — Vagus Nerve Stimulation Could Help New Skills Stick](https://www.sciencedaily.com/releases/2026/10/261002080034.htm)  
 **Published:** October 5, 2026. Story source: Tohoku University.
@@ -141,7 +141,7 @@ animal study ≠ direct human learning prescription
 
 这三句不要合并。目标是防止把“相关”读成“已经证明机制”。
 
-## 3. Active Expressions · 4 min
+## 3. Active Expressions · 3 min
 
 ### [[words/consolidate|consolidate]]
 
@@ -212,7 +212,7 @@ Retrieval cue：
 
 > The KEY point / is what happens AFTER practice / when new learning is still being CONSOLIDATED.
 
-## 5. Speaking · 4 min
+## 5. Speaking · 3 min
 
 **Core topic: When can we say that we have really learned something?**
 
@@ -226,7 +226,43 @@ Retrieval cue：
 
 > I would test retention by ______ rather than ______.
 
-## 6. Transfer & Retrieval · 1 min
+## 6. Writing · 5 min
+
+**Prompt:**  
+**What is the difference between understanding something today and truly learning it for the long term?**
+
+先不看结构提示，写 **80–120 words**。要求：
+
+- 至少主动使用一个今天的表达：**consolidate / retain**
+- 至少复用一个旧表达：**validate / account for / rather than**
+- 至少写出一个 **claim → reason → example** 的关系
+- 不要求复杂词汇，重点是把观点组织清楚
+
+写完后再检查这个最小结构：
+
+```text
+CLAIM
+What counts as real learning?
+        ↓
+REASON
+Why is immediate performance not enough?
+        ↓
+EXAMPLE
+Programming / mathematics / language learning
+        ↓
+TEST
+How could you validate lasting retention?
+```
+
+Self-check:
+
+- [ ] I stated one clear main claim.
+- [ ] I used at least one active expression from today.
+- [ ] I reused one older expression.
+- [ ] I connected sentences with meaning, not just with “and”.
+- [ ] I can still explain the paragraph without rereading it.
+
+## 7. Transfer & Retrieval · 1 min
 
 不看上文，反向调用：
 
@@ -239,7 +275,7 @@ Retrieval cue：
 
 [[words/consolidate|consolidate]] · [[words/retain|retain]] · [[words/validate|validate]] · [[words/account-for|account for]]
 
-## 7. Reflection · 1 min
+## 8. Reflection · 1 min
 
 > Listening breakdown: ______.  
 > Global model: I lost the argument at ______ → ______.  
