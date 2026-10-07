@@ -2,7 +2,7 @@
 type: map
 title: English Learning Connections
 created: 2026-10-02
-updated: 2026-10-02
+updated: 2026-10-08
 tags:
   - english
   - connections
@@ -153,6 +153,12 @@ Connections:
 **get stuck · keep track of · underlying · suggest that · in response to · scale · without sacrificing**
 
 > 是否进入主动词汇，要以后续“不给英文提示时能否调用”为准。
+
+## 2026-10-08 · Cycling and Evidence
+
+- [[EnglishLearning/2026-10-08-English-Cycling-Infrastructure-Evidence-and-Choice|10-08]] — **Question → Comparison → Data → Finding → Caution** · transport choices and research evidence.
+
+New expressions: **be associated with**, **lower the barrier to**. Reuse **validate** to distinguish findings from assumptions.
 
 ## Review Rule
 
