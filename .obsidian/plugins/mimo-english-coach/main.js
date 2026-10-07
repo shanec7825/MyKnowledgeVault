@@ -21,7 +21,8 @@ const DEFAULT_SETTINGS = {
   voice: "Mia",
   folder: "EnglishLearning",
   encryptedKey: "",
-  maxLibraryDays: 60
+  maxLibraryDays: 60,
+  inlineVoiceButtons: true
 };
 
 function localDay(date = new Date()) {
@@ -152,6 +153,54 @@ class EnglishCoachPlugin extends Plugin {
         await view.analyzeToday();
       }
     });
+    this.registerObsidianProtocolHandler("mimo-tts", async params => {
+      const text = String(params?.text || "").trim();
+      if (!text) return;
+      try {
+        await this.speak(text);
+      } catch (e) {
+        new Notice(e.message, 6000);
+      }
+    });
+
+    this.registerMarkdownPostProcessor((el, ctx) => {
+      if (!this.settings.inlineVoiceButtons) return;
+      const prefix = this.settings.folder.replace(/\/+$/, "") + "/";
+      if (!ctx.sourcePath.startsWith(prefix)) return;
+      if (!/\/\d{4}-\d{2}-\d{2}-English-.+\.md$/.test("/" + ctx.sourcePath)) return;
+
+      const targets = [...el.querySelectorAll("p, li, h2, h3, blockquote")];
+      for (const target of targets) {
+        if (target.closest(".mec-tts-ignore")) continue;
+        if (target.querySelector(":scope > .mec-inline-tts")) continue;
+        if (target.tagName === "P" && target.parentElement?.tagName === "LI") continue;
+
+        const text = target.innerText?.trim();
+        if (!text || text.length < 2 || text.length > 2200) continue;
+        if ((text.match(/[A-Za-z]/g) || []).length < 2) continue;
+
+        target.addClass("mec-tts-target");
+        const btn = target.createEl("button", {
+          cls: "mec-inline-tts",
+          attr: {
+            type: "button",
+            "aria-label": "Read with MiMo",
+            title: "Read with MiMo"
+          }
+        });
+        btn.setText("🔊");
+        btn.onclick = async ev => {
+          ev.preventDefault();
+          ev.stopPropagation();
+          try {
+            await this.speak(text);
+          } catch (e) {
+            new Notice(e.message, 6000);
+          }
+        };
+      }
+    });
+
     this.addCommand({
       id: "speak-selection",
       name: "Speak selected text with MiMo",
@@ -294,7 +343,16 @@ class EnglishCoachPlugin extends Plugin {
     return result.trim();
   }
 
+  stopSpeech() {
+    if (this.currentAudio) {
+      try { this.currentAudio.pause(); } catch {}
+      try { URL.revokeObjectURL(this.currentAudio.src); } catch {}
+      this.currentAudio = null;
+    }
+  }
+
   async speak(text) {
+    this.stopSpeech();
     const key = await this.getKey();
     if (!key) throw new Error("Configure your MiMo Token Plan API key first.");
 
@@ -332,7 +390,11 @@ class EnglishCoachPlugin extends Plugin {
     const bytes = Uint8Array.from(atob(b64), c => c.charCodeAt(0));
     const url = URL.createObjectURL(new Blob([bytes], { type: "audio/wav" }));
     const audio = new Audio(url);
-    audio.addEventListener("ended", () => URL.revokeObjectURL(url), { once: true });
+    this.currentAudio = audio;
+    audio.addEventListener("ended", () => {
+      URL.revokeObjectURL(url);
+      if (this.currentAudio === audio) this.currentAudio = null;
+    }, { once: true });
     await audio.play();
   }
 
@@ -1000,6 +1062,17 @@ class EnglishCoachSettings extends PluginSettingTab {
             b.setDisabled(false);
             b.setButtonText("Test");
           }
+        }));
+
+    new Setting(containerEl)
+      .setName("Inline read buttons")
+      .setDesc("In reading mode, show a subtle MiMo speaker button when you hover EnglishLearning paragraphs.")
+      .addToggle(t => t
+        .setValue(this.plugin.settings.inlineVoiceButtons)
+        .onChange(async value => {
+          this.plugin.settings.inlineVoiceButtons = value;
+          await this.plugin.saveSettings();
+          this.plugin.refreshViews();
         }));
 
     new Setting(containerEl)
