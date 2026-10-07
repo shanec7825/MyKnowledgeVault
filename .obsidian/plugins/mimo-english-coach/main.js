@@ -646,8 +646,7 @@ class EnglishCoachView extends ItemView {
 
     const bar = body.createDiv({ cls: "mec-library-bar" });
     const input = bar.createEl("input", {
-      type: "search",
-      placeholder: "Search topics…"
+      attr: { type: "search", placeholder: "Search topics…" }
     });
 
     const list = body.createDiv({ cls: "mec-library" });
@@ -717,22 +716,18 @@ class EnglishCoachView extends ItemView {
     const contextRow = body.createDiv({ cls: "mec-context-row" });
 
     const mode = contextRow.createEl("select");
-    mode.createEl("option", {
-      value: "today",
-      text: "Today / selected day"
-    });
-    mode.createEl("option", {
-      value: "week",
-      text: "Last 7 days"
-    });
+    const todayOption = mode.createEl("option", { text: "Today / selected day" });
+    todayOption.value = "today";
+    const weekOption = mode.createEl("option", { text: "Last 7 days" });
+    weekOption.value = "week";
 
     const noteSelect = contextRow.createEl("select");
 
     notes.slice(0, 30).forEach(n => {
       const opt = noteSelect.createEl("option", {
-        value: n.file.path,
         text: n.date + " · " + n.topic
       });
+      opt.value = n.file.path;
 
       if (this.selectedPath === n.file.path) opt.selected = true;
     });
