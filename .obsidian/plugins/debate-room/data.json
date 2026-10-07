@@ -1,5 +1,7 @@
 {
   "nodePath": "C:\\Program Files\\nodejs\\node.exe",
   "exportFolder": "论场",
-  "pythonPath": ""
+  "pythonPath": "",
+  "autoExport": true,
+  "exportFormat": "both"
 }

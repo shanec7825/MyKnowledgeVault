@@ -91,7 +91,7 @@ function bind(){
   if($('#library-search'))$('#library-search').oninput=e=>{const q=e.target.value.toLowerCase();$('#library-results').innerHTML=state.data.library.filter(s=>JSON.stringify(s).toLowerCase().includes(q)).map(sourceCard).join('')||'<p class="hint">没有匹配的资料。</p>';};
   if($('#role-form'))$('#role-form').onsubmit=async e=>{e.preventDefault();try{const p=await api('/api/presets',Object.fromEntries(new FormData(e.target)));state.data.customPresets.push(p);resetCharacterFilters();render();toast('角色已保存，可在配置辩手时选择');}catch(e){toast(e.message);}};
   if($('#settings-form'))$('#settings-form').onsubmit=async e=>{e.preventDefault();const b=Object.fromEntries(new FormData(e.target));for(const k of ['apiKey','tavilyKey']){if(!b[k])delete b[k];else if(b[k]==='-')b[k]='';}try{state.data.settings=await api('/api/settings',b);render();toast('连接已保存');}catch(e){toast(e.message);}};
-  if($('#voice-form'))$('#voice-form').onsubmit=async e=>{e.preventDefault();try{state.data.voiceSettings=await api('/api/voice/settings',Object.fromEntries(new FormData(e.target)));stopPlayback();toast('语音设置已保存');}catch(error){toast(error.message);}};
+  if($('#voice-form'))$('#voice-form').onsubmit=async e=>{e.preventDefault();const input=Object.fromEntries(new FormData(e.target));if(!input.apiKey)delete input.apiKey;try{state.data.voiceSettings=await api('/api/voice/settings',input);stopPlayback();render();toast('语音设置已保存');}catch(error){toast(error.message);}};
   document.querySelectorAll('[data-voice-preview]').forEach(b=>b.onclick=()=>speak({content:b.dataset.voicePreview.startsWith('en-')?'Welcome to Debate Room. Let us make a clear argument and respond thoughtfully.':'欢迎来到论场。让我们用清晰的理由，展开一场有质量的辩论。',language:b.dataset.voicePreview.startsWith('en-')?'en':'zh',side:b.dataset.voicePreview.replace(/^en-/,'')},{replace:true}));
   if($('#stop-preview'))$('#stop-preview').onclick=stopPlayback;
   if($('#test-search')){
@@ -146,7 +146,7 @@ function dictate(){
 }
 if('speechSynthesis' in window){voices=speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>voices=speechSynthesis.getVoices();}
 try{
-  state.data=await api('/api/bootstrap');if(state.data.features?.voice){neuralVoice=await import('./voice.js');renderVoiceSettings=(await import('./voice-settings.js')).voiceSettings;}state.agents=[{...state.data.presets[0],side:'pro'},{...state.data.presets[4],side:'con'}];
+  state.data=await api('/api/bootstrap');if(state.data.features?.voice){neuralVoice=await import('./voice.js');renderVoiceSettings=(await import('./voice-controls.js')).voiceSettings;}state.agents=[{...state.data.presets[0],side:'pro'},{...state.data.presets[4],side:'con'}];
   try{
     const saved=JSON.parse(sessionStorage.getItem('debate-setup-v1')||'{}');
     if(typeof saved.topic==='string'&&saved.topic.length<=500)state.draftTopic=saved.topic;

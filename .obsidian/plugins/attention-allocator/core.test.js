@@ -4,6 +4,83 @@ const assert = require("node:assert/strict");
 const http = require("node:http");
 const { DEFAULTS, within, qmdPath, redact, parsePlan, buildMessages, generatePlan, generateSummary, generateImage, jsonRequest, QmdClient, Mem0Client, shanghaiClock, journalEntry, appendJournal, publicUrl, memoryImportRows, streamPreview, journalCallout, conversationText, normalizeJournalCallouts, diaryCards } = require("./core");
 const plan = { title: "改一个颜色", currentInterest:'角色配色',targetActivity:'网页编程',bridge:'用角色配色练习CSS', steps: ["把蓝色改为绿色"], doneWhen: "看见颜色变化", minutes: 2, material: "```css\ncolor: green;\n```" };
+test('opening a journal targets its latest conversation rather than a later artifact or summary',()=>{
+  const {latestConversationLine}=require('./core');
+  const text='# Diary\n- 09:00 earlier\nhello\n<!-- attention:one:conversation -->\n- 11:00 latest\nhello\n<!-- attention:two:conversation -->\n- 12:00 audio\n<!-- attention:two-artifact-0:output -->';
+  assert.equal(latestConversationLine(text),5);
+  assert.equal(latestConversationLine(text+'\n- 10:00 late saved\n<!-- attention:old:conversation -->'),5);
+  assert.equal(latestConversationLine('- 09:00 note\n- 10:00 note'),2);
+  assert.equal(latestConversationLine(''),1);assert.equal(latestConversationLine('# Diary\n\nHello\n'),3);
+});
+test('multimodal plans keep complete bounded files and reject oversized HTML',()=>{
+  const artifacts=[{type:'html',title:'Experiment',content:'<button>Try</button>'},{type:'mermaid',content:'graph TD; A-->B'},{type:'audio',content:'Listen to this thought.'}];
+  assert.equal(parsePlan(JSON.stringify({...plan,artifacts}),[]).artifacts.length,3);
+  assert.throws(()=>parsePlan(JSON.stringify({...plan,artifacts:[{type:'html',content:'x'.repeat(24001)}]}),[]),/作品过长/);
+});
+test('HTML runs inside an opaque sandbox with network denied and real audio embedded',()=>{
+  const {artifactHtml}=require('./core');const html=artifactHtml('<audio id="attention-audio" controls></audio><script>window.x=1</script>',Buffer.from('RIFF'));
+  assert.ok(html.includes('sandbox="allow-scripts"'));assert.ok(!html.includes('allow-same-origin'));assert.ok(html.includes("connect-src 'none'"));assert.ok(html.includes('data:audio/wav;base64,UklGRg=='));
+});
+test('MiMo speech uses assistant text and validates returned WAV with matching Xiaomi credentials',async()=>{
+  const {generateAudio}=require('./core');const wav=Buffer.alloc(44);wav.write('RIFF');wav.write('WAVE',8);let calls=0;
+  const request=async(url,options)=>{calls++;assert.equal(url,'https://api.xiaomimimo.com/v1/chat/completions');assert.equal(options.body.messages[1].role,'assistant');assert.equal(options.body.audio.format,'wav');assert.equal(options.body.audio.voice,'茉莉');return {choices:[{message:{audio:{data:wav.toString('base64')}}}]};};
+  assert.deepEqual(await generateAudio({text:'你好',settings:{region:'api',audioVoice:'茉莉'},key:'test-key',request}),wav);
+  await assert.rejects(generateAudio({text:'你好',settings:{region:'api'},key:'tp-test',request}),/不匹配/);
+  await assert.rejects(generateAudio({text:'你好',settings:{aiEnabled:false},key:'test-key',request}),/off/);assert.equal(calls,1);
+  await assert.rejects(generateAudio({text:'你好',settings:{region:'api'},key:'test-key',request:async()=>({choices:[{message:{audio:{data:Buffer.from('not audio').toString('base64')}}}]})}),/WAV/);
+});
+test('speech reuses each Token Plan cluster and refuses mismatched keys without fallback',async()=>{
+  const {generateAudio,ENDPOINTS}=require('./core');const wav=Buffer.alloc(44);wav.write('RIFF');wav.write('WAVE',8);
+  for(const region of ['cn','sgp','ams']){
+    let calls=0;const request=async(url,options)=>{calls++;assert.equal(url,ENDPOINTS[region]+'/chat/completions');assert.equal(options.headers.Authorization,'Bearer tp-example');return {choices:[{message:{audio:{data:wav.toString('base64')}}}]};};
+    await generateAudio({text:'你好',settings:{region},key:'tp-example',request});assert.equal(calls,1);
+    await assert.rejects(generateAudio({text:'你好',settings:{region},key:'sk-example',request}),/不匹配/);assert.equal(calls,1);
+  }
+});
+test('audio direction follows the scene, keeps voice stable, and can lock to the default style',async()=>{
+  const {generateAudio}=require('./core');const wav=Buffer.alloc(44);wav.write('RIFF');wav.write('WAVE',8);const payloads=[];
+  const request=async(url,options)=>{payloads.push(options.body);return {choices:[{message:{audio:{data:wav.toString('base64')}}}]};};
+  const settings={region:'cn',audioVoice:'茉莉',audioStyle:'舒缓默认'};
+  await generateAudio({text:'(好奇)试试这个。',style:'轻快好奇，最后留出停顿',settings,key:'tp-example',request});
+  await generateAudio({text:'休息一下。',style:'温柔而疲惫，语速慢一点',settings,key:'tp-example',request});
+  await generateAudio({text:'开始吧。',style:'兴奋',settings:{...settings,audioAutoStyle:false},key:'tp-example',request});
+  await generateAudio({text:'你好。',settings,key:'tp-example',request});
+  assert.deepEqual(payloads.map(x=>x.messages[0].content),['轻快好奇，最后留出停顿','温柔而疲惫，语速慢一点','舒缓默认','舒缓默认']);
+  assert.ok(payloads.every(x=>x.audio.voice==='茉莉'));assert.equal(payloads[0].messages[1].content,'(好奇)试试这个。');
+  const result=parsePlan(JSON.stringify({...plan,artifacts:[{type:'audio',content:'声音稿',style:'x'.repeat(1200)}]}),[]);assert.equal(result.artifacts[0].style.length,1000);
+  const context={notes:[],memories:[],recent:[]};assert.equal(JSON.parse(buildMessages('hello',{...DEFAULTS,audioAutoStyle:false,audioStyle:'默认'},context)[1].content).voiceDirection.automatic,false);
+});
+test('artifact links stay with the originating diary conversation',()=>{
+  const parent=journalEntry({id:'conversation-id',kind:'conversation',text:conversationText({input:'hello',plan})});
+  const child=journalEntry({id:'conversation-id-artifact-0',kind:'output',text:'[[calendar/assets/attention-test.html]]'});
+  const cards=diaryCards(parent.entry+child.entry);assert.equal(cards.length,1);assert.ok(cards[0].body.includes('attention-test.html'));
+});
+test('artifact export saves real files, journal links and retries without duplicate files or records',async()=>{
+  const source=require('node:fs').readFileSync(require('node:path').join(__dirname,'plugin.js'),'utf8');
+  class Base{};const obsidian={Plugin:Base,ItemView:Base,PluginSettingTab:Base,Modal:Base};const module={exports:{}};
+  new Function('require','module',source)(name=>name==='obsidian'?obsidian:require(name),module);
+  const plugin=new module.exports(),files=new Map(),records=[];
+  plugin.settings={};plugin.persist=async()=>{};plugin.writeJournal=async record=>records.push(record);
+  plugin.app={vault:{getAbstractFileByPath:relative=>files.get(relative),createFolder:async relative=>files.set(relative,{}),create:async(relative,content)=>files.set(relative,{path:relative,content})}};
+  const activity={id:'unit-test',conversationSaved:true,plan:{title:'Demo',artifacts:[{type:'html',title:'Try',content:'<button>Try</button>'},{type:'mermaid',title:'Map',content:'graph TD; A-->B'}]}};
+  await plugin.createArtifacts(activity);await plugin.createArtifacts(activity);
+  assert.equal(files.size,3);assert.equal(records.length,2);assert.equal(activity.artifacts.length,2);
+  assert.ok(records[0].text.includes('obsidian://attention-artifact?path='));assert.ok(files.get(activity.artifacts[1].path).content.includes('```mermaid'));
+  plugin.settings.aiEnabled=false;await assert.rejects(plugin.createArtifacts(activity),/off/);
+});
+test('diary reopening prefers new content, otherwise resumes the last viewed card',()=>{
+  const {diarySelection}=require('./core');const cards=[{id:'newest'},{id:'earlier'}];
+  assert.equal(diarySelection(cards,{latestId:'newest',cardId:'earlier'}),'earlier');
+  assert.equal(diarySelection(cards,{latestId:'old',cardId:'earlier'}),'newest');
+  assert.equal(diarySelection(cards,{latestId:'newest',cardId:'deleted'}),'newest');
+  assert.equal(diarySelection(cards,undefined,'earlier'),'earlier');assert.equal(diarySelection([],{}),null);
+});
+test('continued conversations carry chronological turns and new conversations have no thread',()=>{
+  const {conversationHistory}=require('./core');const activities=[{id:'b',parentId:'a',input:'Second',plan:{title:'Reply two'}},{id:'a',input:'First',plan:{title:'Reply one'}}];
+  const history=conversationHistory(activities,'b');assert.deepEqual(history.map(x=>x.role),['user','assistant','user','assistant']);
+  assert.equal(history[0].content,'First');assert.equal(history[2].content,'Second');assert.deepEqual(conversationHistory(activities,null),[]);
+  activities[1].parentId='b';assert.equal(conversationHistory(activities,'b').length,4);
+});
 test('conversation learning queues only user evidence and feedback has a separate event',async()=>{
   const client=new Mem0Client(process.cwd());client.ensure=async()=>({});let payload;
   client.call=async(route,body)=>{assert.equal(route,'/capture');payload=body;return {status:'queued'};};
@@ -277,3 +354,4 @@ test('image generation uses an independent credential and validates actual image
   await assert.rejects(generateImage({prompt:'x',settings,key:'tp-never-leak'}),/不能发送/);
   await assert.rejects(generateImage({prompt:'x',settings,key:'image-test',request:async()=>({data:[{b64_json:Buffer.from('<script>').toString('base64')}]})}),/不支持|不是支持/);
 });
+

@@ -3,12 +3,18 @@
 const { Plugin, ItemView, PluginSettingTab, Setting, Notice, MarkdownRenderer, Modal, TFile } = require("obsidian");
 const path = require("node:path");
 const { randomUUID, createHash } = require("node:crypto");
-const { DEFAULTS, QmdClient, Mem0Client, generatePlan, generateSummary, generateImage, redact, shanghaiClock, journalEntry, appendJournal, memoryImportRows, journalCallout, conversationText, normalizeJournalCallouts, diaryCards, aiReadable } = require("./core");
+const { latestConversationLine, artifactHtml, generateAudio, within, DEFAULTS, QmdClient, Mem0Client, generatePlan, generateSummary, generateImage, redact, shanghaiClock, journalEntry, appendJournal, memoryImportRows, journalCallout, conversationText, normalizeJournalCallouts, diaryCards, aiReadable, diarySelection, conversationHistory } = require("./core");
 
 const VIEW = "attention-allocator-home";
 const STATE = ".vault-meta/attention-allocator/state.json";
 
+
 const ZH = {
+  'Voice preview':'音色试听', 'Preview':'试听', 'Use this voice':'使用此音色', 'Automatic style':'情境风格', 'Default style':'默认风格', 'Custom':'自定义', 'Gentle':'舒缓', 'Curious':'好奇', 'Clear':'利落', 'Story':'故事',
+  'Audio':'声音', 'Audio model':'声音模型', 'Voice':'音色', 'Voice style':'声音风格', 'Audio key':'声音密钥', 'Separate MiMo API key':'独立 MiMo API 密钥', 'Generate audio':'生成声音', 'Creating audio…':'生成声音中…', 'Export works':'生成作品文件',
+  'Record outcome':'记录成果', 'Continue conversation':'继续对话', 'New conversation':'新建对话',
+  'Focus complete. Take a break.':'专注时间结束，休息一下。', 'Break complete.':'休息时间结束。', 'Timer complete':'计时结束', 'OK':'知道了',
+  'Reply here…':'在这里继续对话…', 'Continuing':'正在继续对话',
   'Start service':'启动服务', 'Auto learn':'自动提取', 'Learn latest':'提取最近对话',
   'Learn this':'提取这段对话', 'All notes':'全部笔记', 'Knowledge':'知识笔记', 'Journals':'日记',
   'Recent journals':'近期日记', 'No matching notes':'没有匹配的知识笔记',
@@ -87,7 +93,7 @@ function watchLanguage(root, plugin) {
   return observer;
 }
 class LocalizedModal extends Modal {
-  open() { super.open();this.languageObserver=watchLanguage(this.contentEl,this.app.plugins.plugins['attention-allocator']); }
+  open() { super.open();this.languageObserver=watchLanguage(this.contentEl,this.app.plugins.plugins['attention-allocator'] || {settings:{language:'zh'}}); }
   close() { this.languageObserver?.disconnect();super.close(); }
 }
 
@@ -125,6 +131,36 @@ class ReadModal extends LocalizedModal {
     MarkdownRenderer.render(this.app,this.text,this.contentEl.createDiv({cls:'aa-memo-body'}),'',this).catch(()=>new Notice('Unable to render entry'));
   }
   onClose() { this.contentEl.empty(); }
+}
+
+class VoicePreviewModal extends LocalizedModal {
+  constructor(app,plugin,refresh){super(app);this.plugin=plugin;this.refresh=refresh;}
+  onOpen(){
+    this.plugin.voicePreviewModal?.close();this.plugin.voicePreviewModal=this;
+    this.contentEl.createEl('h2',{text:'Voice preview'});
+    const voice=new Setting(this.contentEl).setName('Voice');
+    this.voice=this.plugin.settings.audioVoice;
+    voice.addDropdown(c=>{for(const name of ['mimo_default','冰糖','茉莉','苏打','白桦','Mia','Chloe','Milo','Dean'])c.addOption(name,name);c.setValue(this.voice).onChange(value=>{this.voice=value;});});
+    const style=this.contentEl.createEl('textarea',{cls:'aa-modal-input',attr:{'aria-label':'Voice style',maxlength:'1000'}});style.value=this.plugin.settings.audioStyle;
+    new Setting(this.contentEl).setName('Voice style').addDropdown(c=>c.addOption('custom','Custom').addOption('gentle','Gentle').addOption('curious','Curious').addOption('clear','Clear').addOption('story','Story').onChange(value=>{
+      const styles={gentle:'温柔舒缓，语速偏慢，句间自然停顿，不说教。',curious:'轻快好奇，略带俏皮，语调有变化，不夸张。',clear:'清楚利落，语速适中，重点略加重音，行动邀请轻巧。',story:'像讲一段有画面的故事，情绪有层次，留出想象的停顿。'};if(styles[value])style.value=styles[value];
+    }));
+    this.audio=this.contentEl.createEl('audio',{attr:{controls:'',preload:'none','aria-label':'Voice preview'}});this.audio.style.width='100%';
+    const tools=this.contentEl.createDiv({cls:'aa-tools'});
+    this.previewButton=button(tools,'Preview',async()=>{
+      this.controller=new AbortController();this.plugin.jobs.add(this.controller);
+      try{
+        const bytes=await this.plugin.previewVoice(this.voice,style.value,this.controller.signal);
+        if(this.controller.signal.aborted||!this.audio.isConnected)return;
+        this.audio.pause();if(this.url)URL.revokeObjectURL(this.url);
+        this.url=URL.createObjectURL(new Blob([bytes],{type:'audio/wav'}));this.audio.src=this.url;this.audio.load();
+        await this.audio.play().catch(()=>{});
+      }catch(e){if(!this.controller.signal.aborted)throw e;}finally{this.plugin.jobs.delete(this.controller);}
+    },true);
+    button(tools,'Stop',()=>{this.controller?.abort();this.audio.pause();});
+    button(tools,'Use this voice',async()=>{this.plugin.settings.audioVoice=this.voice;await this.plugin.saveSettings();this.close();this.refresh?.();});
+  }
+  onClose(){this.controller?.abort();this.audio?.pause();if(this.url)URL.revokeObjectURL(this.url);if(this.plugin.voicePreviewModal===this)this.plugin.voicePreviewModal=null;this.contentEl.empty();}
 }
 
 class MemoryImportModal extends LocalizedModal {
@@ -259,6 +295,7 @@ class AttentionPlugin extends Plugin {
     this.generatePlan = generatePlan;
     this.generateSummary = generateSummary;
     this.generateImage = generateImage;
+    this.registerObsidianProtocolHandler('attention-artifact',params=>this.openArtifact(params.path).catch(e=>new Notice(redact(e.message))));
     this.journalTail = Promise.resolve();
     const todayFile = this.app.vault.getAbstractFileByPath(`calendar/${shanghaiClock().day}.md`);
     if (todayFile instanceof TFile) {
@@ -296,6 +333,8 @@ class AttentionPlugin extends Plugin {
   }
   onunload() {
     this.disposed = true;
+    this.voicePreviewModal?.close();this.voicePreviewCache?.clear();
+    this.timerModal?.close();this.timerAudio?.close().catch(()=>{});
     clearTimeout(this.journalIndexTimer);
     for (const job of this.jobs || []) job.abort();
     this.jobs?.clear();
@@ -306,12 +345,13 @@ class AttentionPlugin extends Plugin {
     const timer = this.state.pomodoro;
     if (timer.deadline && Date.now() >= timer.deadline) {
       timer.deadline = null; timer.remaining = 0;
-      new Notice(timer.phase === 'focus' ? 'Focus complete. Take a break.' : 'Break complete.', 8000);
+      this.notifyTimer(timer.phase);
       this.persist().catch(e => new Notice(e.message));
     }
     for (const leaf of this.app.workspace.getLeavesOfType(VIEW)) leaf.view.updatePomodoro?.();
   }
   async controlPomodoro(action) {
+    if(action==='toggle')await this.prepareTimerSound();
     const timer = this.state.pomodoro;
     const duration = () => (timer.phase === 'break' ? 5 : 25) * 60 * 1000;
     if (action === 'toggle') {
@@ -328,6 +368,27 @@ class AttentionPlugin extends Plugin {
     }
     this.tickPomodoro();
     await this.persist();
+  }
+  async prepareTimerSound() {
+    try {
+      const Context=window.AudioContext || window.webkitAudioContext;
+      if(Context){this.timerAudio ||= new Context();await this.timerAudio.resume();}
+    } catch {new Notice(this.settings.language==='en'?'Sound unavailable; popup is enabled':'声音不可用，到时仍会弹窗提醒');}
+  }
+  notifyTimer(phase) {
+    const message=uiText(this.settings.language,phase==='focus'?'Focus complete. Take a break.':'Break complete.');
+    new Notice(message,12000);
+    this.timerModal?.close();const modal=this.timerModal=new LocalizedModal(this.app);
+    modal.contentEl.createEl('h2',{text:'Timer complete'});modal.contentEl.createEl('p',{text:message});
+    button(modal.contentEl,'OK',()=>modal.close(),true);modal.open();
+    const context=this.timerAudio;
+    if(context?.state==='running')for(let i=0;i<3;i++){
+      const oscillator=context.createOscillator(),gain=context.createGain(),at=context.currentTime+i*.3;
+      oscillator.type='sine';oscillator.frequency.value=i===1?784:659;
+      gain.gain.setValueAtTime(0,at);gain.gain.linearRampToValueAtTime(.12,at+.02);gain.gain.exponentialRampToValueAtTime(.001,at+.2);
+      oscillator.connect(gain);gain.connect(context.destination);oscillator.start(at);oscillator.stop(at+.22);
+      oscillator.onended=()=>{oscillator.disconnect();gain.disconnect();};
+    }
   }
   async getKey() {
     if (this.sessionKey) return this.sessionKey;
@@ -360,6 +421,85 @@ class AttentionPlugin extends Plugin {
     this.sessionImageKey = value.trim(); this.settings.encryptedImageKey = '';
     if (this.sessionImageKey && this.secretStorage?.isEncryptionAvailable()) this.settings.encryptedImageKey = this.secretStorage.encryptString(this.sessionImageKey).toString('base64');
     await this.saveSettings(); new Notice(this.settings.encryptedImageKey ? '图片 Key 已加密保存' : '图片 Key 仅保留本次会话，或已清除');
+  }
+  async getAudioKey() { return this.getKey(); }
+  async previewVoice(voice,style,signal){
+    const settings={...this.settings,audioVoice:voice,audioAutoStyle:true},key=await this.getAudioKey();
+    if(settings.aiEnabled===false)throw new Error('AI reading is off');
+    const english=['Mia','Chloe','Milo','Dean'].includes(voice)||(voice==='mimo_default'&&settings.region!=='cn');
+    const text=english?'Let us follow a small spark of curiosity. What would you like to discover next?':'先跟着一点好奇走。你想从哪个小小的发现开始？';
+    const id=createHash('sha256').update(JSON.stringify([key,settings.region,settings.audioModel,voice,style,text])).digest('hex');
+    this.voicePreviewCache||=new Map();
+    if(this.voicePreviewCache.has(id)){const data=this.voicePreviewCache.get(id);this.voicePreviewCache.delete(id);this.voicePreviewCache.set(id,data);return data;}
+    const data=await generateAudio({text,style,settings,key,signal});
+    if(signal?.aborted)throw new Error('已取消');
+    this.voicePreviewCache.set(id,data);
+    while([...this.voicePreviewCache.values()].reduce((sum,item)=>sum+item.length,0)>8*1024*1024||this.voicePreviewCache.size>8)this.voicePreviewCache.delete(this.voicePreviewCache.keys().next().value);
+    return data;
+  }
+  async openArtifact(relative) {
+    within(this.root,relative);
+    if(!relative.startsWith('calendar/assets/attention-'))throw new Error('无效作品路径');
+    const file=this.app.vault.getAbstractFileByPath(relative);
+    if(!(file instanceof TFile))throw new Error('作品文件不存在');
+    if(file.extension!=='html')return this.openNote(relative);
+    const browser=this.app.internalPlugins.getPluginById('webviewer');
+    if(!browser?.enabled)throw new Error('请启用 Obsidian Web Viewer');
+    // Web Viewer rejects file:// URLs; serve only explicitly opened artifacts on loopback.
+    if(!this.artifactServer){
+      const http=require('node:http');this.artifactRoutes=new Map();
+      this.artifactServer=http.createServer(async(req,res)=>{
+        const route=this.artifactRoutes.get(req.url);
+        if(req.method!=='GET'||!route){res.writeHead(404);res.end();return;}
+        try{
+          const html=await this.app.vault.adapter.read(route);
+          res.writeHead(200,{'Content-Type':'text/html; charset=utf-8','X-Content-Type-Options':'nosniff','Cache-Control':'no-store'});res.end(html);
+        }catch{res.writeHead(404);res.end();}
+      });
+      const server=this.artifactServer;
+      try{await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(0,'127.0.0.1',resolve);});}
+      catch(e){server.close();this.artifactServer=null;throw e;}
+      server.on('error',()=>new Notice('作品预览服务异常'));this.register(()=>server.close());
+    }
+    let route=[...this.artifactRoutes].find(([,file])=>file===relative)?.[0];
+    if(!route){route='/'+randomUUID();this.artifactRoutes.set(route,relative);}
+    browser.instance.openUrl('http://127.0.0.1:'+this.artifactServer.address().port+route,'tab');
+  }
+  async createArtifacts(activity,signal,audioOnly=false) {
+    this.artifactBusy||=new Set();if(this.artifactBusy.has(activity.id))throw new Error('Wait for the current request');
+    this.artifactBusy.add(activity.id);
+    try{return await this.saveArtifacts(activity,signal,audioOnly);}finally{this.artifactBusy.delete(activity.id);}
+  }
+  async saveArtifacts(activity,signal,audioOnly=false) {
+    if(this.settings.aiEnabled===false)throw new Error('AI reading is off');
+    if(!/^[\w-]+$/.test(activity.id))throw new Error('无效作品 ID');
+    const specs=activity.plan.artifacts||[];activity.artifacts||=[];
+    const folder='calendar/assets';if(!this.app.vault.getAbstractFileByPath(folder))await this.app.vault.createFolder(folder);
+    for(let index=0;index<specs.length;index++){
+      const spec=specs[index];if(audioOnly&&spec.type!=='audio')continue;
+      let saved=activity.artifacts.find(x=>x.index===index);
+      if(!saved){
+        if(spec.type==='audio'&&!audioOnly)continue;
+        if(signal?.aborted)throw new Error('已取消');
+        const extension={html:'html',mermaid:'md',audio:'wav'}[spec.type];if(!extension)continue;
+        const relative=`${folder}/attention-${activity.id}-${index}.${extension}`;
+        const existing=this.app.vault.getAbstractFileByPath(relative);
+        if(!existing){
+          if(spec.type==='audio'){
+            const data=await generateAudio({text:spec.content,style:spec.style,settings:this.settings,key:await this.getAudioKey(),signal});
+            await this.app.vault.createBinary(relative,data.buffer.slice(data.byteOffset,data.byteOffset+data.byteLength));
+          }else await this.app.vault.create(relative,spec.type==='html'?artifactHtml(spec.content):'```mermaid\n'+spec.content.replace(/^```(?:mermaid)?\s*|\s*```$/g,'')+'\n```\n');
+        }
+        saved={index,type:spec.type,title:spec.title,path:relative};activity.artifacts.push(saved);await this.persist();
+      }
+      if(activity.conversationSaved&&!saved.journalSaved){
+        const link=spec.type==='html'?`[HTML · ${index+1}](obsidian://attention-artifact?path=${encodeURIComponent(saved.path)})\n[[${saved.path}]]`:`[[${saved.path}]]`;
+        await this.writeJournal({id:activity.id+'-artifact-'+index,kind:'output',mode:'auto',title:activity.plan.title,text:journalCallout('tip','AI · '+spec.type,link+(spec.type==='audio'?'\n![['+saved.path+']]':''))});
+        saved.journalSaved=true;await this.persist();
+      }
+    }
+    const audio=activity.artifacts.find(x=>x.type==='audio');
+    if(audio){const bytes=Buffer.from(await this.app.vault.adapter.readBinary(audio.path));for(const file of activity.artifacts.filter(x=>x.type==='html'))await this.app.vault.modify(this.app.vault.getAbstractFileByPath(file.path),artifactHtml(specs[file.index].content,bytes));}
   }
   async createActivityImage(activity, signal) {
     const image = await this.generateImage({ prompt: activity.plan.imagePrompt, settings: this.settings, key: await this.getImageKey(), signal });
@@ -410,10 +550,11 @@ class AttentionPlugin extends Plugin {
     }).finally(() => { this.indexing = null; });
     return this.indexing;
   }
-  async openNote(notePath, line = 1) {
+  async openNote(notePath, line) {
     const file = this.app.vault.getAbstractFileByPath(notePath);
     if (!(file instanceof TFile)) throw new Error("笔记已移动或不存在");
-    await this.app.workspace.getLeaf(false).openFile(file, { eState: { line: Math.max(0, line - 1) } });
+    const targetLine=line ?? (/^calendar\/\d{4}-\d{2}-\d{2}\.md$/.test(notePath)?latestConversationLine(await this.app.vault.read(file)):1);
+    await this.app.workspace.getLeaf(false).openFile(file, { eState: { line: Math.max(0, targetLine - 1) } });
   }
   async remember(text) {
     await this.mem0.add(text);
@@ -576,6 +717,9 @@ class AttentionView extends ItemView {
     this.startButton = button(tools, "Continue", () => this.submit(), true);
     this.cancelButton = button(tools, "Cancel", () => this.controller?.abort());
     this.cancelButton.hidden = true;
+    this.replyLabel=tools.createEl('span',{cls:'aa-caption'});
+    this.newChatButton=button(tools,'New conversation',()=>this.newConversation());
+    this.updateConversation();
     this.updateAiMode();
     const timer=tools.createEl('details',{cls:'aa-timer-menu'});
     timer.createEl('summary',{text:'25:00',attr:{'aria-label':'Timer'}});
@@ -731,6 +875,7 @@ class AttentionView extends ItemView {
       return;
     }
     const submittedValue = this.input.value;
+    const parentId=this.replyTo || null;
     const input = submittedValue.trim();
     if (!input) { this.input.focus(); this.setStatus("Write a thought first"); return; }
     this.busy = true; this.startButton.disabled = true; this.cancelButton.hidden = false;
@@ -742,7 +887,7 @@ class AttentionView extends ItemView {
     try {
       const key = await this.plugin.getKey();
       if (!key) throw new Error("Add your Xiaomi key in Settings");
-      const settings = { ...this.plugin.settings };
+      const settings = { ...this.plugin.settings, audioConfigured:Boolean(key) };
       this.setStatus("Finding context…");
       const query = this.queryInput.value.trim() || input;
       const settled = await Promise.allSettled([
@@ -771,7 +916,7 @@ class AttentionView extends ItemView {
       const previewTitle = preview.createEl('h2');
       const previewGreeting = preview.createEl('p',{ cls:'aa-acknowledgement' });
       const previewMaterial = preview.createEl('pre',{ cls:'aa-stream-material' });
-      const context = { notes, memories, recent: this.plugin.state.activities };
+      const context = { notes, memories, recent: this.plugin.state.activities,conversation:conversationHistory(this.plugin.state.activities,parentId) };
       const generated = await this.plugin.generatePlan({ input, settings, context, key, signal: controller.signal, mode,
         onPartial: partial => {
           if (!this.alive || controller.signal.aborted || !preview.isConnected) return;
@@ -779,7 +924,7 @@ class AttentionView extends ItemView {
         } });
       if (generated.warning) warnings.push(generated.warning);
       active();
-      const activity = { id: randomUUID(), at: new Date().toISOString(), input: redact(input), plan: generated.plan, mode: generated.plan.mode || 'focus',
+      const activity = { id: randomUUID(), parentId,at: new Date().toISOString(), input: redact(input), plan: generated.plan, mode: generated.plan.mode || 'focus',
         status: "suggested", result: "", usage: generated.usage,
         sources: notes.map(({ path, title, line }) => ({ path, title, line })),
         memoryCount: memories.length, warnings };
@@ -795,11 +940,19 @@ class AttentionView extends ItemView {
         }
         this.plugin.state.draft = redact(this.input.value); await this.plugin.persist();
         this.selectedDay=shanghaiClock().day;this.selectedCardId=activity.id;
+        if(parentId){this.replyTo=activity.id;this.updateConversation();}
         this.resultEl.empty(); this.renderHistory();
       } catch (e) {
         warnings.push((activity.conversationSaved ? 'Journal saved; local state pending: ' : 'Reply saved locally; journal pending: ') + e.message);
         this.resultEl.empty(); this.renderHistory();
       }
+      try {
+        await this.plugin.createArtifacts(activity,controller.signal);
+        if(activity.plan.artifacts?.some(x=>x.type==='audio') && settings.audioConfigured){
+          this.setStatus('Creating audio…');await this.plugin.createArtifacts(activity,controller.signal,true);
+        }
+        active();this.renderHistory();
+      } catch(e){if(controller.signal.aborted)throw e;warnings.push('作品生成未完成：'+e.message);}
       if(settings.captureMemory) {
         try {await this.plugin.queueMemory(activity);}
         catch(e){warnings.push('记忆提取未提交：'+e.message);}
@@ -856,6 +1009,12 @@ class AttentionView extends ItemView {
     const more = journal ? card.createEl('details',{cls:'aa-entry-more'}) : card;
     if (journal) more.createEl('summary',{text:'More'});
     const additional = journal ? more.createDiv({cls:'aa-tools'}) : actions;
+    for(const file of activity.artifacts||[])button(additional,file.title||file.type,()=>this.plugin.openArtifact(file.path));
+    if(activity.plan.artifacts?.some(x=>x.type!=='audio'&&!(activity.artifacts||[]).some(y=>y.index===activity.plan.artifacts.indexOf(x)&&y.journalSaved)))button(additional,'Export works',async()=>{await this.plugin.createArtifacts(activity);await redraw();});
+    if(activity.plan.artifacts?.some(x=>x.type==='audio'&&!(activity.artifacts||[]).some(y=>y.type==='audio'&&y.journalSaved)))button(additional,'Generate audio',async()=>{
+      const controller=new AbortController();this.plugin.jobs.add(controller);
+      try{await this.plugin.createArtifacts(activity,controller.signal,true);await redraw();}finally{this.plugin.jobs.delete(controller);}
+    });
     if (journal && divergent) for (const perspective of activity.plan.perspectives || []) button(additional,perspective.title,async()=>{
       this.input.value=activity.input; await this.submit(`我想试试这个视角：${perspective.title}。问题：${perspective.question}。请引导思考并给出一个可以实践的动作。`);
     });
@@ -870,17 +1029,19 @@ class AttentionView extends ItemView {
       try { await this.plugin.createActivityImage(activity,controller.signal); await redraw(); }
       finally { this.plugin.jobs.delete(controller); }
     });
-    if (!divergent && !["done", "paused"].includes(activity.status)) button(actions, activity.status === "started" ? "Started ✓" : "Start", async () => {
+    if (!divergent && !["done", "paused"].includes(activity.status)) button(additional, activity.status === "started" ? "Started ✓" : "Start", async () => {
       const previous = { status: activity.status, startedAt: activity.startedAt };
       activity.status = "started"; activity.startedAt = new Date().toISOString();
       try { await this.plugin.persist(); } catch (e) { Object.assign(activity, previous); throw e; }
       await redraw(); this.renderHistory();
       this.setStatus("");
     }, true);
-    button(actions, "Done", () => new TextModal(this.app, "Your output", "Write, paste code, or link your work.", async result => {
+    button(actions,'Continue conversation',()=>{this.replyTo=activity.id;this.updateConversation();this.input.focus();this.contentEl.scrollTop=0;});
+    button(actions,'New conversation',()=>{this.newConversation();this.contentEl.scrollTop=0;});
+    button(additional, "Record outcome", () => new TextModal(this.app, "Your output", "Write, paste code, or link your work.", async result => {
       await this.plugin.finish(activity, "done", result); await redraw();
     }).open());
-    button(actions, "Pause", () => new TextModal(this.app, "Save a checkpoint", "Where will you pick up?", async result => {
+    button(additional, "Pause", () => new TextModal(this.app, "Save a checkpoint", "Where will you pick up?", async result => {
       await this.plugin.finish(activity, "paused", result); await redraw();
     }).open());
     if (!divergent) button(additional, "Make it smaller", async () => {
@@ -919,6 +1080,15 @@ class AttentionView extends ItemView {
     if (!this.alive || !this.todayEl) return;
     return this.renderToday().catch(error => { if(this.alive)this.setStatus(redact(error.message),true); });
   }
+  updateConversation() {
+    if(!this.replyLabel)return;
+    this.replyLabel.hidden=!this.replyTo;this.newChatButton.hidden=!this.replyTo;
+    this.replyLabel.setText(uiText(this.plugin.settings.language,'Continuing'));
+    this.input.placeholder=uiText(this.plugin.settings.language,this.replyTo?'Reply here…':'What’s on your mind?');
+  }
+  newConversation() {
+    this.replyTo=null;this.updateConversation();this.input.focus();
+  }
   openCollection(kind) {
     const modal=new LocalizedModal(this.app);
     modal.contentEl.createEl('h2',{text:kind==='recent'?'Recent':'Library'});
@@ -929,7 +1099,7 @@ class AttentionView extends ItemView {
         info.createEl('strong',{text:item.plan.title});
         info.createEl('span',{text:uiText(this.plugin.settings.language,names[item.status]||item.status)+' · '+shanghaiClock(new Date(item.at)).day});
         button(row,'Read',async()=>{
-          if(item.conversationSaved){this.selectedDay=shanghaiClock(new Date(item.at)).day;this.selectedCardId=item.id;await this.renderToday();modal.close();}
+          if(item.conversationSaved){this.selectedDay=shanghaiClock(new Date(item.at)).day;this.selectedCardId=item.id;this.explicitCard=true;await this.renderToday();modal.close();}
           else {modal.close();new ReadModal(this.app,item.plan.title,conversationText(item)).open();}
         });
       }
@@ -956,6 +1126,7 @@ class AttentionView extends ItemView {
       const index=this.cards.findIndex(x=>x.id===this.selectedCardId),next=index+delta;
       if(next<0 || next>=this.cards.length)return;
       this.selectedCardId=this.cards[next].id;
+      this.explicitCard=true;
     }
     this.turning=true;
     const direction=axis==='day'?'vertical':'horizontal';
@@ -977,6 +1148,12 @@ class AttentionView extends ItemView {
     const revision=this.todayRevision=(this.todayRevision||0)+1;
     const today=shanghaiClock().day;
     this.days=[...new Set([today,...this.app.vault.getMarkdownFiles().filter(x=>/^calendar\/\d{4}-\d{2}-\d{2}\.md$/.test(x.path) && x.basename<=today).map(x=>x.basename)])].sort().reverse();
+    if(!this.selectedDay && this.days.includes(this.plugin.state.lastReadingDay)){
+      const todayFile=this.app.vault.getAbstractFileByPath('calendar/'+today+'.md');
+      const newest=todayFile instanceof TFile?diaryCards(await this.app.vault.cachedRead(todayFile))[0]?.id:null;
+      if(!this.alive || revision!==this.todayRevision)return;
+      if(!newest || this.plugin.state.reading?.[today]?.latestId===newest)this.selectedDay=this.plugin.state.lastReadingDay;
+    }
     if(!this.days.includes(this.selectedDay))this.selectedDay=today;
     const day=this.selectedDay,file=this.app.vault.getAbstractFileByPath('calendar/'+day+'.md');
     const text=file instanceof TFile?await this.app.vault.cachedRead(file):'';
@@ -985,7 +1162,10 @@ class AttentionView extends ItemView {
     const pending=this.plugin.state.activities.filter(x=>!x.conversationSaved && Number.isFinite(Date.parse(x.at)) && shanghaiClock(new Date(x.at)).day===day && !text.includes('attention:'+x.id+':conversation'));
     for(const activity of pending.reverse())cards.unshift({id:activity.id,kind:'pending',time:shanghaiClock(new Date(activity.at)).time,body:conversationText(activity)});
     this.cards=cards;
-    if(!cards.some(x=>x.id===this.selectedCardId))this.selectedCardId=cards[0]?.id || null;
+    const bookmark=this.plugin.state.reading?.[day];
+    this.selectedCardId=diarySelection(cards,this.forceLatest?null:bookmark,this.explicitCard?this.selectedCardId:null);
+    this.forceLatest=false;
+    this.explicitCard=false;
     const index=cards.findIndex(x=>x.id===this.selectedCardId),card=cards[index];
     this.todayDate.setText(day+(day===today?' · '+uiText(this.plugin.settings.language,'Today'):''));
     this.todayEl.empty();this.cardFooter.empty();this.backCards.empty();this.sideCards.empty();this.dayNavigation.empty();
@@ -996,7 +1176,7 @@ class AttentionView extends ItemView {
       if(!this.alive || revision!==this.todayRevision)return;
       if(this.plugin.settings.language!=='en')for(const title of memo.querySelectorAll('.callout-title-inner'))if(/^Me(?:$| · )/.test(title.textContent))title.setText(title.textContent.replace(/^Me/,'我').replace('Reflection','反省').replace('Output','成果').replace('Checkpoint','进度'));
       const activity=this.plugin.state.activities.find(x=>x.id===card.id);
-      if(this.plugin.settings.aiEnabled!==false && activity && ['suggested','started','paused'].includes(activity.status))await this.showActivity(activity,memo,true);
+      if(this.plugin.settings.aiEnabled!==false && activity)await this.showActivity(activity,memo,true);
     } else memo.createEl('p',{text:'A fresh page.',cls:'aa-empty-page'});
     if(!this.alive || revision!==this.todayRevision)return;
     const previous=button(this.cardFooter,'←',()=>this.navigateCard('entry',-1));previous.disabled=index<=0;previous.setAttribute('aria-label','Previous conversation');
@@ -1016,10 +1196,16 @@ class AttentionView extends ItemView {
     }
     this.deck.style.setProperty('--layers',String(below.length));
     const newer=button(this.dayNavigation,'↑',()=>this.navigateCard('day',-1));newer.disabled=dayIndex<=0;newer.setAttribute('aria-label','Later day');
-    const jump=button(this.dayNavigation,'Today',async()=>{this.selectedDay=today;this.selectedCardId=null;await this.renderToday();});jump.disabled=day===today;
+    const jump=button(this.dayNavigation,'Today',async()=>{this.selectedDay=today;this.selectedCardId=null;this.forceLatest=true;await this.renderToday();});jump.disabled=day===today;
     const older=button(this.dayNavigation,'↓',()=>this.navigateCard('day',1));older.disabled=dayIndex>=this.days.length-1;older.setAttribute('aria-label','Earlier day');
     if(day===today && this.plugin.settings.aiEnabled!==false)button(this.dayNavigation,'Review',()=>this.summarizeToday());
     this.todayEl.scrollTop=previousCard===card?.id?previousScroll:0;
+    const latestId=cards[0]?.id || null;
+    if(bookmark?.latestId!==latestId || bookmark?.cardId!==this.selectedCardId || this.plugin.state.lastReadingDay!==day){
+      this.plugin.state.reading ||= {};this.plugin.state.reading[day]={latestId,cardId:this.selectedCardId};
+      this.plugin.state.lastReadingDay=day;
+      await this.plugin.persist();
+    }
   }
 }
 
@@ -1066,8 +1252,19 @@ class AttentionSettings extends PluginSettingTab {
     new Setting(containerEl).setName('Image model').addText(c => c.setValue(p.settings.imageModel).onChange(async value => { p.settings.imageModel = value.trim(); await p.saveSettings(); }));
     let imageKeyInput;
     new Setting(containerEl).setName('Image key').addText(c => { imageKeyInput=c; c.inputEl.type='password'; c.setPlaceholder(p.settings.encryptedImageKey || p.sessionImageKey ? 'Configured' : 'Separate image key'); }).addButton(c => c.setButtonText('Save').onClick(async()=>{ try { await p.setImageKey(imageKeyInput.getValue()); imageKeyInput.setValue(''); } catch(e) { new Notice(e.message); } }));
+    containerEl.createEl('h3',{text:'Audio'});
+    new Setting(containerEl).setName('Voice preview').addButton(c=>c.setButtonText('Preview').onClick(()=>new VoicePreviewModal(this.app,p,()=>this.display()).open()));
+    new Setting(containerEl).setName('Automatic style').addToggle(c=>c.setValue(p.settings.audioAutoStyle!==false).onChange(async value=>{p.settings.audioAutoStyle=value;await p.saveSettings();}));
+    new Setting(containerEl).setName('Audio model').addDropdown(c=>c.addOption('mimo-v2.5-tts','MiMo V2.5 TTS').setValue(p.settings.audioModel).onChange(async value=>{p.settings.audioModel=value;await p.saveSettings();}));
+    new Setting(containerEl).setName('Voice').addDropdown(c=>{for(const voice of ['mimo_default','冰糖','茉莉','苏打','白桦','Mia','Chloe','Milo','Dean'])c.addOption(voice,voice);c.setValue(p.settings.audioVoice).onChange(async value=>{p.settings.audioVoice=value;await p.saveSettings();});});
+    new Setting(containerEl).setName('Default style').addText(c=>c.setValue(p.settings.audioStyle).onChange(async value=>{p.settings.audioStyle=value.slice(0,1000);await p.saveSettings();}));
+    new Setting(containerEl).setName('Connection').setDesc(p.settings.language==='en'?'Uses your current Xiaomi key and endpoint':'复用当前小米密钥与地区接口');
     localize(containerEl,p.settings.language);
   }
 }
 
 module.exports = AttentionPlugin;
+
+
+
+

@@ -1,14 +1,527 @@
 {
-  "debates": [],
+  "debates": [
+    {
+      "language": "zh",
+      "impromptu": false,
+      "impromptuPrompt": "",
+      "topic": "插件自检：学校应允许人工智能辅助学习吗？",
+      "query": "插件自检：学校应允许人工智能辅助学习吗？",
+      "agents": [
+        {
+          "id": "a04025c5-9d9f-4f8d-971c-b7671b1333c8",
+          "name": "苏格拉底",
+          "prompt": "借鉴苏格拉底式追问：澄清概念、揭示前提和矛盾，提出具体问题。",
+          "avatar": "苏",
+          "side": "pro",
+          "model": ""
+        },
+        {
+          "id": "c9c21f0e-f92a-453f-bd2d-773c8f965322",
+          "name": "亚里士多德",
+          "prompt": "借鉴亚里士多德的逻辑分析：清晰定义、演绎推理、关注实践条件。",
+          "avatar": "亚",
+          "side": "con",
+          "model": ""
+        }
+      ],
+      "rounds": 1,
+      "research": false,
+      "id": "25f3f31c-89be-4297-8de1-6af1c8cdcfdb",
+      "status": "completed",
+      "mode": "demo",
+      "model": "qwen3:8b",
+      "sources": [],
+      "messages": [
+        {
+          "id": "b955de4a-672a-4cf1-9ed0-6c7fd6f2d4b7",
+          "agentId": "a04025c5-9d9f-4f8d-971c-b7671b1333c8",
+          "name": "苏格拉底",
+          "side": "pro",
+          "stage": "开篇",
+          "round": 0,
+          "content": "[演示发言 · 开篇]\n\n关于「插件自检：学校应允许人工智能辅助学习吗？」，我支持辩题所提出的方向，但支持必须有明确的条件和边界。\n\n首先应明确评判标准：能否在可接受的成本下，改善更多人的长期处境。 借鉴苏格拉底式追问：澄清概念、揭示前提和矛盾，提出具体问题。\n\n目前没有可核验的外部资料，因此这里提出的是分析框架，不能当作已证实的事实。\n\n我向对方提出一个问题：什么证据会让你改变目前的判断？",
+          "context": {
+            "includedMessages": 0,
+            "totalMessages": 0,
+            "shortenedMessages": 0,
+            "omittedMessages": 0,
+            "sourceCount": 0,
+            "shortenedSources": 0
+          },
+          "citations": [],
+          "createdAt": "2026-10-07T05:45:51.863Z"
+        },
+        {
+          "id": "e091d911-f4ab-462c-aa2f-c73369f21c6c",
+          "agentId": "c9c21f0e-f92a-453f-bd2d-773c8f965322",
+          "name": "亚里士多德",
+          "side": "con",
+          "stage": "开篇",
+          "round": 0,
+          "content": "[演示发言 · 开篇]\n\n关于「插件自检：学校应允许人工智能辅助学习吗？」，我反对将辩题中的优先顺序作为普遍规则。\n\n判断一项选择，不能只关注理想收益，还必须考虑成本由谁承担，以及错误能否被纠正。 借鉴亚里士多德的逻辑分析：清晰定义、演绎推理、关注实践条件。\n\n目前没有可核验的外部资料，因此这里提出的是分析框架，不能当作已证实的事实。\n\n我向对方提出一个问题：什么证据会让你改变目前的判断？",
+          "context": {
+            "includedMessages": 1,
+            "totalMessages": 1,
+            "shortenedMessages": 0,
+            "omittedMessages": 0,
+            "sourceCount": 0,
+            "shortenedSources": 0
+          },
+          "citations": [],
+          "createdAt": "2026-10-07T05:45:52.175Z"
+        },
+        {
+          "id": "9aec2a52-0a27-41ee-8169-6d5fe5c49dc7",
+          "agentId": "a04025c5-9d9f-4f8d-971c-b7671b1333c8",
+          "name": "苏格拉底",
+          "side": "pro",
+          "stage": "交锋",
+          "round": 1,
+          "content": "[演示发言 · 交锋 1]\n\n关于「插件自检：学校应允许人工智能辅助学习吗？」，我支持辩题所提出的方向，但支持必须有明确的条件和边界。\n\n对方 亚里士多德 的观点值得回应：应当区分原则上可行与现实中可执行。请进一步说明判断标准，以及在哪些条件下愿意修正立场。\n\n首先应明确评判标准：能否在可接受的成本下，改善更多人的长期处境。 借鉴苏格拉底式追问：澄清概念、揭示前提和矛盾，提出具体问题。\n\n目前没有可核验的外部资料，因此这里提出的是分析框架，不能当作已证实的事实。\n\n我向对方提出一个问题：什么证据会让你改变目前的判断？",
+          "context": {
+            "includedMessages": 2,
+            "totalMessages": 2,
+            "shortenedMessages": 0,
+            "omittedMessages": 0,
+            "sourceCount": 0,
+            "shortenedSources": 0
+          },
+          "citations": [],
+          "createdAt": "2026-10-07T05:45:52.500Z"
+        },
+        {
+          "id": "6f56574c-4ef3-4d3e-9fad-cc37abaa2325",
+          "agentId": "c9c21f0e-f92a-453f-bd2d-773c8f965322",
+          "name": "亚里士多德",
+          "side": "con",
+          "stage": "交锋",
+          "round": 1,
+          "content": "[演示发言 · 交锋 1]\n\n关于「插件自检：学校应允许人工智能辅助学习吗？」，我反对将辩题中的优先顺序作为普遍规则。\n\n对方 苏格拉底 的观点值得回应：应当区分原则上可行与现实中可执行。请进一步说明判断标准，以及在哪些条件下愿意修正立场。\n\n判断一项选择，不能只关注理想收益，还必须考虑成本由谁承担，以及错误能否被纠正。 借鉴亚里士多德的逻辑分析：清晰定义、演绎推理、关注实践条件。\n\n目前没有可核验的外部资料，因此这里提出的是分析框架，不能当作已证实的事实。\n\n我向对方提出一个问题：什么证据会让你改变目前的判断？",
+          "context": {
+            "includedMessages": 3,
+            "totalMessages": 3,
+            "shortenedMessages": 0,
+            "omittedMessages": 0,
+            "sourceCount": 0,
+            "shortenedSources": 0
+          },
+          "citations": [],
+          "createdAt": "2026-10-07T05:48:50.883Z"
+        },
+        {
+          "id": "3ffbe233-9c1f-467e-a4ef-08106d4f89fa",
+          "agentId": "a04025c5-9d9f-4f8d-971c-b7671b1333c8",
+          "name": "苏格拉底",
+          "side": "pro",
+          "stage": "总结",
+          "round": 0,
+          "content": "[演示发言 · 总结]\n\n关于「插件自检：学校应允许人工智能辅助学习吗？」，我支持辩题所提出的方向，但支持必须有明确的条件和边界。\n\n首先应明确评判标准：能否在可接受的成本下，改善更多人的长期处境。 借鉴苏格拉底式追问：澄清概念、揭示前提和矛盾，提出具体问题。\n\n目前没有可核验的外部资料，因此这里提出的是分析框架，不能当作已证实的事实。\n\n我的结论是：给出条件、明确责任、保留修正机制，比绝对化的口号更有说服力。",
+          "context": {
+            "includedMessages": 4,
+            "totalMessages": 4,
+            "shortenedMessages": 0,
+            "omittedMessages": 0,
+            "sourceCount": 0,
+            "shortenedSources": 0
+          },
+          "citations": [],
+          "createdAt": "2026-10-07T05:48:51.208Z"
+        },
+        {
+          "id": "9c810e83-90ac-4539-b0c9-a8fd4f759b4b",
+          "agentId": "c9c21f0e-f92a-453f-bd2d-773c8f965322",
+          "name": "亚里士多德",
+          "side": "con",
+          "stage": "总结",
+          "round": 0,
+          "content": "[演示发言 · 总结]\n\n关于「插件自检：学校应允许人工智能辅助学习吗？」，我反对将辩题中的优先顺序作为普遍规则。\n\n判断一项选择，不能只关注理想收益，还必须考虑成本由谁承担，以及错误能否被纠正。 借鉴亚里士多德的逻辑分析：清晰定义、演绎推理、关注实践条件。\n\n目前没有可核验的外部资料，因此这里提出的是分析框架，不能当作已证实的事实。\n\n我的结论是：给出条件、明确责任、保留修正机制，比绝对化的口号更有说服力。",
+          "context": {
+            "includedMessages": 5,
+            "totalMessages": 5,
+            "shortenedMessages": 0,
+            "omittedMessages": 0,
+            "sourceCount": 0,
+            "shortenedSources": 0
+          },
+          "citations": [],
+          "createdAt": "2026-10-07T05:48:51.546Z"
+        }
+      ],
+      "warnings": [],
+      "review": {
+        "summary": "本场为流程演示，以下为示例点评，不代表真实模型评判。双方围绕收益、成本与适用条件展开论证，尚需更多可验证证据。",
+        "winner": "平局",
+        "scores": [
+          {
+            "name": "苏格拉底",
+            "logic": 7,
+            "evidence": 5,
+            "response": 6,
+            "clarity": 7
+          },
+          {
+            "name": "亚里士多德",
+            "logic": 7,
+            "evidence": 5,
+            "response": 6,
+            "clarity": 7
+          }
+        ],
+        "strengths": [
+          "双方均提出了适用边界和责任问题。",
+          "反驳关注论证前提，而非攻击个人。"
+        ],
+        "weaknesses": [
+          "缺少直接支持辩题的实证证据。",
+          "尚未建立双方共同接受的比较标准。"
+        ],
+        "questions": [
+          "双方可以接受哪些共同的判断标准？",
+          "什么证据足以改变双方的立场？"
+        ],
+        "factCheck": "本场无外部资料，不作事实真实性背书。"
+      },
+      "createdAt": "2026-10-07T05:45:51.547Z",
+      "researchComplete": true,
+      "updatedAt": "2026-10-07T05:48:51.568Z",
+      "current": null,
+      "error": null
+    }
+  ],
   "library": [],
   "customPresets": [],
-  "coachSessions": [],
+  "coachSessions": [
+    {
+      "id": "971bc274-071c-4a07-8dff-82202eb6cf99",
+      "topic": "插件自检：学校应允许人工智能辅助学习吗？",
+      "side": "正方",
+      "level": "入门",
+      "debateId": "25f3f31c-89be-4297-8de1-6af1c8cdcfdb",
+      "context": {
+        "status": "completed",
+        "messages": [
+          {
+            "id": "b955de4a-672a-4cf1-9ed0-6c7fd6f2d4b7",
+            "agentId": "a04025c5-9d9f-4f8d-971c-b7671b1333c8",
+            "name": "苏格拉底",
+            "side": "pro",
+            "stage": "开篇",
+            "round": 0,
+            "content": "[演示发言 · 开篇]\n\n关于「插件自检：学校应允许人工智能辅助学习吗？」，我支持辩题所提出的方向，但支持必须有明确的条件和边界。\n\n首先应明确评判标准：能否在可接受的成本下，改善更多人的长期处境。 借鉴苏格拉底式追问：澄清概念、揭示前提和矛盾，提出具体问题。\n\n目前没有可核验的外部资料，因此这里提出的是分析框架，不能当作已证实的事实。\n\n我向对方提出一个问题：什么证据会让你改变目前的判断？",
+            "context": {
+              "includedMessages": 0,
+              "totalMessages": 0,
+              "shortenedMessages": 0,
+              "omittedMessages": 0,
+              "sourceCount": 0,
+              "shortenedSources": 0
+            },
+            "citations": [],
+            "createdAt": "2026-10-07T05:45:51.863Z"
+          },
+          {
+            "id": "e091d911-f4ab-462c-aa2f-c73369f21c6c",
+            "agentId": "c9c21f0e-f92a-453f-bd2d-773c8f965322",
+            "name": "亚里士多德",
+            "side": "con",
+            "stage": "开篇",
+            "round": 0,
+            "content": "[演示发言 · 开篇]\n\n关于「插件自检：学校应允许人工智能辅助学习吗？」，我反对将辩题中的优先顺序作为普遍规则。\n\n判断一项选择，不能只关注理想收益，还必须考虑成本由谁承担，以及错误能否被纠正。 借鉴亚里士多德的逻辑分析：清晰定义、演绎推理、关注实践条件。\n\n目前没有可核验的外部资料，因此这里提出的是分析框架，不能当作已证实的事实。\n\n我向对方提出一个问题：什么证据会让你改变目前的判断？",
+            "context": {
+              "includedMessages": 1,
+              "totalMessages": 1,
+              "shortenedMessages": 0,
+              "omittedMessages": 0,
+              "sourceCount": 0,
+              "shortenedSources": 0
+            },
+            "citations": [],
+            "createdAt": "2026-10-07T05:45:52.175Z"
+          },
+          {
+            "id": "9aec2a52-0a27-41ee-8169-6d5fe5c49dc7",
+            "agentId": "a04025c5-9d9f-4f8d-971c-b7671b1333c8",
+            "name": "苏格拉底",
+            "side": "pro",
+            "stage": "交锋",
+            "round": 1,
+            "content": "[演示发言 · 交锋 1]\n\n关于「插件自检：学校应允许人工智能辅助学习吗？」，我支持辩题所提出的方向，但支持必须有明确的条件和边界。\n\n对方 亚里士多德 的观点值得回应：应当区分原则上可行与现实中可执行。请进一步说明判断标准，以及在哪些条件下愿意修正立场。\n\n首先应明确评判标准：能否在可接受的成本下，改善更多人的长期处境。 借鉴苏格拉底式追问：澄清概念、揭示前提和矛盾，提出具体问题。\n\n目前没有可核验的外部资料，因此这里提出的是分析框架，不能当作已证实的事实。\n\n我向对方提出一个问题：什么证据会让你改变目前的判断？",
+            "context": {
+              "includedMessages": 2,
+              "totalMessages": 2,
+              "shortenedMessages": 0,
+              "omittedMessages": 0,
+              "sourceCount": 0,
+              "shortenedSources": 0
+            },
+            "citations": [],
+            "createdAt": "2026-10-07T05:45:52.500Z"
+          },
+          {
+            "id": "6f56574c-4ef3-4d3e-9fad-cc37abaa2325",
+            "agentId": "c9c21f0e-f92a-453f-bd2d-773c8f965322",
+            "name": "亚里士多德",
+            "side": "con",
+            "stage": "交锋",
+            "round": 1,
+            "content": "[演示发言 · 交锋 1]\n\n关于「插件自检：学校应允许人工智能辅助学习吗？」，我反对将辩题中的优先顺序作为普遍规则。\n\n对方 苏格拉底 的观点值得回应：应当区分原则上可行与现实中可执行。请进一步说明判断标准，以及在哪些条件下愿意修正立场。\n\n判断一项选择，不能只关注理想收益，还必须考虑成本由谁承担，以及错误能否被纠正。 借鉴亚里士多德的逻辑分析：清晰定义、演绎推理、关注实践条件。\n\n目前没有可核验的外部资料，因此这里提出的是分析框架，不能当作已证实的事实。\n\n我向对方提出一个问题：什么证据会让你改变目前的判断？",
+            "context": {
+              "includedMessages": 3,
+              "totalMessages": 3,
+              "shortenedMessages": 0,
+              "omittedMessages": 0,
+              "sourceCount": 0,
+              "shortenedSources": 0
+            },
+            "citations": [],
+            "createdAt": "2026-10-07T05:48:50.883Z"
+          },
+          {
+            "id": "3ffbe233-9c1f-467e-a4ef-08106d4f89fa",
+            "agentId": "a04025c5-9d9f-4f8d-971c-b7671b1333c8",
+            "name": "苏格拉底",
+            "side": "pro",
+            "stage": "总结",
+            "round": 0,
+            "content": "[演示发言 · 总结]\n\n关于「插件自检：学校应允许人工智能辅助学习吗？」，我支持辩题所提出的方向，但支持必须有明确的条件和边界。\n\n首先应明确评判标准：能否在可接受的成本下，改善更多人的长期处境。 借鉴苏格拉底式追问：澄清概念、揭示前提和矛盾，提出具体问题。\n\n目前没有可核验的外部资料，因此这里提出的是分析框架，不能当作已证实的事实。\n\n我的结论是：给出条件、明确责任、保留修正机制，比绝对化的口号更有说服力。",
+            "context": {
+              "includedMessages": 4,
+              "totalMessages": 4,
+              "shortenedMessages": 0,
+              "omittedMessages": 0,
+              "sourceCount": 0,
+              "shortenedSources": 0
+            },
+            "citations": [],
+            "createdAt": "2026-10-07T05:48:51.208Z"
+          },
+          {
+            "id": "9c810e83-90ac-4539-b0c9-a8fd4f759b4b",
+            "agentId": "c9c21f0e-f92a-453f-bd2d-773c8f965322",
+            "name": "亚里士多德",
+            "side": "con",
+            "stage": "总结",
+            "round": 0,
+            "content": "[演示发言 · 总结]\n\n关于「插件自检：学校应允许人工智能辅助学习吗？」，我反对将辩题中的优先顺序作为普遍规则。\n\n判断一项选择，不能只关注理想收益，还必须考虑成本由谁承担，以及错误能否被纠正。 借鉴亚里士多德的逻辑分析：清晰定义、演绎推理、关注实践条件。\n\n目前没有可核验的外部资料，因此这里提出的是分析框架，不能当作已证实的事实。\n\n我的结论是：给出条件、明确责任、保留修正机制，比绝对化的口号更有说服力。",
+            "context": {
+              "includedMessages": 5,
+              "totalMessages": 5,
+              "shortenedMessages": 0,
+              "omittedMessages": 0,
+              "sourceCount": 0,
+              "shortenedSources": 0
+            },
+            "citations": [],
+            "createdAt": "2026-10-07T05:48:51.546Z"
+          }
+        ],
+        "sources": [],
+        "review": {
+          "summary": "本场为流程演示，以下为示例点评，不代表真实模型评判。双方围绕收益、成本与适用条件展开论证，尚需更多可验证证据。",
+          "winner": "平局",
+          "scores": [
+            {
+              "name": "苏格拉底",
+              "logic": 7,
+              "evidence": 5,
+              "response": 6,
+              "clarity": 7
+            },
+            {
+              "name": "亚里士多德",
+              "logic": 7,
+              "evidence": 5,
+              "response": 6,
+              "clarity": 7
+            }
+          ],
+          "strengths": [
+            "双方均提出了适用边界和责任问题。",
+            "反驳关注论证前提，而非攻击个人。"
+          ],
+          "weaknesses": [
+            "缺少直接支持辩题的实证证据。",
+            "尚未建立双方共同接受的比较标准。"
+          ],
+          "questions": [
+            "双方可以接受哪些共同的判断标准？",
+            "什么证据足以改变双方的立场？"
+          ],
+          "factCheck": "本场无外部资料，不作事实真实性背书。"
+        },
+        "capturedAt": "2026-10-07T05:48:51.669Z"
+      },
+      "messages": [
+        {
+          "id": "76cdfa86-0536-46e8-bd97-32b4da32d7fc",
+          "role": "user",
+          "content": "插件自检：请安排一道立论练习。",
+          "createdAt": "2026-10-07T05:48:51.676Z"
+        },
+        {
+          "id": "387daa4d-ff28-40b5-9ee3-89ea0f964664",
+          "role": "assistant",
+          "content": "【演示辩论教练 · 规则教学】我们先从论题、过程、技巧、表达和方法建立训练框架。\n\n训练论题：插件自检：学校应允许人工智能辅助学习吗？；立场：正方；难度：入门。连接模型后，会结合你的发言和练习答案给出具体反馈。",
+          "report": {
+            "reply": "【演示辩论教练 · 规则教学】我们先从论题、过程、技巧、表达和方法建立训练框架。\n\n训练论题：插件自检：学校应允许人工智能辅助学习吗？；立场：正方；难度：入门。连接模型后，会结合你的发言和练习答案给出具体反馈。",
+            "lessons": [
+              {
+                "dimension": "论题",
+                "title": "先定义，再比较",
+                "analysis": "围绕「插件自检：学校应允许人工智能辅助学习吗？」，先写清关键词、适用人群和时间范围。",
+                "advice": "分别写出正反立场，并提出一个双方可共同使用的比较标准。",
+                "example": "",
+                "messageId": ""
+              },
+              {
+                "dimension": "过程",
+                "title": "把每轮发言当成接力",
+                "analysis": "已有 6 条发言可供复盘；先找到对方最近一条实质论点，再判断你的回应是否接住它。",
+                "advice": "开篇交代标准，交锋回应关键前提，总结比较双方最重要的分歧。",
+                "example": "",
+                "messageId": ""
+              },
+              {
+                "dimension": "技巧",
+                "title": "反驳一个明确前提",
+                "analysis": "区分反驳结论、反驳证据和反驳推理。一个反例通常只能推翻普遍性，不能证明相反的普遍命题。",
+                "advice": "练习先准确复述对方论点，再指出缺少的条件，最后提出可回答的追问。",
+                "example": "",
+                "messageId": ""
+              },
+              {
+                "dimension": "表达",
+                "title": "让一句话承担一个任务",
+                "analysis": "下面的原文摘录可以用于练习精简；它不是自动评分结果。",
+                "advice": "使用“我的判断是…，因为…，证据是…，适用条件是…”串起发言，去掉重复修饰。",
+                "example": "[演示发言 · 开篇]\n\n关于「插件自检：学校应允许人工智能辅助学习吗？」，我支持辩题所提出的方向，但支持必须有明确的条件和边界。\n\n首先应明确评判标准：能否在可接受的成本下，改善更多人的长期处境。 ",
+                "messageId": "b955de4a-672a-4cf1-9ed0-6c7fd6f2d4b7"
+              },
+              {
+                "dimension": "方法",
+                "title": "建立可重复的小练习",
+                "analysis": "把论证拆成主张、理由、证据、连接理由与主张的前提，再补反例与回应。",
+                "advice": "先用 90 秒列提纲，再讲 60 秒；检查是否回答论题、是否引用证据、是否承认边界。",
+                "example": "",
+                "messageId": ""
+              }
+            ],
+            "exercise": {
+              "title": "60 秒立论练习",
+              "instruction": "围绕本场论题，写出 120–200 字立论，包含判断标准、一个理由、证据需求和适用边界。",
+              "checklist": [
+                "是否直接回答论题？",
+                "理由与结论之间的前提是否清楚？",
+                "是否区分事实、推论与价值判断？",
+                "是否提出可检验的证据需求或反例？"
+              ]
+            }
+          },
+          "mode": "demo",
+          "model": "qwen3:8b",
+          "createdAt": "2026-10-07T05:48:51.676Z"
+        },
+        {
+          "id": "c4b83d87-e1f6-418f-881f-c0c3943c316f",
+          "role": "user",
+          "content": "插件自检练习答案：我主张允许辅助学习，以独立理解能力为标准；人工智能可帮助解释概念，但学生必须复述推理并完成独立测验，实际效果需要对照证据。",
+          "createdAt": "2026-10-07T05:48:51.698Z"
+        },
+        {
+          "id": "58fcde1f-4bf5-4325-8f28-6c3abfa9747f",
+          "role": "assistant",
+          "content": "【演示辩论教练 · 规则教学】已收到你的追问或练习答案：「插件自检练习答案：我主张允许辅助学习，以独立理解能力为标准；人工智能可帮助解释概念，但学生必须复述推理并完成独立测验，实际效果需要对照证据。」。演示模式不对答案进行真实模型诊断，请按下面的标准自查。\n\n训练论题：插件自检：学校应允许人工智能辅助学习吗？；立场：正方；难度：入门。连接模型后，会结合你的发言和练习答案给出具体反馈。",
+          "report": {
+            "reply": "【演示辩论教练 · 规则教学】已收到你的追问或练习答案：「插件自检练习答案：我主张允许辅助学习，以独立理解能力为标准；人工智能可帮助解释概念，但学生必须复述推理并完成独立测验，实际效果需要对照证据。」。演示模式不对答案进行真实模型诊断，请按下面的标准自查。\n\n训练论题：插件自检：学校应允许人工智能辅助学习吗？；立场：正方；难度：入门。连接模型后，会结合你的发言和练习答案给出具体反馈。",
+            "lessons": [
+              {
+                "dimension": "论题",
+                "title": "先定义，再比较",
+                "analysis": "围绕「插件自检：学校应允许人工智能辅助学习吗？」，先写清关键词、适用人群和时间范围。",
+                "advice": "分别写出正反立场，并提出一个双方可共同使用的比较标准。",
+                "example": "",
+                "messageId": ""
+              },
+              {
+                "dimension": "过程",
+                "title": "把每轮发言当成接力",
+                "analysis": "已有 6 条发言可供复盘；先找到对方最近一条实质论点，再判断你的回应是否接住它。",
+                "advice": "开篇交代标准，交锋回应关键前提，总结比较双方最重要的分歧。",
+                "example": "",
+                "messageId": ""
+              },
+              {
+                "dimension": "技巧",
+                "title": "反驳一个明确前提",
+                "analysis": "区分反驳结论、反驳证据和反驳推理。一个反例通常只能推翻普遍性，不能证明相反的普遍命题。",
+                "advice": "练习先准确复述对方论点，再指出缺少的条件，最后提出可回答的追问。",
+                "example": "",
+                "messageId": ""
+              },
+              {
+                "dimension": "表达",
+                "title": "让一句话承担一个任务",
+                "analysis": "下面的原文摘录可以用于练习精简；它不是自动评分结果。",
+                "advice": "使用“我的判断是…，因为…，证据是…，适用条件是…”串起发言，去掉重复修饰。",
+                "example": "[演示发言 · 开篇]\n\n关于「插件自检：学校应允许人工智能辅助学习吗？」，我支持辩题所提出的方向，但支持必须有明确的条件和边界。\n\n首先应明确评判标准：能否在可接受的成本下，改善更多人的长期处境。 ",
+                "messageId": "b955de4a-672a-4cf1-9ed0-6c7fd6f2d4b7"
+              },
+              {
+                "dimension": "方法",
+                "title": "建立可重复的小练习",
+                "analysis": "把论证拆成主张、理由、证据、连接理由与主张的前提，再补反例与回应。",
+                "advice": "先用 90 秒列提纲，再讲 60 秒；检查是否回答论题、是否引用证据、是否承认边界。",
+                "example": "",
+                "messageId": ""
+              }
+            ],
+            "exercise": {
+              "title": "反驳与追问练习",
+              "instruction": "准确复述一个反方观点，指出其中一个前提，并提出一个能检验该前提的问题。",
+              "checklist": [
+                "是否直接回答论题？",
+                "理由与结论之间的前提是否清楚？",
+                "是否区分事实、推论与价值判断？",
+                "是否提出可检验的证据需求或反例？"
+              ]
+            }
+          },
+          "mode": "demo",
+          "model": "qwen3:8b",
+          "createdAt": "2026-10-07T05:48:51.698Z"
+        }
+      ],
+      "createdAt": "2026-10-07T05:48:51.669Z",
+      "attempts": [
+        {
+          "id": "499e251c-7f29-4e57-8c74-b415643bc41d",
+          "content": "插件自检：请安排一道立论练习。",
+          "status": "replied",
+          "createdAt": "2026-10-07T05:48:51.669Z"
+        },
+        {
+          "id": "a1e6d4a5-5ea4-4e52-bab2-4f69d9a89c3f",
+          "content": "插件自检练习答案：我主张允许辅助学习，以独立理解能力为标准；人工智能可帮助解释概念，但学生必须复述推理并完成独立测验，实际效果需要对照证据。",
+          "status": "replied",
+          "createdAt": "2026-10-07T05:48:51.692Z"
+        }
+      ],
+      "updatedAt": "2026-10-07T05:48:51.698Z"
+    }
+  ],
   "voiceSettings": {
-    "provider": "edge",
+    "provider": "mimo",
     "proVoice": "zh-CN-YunxiNeural",
     "conVoice": "zh-CN-XiaoxiaoNeural",
     "enProVoice": "en-US-GuyNeural",
     "enConVoice": "en-US-JennyNeural",
-    "rate": 1
+    "rate": 1,
+    "mimoProVoice": "苏打",
+    "mimoConVoice": "茉莉",
+    "mimoEnProVoice": "Milo",
+    "mimoEnConVoice": "Chloe",
+    "mimoModel": "mimo-v2.5-tts",
+    "mimoBaseUrl": "https://api.xiaomimimo.com/v1",
+    "reuseModelConnection": true
   }
 }

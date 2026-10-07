@@ -107,6 +107,30 @@
         "options": {
           "caseSensitive": false
         }
+      },
+      {
+        "expr": "**/.vault-meta",
+        "options": {
+          "caseSensitive": false
+        }
+      },
+      {
+        "expr": "**/.qmd",
+        "options": {
+          "caseSensitive": false
+        }
+      },
+      {
+        "expr": "**/.tmp.driveupload",
+        "options": {
+          "caseSensitive": false
+        }
+      },
+      {
+        "expr": "**/.tmp.drivedownload",
+        "options": {
+          "caseSensitive": false
+        }
       }
     ],
     "inclusionRules": []
@@ -116,8 +140,8 @@
   },
   "mobileAppDownloadFileChunkSize": "16 MiB",
   "realtimeSync": false,
-  "startupSyncDelaySeconds": 0,
-  "autoSyncIntervalSeconds": 300,
+  "startupSyncDelaySeconds": 30,
+  "autoSyncIntervalSeconds": 900,
   "ai": {
     "providers": {},
     "yolo": false,

@@ -3,7 +3,7 @@ const { spawn } = require('node:child_process');
 const path = require('node:path');
 const { randomUUID } = require('node:crypto');
 const VIEW = 'debate-room-view';
-const DEFAULTS = { nodePath: 'node', exportFolder: '论场', pythonPath: '' };
+const DEFAULTS = { nodePath: 'node', exportFolder: '论场', pythonPath: '', autoExport: true, exportFormat: 'both' };
 
 function exportFolder(value) {
   const folder = String(value || '').trim().replace(/\\/g, '/');
@@ -60,6 +60,8 @@ class DebateSettings extends PluginSettingTab {
     new Setting(this.containerEl).setName('Node.js 可执行文件').setDesc('默认 node；找不到时填写完整路径，如 C:\\Program Files\\nodejs\\node.exe。修改后重启服务。').addText(t => t.setValue(this.plugin.settings.nodePath).onChange(async value => { this.plugin.settings.nodePath = value.trim() || 'node'; await this.plugin.saveSettings(); }));
     new Setting(this.containerEl).setName('笔记保存目录').setDesc('仓库内的相对路径。每次保存创建新笔记，不覆盖已有笔记。').addText(t => t.setValue(this.plugin.settings.exportFolder).onChange(async value => { try { this.plugin.settings.exportFolder = exportFolder(value); await this.plugin.saveSettings(); } catch (e) { new Notice(e.message); } }));
     new Setting(this.containerEl).setName('语音 Python 路径（可选）').setDesc('使用 Edge 神经语音时填写已安装 edge-tts 的 Python 路径；也可在论场内选择系统朗读。修改后重启服务。').addText(t => t.setValue(this.plugin.settings.pythonPath).onChange(async value => { this.plugin.settings.pythonPath = value.trim(); await this.plugin.saveSettings(); }));
+    new Setting(this.containerEl).setName('自动归档辩论与训练').setDesc('每次发言、点评、练习提交和教练反馈后更新专用归档文件；包括未得到反馈的练习。').addToggle(t => t.setValue(this.plugin.settings.autoExport !== false).onChange(async value => { this.plugin.settings.autoExport = value; await this.plugin.saveSettings(); }));
+    new Setting(this.containerEl).setName('自动归档格式').setDesc('默认同时保存 Markdown 与可独立打开的 HTML。').addDropdown(d => d.addOptions({ both: 'MD + HTML', md: 'Markdown', html: 'HTML' }).setValue(this.plugin.settings.exportFormat || 'both').onChange(async value => { this.plugin.settings.exportFormat = value; await this.plugin.saveSettings(); }));
     new Setting(this.containerEl).setName('重启本地服务').setDesc('会中止生成并保留已完成发言。').addButton(b => b.setButtonText('重启').onClick(() => { void this.plugin.restart().catch(e => new Notice(e.message)); }));
   }
 }
@@ -67,6 +69,8 @@ class DebateSettings extends PluginSettingTab {
 class DebatePlugin extends Plugin {
   async onload() {
     this.settings = { ...DEFAULTS, ...await this.loadData() };
+    this.archiveWrites = Promise.resolve();
+    this.archiveStatus = this.addStatusBarItem(); this.archiveStatus.setText('论场：自动归档已启用');
     this.registerView(VIEW, leaf => new DebateView(leaf, this));
     this.addRibbonIcon('messages-square', '打开论场', () => { void this.openView().catch(e => new Notice(e.message)); });
     this.addCommand({ id: 'open', name: '打开论场', callback: () => { void this.openView().catch(e => new Notice(e.message)); } });
@@ -108,10 +112,12 @@ class DebatePlugin extends Plugin {
           for (const leaf of this.app.workspace.getLeavesOfType(VIEW)) {
             const view = leaf.view; view.ready = false; view.status.hidden = false; view.status.textContent = '本地服务已退出，请点击重启服务。';
           }
-          new Notice('论场服务已退出，请重启服务');
+          if (!this.stopping) new Notice('论场服务已退出，请重启服务');
         }
       });
       child.on('message', message => {
+        if (message?.type === 'archive' && this.child === child) { this.queueArchive(message.documents); return; }
+        if (message?.type === 'archive-error') { new Notice(message.error); return; }
         if (settled || message?.type !== 'ready' || !Number.isInteger(message.port) || message.port < 1 || message.port > 65535) return;
         settled = true; clearTimeout(timer); this.origin = `http://127.0.0.1:${message.port}`; resolve(this.origin);
       });
@@ -119,13 +125,43 @@ class DebatePlugin extends Plugin {
     return this.starting;
   }
   async stopService() {
-    const child = this.child; this.child = null; this.starting = null; this.origin = null;
-    if (!child || child.exitCode !== null) return;
+    const child = this.child; this.stopping = true; this.starting = null; this.origin = null;
+    if (!child || child.exitCode !== null) { this.child = null; this.stopping = false; await this.archiveWrites; return; }
     await new Promise(resolve => {
-      const timer = setTimeout(() => { child.kill(); resolve(); }, 3000);
+      const timer = setTimeout(() => { child.kill(); resolve(); }, 10000);
       child.once('exit', () => { clearTimeout(timer); resolve(); });
       if (child.connected) child.send({ type: 'shutdown' }, error => { if (error) child.kill(); }); else child.kill();
     });
+    if (this.child === child) this.child = null;
+    this.stopping = false;
+    await this.archiveWrites;
+  }
+  queueArchive(documents) {
+    if (this.settings.autoExport === false) return;
+    this.archiveWrites = (this.archiveWrites || Promise.resolve()).then(() => this.writeArchive(documents)).catch(error => {
+      this.archiveStatus?.setText('论场：自动归档失败');
+      new Notice(`论场自动归档失败：${error.message}。原始记录及服务端归档仍保留。`);
+    });
+  }
+  async writeArchive(documents) {
+    if (!documents || !['debate', 'coach'].includes(documents.type) || !/^[a-f0-9-]{36}$/.test(documents.id || '')) throw new Error('归档记录无效');
+    const marker = `<!-- debate-room:auto:${documents.type}:${documents.id} -->`;
+    if (typeof documents.markdown !== 'string' || typeof documents.html !== 'string' || !documents.markdown.startsWith(marker) || !documents.html.includes(marker)) throw new Error('归档内容无效');
+    const folder = exportFolder(this.settings.exportFolder) + '/自动归档/' + (documents.type === 'debate' ? '辩论' : '训练');
+    let current = '';
+    for (const part of folder.split('/')) { current = current ? `${current}/${part}` : part; if (!this.app.vault.getAbstractFileByPath(current)) await this.app.vault.createFolder(current); }
+    const title = (String(documents.title || '').replace(/[<>:"/\\|?*\x00-\x1f]/g, '-').replace(/[. ]+$/, '').slice(0, 55) || '记录');
+    const format = this.settings.exportFormat || 'both';
+    for (const [extension,content] of [['md',documents.markdown],['html',documents.html]]) {
+      if (format !== 'both' && format !== extension) continue;
+      const filename = normalizePath(`${folder}/${title}-${documents.id}.${extension}`);
+      const existing = this.app.vault.getAbstractFileByPath(filename);
+      if (existing) {
+        if (!(await this.app.vault.read(existing)).includes(marker)) throw new Error(`发现同名非归档文件，未覆盖：${filename}`);
+        await this.app.vault.modify(existing,content);
+      } else await this.app.vault.create(filename,content);
+    }
+    this.archiveStatus?.setText('论场：辩论与训练已自动归档');
   }
   async restart() {
     await this.app.workspace.detachLeavesOfType(VIEW);
