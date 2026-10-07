@@ -30,7 +30,7 @@ socket → bind → listen → accept
 
 ---
 
-# 第 1 章 Socket 也是一种文件描述符
+## 第 1 章 Socket 也是一种文件描述符
 
 Unix 中很多内核资源通过 fd 暴露：
 
@@ -51,7 +51,7 @@ terminal fd
 
 ---
 
-# 第 2 章 IP、端口与 TCP 连接
+## 第 2 章 IP、端口与 TCP 连接
 
 最低限度模型：
 
@@ -79,7 +79,7 @@ server_ip:server_port
 
 ---
 
-# 第 3 章 网络字节序
+## 第 3 章 网络字节序
 
 项目 1 已学过大小端。网络协议中的多字节整数通常使用 network byte order。
 
@@ -102,7 +102,7 @@ addr.sin_port = htons(8080);
 
 ---
 
-# 第 4 章 创建监听 Socket
+## 第 4 章 创建监听 Socket
 
 ~~~c
 #include <sys/socket.h>
@@ -149,7 +149,7 @@ if (listen(listen_fd, 128) == -1) {
 
 ---
 
-# 第 5 章 SO_REUSEADDR
+## 第 5 章 SO_REUSEADDR
 
 开发时服务器刚退出，立即重启可能遇到：
 
@@ -177,7 +177,7 @@ if (setsockopt(
 
 ---
 
-# 第 6 章 accept：监听 fd 与连接 fd
+## 第 6 章 accept：监听 fd 与连接 fd
 
 ~~~c
 int client_fd = accept(listen_fd, NULL, NULL);
@@ -204,7 +204,7 @@ while true:
 
 ---
 
-# 第 7 章 先做 Echo Server
+## 第 7 章 先做 Echo Server
 
 ~~~c
 unsigned char buf[4096];
@@ -251,7 +251,7 @@ read/write loop
 
 ---
 
-# 第 8 章 TCP 是字节流，不是消息队列
+## 第 8 章 TCP 是字节流，不是消息队列
 
 项目 9 最重要的一句话：
 
@@ -290,7 +290,7 @@ read #3 -> "rld"
 
 ---
 
-# 第 9 章 HTTP 请求头的边界
+## 第 9 章 HTTP 请求头的边界
 
 curl：
 
@@ -330,7 +330,7 @@ append 到 request buffer
 
 ---
 
-# 第 10 章 有界 Request Buffer
+## 第 10 章 有界 Request Buffer
 
 ~~~c
 #define REQUEST_MAX 8192
@@ -384,7 +384,7 @@ while (used < REQUEST_MAX) {
 
 ---
 
-# 第 11 章 请求行解析
+## 第 11 章 请求行解析
 
 核心版只支持：
 
@@ -427,7 +427,7 @@ int fields = sscanf(
 
 ---
 
-# 第 12 章 第一份 HTTP Response
+## 第 12 章 第一份 HTTP Response
 
 固定 body：
 
@@ -473,7 +473,7 @@ write_all(client_fd, body, strlen(body));
 
 ---
 
-# 第 13 章 Content-Length 必须准确
+## 第 13 章 Content-Length 必须准确
 
 对于内存文本，可以用明确长度。
 
@@ -503,7 +503,7 @@ Content-Length: <file size>
 
 ---
 
-# 第 14 章 静态文件服务器
+## 第 14 章 静态文件服务器
 
 设：
 
@@ -556,7 +556,7 @@ close file_fd
 
 ---
 
-# 第 15 章 路径安全
+## 第 15 章 路径安全
 
 不能直接：
 
@@ -589,7 +589,7 @@ README 必须说明协议和路径子集。
 
 ---
 
-# 第 16 章 Content-Type
+## 第 16 章 Content-Type
 
 简单扩展名映射：
 
@@ -607,7 +607,7 @@ README 必须说明协议和路径子集。
 
 ---
 
-# 第 17 章 错误响应
+## 第 17 章 错误响应
 
 至少支持：
 
@@ -632,7 +632,7 @@ body
 
 ---
 
-# 第 18 章 send_all
+## 第 18 章 send_all
 
 ~~~c
 int send_all(int fd, const void *buf, size_t len) {
@@ -669,7 +669,7 @@ int send_all(int fd, const void *buf, size_t len) {
 
 ---
 
-# 第 19 章 客户端提前断开
+## 第 19 章 客户端提前断开
 
 若客户端只发：
 
@@ -695,7 +695,7 @@ read 返回 0
 
 ---
 
-# 第 20 章 请求分段实验
+## 第 20 章 请求分段实验
 
 用 nc 故意分三次发：
 
@@ -713,7 +713,7 @@ read 返回 0
 
 ---
 
-# 第 21 章 curl 测试矩阵
+## 第 21 章 curl 测试矩阵
 
 ~~~bash
 curl -v http://127.0.0.1:8080/
@@ -738,7 +738,7 @@ cmp www/image.png got.png
 
 ---
 
-# 第 22 章 strace 一次请求
+## 第 22 章 strace 一次请求
 
 ~~~bash
 strace -f -o trace.txt ./server 8080
@@ -787,7 +787,7 @@ curl
 
 ---
 
-# 第 23 章 用 ss 和 /proc 观察
+## 第 23 章 用 ss 和 /proc 观察
 
 监听：
 
@@ -817,7 +817,7 @@ ls -l /proc/<PID>/fd
 
 ---
 
-# 第 24 章 顺序服务器为什么会被慢客户端拖住
+## 第 24 章 顺序服务器为什么会被慢客户端拖住
 
 模型：
 
@@ -847,7 +847,7 @@ accept
 
 ---
 
-# 第 25 章 推荐工程结构
+## 第 25 章 推荐工程结构
 
 ~~~text
 project9/
@@ -900,7 +900,7 @@ int serve_file(
 
 ---
 
-# 第 26 章 必做实验
+## 第 26 章 必做实验
 
 | 实验 | 必留证据 |
 | --- | --- |
@@ -918,7 +918,7 @@ int serve_file(
 
 ---
 
-# 第 27 章 报告模板
+## 第 27 章 报告模板
 
 ~~~markdown
 # 项目 9 Socket 与 HTTP
@@ -943,7 +943,7 @@ int serve_file(
 
 ---
 
-# 第 28 章 验收自测
+## 第 28 章 验收自测
 
 1. socket 为什么也能用 fd 表示？
 2. bind、listen、accept 分别做什么？
@@ -966,18 +966,18 @@ int serve_file(
 
 ---
 
-# 学习导航：资料、图解与扩展
+## 学习导航：资料、图解与扩展
 
 > [!tip] 阅读策略
 > 先做 echo server，只解决 **TCP 字节流 + socket API**；再加 HTTP 文本格式。不要一开始同时处理 TCP、HTTP、文件、安全路径与并发。
 
-## A. 实验前必读
+### A. 实验前必读
 
 - **CS:APP 3e Ch.11**：§11.1 Client-Server Model、§11.3 Internet Connections、§11.4 Sockets Interface；HTTP 再读 §11.5–11.6。
 - Beej's Guide to Network Programming：https://beej.us/guide/bgnet/
 - 总索引：[[实验参考指南与可视化索引]]
 
-## B. 做实验时按需查
+### B. 做实验时按需查
 
 - Linux sockets 总入口：https://man7.org/linux/man-pages/man7/socket.7.html
 - `socket(2)`：https://man7.org/linux/man-pages/man2/socket.2.html
@@ -985,12 +985,12 @@ int serve_file(
 - HTTP/1.0（本实验简化协议的历史参考）：https://www.rfc-editor.org/rfc/rfc1945
 - 当前 HTTP 语义：RFC 9110：https://www.rfc-editor.org/rfc/rfc9110
 
-## C. 视频/扩展
+### C. 视频/扩展
 
 - MIT 6.1810（2026）Networking 讲次：https://pdos.csail.mit.edu/6.S081/2026/schedule.html
 - CS:APP 官方 Tiny Web Server 资料可在学生站找到：https://csapp.cs.cmu.edu/3e/students.html
 
-## 机制图：TCP 是字节流，HTTP 是字节流上的协议
+### 机制图：TCP 是字节流，HTTP 是字节流上的协议
 
 ```mermaid
 sequenceDiagram
