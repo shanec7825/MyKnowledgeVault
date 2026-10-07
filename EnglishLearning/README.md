@@ -64,3 +64,19 @@ tags:
 - Implication — Why does this matter?
 
 > 不要求每篇文章都套同一模板。重点是识别段落之间的关系，并持续维护全文模型。
+
+
+## Multimedia Daily Package
+
+从 2026-10-07 起，每日英语资源优先生成一个多媒体学习包，而不只是 Markdown：
+
+- **Markdown** — Obsidian 知识网络、Previous / Next、Connections、词汇反链。
+- **Interactive HTML** — 原音播放器、原始文章跳转、词汇点击朗读、retrieval 自测、折叠提示、复盘输入等交互。
+- **Original listening audio link** — 优先寻找并验证媒体提供方的直接 MP3/audio URL；若只能获得播放器页面，则保留原始媒体页和可用下载入口，不伪造直链。
+- **Visual** — 主题/词汇视觉辅助；能持久化生成图片时保存到 `EnglishLearning/assets/`，否则在 HTML 内提供原创视觉卡片。
+- **Speech** — HTML 默认可使用浏览器 Web Speech API 进行单词/句子朗读；若后续连接可用的高质量语音服务，可额外生成 voiceover 文件。
+
+推荐命名：
+- `EnglishLearning/YYYY-MM-DD-English-<TopicSlug>.md`
+- `EnglishLearning/YYYY-MM-DD-English-<TopicSlug>.html`
+- `EnglishLearning/assets/YYYY-MM-DD-<TopicSlug>-*.png`（有可持久化图片时）
