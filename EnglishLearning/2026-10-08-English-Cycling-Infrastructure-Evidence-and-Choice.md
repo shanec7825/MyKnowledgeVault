@@ -136,6 +136,23 @@ CAUTION        observed association ≠ automatic proof of ______
 
 读两遍，停顿按意义分组；再不看文本解释 **associated with** 为什么比 **caused** 更谨慎。
 
+
+### Visual retrieval · See → Hide → Explain
+
+**Concept map (a reasoning aid, not a causal conclusion):**
+
+```text
+CITY DESIGN ──→ PERCEIVED SAFETY ──→ WILLINGNESS TO CYCLE
+     │                                      │
+     └──→ ACCESS TO ROUTES ─────────────────┘
+                        ↓
+              OBSERVED COMMUTING CHANGE
+                        ↑
+          Other factors may also contribute
+```
+
+**Look for 20 seconds, hide the diagram, then explain it in English.** Use *be associated with* and *lower the barrier to*. Transfer: replace bike lanes with a university programming club and explain which barriers change. This diagram is a hypothesis map, not proof of causation.
+
 ## 4. Speaking · 4 min
 
 **Topic: How should a city decide whether to build more protected bike lanes?**
