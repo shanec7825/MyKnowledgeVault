@@ -69,3 +69,40 @@
   .mec-today h1 { font-size:25px; }
   .mec-context-row { grid-template-columns:1fr; }
 }
+
+/* Real-time MiMo TTS in rendered EnglishLearning notes */
+.mec-tts-target { position: relative; }
+.mec-inline-tts {
+  position: absolute;
+  right: -24px;
+  top: .15em;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-faint);
+  opacity: 0;
+  pointer-events: none;
+  cursor: pointer;
+  box-shadow: none;
+  font-size: 11px;
+  line-height: 22px;
+  transition: opacity .12s ease, background .12s ease, color .12s ease;
+}
+.mec-tts-target:hover > .mec-inline-tts,
+.mec-inline-tts:focus-visible {
+  opacity: .9;
+  pointer-events: auto;
+}
+.mec-inline-tts:hover {
+  color: var(--text-normal);
+  background: var(--background-modifier-hover);
+}
+@media (max-width: 700px) {
+  .mec-inline-tts {
+    right: 0;
+    top: -18px;
+  }
+}
