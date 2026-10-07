@@ -3,7 +3,7 @@ type: daily-english
 title: 2026-10-07 · Practice × Consolidation × Lasting Learning
 topic: "Practice × Consolidation × Lasting Learning"
 created: 2026-10-07
-updated: 2026-10-07
+updated: 2026-10-08
 tags:
   - english
   - daily-learning
@@ -301,4 +301,4 @@ Self-check:
 ## Previous / Next
 
 - Previous: [[EnglishLearning/2026-10-06-English-Wind-Farms-Scaling-Evidence|2026-10-06 · Wind Farms × Scaling Evidence]]
-- Next: 明日文档创建后自动补链
+- Next: [[EnglishLearning/2026-10-08-English-Cycling-Infrastructure-Evidence-and-Choice|2026-10-08 · Cycling Infrastructure × Evidence and Choice]]
