@@ -22,6 +22,15 @@ related:
 
 ← [[EnglishLearning/README|English Learning Hub]]
 
+## Multimedia Companion
+
+- 🎧 **Direct listening audio (MP3, 128 kbps):** [Open / play original VOA audio](https://voa-audio.voanews.eu/vle/2016/08/10/839c21d5-9d72-459a-bea7-cb6b6e0b00c5_hq.mp3?download=1)
+- 📝 **Listening transcript / source page:** [VOA — Review of Lessons 20–24](https://learningenglish.voanews.com/a/review-lesson-20-24/3450511.html)
+- 📖 **Reading source:** [ScienceDaily — Vagus Nerve Stimulation Could Help New Skills Stick](https://www.sciencedaily.com/releases/2026/10/261002080034.htm)
+- 🧩 **Interactive HTML lesson:** [Open today's interactive lesson](./2026-10-07-English-Practice-Consolidation-Lasting-Learning.html)
+
+> HTML 版本提供原音播放器、词汇点击朗读、隐藏/显示提示、篇章结构展开，以及 retrieval 自测。若 Obsidian 的浏览器插件接管本地 HTML 链接，可直接在 Obsidian 内打开；否则会由系统浏览器打开。
+
 ## Today's Focus
 
 今天从昨天的工程实验切换到 **learning / neuroscience**。核心不是“多学一点”，而是区分：
