@@ -25,3 +25,6 @@ Thumbs.db
 
 # Attention plugin settings may contain encrypted credentials and personal goals.
 .obsidian/plugins/attention-allocator/data.json
+
+# Local Xiaomi MiMo Token Plan credentials and runtime state.
+EnglishLearning/.mimo/
