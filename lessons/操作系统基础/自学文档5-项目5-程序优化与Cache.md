@@ -22,7 +22,7 @@
 
 ---
 
-# 第 1 章 性能实验第一原则：先保证结果真的被计算
+## 第 1 章 性能实验第一原则：先保证结果真的被计算
 
 错误 benchmark：
 
@@ -42,7 +42,7 @@ printf("%lld\n", sum);
 
 或把结果返回/写入不可轻易消除的位置。
 
-## 1.1 编译器是实验变量
+### 1.1 编译器是实验变量
 
 必须记录：
 
@@ -57,7 +57,7 @@ gcc -O3 ...
 
 ---
 
-# 第 2 章 可靠计时
+## 第 2 章 可靠计时
 
 使用 clock_gettime：
 
@@ -94,7 +94,7 @@ printf("%.6f\n", t1 - t0);
 
 ---
 
-# 第 3 章 Memory Hierarchy
+## 第 3 章 Memory Hierarchy
 
 极简层次：
 
@@ -124,9 +124,9 @@ Cache 的基本思想：
 
 ---
 
-# 第 4 章 局部性
+## 第 4 章 局部性
 
-## 4.1 时间局部性
+### 4.1 时间局部性
 
 同一个数据短时间内反复使用。
 
@@ -136,7 +136,7 @@ for (...) {
 }
 ~~~
 
-## 4.2 空间局部性
+### 4.2 空间局部性
 
 访问一个地址后，很快访问它附近地址。
 
@@ -154,7 +154,7 @@ for (i = 0; i < n; i += 1024)
 
 更容易利用连续数据。
 
-## 4.3 Cache line
+### 4.3 Cache line
 
 缓存通常不是一次只搬 4 字节 int，而是按 cache line 搬一块连续数据。常见系统可能是 64 字节，但不要在报告里无证据地假定；可查：
 
@@ -167,7 +167,7 @@ lscpu
 
 ---
 
-# 第 5 章 实验 1：连续访问 vs 跨步访问
+## 第 5 章 实验 1：连续访问 vs 跨步访问
 
 创建数组：
 
@@ -219,7 +219,7 @@ ns_per_access = elapsed_seconds × 1e9 / accesses
 
 ---
 
-# 第 6 章 实验 2：矩阵按行 vs 按列
+## 第 6 章 实验 2：矩阵按行 vs 按列
 
 C 二维数组按行存放。
 
@@ -253,7 +253,7 @@ for (int j = 0; j < N; j++)
 | row-major | | | | |
 | column-major | | | | |
 
-## 6.1 解释链
+### 6.1 解释链
 
 不要写：
 
@@ -273,7 +273,7 @@ for (int j = 0; j < N; j++)
 
 ---
 
-# 第 7 章 Working Set：数据规模为什么重要
+## 第 7 章 Working Set：数据规模为什么重要
 
 对不同大小重复测试：
 
@@ -301,7 +301,7 @@ lscpu
 
 ---
 
-# 第 8 章 实验 3：循环展开
+## 第 8 章 实验 3：循环展开
 
 基础：
 
@@ -352,7 +352,7 @@ objdump -d -Mintel ./bench | less
 
 ---
 
-# 第 9 章 向量化：一次处理多个元素
+## 第 9 章 向量化：一次处理多个元素
 
 O3 可能使用 SIMD 指令。
 
@@ -381,7 +381,7 @@ gcc -O3 -march=native -fopt-info-vec-optimized ...
 
 ---
 
-# 第 10 章 编译优化不是“把 O0 变快”这么简单
+## 第 10 章 编译优化不是“把 O0 变快”这么简单
 
 比较：
 
@@ -404,7 +404,7 @@ gcc -O3
 
 ---
 
-# 第 11 章 perf：有条件时补充硬件计数器
+## 第 11 章 perf：有条件时补充硬件计数器
 
 如果 Linux 环境允许：
 
@@ -431,7 +431,7 @@ perf stat -e cycles,instructions,cache-references,cache-misses ./bench
 
 ---
 
-# 第 12 章 简化 Cache 模拟器（可选但强烈推荐）
+## 第 12 章 简化 Cache 模拟器（可选但强烈推荐）
 
 参数：
 
@@ -467,7 +467,7 @@ tag | set index | block offset
 
 ---
 
-# 第 13 章 分块矩阵
+## 第 13 章 分块矩阵
 
 普通矩阵乘法：
 
@@ -495,7 +495,7 @@ C[i][j] += A[i][k] * B[k][j]
 
 ---
 
-# 第 14 章 性能实验的完整流程
+## 第 14 章 性能实验的完整流程
 
 任何性能问题都按：
 
@@ -516,29 +516,29 @@ C[i][j] += A[i][k] * B[k][j]
 
 ---
 
-# 第 15 章 必做实验
+## 第 15 章 必做实验
 
-## A. stride benchmark
+### A. stride benchmark
 输出 ns/access。
 
-## B. matrix row/column
+### B. matrix row/column
 同样元素数量、不同顺序。
 
-## C. working-set size
+### C. working-set size
 多个数据规模。
 
-## D. O0/O2/O3
+### D. O0/O2/O3
 同一函数多优化等级。
 
-## E. single accumulator vs multi accumulator
+### E. single accumulator vs multi accumulator
 观察依赖链与性能。
 
-## F. 汇编验证
+### F. 汇编验证
 至少选择一个有明显性能差异的函数，解释机器级变化。
 
 ---
 
-# 第 16 章 报告模板
+## 第 16 章 报告模板
 
 ~~~markdown
 # 项目 5 性能实验报告
@@ -578,7 +578,7 @@ C[i][j] += A[i][k] * B[k][j]
 
 ---
 
-# 第 17 章 常见错误
+## 第 17 章 常见错误
 
 > [!warning] 只跑一次
 > 单次时间不可靠。
@@ -600,7 +600,7 @@ C[i][j] += A[i][k] * B[k][j]
 
 ---
 
-# 第 18 章 验收自测
+## 第 18 章 验收自测
 
 1. 时间局部性与空间局部性是什么？
 2. cache line 为什么让连续访问有意义？
@@ -621,30 +621,30 @@ C[i][j] += A[i][k] * B[k][j]
 
 ---
 
-# 学习导航：资料、图解与扩展
+## 学习导航：资料、图解与扩展
 
 > [!tip] 阅读策略
 > 性能实验最容易“看见差异就编故事”。固定流程是：**先保证结果正确 → 控制变量 → 重复测量 → 看汇编/计数器 → 再解释**。
 
-## A. 实验前必读
+### A. 实验前必读
 
 - **CS:APP 3e Ch.5**：§5.2–5.14，重点是性能表达、循环优化、并行性、瓶颈定位。
 - **CS:APP Ch.6**：§6.2 Locality、§6.3 Memory Hierarchy、§6.4 Cache、§6.5–6.6 Cache-Friendly Code。
 - 总索引：[[实验参考指南与可视化索引]]
 
-## B. 做实验时按需查
+### B. 做实验时按需查
 
 - 编译器优化：GCC Optimize Options：https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html
 - 汇编证据：GNU objdump：https://sourceware.org/binutils/docs/binutils.html
 - Linux 可尝试 `perf stat` / `perf record`；若 WSL/权限下计数器不可用，明确记录“只能凭时间与汇编推断”的证据边界。
 
-## C. 视频/扩展
+### C. 视频/扩展
 
 - MIT 6.172 Lecture 10 Measurement and Timing。
 - MIT 6.172 Lecture 14 Caching and Cache-Efficient Algorithms。
   https://ocw.mit.edu/courses/6-172-performance-engineering-of-software-systems-fall-2018/
 
-## 机制图：性能结论需要证据链
+### 机制图：性能结论需要证据链
 
 ```mermaid
 flowchart LR
