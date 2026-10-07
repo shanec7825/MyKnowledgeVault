@@ -1,0 +1,5 @@
+.debate-room-view { padding: 0 !important; display: flex; flex-direction: column; overflow: hidden; }
+.debate-room-toolbar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; padding: 8px 12px; border-bottom: 1px solid var(--background-modifier-border); }
+.debate-room-toolbar span { margin-right: auto; color: var(--text-muted); }
+.debate-room-frame { flex: 1; width: 100%; min-height: 0; border: 0; background: var(--background-primary); }
+.debate-room-status { padding: 24px; white-space: pre-wrap; }

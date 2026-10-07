@@ -2,7 +2,7 @@
   "userName": "",
   "permissionMode": "yolo",
   "model": "openai-codex/gpt-6-luna",
-  "effortLevel": "high",
+  "effortLevel": "medium",
   "serviceTier": "default",
   "enableAutoTitleGeneration": true,
   "titleGenerationLocale": "",
@@ -35,7 +35,6 @@
       "titleModelEnvironmentType": "",
       "environmentVariables": "",
       "environmentHash": "",
-      "responseStyle": "Default",
       "modelAliases": {},
       "visibleModels": [
         "haiku",
@@ -86,7 +85,10 @@
             "max"
           ]
         }
-      ]
+      ],
+      "outputStyle": null,
+      "promptSuggestions": false,
+      "discoveredOutputStyles": []
     },
     "codex": {
       "enabled": true,
@@ -96,10 +98,13 @@
       "modelAliases": {},
       "visibleModels": [
         "gpt-6-luna",
-        "gpt-6.1-sol"
+        "gpt-6.1-sol",
+        "gpt-6-astra",
+        "gpt-5.6-sol"
       ],
       "enableUltraEffort": false,
       "responseStyle": "pragmatic",
+      "responseVerbosity": "default",
       "reasoningSummary": "detailed",
       "environmentVariables": "",
       "environmentHash": "runtime-input:v1:ed54f4f5238abeec7f65a5da1e468c9a639e157a7d1c7753b53f54ba1196e8a0",
@@ -154,6 +159,51 @@
           "isDefault": true
         },
         {
+          "model": "gpt-6-astra",
+          "displayName": "GPT-6 Astra",
+          "description": "Frontier intelligence for the most demanding work.",
+          "supportedReasoningEfforts": [
+            {
+              "value": "low",
+              "description": "Fast responses with lighter reasoning"
+            },
+            {
+              "value": "medium",
+              "description": "Balances speed and reasoning depth for everyday tasks"
+            },
+            {
+              "value": "high",
+              "description": "Greater reasoning depth for complex problems"
+            },
+            {
+              "value": "xhigh",
+              "description": "Extra high reasoning depth for complex problems"
+            },
+            {
+              "value": "max",
+              "description": "Maximum reasoning depth for the hardest problems"
+            },
+            {
+              "value": "ultra",
+              "description": "Maximum reasoning with automatic task delegation"
+            }
+          ],
+          "defaultReasoningEffort": "low",
+          "serviceTiers": [
+            {
+              "id": "priority",
+              "name": "Fast",
+              "description": "2x speed, increased usage"
+            }
+          ],
+          "defaultServiceTier": null,
+          "inputModalities": [
+            "text",
+            "image"
+          ],
+          "isDefault": false
+        },
+        {
           "model": "gpt-6-luna",
           "displayName": "GPT-6 Luna",
           "description": "Fast and affordable model for easier tasks.",
@@ -185,6 +235,51 @@
               "id": "priority",
               "name": "Fast",
               "description": "1.5x speed"
+            }
+          ],
+          "defaultServiceTier": null,
+          "inputModalities": [
+            "text",
+            "image"
+          ],
+          "isDefault": false
+        },
+        {
+          "model": "gpt-5.6-sol",
+          "displayName": "GPT-5.6 Sol",
+          "description": "Older generation workhorse model.",
+          "supportedReasoningEfforts": [
+            {
+              "value": "low",
+              "description": "Fast responses with lighter reasoning"
+            },
+            {
+              "value": "medium",
+              "description": "Balances speed and reasoning depth for everyday tasks"
+            },
+            {
+              "value": "high",
+              "description": "Greater reasoning depth for complex problems"
+            },
+            {
+              "value": "xhigh",
+              "description": "Extra high reasoning depth for complex problems"
+            },
+            {
+              "value": "max",
+              "description": "Maximum reasoning depth for the hardest problems"
+            },
+            {
+              "value": "ultra",
+              "description": "Maximum reasoning with automatic task delegation"
+            }
+          ],
+          "defaultReasoningEffort": "low",
+          "serviceTiers": [
+            {
+              "id": "priority",
+              "name": "Fast",
+              "description": "1.5x speed, increased usage"
             }
           ],
           "defaultServiceTier": null,
@@ -245,8 +340,8 @@
   },
   "settingsProvider": "codex",
   "lastSelectedChatModel": {
-    "providerId": "deepseek",
-    "model": "deepseek-harness/[\"deepseek-account\",\"deepseek-flash\"]"
+    "providerId": "codex",
+    "model": "openai-codex/gpt-6.1-sol"
   },
   "savedProviderModel": {
     "claude": "fable",
@@ -255,7 +350,7 @@
   "savedProviderEffort": {
     "claude": "medium",
     "deepseek": "low",
-    "codex": "high"
+    "codex": "medium"
   },
   "savedProviderServiceTier": {
     "codex": "default"
@@ -267,7 +362,6 @@
     "deepseek": "yolo"
   },
   "pendingProviderSessionInvalidations": {},
-  "maxWarmAgentProcesses": 5,
   "enableAutoScroll": true,
   "showMessageTimestamps": false,
   "deferMathRenderingDuringStreaming": true,

@@ -10,5 +10,7 @@
   "obsidian-html-plugin",
   "qiaomu-reader",
   "qiaomu-ai-rss",
-  "qiaomu-agent"
+  "qiaomu-agent",
+  "attention-allocator",
+  "debate-room"
 ]

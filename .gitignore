@@ -5,6 +5,11 @@
 # reviewed `.mcp.example.json` instead of committing the live file.
 .mcp.json
 
+# Cloud-drive staging areas (Google Drive/Nutstore). Never vault content:
+# `.tmp.driveupload` alone reached ~200 MB of transient upload parts.
+.tmp.driveupload/
+.tmp.drivedownload/
+
 # Obsidian and operating-system session state.
 .obsidian/workspace*.json
 .trash/
@@ -17,3 +22,6 @@ Thumbs.db
 # QMD generated index and runtime state (config is tracked).
 .qmd/*
 !.qmd/index.yml
+
+# Attention plugin settings may contain encrypted credentials and personal goals.
+.obsidian/plugins/attention-allocator/data.json

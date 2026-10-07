@@ -1,0 +1,9 @@
+{
+  "id": "debate-room",
+  "name": "论场 · Debate Room",
+  "version": "1.0.0",
+  "minAppVersion": "1.5.0",
+  "description": "Multi-agent debates, coaching and research with notes saved directly to your vault.",
+  "author": "Debate Room",
+  "isDesktopOnly": true
+}

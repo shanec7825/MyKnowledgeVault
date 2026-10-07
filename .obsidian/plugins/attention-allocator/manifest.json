@@ -1,0 +1,9 @@
+{
+  "id": "attention-allocator",
+  "name": "注意力分配器",
+  "version": "0.2.0",
+  "minAppVersion": "1.5.0",
+  "description": "结合本库 QMD 检索与本地 Mem0，把此刻的想法变成一个可以开始的小动作。支持 Xiaomi MiMo Token Plan。",
+  "author": "Personal workspace",
+  "isDesktopOnly": true
+}

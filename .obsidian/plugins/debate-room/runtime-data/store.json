@@ -1,0 +1,14 @@
+{
+  "debates": [],
+  "library": [],
+  "customPresets": [],
+  "coachSessions": [],
+  "voiceSettings": {
+    "provider": "edge",
+    "proVoice": "zh-CN-YunxiNeural",
+    "conVoice": "zh-CN-XiaoxiaoNeural",
+    "enProVoice": "en-US-GuyNeural",
+    "enConVoice": "en-US-JennyNeural",
+    "rate": 1
+  }
+}
