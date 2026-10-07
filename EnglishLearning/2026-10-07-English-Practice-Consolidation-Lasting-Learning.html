@@ -40,6 +40,11 @@ textarea{width:100%;min-height:190px;border:1px solid #d7dce2;border-radius:10px
 .checks{margin:12px 0 0;padding-left:18px;color:#475467;font-size:13px}
 .small{font-size:13px;color:#667085}
 footer{text-align:center;color:#98a2b3;font-size:12px;margin-top:34px}
+#selectionListen{
+  position:fixed;z-index:9999;display:none;padding:6px 9px;border-radius:7px;
+  border:1px solid #d7dce2;background:#202938;color:#fff;font:inherit;font-size:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,.12);cursor:pointer
+}
 @media(max-width:640px){main{padding:18px 12px 50px}section{padding:18px}h1{font-size:28px}.vocab{grid-template-columns:1fr}}
 </style>
 </head>
@@ -142,6 +147,7 @@ footer{text-align:center;color:#98a2b3;font-size:12px;margin-top:34px}
 
 <footer>EnglishLearning · content first, guidance on demand</footer>
 </main>
+<button id="selectionListen" type="button">Listen</button>
 <script>
 const key='english-2026-10-07-writing';
 const draft=document.getElementById('draft');
@@ -153,6 +159,34 @@ function update(){
   localStorage.setItem(key,draft.value);
 }
 draft.addEventListener('input',update);update();
+
+const selectionListen=document.getElementById('selectionListen');
+let selectedText='';
+
+function hideListen(){selectionListen.style.display='none';selectedText='';}
+
+function showListenForSelection(){
+  const sel=window.getSelection();
+  const text=(sel&&sel.toString()||'').trim();
+  if(!text || text.length<2 || text.length>1800){hideListen();return;}
+  selectedText=text;
+  const range=sel.getRangeAt(0);
+  const rect=range.getBoundingClientRect();
+  selectionListen.style.left=Math.min(window.innerWidth-90,Math.max(8,rect.right+8))+'px';
+  selectionListen.style.top=Math.min(window.innerHeight-42,Math.max(8,rect.top-4))+'px';
+  selectionListen.style.display='block';
+}
+
+document.addEventListener('mouseup',()=>setTimeout(showListenForSelection,0));
+document.addEventListener('keyup',()=>setTimeout(showListenForSelection,0));
+document.addEventListener('scroll',hideListen,{passive:true});
+
+selectionListen.addEventListener('click',()=>{
+  if(!selectedText)return;
+  const uri='obsidian://mimo-tts?text='+encodeURIComponent(selectedText);
+  window.location.href=uri;
+  hideListen();
+});
 </script>
 </body>
 </html>
