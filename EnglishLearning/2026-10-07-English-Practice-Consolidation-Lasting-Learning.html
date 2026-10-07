@@ -23,6 +23,8 @@ input[type=text]{width:100%;box-sizing:border-box;padding:10px;border:1px solid 
   <div class="muted">EnglishLearning · 2026-10-07</div>
   <h1>Practice × Consolidation × Lasting Learning</h1>
   <p>Multisensory lesson: listen → build a global model → retrieve → speak → review.</p>
+  <p class="small">🔊 Vocabulary buttons prefer your local Xiaomi MiMo bridge when it is running; otherwise they fall back to browser speech.</p>
+  <p><a class="btn secondary" href="http://127.0.0.1:8765/setup" target="_blank">MiMo Voice Setup</a></p>
   <span class="pill">Listening</span><span class="pill">Reading</span><span class="pill">Retrieval</span><span class="pill">Speaking</span>
 </section>
 
@@ -127,8 +129,21 @@ input[type=text]{width:100%;box-sizing:border-box;padding:10px;border:1px solid 
 </div>
 
 <script>
-function speak(text){
-  if(!('speechSynthesis' in window)){alert('Speech synthesis is not supported in this browser.');return;}
+async function speak(text){
+  try{
+    const r=await fetch('http://127.0.0.1:8765/api/tts',{
+      method:'POST',
+      headers:{'content-type':'application/json'},
+      body:JSON.stringify({text})
+    });
+    if(r.ok){
+      const blob=await r.blob();
+      const a=new Audio(URL.createObjectURL(blob));
+      await a.play();
+      return;
+    }
+  }catch(e){}
+  if(!('speechSynthesis' in window)){alert('MiMo local voice is unavailable and browser speech synthesis is not supported.');return;}
   speechSynthesis.cancel();
   const u=new SpeechSynthesisUtterance(text);
   u.lang='en-US'; u.rate=0.9;
