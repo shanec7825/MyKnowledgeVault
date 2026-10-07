@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>2026-10-07 · Practice × Consolidation × Lasting Learning</title>
+<style>
+:root{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.55;color:#1f2937;background:#f7f7fb}
+body{margin:0}.wrap{max-width:980px;margin:auto;padding:24px}.hero,.card{background:white;border:1px solid #e5e7eb;border-radius:18px;padding:20px;margin:14px 0;box-shadow:0 8px 28px rgba(0,0,0,.04)}
+.hero h1{margin:.2rem 0}.muted{opacity:.72}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+button,a.btn{display:inline-block;border:0;border-radius:10px;padding:9px 12px;background:#111827;color:white;text-decoration:none;cursor:pointer;margin:4px 4px 4px 0}
+button.secondary,a.secondary{background:#e5e7eb;color:#111827}
+audio{width:100%;margin-top:10px}.pill{display:inline-block;padding:4px 8px;border-radius:999px;background:#eef2ff;margin:3px}
+.hidden{display:none}.flow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.node{padding:10px 12px;border:1px solid #d1d5db;border-radius:12px;background:#fafafa}.arrow{font-weight:700}
+details{margin-top:8px}.prompt{padding:12px;border-left:4px solid #d1d5db;background:#fafafa;border-radius:8px}
+input[type=text]{width:100%;box-sizing:border-box;padding:10px;border:1px solid #d1d5db;border-radius:8px;margin:6px 0}
+.small{font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<section class="hero">
+  <div class="muted">EnglishLearning · 2026-10-07</div>
+  <h1>Practice × Consolidation × Lasting Learning</h1>
+  <p>Multisensory lesson: listen → build a global model → retrieve → speak → review.</p>
+  <span class="pill">Listening</span><span class="pill">Reading</span><span class="pill">Retrieval</span><span class="pill">Speaking</span>
+</section>
+
+<section class="card">
+  <h2>🎧 Original Listening Audio</h2>
+  <p>VOA Learning English — <em>Review of Lessons 20–24</em></p>
+  <audio controls preload="metadata">
+    <source src="https://voa-audio.voanews.eu/vle/2016/08/10/839c21d5-9d72-459a-bea7-cb6b6e0b00c5_hq.mp3?download=1" type="audio/mpeg">
+  </audio>
+  <p>
+    <a class="btn" href="https://voa-audio.voanews.eu/vle/2016/08/10/839c21d5-9d72-459a-bea7-cb6b6e0b00c5_hq.mp3?download=1" target="_blank">Open MP3</a>
+    <a class="btn secondary" href="https://learningenglish.voanews.com/a/review-lesson-20-24/3450511.html" target="_blank">Transcript / Source</a>
+  </p>
+  <div class="prompt"><strong>First-pass task:</strong> Keep only three slots: <b>learner problem → advice → practice method</b>.</div>
+</section>
+
+<section class="card">
+  <h2>📖 Reading</h2>
+  <p>ScienceDaily — <em>Vagus Nerve Stimulation Could Help New Skills Stick</em></p>
+  <a class="btn" href="https://www.sciencedaily.com/releases/2026/10/261002080034.htm" target="_blank">Open original article</a>
+  <details>
+    <summary>Show the article model only after your first read</summary>
+    <div class="flow" style="margin-top:12px">
+      <div class="node">Timing</div><div class="arrow">→</div>
+      <div class="node">Intervention</div><div class="arrow">→</div>
+      <div class="node">Behavioral result</div><div class="arrow">→</div>
+      <div class="node">Physiological observation</div><div class="arrow">→</div>
+      <div class="node">Association</div><div class="arrow">→</div>
+      <div class="node">Interpretation</div><div class="arrow">→</div>
+      <div class="node">Limitation</div>
+    </div>
+  </details>
+</section>
+
+<section class="card">
+  <h2>🧠 Active Vocabulary</h2>
+  <div class="grid">
+    <div>
+      <h3>consolidate</h3>
+      <p><b>new / fragile learning → becomes stable</b></p>
+      <button onclick="speak('consolidate')">🔊 Hear word</button>
+      <button class="secondary" onclick="speak('Retrieval practice may help me consolidate what I learned.')">🔊 Hear sentence</button>
+    </div>
+    <div>
+      <h3>retain</h3>
+      <p><b>learned earlier → still available later</b></p>
+      <button onclick="speak('retain')">🔊 Hear word</button>
+      <button class="secondary" onclick="speak('I understood it today, but how much will I retain tomorrow?')">🔊 Hear sentence</button>
+    </div>
+    <div>
+      <h3>validate</h3>
+      <p><b>test whether a claim/model is supported</b></p>
+      <button onclick="speak('validate')">🔊 Hear word</button>
+    </div>
+    <div>
+      <h3>account for</h3>
+      <p><b>include an important factor in an explanation</b></p>
+      <button onclick="speak('account for')">🔊 Hear phrase</button>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>🎯 Retrieval Check</h2>
+  <p>Try to produce the English before revealing the answer.</p>
+  <div class="prompt">“让刚学到的知识变得稳定” <button onclick="reveal('a1')">Reveal</button> <span id="a1" class="hidden"><b>consolidate</b></span></div>
+  <div class="prompt">“过一段时间仍然保留信息/技能” <button onclick="reveal('a2')">Reveal</button> <span id="a2" class="hidden"><b>retain</b></span></div>
+  <div class="prompt">“用证据检验一个判断” <button onclick="reveal('a3')">Reveal</button> <span id="a3" class="hidden"><b>validate</b></span></div>
+</section>
+
+<section class="card">
+  <h2>🗣 Speaking Ladder</h2>
+  <ol>
+    <li>What is the difference between performing well immediately and retaining a skill?</li>
+    <li>Why might the period after practice matter?</li>
+    <li>What evidence in the study is direct, and what is interpretation?</li>
+    <li>Why should we be cautious when applying a mouse study to human studying?</li>
+    <li>How could you test durable learning in programming or mathematics?</li>
+  </ol>
+  <button onclick="speak('When can we say that we have really learned something?')">🔊 Hear core question</button>
+</section>
+
+<section class="card">
+  <h2>⚡ 8-minute Mode</h2>
+  <ol>
+    <li>2 min — listen once; keep problem → advice → practice.</li>
+    <li>3 min — read; keep timing → result → association → interpretation.</li>
+    <li>1 min — state one observation and one interpretation.</li>
+    <li>1 min — retrieve <b>consolidate</b> and <b>retain</b>.</li>
+    <li>1 min — answer: How would I know tomorrow whether today's learning lasted?</li>
+  </ol>
+</section>
+
+<section class="card small">
+  <h2>Reflection</h2>
+  <label>Listening breakdown</label><input id="r1" type="text" placeholder="sound recognition / vocabulary / chunking / global model..." />
+  <label>Where did I lose the article model?</label><input id="r2" type="text" />
+  <label>What could I retrieve without seeing the English?</label><input id="r3" type="text" />
+  <button onclick="saveReflection()">Save locally</button>
+  <span id="saved" class="muted"></span>
+</section>
+</div>
+
+<script>
+function speak(text){
+  if(!('speechSynthesis' in window)){alert('Speech synthesis is not supported in this browser.');return;}
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang='en-US'; u.rate=0.9;
+  const voices=speechSynthesis.getVoices();
+  const v=voices.find(v=>v.lang && v.lang.toLowerCase().startsWith('en'));
+  if(v)u.voice=v;
+  speechSynthesis.speak(u);
+}
+function reveal(id){document.getElementById(id).classList.remove('hidden')}
+const key='english-2026-10-07-reflection';
+function saveReflection(){
+  const v=[r1.value,r2.value,r3.value];
+  localStorage.setItem(key,JSON.stringify(v));
+  saved.textContent=' Saved in this browser.';
+}
+try{
+ const v=JSON.parse(localStorage.getItem(key)||'null');
+ if(v){r1.value=v[0]||'';r2.value=v[1]||'';r3.value=v[2]||'';}
+}catch(e){}
+</script>
+</body>
+</html>
