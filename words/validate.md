@@ -2,7 +2,7 @@
 type: resource
 title: validate
 created: 2026-10-06
-updated: 2026-10-06
+updated: 2026-10-08
 related:
   - "[[EnglishLearning/2026-10-06-English-Wind-Farms-Scaling-Evidence|2026-10-06 · Wind Farms × Scaling Evidence]]"
 tags:
@@ -21,3 +21,9 @@ tags:
 > We should validate the simulation against real measurements.
 
 Related：[[EnglishLearning/2026-10-06-English-Wind-Farms-Scaling-Evidence|2026-10-06 · Wind Farms × Scaling Evidence]]
+
+## Transfer · 2026-10-08
+
+Before claiming a policy works, we need to validate the claim against real evidence. A reported association is not the same as proof of causation.
+
+Related: [[EnglishLearning/2026-10-08-English-Cycling-Infrastructure-Evidence-and-Choice|2026-10-08 · Cycling Infrastructure × Evidence and Choice]]
