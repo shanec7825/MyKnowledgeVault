@@ -80,3 +80,15 @@ tags:
 - `EnglishLearning/YYYY-MM-DD-English-<TopicSlug>.md`
 - `EnglishLearning/YYYY-MM-DD-English-<TopicSlug>.html`
 - `EnglishLearning/assets/YYYY-MM-DD-<TopicSlug>-*.png`（有可持久化图片时）
+
+
+### Real-time MiMo reading
+
+Daily English pages use the Obsidian plugin `.obsidian/plugins/mimo-english-coach/` as the only MiMo credential holder.
+
+- **Markdown reading mode:** the plugin automatically adds a subtle speaker button to English paragraphs/headings/list items. The button is hidden until hover and calls MiMo TTS in real time.
+- **Markdown editing mode:** select English text and run `MiMo English Coach: Speak selected text with MiMo`.
+- **HTML companion:** when the learner selects text, show a small temporary `Listen` button near the selection. It should call `obsidian://mimo-tts?text=<URL-encoded text>`, so the Obsidian plugin performs MiMo TTS without exposing the API key to the HTML file.
+- Do not store API keys in Markdown or HTML.
+- Do not pre-generate audio for ordinary words or sentences; generate speech on demand. Preserve original source audio separately for listening practice.
+- Keep the TTS control visually unobtrusive: no permanent audio toolbar and no repeated speaker icons cluttering the content.
