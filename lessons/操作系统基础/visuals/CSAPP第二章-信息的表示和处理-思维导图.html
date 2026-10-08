@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSAPP 第二章｜信息的表示和处理</title>
+<style>
+:root{--bg:#0b1020;--panel:#111831;--line:#33446f;--text:#eef3ff;--muted:#9fb0d7;--accent:#83b7ff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% 0,#182650,var(--bg) 45%);color:var(--text);font-family:Inter,"Noto Sans SC",system-ui,sans-serif}
+header{padding:28px 24px 12px;text-align:center}h1{margin:0;font-size:clamp(26px,4vw,46px)}header p{color:var(--muted);margin:10px}
+.toolbar{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:14px}.toolbar button{background:#172241;color:var(--text);border:1px solid #40517d;border-radius:999px;padding:8px 13px;cursor:pointer}.toolbar button:hover{border-color:var(--accent)}
+main{max-width:1400px;margin:auto;padding:12px 24px 60px}.root{text-align:center;margin:12px auto 28px;max-width:650px;padding:20px;border:1px solid #4e659b;border-radius:18px;background:#162044;box-shadow:0 16px 50px #0006}.root b{font-size:22px}.root span{display:block;color:var(--muted);margin-top:7px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.branch{position:relative;background:color-mix(in srgb,var(--panel) 92%,transparent);border:1px solid var(--line);border-radius:16px;padding:16px;min-height:390px}.branch h2{font-size:19px;margin:0 0 5px}.branch>.q{color:var(--accent);font-size:13px;margin-bottom:14px}.node{background:#0d1429;border-left:3px solid #536fae;border-radius:8px;margin:9px 0;padding:10px;cursor:pointer}.node strong{display:block}.node small{display:block;color:var(--muted);line-height:1.5;margin-top:4px}.node .detail{display:none;color:#cad6f4;font-size:13px;line-height:1.55;padding-top:7px}.node.open .detail{display:block}.footer{margin-top:22px;border:1px dashed #465a8c;border-radius:14px;padding:15px;color:var(--muted)}.footer b{color:var(--text)}
+@media(max-width:1000px){.grid{grid-template-columns:1fr 1fr}}@media(max-width:620px){.grid{grid-template-columns:1fr}}
+body.focus .branch{opacity:.24}body.focus .branch.active{opacity:1;transform:scale(1.01)}
+</style></head><body>
+<header><h1>CSAPP Chapter 2 · 信息的表示和处理</h1><p>一张图抓住主线：位模式 → 类型解释 → 机器运算 → 有限精度</p><div class="toolbar"><button onclick="reset()">全部</button><button onclick="focusB(0)">2.1 信息存储</button><button onclick="focusB(1)">2.2 整数表示</button><button onclick="focusB(2)">2.3 整数运算</button><button onclick="focusB(3)">2.4 浮点数</button><button onclick="toggleAll()">展开/收起节点</button></div></header>
+<main><div class="root"><b>有限位宽的比特串</b><span>机器保存的是 bits；意义来自“如何解释、如何运算”</span></div>
+<div class="grid">
+<section class="branch"><h2>2.1 信息存储</h2><div class="q">核心问题：数据怎样落到内存？</div>
+<div class="node"><strong>Bit → Byte → Hex</strong><small>8 bit = 1 byte；1 hex digit = 4 bit</small><div class="detail">十六进制是观察机器位模式的最佳桥梁。</div></div>
+<div class="node"><strong>地址与对象</strong><small>内存 ≈ 按地址编号的字节数组</small><div class="detail">C 对象占连续字节，指针连接“值”与“地址”。</div></div>
+<div class="node"><strong>Endian</strong><small>小端：低有效字节放低地址</small><div class="detail">0x12345678 在小端中按低→高地址为 78 56 34 12。</div></div>
+<div class="node"><strong>位运算</strong><small>&amp; 掩码 · | 置位 · ^ 翻转 · ~ 取反</small><div class="detail">把整数暂时当成位向量，而不是数学上的数。</div></div>
+<div class="node"><strong>移位</strong><small>&lt;&lt; 左移；逻辑/算术右移</small><div class="detail">移位既是位操作，也连接到整数乘除法。</div></div>
+</section>
+<section class="branch"><h2>2.2 整数表示</h2><div class="q">核心问题：同一位串为什么能是不同的数？</div>
+<div class="node"><strong>Unsigned</strong><small>权值：1,2,4,...</small><div class="detail">w 位范围 0 ~ 2^w-1。</div></div>
+<div class="node"><strong>Two's Complement</strong><small>最高位具有负权</small><div class="detail">w 位范围 -2^(w-1) ~ 2^(w-1)-1，因此不对称。</div></div>
+<div class="node"><strong>同位模式，不同解释</strong><small>11111111 → 255 或 -1</small><div class="detail">这是 signed/unsigned 转换的根本模型。</div></div>
+<div class="node"><strong>类型转换</strong><small>先看位宽，再看 signedness</small><div class="detail">混合表达式尤其要警惕隐式转为 unsigned。</div></div>
+<div class="node"><strong>扩展 / 截断</strong><small>零扩展 · 符号扩展 · 丢高位</small><div class="detail">先处理位模式，再用目标类型重新解释。</div></div>
+</section>
+<section class="branch"><h2>2.3 整数运算</h2><div class="q">核心问题：固定字长下“算术”是什么？</div>
+<div class="node"><strong>模 2^w</strong><small>unsigned 加法天然回绕</small><div class="detail">高于 w 位的结果被截掉。</div></div>
+<div class="node"><strong>补码加法</strong><small>可共享同一个硬件加法器</small><div class="detail">位级计算相同，signed/unsigned 的结果解释与溢出判断不同。</div></div>
+<div class="node"><strong>取负</strong><small>~x + 1</small><div class="detail">最小补码值是边界特例：其正值无法在同位宽表示。</div></div>
+<div class="node"><strong>乘法与移位</strong><small>固定宽度仍只保留低 w 位</small><div class="detail">乘 2^k 与左移建立联系。</div></div>
+<div class="node"><strong>统一心智模型</strong><small>数学计算 → 截成 w 位 → 重新解释</small><div class="detail">用这一条推导规则代替大量死记硬背。</div></div>
+</section>
+<section class="branch"><h2>2.4 浮点数</h2><div class="q">核心问题：有限 bits 怎样近似实数？</div>
+<div class="node"><strong>s · exp · frac</strong><small>(-1)^s × M × 2^E</small><div class="detail">类似二进制科学计数法，但编码经过精心设计。</div></div>
+<div class="node"><strong>规格化</strong><small>隐含前导 1 + 偏置指数</small><div class="detail">承担绝大多数普通非零浮点值。</div></div>
+<div class="node"><strong>非规格化</strong><small>填补 0 附近</small><div class="detail">实现 gradual underflow，并包含 ±0。</div></div>
+<div class="node"><strong>∞ / NaN</strong><small>exp 全 1</small><div class="detail">表达溢出、无穷以及未定义/异常数值结果。</div></div>
+<div class="node"><strong>舍入与间距</strong><small>浮点数是离散集合</small><div class="detail">数越大，绝对间距通常越大；运算结果需要舍入，因此结合律等性质可能失效。</div></div>
+</section></div>
+<div class="footer"><b>贯穿后续课程：</b>寄存器、机器指令、Cache 地址、虚拟地址、整数漏洞，本质上仍是在处理有限位宽比特串。建议配合 <code>自学文档1-项目1-数据表示与位运算.md</code> 做实验。</div>
+</main><script>
+const nodes=[...document.querySelectorAll('.node')];nodes.forEach(n=>n.onclick=()=>n.classList.toggle('open'));
+function focusB(i){document.body.classList.add('focus');document.querySelectorAll('.branch').forEach((b,j)=>b.classList.toggle('active',i===j))}
+function reset(){document.body.classList.remove('focus');document.querySelectorAll('.branch').forEach(b=>b.classList.remove('active'))}
+let expanded=false;function toggleAll(){expanded=!expanded;nodes.forEach(n=>n.classList.toggle('open',expanded))}
+</script></body></html>
