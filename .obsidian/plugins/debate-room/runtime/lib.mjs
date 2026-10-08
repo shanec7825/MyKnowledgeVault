@@ -95,13 +95,13 @@ export async function requestJson(url, init={}, signal) {
   return res.json();
 }
 export {search} from './search.mjs';
-export async function generate(messages,settings,signal,model) {
+export async function generate(messages,settings,signal,model,options={}) {
   if (settings.provider === 'demo') throw new Error('演示模式不调用语言模型');
   const base = normalizeBaseUrl(settings.baseUrl,settings.provider);
   const ollama = settings.provider==='ollama';
   const mimo=settings.provider==='mimo';
   if(mimo&&!settings.apiKey)throw new Error('请先填写 MiMo Token Plan 专属 API Key');
-  const body = {model:model || settings.model,messages,stream:false,...(ollama?{options:{temperature:0.7}}:{temperature:0.7})};
+  const body = {model:model || settings.model,messages,stream:false,...(ollama?{options:{temperature:0.7}}:mimo?(options.thinking===false?{thinking:{type:'disabled'},temperature:0.3}:{}):{temperature:0.7})};
   const data = await requestJson(base+(ollama?'/api/chat':'/chat/completions'),{method:'POST',headers:{'Content-Type':'application/json',...(settings.apiKey?(mimo?{'api-key':settings.apiKey}:{Authorization:`Bearer ${settings.apiKey}`}):{})},body:JSON.stringify(body)},signal);
   const content = ollama?data.message?.content:data.choices?.[0]?.message?.content;
   if (typeof content !== 'string' || !content.trim()) throw new Error('模型未返回有效文本');

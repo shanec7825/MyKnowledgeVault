@@ -110,7 +110,9 @@ class DebatePlugin extends Plugin {
         if (this.child === child) {
           this.child = null; this.starting = null;
           for (const leaf of this.app.workspace.getLeavesOfType(VIEW)) {
-            const view = leaf.view; view.ready = false; view.status.hidden = false; view.status.textContent = '本地服务已退出，请点击重启服务。';
+            const view = leaf.view;
+            if (view.plugin !== this || !view.status) continue;
+            view.ready = false; view.status.hidden = false; view.status.textContent = '本地服务已退出，请点击重启服务。';
           }
           if (!this.stopping) new Notice('论场服务已退出，请重启服务');
         }

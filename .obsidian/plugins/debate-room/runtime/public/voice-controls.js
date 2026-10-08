@@ -4,5 +4,32 @@ export function voiceSettings(settings,names,enabled){
   const s=settings||{};
   const options=(voices,value,english,mimo=false)=>Object.entries(voices||{}).filter(([id])=>mimo?(/^[A-Za-z]+$/.test(id)===english):id.startsWith(english?'en-':'zh-')).map(([id,name])=>`<option value="${esc(id)}" ${id===value?'selected':''}>${esc(name)}</option>`).join('');
   const selector=(name,label,voices,value,english,mimo)=>`<label>${label}<select name="${name}">${options(voices,value,english,mimo)}</select></label>`;
-  return `<section class="form-card settings-card voice-settings"><h2>语音朗读</h2><p class="hint">默认使用小米 MiMo-V2.5-TTS，无需 Python。朗读正文发送到你配置的小米服务；小米语速由风格指令控制，实际速度可能有偏差。</p><form id="voice-form"><fieldset ${enabled?'':'disabled'}><div class="form-grid"><label>语音模式<select name="provider">${[['mimo','小米 MiMo 语音'],['edge','Edge 神经语音'],['system','系统朗读']].map(([v,label])=>`<option value="${v}" ${s.provider===v?'selected':''}>${label}</option>`).join('')}</select></label><label>语速<select name="rate">${[0.8,0.9,1,1.1,1.2,1.3].map(rate=>`<option value="${rate}" ${rate===s.rate?'selected':''}>${rate} 倍</option>`).join('')}</select></label></div><h3>小米语音连接与音色</h3><div class="form-grid"><label>连接来源<select name="reuseModelConnection"><option value="true" ${s.reuseModelConnection!==false?'selected':''}>优先复用已配置的 MiMo 模型连接</option><option value="false" ${s.reuseModelConnection===false?'selected':''}>独立语音连接</option></select></label><label>语音模型<input name="mimoModel" value="${esc(s.mimoModel||'mimo-v2.5-tts')}" readonly></label><label>独立服务地址<input name="mimoBaseUrl" value="${esc(s.mimoBaseUrl||'https://api.xiaomimimo.com/v1')}" placeholder="https://token-plan-cn.xiaomimimo.com/v1"></label><label>独立 API Key<input name="apiKey" type="password" autocomplete="new-password" placeholder="${s.hasApiKey?'已设置，留空保留；输入 - 清除':'未设置；复用 MiMo 模型连接时无需填写'}"></label>${selector('mimoProVoice','小米中文正方',mimoVoices,s.mimoProVoice||'苏打',false,true)}${selector('mimoConVoice','小米中文反方',mimoVoices,s.mimoConVoice||'茉莉',false,true)}${selector('mimoEnProVoice','小米英文正方',mimoVoices,s.mimoEnProVoice||'Milo',true,true)}${selector('mimoEnConVoice','小米英文反方',mimoVoices,s.mimoEnConVoice||'Chloe',true,true)}</div><p class="hint">Token Plan 请使用套餐对应集群地址与密钥；独立连接仅保存密钥到服务内存，重启后需重新填写。复用模式只有在模型提供商为 MiMo 时生效，否则使用独立连接。</p><details><summary>Edge 音色（仅 Edge 模式使用）</summary><div class="form-grid">${selector('proVoice','Edge 中文正方',names,s.proVoice,false)}${selector('conVoice','Edge 中文反方',names,s.conVoice,false)}${selector('enProVoice','Edge 英文正方',names,s.enProVoice,true)}${selector('enConVoice','Edge 英文反方',names,s.enConVoice,true)}</div><p class="hint">Edge 需要 Python 与 edge-tts，朗读正文发送给微软。</p></details><div class="form-actions"><button class="primary" type="submit">保存语音</button>${[['pro','试听中文正方'],['con','试听中文反方'],['en-pro','试听英文正方'],['en-con','试听英文反方']].map(([v,label])=>`<button class="secondary" type="button" data-voice-preview="${v}">${label}</button>`).join('')}<button class="secondary" type="button" id="stop-preview">停止</button></div><p class="hint">试听使用已保存的设置。</p></fieldset></form></section>`;
+  const select=(name,label,choices,value)=>`<label>${label}<select name="${name}">${choices.map(([id,title])=>`<option value="${id}" ${id===String(value)?'selected':''}>${title}</option>`).join('')}</select></label>`;
+  const textarea=(name,label,fallback)=>`<label>${label}<textarea name="${name}" maxlength="1000" rows="3">${esc(s[name]??fallback)}</textarea></label>`;
+  return `<section class="form-card settings-card voice-settings"><h2>语音朗读</h2>
+    <p class="hint">小米预置音色支持边生成边播放。长发言按句分段，跳过 Markdown 标记、代码块和引用编号。暂停、继续、停止和重试可在浮动播放器操作。</p>
+    <form id="voice-form"><fieldset ${enabled?'':'disabled'}><div class="form-grid">
+      ${select('provider','语音模式',[['mimo','小米 MiMo 语音'],['edge','Edge 神经语音'],['system','系统朗读']],s.provider||'mimo')}
+      ${select('rate','播放倍速 / 系统语速',[0.7,0.8,0.9,1,1.1,1.2,1.3,1.5].map(n=>[String(n),n+' 倍']),s.rate||1)}
+    </div><h3>小米连接</h3><div class="form-grid">
+      <input type="hidden" name="reuseModelConnection" value="true">
+      ${select('mimoModel','音色模式',[['mimo-v2.5-tts','预置音色 · 支持低延迟'],['mimo-v2.5-tts-voicedesign','文本设计音色 · 分段合成']],s.mimoModel||'mimo-v2.5-tts')}
+      ${select('mimoStreaming','预置音色播放方式',[['true','流式 · 边生成边播放'],['false','分段 · 每段完成后播放']],s.mimoStreaming!==false)}
+    </div><p class="hint">辩手与语音共用模型设置中的 MiMo Token Plan 密钥和套餐集群地址，只需填写一次。密钥仅在服务内存，重启需重新填写。朗读正文发送到该小米服务。</p>
+    <h3>双方音色与表达</h3><div class="form-grid">
+      ${selector('mimoProVoice','预置中文正方',mimoVoices,s.mimoProVoice||'苏打',false,true)}
+      ${selector('mimoConVoice','预置中文反方',mimoVoices,s.mimoConVoice||'茉莉',false,true)}
+      ${selector('mimoEnProVoice','预置英文正方',mimoVoices,s.mimoEnProVoice||'Milo',true,true)}
+      ${selector('mimoEnConVoice','预置英文反方',mimoVoices,s.mimoEnConVoice||'Chloe',true,true)}
+      ${textarea('mimoProStyle','正方表达风格','沉稳有力，强调关键理由，克制而清晰。')}
+      ${textarea('mimoConStyle','反方表达风格','冷静敏锐，在转折和反例处自然停顿。')}
+    </div><details id="mimo-voice-design" ${s.mimoModel==='mimo-v2.5-tts-voicedesign'?'open':''}><summary>文本设计音色描述（仅设计模式使用）</summary><div class="form-grid">
+      ${textarea('mimoProDesign','正方设计音色','成年男声，温暖醇厚、吐字清晰，适合严谨的辩论表达。')}
+      ${textarea('mimoConDesign','反方设计音色','成年女声，清亮沉稳、吐字清晰，适合分析论证和提出反例。')}
+    </div><p class="hint">描述性别、质感和表达特点，建议 1–4 句。设计模式不会使用预置音色，按段等待合成完成后播放。保持正文不润色，不提供真人音色克隆。</p></details>
+    <details><summary>Edge 音色（仅 Edge 模式使用）</summary><div class="form-grid">
+      ${selector('proVoice','Edge 中文正方',names,s.proVoice,false)}${selector('conVoice','Edge 中文反方',names,s.conVoice,false)}
+      ${selector('enProVoice','Edge 英文正方',names,s.enProVoice,true)}${selector('enConVoice','Edge 英文反方',names,s.enConVoice,true)}
+    </div><p class="hint">Edge 需要 Python 与 edge-tts，正文发送给微软。小米倍速在本地播放器执行，Edge 与系统语速由对应引擎控制。</p></details>
+    <div class="form-actions"><button class="primary" type="submit">保存语音</button>${[['pro','试听中文正方'],['con','试听中文反方'],['en-pro','试听英文正方'],['en-con','试听英文反方']].map(([v,label])=>`<button class="secondary" type="button" data-voice-preview="${v}">${label}</button>`).join('')}<button class="secondary" type="button" id="stop-preview">停止</button></div><p class="hint">试听使用已保存的设置；倍速与风格更改后保存，再重试朗读。</p></fieldset></form></section>`;
 }

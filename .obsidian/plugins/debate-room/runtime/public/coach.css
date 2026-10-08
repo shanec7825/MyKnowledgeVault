@@ -2,3 +2,4 @@
 
 .coach-chat{max-height:none;overflow:visible}.training-flow{padding:16px 0;color:var(--green)}.training-flow p{font-size:13px;color:#687b70}.training-turn{border-top:1px solid var(--line);padding:18px 0}.training-turn summary{cursor:pointer;font-weight:600;margin-bottom:16px}.coach-message p{font-size:14px;line-height:1.9}.lesson-card p,.exercise-card p,.exercise-card li{font-size:13px;color:#52675a}
 
+.training-methods{margin-top:18px;border-top:1px solid var(--line);padding-top:12px;font-size:12px;line-height:1.7}.training-methods summary{cursor:pointer;font-weight:600}.training-methods ul{padding-left:18px;max-height:340px;overflow:auto}.training-methods li{margin:12px 0;overflow-wrap:anywhere}.training-methods a{color:var(--green)}.training-methods p{margin:5px 0}.training-methods small{color:#687a6d}.coach-workspace #coach-action{max-width:230px;margin:6px 0 10px}

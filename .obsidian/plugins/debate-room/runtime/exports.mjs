@@ -1,3 +1,4 @@
+import {trainingTrack,trackSources,trainingActions} from './public/training-catalog.js';
 import {mkdir} from 'node:fs/promises';
 import {atomicWrite} from './atomic-file.mjs';
 import path from 'node:path';
@@ -9,17 +10,21 @@ export function archiveDocuments(record,type){
   const blocks=[];
   const add=(title,content)=>blocks.push({title,content:String(content??'')});
   add(record.topic, type==='debate'?`语言：${record.language==='en'?'English':'中文'} · 模式：${record.mode} · 状态：${record.status}`:`辩论训练与练习 · ${record.side} · ${record.level}`);
+  if(type==='coach'){const track=trainingTrack(record.track);add('训练专项',track.name+'\n'+track.goal);add('方法参考（不是本题证据）',trackSources(track.id).map(s=>s.author+' · '+s.title+'\n'+s.url+'\n'+s.access+' · '+s.locator).join('\n\n'));}
   add('记录信息',`记录 ID：${record.id}\n创建：${record.createdAt||''}\n更新：${record.updatedAt||record.createdAt||''}${record.debateId?'\n关联辩论：'+record.debateId:''}`);
+  if(type==='debate'&&record.brief){const b=record.brief;add('共同审题（可争议，不是裁决）',`${b.scope}\n\n${b.definitions}\n\n正方举证：${b.burdens.pro}\n反方举证：${b.burdens.con}\n\n${b.cruxes.map(i=>'- '+i.question).join('\n')}`);}
   for(const message of record.messages||[]){
     if(type==='debate')add(`${message.stage} ${message.round||''} · ${message.name}（${message.side==='pro'?'正方':'反方'}）`,message.content);
     else{
-      add(message.role==='user'?'你的问题 / 练习答案':'教练反馈',message.content);
+      add(message.role==='user'?'你的问题 / 练习答案'+(message.action?' · '+trainingActions[message.action]:''):'教练反馈',message.content);
       for(const lesson of message.report?.lessons||[])add(`${lesson.dimension} · ${lesson.title}`,`${lesson.analysis}\n\n改进建议：${lesson.advice}${lesson.example?'\n\n原文摘录：'+lesson.example:''}${lesson.citationWarning?'\n\n提示：摘录未匹配原文，已忽略。':''}`);
       const exercise=message.report?.exercise;if(exercise)add(`练习 · ${exercise.title}`,`${exercise.instruction}\n\n${exercise.checklist.map(item=>'- '+item).join('\n')}`);
     }
   }
   for(const attempt of record.attempts||[])if(attempt.status!=='replied')add(`练习提交 · ${attempt.status==='pending'?'等待反馈':attempt.status==='cancelled'?'已停止':'反馈失败'}`,`${attempt.content}\n\n提交：${attempt.createdAt}${attempt.error?'\n提示：'+attempt.error:''}`);
   if(type==='debate'){
+    for(const issue of record.flow?.issues||[])add(`争点 · ${issue.question}`,`正方理由：${issue.pro}\n反方理由：${issue.con}\n待检验：${issue.open}\n\n${issue.anchors.map(a=>`${a.name} 原文：${a.quote}`).join('\n')}`);
+    if(record.streamingSpeech?.content)add(`未完成发言 · ${record.streamingSpeech.name}`,record.streamingSpeech.content+'\n\n此发言未完成，不作为正式发言。');
     const review=record.review;
     add('点评',review?.summary||'尚无点评');
     if(review&&!review.unstructured){

@@ -4,6 +4,15 @@ const assert = require("node:assert/strict");
 const http = require("node:http");
 const { DEFAULTS, within, qmdPath, redact, parsePlan, buildMessages, generatePlan, generateSummary, generateImage, jsonRequest, QmdClient, Mem0Client, shanghaiClock, journalEntry, appendJournal, publicUrl, memoryImportRows, streamPreview, journalCallout, conversationText, normalizeJournalCallouts, diaryCards } = require("./core");
 const plan = { title: "改一个颜色", currentInterest:'角色配色',targetActivity:'网页编程',bridge:'用角色配色练习CSS', steps: ["把蓝色改为绿色"], doneWhen: "看见颜色变化", minutes: 2, material: "```css\ncolor: green;\n```" };
+test('continued turns form one persistent card while independent conversations remain separate',()=>{
+  const {conversationRoot,diarySelection}=require('./core');
+  const entries=[['root','09:00','root'],['other','09:30','other'],['reply','10:00','root'],['reply2','11:00','root']].map(([id,time,thread])=>`- ${time}\n> [!quote] Me\n> ${id}\n<!-- attention-thread:${thread} -->\n<!-- attention:${id}:conversation -->`).join('\n');
+  const cards=diaryCards(entries);assert.equal(cards.length,2);assert.equal(cards[0].id,'root');assert.equal(cards[0].latestId,'reply2');assert.deepEqual(cards[0].turnIds,['root','reply','reply2']);assert.ok(cards[0].body.indexOf('root')<cards[0].body.indexOf('reply'));
+  assert.equal(diarySelection(cards,undefined,'reply2'),'root');assert.equal(diarySelection(cards,{latestId:'reply',cardId:'other'}),'root');
+  const activities=[{id:'root'},{id:'reply',parentId:'root'},{id:'reply2',parentId:'reply'}];assert.equal(conversationRoot(activities,'reply2'),'root');
+  const old=entries.replace(/<!-- attention-thread:[\w-]+ -->/g,'');assert.equal(diaryCards(old,activities).length,2);
+  const audio='\n- 12:00\n[[audio.wav]]\n<!-- attention:reply2-artifact-0:output -->';assert.ok(diaryCards(entries+audio)[0].body.includes('audio.wav'));
+});
 test('opening a journal targets its latest conversation rather than a later artifact or summary',()=>{
   const {latestConversationLine}=require('./core');
   const text='# Diary\n- 09:00 earlier\nhello\n<!-- attention:one:conversation -->\n- 11:00 latest\nhello\n<!-- attention:two:conversation -->\n- 12:00 audio\n<!-- attention:two-artifact-0:output -->';

@@ -3,7 +3,7 @@
 const { Plugin, ItemView, PluginSettingTab, Setting, Notice, MarkdownRenderer, Modal, TFile } = require("obsidian");
 const path = require("node:path");
 const { randomUUID, createHash } = require("node:crypto");
-const { latestConversationLine, artifactHtml, generateAudio, within, DEFAULTS, QmdClient, Mem0Client, generatePlan, generateSummary, generateImage, redact, shanghaiClock, journalEntry, appendJournal, memoryImportRows, journalCallout, conversationText, normalizeJournalCallouts, diaryCards, aiReadable, diarySelection, conversationHistory } = require("./core");
+const { conversationRoot, latestConversationLine, artifactHtml, generateAudio, within, DEFAULTS, QmdClient, Mem0Client, generatePlan, generateSummary, generateImage, redact, shanghaiClock, journalEntry, appendJournal, memoryImportRows, journalCallout, conversationText, normalizeJournalCallouts, diaryCards, aiReadable, diarySelection, conversationHistory } = require("./core");
 
 const VIEW = "attention-allocator-home";
 const STATE = ".vault-meta/attention-allocator/state.json";
@@ -603,7 +603,7 @@ class AttentionPlugin extends Plugin {
     return task;
   }
   async writeConversation(activity) {
-    activity.journalPath = await this.writeJournal({ id:activity.id,kind:'conversation',mode:'auto',date:new Date(activity.at),text:conversationText(activity) });
+    activity.journalPath = await this.writeJournal({ id:activity.id,kind:'conversation',mode:'auto',date:new Date(activity.at),text:conversationText(activity)+'\n<!-- attention-thread:'+conversationRoot(this.state.activities,activity.id)+' -->' });
     activity.conversationSaved = true;
     await this.persist();
     return activity.journalPath;
@@ -924,7 +924,7 @@ class AttentionView extends ItemView {
         } });
       if (generated.warning) warnings.push(generated.warning);
       active();
-      const activity = { id: randomUUID(), parentId,at: new Date().toISOString(), input: redact(input), plan: generated.plan, mode: generated.plan.mode || 'focus',
+      const activity = { id: randomUUID(), parentId,threadId:parentId?conversationRoot(this.plugin.state.activities,parentId):null,at: new Date().toISOString(), input: redact(input), plan: generated.plan, mode: generated.plan.mode || 'focus',
         status: "suggested", result: "", usage: generated.usage,
         sources: notes.map(({ path, title, line }) => ({ path, title, line })),
         memoryCount: memories.length, warnings };
@@ -1144,13 +1144,14 @@ class AttentionView extends ItemView {
     } finally {motion?.cancel();this.turning=false;}
   }
   async renderToday() {
-    const previousCard=this.todayEl.querySelector('[data-card-id]')?.dataset.cardId,previousScroll=this.todayEl.scrollTop;
+    const previousEntry=this.todayEl.querySelector('[data-card-id]'),previousCard=previousEntry?.dataset.cardId,previousTurn=previousEntry?.dataset.latestTurn,previousScroll=this.todayEl.scrollTop;
     const revision=this.todayRevision=(this.todayRevision||0)+1;
     const today=shanghaiClock().day;
     this.days=[...new Set([today,...this.app.vault.getMarkdownFiles().filter(x=>/^calendar\/\d{4}-\d{2}-\d{2}\.md$/.test(x.path) && x.basename<=today).map(x=>x.basename)])].sort().reverse();
     if(!this.selectedDay && this.days.includes(this.plugin.state.lastReadingDay)){
       const todayFile=this.app.vault.getAbstractFileByPath('calendar/'+today+'.md');
-      const newest=todayFile instanceof TFile?diaryCards(await this.app.vault.cachedRead(todayFile))[0]?.id:null;
+      const newestCard=todayFile instanceof TFile?diaryCards(await this.app.vault.cachedRead(todayFile),this.plugin.state.activities)[0]:null;
+      const newest=newestCard?.latestId||newestCard?.id||null;
       if(!this.alive || revision!==this.todayRevision)return;
       if(!newest || this.plugin.state.reading?.[today]?.latestId===newest)this.selectedDay=this.plugin.state.lastReadingDay;
     }
@@ -1158,9 +1159,14 @@ class AttentionView extends ItemView {
     const day=this.selectedDay,file=this.app.vault.getAbstractFileByPath('calendar/'+day+'.md');
     const text=file instanceof TFile?await this.app.vault.cachedRead(file):'';
     if(!this.alive || revision!==this.todayRevision)return;
-    const cards=diaryCards(text);
+    const cards=diaryCards(text,this.plugin.state.activities);
     const pending=this.plugin.state.activities.filter(x=>!x.conversationSaved && Number.isFinite(Date.parse(x.at)) && shanghaiClock(new Date(x.at)).day===day && !text.includes('attention:'+x.id+':conversation'));
-    for(const activity of pending.reverse())cards.unshift({id:activity.id,kind:'pending',time:shanghaiClock(new Date(activity.at)).time,body:conversationText(activity)});
+    for(const activity of pending.reverse()){
+      const root=conversationRoot(this.plugin.state.activities,activity.id),group=cards.find(x=>x.id===root),time=shanghaiClock(new Date(activity.at)).time;
+      if(group){group.body+='\n\n---\n\n'+conversationText(activity);group.latestId=activity.id;group.time=time;group.turnIds.push(activity.id);}
+      else cards.unshift({id:root,latestId:activity.id,turnIds:[activity.id],kind:'pending',time,body:conversationText(activity)});
+    }
+    cards.sort((a,b)=>b.time.localeCompare(a.time));
     this.cards=cards;
     const bookmark=this.plugin.state.reading?.[day];
     this.selectedCardId=diarySelection(cards,this.forceLatest?null:bookmark,this.explicitCard?this.selectedCardId:null);
@@ -1169,13 +1175,13 @@ class AttentionView extends ItemView {
     const index=cards.findIndex(x=>x.id===this.selectedCardId),card=cards[index];
     this.todayDate.setText(day+(day===today?' · '+uiText(this.plugin.settings.language,'Today'):''));
     this.todayEl.empty();this.cardFooter.empty();this.backCards.empty();this.sideCards.empty();this.dayNavigation.empty();
-    const memo=this.todayEl.createDiv({cls:'aa-today-entry',attr:{'data-card-id':card?.id || 'empty'}});
+    const memo=this.todayEl.createDiv({cls:'aa-today-entry',attr:{'data-card-id':card?.id || 'empty','data-latest-turn':card?.latestId||card?.id||'empty'}});
     if(card) {
       if(card.time)memo.createEl('span',{text:card.time,cls:'aa-entry-time'});
       await MarkdownRenderer.render(this.app,card.body,memo.createDiv({cls:'aa-memo-body'}),file?.path || '',this);
       if(!this.alive || revision!==this.todayRevision)return;
       if(this.plugin.settings.language!=='en')for(const title of memo.querySelectorAll('.callout-title-inner'))if(/^Me(?:$| · )/.test(title.textContent))title.setText(title.textContent.replace(/^Me/,'我').replace('Reflection','反省').replace('Output','成果').replace('Checkpoint','进度'));
-      const activity=this.plugin.state.activities.find(x=>x.id===card.id);
+      const activity=this.plugin.state.activities.find(x=>x.id===(card.latestId||card.id));
       if(this.plugin.settings.aiEnabled!==false && activity)await this.showActivity(activity,memo,true);
     } else memo.createEl('p',{text:'A fresh page.',cls:'aa-empty-page'});
     if(!this.alive || revision!==this.todayRevision)return;
@@ -1200,7 +1206,11 @@ class AttentionView extends ItemView {
     const older=button(this.dayNavigation,'↓',()=>this.navigateCard('day',1));older.disabled=dayIndex>=this.days.length-1;older.setAttribute('aria-label','Earlier day');
     if(day===today && this.plugin.settings.aiEnabled!==false)button(this.dayNavigation,'Review',()=>this.summarizeToday());
     this.todayEl.scrollTop=previousCard===card?.id?previousScroll:0;
-    const latestId=cards[0]?.id || null;
+    if(previousCard===card?.id && previousTurn!==(card?.latestId||card?.id)){
+      const latestMe=Array.from(memo.querySelectorAll('.callout[data-callout="quote"]')).at(-1);
+      if(latestMe)this.todayEl.scrollTop+=latestMe.getBoundingClientRect().top-this.todayEl.getBoundingClientRect().top;
+    }
+    const latestId=cards[0]?.latestId || cards[0]?.id || null;
     if(bookmark?.latestId!==latestId || bookmark?.cardId!==this.selectedCardId || this.plugin.state.lastReadingDay!==day){
       this.plugin.state.reading ||= {};this.plugin.state.reading[day]={latestId,cardId:this.selectedCardId};
       this.plugin.state.lastReadingDay=day;
@@ -1264,6 +1274,7 @@ class AttentionSettings extends PluginSettingTab {
 }
 
 module.exports = AttentionPlugin;
+
 
 
 

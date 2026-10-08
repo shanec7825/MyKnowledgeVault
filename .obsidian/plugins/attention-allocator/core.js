@@ -517,21 +517,39 @@ function aiReadable(text) {
   return String(text).replace(/<!-- aa-local:start -->[\s\S]*?(?:<!-- aa-local:end -->|$)/g, block => block.replace(/[^\r\n]/g,''));
 }
 
-function diaryCards(text) {
+function conversationRoot(activities,id){
+  const byId=new Map(activities.map(x=>[x.id,x])),seen=new Set();let root=id;
+  while(byId.has(root)&&!seen.has(root)){
+    seen.add(root);const item=byId.get(root);if(item.threadId)return item.threadId;
+    if(!item.parentId||!byId.has(item.parentId)||seen.has(item.parentId))break;root=item.parentId;
+  }
+  return root;
+}
+function diaryCards(text,activities=[]) {
   const clean = String(text).replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, '').replace(/<!-- aa-local:(?:start|end) -->\r?\n?/g,'');
   const cards = clean.split(/(?=^- \d{2}:\d{2})/m).filter(x => x.trim()).map((entry,index) => {
     const time = /^- (\d{2}:\d{2})/.exec(entry)?.[1] || '';
     const marker = /<!-- attention:([\w-]+):(\w+) -->/.exec(entry);
     const body = (time ? (marker ? entry.replace(/^- [^\n]*\n?/,'') : entry.replace(/^- \d{2}:\d{2}[ \t]*/,'' )).replace(/^(?:\t| {2})/gm,'') : entry).replace(/<!-- attention:[^>]*-->/g,'').trim();
-    return {id:marker?.[1] || `entry-${index}-${time}`,kind:marker?.[2] || 'note',time,body};
+    const threadId=/<!-- attention-thread:([\w-]+) -->/.exec(entry)?.[1];
+    return {id:marker?.[1] || `entry-${index}-${time}`,kind:marker?.[2] || 'note',time,body:body.replace(/<!-- attention-thread:[\w-]+ -->/g,'').trim(),threadId};
   }).filter(x => x.body && !/^# [^\n]+$/.test(x.body));
   // Generated images belong to the originating conversation, even when appended later.
   const byId = new Map(cards.filter(x=>x.kind==='conversation').map(x=>[x.id,x]));
-  return cards.filter(card => {
+  const entries=cards.filter(card => {
     const parent = card.kind === 'output' && byId.get(card.id.replace(/(?:-image|-artifact-\d+)$/,''));
     if (!parent) return true;
     parent.body += '\n\n' + card.body; return false;
-  }).reverse().sort((a,b)=>b.time.localeCompare(a.time));
+  });
+  const groups=new Map(),merged=[];
+  for(const card of entries.sort((a,b)=>a.time.localeCompare(b.time))){
+    if(card.kind!=='conversation'){merged.push(card);continue;}
+    const root=card.threadId||conversationRoot(activities,card.id);
+    let group=groups.get(root);
+    if(!group){group={...card,id:root,latestId:card.id,turnIds:[card.id]};groups.set(root,group);merged.push(group);}
+    else{group.body+='\n\n---\n\n'+card.body;group.time=card.time;group.latestId=card.id;group.turnIds.push(card.id);}
+  }
+  return merged.reverse().sort((a,b)=>b.time.localeCompare(a.time));
 }
 
 function latestConversationLine(text) {
@@ -545,9 +563,9 @@ function latestConversationLine(text) {
   return latest?.line||fallback?.line||Math.max(1,lines.findLastIndex(line=>line.trim())+1);
 }
 function diarySelection(cards,bookmark,explicit) {
-  if(explicit && cards.some(x=>x.id===explicit))return explicit;
-  const newest=cards[0]?.id || null;
-  return bookmark?.latestId===newest && cards.some(x=>x.id===bookmark.cardId)?bookmark.cardId:newest;
+  const selected=explicit&&cards.find(x=>x.id===explicit||x.turnIds?.includes(explicit));if(selected)return selected.id;
+  const newest=cards[0]?.latestId || cards[0]?.id || null;
+  return bookmark?.latestId===newest && cards.some(x=>x.id===bookmark.cardId)?bookmark.cardId:cards[0]?.id||null;
 }
 function conversationHistory(activities,id) {
   const byId=new Map(activities.map(x=>[x.id,x])),seen=new Set(),turns=[];
@@ -558,7 +576,8 @@ function conversationHistory(activities,id) {
   }
   return turns;
 }
-module.exports = { latestConversationLine, artifactHtml, generateAudio, DEFAULTS, ENDPOINTS, QmdClient, Mem0Client, run, jsonRequest, redact, within, qmdPath, parsePlan, buildMessages, generatePlan, generateSummary, generateImage, publicUrl, shanghaiClock, journalEntry, appendJournal, memoryImportRows, streamPreview, journalCallout, conversationText, normalizeJournalCallouts, diaryCards, aiReadable, diarySelection, conversationHistory };
+module.exports = { conversationRoot, latestConversationLine, artifactHtml, generateAudio, DEFAULTS, ENDPOINTS, QmdClient, Mem0Client, run, jsonRequest, redact, within, qmdPath, parsePlan, buildMessages, generatePlan, generateSummary, generateImage, publicUrl, shanghaiClock, journalEntry, appendJournal, memoryImportRows, streamPreview, journalCallout, conversationText, normalizeJournalCallouts, diaryCards, aiReadable, diarySelection, conversationHistory };
+
 
 
 

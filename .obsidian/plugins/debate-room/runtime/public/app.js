@@ -8,6 +8,7 @@ import {bindTopicChat} from './topic-chat.js';
 import {connectionSettings,connectionDefaults} from './connections.js';
 import {renderSpeech} from './speech-format.js';
 import {createObsidianBridge} from './obsidian-bridge.js';
+import {teamPanel,bindTeams} from './team-templates.js';
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const icons=Object.fromEntries(['home','arena','library','roles','history','coach','settings'].map(k=>[k,icon(k)]));
@@ -23,12 +24,26 @@ let recognition=null,voices=[],toastTimer,neuralVoice=null,renderVoiceSettings=n
 const statusText={researching:'搜集资料中',running:'辩论进行中',judging:'评审点评中',completed:'已完成',cancelled:'已停止',failed:'运行失败',interrupted:'已中断'};
 async function api(url,body){const r=await fetch(url,{...(body!==undefined?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}:{})});const data=await r.json();if(!r.ok)throw new Error(data.error||'请求失败');return data;}
 function toast(text){$('#toast').textContent=text;$('#toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('show'),4000);}
+let deletingId=null;
+function confirmDeletion(record){
+  return new Promise(resolve=>{
+    const dialog=document.createElement('dialog');dialog.className='delete-confirmation';
+    dialog.setAttribute('aria-labelledby','delete-confirmation-title');dialog.setAttribute('aria-describedby','delete-confirmation-description');
+    dialog.innerHTML='<h2 id="delete-confirmation-title">删除这场辩论？</h2><p class="delete-topic"></p><p id="delete-confirmation-description">将删除历史记录及发言，无法恢复；正在进行的生成会停止。已经导出的知识库 MD / HTML 文件会保留。</p><div class="form-actions"><button type="button" class="secondary" data-cancel-delete>取消</button><button type="button" class="secondary danger" data-confirm-delete>确认删除</button></div>';
+    dialog.querySelector('.delete-topic').textContent=record?.topic||'所选辩论';
+    let settled=false;const finish=value=>{if(settled)return;settled=true;dialog.close();dialog.remove();resolve(value);};
+    dialog.querySelector('[data-cancel-delete]').onclick=()=>finish(false);
+    dialog.querySelector('[data-confirm-delete]').onclick=()=>finish(true);
+    dialog.oncancel=event=>{event.preventDefault();finish(false);};dialog.onclose=()=>finish(false);
+    document.body.append(dialog);dialog.showModal();dialog.querySelector('[data-cancel-delete]').focus();
+  });
+}
 function modeName(){return {demo:'演示模式',ollama:'本地模型',compatible:'API 模型',mimo:'MiMo Token Plan'}[state.data?.settings.provider]||'';}
 function navigate(page){const previous=state.page;state.page=page;render();if(previous!==page)window.scrollTo(0,0);}
 function active(){return state.debate&&['researching','running','judging'].includes(state.debate.status);}
 function shell(content){return `<aside class="sidebar ${sidebarCollapsed?'sidebar-collapsed':''}"><button class="sidebar-toggle" id="toggle-left-sidebar" aria-expanded="${!sidebarCollapsed}" aria-controls="main-navigation" aria-label="${sidebarCollapsed?'展开左侧导航':'收起左侧导航'}">${sidebarCollapsed?'☰':'‹ 收起导航'}</button><a class="brand" href="/" aria-label="论场首页"><span class="brand-mark">论</span><span>论场</span></a><nav id="main-navigation">${[['home','新建辩论'],['arena','辩论现场'],['library','共享资料库'],['roles','人物预设'],['coach','辩论训练'],['history','历史记录']].map(([k,t])=>`<button class="nav-item ${state.page===k?'active':''}" data-nav="${k}" title="${t}" aria-label="${t}" ${state.page===k?'aria-current="page"':''}><span>${icons[k]}</span>${t}${k==='library'?`<i>${state.data.library.length}</i>`:''}</button>`).join('')}</nav><div class="sidebar-bottom"><div class="local-badge"><span class="dot"></span>本地运行</div><button class="nav-item ${state.page==='settings'?'active':''}" data-nav="settings" title="模型设置" aria-label="模型设置"><span>${icon('settings')}</span>模型设置</button></div></aside><main class="${sidebarCollapsed?'nav-collapsed':''}"><header class="topbar"><span>${{home:'新建辩论',arena:'辩论现场',library:'共享资料库',roles:'人物预设',history:'历史记录',coach:'辩论训练',settings:'模型设置'}[state.page]}</span><button class="mode-pill" data-nav="settings"><span class="dot ${state.data.settings.provider==='demo'?'amber':''}"></span>${modeName()} <span>↗</span></button></header><div class="content">${content}</div></main>`;}
 function heading(eyebrow,title,subtitle,extra=''){return `<div class="page-heading"><div><h1>${title}</h1><p>${subtitle}</p></div>${extra}</div>`;}
-function home(){return homePage(state,team);}
+function home(){return homePage(state,team).replace('<div class="teams">',teamPanel(state)+'<div class="teams">');}
 function allPresets(){return [...state.data.presets,...state.data.customPresets];}
 function team(side,title,sub,sign){const agents=state.agents.filter(a=>a.side===side);return `<div class="team ${side}"><div class="team-heading"><span class="side-mark">${sign}</span><h3>${title}<small>${sub}</small></h3><span class="count">${agents.length} 位辩手</span></div>${agents.map(a=>`<div class="agent-row"><div class="avatar ${side}">${esc(a.avatar||a.name.slice(0,1))}</div><div class="agent-info"><strong>${esc(a.name)}</strong><small>${esc(a.tag||'自定义角色')}</small><input class="agent-model" data-model="${esc(a.id)}" value="${esc(a.model||'')}" placeholder="模型：默认（可单独指定）" aria-label="${esc(a.name)} 的模型"></div><button class="remove" data-remove="${esc(a.id)}" title="移除辩手" aria-label="移除 ${esc(a.name)}">×</button></div>`).join('')}<select class="add-agent" data-add="${side}" aria-label="添加${title}辩手"><option value="">＋ 添加辩手</option>${characterOptions(allPresets().filter(p=>!state.agents.some(a=>a.name===p.name)))}</select></div>`;}
 function arena(){const d=state.debate;if(!d)return `${heading('THE ARENA','辩论现场','选择辩题和角色后开始。')}<div class="empty"><span>◉</span><h2>暂无辩论</h2><button class="primary" data-nav="home">新建辩论 →</button></div>`;
@@ -45,6 +60,7 @@ function saveSetup(){try{sessionStorage.setItem('debate-setup-v1',JSON.stringify
 function render(){if(!state.data)return;if(state.page==='home')saveSetup();const savedScroll=window.scrollY,focused=document.activeElement,focusId=focused?.id,selection=typeof focused?.selectionStart==='number'?[focused.selectionStart,focused.selectionEnd]:null;const assistantScroll=$('.assistant-messages')?.scrollTop;$('#app').innerHTML=shell(({home,arena,library,roles,history,settings,coach:()=>coachPage(state.data)}[state.page])());bind();if(focusId){const next=document.getElementById(focusId);if(next&&!next.disabled){next.focus({preventScroll:true});if(selection&&next.setSelectionRange)next.setSelectionRange(...selection);}}if(assistantScroll!==undefined&&$('.assistant-messages'))$('.assistant-messages').scrollTop=assistantScroll;if(state.page==='arena')window.scrollTo(0,savedScroll);}
 function captureDraft(){if($('#topic')){state.draftTopic=$('#topic').value;state.rounds=Number($('#rounds').value);state.research=$('#research').checked;state.autoVoice=$('#autovoice').checked;state.language=$('#debate-language').value;state.impromptu=$('#impromptu').checked;state.impromptuPrompt=$('#impromptu-prompt').value;saveSetup();}}
 function bind(){
+  bindTeams(state,{capture:captureDraft,render,toast,api});
   obsidianBridge?.report();
   $('#toggle-left-sidebar').onclick=()=>{captureDraft();sidebarCollapsed=!sidebarCollapsed;saveLayout();render();};
   if($('#toggle-arena-sidebar'))$('#toggle-arena-sidebar').onclick=()=>{rightCollapsed=!rightCollapsed;saveLayout();render();};
@@ -70,28 +86,32 @@ function bind(){
   document.querySelectorAll('[data-topic]').forEach(b=>b.onclick=()=>{captureDraft();state.selectedTopic=Number(b.dataset.topic);state.draftTopic=state.data.topics[state.selectedTopic].title;state.draftQuery='';render();});
   document.querySelectorAll('[data-add]').forEach(b=>b.onchange=()=>{captureDraft();if(state.agents.length>=6){toast('每场最多 6 位辩手');b.value='';return;}const p=allPresets().find(p=>p.id===b.value);if(p)state.agents.push({...p,side:b.dataset.add});render();});
   document.querySelectorAll('[data-remove]').forEach(b=>b.onclick=()=>{captureDraft();state.agents=state.agents.filter(a=>a.id!==b.dataset.remove);render();});
+  document.querySelectorAll('[data-remove]').forEach(b=>{const switchSide=document.createElement('button');switchSide.type='button';switchSide.className='text-button';switchSide.textContent='换方';switchSide.setAttribute('aria-label','切换辩手立场');switchSide.onclick=()=>{captureDraft();const agent=state.agents.find(a=>a.id===b.dataset.remove);if(agent)agent.side=agent.side==='pro'?'con':'pro';render();};b.before(switchSide);});
   document.querySelectorAll('[data-model]').forEach(b=>b.oninput=()=>{state.agents.find(a=>a.id===b.dataset.model).model=b.value;saveSetup();});
   if($('#start'))$('#start').onclick=start;
   if($('#dictate'))$('#dictate').onclick=dictate;
   if($('#cancel'))$('#cancel').onclick=async()=>{const button=$('#cancel');button.disabled=true;button.textContent='正在中止…';try{const d=await api(`/api/debates/${state.debate.id}/cancel`,{});stopPlayback();await openDebate(d);}catch(e){toast(e.message);button.disabled=false;button.textContent='中止辩论';}};
   if($('#resume-debate'))$('#resume-debate').onclick=async()=>{const button=$('#resume-debate');button.disabled=true;try{await openDebate(await api('/api/debates/'+state.debate.id+'/resume',{}));}catch(e){toast(e.message);button.disabled=false;}};
   document.querySelectorAll('[data-delete-debate]').forEach(b=>b.onclick=async()=>{
-    const id=b.dataset.deleteDebate;if(!confirm('删除这场辩论及发言记录？进行中的生成将被中断，删除后无法恢复。'))return;
-    b.disabled=true;try{const r=await fetch('/api/debates/'+id,{method:'DELETE'});const result=await r.json();if(!r.ok)throw new Error(result.error||'删除失败');
+    if(deletingId)return;const id=b.dataset.deleteDebate;deletingId=id;b.disabled=true;
+    try{if(!await confirmDeletion(state.data.debates.find(d=>d.id===id)))return;
+      const r=await fetch('/api/debates/'+id,{method:'DELETE'});const result=await r.json();if(!r.ok)throw new Error(result.error||'删除失败');
       state.data.debates=state.data.debates.filter(d=>d.id!==id);
-      if(state.debate?.id===id){state.event?.close();state.debate=null;stopPlayback();try{sessionStorage.removeItem('debate-current-id');}catch{}}
-      navigate('history');
-    }catch(e){toast(e.message);b.disabled=false;}
+      if(state.debate?.id===id){state.event?.close();state.event=null;state.debate=null;stopPlayback();try{sessionStorage.removeItem('debate-current-id');}catch{}}
+      navigate('history');toast('历史记录已删除，导出文件保留');
+    }catch(e){toast(e.message);}
+    finally{deletingId=null;if(b.isConnected)b.disabled=false;}
   });
   if($('#again'))$('#again').onclick=()=>{state.draftTopic=state.debate.topic;state.draftQuery=state.debate.query;state.agents=state.debate.agents.map(a=>({...a}));state.rounds=state.debate.rounds;state.research=state.debate.research;state.language=state.debate.language||'zh';state.impromptu=state.debate.impromptu;state.impromptuPrompt=state.debate.impromptuPrompt;navigate('home');};
   if($('#stop-voice'))$('#stop-voice').onclick=stopPlayback;
-  if($('#toggle-voice'))$('#toggle-voice').onclick=()=>{state.autoVoice=!state.autoVoice;if(!state.autoVoice)window.speechSynthesis?.cancel();render();};
+  if($('#toggle-voice'))$('#toggle-voice').onclick=()=>{state.autoVoice=!state.autoVoice;if(!state.autoVoice)stopPlayback();render();};
   document.querySelectorAll('[data-read]').forEach(b=>b.onclick=()=>speak(state.debate.messages.find(m=>m.id===b.dataset.read),{replace:true}));
   document.querySelectorAll('[data-history]').forEach(b=>b.onclick=async()=>{try{await openDebate(await api(`/api/debates/${b.dataset.history}`));}catch(e){toast(e.message);}});
   if($('#library-search'))$('#library-search').oninput=e=>{const q=e.target.value.toLowerCase();$('#library-results').innerHTML=state.data.library.filter(s=>JSON.stringify(s).toLowerCase().includes(q)).map(sourceCard).join('')||'<p class="hint">没有匹配的资料。</p>';};
   if($('#role-form'))$('#role-form').onsubmit=async e=>{e.preventDefault();try{const p=await api('/api/presets',Object.fromEntries(new FormData(e.target)));state.data.customPresets.push(p);resetCharacterFilters();render();toast('角色已保存，可在配置辩手时选择');}catch(e){toast(e.message);}};
   if($('#settings-form'))$('#settings-form').onsubmit=async e=>{e.preventDefault();const b=Object.fromEntries(new FormData(e.target));for(const k of ['apiKey','tavilyKey']){if(!b[k])delete b[k];else if(b[k]==='-')b[k]='';}try{state.data.settings=await api('/api/settings',b);render();toast('连接已保存');}catch(e){toast(e.message);}};
   if($('#voice-form'))$('#voice-form').onsubmit=async e=>{e.preventDefault();const input=Object.fromEntries(new FormData(e.target));if(!input.apiKey)delete input.apiKey;try{state.data.voiceSettings=await api('/api/voice/settings',input);stopPlayback();render();toast('语音设置已保存');}catch(error){toast(error.message);}};
+  const voiceModel=$('#voice-form [name="mimoModel"]');if(voiceModel)voiceModel.onchange=()=>{$('#mimo-voice-design').open=voiceModel.value==='mimo-v2.5-tts-voicedesign';};
   document.querySelectorAll('[data-voice-preview]').forEach(b=>b.onclick=()=>speak({content:b.dataset.voicePreview.startsWith('en-')?'Welcome to Debate Room. Let us make a clear argument and respond thoughtfully.':'欢迎来到论场。让我们用清晰的理由，展开一场有质量的辩论。',language:b.dataset.voicePreview.startsWith('en-')?'en':'zh',side:b.dataset.voicePreview.replace(/^en-/,'')},{replace:true}));
   if($('#stop-preview'))$('#stop-preview').onclick=stopPlayback;
   if($('#test-search')){
@@ -112,7 +132,7 @@ function bind(){
 }
 async function start(){captureDraft();state.busy=true;$('#start').disabled=true;try{const selected=state.data.topics.find(t=>t.title===state.draftTopic);const d=await api('/api/debates',{topic:state.draftTopic,query:selected?.query||state.draftQuery||state.draftTopic,agents:state.agents,rounds:state.rounds,research:state.research,language:state.language||'zh',impromptu:state.impromptu,impromptuPrompt:state.impromptuPrompt});state.data.debates.unshift(d);state.busy=false;await openDebate(d);}catch(e){state.busy=false;render();toast(e.message);}}
 async function openDebate(d,{show=true}={}){
-  window.speechSynthesis?.cancel();
+  stopPlayback();
   state.event?.close();state.debate=d;try{sessionStorage.setItem('debate-current-id',d.id);}catch{}if(show)navigate('arena');
   obsidianBridge?.report();
   if(!['running','researching','judging'].includes(d.status))return;
@@ -122,7 +142,7 @@ async function openDebate(d,{show=true}={}){
     const next=JSON.parse(e.data);state.debate=next;
     const i=state.data.debates.findIndex(x=>x.id===next.id);
     if(i>=0)state.data.debates[i]=next;else state.data.debates.unshift(next);
-    if(state.autoVoice)next.messages.slice(lastCount).forEach(speak);
+    if(state.autoVoice)next.messages.slice(lastCount).forEach(message=>speak(message));
     lastCount=next.messages.length;
     const byUrl=new Map([...state.data.library,...next.sources].map(s=>[s.url,s]));
     state.data.library=[...byUrl.values()];
@@ -132,6 +152,13 @@ async function openDebate(d,{show=true}={}){
   event.onerror=()=>{toast('实时连接中断，正在尝试重新连接…');};
 }
 function stopPlayback(){if(neuralVoice)neuralVoice.stopVoice();else window.speechSynthesis?.cancel();}
+function showVoicePlayer(player){
+  const panel=$('#voice-player');if(!panel)return;panel.hidden=player.phase==='idle';
+  const labels={generating:'正在生成语音',playing:'正在朗读',paused:'已暂停',waiting:'点击播放以启用音频',error:'朗读失败'};
+  panel.innerHTML=`<div><strong>${esc(labels[player.phase]||'语音')}</strong><span>${esc(player.label)} · 第 ${player.segment}/${player.total} 段${player.queued?' · 等待 '+player.queued+' 条':''}</span>${player.error?`<small>${esc(player.error)}</small>`:''}</div><button id="voice-pause" ${player.phase==='error'?'hidden':''}>${['paused','waiting'].includes(player.phase)?'继续播放':'暂停'}</button><button id="voice-retry" ${player.phase==='error'?'':'hidden'}>重试朗读</button><button id="voice-stop">停止</button>`;
+  $('#voice-pause').onclick=()=>{if(['paused','waiting'].includes(player.phase))void neuralVoice.resumeVoice();else neuralVoice.pauseVoice();};
+  $('#voice-retry').onclick=()=>neuralVoice.retryVoice();$('#voice-stop').onclick=stopPlayback;
+}
 function speak(message,options={}){if(neuralVoice){neuralVoice.speakVoice({...message,language:message.language||state.debate?.language||'zh'},state.data.voiceSettings,toast,options);return;}if(!('speechSynthesis' in window)){toast('当前浏览器不支持语音朗读');return;}const u=new SpeechSynthesisUtterance(message.content.replace(/\[S-[^\]]+\]/g,''));u.lang=state.debate?.language==='en'?'en-US':'zh-CN';u.rate=1.05;const zh=voices.filter(v=>v.lang.startsWith(state.debate?.language==='en'?'en':'zh'));if(zh.length)u.voice=zh[message.side==='con'?Math.min(1,zh.length-1):0];speechSynthesis.speak(u);}
 function dictate(){
   const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
@@ -146,7 +173,7 @@ function dictate(){
 }
 if('speechSynthesis' in window){voices=speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>voices=speechSynthesis.getVoices();}
 try{
-  state.data=await api('/api/bootstrap');if(state.data.features?.voice){neuralVoice=await import('./voice.js');renderVoiceSettings=(await import('./voice-controls.js')).voiceSettings;}state.agents=[{...state.data.presets[0],side:'pro'},{...state.data.presets[4],side:'con'}];
+  state.data=await api('/api/bootstrap');if(state.data.features?.voice){neuralVoice=await import('./voice-player.js');neuralVoice.subscribeVoice(showVoicePlayer);document.addEventListener('pointerdown',()=>{void neuralVoice.unlockVoice().catch(()=>{});},{once:true});window.addEventListener('beforeunload',stopPlayback);renderVoiceSettings=(await import('./voice-controls.js')).voiceSettings;}state.agents=[{...state.data.presets[0],side:'pro'},{...state.data.presets[4],side:'con'}];
   try{
     const saved=JSON.parse(sessionStorage.getItem('debate-setup-v1')||'{}');
     if(typeof saved.topic==='string'&&saved.topic.length<=500)state.draftTopic=saved.topic;
