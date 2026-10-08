@@ -1,5 +1,12 @@
 .debate-room-view { padding: 0 !important; display: flex; flex-direction: column; overflow: hidden; }
-.debate-room-toolbar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; padding: 8px 12px; border-bottom: 1px solid var(--background-modifier-border); }
-.debate-room-toolbar span { margin-right: auto; color: var(--text-muted); }
+.debate-room-toolbar { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; padding: 6px 10px; border-bottom: 1px solid var(--background-modifier-border); background: var(--background-secondary); }
+.debate-room-toolbar-title { margin-right: auto; color: var(--text-muted); font-size: var(--font-ui-small); font-weight: 600; }
+.debate-room-toolbar .debate-room-tool { display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 8px; font-size: var(--font-ui-small); box-shadow: none; background: transparent; color: var(--text-muted); border-radius: var(--radius-s); }
+.debate-room-toolbar .debate-room-tool:hover { background: var(--background-modifier-hover); color: var(--text-normal); }
+.debate-room-tool-icon-content { display: flex; }
+.debate-room-tool-icon-content svg { width: 15px; height: 15px; }
+.debate-room-toolbar .debate-room-tool:disabled { opacity: .4; }
+.debate-room-toolbar .debate-room-tool-icon { padding: 0 6px; }
 .debate-room-frame { flex: 1; width: 100%; min-height: 0; border: 0; background: var(--background-primary); }
-.debate-room-status { padding: 24px; white-space: pre-wrap; }
+.debate-room-status { padding: 24px; white-space: pre-wrap; color: var(--text-muted); font-size: var(--font-ui-medium); line-height: 1.8; }
+.debate-room-status[hidden] { display: none; }

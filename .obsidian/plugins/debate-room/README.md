@@ -73,6 +73,12 @@ MiMo Token Plan、兼容 API 和 Ollama 的辩手发言边生成边显示，评�
 
 ## 开发与验证
 
+### 嵌入界面
+
+插件界面跟随 Obsidian 的深浅主题、强调色和字体，切换主题后实时更新。顶部采用紧凑导航，在较窄的分栏内显示带名称提示的图标；辩题、训练和现场区域会根据标签页宽度重新排版。工具栏提供「从笔记创建」「保存为笔记」，未打开辩论时保存按钮不可用。重启按钮的提示说明会中止生成。
+
+主题适配仅应用于 Obsidian 嵌入模式。更新安装时复制整个 `dist/debate-room` 目录中的代码与 `runtime/`，保留现有 `runtime-data/` 和 `data.json`。
+
 插件入口源代码为 `obsidian-plugin/main.cjs`，无构建依赖；构建脚本复制入口为 `main.js` 并打包运行资源。`npm.cmd test` 包含现有业务测试及插件包/消息桥/服务生命周期测试。修改后重新构建并复制到测试仓库，可用 Obsidian CLI 的 `plugin:reload id=debate-room`、`dev:errors`、`dev:console level=error` 验证实际运行。
 
 插件结构遵循 [Obsidian 官方插件开发文档](https://docs.obsidian.md/Plugins/Getting%20started/Build%20a%20plugin)。此版本采用嵌入现有应用与随附 Node 服务的桌面架构，不是移动端原生实现。

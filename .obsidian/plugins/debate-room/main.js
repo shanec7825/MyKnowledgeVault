@@ -1,4 +1,4 @@
-const { Plugin, ItemView, PluginSettingTab, Setting, Notice, MarkdownView, FileSystemAdapter, normalizePath, requestUrl } = require('obsidian');
+const { Plugin, ItemView, PluginSettingTab, Setting, Notice, MarkdownView, FileSystemAdapter, normalizePath, requestUrl, setIcon } = require('obsidian');
 const { spawn } = require('node:child_process');
 const path = require('node:path');
 const { randomUUID } = require('node:crypto');
@@ -22,14 +22,18 @@ class DebateView extends ItemView {
   async onOpen() {
     this.contentEl.empty(); this.contentEl.addClass('debate-room-view');
     const toolbar = this.contentEl.createDiv({ cls: 'debate-room-toolbar' });
-    toolbar.createSpan({ text: '论场 · Debate Room' });
-    const button = (text, action) => {
-      const el = toolbar.createEl('button', { text });
+    toolbar.createSpan({ cls: 'debate-room-toolbar-title', text: '论场' });
+    const button = (text, icon, action, compact = false) => {
+      const el = toolbar.createEl('button', { cls: compact ? 'debate-room-tool debate-room-tool-icon' : 'debate-room-tool', attr: { 'aria-label': text, title: text, type: 'button' } });
+      setIcon(el.createSpan({ cls: 'debate-room-tool-icon-content' }), icon);
+      if (!compact) el.createSpan({ text });
       this.registerDomEvent(el, 'click', () => { void action().catch(e => new Notice(e.message)); });
+      return el;
     };
-    button('用当前笔记创建辩题', () => this.plugin.importNote());
-    button('保存当前辩论到仓库', () => this.plugin.saveDebate(this));
-    button('重启服务', () => this.plugin.restart());
+    button('从笔记创建', 'file-input', () => this.plugin.importNote());
+    this.saveButton = button('保存为笔记', 'file-down', () => this.plugin.saveDebate(this));
+    this.saveButton.disabled = true;
+    button('重启服务（将中止生成）', 'refresh-cw', () => this.plugin.restart(), true);
     this.status = this.contentEl.createDiv({ cls: 'debate-room-status', text: '正在启动本地服务…' });
     try {
       const origin = await this.plugin.startService();
@@ -38,18 +42,31 @@ class DebateView extends ItemView {
       this.frame = this.contentEl.createEl('iframe', { cls: 'debate-room-frame', attr: { title: '论场工作区', sandbox: 'allow-scripts allow-same-origin allow-forms allow-downloads', allow: 'microphone' } });
       this.registerDomEvent(window, 'message', event => {
         if (event.source !== this.frame.contentWindow || event.origin !== this.origin || event.data?.token !== this.token || event.data?.channel !== 'debate-room') return;
-        if (event.data.type === 'ready') { this.ready = true; this.status.hidden = true; this.sendTopic(); }
-        if (event.data.type === 'state') this.debateId = /^[a-f0-9-]{36}$/.test(event.data.id || '') ? event.data.id : null;
+        if (event.data.type === 'ready') { this.ready = true; this.status.hidden = true; this.sendTheme(); this.sendTopic(); }
+        if (event.data.type === 'state') { this.debateId = /^[a-f0-9-]{36}$/.test(event.data.id || '') ? event.data.id : null; this.saveButton.disabled = !this.debateId; }
       });
+      const doc = this.contentEl.ownerDocument;
+      this.themeObserver = new doc.defaultView.MutationObserver(() => this.sendTheme());
+      this.themeObserver.observe(doc.body, { attributes: true, attributeFilter: ['class', 'style'] });
+      this.themeObserver.observe(doc.documentElement, { attributes: true, attributeFilter: ['class', 'style'] });
+      this.registerEvent(this.app.workspace.on('css-change', () => this.sendTheme()));
       this.frame.src = `${origin}/#obsidian=${encodeURIComponent(this.token)}`;
     } catch (e) { this.status.textContent = `服务启动失败：${e.message}\n请在设置 → 论场中填写 Node.js 20+ 可执行文件的完整路径，再重启服务。`; }
+  }
+  sendTheme() {
+    if (!this.ready || this.closed) return;
+    const doc = this.contentEl.ownerDocument;
+    const computed = doc.defaultView.getComputedStyle(this.contentEl);
+    const names = ['background-primary', 'background-primary-alt', 'background-secondary', 'background-modifier-border', 'background-modifier-hover', 'text-normal', 'text-muted', 'text-faint', 'text-on-accent', 'text-accent', 'interactive-accent', 'interactive-accent-hover', 'background-modifier-error', 'text-error', 'font-interface', 'font-text', 'font-ui-small', 'font-ui-medium', 'radius-s'];
+    const variables = Object.fromEntries(names.map(name => [name, computed.getPropertyValue(`--${name}`).trim()]));
+    this.frame.contentWindow.postMessage({ channel: 'debate-room', token: this.token, type: 'theme', dark: doc.body.classList.contains('theme-dark'), variables }, this.origin);
   }
   sendTopic() {
     if (!this.ready || !this.pendingTopic) return;
     this.frame.contentWindow.postMessage({ channel: 'debate-room', token: this.token, type: 'topic', topic: this.pendingTopic }, this.origin);
     this.pendingTopic = null;
   }
-  async onClose() { this.closed = true; this.ready = false; this.frame?.remove(); }
+  async onClose() { this.closed = true; this.ready = false; this.themeObserver?.disconnect(); this.frame?.remove(); }
 }
 
 class DebateSettings extends PluginSettingTab {

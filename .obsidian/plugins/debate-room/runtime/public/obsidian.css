@@ -1,0 +1,124 @@
+/* Embedded appearance follows the authenticated host theme. */
+html.obsidian-embed {
+  --background-primary: #fff;
+  --background-primary-alt: #fafafa;
+  --background-secondary: #f6f6f6;
+  --background-modifier-border: #e0e0e0;
+  --background-modifier-hover: #00000008;
+  --text-normal: #222;
+  --text-muted: #666;
+  --text-faint: #999;
+  --text-on-accent: #fff;
+  --text-accent: #7852ee;
+  --interactive-accent: #7852ee;
+  --interactive-accent-hover: #6942d8;
+  --background-modifier-error: #fbe9e9;
+  --text-error: #c43c3c;
+  --green: var(--interactive-accent);
+  --muted: var(--text-muted);
+  --line: var(--background-modifier-border);
+  --border: var(--background-modifier-border);
+  --soft: var(--background-secondary);
+  font-family: var(--font-interface, system-ui, sans-serif);
+  color: var(--text-normal);
+  background: var(--background-primary);
+  color-scheme: light;
+}
+html.obsidian-dark {
+  --background-primary: #1e1e1e;
+  --background-primary-alt: #242424;
+  --background-secondary: #262626;
+  --background-modifier-border: #3b3b3b;
+  --background-modifier-hover: #ffffff0d;
+  --text-normal: #dadada;
+  --text-muted: #aaa;
+  --text-faint: #777;
+  --background-modifier-error: #482727;
+  --text-error: #f08080;
+  color-scheme: dark;
+}
+.obsidian-embed body { font-size: var(--font-ui-medium, 14px); background: var(--background-primary); }
+.obsidian-embed .sr-only { position: absolute; width: 1px !important; height: 1px !important; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.obsidian-embed :is(.launch-bar,.launch-options) { background: var(--background-primary); }
+.obsidian-embed :is(.topic-confirm input,.chat-composer textarea,.agent-model,.add-agent,.language-buttons button,.chat-prompts button,.form-actions button) { background: var(--background-primary); color: var(--text-normal); }
+.obsidian-embed :is(.form-actions .primary,.chat-composer .primary,.language-buttons button[aria-pressed=true]) { background: var(--interactive-accent); color: var(--text-on-accent); }
+.obsidian-embed :is(h1,h2,h3,h4,p,strong,label,input,textarea,select,.speech-body,.coach-reply,.lesson-detail) { color: var(--text-normal); }
+.obsidian-embed :is(small,.hint,.info-line,.optional,.category,.count,.status-label,.role-origin,.role-tag,.message-label,.speech-stage,.assistant-picker-label,.composer-label,.lesson-dimension,.lesson-expand,.practice-label,.mode-note,.training-mode,.empty,.citation,.source-id,.agent-model,.mode-pill,.page-heading p,.training-steps li,.speech-attachment,.coach-message>span,.assistant-message>small,.chat-heading,.chat-welcome p,.topic-suggestions>span,.topic-suggestions button>span,.chat-composer>div>span,.coach-configuration>summary span,.coach-section-heading>span,.impromptu-question,.review .winner) { color: var(--text-muted); }
+.obsidian-embed :is(.topic-chat,.setup-panel,.topic-examples,.role-card,.form-card,.speech,.research-panel,.source-card,.history-row,.coach-setup,.coach-chat,.lesson-card,.exercise-card,.review,.review-next,.training-context,.arena-sidebar,.arena-overview,.debate-language-panel,.voice-player,.delete-confirmation,.chat-composer,.chat-heading,.topic-confirm,.team,.agent-row,.topic-card,.search-bar) {
+  background: var(--background-primary); border-color: var(--line);
+  border-radius: var(--radius-s, 6px); box-shadow: none;
+}
+.obsidian-embed :is(.topic-message>div,.coach-message p,.coach-message.assistant,.assistant-message>div,.chat-prompts button,.coach-quick button,.speech-attachment,.avatar,.history-icon,.lesson-advice,.review-grid>div,.fact-check,.language-buttons button) { background: var(--background-secondary); color: var(--text-normal); border-color: var(--line); }
+.obsidian-embed :is(.topic-message.user>div,.coach-message.user p,.assistant-message.user>div,.topic-card.selected,.arena-overview,.training-context,.exercise-card,.review) { background: var(--background-primary-alt); }
+.obsidian-embed :is(input,textarea,select) { background: var(--background-primary); border-color: var(--line); color: var(--text-normal); padding: 7px 10px; border-radius: var(--radius-s, 5px); }
+.obsidian-embed :is(input,textarea)::placeholder { color: var(--text-faint); }
+.obsidian-embed :is(input,textarea,select):disabled { background: var(--background-secondary); color: var(--text-muted); }
+.obsidian-embed :is(button,a,input,textarea,select,summary):focus-visible { outline: 2px solid var(--interactive-accent); outline-offset: 2px; }
+.obsidian-embed :is(.primary,.language-buttons button[aria-pressed=true]) { background: var(--interactive-accent); border-color: var(--interactive-accent); color: var(--text-on-accent); }
+.obsidian-embed .primary:hover { background: var(--interactive-accent-hover); }
+.obsidian-embed :is(.secondary,.add-agent,.chat-prompts button,.region-tabs button,.arena-side-tabs button) { color: var(--text-normal); border-color: var(--line); background: var(--background-secondary); }
+.obsidian-embed :is(.secondary,.add-agent,.chat-prompts button,.region-tabs button,.arena-side-tabs button):hover { background: var(--background-modifier-hover); }
+.obsidian-embed :is(.region-tabs button.active,.arena-side-tabs button[aria-pressed=true],.training-steps .current,.training-steps .current b) { background: var(--background-modifier-hover); color: var(--text-accent); }
+.obsidian-embed :is(.side-tag,.side-mark) { background: var(--background-secondary); color: var(--text-accent); }
+.obsidian-embed :is(.side-tag.con,.con .side-mark) { color: var(--text-muted); }
+.obsidian-embed :is(.notice,.warnings,.chat-error) { background: var(--background-modifier-error); color: var(--text-error); border-color: var(--line); }
+.obsidian-embed :is(.lesson-card blockquote,.lesson-card blockquote small) { color: var(--text-muted); border-color: var(--line); }
+.obsidian-embed .source-card a { color: var(--text-accent); }
+.obsidian-embed #toast { background: var(--background-secondary); color: var(--text-normal); border: 1px solid var(--line); }
+.obsidian-embed .delete-confirmation::backdrop { background: #0008; }
+.obsidian-embed .sidebar,
+.obsidian-embed .sidebar.sidebar-collapsed {
+  position: sticky; inset: auto; top: 0; width: 100%; padding: 6px 12px;
+  display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center;
+  gap: 8px; background: var(--background-secondary); border: 0;
+  border-bottom: 1px solid var(--line); z-index: 20;
+}
+.obsidian-embed :is(.brand,.sidebar-toggle,.local-badge) { display: none; }
+.obsidian-embed .sidebar nav,
+.obsidian-embed .sidebar-collapsed nav { display: flex; gap: 3px; flex: 1; min-width: 0; overflow-x: auto; margin: 0; scrollbar-width: thin; }
+.obsidian-embed .sidebar-bottom,
+.obsidian-embed .sidebar-collapsed .sidebar-bottom { display: flex; flex: 0 0 auto; width: auto; margin: 0; }
+.obsidian-embed .sidebar .nav-item { flex: 0 0 auto; width: auto; margin: 0; padding: 7px 9px; gap: 6px; font-size: 12px; white-space: nowrap; color: var(--text-muted); border-radius: var(--radius-s, 5px); }
+.obsidian-embed .nav-item svg { width: 16px; height: 16px; }
+.obsidian-embed .nav-item i { display: none; }
+.obsidian-embed .sidebar .nav-item:hover { background: var(--background-modifier-hover); color: var(--text-normal); }
+.obsidian-embed .sidebar .nav-item.active { background: var(--background-modifier-hover); color: var(--text-accent); }
+.obsidian-embed main,
+.obsidian-embed main.nav-collapsed { margin: 0; min-width: 0; }
+.obsidian-embed .topbar { height: 38px; padding: 0 20px; background: var(--background-primary); border-color: var(--line); font-size: 12px; color: var(--text-muted); }
+.obsidian-embed .mode-pill { background: var(--background-secondary); border-color: var(--line); padding: 4px 8px; font-size: 11px; }
+.obsidian-embed .content { max-width: 1320px; padding: 20px; margin: 0 auto; }
+.obsidian-embed h1 { font-size: 22px; letter-spacing: 0; }
+.obsidian-embed .page-heading { margin-bottom: 18px; }
+.obsidian-embed .page-heading p { font-size: 12px; margin-top: 6px; }
+.obsidian-embed :is(.home-grid,.arena-layout) { grid-template-columns: minmax(0,1fr) 280px; gap: 18px; }
+.obsidian-embed .arena-layout.right-collapsed { grid-template-columns: minmax(0,1fr); }
+.obsidian-embed :is(.setup-panel,.coach-setup,.arena-sidebar,.speech,.form-card,.coach-chat,.review,.exercise-card) { padding: 16px; }
+.obsidian-embed :is(.chat-heading,.topic-messages,.topic-confirm) { padding: 16px; }
+.obsidian-embed .chat-composer { margin: 0 16px 16px; }
+.obsidian-embed :is(.speech-body,.coach-reply) { font-family: var(--font-text, var(--font-interface, system-ui)); line-height: 1.8; }
+.obsidian-embed .form-actions { flex-wrap: wrap; }
+.obsidian-embed :is(.topic-column,.setup-panel,.coach-workspace,.speech,.history-row,.history-row>div,.form-grid>label,.team) { min-width: 0; overflow-wrap: anywhere; }
+.obsidian-embed .voice-player { bottom: 10px; right: 10px; padding: 10px; }
+.obsidian-embed footer { color: var(--text-muted); border-color: var(--line); }
+@media (max-width: 1000px) {
+  .obsidian-embed :is(.home-grid,.arena-layout,.coach-layout) { grid-template-columns: minmax(0,1fr); }
+  .obsidian-embed :is(.arena-sidebar,.coach-setup) { position: static; max-height: none; }
+  .obsidian-embed .setup-panel .teams { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 600px) {
+  .obsidian-embed .content { padding: 14px 12px; }
+  .obsidian-embed .topbar { padding: 0 12px; }
+  .obsidian-embed .sidebar,
+  .obsidian-embed .sidebar.sidebar-collapsed { padding: 5px 6px; gap: 3px; }
+  .obsidian-embed .sidebar .nav-item { font-size: 0; gap: 0; padding: 8px; }
+  .obsidian-embed .sidebar nav { justify-content: flex-start; }
+  .obsidian-embed :is(.setup-panel .teams,.form-grid,.review-grid,.topic-grid,.roles-grid,.library-grid,.lesson-grid) { grid-template-columns: minmax(0,1fr); }
+  .obsidian-embed .setup-panel .launch-bar { display: block; }
+  .obsidian-embed .launch-bar>.primary { width: 100%; margin-top: 14px; }
+  .obsidian-embed .history-entry { align-items: stretch; }
+  .obsidian-embed .history-row { flex-wrap: wrap; padding: 12px; }
+  .obsidian-embed .page-heading { flex-wrap: wrap; }
+  .obsidian-embed .language-buttons { flex-wrap: wrap; min-width: 0; }
+  .obsidian-embed .language-buttons button { min-width: 0; padding: 8px 12px; }
+}

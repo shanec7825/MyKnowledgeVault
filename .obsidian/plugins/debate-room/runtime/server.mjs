@@ -359,7 +359,7 @@ const server=http.createServer(async(req,res)=>{
       if(!match[2] && req.method==='GET')return send(res,200,d);
     }
     if(req.method!=='GET')return send(res,404,{error:'接口不存在'});
-    const files={'/workspace.css':'workspace.css','/arena.js':'arena.js','/arena-assistant.js':'arena-assistant.js','/model-output.js':'model-output.js','/voice.js':'voice.js','/voice-settings.js':'voice-settings.js','/icons.js':'icons.js','/home.js':'home.js','/ui.css':'ui.css','/':'index.html','/app.js':'app.js','/topic-chat.js':'topic-chat.js','/connections.js':'connections.js','/coach.js':'coach.js','/character-studio.js':'character-studio.js','/coach.css':'coach.css','/topic-chat.css':'topic-chat.css','/styles.css':'styles.css','/speech-format.js':'speech-format.js'};
+    const files={'/obsidian.css':'obsidian.css','/workspace.css':'workspace.css','/arena.js':'arena.js','/arena-assistant.js':'arena-assistant.js','/model-output.js':'model-output.js','/voice.js':'voice.js','/voice-settings.js':'voice-settings.js','/icons.js':'icons.js','/home.js':'home.js','/ui.css':'ui.css','/':'index.html','/app.js':'app.js','/topic-chat.js':'topic-chat.js','/connections.js':'connections.js','/coach.js':'coach.js','/character-studio.js':'character-studio.js','/coach.css':'coach.css','/topic-chat.css':'topic-chat.css','/styles.css':'styles.css','/speech-format.js':'speech-format.js'};
     files['/obsidian-bridge.js']='obsidian-bridge.js';
     files['/voice-controls.js']='voice-controls.js';
     files['/sse.js']='sse.js';files['/speech-text.js']='speech-text.js';
