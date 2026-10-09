@@ -15,5 +15,13 @@
       ],
       "key": "A"
     }
+  ],
+  "obsidian-excalidraw-plugin:tray-mode": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "U"
+    }
   ]
 }
