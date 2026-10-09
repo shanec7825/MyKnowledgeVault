@@ -47,7 +47,7 @@ A4 无论由正弦波、钢琴还是吉他发出，都可以保持同一音高�
 
 ## 交互图
 
-打开同目录下的 **[music_basics.html](./music_basics.html)**。
+打开同目录下的 **[music_basics.html](./music_basics.html)**。\n\n如果你想专门把“节拍/节奏”听出区别，打开 **[beat_lab.html](./beat_lab.html)**：可交互比较 2/4、3/4、4/4、6/8、5/4，以及 Straight、Swing、反拍和切分。
 
 其中最值得先玩的部分是 **环形音序器（Circular Sequencer）**：
 
