@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>节拍实验室 · Beat Lab</title>
+<style>
+:root{
+  --bg:#09101c;--panel:#111b2d;--panel2:#0d1627;--line:#263653;
+  --text:#eef4ff;--muted:#9eabc8;--cyan:#77d9ff;--violet:#c4b5fd;
+  --green:#86efac;--yellow:#fde68a;--pink:#f9a8d4;
+}
+*{box-sizing:border-box}
+body{margin:0;background:
+ radial-gradient(circle at 10% 0,#142b4f 0,transparent 30%),
+ radial-gradient(circle at 92% 8%,#33204b 0,transparent 26%),var(--bg);
+ color:var(--text);font-family:Inter,"Noto Sans SC","Microsoft YaHei",sans-serif;line-height:1.65}
+header,main,footer{max-width:1120px;margin:auto;padding-left:22px;padding-right:22px}
+header{padding-top:52px;padding-bottom:16px}
+h1{font-size:clamp(2.2rem,6vw,4.7rem);line-height:1.04;margin:.15em 0 .25em}
+h2{font-size:1.55rem;margin:0 0 12px} h3{margin:.25em 0}
+.lead{max-width:850px;color:#cad4ec;font-size:1.08rem}
+.pill{display:inline-block;padding:5px 11px;border:1px solid #40567d;border-radius:999px;color:#bdc9e3;font-size:.83rem}
+section{margin:26px 0;padding:23px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,#111b2deF,#0c1525ef);box-shadow:0 22px 60px #0004}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.card{padding:16px;background:#0d1728;border:1px solid #273956;border-radius:15px}
+.muted{color:var(--muted)} .tiny{font-size:.84rem}
+.controls{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin:12px 0}
+button,select,input{font:inherit}
+button{border:1px solid #385172;background:#15243b;color:var(--text);border-radius:11px;padding:9px 13px;cursor:pointer}
+button:hover{background:#1d3150} button.active,button.primary{background:#174d69;border-color:#5dc9f5}
+input[type=range]{width:min(250px,55vw)}
+.meter-buttons{display:flex;gap:8px;flex-wrap:wrap}
+.meter-buttons button{min-width:72px}
+.stage{padding:18px;border:1px solid #2c4162;border-radius:18px;background:#08111f}
+.pulseRow{display:flex;gap:7px;align-items:flex-end;min-height:118px;margin:16px 0;overflow-x:auto;padding-bottom:4px}
+.pulse{flex:1;min-width:34px;height:54px;border:1px solid #314563;background:#111c2e;border-radius:10px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:7px;color:#8292b0;transition:.08s}
+.pulse.main{height:80px;border-color:#496789;color:#c9d6ee}
+.pulse.accent{height:104px;border-color:#72d7fc;color:white;background:#133451}
+.pulse.mid{height:90px;border-color:#b7a0ff;background:#251f49;color:white}
+.pulse.now{transform:translateY(-8px);box-shadow:0 0 0 2px #fff8,0 0 24px #7dd3fc66}
+.countline{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;color:#cbd5ea;background:#08111f;border:1px solid #283c5c;border-radius:10px;padding:9px 12px;overflow-x:auto}
+.bigdesc{font-size:1.05rem;color:#d8e0f3}
+.tag{display:inline-block;border:1px solid #3a4d70;border-radius:999px;padding:3px 9px;margin:3px 4px 3px 0;font-size:.8rem;color:#b9c7e3}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:760px){.compare{grid-template-columns:1fr}}
+.grooveViz{display:grid;grid-template-columns:repeat(8,1fr);gap:6px;margin:12px 0}
+.gstep{height:58px;border:1px solid #314461;border-radius:9px;background:#0c1626;display:grid;place-items:center;color:#7e8ba8}
+.gstep.hit{background:#19394e;border-color:#65c7ea;color:white}
+.gstep.off{background:#302443;border-color:#aa8de0}
+.explain{border-left:3px solid #5fbfe2;padding-left:13px;color:#c7d1e7}
+.callout{padding:12px 14px;border-radius:12px;background:#0b1525;border:1px solid #2b3d5b}
+kbd{background:#202a3b;border:1px solid #43516a;border-bottom-width:2px;border-radius:5px;padding:1px 5px}
+footer{padding-top:4px;padding-bottom:50px;color:#8090af}
+hr{border:none;border-top:1px solid #263854;margin:18px 0}
+</style>
+</head>
+<body>
+<header>
+  <span class="pill">MusicLearning / Beat Lab</span>
+  <h1>节拍不是“咚咚咚”<br>而是时间怎样被分组</h1>
+  <p class="lead">这个页面只做一件事：让你<strong>用耳朵和身体体验拍号、重音、细分、Swing 与切分</strong>。不要急着记术语；先反复切换、拍手、点头，直到你能感觉出差异。</p>
+</header>
+
+<main>
+<section>
+  <h2>01 · 拍号实验室：同样的速度，为什么走路感完全不同？</h2>
+  <div class="meter-buttons" id="meterButtons"></div>
+  <div class="controls">
+    <button id="playMeter" class="primary">▶ 开始</button>
+    <label>BPM <input id="bpm" type="range" min="45" max="180" value="90"> <b id="bpmText">90</b></label>
+    <label><input id="subdivision" type="checkbox" checked> 听见细分</label>
+  </div>
+  <div class="stage">
+    <div><span class="tag" id="meterName"></span><span class="tag" id="meterFeel"></span></div>
+    <div class="pulseRow" id="pulseRow"></div>
+    <div class="countline" id="countline"></div>
+    <p class="bigdesc" id="meterDesc"></p>
+    <p class="muted tiny" id="meterTip"></p>
+  </div>
+  <div class="callout" style="margin-top:14px">
+    <b>最重要的实验：</b>保持 BPM 不动，在 3/4、4/4、6/8 之间来回切换。你会发现“速度”可以相近，但<strong>重音多久回到一次起点</strong>、一拍内部怎样细分，会改变整个身体感觉。
+  </div>
+</section>
+
+<section>
+  <h2>02 · 先把几个最常见拍号“走”出来</h2>
+  <div class="grid">
+    <div class="card"><h3>2/4 · 一二｜一二</h3><p>强—弱。像左右脚交替，方向感直接，常见于进行曲或很明确的二拍律动。</p><p class="muted">身体提示：左脚 <b>强</b>，右脚 弱。</p></div>
+    <div class="card"><h3>3/4 · 一二三｜一二三</h3><p>强—弱—弱。每三拍回到“家”，天然有旋转、摇摆的圆周感。</p><p class="muted">身体提示：第 1 拍下沉，2、3 拍抬起。</p></div>
+    <div class="card"><h3>4/4 · 一二三四</h3><p>强—弱—次强—弱。流行音乐最常见；第 2、4 拍常由军鼓强调，形成 backbeat。</p><p class="muted">身体提示：脚踩四拍，手在 2、4 拍手。</p></div>
+    <div class="card"><h3>6/8 · 123｜456</h3><p>纸面上有六个八分音符，但通常<strong>感成两大拍</strong>，每大拍内部三分：1-2-3 / 4-5-6。</p><p class="muted">身体提示：只在 1 和 4 点头，嘴里数满六个。</p></div>
+    <div class="card"><h3>5/4 · 123｜45</h3><p>五拍是不对称的。这里采用常见的 3+2 分组，所以你会感到“长一步 + 短一步”。</p><p class="muted">身体提示：数 1-2-3｜4-5，不要平均成没有方向的五下。</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>03 · 细分：一拍里面还能继续切</h2>
+  <p class="explain">“拍”是你点头的主脉搏；“细分”是这一拍内部更小的时间网格。很多节奏感差异，真正来自细分，而不是 BPM。</p>
+  <div class="compare">
+    <div class="card">
+      <h3>二分细分 · Straight 8ths</h3>
+      <div class="grooveViz" id="straightViz"></div>
+      <div class="controls"><button id="straightPlay">▶ 听直八</button></div>
+      <p class="muted">每拍平均切成两半：<b>1 & 2 & 3 & 4 &</b>。两个间隔一样长。</p>
+    </div>
+    <div class="card">
+      <h3>三连音骨架 · Swing 8ths</h3>
+      <div class="grooveViz" id="swingViz"></div>
+      <div class="controls"><button id="swingPlay">▶ 听 Swing</button></div>
+      <p class="muted">不是“前后一样长”。可以先把一拍想成三份，声音大致落在第 1 份和第 3 份，于是出现“长—短、长—短”的弹性感。</p>
+    </div>
+  </div>
+  <div class="callout"><b>体验方法：</b>先听直八 4 次，再听 Swing 4 次。不要分析数字，只让手指跟着敲桌面。你应该能感到 Straight 更“方”，Swing 更“弹”。</div>
+</section>
+
+<section>
+  <h2>04 · 重音位置：格子没变，律动却变了</h2>
+  <p>下面都在同一个 4/4、同一个八分音符网格里，只改变“哪些位置被强调”。这就是为什么<strong>节拍（meter）</strong>和<strong>节奏（rhythm）</strong>不能混成一个概念。</p>
+  <div class="controls">
+    <button class="rhythmBtn active" data-rhythm="on">正拍 On-beat</button>
+    <button class="rhythmBtn" data-rhythm="back">2 / 4 Backbeat</button>
+    <button class="rhythmBtn" data-rhythm="off">反拍 Off-beat</button>
+    <button class="rhythmBtn" data-rhythm="sync">切分 Syncopation</button>
+    <button id="playRhythm" class="primary">▶ 播放</button>
+  </div>
+  <div class="grooveViz" id="rhythmViz"></div>
+  <p class="bigdesc" id="rhythmDesc"></p>
+</section>
+
+<section>
+  <h2>05 · “节拍感”训练：声音消失后，你还能不能把拍留在脑子里？</h2>
+  <p>真正的节拍感不是依赖节拍器，而是你脑中能维持稳定脉搏。这个训练会先给你 4 小节 4/4 点击，然后静音 2 小节，再回来。</p>
+  <div class="controls">
+    <button id="gapTrain" class="primary">▶ 4 小节有声 + 2 小节静音</button>
+    <button id="stopAll">■ 全部停止</button>
+  </div>
+  <div class="countline" id="gapStatus">准备：回来时如果你的内拍准确，重新出现的“1”会刚好撞上你心里预计的位置。</div>
+</section>
+
+<section>
+  <h2>06 · 最后用一句话区分</h2>
+  <div class="grid">
+    <div class="card"><b>Tempo 速度</b><p class="muted">脉搏有多快：例如 90 BPM。</p></div>
+    <div class="card"><b>Beat 拍</b><p class="muted">你身体最自然跟随的基本脉搏。</p></div>
+    <div class="card"><b>Meter 拍号/节拍组织</b><p class="muted">拍如何周期性分组、哪里是强拍。</p></div>
+    <div class="card"><b>Subdivision 细分</b><p class="muted">一拍内部再切成 2、3、4……份。</p></div>
+    <div class="card"><b>Rhythm 节奏</b><p class="muted">声音具体选择在哪些时间点出现、持续多久。</p></div>
+    <div class="card"><b>Groove 律动</b><p class="muted">重音、微小时值偏移、音色等共同产生的“身体感”。</p></div>
+  </div>
+</section>
+</main>
+
+<footer>建议一次只比较两个东西：例如先只比较 3/4 vs 4/4；能稳定听出后，再碰 6/8、Swing 和切分。</footer>
+
+<script>
+let ac;
+function audio(){if(!ac)ac=new (window.AudioContext||window.webkitAudioContext)();if(ac.state==='suspended')ac.resume();return ac}
+function hit(level=0,time=null,tone='click'){
+  const c=audio(),t=time??c.currentTime,o=c.createOscillator(),g=c.createGain();
+  if(tone==='low'){o.type='sine';o.frequency.value=level>1?150:190}
+  else{o.type='square';o.frequency.value=level===2?1200:level===1?900:650}
+  const amp=level===2?.15:level===1?.09:.045;
+  g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(amp,t+.004);g.gain.exponentialRampToValueAtTime(.0001,t+.055);
+  o.connect(g);g.connect(c.destination);o.start(t);o.stop(t+.07)
+}
+const meters={
+ '2/4':{beats:2,sub:2,acc:[2,0],count:['1','&','2','&'],feel:'二拍子 · 强弱',desc:'两拍一个周期：强—弱。最容易产生“左—右、左—右”的步行感。',tip:'练习：只在 1 拍踩脚，2 拍轻点；然后两个都踩，比较重音是否仍然清楚。'},
+ '3/4':{beats:3,sub:2,acc:[2,0,0],count:['1','&','2','&','3','&'],feel:'三拍子 · 强弱弱',desc:'三拍回到一次起点：强—弱—弱。关键不是“有三下”，而是每三个脉搏形成一个新的重心。',tip:'练习：身体在 1 拍稍微下沉，2、3 拍抬起；体会循环不是左右对称。'},
+ '4/4':{beats:4,sub:2,acc:[2,0,1,0],count:['1','&','2','&','3','&','4','&'],feel:'四拍子 · 强弱次强弱',desc:'四拍一个周期。1 是最强起点，3 常有次级重心；流行音乐又常把 2、4 用军鼓突出。',tip:'练习：脚踩 1-2-3-4，手只在 2 和 4 拍手。这是非常重要的流行乐身体感。'},
+ '6/8':{beats:2,sub:3,acc:[2,1],count:['1','2','3','4','5','6'],feel:'复二拍子 · 每大拍三分',desc:'虽然写作六个八分音符，但通常不是“六个同等的大拍”，而是两大拍：1-2-3｜4-5-6。',tip:'练习：嘴数六个数字，但只在 1、4 点头。若你六下都点头，就还没抓住 6/8 的大拍。'},
+ '5/4':{beats:5,sub:2,acc:[2,0,0,1,0],count:['1','&','2','&','3','&','4','&','5','&'],feel:'不规则五拍 · 3+2',desc:'五个四分音符被组织成 3+2：1-2-3｜4-5。它的特别之处不是“复杂”，而是周期天然不对称。',tip:'练习：先拍三下，再拍两下；循环。感觉应该像“长组 + 短组”，而不是平均的五个点。'}
+};
+let meter='4/4',meterTimer=null,meterStep=0;
+const meterButtons=document.getElementById('meterButtons'),row=document.getElementById('pulseRow');
+Object.keys(meters).forEach(k=>{const b=document.createElement('button');b.textContent=k;b.dataset.meter=k;if(k===meter)b.classList.add('active');b.onclick=()=>{meter=k;meterStep=0;[...meterButtons.children].forEach(x=>x.classList.toggle('active',x===b));renderMeter();restartMeterIfNeeded()};meterButtons.appendChild(b)});
+const bpm=document.getElementById('bpm'),bpmText=document.getElementById('bpmText');bpm.oninput=()=>{bpmText.textContent=bpm.value;restartMeterIfNeeded()};
+function accentForStep(m,step){if(step%m.sub!==0)return 0;return m.acc[Math.floor(step/m.sub)]||0}
+function renderMeter(){
+ const m=meters[meter];row.innerHTML='';
+ const total=m.beats*m.sub;
+ for(let i=0;i<total;i++){
+   const d=document.createElement('div');const a=accentForStep(m,i);
+   d.className='pulse '+(i%m.sub===0?'main ':'')+(a===2?'accent':a===1?'mid':'');
+   d.textContent=m.count[i]??(i+1);d.dataset.i=i;row.appendChild(d)
+ }
+ document.getElementById('meterName').textContent=meter;
+ document.getElementById('meterFeel').textContent=m.feel;
+ document.getElementById('countline').textContent='数拍： '+m.count.join('   ');
+ document.getElementById('meterDesc').textContent=m.desc;
+ document.getElementById('meterTip').textContent=m.tip
+}
+renderMeter();
+function meterTick(){
+ const m=meters[meter],total=m.beats*m.sub,subsOn=document.getElementById('subdivision').checked;
+ [...row.children].forEach((x,i)=>x.classList.toggle('now',i===meterStep));
+ const a=accentForStep(m,meterStep);
+ if(a>0)hit(a);else if(subsOn)hit(0);
+ meterStep=(meterStep+1)%total;
+ const ms=60000/Number(bpm.value)/m.sub;
+ meterTimer=setTimeout(meterTick,ms)
+}
+function stopMeter(){if(meterTimer){clearTimeout(meterTimer);meterTimer=null}document.getElementById('playMeter').textContent='▶ 开始'}
+function startMeter(){stopOther();audio();meterStep=0;document.getElementById('playMeter').textContent='■ 停止';meterTick()}
+function restartMeterIfNeeded(){if(meterTimer){clearTimeout(meterTimer);meterTimer=null;meterTick()}}
+document.getElementById('playMeter').onclick=()=>meterTimer?stopMeter():startMeter();
+
+function makeViz(el,hits,off=[]){el.innerHTML='';for(let i=0;i<8;i++){const d=document.createElement('div');d.className='gstep'+(hits.includes(i)?' hit':'')+(off.includes(i)?' off':'');d.textContent=i%2===0?(i/2+1):'&';el.appendChild(d)}}
+makeViz(document.getElementById('straightViz'),[0,1,2,3,4,5,6,7]);
+makeViz(document.getElementById('swingViz'),[0,1,2,3,4,5,6,7],[1,3,5,7]);
+let demoTimers=[];
+function clearDemoTimers(){demoTimers.forEach(clearTimeout);demoTimers=[]}
+function playStraight(){
+ stopOther();audio();const beat=60000/100;
+ for(let i=0;i<8;i++){demoTimers.push(setTimeout(()=>hit(i%2===0?1:0),i*beat/2))}
+}
+function playSwing(){
+ stopOther();const c=audio(),beat=60/100,t=c.currentTime+.05;
+ for(let b=0;b<4;b++){hit(1,t+b*beat);hit(0,t+b*beat+beat*2/3)}
+}
+document.getElementById('straightPlay').onclick=playStraight;document.getElementById('swingPlay').onclick=playSwing;
+
+const rhythms={
+ on:{hits:[0,2,4,6],levels:[2,1,1,1],desc:'正拍：声音落在 1、2、3、4 上。重心和基本脉搏重合，所以最稳、最“落地”。'},
+ back:{hits:[2,6],levels:[2,2],desc:'Backbeat：强调第 2、4 拍。流行、摇滚中极其常见；脚仍可踩四拍，但手会自然想在 2、4 拍手。'},
+ off:{hits:[1,3,5,7],levels:[1,1,1,1],desc:'反拍：强调每个 “&”。主拍位置反而留空，于是产生向前推、悬着不落地的感觉。'},
+ sync:{hits:[0,3,5,6],levels:[2,1,1,1],desc:'切分：重音跨过或避开预期的强拍位置，让你对“下一拍应该落在哪里”的预期被拉扯。'}
+};
+let currentRhythm='on',rhythmTimer=null;
+function renderRhythm(){
+ const r=rhythms[currentRhythm],v=document.getElementById('rhythmViz');makeViz(v,r.hits,r.hits.filter(x=>x%2===1));
+ document.getElementById('rhythmDesc').textContent=r.desc
+}
+renderRhythm();
+document.querySelectorAll('.rhythmBtn').forEach(b=>b.onclick=()=>{currentRhythm=b.dataset.rhythm;document.querySelectorAll('.rhythmBtn').forEach(x=>x.classList.toggle('active',x===b));renderRhythm()});
+function playRhythm(){
+ stopOther();audio();const r=rhythms[currentRhythm],beatMs=60000/Number(bpm.value),stepMs=beatMs/2;let step=0,loops=0;
+ document.getElementById('playRhythm').textContent='■ 停止';
+ const tick=()=>{
+   const pos=r.hits.indexOf(step);if(pos>=0)hit(r.levels[pos]||1);
+   [...document.getElementById('rhythmViz').children].forEach((x,i)=>x.classList.toggle('now',i===step));
+   step=(step+1)%8;if(step===0)loops++;
+   if(loops>=4){stopRhythm();return}rhythmTimer=setTimeout(tick,stepMs)
+ };tick()
+}
+function stopRhythm(){if(rhythmTimer){clearTimeout(rhythmTimer);rhythmTimer=null}document.getElementById('playRhythm').textContent='▶ 播放'}
+document.getElementById('playRhythm').onclick=()=>rhythmTimer?stopRhythm():playRhythm();
+
+let gapTimer=null,gapBeat=0;
+function startGap(){
+ stopOther();audio();gapBeat=0;document.getElementById('gapTrain').textContent='■ 训练中';
+ const status=document.getElementById('gapStatus');
+ const tick=()=>{
+   const bar=Math.floor(gapBeat/4)+1,beatNo=gapBeat%4+1,audible=bar<=4||bar>6;
+   if(audible)hit(beatNo===1?2:0);
+   status.textContent=(bar<=4?'有声 ':bar<=6?'静音 — 请继续在心里数 ':'回来！ ')+'｜第 '+bar+' 小节 · 第 '+beatNo+' 拍';
+   gapBeat++;
+   if(gapBeat>=32){gapTimer=null;document.getElementById('gapTrain').textContent='▶ 4 小节有声 + 2 小节静音';status.textContent='完成。回来的第 1 拍有没有正好撞上你心里的“1”？';return}
+   gapTimer=setTimeout(tick,60000/Number(bpm.value))
+ };tick()
+}
+function stopGap(){if(gapTimer){clearTimeout(gapTimer);gapTimer=null}document.getElementById('gapTrain').textContent='▶ 4 小节有声 + 2 小节静音'}
+document.getElementById('gapTrain').onclick=()=>gapTimer?stopGap():startGap();
+
+function stopOther(){
+ stopMeter();stopRhythm();stopGap();clearDemoTimers()
+}
+document.getElementById('stopAll').onclick=stopOther;
+</script>
+</body>
+</html>
