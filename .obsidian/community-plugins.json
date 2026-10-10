@@ -1,17 +1,11 @@
 [
   "templater-obsidian",
   "dataview",
-  "realclaudian",
   "obsidian-memos",
   "nutstore-sync",
   "obsidian-excalidraw-plugin",
-  "table-editor-obsidian",
   "obsidian-git",
-  "obsidian-html-plugin",
   "qiaomu-reader",
   "qiaomu-ai-rss",
-  "qiaomu-agent",
-  "attention-allocator",
-  "mimo-english-coach",
-  "debate-room"
+  "mimo-english-coach"
 ]

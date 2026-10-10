@@ -17,7 +17,7 @@ Obsidian 内的使用入口：[[wiki/meta/attention-allocator|注意力分配器
 
 ## Agent 查阅流程
 
-从知识库根目录运行，先读根目录 `AGENTS.md`；Claude 客户端同时读取 `CLAUDE.md`。领域入口按需要读取 [[EnglishLearning/README]]、[[EnglishLearning/Connections]]、[[MusicLearning/README]] 或 [[lessons/操作系统基础/实验参考指南与可视化索引]]。
+从知识库根目录运行，先读根目录 `AGENTS.md`；Claude 客户端同时读取 `CLAUDE.md`。领域入口按需要读取 [[drafts/EnglishLearning/README]]、[[Connections]]、[[MusicLearning/README]] 或 [[lessons/操作系统基础/实验参考指南与可视化索引]]。
 
 ```powershell
 # 显式绑定本库，避免误用用户级默认索引
@@ -70,7 +70,7 @@ npm.cmd run --silent qmd -- status
 
 上述信任设置针对已经核查的本库配置：collection 路径位于本库内，嵌入模型为已有本地 GGUF，未配置外部更新命令。若配置被修改或从其他项目导入，应先重新检查路径、模型和更新命令；不要直接沿用信任设置。未信任时 QMD 会跳过指定模型，可能改用需要下载的默认模型。
 
-目录页与搜索数据库分别维护：新增英语学习笔记时补充 [[EnglishLearning/README]]，相关概念联系按内容更新 [[EnglishLearning/Connections]]；其他领域按已有入口组织。目录页是 Markdown 链接列表，不会因新增文件自动添加链接。Obsidian 的链接与属性缓存、Dataview 的事件索引也不会代替 QMD 刷新。
+目录页与搜索数据库分别维护：新增英语学习笔记时补充 [[drafts/EnglishLearning/README]]，相关概念联系按内容更新 [[Connections]]；其他领域按已有入口组织。目录页是 Markdown 链接列表，不会因新增文件自动添加链接。Obsidian 的链接与属性缓存、Dataview 的事件索引也不会代替 QMD 刷新。
 
 若 `status` 显示孤立向量，可先运行 `npm.cmd run --silent qmd -- cleanup --dry-run` 查看计划，再运行 `npm.cmd run --silent qmd -- cleanup` 清理生成数据。原始 Markdown 不属于清理对象。清理后再次检查状态。
 
