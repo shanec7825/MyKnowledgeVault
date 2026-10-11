@@ -1,0 +1,14 @@
+services:
+  web:
+    environment:
+      HTTP_PROXY: http://host.docker.internal:7890
+      HTTPS_PROXY: http://host.docker.internal:7890
+      NO_PROXY: localhost,127.0.0.1,postgres,redis,credential-sync
+  workers:
+    environment:
+      HTTP_PROXY: http://host.docker.internal:7890
+      HTTPS_PROXY: http://host.docker.internal:7890
+      NO_PROXY: localhost,127.0.0.1,postgres,redis,credential-sync
+  credential-sync:
+    volumes:
+      - /mnt/c/Users/Lenovo/.codex:/host-codex:ro
