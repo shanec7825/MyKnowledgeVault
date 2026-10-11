@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>组合逻辑实验室 · 数字逻辑与系统</title>
+<style>
+:root{color-scheme:light;--ink:#192638;--muted:#526376;--line:#dbe3ea;--bg:#f5f7fb;--card:#fff;--accent:#136ac2;--cyan:#06797e;--hot:#cf6c0b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif}
+main{max-width:1040px;margin:auto;padding:34px 20px 70px}
+header{margin-bottom:26px}
+h1{font-size:clamp(27px,3.4vw,42px);letter-spacing:-.025em;margin:0 0 6px}
+.lead{margin:0;color:var(--muted);max-width:800px}
+.eyebrow{color:var(--accent);font-size:13px;font-weight:750;letter-spacing:.12em}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0}
+nav a{text-decoration:none;color:#1c4e7d;border:1px solid #d3e0ed;background:white;padding:7px 14px;border-radius:40px;font-size:14px}
+section{background:var(--card);border:1px solid var(--line);box-shadow:0 7px 24px rgba(19,39,59,.035);border-radius:18px;padding:25px;margin-bottom:22px}
+section h2{font-size:24px;margin:0 0 7px}
+section .intro{color:var(--muted);margin:0 0 17px}
+.grid{display:grid;grid-template-columns:1.25fr 1fr;gap:18px}
+.diagram{background:#f8fbff;border:1px solid #d8e5ef;border-radius:12px;padding:14px;min-width:0}
+.diagram svg{width:100%;height:auto;display:block}
+.control{background:#f8f9fb;border:1px solid #e3e8ef;border-radius:12px;padding:16px}
+.control h3{font-size:15px;letter-spacing:.02em;margin:0 0 10px}
+.controls{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.control-box{display:inline-flex;align-items:center;gap:8px;font-weight:600}
+.bit{border:1px solid #c7d6e5;background:white;min-width:45px;padding:6px 12px;border-radius:9px;font:700 18px ui-monospace,SFMono-Regular,Consolas,monospace;cursor:pointer;color:#345271}
+.bit[aria-pressed="true"]{border-color:var(--accent);color:white;background:var(--accent)}
+.bit:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #e8a62f;outline-offset:2px}
+.result{margin-top:15px;background:#eaf3fd;border-left:4px solid var(--accent);padding:12px 14px;border-radius:6px}
+.result strong{font:750 25px ui-monospace,SFMono-Regular,Consolas,monospace}
+.note{font-size:14px;color:#4a5e71;margin:14px 0 0}
+.trace{margin-top:10px;border-top:1px dashed #c9d8e5;padding-top:10px;font-size:14px;color:#394f67}
+path.wire{stroke:#9db1c6;stroke-width:5;fill:none;stroke-linecap:round;stroke-linejoin:round;transition:stroke .15s}
+path.wire.active{stroke:var(--accent);stroke-width:6}
+path.selectwire{stroke:var(--hot);stroke-width:3;fill:none;stroke-dasharray:7 5}
+.label{fill:#22374c;font-size:18px;font-family:ui-monospace,Consolas,monospace}
+.label.small{font-size:14px}
+.block{fill:#fff;stroke:#8fa5bd;stroke-width:2}
+.kv{display:flex;gap:9px;flex-wrap:wrap;margin:10px 0}
+.kv span{display:inline-block;background:#eef2f6;border-radius:9px;padding:4px 10px;font-family:ui-monospace,Consolas,monospace}
+.aluflow{display:grid;grid-template-columns:minmax(60px,.7fr) 24px 1fr 28px 1fr 28px .55fr;gap:5px;align-items:center;max-width:680px;margin:auto}
+.stack{display:grid;gap:15px}
+.unit{border:2px solid #b9cbdc;background:white;padding:16px 10px;text-align:center;border-radius:12px;font-weight:700}
+.unit.on{border-color:var(--accent);background:#e7f3ff}
+.arrow{color:var(--accent);font-weight:900;text-align:center}
+.sub{color:var(--muted);font-size:12px;display:block;font-weight:500}
+.bitstring{font:750 22px ui-monospace,Consolas,monospace;color:#0e6098}
+.fulladders{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:15px}
+.fa{border:1px solid #cfdae6;border-radius:12px;padding:12px 7px;text-align:center;background:#f8fbff;font:14px ui-monospace,Consolas,monospace}
+.fa strong{display:block;font:700 17px ui-monospace,Consolas,monospace;color:#125f94;margin-bottom:7px}
+.fa .small{font-size:12px;color:#64758a}
+input[type=range]{width:155px;accent-color:var(--accent)}
+select{border:1px solid #c3d0df;border-radius:8px;padding:8px;font-size:16px;background:white}
+.leds{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:18px 0}
+.led{border:1px solid #cad8e6;padding:16px 3px;border-radius:12px;text-align:center;background:#f1f4f8}
+.led b{display:block;font:800 25px ui-monospace,Consolas,monospace;color:#8b9ba9}
+.led.on{border-color:var(--cyan);background:#e2f5f3}
+.led.on b{color:var(--cyan)}
+details{margin-top:16px;border:1px solid #d7e1eb;border-radius:10px;padding:10px 15px}
+summary{font-weight:700;cursor:pointer}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;margin-top:8px}
+th,td{padding:6px 10px;border-bottom:1px solid #e4ebf1;text-align:left}
+th{color:#53687a;font-weight:650}
+footer{color:var(--muted);font-size:14px;padding:10px}
+@media(max-width:720px){.grid{grid-template-columns:1fr}section{padding:18px}.aluflow{grid-template-columns:1fr;gap:8px}.aluflow .arrow{transform:rotate(90deg)}.fulladders{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<div class="eyebrow">DIGITAL LOGIC / PHASE 03</div>
+<h1>组合逻辑实验室</h1>
+<p class="lead">点按 0/1，观察输入如何沿模块变成输出。先预测，再操作，最后对照公式和真值表；所有计算都在浏览器本地完成。</p>
+</header>
+<nav aria-label="实验导航"><a href="#mux">01 MUX 选路</a><a href="#decoder">02 译码</a><a href="#alu">03 双功能 ALU</a><a href="#adder">04 逐位进位</a></nav>
+<section id="mux">
+<h2>01 · 2 选 1 MUX：选择一条路径</h2>
+<p class="intro">选择位 S 只决定路径，不计算 D0 和 D1 的“或”。蓝色线代表当前选中的数据通路。</p>
+<div class="grid">
+<div class="diagram">
+<svg viewBox="0 0 550 245" role="img" aria-label="两条数据输入进入多路选择器，S 选择输出路径">
+<path id="muxp0" class="wire" d="M38 77 H243 L355 118 H505"/>
+<path id="muxp1" class="wire" d="M38 165 H243 L355 118 H505"/>
+<polygon points="245,38 355,81 355,157 245,200" fill="#fff" stroke="#5c7c9a" stroke-width="3"/>
+<path class="selectwire" d="M300 228 V178"/>
+<text class="label" x="10" y="68">D0</text><text class="label" x="10" y="157">D1</text>
+<text class="label" x="491" y="103">Y</text><text class="label" x="295" y="242">S</text>
+<text class="label" x="265" y="122">MUX</text>
+</svg>
+</div>
+<div class="control"><h3>点击输入位切换 0/1</h3>
+<div class="controls"><label class="control-box">D0 <button class="bit" data-key="d0" aria-label="切换 D0">0</button></label><label class="control-box">D1 <button class="bit" data-key="d1" aria-label="切换 D1">1</button></label><label class="control-box">S <button class="bit" data-key="s" aria-label="切换选择位 S">0</button></label></div>
+<div class="result">当前选择 <b id="muxroute">D0</b>，输出 Y = <strong id="muxy">0</strong></div>
+<div class="trace" id="muxtrace" aria-live="polite"></div><p class="note">公式：Y = (¬S ∧ D0) ∨ (S ∧ D1)。尝试固定两路数据不变，只切换 S。</p>
+</div></div>
+</section>
+<section id="decoder">
+<h2>02 · 2→4 译码器：编号变成一条有效线</h2>
+<p class="intro">这里明确规定：<b>高电平有效</b>、输出位序为 <code>Y3Y2Y1Y0</code>。输入编码不是数据本身，而是在指定哪一路应该变为 1。</p>
+<div class="grid"><div class="diagram">
+<div class="unit">输入编号 <span id="decin" class="bitstring">00</span>　→　2→4 译码器</div>
+<div class="leds"><div class="led" id="led3">Y3 <b>0</b></div><div class="led" id="led2">Y2 <b>0</b></div><div class="led" id="led1">Y1 <b>0</b></div><div class="led" id="led0">Y0 <b>1</b></div></div>
+<div class="result">Y3Y2Y1Y0 = <strong id="decout">0001</strong></div>
+</div><div class="control"><h3>选择地址</h3>
+<select id="addr" aria-label="译码地址"><option value="0">00 → Y0</option><option value="1">01 → Y1</option><option value="2">10 → Y2</option><option value="3">11 → Y3</option></select>
+<div class="trace">规则：若 A1A0=10，则 Y2 有效，位串为 <code>0100</code>。不要把独热输出误认为二进制数值 4 的另一个编码表示。</div>
+<details><summary>自检：如果输出低电平有效？</summary><p>仍然由地址选中同一路，但被选中的输出应为 0，其余为 1。例如地址 10 对应 <code>1011</code>（位序 Y3Y2Y1Y0）。</p></details>
+</div></div>
+</section>
+<section id="alu">
+<h2>03 · 1 位双功能 ALU：运算与选路分开</h2>
+<p class="intro">建议先完成项目第一层的 8 行真值表，再用这里对照。AND 和 XOR 同时算出候选结果，Op 选择哪一条被送到 Y。</p>
+<div class="grid">
+<div class="diagram">
+<div class="kv"><span>A = <b id="av">0</b></span><span>B = <b id="bv">1</b></span></div>
+<div class="aluflow">
+<div class="unit">A、B</div><div class="arrow">→</div>
+<div class="stack"><div id="andbox" class="unit">AND<span class="sub" id="andv">0</span></div><div id="xorbox" class="unit">XOR<span class="sub" id="xorv">1</span></div></div>
+<div class="arrow">→</div><div class="unit">2:1 MUX<span class="sub">Op = <b id="opv">0</b></span></div><div class="arrow">→</div><div class="unit on">Y <span class="sub" id="aluy">0</span></div>
+</div>
+<p class="note">Op=0 → AND；Op=1 → XOR。高亮的计算模块是最终被选用的路径。</p>
+</div>
+<div class="control"><h3>输入 / 运算码</h3>
+<div class="controls"><label class="control-box">A <button class="bit" data-key="a" aria-label="切换 A">0</button></label><label class="control-box">B <button class="bit" data-key="b" aria-label="切换 B">1</button></label><label class="control-box">Op <button class="bit" data-key="op" aria-label="切换 Op">0</button></label></div>
+<div class="result">Y = <strong id="aluybig">0</strong></div><div class="trace" id="alutrace" aria-live="polite"></div>
+<details><summary>查看完整真值表（用于核对）</summary><table><thead><tr><th>A</th><th>B</th><th>Op</th><th>Y</th></tr></thead><tbody id="alutable"></tbody></table></details>
+</div></div>
+</section>
+<section id="adder">
+<h2>04 · 四位行波加法：进位穿过每一位</h2>
+<p class="intro">每个全加器的输入包括 Ai、Bi 和上一位进位 Ci；结果包含本位 Si 和下一位进位 Ci+1。最低位从右边开始，C0 固定为 0。</p>
+<div class="control">
+<div class="controls">
+<label class="control-box">A <input id="numa" type="range" min="0" max="15" value="11"><span id="numav">11</span></label>
+<label class="control-box">B <input id="numb" type="range" min="0" max="15" value="6"><span id="numbv">6</span></label>
+</div>
+<div class="kv"><span>A = <b id="abin">1011</b></span><span>B = <b id="bbin">0110</b></span><span>A+B = <b id="sumdec">17</b></span></div>
+<div class="result">C4 / S3S2S1S0 = <strong id="sumbin">10001</strong></div>
+</div>
+<div class="fulladders" id="fa-list" aria-label="从 FA0 到 FA3 的逐位运算"></div>
+<p class="trace" id="addertrace" aria-live="polite"></p>
+<p class="note">按 FA0 → FA1 → FA2 → FA3 阅读。每一级满足整数关系：Ai + Bi + Ci = Si + 2 × Ci+1。四位结果只保留 S3S2S1S0，C4 是最高位进位；它与有符号溢出 V 不同。</p>
+</section>
+<footer>本实验是组合逻辑行为模型，不含门级传播延迟、毛刺或时钟。配套可阅读：同目录《组合逻辑-核心模块可视化图解.md》以及《项目-4位ALU.md》。</footer>
+</main>
+<script>
+(function(){
+"use strict";
+var s={d0:0,d1:1,s:0,a:0,b:1,op:0,addr:0,x:11,y:6};
+function id(v){return document.getElementById(v)}
+function bin(n,w){return (n>>>0).toString(2).padStart(w,"0")}
+function fill(k,v){id(k).textContent=String(v)}
+function update(){
+ document.querySelectorAll("button[data-key]").forEach(function(b){var v=s[b.dataset.key];b.textContent=String(v);b.setAttribute("aria-pressed",v===1?"true":"false")});
+ var pick=s.s===0?"d0":"d1";var my=s[pick];fill("muxroute",pick.toUpperCase());fill("muxy",my);
+ id("muxp0").classList.toggle("active",s.s===0);id("muxp1").classList.toggle("active",s.s===1);
+ fill("muxtrace","S="+s.s+"，所以选 "+pick.toUpperCase()+"="+my+"；即使未选中一路为 1，也不应影响 Y。");
+ id("addr").value=String(s.addr);fill("decin",bin(s.addr,2));
+ for(var i=0;i<4;i++){var led=id("led"+i);var active=s.addr===i;led.classList.toggle("on",active);led.querySelector("b").textContent=active?"1":"0"}
+ fill("decout",bin(1<<s.addr,4));
+ var and=s.a&s.b,xor=s.a^s.b,y=s.op===0?and:xor;
+ fill("av",s.a);fill("bv",s.b);fill("andv",and);fill("xorv",xor);fill("opv",s.op);fill("aluy",y);fill("aluybig",y);
+ id("andbox").classList.toggle("on",s.op===0);id("xorbox").classList.toggle("on",s.op===1);
+ fill("alutrace","AND="+and+"，XOR="+xor+"；Op="+s.op+" 选中 "+(s.op===0?"AND":"XOR")+"，因此 Y="+y+"。");
+ fill("numav",s.x);fill("numbv",s.y);fill("abin",bin(s.x,4));fill("bbin",bin(s.y,4));
+ var carry=0,sum=0,html="",trace=[];
+ for(var j=0;j<4;j++){
+  var ai=(s.x>>j)&1,bi=(s.y>>j)&1,c0=carry,total=ai+bi+c0,si=total&1;
+  carry=total>>1;sum|=(si<<j);
+  html+='<div class="fa"><strong>FA'+j+'</strong><div>Ai='+ai+'　Bi='+bi+'</div><div>Ci='+c0+'</div><div>Si='+si+'</div><div>Ci+1='+carry+'</div><div class="small">'+ai+'+'+bi+'+'+c0+'='+total+'</div></div>';
+  trace.push("FA"+j+": "+ai+"+"+bi+"+"+c0+" → S"+j+"="+si+", C"+(j+1)+"="+carry);
+ }
+ id("fa-list").innerHTML=html;
+ fill("sumdec",s.x+s.y);fill("sumbin",String(carry)+bin(sum,4));fill("addertrace",trace.join("；"));
+}
+document.querySelectorAll("button[data-key]").forEach(function(b){b.addEventListener("click",function(){var k=b.dataset.key;s[k]=1-s[k];update()})});
+id("addr").addEventListener("change",function(){s.addr=Number(this.value);update()});
+id("numa").addEventListener("input",function(){s.x=Number(this.value);update()});
+id("numb").addEventListener("input",function(){s.y=Number(this.value);update()});
+var rows="";
+for(var a=0;a<2;a++)for(var b=0;b<2;b++)for(var op=0;op<2;op++)
+ rows+="<tr><td>"+a+"</td><td>"+b+"</td><td>"+op+"</td><td>"+(op===0?(a&b):(a^b))+"</td></tr>";
+id("alutable").innerHTML=rows;
+update();
+})();
+</script>
+</body>
+</html>
