@@ -3,12 +3,40 @@ services:
     environment:
       HTTP_PROXY: http://host.docker.internal:7890
       HTTPS_PROXY: http://host.docker.internal:7890
-      NO_PROXY: localhost,127.0.0.1,postgres,redis,credential-sync
+      NO_PROXY: localhost,127.0.0.1,postgres,redis,credential-sync,mimo-tts,host.docker.internal
   workers:
+    volumes:
+      - ./patches/intro-protocol.ts:/app/apps/web/src/lib/classes/intro/protocol.ts:ro
+      - ./patches/class-intro.ts:/app/apps/web/src/lib/classes/class-intro.ts:ro
+      - ./patches/generate-class-intro.md:/app/apps/web/prompts/class/generate-class-intro.md:ro
+      - ./patches/repair-class-intro.md:/app/apps/web/prompts/class/repair-class-intro.md:ro
     environment:
       HTTP_PROXY: http://host.docker.internal:7890
       HTTPS_PROXY: http://host.docker.internal:7890
-      NO_PROXY: localhost,127.0.0.1,postgres,redis,credential-sync
+      NO_PROXY: localhost,127.0.0.1,postgres,redis,credential-sync,mimo-tts,host.docker.internal
   credential-sync:
     volumes:
       - /mnt/c/Users/Lenovo/.codex:/host-codex:ro
+  mimo-tts:
+    image: ghcr.io/affromero/sotto-web:c378f16e
+    user: '1000:1000'
+    entrypoint: [node, /opt/mimo/server.mjs]
+    restart: unless-stopped
+    read_only: true
+    healthcheck:
+      test: [CMD, node, -e, "fetch('http://127.0.0.1:8090/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    environment:
+      NODE_USE_ENV_PROXY: '1'
+      PORT: '8090'
+      HTTPS_PROXY: http://host.docker.internal:7890
+      HTTP_PROXY: http://host.docker.internal:7890
+      NO_PROXY: localhost,127.0.0.1,host.docker.internal
+      MIMO_BASE_URL: https://token-plan-cn.xiaomimimo.com/v1
+    volumes:
+      - ./mimo-tts:/opt/mimo:ro
+      - ./secrets/mimo-api-key:/run/secrets/mimo-api-key:ro
+    networks:
+      - sotto-network

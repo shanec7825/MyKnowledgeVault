@@ -1,0 +1,9 @@
+{
+  "id": "vault-html-webviewer",
+  "name": "Vault HTML Web Viewer",
+  "version": "1.0.0",
+  "minAppVersion": "1.8.0",
+  "description": "在 Obsidian 自带网页查看器中打开库内交互式 HTML。",
+  "author": "Local vault",
+  "isDesktopOnly": true
+}
