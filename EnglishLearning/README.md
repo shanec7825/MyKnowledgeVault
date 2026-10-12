@@ -2,7 +2,7 @@
 type: index
 title: English Learning Hub
 created: 2026-10-10
-updated: 2026-10-10
+updated: 2026-10-12
 tags: [english, learning, index]
 ---
 
@@ -11,6 +11,8 @@ tags: [english, learning, index]
 Daily lessons focus on **complete → identify breakdown → repair → transfer → review**, moving from local sentence comprehension to a global model, and from recognition to retrieval.
 
 ## Daily Notes
+
+- [[EnglishLearning/2026-10-12-English-When-AI-Misses-Not|2026-10-12 · When AI Misses 'Not']]
 
 - [[EnglishLearning/2026-10-10-English-Whale-Songs-and-Ocean-Noise|2026-10-10 · Whale Songs and Ocean Noise]]
 - [[drafts/EnglishLearning/2026-10-09-English-Food-Heritage-and-Reinvention|2026-10-09 · Food Heritage and Reinvention]]
