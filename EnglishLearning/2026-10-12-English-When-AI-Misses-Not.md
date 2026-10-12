@@ -21,7 +21,7 @@ tags: [english, daily-learning, ai, reading-structure, listening, retrieval]
 - **Transcript:** [VOA — How to Find AI 'Deepfake' Images](https://learningenglish.voanews.com/a/how-to-find-ai-deepfake-images/7537253.html) (article text below the player).
 - **Source page:** [VOA Learning English, 2024-03-27](https://learningenglish.voanews.com/a/how-to-find-ai-deepfake-images/7537253.html).
 - **Reading source:** [MIT News — Study shows vision-language models can't handle queries with negation words](https://news.mit.edu/2025/study-shows-vision-language-models-cant-handle-negation-words-queries-0514) (2025-05-14).
-- **Original research (optional):** [MIT article's linked paper](https://arxiv.org/abs/2501.02949) (check title on landing page; optional, not required).
+- **Original research (optional):** [MIT article's linked paper](https://arxiv.org/abs/2501.09425) (linked from MIT; optional, not required).
 - **HTML learning companion:** [Open the interactive reader](./2026-10-12-English-When-AI-Misses-Not.html).
 
 > The VOA story was published in **2024**. Its visual clues for detecting synthetic images may become unreliable as technology changes. Treat them as historical reporting, not a definitive detection method.
@@ -90,7 +90,7 @@ Imagine a scene containing **a dog, a bicycle and a tree, but no car**. Which ca
 2. How does “a dog is present” differ from “a dog is not present”?
 3. Why might training captions cause a model to miss negation?
 4. What would you test before trusting an AI tool that searches photos?
-5. Transfer: How would you check whether an AI assistant correctly understood “Do **not** delete my notes”?
+5. Transfer: How would you check whether an AI assistant correctly understood “Do **not** move my notes”?
 
 Answer from memory. Include a **contrast** (*although / however*) and one active expression.
 
