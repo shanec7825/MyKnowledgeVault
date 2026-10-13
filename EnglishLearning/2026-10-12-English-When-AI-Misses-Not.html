@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026-10-12 · When AI Misses 'Not'</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#263142;background:#fafbfc;line-height:1.65}*{box-sizing:border-box}body{margin:0}main{max-width:790px;margin:auto;padding:32px 20px 70px}
+header{border-bottom:1px solid #e0e5eb;padding-bottom:20px}.date,.muted{color:#718094;font-size:12px}.date{letter-spacing:.07em}h1{font-size:30px;letter-spacing:-.035em;line-height:1.2;margin:9px 0}h2{font-size:20px;margin:0 0 12px}h3{font-size:15px;margin:17px 0 7px}section{padding:24px 0;border-bottom:1px solid #e0e5eb}
+p{margin:10px 0}a{color:#244f7c;text-underline-offset:3px}.source{font-size:15px;font-weight:650}.links{display:flex;gap:12px;flex-wrap:wrap;margin:10px 0}audio{width:100%;margin-top:12px}
+small,.note{font-size:12px;color:#718094}details{margin-top:14px}summary{cursor:pointer;font-size:13px;color:#65758a;font-weight:600}details p,details li{font-size:13px;color:#516075}
+.flow{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin:14px 0}.flow span{border:1px solid #e0e6ed;background:white;padding:7px 10px;border-radius:7px;font-size:12px}.flow b{color:#94a0ae}
+.scene{border:1px solid #dfe5ed;border-radius:9px;background:#fff;padding:17px;margin:17px 0}.scene figcaption{font-weight:650;font-size:13px;margin-bottom:8px}.picture{font-size:33px;letter-spacing:.22em;text-align:center;padding:17px;background:#f3f6f9;border-radius:7px}.caption-options{display:grid;gap:8px;margin-top:12px}
+button{font:inherit;cursor:pointer;background:white;border:1px solid #d5dce5;color:#2c3c51;border-radius:7px;padding:9px 12px;text-align:left}.caption-options button:hover,button:hover{background:#f2f5f8}.caption-options button:focus-visible{outline:2px solid #527eae}.feedback{min-height:24px;font-size:13px;margin-top:10px;color:#4d6074}
+.expr{padding:12px 0;border-bottom:1px solid #e8ecf1}.expr strong{font-size:16px}.expr p{font-size:14px;margin:4px 0}ol{padding-left:22px}li{margin:8px 0}
+textarea{width:100%;min-height:190px;padding:14px;border:1px solid #d5dce5;border-radius:8px;font:inherit;resize:vertical;background:#fff;color:inherit}.writerline{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-top:8px}.writerline button{font-size:12px;padding:6px 10px}
+.review{font-size:14px}.foot{font-size:12px;color:#9aa6b4;text-align:center;padding-top:28px}
+@media(max-width:620px){main{padding:22px 15px 45px}h1{font-size:26px}.picture{font-size:28px}}
+</style></head>
+<body><main>
+<header><div class="date">OCTOBER 12, 2026 · 30 MIN</div><h1>When AI Misses “Not”</h1><p>Why can AI recognize an object but misunderstand that it is <em>not</em> there?</p></header>
+<section><h2>Listening <small>· 6 min</small></h2>
+<div class="source">VOA Learning English · How to Find AI “Deepfake” Images</div>
+<p class="note">Original audio: 5:42 (2024 historical reporting). Listen to the first ~3:40; detection clues may be outdated.</p>
+<audio controls preload="metadata" src="https://voa-audio.voanews.eu/vle/2024/03/21/01000000-0aff-0242-7c40-08dc49ee181d_hq.mp3?download=1"></audio>
+<div class="links"><a href="https://voa-audio.voanews.eu/vle/2024/03/21/01000000-0aff-0242-7c40-08dc49ee181d_hq.mp3?download=1" target="_blank" rel="noopener">Direct audio ↗</a><a href="https://learningenglish.voanews.com/a/how-to-find-ai-deepfake-images/7537253.html" target="_blank" rel="noopener">Transcript ↗</a><a href="https://learningenglish.voanews.com/a/how-to-find-ai-deepfake-images/7537253.html" target="_blank" rel="noopener">Source page ↗</a></div>
+<div class="flow"><span>Problem</span><b>→</b><span>Clues</span><b>→</b><span>Why clues can fail</span></div>
+<details><summary>Listening task · repair one breakdown</summary><p>Listen without text. Locate your first missed contrast, example or reference; check only that sentence and replay it. Then explain one clue and one limitation without looking.</p></details>
+</section>
+<section><h2>Reading <small>· 9 min</small></h2>
+<div class="source">MIT News · Vision-language models and negation</div><p class="note">Research report · May 14, 2025</p>
+<div class="links"><a href="https://news.mit.edu/2025/study-shows-vision-language-models-cant-handle-negation-words-queries-0514" target="_blank" rel="noopener">Read MIT article ↗</a></div>
+<p>Read the opening explanation, <strong>“Neglecting negation”</strong>, and the fine-tuning result in <strong>“A solvable problem”</strong>.</p>
+<div class="flow"><span>Risk</span><b>→</b><span>Cause</span><b>→</b><span>Test</span><b>→</b><span>Failure</span><b>→</b><span>Partial repair</span><b>→</b><span>Limit</span></div>
+<figure class="scene"><figcaption>Visual retrieval · Which captions fit this scene?</figcaption><div class="picture" role="img" aria-label="A dog, a bicycle and a tree. There is no car.">🐕 🚲 🌳</div>
+<div class="caption-options"><button type="button" data-correct="true">A dog is near a bicycle.</button><button type="button" data-correct="false">There is no dog near the bicycle.</button><button type="button" data-correct="true">There is no car in the scene.</button></div>
+<div class="feedback" id="sceneFeedback" aria-live="polite">Choose a caption to test your understanding.</div>
+<details><summary>Hide the picture and explain</summary><p>Close your eyes or scroll away. Explain why recognizing the noun <em>dog</em> is not enough to understand <em>no dog</em>. Transfer the same idea to “Do not delete my notes.”</p></details></figure>
+<details><summary>Reading task · rebuild the whole argument</summary><p>Give each selected section a function label. Then close the source and explain: positive-only captions → missed exclusion → wrong retrieval → targeted training → remaining uncertainty. Improved performance does not mean the issue is completely solved.</p></details>
+</section>
+<section><h2>Active language <small>· 4 min</small></h2>
+<div class="expr"><strong>fail to account for</strong><p>“模型没有考虑否定信息。” → The model ______ negation.</p><details><summary>Reveal meaning and transfer cue</summary><p>Overlook a relevant factor. Transfer: A study of learning habits might fail to account for sleep.</p></details></div>
+<div class="expr"><strong>rule out</strong><p>“不能排除这种可能性。” → We cannot ______ that possibility.</p><details><summary>Reveal meaning and transfer cue</summary><p>Exclude a possibility after checking evidence. Transfer: What would rule out a bug in your code?</p></details></div>
+<div class="expr"><strong>Review: back up a claim with evidence</strong><p>Without looking, explain how you would check an AI summary.</p></div>
+<details><summary>Pronunciation · 30 seconds</summary><p>The MODEL recognized the OBJECT / but FAILED to account for / the word NOT. Read in chunks, then make your own sentence.</p></details>
+</section>
+<section><h2>Speaking <small>· 4 min</small></h2><ol>
+<li>What can a vision-language model do well?</li>
+<li>How does “a dog is present” differ from “a dog is not present”?</li>
+<li>Why might training captions cause a model to miss negation?</li>
+<li>What would you test before trusting an AI photo search tool?</li>
+<li>How would you check “Do not delete my notes”?</li></ol>
+<details><summary>Speaking target</summary><p>Use <em>although</em> or <em>however</em> and one active expression. Move from example to evidence to limitation.</p></details>
+</section>
+<section><h2>Writing <small>· 5 min</small></h2>
+<p class="source">Should universities let students use AI to organize research notes automatically?</p>
+<p>Write <strong>80–120 words</strong>. Include a concrete risk involving <em>not</em> or an excluded condition, and a way to test the tool. Use one new and one reviewed expression if natural.</p>
+<textarea id="draft" aria-label="Your original English writing" placeholder="Write your own answer here…"></textarea>
+<div class="writerline"><span class="muted" id="count">0 words · saved locally</span><button id="copy" type="button">Copy writing</button></div>
+<details><summary>Minimal structure hint · open after drafting</summary><p>Position → Benefit → Negation-related risk → Test → Qualified conclusion.</p></details>
+</section>
+<section><h2>Review <small>· 2 min</small></h2>
+<p class="review">Close the article. Rebuild <strong>risk → cause → test → result → repair → limitation</strong>. Retrieve <em>fail to account for</em> and <em>rule out</em> from Chinese, then transfer one to a new context. Record your real breakdown and draft in the Markdown note.</p>
+<details><summary>8-minute busy version</summary><p>2 min VOA opening → 3 min MIT opening and cause → 1 min explain “no dog” → 1 min expression retrieval → <strong>1 min micro-writing</strong> (one AI risk + one test).</p></details>
+</section><div class="foot">EnglishLearning · source first · coaching in Obsidian</div></main>
+<script>
+(function(){
+  var storageKey="english-2026-10-12-when-ai-misses-not-draft";
+  var draft=document.getElementById("draft"), count=document.getElementById("count"),copy=document.getElementById("copy");
+  try{draft.value=localStorage.getItem(storageKey)||""}catch(e){}
+  function update(){var n=(draft.value.trim().match(/\b[\w’'-]+\b/g)||[]).length;count.textContent=n+" words · "+(n>=80&&n<=120?"within range":"target 80–120")+" · saved locally";try{localStorage.setItem(storageKey,draft.value)}catch(e){}}
+  draft.addEventListener("input",update);update();
+  copy.addEventListener("click",function(){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(draft.value).then(function(){copy.textContent="Copied";setTimeout(function(){copy.textContent="Copy writing"},1200)}).catch(function(){draft.select();document.execCommand("copy")})}else{draft.select();document.execCommand("copy")}});
+  document.querySelectorAll("[data-correct]").forEach(function(button){button.addEventListener("click",function(){var yes=button.getAttribute("data-correct")==="true";document.getElementById("sceneFeedback").textContent=yes?"Fits the scene. Now explain what is present and what is excluded.":"Not quite. The dog IS present. Notice how “no” reverses the meaning.";})});
+})();
+</script></body></html>

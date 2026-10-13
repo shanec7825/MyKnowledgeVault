@@ -2,11 +2,18 @@
 type: map
 title: English Learning Connections
 created: 2026-10-10
-updated: 2026-10-10
+updated: 2026-10-12
 tags: [english, connections, review]
 ---
 
 # English Learning Connections
+
+## 2026-10-12 · When AI Misses 'Not'
+
+- [[EnglishLearning/2026-10-12-English-When-AI-Misses-Not|Today's lesson]]: risk → training data → test → result → partial improvement → limitation.
+- Compare with [[EnglishLearning/2026-10-10-English-Whale-Songs-and-Ocean-Noise|10-10 · Whale Songs]]: losing sound information versus missing a negated condition.
+- Active expressions: [[words/fail-to-account-for|fail to account for]], [[words/rule-out|rule out]], [[words/back-up-a-claim-with-evidence|back up a claim with evidence]].
+
 
 ## 2026-10-10 · Whale Songs and Ocean Noise
 

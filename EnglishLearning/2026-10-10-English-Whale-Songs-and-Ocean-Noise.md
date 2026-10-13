@@ -106,4 +106,4 @@ Without notes, recall the article's **condition → need → source of noise →
 ## Previous / Next
 
 - Previous: [[drafts/EnglishLearning/2026-10-09-English-Food-Heritage-and-Reinvention|2026-10-09 · Food Heritage and Reinvention]]
-- Next: pending
+- Next (next published note; 2026-10-11 is not published): [[EnglishLearning/2026-10-12-English-When-AI-Misses-Not|2026-10-12 · When AI Misses 'Not']]
