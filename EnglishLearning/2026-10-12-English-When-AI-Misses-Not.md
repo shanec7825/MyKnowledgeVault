@@ -3,7 +3,7 @@ type: daily-english
 title: "2026-10-12 · When AI Misses 'Not'"
 topic: "When AI Misses 'Not'"
 created: 2026-10-12
-updated: 2026-10-12
+updated: 2026-10-13
 tags: [english, daily-learning, ai, reading-structure, listening, retrieval]
 ---
 
@@ -143,4 +143,4 @@ Close the sources. Rebuild the **risk → cause → test → result → repair �
 
 - Previous (most recent published lesson): [[EnglishLearning/2026-10-10-English-Whale-Songs-and-Ocean-Noise|2026-10-10 · Whale Songs and Ocean Noise]].
 - 2026-10-11: no published Daily Note found at the expected path when preparing this lesson.
-- Next: pending creation of the next daily note.
+- Next: [[EnglishLearning/2026-10-13-English-Focus-Under-Pressure|2026-10-13 · Focus Under Pressure]]
