@@ -2,11 +2,19 @@
 type: map
 title: English Learning Connections
 created: 2026-10-10
-updated: 2026-10-12
+updated: 2026-10-13
 tags: [english, connections, review]
 ---
 
 # English Learning Connections
+
+## 2026-10-13 · Focus Under Pressure
+
+- [[EnglishLearning/2026-10-13-English-Focus-Under-Pressure|2026-10-13 · Focus Under Pressure]]: **context → attention problem → focus cue → next action → qualification**. This is an interpretation of an expert interview, not proof of effectiveness.
+- Compare with [[EnglishLearning/2026-10-12-English-When-AI-Misses-Not|10-12 · When AI Misses 'Not']]: noticing the *critical missing word* versus noticing *attention drifting away from the next task*.
+- Compare with [[drafts/EnglishLearning/2026-10-07-English-Practice-Consolidation-Lasting-Learning|10-07 · Practice and Consolidation]]: immediate performance and lasting learning are not the same outcome.
+- Active: [[words/get-caught-up-in|get caught up in]], [[words/refocus-attention-on|refocus attention on]]; review [[drafts/words/rather-than|rather than]].
+
 
 ## 2026-10-12 · When AI Misses 'Not'
 
