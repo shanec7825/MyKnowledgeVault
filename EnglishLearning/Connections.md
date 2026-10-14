@@ -8,6 +8,13 @@ tags: [english, connections, review]
 
 # English Learning Connections
 
+## 2026-10-14 · Repair or Replace
+
+- [[EnglishLearning/2026-10-14-English-Repair-or-Replace|2026-10-14 · Repair or Replace]]: **device problem → repair barrier → policy response → possible effect → scope/price limitation**. Separate a policy's intent from a demonstrated local outcome.
+- The EU's July 2026 policy announcement is jurisdiction-specific. **Free or reasonable-price repair** is not **always free**; “technically repairable” is not “every device.” Compare the US FTC's earlier consumer guidance without conflating legal systems.
+- Contrast with [[EnglishLearning/2026-10-12-English-When-AI-Misses-Not|When AI Misses 'Not']]: missing qualifiers changes the conclusion. Contrast with [[EnglishLearning/2026-10-13-English-Focus-Under-Pressure|Focus Under Pressure]]: identify the next useful action after a problem.
+- Active: [[words/extend-the-lifespan-of|extend the lifespan of]], [[words/weigh-against|weigh X against Y]]; review [[drafts/words/rather-than|rather than]].
+
 ## 2026-10-14 · Basketball Writing: Evidence vs Prediction
 
 - [[calendar/2026-10-14#英语写作练习｜Knicks @ Raptors｜三轮独立写作|Original writing and revision evidence]] ↔ [[EnglishLearning/2026-10-14-Knicks-Raptors-Writing-Reference|AI model essay, expressions and syntax reference]]. Keep the learner's drafts separate from the AI model.
