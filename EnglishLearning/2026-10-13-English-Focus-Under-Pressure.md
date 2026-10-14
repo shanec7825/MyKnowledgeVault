@@ -3,7 +3,7 @@ type: daily-english
 title: "2026-10-13 · Focus Under Pressure"
 topic: "Focus Under Pressure"
 created: 2026-10-13
-updated: 2026-10-13
+updated: 2026-10-14
 tags: [english, daily-learning, sports, university-life, reading-structure, retrieval]
 ---
 
@@ -133,4 +133,4 @@ Close the sources. Rebuild **context → attention problem → cue → action �
 ## Previous / Next
 
 - Previous: [[EnglishLearning/2026-10-12-English-When-AI-Misses-Not|2026-10-12 · When AI Misses 'Not']]
-- Next: pending the next daily lesson.
+- Next: [[EnglishLearning/2026-10-14-English-Repair-or-Replace|2026-10-14 · Repair or Replace]]
