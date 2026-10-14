@@ -2,11 +2,18 @@
 type: map
 title: English Learning Connections
 created: 2026-10-10
-updated: 2026-10-13
+updated: 2026-10-14
 tags: [english, connections, review]
 ---
 
 # English Learning Connections
+
+## 2026-10-14 · Basketball Writing: Evidence vs Prediction
+
+- [[calendar/2026-10-14#英语写作练习｜Knicks @ Raptors｜三轮独立写作|Original writing and revision evidence]] ↔ [[EnglishLearning/2026-10-14-Knicks-Raptors-Writing-Reference|AI model essay, expressions and syntax reference]]. Keep the learner's drafts separate from the AI model.
+- Writing reasoning: **fact → cause → example → limitation → qualified prediction**. Contrast a preseason score with uncertainty about the regular season.
+- Syntax to retrieve later: **did + base verb**; **modal choice** (*will / could / cannot be sure*); **embedded question word order** (*How far they go depends on ...*); **play well on both ends of the floor**.
+- Related to [[EnglishLearning/2026-10-13-English-Focus-Under-Pressure|Focus Under Pressure]]: diagnose the first exact failure, repair it, then test independent transfer.
 
 ## 2026-10-13 · Focus Under Pressure
 
