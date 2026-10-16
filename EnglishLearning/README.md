@@ -2,7 +2,7 @@
 type: index
 title: English Learning Hub
 created: 2026-10-10
-updated: 2026-10-14
+updated: 2026-10-17
 tags: [english, learning, index]
 ---
 
@@ -15,6 +15,9 @@ Daily lessons focus on **complete → identify breakdown → repair → transfer
 - [[EnglishLearning/2026-10-14-Knicks-Raptors-Writing-Reference|2026-10-14 · Knicks vs Raptors — AI model essay, grammar and vocabulary]] · [[calendar/2026-10-14#英语写作练习｜Knicks @ Raptors｜三轮独立写作|Original drafts and feedback (diary)]]
 
 ## Daily Notes
+
+- [[EnglishLearning/2026-10-17-English-Shade-and-City-Heat|2026-10-17 · Shade and City Heat]]
+- [[EnglishLearning/2026-10-14-English-Repair-or-Replace|2026-10-14 · Repair or Replace]]
 
 - [[EnglishLearning/2026-10-13-English-Focus-Under-Pressure|2026-10-13 · Focus Under Pressure]]
 
