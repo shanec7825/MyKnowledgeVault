@@ -2,7 +2,7 @@
 type: vocabulary
 title: weigh X against Y
 created: 2026-10-14
-updated: 2026-10-14
+updated: 2026-10-17
 tags: [english, vocabulary, active-expression, reasoning]
 ---
 
@@ -19,3 +19,5 @@ tags: [english, vocabulary, active-expression, reasoning]
 **Transfer:** Engineers weigh model accuracy against inference cost.
 
 **Backlink:** [[EnglishLearning/2026-10-14-English-Repair-or-Replace|2026-10-14 · Repair or Replace]]
+
+**2026-10-17 transfer:** Campus planners should weigh the cooling benefits of trees against long-term maintenance costs. See [[EnglishLearning/2026-10-17-English-Shade-and-City-Heat|Shade and City Heat]].
