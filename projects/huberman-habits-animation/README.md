@@ -30,3 +30,12 @@
 源视频：<https://www.youtube.com/watch?v=HXuj7wAt7u8>
 
 制作方式：原创中文改写、原创 SVG 图形设计。没有复制原播客音视频或他人照片。
+
+
+## English version
+
+- [English animated SVG player](en/index.html)
+- [English version instructions and source notes](en/README.md)
+- [English narration script](en/narration_en.txt) and [subtitles](en/narration_en.srt)
+
+10 English-localized SVG scenes plus an interactive offline player. The 40-second MP4 is downloadable from the ChatGPT conversation.
