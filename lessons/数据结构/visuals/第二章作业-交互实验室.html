@@ -119,6 +119,13 @@ footer{font-size:13px;color:var(--muted);margin-top:22px}
 <details><summary>提示：数的是变量个数</summary><p>你循环做 3 次或 300 次，是否因此新增了 300 个 temp 变量？</p></details>
 </div>
 </div>
+<hr>
+<h3>前次诊断的两道变式（只记录你的想法，不提前判分）</h3>
+<p class="subtle">这两题是为你上一轮的理解漏洞补充的训练，不属于老师要提交的原作业。</p>
+<label for="reviewA">变式 A：链表 4 → 8 → 12 → 16，只有头指针与已经给出“指向 8 的指针”两种情形，完整插入 10 的成本有什么区别？</label>
+<textarea id="reviewA" placeholder="找位置需要……；修改链接需要……"></textarea>
+<label for="reviewB">变式 B：A=[3,5,7,9,11,99]，n=5。逆置后的整个数组、交换下标和中间元素如何处理？</label>
+<textarea id="reviewB" placeholder="完整数组……；下标……；中间元素……"></textarea>
 </section>
 
 <section id="hw1">
@@ -229,7 +236,7 @@ footer{font-size:13px;color:var(--muted);margin-top:22px}
 <h2>现在轮到你写函数</h2>
 <p>下方是<strong>未完成的作业代码模板</strong>，没有隐藏算法答案。请先独立完成一个函数，再继续下一题。使用 <code>ElemType</code> 表示数据元素；本次测试把它定义为 <code>int</code>。</p>
 <div class="callout warn"><strong>重要：</strong>网页不具有 C 编译器。「保存」只是在本地下载你的文本，不表示编译通过；真实运行结果必须由终端执行 <code>homework-tests.c</code> 获得。提示不会自动把答案填进代码。</div>
-<div class="actions"><a id="starterLink" href="../practice/homework-starter.c">GitHub 配套：C 起始文件</a><a id="testsLink" href="../practice/homework-tests.c">GitHub 配套：测试文件</a></div>
+<div class="actions"><a id="starterLink" href="https://github.com/shanec7825/MyKnowledgeVault/blob/main/lessons/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/practice/homework-starter.c" target="_blank" rel="noopener">GitHub 配套：C 起始文件</a><a id="testsLink" href="https://github.com/shanec7825/MyKnowledgeVault/blob/main/lessons/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/practice/homework-tests.c" target="_blank" rel="noopener">GitHub 配套：测试文件</a></div>
 <label for="editor"><strong>编辑 homework-starter.c：</strong>可以在下面修改，再保存为 C 文件</label>
 <textarea id="editor" class="code" spellcheck="false" aria-label="C 语言代码编辑器">#include &lt;stddef.h&gt;
 #include &lt;stdlib.h&gt;
@@ -388,7 +395,7 @@ $('revClear').onclick=()=>{state.rev.chosen=[];showRev();};
 $('revReset').onclick=()=>{state.rev={a:[2,7,1,8,2,8,99,100],n:6,step:0,chosen:[]};showRev();msg('revFb','已重置。重新选择第一对对称下标。');};
 function readStore(key){try{return localStorage.getItem('ds-homework-'+key);}catch(_){return null;}}
 function writeStore(key,v){try{localStorage.setItem('ds-homework-'+key,v);}catch(_){}}
-const saved=['plan1','machine1','plan2','machine2','plan3','machine3','bonusNote','editor','testLog'];
+const saved=['plan1','machine1','plan2','machine2','plan3','machine3','bonusNote','reviewA','reviewB','editor','testLog'];
 saved.forEach(id=>{const el=$(id),stored=readStore(id);if(stored!==null)el.value=stored;el.addEventListener('input',()=>writeStore(id,el.value));});
 ['checkHuman','checkMachine','checkCompare','checkTest'].forEach(id=>{
  const el=$(id);el.checked=readStore(id)==='true';el.onchange=()=>writeStore(id,String(el.checked));
@@ -409,7 +416,7 @@ $('codeCheck').onclick=()=>{
  msg('codeFb',issue?'检测到 TODO 或起始模板占位写法；这只是文字提示，无法证明代码错误或正确。':'未发现典型占位文本，但这不是编译或运行测试；请使用终端 gcc + homework-tests.c。','neutral');
 };
 $('copyProgress').onclick=()=>{
- const keys=[['作业1 · 人的思路','plan1'],['作业1 · 计算机思路','machine1'],['作业2 · 人的思路','plan2'],['作业2 · 计算机思路','machine2'],['作业3 · 人的思路','plan3'],['作业3 · 计算机思路','machine3'],['附加练习','bonusNote'],['真实测试输出','testLog']];
+ const keys=[['作业1 · 人的思路','plan1'],['作业1 · 计算机思路','machine1'],['作业2 · 人的思路','plan2'],['作业2 · 计算机思路','machine2'],['作业3 · 人的思路','plan3'],['作业3 · 计算机思路','machine3'],['前次诊断变式 A','reviewA'],['前次诊断变式 B','reviewB'],['附加练习','bonusNote'],['真实测试输出','testLog']];
  let txt='数据结构第二章 / 自主学习记录（待 ChatGPT 逐题诊断）\n';
  txt+='\n网页手推进度（不等于代码验收）：作业1 '+state.del.read+'/9 个，作业2 '+state.link.idx+'/4 个，作业3 '+state.rev.step+'/3 对。\n';
  keys.forEach(([label,id])=>{txt+='\n## '+label+'\n'+($(id).value.trim()||'（尚未填写）')+'\n';});
