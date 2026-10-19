@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>数据结构第二章 · 作业交互实验室</title>
+<style>
+:root{color-scheme:light;--bg:#f4f7fb;--surface:#fff;--ink:#16283e;--muted:#607184;--line:#d7e1ee;--accent:#1667c5;--good:#147453;--warn:#9b570c;--soft:#e9f3ff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:var(--bg);font:16px/1.6 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+main{max-width:1100px;margin:auto;padding:28px 18px 90px}
+h1{font-size:clamp(27px,4.5vw,43px);line-height:1.24;margin:9px 0}
+h2{font-size:23px;margin:0 0 6px}
+h3{font-size:17px;margin:22px 0 7px}
+p{margin:8px 0}
+strong{font-weight:750}
+code,pre,textarea.code{font-family:ui-monospace,Consolas,Monaco,monospace}
+code{background:#eef2f7;border-radius:4px;padding:1px 4px}
+a{color:#135db2}
+.eyebrow{font-size:13px;font-weight:800;color:#1b62aa;letter-spacing:.13em}
+.lead{color:var(--muted);max-width:820px}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin:23px 0}
+nav a{background:white;border:1px solid var(--line);border-radius:100px;padding:7px 12px;font-size:14px;text-decoration:none}
+section{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:clamp(16px,3vw,27px);margin:20px 0;box-shadow:0 6px 20px #173b6410}
+small,.subtle{color:var(--muted)}
+.tag{display:inline-block;border:1px solid #bfd9f2;background:#ebf5ff;color:#125799;border-radius:40px;padding:2px 10px;font-size:12px;font-weight:750}
+.grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:18px}
+.panel{background:#f9fbfe;border:1px solid #dbe5f0;border-radius:13px;padding:15px;min-width:0}
+.step{font-size:12px;color:#1763ad;font-weight:800;letter-spacing:.08em;margin-bottom:6px}
+blockquote,.callout{margin:12px 0;border-left:4px solid #4c91d0;background:#eef6ff;border-radius:6px;padding:10px 14px}
+.callout.warn{border-color:#d5a24d;background:#fff8e8}
+fieldset{border:0;padding:0;margin:12px 0}
+legend{font-weight:750;margin-bottom:8px}
+button,select{font:inherit}
+button{background:#1667c5;color:white;border:1px solid #1667c5;border-radius:9px;padding:9px 15px;cursor:pointer;font-weight:680}
+button.secondary{background:#fff;color:#175d9f;border-color:#a5c7e7}
+button.ghost{background:#eef4fb;color:#194e7a;border-color:#bcd2e9}
+button:disabled{opacity:.5;cursor:default}
+button:hover:not(:disabled){filter:brightness(.95)}
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid #f1ab45;outline-offset:3px}
+.actions{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0}
+textarea:not(.code){width:100%;resize:vertical;min-height:80px;border:1px solid #b7cadd;border-radius:9px;padding:10px;color:#182e44;background:white;font:inherit}
+textarea.code{width:100%;min-height:460px;border:1px solid #b7cadd;border-radius:12px;padding:15px;color:#e4edf8;background:#192c43;line-height:1.55;resize:vertical;font-size:13px;tab-size:4}
+label{cursor:pointer}
+.feedback{min-height:32px;font-weight:650;margin-top:12px}
+.feedback.ok{color:var(--good)}
+.feedback.bad{color:#a44321}
+.feedback.neutral{color:#415e7c}
+.array{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}
+.cell{width:55px;min-height:63px;text-align:center;border:1.5px solid #aec2d5;background:white;border-radius:9px;padding:7px 3px;position:relative;font:700 18px ui-monospace,monospace}
+.cell em{display:block;font:11px ui-monospace,monospace;color:#708294;font-style:normal}
+.cell.read{background:#dff0ff;border-color:#3085db}
+.cell.write{outline:3px solid #f5bb55;outline-offset:1px}
+.cell.inactive{opacity:.49;background:#e8ecf1}
+.cell.done{background:#def3e9;border-color:#2c9768}
+.cell.selected{background:#f8ebcf;border-color:#bd7824}
+.cell.clickable{cursor:pointer}
+.cell.clickable:hover{background:#eef7ff}
+.legend{font-size:13px;color:#586d80}
+.legend b{color:#195d9f}
+.hrow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:8px}
+.stat{background:#eaf2fa;padding:6px 11px;border-radius:8px;font-size:13px}
+.nodes{display:flex;flex-wrap:wrap;align-items:center;gap:5px;min-height:60px;padding:10px 0}
+.node{border:1.5px solid #94aeca;background:white;border-radius:9px;min-width:55px;text-align:center;padding:6px 9px;font:700 16px ui-monospace,monospace}
+.node.sentinel{background:#f6e7cf;border-color:#c59244}
+.arrow{color:#6183a4;font-size:22px}
+code.kbd{border:1px solid #d2dce9;padding:3px 7px}
+details{margin:8px 0;border:1px solid #d8e2ed;padding:10px 14px;border-radius:10px;background:#fbfdff}
+summary{font-weight:700;cursor:pointer}
+ul{padding-left:22px}
+li{margin:5px 0}
+hr{border:0;border-top:1px solid var(--line);margin:20px 0}
+pre{overflow:auto;background:#eff4f9;border-radius:10px;padding:12px;font-size:13px}
+.row{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+label.check{display:block;margin:8px 0;padding:8px 10px;border-radius:8px;background:#f4f8fb}
+.progress{height:9px;border-radius:7px;overflow:hidden;background:#dfe9f2;margin:12px 0}
+.progress span{display:block;height:100%;background:#36936e;transition:width .2s}
+footer{font-size:13px;color:var(--muted);margin-top:22px}
+@media(max-width:780px){.grid{grid-template-columns:1fr}.cell{width:46px;min-height:57px}main{padding:18px 12px 65px}section{padding:17px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<div class="eyebrow">DATA STRUCTURES · CHAPTER 02 / HOMEWORK LAB</div>
+<h1>数据结构第二章：作业交互实验室</h1>
+<p class="lead">这不是“点一下看答案”。顺序是：<strong>先预测 → 自己动手操作 → 回答为何这样做 → 自己写 C → 在终端真实测试</strong>。实验基于老师原作业的三题，并补进你前次诊断里暴露的概念缺口。</p>
+<div class="callout warn"><strong>学习记录区别：</strong>在这里正确点击只说明“手动模拟成功”，不等于 C 程序正确。网页不运行、不编译 C；真正的 C 测试请在终端执行下面的测试文件。输入的草稿和代码优先尝试保存在此浏览器的本地存储中，不会自动提交 GitHub。</div>
+</header>
+<nav aria-label="章节导航">
+<a href="#pre">先修补课</a><a href="#hw1">作业 1 · 有序表删除</a><a href="#hw2">作业 2 · 正序建链</a><a href="#hw3">作业 3 · 原地逆置</a><a href="#bonus">链表附加练习</a><a href="#coding">C 代码和测试</a>
+</nav>
+
+<section id="pre">
+<div class="step">00 / 先修概念 · 对应前次诊断</div>
+<h2>先补两个关键漏洞</h2>
+<div class="grid">
+<div class="panel">
+<h3>位置已知 ≠ 从头寻找位置</h3>
+<p>单链表每个结点通常存储 <code>data</code> 与 <code>next</code>。如果已经有结点指针 <code>p</code>，在 <code>p</code> 后插入新结点只需改动有限条链接；如果只有头指针，可能得先遍历找位置。</p>
+<fieldset><legend>问题 A：只给链表头指针，要寻找值为 8 的结点并在其后插入，整个任务最坏复杂度是？</legend>
+<label class="check"><input type="radio" name="warmA" value="constant"> O(1)</label>
+<label class="check"><input type="radio" name="warmA" value="linear"> O(n)</label>
+</fieldset>
+<button class="secondary" id="checkA">检验我的判断</button><div id="fbA" class="feedback" aria-live="polite"></div>
+<details><summary>提示一：拆开两个动作</summary><p>将“从头找到结点”和“修改两个 next”分开计算。</p></details>
+<details><summary>提示二：看最坏情况</summary><p>如果目标恰好是最后一个结点，寻找时可能走过多少个结点？</p></details>
+</div>
+<div class="panel">
+<h3>原地 ≠ 借用末尾作为缓冲区</h3>
+<p>数组的 <strong>容量</strong> 是能存多少；<strong>有效长度</strong> 是现在有多少。逆置前 n 个元素时，后面的其它内容仍需保持不变。空间 O(1) 意味着辅助变量个数不会随着 n 增长。</p>
+<fieldset><legend>问题 B：长度 n 增加时，用一个 <code>temp</code> 反复交换，额外空间复杂度是？</legend>
+<label class="check"><input type="radio" name="warmB" value="linear"> O(n)</label>
+<label class="check"><input type="radio" name="warmB" value="constant"> O(1)</label>
+</fieldset>
+<button class="secondary" id="checkB">检验我的判断</button><div id="fbB" class="feedback" aria-live="polite"></div>
+<details><summary>提示：数的是变量个数</summary><p>你循环做 3 次或 300 次，是否因此新增了 300 个 temp 变量？</p></details>
+</div>
+</div>
+</section>
+
+<section id="hw1">
+<div class="step">01 / 老师作业 · 习题 1</div>
+<h2>递增顺序表：删除所有 k1 &lt; x &lt; k2 的元素</h2>
+<p>原数组 <code>[1,3,3,5,6,8,10,10,13]</code>，<code>k1=3</code>，<code>k2=10</code>。只删除严格处于边界之间的元素，保持其他元素先后顺序。</p>
+<div class="callout"><strong>概念：</strong>顺序表通常用连续数组加一个有效长度 <code>length</code> 表示；“删除”是让留下的元素在数组前端连续排列，并更新 <code>length</code>。底层数组后部留下的旧数值不代表有效数据。两下标法中的 <code>read</code> 负责看原元素，<code>write</code> 负责放保留元素。</div>
+<div class="grid">
+<div class="panel">
+<div class="step">① 先写你的思路（不要先点操作）</div>
+<label for="plan1">人的思路：哪些数必须保留？有序条件能帮什么忙？</label>
+<textarea id="plan1" placeholder="例如先判断两个边界；想一想如何避免删除一个就整体搬一次……"></textarea>
+<label for="machine1">计算机的思路：读下标、写下标、有效长度各怎样变化？</label>
+<textarea id="machine1" placeholder="用自己的话解释 read/write，而不必先写完整代码"></textarea>
+<details><summary>分层提示 1 · 开区间</summary><p>端点 3 和 10 是否满足严格大于 3 且严格小于 10？重复的端点呢？</p></details>
+<details><summary>分层提示 2 · 避免反复移动</summary><p>看每一个原元素一次。需要保留就写到前面，不需要保留就只移动 read。</p></details>
+<details><summary>分层提示 3 · 有序性</summary><p>所有要删除的元素在有序表里会形成连续区间；也可以先找这个区间的起点和终点，再一次性移动后半段。</p></details>
+</div>
+<div class="panel">
+<div class="step">② 逐元素模拟（每一步由你决定）</div>
+<div class="hrow"><span class="stat" id="delCount">read=0 · write=0 · length=9</span></div>
+<div id="delArray" class="array" aria-label="顺序表数组演示"></div>
+<div class="legend"><b>蓝色</b>：read 正在读；<b>金色边框</b>：write 目标位置；<b>绿色</b>：已保留。</div>
+<p>当前读到：<strong id="delCurrent">1</strong>。该元素应怎样处理？</p>
+<div class="actions"><button id="keepBtn">保留：写到 write 位置</button><button id="dropBtn" class="secondary">删除：只前进 read</button></div>
+<div class="feedback neutral" id="delFb" aria-live="polite">先判断是否满足严格开区间，再按自己的决定操作。</div>
+<button id="delReset" class="ghost">重新模拟</button>
+<div class="progress"><span id="delProgress" style="width:0%"></span></div>
+<div class="stat" id="delResult">完成后这里将显示有效前缀；未模拟完成前不展示答案。</div>
+</div>
+</div>
+</section>
+
+<section id="hw2">
+<div class="step">02 / 老师作业 · 习题 2</div>
+<h2>从数组第一个元素起，正序创建单链表</h2>
+<p>数组为 <code>[8,3,8,1]</code>，每次从左到右读取一个元素并新建结点，要求链表中元素的顺序仍和数组一致。</p>
+<div class="callout"><strong>概念：</strong>链表结点不必在内存中相邻，而是通过 <code>next</code> 形成先后关系。<strong>头指针</strong>指向首结点；<strong>头结点</strong>是一个可选的、通常不存放有效数据的哨兵结点；<strong>尾指针</strong>帮助快速找到最后一个结点。题目未强制使用头结点，C 模板统一采用不带头结点实现。</div>
+<div class="grid">
+<div class="panel">
+<div class="step">① 画模型和选择策略</div>
+<label for="plan2">人的思路：逐个读数组元素时，插到哪里才不会倒序？</label>
+<textarea id="plan2" placeholder="我想使用……插法，因为……"></textarea>
+<label for="machine2">计算机的思路：首次创建结点、尾指针更新、空数组时如何处理？</label>
+<textarea id="machine2" placeholder="指出 head、tail、newNode、next 的关系"></textarea>
+<details><summary>分层提示 1 · 两种插法</summary><p>每次将新节点放在头部，和每次接在尾部，最终的先后顺序一样吗？</p></details>
+<details><summary>分层提示 2 · 指针</summary><p>创建第一个结点时，头指针应该指向谁？后续追加结点后，尾指针应该指向谁？</p></details>
+<details><summary>分层提示 3 · C 语言</summary><p><code>malloc</code> 用来分配节点；新节点的 <code>next</code> 初始应设为 <code>NULL</code>；使用完毕要调用 <code>free</code>。</p></details>
+</div>
+<div class="panel">
+<div class="step">② 模拟从左到右建链</div>
+<p><label for="headMode">可视化展示方式：</label> <select id="headMode"><option value="plain">不带头结点（与 C 模板一致）</option><option value="dummy">带头结点 H（仅展示对比）</option></select></p>
+<p><span class="stat" id="linkCount">已创建 0 / 4 个结点</span></p>
+<div id="linkView" class="nodes" aria-label="链表当前状态"></div>
+<p>下一个待加入的数据：<strong id="linkCurrent">8</strong></p>
+<div class="actions"><button id="linkFront" class="secondary">将新结点插到最前面</button><button id="linkBack">将新结点接到尾部</button></div>
+<div id="linkFb" class="feedback neutral" aria-live="polite">先预测两种方案的最终顺序，再选择操作。</div>
+<div class="actions"><button id="linkReset" class="ghost">重新建链</button></div>
+<div class="stat" id="linkResult">尚未建表。</div>
+</div>
+</div>
+</section>
+
+<section id="hw3">
+<div class="step">03 / 老师作业 · 习题 3</div>
+<h2>将数组前 n 个有效元素原地逆置</h2>
+<p><code>A=[2,7,1,8,2,8,99,100]</code>，<code>arraySize=8</code>，<code>n=6</code>。只能增加常数个辅助变量，且 99、100 不得改变。</p>
+<div class="callout"><strong>概念：</strong>两个下标可以从有效前缀的两端向中间靠拢，只用固定的 <code>temp</code> 交换一对值。循环次数与操作时间属于时间复杂度；额外开辟多少个存储位置属于额外空间复杂度，二者不应混淆。</div>
+<div class="grid">
+<div class="panel">
+<div class="step">① 先预测</div>
+<label for="plan3">人的思路：最终整个数组是什么？哪些位置绝不应改动？</label>
+<textarea id="plan3" placeholder="包含数组尾部的 99 和 100"></textarea>
+<label for="machine3">计算机的思路：初始 left/right、循环停止条件、temp 的用途？</label>
+<textarea id="machine3" placeholder="如果 n=0、1 或奇数，循环将怎样结束？"></textarea>
+<details><summary>分层提示 1 · 有效长度</summary><p>右侧交换下标从 <code>n-1</code> 开始，不是 <code>arraySize-1</code>。</p></details>
+<details><summary>分层提示 2 · 奇数长度</summary><p>左右下标相遇时，中间那个元素还需要和自己交换吗？</p></details>
+<details><summary>分层提示 3 · 边界</summary><p><code>n=0</code> 时不能先计算并访问 <code>A[n-1]</code>，要考虑安全的循环写法。</p></details>
+</div>
+<div class="panel">
+<div class="step">② 点击两个下标，再交换</div>
+<p><span class="stat" id="revCount">已交换 0 / 3 对</span></p>
+<div id="revArray" class="array" aria-label="点击数组位置来交换"></div>
+<div class="legend">选中两个有效位置（下标 0–5），再按「交换」。灰色后缀始终受保护。</div>
+<div class="actions"><button id="revSwap">交换我选的两个位置</button><button id="revClear" class="secondary">清除选择</button><button id="revReset" class="ghost">重新逆置</button></div>
+<div id="revFb" class="feedback neutral" aria-live="polite">先自己找出第一对下标，不会时展开左侧的提示。</div>
+<div class="stat" id="revResult">完成交换后显示结果。</div>
+</div>
+</div>
+</section>
+
+<section id="bonus">
+<div class="step">04 / 老师练习题 · 不用提交</div>
+<h2>带头结点与不带头结点的读取、插入和删除</h2>
+<p>先不要急着写六套完整代码。看链表 <code>H → 4 → 7 → 7 → 9 → NULL</code>（H 为头结点），在纸上完成这三项，再决定是否进入附加编程。</p>
+<ul>
+<li>找到并删除<strong>第一个</strong>值为 7 的结点：哪个结点的 <code>next</code> 要改？如何保证第二个 7 还在？</li>
+<li>在值为 4 的结点后插入 6：先让新结点指向后继，还是先改 4 的 <code>next</code>？为什么？</li>
+<li>如果去掉头结点，而要删除第一个数据结点：头指针本身要不要发生变化？</li>
+</ul>
+<label for="bonusNote">我的指针草图与理由（自由作答）</label>
+<textarea id="bonusNote" placeholder="可以写 H.next、p.next、s.next，也可以画箭头……"></textarea>
+<details><summary>概念提醒：指针不只是值</summary><p>赋值 <code>p = p->next</code> 只是让局部指针向后移动；<code>pre->next = p->next</code> 则是改变链表本身的链接。删除一个动态分配的结点后，应在不再访问它的前提下释放内存。</p></details>
+</section>
+
+<section id="coding">
+<div class="step">05 / 把手推变成 C 代码（实际作业）</div>
+<h2>现在轮到你写函数</h2>
+<p>下方是<strong>未完成的作业代码模板</strong>，没有隐藏算法答案。请先独立完成一个函数，再继续下一题。使用 <code>ElemType</code> 表示数据元素；本次测试把它定义为 <code>int</code>。</p>
+<div class="callout warn"><strong>重要：</strong>网页不具有 C 编译器。「保存」只是在本地下载你的文本，不表示编译通过；真实运行结果必须由终端执行 <code>homework-tests.c</code> 获得。提示不会自动把答案填进代码。</div>
+<div class="actions"><a id="starterLink" href="../practice/homework-starter.c">GitHub 配套：C 起始文件</a><a id="testsLink" href="../practice/homework-tests.c">GitHub 配套：测试文件</a></div>
+<label for="editor"><strong>编辑 homework-starter.c：</strong>可以在下面修改，再保存为 C 文件</label>
+<textarea id="editor" class="code" spellcheck="false" aria-label="C 语言代码编辑器">#include &lt;stddef.h&gt;
+#include &lt;stdlib.h&gt;
+
+typedef int ElemType;
+#define CAPACITY 64
+typedef struct { ElemType data[CAPACITY]; size_t length; } SqList;
+typedef struct Node { ElemType data; struct Node *next; } Node;
+
+/* 作业 1：严格删除 k1 &lt; x &lt; k2 */
+void delete_between(SqList *L, ElemType k1, ElemType k2)
+{
+    /* TODO: 读写下标、长度 */
+    (void)L; (void)k1; (void)k2;
+}
+
+/* 作业 2：不带头结点，保持 A[0..n-1] 顺序 */
+Node *build_list(const ElemType *A, size_t n)
+{
+    /* TODO: malloc、head、tail、next */
+    (void)A; (void)n;
+    return NULL;
+}
+
+/* 作业 3：仅逆置前 n 项 */
+void reverse_prefix(ElemType *A, size_t n)
+{
+    /* TODO: 左右下标及 temp */
+    (void)A; (void)n;
+}
+</textarea>
+<div class="actions"><button id="copyCode">复制当前 C 代码</button><button id="downloadCode" class="secondary">下载当前代码为 homework-starter.c</button><button id="codeCheck" class="ghost">检查是否还留有 TODO（非编译）</button></div>
+<div class="feedback neutral" id="codeFb" aria-live="polite">真正的测试从终端运行；错误结果也值得记录。</div>
+<h3>本地编译及运行</h3>
+<pre>gcc -std=c11 -Wall -Wextra -pedantic homework-starter.c homework-tests.c -o ds-test
+./ds-test            # Windows PowerShell: .\ds-test.exe</pre>
+<p class="subtle">将两个 C 文件放到同一个文件夹。在 Windows 可用 GCC（例如通过已配置的 MinGW-w64）；未安装编译器时可先把代码发回 ChatGPT 检查。测试覆盖重复边界、空表、全删、链表正序、奇偶长度及原数组后缀。初始空模板的 FAIL 是预期现象。</p>
+<h3>课程作业要交什么？</h3>
+<label class="check"><input type="checkbox" id="checkHuman"> 我写出了人的处理思路</label>
+<label class="check"><input type="checkbox" id="checkMachine"> 我解释了计算机如何移动下标/修改指针</label>
+<label class="check"><input type="checkbox" id="checkCompare"> 我比较了顺序存储与链式存储的不同</label>
+<label class="check"><input type="checkbox" id="checkTest"> 我有自己运行得到的测试用例和输出</label>
+<label for="testLog">真实测试结果粘贴区（网页不会自动填）</label>
+<textarea id="testLog" placeholder="例如 gcc 命令、PASS/FAIL 输出、自己排查的错误；还没测试可留空"></textarea>
+<div class="actions"><button id="copyProgress">复制作答与学习记录，发回 ChatGPT</button></div>
+<div class="feedback neutral" id="copyFb" aria-live="polite"></div>
+</section>
+<footer>课程来源：《数据结构第二章课后作业.doc》 · 2026-10-19。浏览器操作仅是可视化练习，实际验收需要独立完成代码和真实测试。代码/草稿只保留在本机浏览器中（若允许本地存储）；此页不调用外部服务、不上报内容。</footer>
+</main>
+<script>
+'use strict';
+const $ = id => document.getElementById(id);
+const state = {
+  del:{src:[1,3,3,5,6,8,10,10,13],a:[1,3,3,5,6,8,10,10,13],read:0,write:0},
+  link:{source:[8,3,8,1],a:[],idx:0},
+  rev:{a:[2,7,1,8,2,8,99,100],n:6,step:0,chosen:[]}
+};
+function msg(id,body,kind){const e=$(id); e.textContent=body; e.className='feedback '+(kind||'neutral');}
+function buttonCell(v,i,className,clickable){
+  const e=document.createElement(clickable?'button':'div');
+  e.className='cell '+(className||'')+(clickable?' clickable':'');
+  if(clickable)e.type='button';
+  const value=document.createElement('span');value.textContent=v;
+  const index=document.createElement('em');index.textContent='['+i+']';
+  e.append(value,index);return e;
+}
+function warm(name,correct,fb,explain){
+ const choice=document.querySelector('input[name="'+name+'"]:checked');
+ if(!choice){msg(fb,'请先选择，再检查。','neutral');return;}
+ msg(fb,choice.value===correct?'判断正确！'+explain:'尚不对。可以打开下方提示，再比较“寻找”和“操作”或“次数”和“空间”。',choice.value===correct?'ok':'bad');
+}
+$('checkA').onclick=()=>warm('warmA','linear','fbA','寻找位置最坏 O(n)，只做链接更新则是 O(1)。');
+$('checkB').onclick=()=>warm('warmB','constant','fbB','反复复用同一个变量仍是常数额外空间。');
+function showDel(){
+ const s=state.del,a=$('delArray');a.replaceChildren();
+ s.a.forEach((v,i)=>{
+  let c='';if(i<s.write)c+='done ';if(i===s.read)c+='read ';if(i===s.write)c+='write ';
+  a.appendChild(buttonCell(v,i,c,false));
+ });
+ $('delCount').textContent='read='+s.read+' · write='+s.write+' · 初始 length=9';
+ $('delProgress').style.width=(s.read/s.src.length*100)+'%';
+ const complete=s.read===s.src.length;
+ $('delCurrent').textContent=complete?'已检查全部元素':s.src[s.read];
+ $('keepBtn').disabled=complete;$('dropBtn').disabled=complete;
+ $('delResult').textContent=complete?'完成：有效前缀 ['+s.a.slice(0,s.write).join(', ')+']，新 length='+s.write+'。后面的旧数据不是有效元素。':'目前已确定的有效前缀：['+s.a.slice(0,s.write).join(', ')+']';
+}
+function advanceDel(keep){
+ const s=state.del;if(s.read>=s.src.length)return;
+ const x=s.src[s.read],expected=!(x>3&&x<10);
+ if(keep!==expected){msg('delFb','这一步不对：检查 '+x+' 是否严格满足 3 < x < 10（端点不删）。','bad');return;}
+ if(keep){s.a[s.write]=x;s.write++;}
+ s.read++;
+ msg('delFb',s.read===s.src.length?'全部判断完成。你已经完成手动模拟；现在解释 read/write 并自己写 C。':(keep?'保留成功：写指针增加 1。':'删除成功：只移动读指针。')+' 请继续下一项。','ok');
+ showDel();
+}
+$('keepBtn').onclick=()=>advanceDel(true);
+$('dropBtn').onclick=()=>advanceDel(false);
+$('delReset').onclick=()=>{state.del={src:[1,3,3,5,6,8,10,10,13],a:[1,3,3,5,6,8,10,10,13],read:0,write:0};showDel();msg('delFb','已重置。尝试不看提示独立完成。');};
+function showLink(){
+ const s=state.link,v=$('linkView');v.replaceChildren();
+ const createNode=(val,cls)=>{let n=document.createElement('span');n.className='node '+(cls||'');n.textContent=val;return n;};
+ const arrow=()=>{let a=document.createElement('span');a.className='arrow';a.textContent='→';return a;};
+ const dummy=$('headMode').value==='dummy';
+ if(dummy){v.append(createNode('H','sentinel'),arrow());}
+ if(!s.a.length){v.append(createNode('NULL'));}else{
+  s.a.forEach(x=>{v.append(createNode(x),arrow());});
+  v.append(createNode('NULL'));
+ }
+ $('linkCount').textContent='已创建 '+s.idx+' / '+s.source.length+' 个数据结点';
+ $('linkCurrent').textContent=s.idx===s.source.length?'已读完':s.source[s.idx];
+ $('linkFront').disabled=s.idx===s.source.length;
+ $('linkBack').disabled=s.idx===s.source.length;
+ $('linkResult').textContent='head → '+(s.a.length?s.a.join(' → ')+' → NULL':'NULL')+(dummy?'（H 是哨兵，不算数据）':'');
+}
+function linkStep(strategy){
+ const s=state.link;if(s.idx>=s.source.length)return;
+ if(strategy==='front'&&s.idx>0){
+ msg('linkFb','如果继续头插，之前的元素会被推到后面，产生倒序。请改用尾插以满足原作业的“正序”。','bad');return;
+ }
+ const value=s.source[s.idx];if(strategy==='front')s.a.unshift(value);else s.a.push(value);
+ s.idx++;
+ msg('linkFb',s.idx===s.source.length?'正序建表模拟完成！下一步写出 head/tail 如何更新。':('已添加 '+value+'。注意第一个结点时 head 与 tail 的关系。'),'ok');
+ showLink();
+}
+$('headMode').onchange=showLink;
+$('linkFront').onclick=()=>linkStep('front');
+$('linkBack').onclick=()=>linkStep('back');
+$('linkReset').onclick=()=>{state.link={source:[8,3,8,1],a:[],idx:0};showLink();msg('linkFb','已重置。试着从第一个结点开始重新建链。');};
+function showRev(){
+ const s=state.rev,a=$('revArray');a.replaceChildren();
+ s.a.forEach((v,i)=>{
+  const c=buttonCell(v,i,(i>=s.n?'inactive ':'')+(s.chosen.includes(i)?'selected ':'')+(s.step*2>s.n-1-i && i<s.n?'done':''),true);
+  c.disabled=i>=s.n||s.step===Math.floor(s.n/2);
+  c.setAttribute('aria-pressed',String(s.chosen.includes(i)));
+  c.onclick=()=>{const at=s.chosen.indexOf(i);if(at>=0)s.chosen.splice(at,1);else if(s.chosen.length<2)s.chosen.push(i);else s.chosen=[i];showRev();};
+  a.append(c);
+ });
+ $('revCount').textContent='已交换 '+s.step+' / '+Math.floor(s.n/2)+' 对';
+ const finished=s.step===Math.floor(s.n/2);
+ $('revSwap').disabled=finished;
+ $('revResult').textContent=finished?'全部完成：['+s.a.join(', ')+']；99、100 保持不变。':'原数组后缀 [99, 100] 被保护，不可选择。';
+}
+$('revSwap').onclick=()=>{
+ const s=state.rev, pair=s.chosen.slice().sort((a,b)=>a-b);
+ if(pair.length!==2){msg('revFb','请先点击恰好两个有效下标。','bad');return;}
+ const expected=[s.step,s.n-1-s.step];
+ if(pair[0]!==expected[0]||pair[1]!==expected[1]){
+ msg('revFb','请检查两端是否对称：当前应从尚未交换的有效前缀两端选择，而不能碰 99、100。','bad');return;
+ }
+ const t=s.a[pair[0]];s.a[pair[0]]=s.a[pair[1]];s.a[pair[1]]=t;
+ s.step++;s.chosen=[];
+ msg('revFb',s.step===3?'全部交换完成。思考 n 为奇数和 n=0 的终止条件。':'交换成功。左右下标各朝中间移动一步。','ok');
+ showRev();
+};
+$('revClear').onclick=()=>{state.rev.chosen=[];showRev();};
+$('revReset').onclick=()=>{state.rev={a:[2,7,1,8,2,8,99,100],n:6,step:0,chosen:[]};showRev();msg('revFb','已重置。重新选择第一对对称下标。');};
+function readStore(key){try{return localStorage.getItem('ds-homework-'+key);}catch(_){return null;}}
+function writeStore(key,v){try{localStorage.setItem('ds-homework-'+key,v);}catch(_){}}
+const saved=['plan1','machine1','plan2','machine2','plan3','machine3','bonusNote','editor','testLog'];
+saved.forEach(id=>{const el=$(id),stored=readStore(id);if(stored!==null)el.value=stored;el.addEventListener('input',()=>writeStore(id,el.value));});
+['checkHuman','checkMachine','checkCompare','checkTest'].forEach(id=>{
+ const el=$(id);el.checked=readStore(id)==='true';el.onchange=()=>writeStore(id,String(el.checked));
+});
+async function copyText(s,fb){
+ try{await navigator.clipboard.writeText(s);msg(fb,'已复制，可以粘贴到 ChatGPT 或你的编辑器。','ok');}
+ catch(e){msg(fb,'当前页面无法调用剪贴板。请手动选中文本复制；部分 file:// 浏览器会限制权限。','bad');}
+}
+$('copyCode').onclick=()=>copyText($('editor').value,'codeFb');
+$('downloadCode').onclick=()=>{
+ const data=new Blob([$('editor').value],{type:'text/plain;charset=utf-8'});
+ const url=URL.createObjectURL(data);const a=document.createElement('a');a.href=url;a.download='homework-starter.c';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+ msg('codeFb','已发起下载。注意下载不代表代码已通过 C 编译或测试。','neutral');
+};
+$('codeCheck').onclick=()=>{
+ const code=$('editor').value;
+ const issue=code.includes('TODO')||code.includes('(void)L;')||code.includes('(void)A;')||code.includes('return NULL;');
+ msg('codeFb',issue?'检测到 TODO 或起始模板占位写法；这只是文字提示，无法证明代码错误或正确。':'未发现典型占位文本，但这不是编译或运行测试；请使用终端 gcc + homework-tests.c。','neutral');
+};
+$('copyProgress').onclick=()=>{
+ const keys=[['作业1 · 人的思路','plan1'],['作业1 · 计算机思路','machine1'],['作业2 · 人的思路','plan2'],['作业2 · 计算机思路','machine2'],['作业3 · 人的思路','plan3'],['作业3 · 计算机思路','machine3'],['附加练习','bonusNote'],['真实测试输出','testLog']];
+ let txt='数据结构第二章 / 自主学习记录（待 ChatGPT 逐题诊断）\n';
+ txt+='\n网页手推进度（不等于代码验收）：作业1 '+state.del.read+'/9 个，作业2 '+state.link.idx+'/4 个，作业3 '+state.rev.step+'/3 对。\n';
+ keys.forEach(([label,id])=>{txt+='\n## '+label+'\n'+($(id).value.trim()||'（尚未填写）')+'\n';});
+ txt+='\n## 完成确认（自报）\n';
+ [['checkHuman','人的思路'],['checkMachine','计算机思路'],['checkCompare','存储方式对比'],['checkTest','真实运行测试']].forEach(([id,label])=>{txt+='- '+label+'：'+($(id).checked?'已勾选':'未勾选')+'\n';});
+ txt+='\n请先看我的原始思路并分层引导，不要立刻给整套答案。我会另外发送 C 代码或报错。\n';
+ copyText(txt,'copyFb');
+};
+showDel();showLink();showRev();
+</script>
+</body>
+</html>
