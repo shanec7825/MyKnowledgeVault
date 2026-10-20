@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 520" role="img" aria-labelledby="title desc">
+<title id="title">计算机系统基础五阶段学习地图</title><desc id="desc">从源文件和编译到位模式、CPU与机器级程序、进程与内存、文件与网络，并最终连接成小型服务器。建议先从项目0开始。</desc>
+<defs><linearGradient id="bg" x1="0" x2="1"><stop stop-color="#101f3a"/><stop offset="1" stop-color="#183f5a"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#0c1b2d" flood-opacity=".16"/></filter></defs>
+<rect width="1400" height="520" rx="28" fill="url(#bg)"/>
+<g font-family="ui-sans-serif,system-ui,'Microsoft YaHei',sans-serif">
+<text x="58" y="72" fill="#fff" font-size="40" font-weight="700">从一行 C 代码，看懂计算机系统</text>
+<text x="59" y="111" fill="#adc8db" font-size="21">不是五门孤立的知识，而是同一个程序不断深入的五个观察层次</text>
+<path d="M 155 246 H 1240" fill="none" stroke="#71b4ba" stroke-width="6" stroke-linecap="round" stroke-dasharray="14 14"/>
+<g filter="url(#s)">
+<rect x="47" y="164" width="248" height="218" rx="24" fill="#eaf7ff"/><rect x="315" y="164" width="248" height="218" rx="24" fill="#e8f7f1"/><rect x="583" y="164" width="248" height="218" rx="24" fill="#fff2dc"/><rect x="851" y="164" width="248" height="218" rx="24" fill="#f3eaff"/><rect x="1119" y="164" width="234" height="218" rx="24" fill="#ecf8fb"/>
+</g>
+<g font-size="16" font-weight="700">
+<rect x="64" y="184" width="88" height="31" rx="16" fill="#136db6"/><text x="108" y="205" fill="white" text-anchor="middle">阶段 1</text>
+<rect x="332" y="184" width="88" height="31" rx="16" fill="#0d8563"/><text x="376" y="205" fill="white" text-anchor="middle">阶段 2</text>
+<rect x="600" y="184" width="88" height="31" rx="16" fill="#b87516"/><text x="644" y="205" fill="white" text-anchor="middle">阶段 3</text>
+<rect x="868" y="184" width="88" height="31" rx="16" fill="#7a4bb7"/><text x="912" y="205" fill="white" text-anchor="middle">阶段 4</text>
+<rect x="1136" y="184" width="88" height="31" rx="16" fill="#176c82"/><text x="1180" y="205" fill="white" text-anchor="middle">阶段 5</text>
+</g>
+<g font-size="39" font-weight="700" text-anchor="middle"><text x="171" y="273" fill="#155a93">{ C }</text><text x="439" y="273" fill="#087d64">0101</text><text x="707" y="273" fill="#9b610b">CPU</text><text x="975" y="273" fill="#653aa2">OS</text><text x="1236" y="273" fill="#14667e">HTTP</text></g>
+<g font-size="22" font-weight="700" text-anchor="middle" fill="#14243f">
+<text x="171" y="312">第一次运行</text><text x="439" y="312">数值与位模式</text><text x="707" y="312">机器与性能</text><text x="975" y="312">进程、内存、文件</text><text x="1236" y="312">网络与并发</text>
+</g>
+<g font-size="16" text-anchor="middle" fill="#556475">
+<text x="171" y="348">项目 0</text><text x="439" y="348">项目 1</text><text x="707" y="348">项目 2–5</text><text x="975" y="348">项目 6–8</text><text x="1236" y="348">项目 9–10</text>
+</g>
+<rect x="49" y="426" rx="16" width="1302" height="58" fill="#28516b"/>
+<text x="76" y="462" font-size="20" fill="#fff" font-weight="650">每一步都只做：看一个现象 → 跑最小代码 → 改一个条件 → 解释变化</text>
+<text x="1309" y="462" font-size="16" fill="#bfeaff" text-anchor="end">最后：Mini Linux Web Server</text>
+</g></svg>
