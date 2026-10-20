@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" role="img" aria-labelledby="t d">
+<title id="t">从源代码到屏幕输出</title><desc id="d">C 源文件通过 GCC 编译链接得到可执行文件，启动后由程序将文字打印到终端</desc>
+<rect width="1000" height="300" rx="22" fill="#f8fafc"/><text x="40" y="48" font-size="25" font-family="system-ui,sans-serif" font-weight="bold" fill="#0f172a">第一眼：写代码 ≠ 运行代码</text>
+<g font-family="system-ui,sans-serif" text-anchor="middle">
+<rect x="34" y="86" width="210" height="150" rx="18" fill="#dbeafe" stroke="#60a5fa" stroke-width="2"/><text x="139" y="132" fill="#1e40af" font-size="26" font-weight="bold">hello.c</text><text x="139" y="165" fill="#1e40af" font-size="18">人类可读的 C 源码</text><text x="139" y="198" fill="#334155" font-size="16">puts("Hello")</text>
+<path d="M256 161 H294" stroke="#475569" stroke-width="4" stroke-linecap="round"/><path d="M287 153 L299 161 L287 169" fill="none" stroke="#475569" stroke-width="4"/><text x="278" y="145" font-size="14" fill="#475569">gcc</text>
+<rect x="312" y="86" width="218" height="150" rx="18" fill="#dcfce7" stroke="#4ade80" stroke-width="2"/><text x="421" y="134" fill="#166534" font-size="25" font-weight="bold">hello</text><text x="421" y="167" fill="#166534" font-size="18">可执行文件</text><text x="421" y="199" fill="#334155" font-size="15">仍躺在硬盘上</text>
+<path d="M542 161 H580" stroke="#475569" stroke-width="4"/><path d="M573 153 L585 161 L573 169" fill="none" stroke="#475569" stroke-width="4"/><text x="563" y="143" font-size="14" fill="#475569">./hello</text>
+<rect x="597" y="86" width="365" height="150" rx="18" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/><text x="780" y="125" fill="#92400e" font-size="24" font-weight="bold">运行中的程序</text><rect x="633" y="144" width="295" height="59" rx="10" fill="#0f172a"/><text x="780" y="180" fill="#86efac" font-size="20" font-family="monospace">Hello, system!</text>
+</g><text x="40" y="275" fill="#64748b" font-size="16" font-family="system-ui,sans-serif">先抓住这三个东西，再学习预处理、汇编、目标文件和 ELF。</text></svg>
