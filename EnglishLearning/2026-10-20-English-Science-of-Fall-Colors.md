@@ -143,4 +143,4 @@ Close both sources. Reconstruct **seasonal signal → pigment mechanism → weat
 ## Previous / Next
 
 - Previous: [[EnglishLearning/2026-10-19-English-Offline-Knowledge|2026-10-19 · Offline Knowledge]]
-- Next: pending tomorrow's topic-named lesson.
+- Next: [[EnglishLearning/2026-10-21-English-Small-Talk-Real-Connection|2026-10-21 · Small Talk, Real Connection]]
