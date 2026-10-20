@@ -1,0 +1,85 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>项目 3–10 · 先玩再学交互观察板</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Microsoft YaHei",sans-serif;color:#111827;background:#f7f8fc;line-height:1.6}
+*{box-sizing:border-box}body{margin:0}.shell{max-width:1080px;margin:auto;padding:19px 16px 65px}
+header{border-radius:20px;padding:28px;color:white;background:linear-gradient(115deg,#0f172a,#0f766e)}h1{font-size:clamp(23px,4vw,34px);margin:0}header p{margin:8px 0;color:#d1fae5}
+nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:17px 0}
+nav button{border:1px solid #cbd5e1;border-radius:12px;background:white;text-align:left;padding:12px;cursor:pointer;color:#334155;font-weight:bold}nav button[aria-pressed=true]{background:#134e4a;color:white;border-color:#134e4a}
+section{border:1px solid #dbe3f1;background:white;border-radius:18px;padding:23px;margin:15px 0}h2{margin:0 0 9px;font-size:24px}p{margin:8px 0}.muted{color:#64748b}.notice{background:#ecfeff;border-left:4px solid #14b8a6;padding:12px;border-radius:0 9px 9px 0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:20px 0}.node{border:2px solid #cbd5e1;border-radius:12px;padding:12px;background:#f8fafc;min-height:92px}.node.now{border-color:#0d9488;background:#ccfbf1}.node.done{background:#f0fdf4;border-color:#bbf7d0}.node .num{font-size:12px;color:#64748b}.node b{display:block}
+button.action{border:0;background:#0f766e;color:white;border-radius:9px;padding:10px 16px;cursor:pointer;font-weight:bold}button.action.secondary{background:white;border:1px solid #0f766e;color:#115e59}button:disabled{opacity:.5;cursor:not-allowed}
+button:focus-visible,select:focus-visible{outline:3px solid #f59e0b;outline-offset:2px}select{border:1px solid #94a3b8;border-radius:9px;padding:9px;max-width:100%;background:white;color:#0f172a}
+.controls{display:flex;gap:11px;align-items:center;flex-wrap:wrap;margin:16px 0}
+.readout{background:#0f172a;color:#d1fae5;padding:17px;border-radius:13px;min-height:140px;white-space:pre-wrap;overflow-wrap:anywhere;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:15px;line-height:1.75}
+.mini{font-size:13px}.stepnote{background:#f1f5f9;padding:13px;border-radius:11px;margin-top:12px;min-height:64px}
+a{color:#0369a1}
+@media(max-width:650px){nav{grid-template-columns:repeat(2,minmax(0,1fr))}section{padding:15px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.shell{padding:12px 10px 40px}}
+</style></head><body><main class="shell">
+<header><h1>项目 3–10 · 交互观察板</h1><p>不先背术语。换个条件 → 猜结果 → 按“下一步”观察状态 → 回 WSL 做真的小实验。</p><p class="mini">此页是离线教学模拟。地址、时间顺序、HTTP 内容等使用说明性示例，不冒充真实运行数据。</p></header>
+<nav id="nav" aria-label="选择一个计算机系统项目"></nav>
+<section><h2 id="topic">选一个项目</h2><p id="intro"></p><p class="notice" id="predict"></p>
+<div class="controls"><label for="mode">改变一个条件：</label><select id="mode"></select><button id="restart" class="action secondary">重置观察</button></div>
+<div class="grid" id="flow" aria-label="分步状态流程"></div>
+<div class="readout" id="readout" role="status"></div>
+<div class="stepnote" id="why"></div>
+<div class="controls"><button id="back" class="action secondary">上一步</button><button id="next" class="action">下一步</button><span class="muted" id="position"></span></div>
+<p class="mini muted">观察板回答的是“先看到什么”；解释与证据要到实际实验获取。<a id="deep" href="#">打开对应的最小 WSL 微实验</a>，完成后再由微实验进入 CS:APP 长文档。</p>
+</section>
+<footer class="muted mini">返回 <a href="先玩再学-系统实验室.html">0–2 交互实验室</a> · <a href="../00-先玩再学-直观实验入口.md">所有项目导航</a>。所有操作都在浏览器内完成，无需联网。</footer>
+</main><script>
+(function(){
+'use strict';
+var list=[
+{id:3,title:'03 · 三条指令的小 CPU',intro:'PC 指向下一步，寄存器 r0 保存加法结果。真实 CPU 远比它复杂。',predict:'先猜：三条加法执行完，r0 是多少？',file:'03-三条指令的小CPU.md',modes:[
+{label:'依次加 3、加 5、减 2',steps:[['开始','PC=0  r0=0','还没有执行指令。'],['ADD +3','PC=1  r0=3','执行指令0后 r0 改变，PC 前进。'],['ADD +5','PC=2  r0=8','执行指令1后累计为 8。'],['ADD -2','PC=3  r0=6','执行指令2后得到 6。']]},
+{label:'改成加 3、加 10、减 2',steps:[['开始','PC=0  r0=0','只改变第二条指令的立即数。'],['ADD +3','PC=1  r0=3','第一条结果不变。'],['ADD +10','PC=2  r0=13','新的第二条使中间状态不同。'],['ADD -2','PC=3  r0=11','最终值也随之改变。']]}]},
+{id:4,title:'04 · 链接：多个文件合作',intro:'main.c 调用 add；add.c 定义 add。编译器和链接器负责把它们连接起来。',predict:'先猜：如果忘记把 add.c 一起链接，会在哪个环节出错？',file:'04-两个文件拼成程序.md',modes:[
+{label:'同时给出 main.c 和 add.c',steps:[['两个源文件','main.c：调用 add(2,3)\nadd.c：定义 add','文件彼此独立。'],['各自编译','main.o：引用 add\nadd.o：提供 add','目标文件里有对符号的引用和定义。'],['链接','引用 add → 找到 add 的定义','链接成功，建立可执行程序。'],['运行','stdout: 5','主程序现在可以调用函数。']]},
+{label:'只给出 main.c',steps:[['源文件','main.c：调用 add(2,3)','调用存在，但定义未提供。'],['编译','main.o：引用 add','C 代码本身可以通过编译。'],['链接失败','undefined reference to add','链接器找不到定义，因而无法生成可执行文件。']]}]},
+{id:5,title:'05 · 连续访问与跳步访问',intro:'先看数组访问次序，而不是立刻测速度。你实际读的是数组的哪个元素？',predict:'先猜：先读偶数下标、再读奇数下标，观察到的序列和连续访问一样吗？',file:'05-按顺序还是跳着访问.md',modes:[
+{label:'连续下标 0 → 7',steps:Array.from({length:8},function(_,i){return ['读 a['+i+']','访问序列：'+Array.from({length:i+1},function(_,k){return k}).join(' → '),'当前指向下标 '+i+'。这里只显示顺序，不测 Cache 延迟。'];})},
+{label:'偶数下标，再奇数下标',steps:[0,2,4,6,1,3,5,7].map(function(v,i,arr){return ['读 a['+v+']','访问序列：'+arr.slice(0,i+1).join(' → '),'当前指向下标 '+v+'。跳步不等于已经证明 Cache miss。'];})}]},
+{id:6,title:'06 · 一个 fork 产生两条执行路线',intro:'fork 之后父子进程分别继续。waitpid 是让父进程等待子进程结束。',predict:'先猜：去掉 waitpid 时，“child”一定比“parent”先显示吗？',file:'06-一个程序两个进程.md',modes:[
+{label:'父进程调用 waitpid',steps:[['fork','父进程：P\n子进程：C','两个进程各自从 fork 返回。'],['子进程打印','屏幕：child\n父进程：等待 C','父进程还没打印。'],['子进程退出','C：退出\nP：waitpid 返回','现在可以确定子进程已结束。'],['父进程打印','屏幕：child\nparent','因为等待，打印顺序有保证。']]},
+{label:'不等待子进程（只看可能情况）',steps:[['fork','父进程：P\n子进程：C','两个进程都可以继续执行。'],['调度不确定','可能：parent → child\n也可能：child → parent','这是可能的执行顺序，不是每次实际测得的轨迹。'],['结论','输出先后不保证','不能凭一次运行推断固定顺序。']]}]},
+{id:7,title:'07 · 虚拟地址中的两种对象',intro:'C 程序里的局部变量和动态分配对象都有地址，但打印它们无法直接得知物理内存。',predict:'先猜：malloc 返回的指针和局部变量地址有什么共同点？',file:'07-变量住在哪里.md',modes:[
+{label:'观察局部变量 &x',steps:[['声明 int x','对象：x = 7','本地变量在其生命周期内具有一个对象存储位置（可能被优化影响）。'],['取地址 &x','&x = 某个虚拟地址','示意：只知道它在进程虚拟地址空间。'],['先不下结论','不是直接得到物理地址','不同环境地址数字可能改变。']]},
+{label:'观察 malloc 指针 p',steps:[['请求 malloc','p = malloc(sizeof(int))','向运行时申请一块可用空间。'],['写入数据','*p = 9','使用返回的地址访问对象。'],['释放','free(p)','释放动态分配对象；不要再解引用已释放的指针。']]}]},
+{id:8,title:'08 · 文件写入与关闭',intro:'fopen 打开文件、fputs 写内容、fclose 关闭流。这里只模拟一个文件。',predict:'先猜：打开模式 w 和 a 对已有文件内容的影响有什么区别？',file:'08-亲手写出一个文件.md',modes:[
+{label:'以 w 模式打开已有文件',steps:[['初始文件','note.txt: OLD','假设它原先有 OLD。'],['fopen("w")','note.txt: （清空）','w 模式会截断已有文件。'],['fputs','缓冲中的新内容：NEW','库可能先缓冲，不必把每次函数调用等同于一个内核写入。'],['fclose','note.txt: NEW','刷新并关闭成功时，文件内容变成 NEW。']]},
+{label:'以 a 模式追加',steps:[['初始文件','note.txt: OLD','同样假设已有 OLD。'],['fopen("a")','note.txt: OLD','追加模式不先截断旧内容。'],['fputs','准备追加 NEW','可能有标准 I/O 缓冲。'],['fclose','note.txt: OLDNEW','写入成功时追加到文件尾。']]}]},
+{id:9,title:'09 · 浏览器和服务器的一次对话',intro:'浏览器发送 HTTP 请求，本机服务器给出状态与页面内容。',predict:'先猜：访问不存在的 /missing 时，HTTP 状态通常怎样变化？',file:'09-本机第一个HTTP回复.md',modes:[
+{label:'访问 /index.html（存在）',steps:[['浏览器请求','GET /index.html HTTP/1.1','浏览器先建立连接并发送请求。'],['服务器找文件','index.html：存在','服务器读取目标内容。'],['HTTP 响应','HTTP/1.0 200 OK\nContent-Type: text/html','这里展示简化响应，不保证每个实际服务器完全同样的版本/头部。'],['浏览器显示','Hello HTTP','浏览器根据响应内容显示页面。']]},
+{label:'访问 /missing（不存在）',steps:[['浏览器请求','GET /missing HTTP/1.1','请求路径改变了。'],['查找资源','文件 missing 不存在','本机服务找不到这个路径对应的文件。'],['HTTP 响应','HTTP/1.0 404 File not found','404 表示资源不存在，具体响应格式由服务器实现决定。']]}]},
+{id:10,title:'10 · 两个线程怎么会合',intro:'工作线程和主线程都执行代码；join 让主线程等工作线程结束。',predict:'先猜：没有 join 的话，worker 一定有机会在主程序退出前输出吗？',file:'10-两个线程会合.md',modes:[
+{label:'有 pthread_join',steps:[['创建工作线程','main → pthread_create','产生新的执行路线。'],['执行 worker','worker: 打印 worker','工作线程独立运行。'],['join 等待','main: 等待 worker 结束','主线程不早于工作线程结束继续下去。'],['主线程完成','屏幕：worker\nmain done','在这个程序中输出次序受 join 约束。']]},
+{label:'无 join（仅说明不确定性）',steps:[['创建工作线程','main 与 worker 都可运行','调度时机不受主线程直接控制。'],['可能的调度','可能先看到 main done\n可能先看到 worker','此处不是一次确定的运行轨迹。'],['主进程退出','worker 可能还未完成','进程退出时不能保证 worker 打印已经发生。']]}]}
+];
+var which=0,mode=0,step=0;
+var nav=document.getElementById('nav'),select=document.getElementById('mode');
+list.forEach(function(d,i){var b=document.createElement('button');b.type='button';b.textContent=d.title;b.addEventListener('click',function(){which=i;mode=0;step=0;draw()});nav.appendChild(b);});
+function draw(){
+var d=list[which],sc=d.modes[mode];var buttons=nav.querySelectorAll('button');
+buttons.forEach(function(b,i){b.setAttribute('aria-pressed',String(i===which));});
+document.getElementById('topic').textContent=d.title;
+document.getElementById('intro').textContent=d.intro;
+document.getElementById('predict').textContent='先预测 → '+d.predict;
+select.textContent='';
+d.modes.forEach(function(m,i){var o=document.createElement('option');o.value=i;o.textContent=m.label;select.appendChild(o)});
+select.value=mode;
+var flow=document.getElementById('flow');flow.textContent='';
+sc.steps.forEach(function(st,i){var box=document.createElement('div');box.className='node '+(i===step?'now':i<step?'done':'');var small=document.createElement('div');small.className='num';small.textContent='第 '+(i+1)+' 步';var strong=document.createElement('b');strong.textContent=st[0];box.appendChild(small);box.appendChild(strong);flow.appendChild(box)});
+document.getElementById('readout').textContent=sc.steps[step][1];
+document.getElementById('why').textContent=sc.steps[step][2];
+document.getElementById('position').textContent=(step+1)+' / '+sc.steps.length;
+document.getElementById('back').disabled=step===0;
+document.getElementById('next').disabled=step>=sc.steps.length-1;
+document.getElementById('deep').href='../微实验/'+d.file;
+}
+select.addEventListener('change',function(){mode=Number(select.value);step=0;draw()});
+document.getElementById('back').addEventListener('click',function(){step=Math.max(0,step-1);draw()});
+document.getElementById('next').addEventListener('click',function(){step=Math.min(list[which].modes[mode].steps.length-1,step+1);draw()});
+document.getElementById('restart').addEventListener('click',function(){step=0;draw()});
+draw();
+})();
+</script></body></html>
