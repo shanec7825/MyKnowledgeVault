@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>先玩再学 · 计算机系统交互实验室</title>
+<style>
+:root{font-family:ui-sans-serif,system-ui,-apple-system,"Microsoft YaHei",sans-serif;color:#172554;background:#f6f8fd;line-height:1.65}
+*{box-sizing:border-box}body{margin:0}button,input{font:inherit}
+.wrap{max-width:1050px;margin:auto;padding:20px 18px 72px}.hero{background:linear-gradient(120deg,#172554,#1d4ed8);color:white;border-radius:22px;padding:27px 30px}.hero h1{margin:0 0 6px;font-size:clamp(23px,4vw,34px)}.hero p{color:#dbeafe;margin:5px 0;max-width:780px}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin:19px 0}.tab{border:1px solid #c7d2fe;color:#1e40af;background:white;border-radius:14px;padding:11px 17px;cursor:pointer;font-weight:650}.tab[aria-selected=true]{background:#1e40af;color:white;border-color:#1e40af}
+.panel{display:none}.panel.active{display:block}.card{border:1px solid #dbe3f1;border-radius:18px;background:white;padding:22px;margin:16px 0;box-shadow:0 2px 8px rgba(15,23,42,.035)}h2{font-size:24px;margin:0 0 10px}h3{font-size:18px;margin:4px 0 12px}.muted,.small{color:#52627a}.small{font-size:14px}
+.columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.stage-row{display:flex;gap:9px;flex-wrap:wrap}.stage{border:2px solid #cbd5e1;background:#f1f5f9;min-width:155px;flex:1;padding:13px;border-radius:13px;text-align:center}.stage.current{border-color:#2563eb;background:#dbeafe}.stage strong{display:block}.stage span{font-size:13px}
+.bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:15px}.btn{border:0;border-radius:11px;background:#1d4ed8;color:#fff;padding:10px 18px;cursor:pointer;font-weight:650}.btn:focus-visible,.tab:focus-visible,.bit:focus-visible{outline:3px solid #f59e0b;outline-offset:3px}.btn:disabled{background:#94a3b8;cursor:not-allowed}.btn.secondary{border:1px solid #cbd5e1;background:#fff;color:#1e40af}
+.choice{border:1px solid #c7d2fe;background:#eef2ff;border-radius:10px;padding:9px 12px;cursor:pointer}.choice:hover{background:#dbeafe}
+.response{padding:11px 13px;border-radius:11px;background:#f1f5f9;color:#334155;min-height:50px;margin-top:11px}.ok{background:#dcfce7;color:#14532d}.note{border-left:4px solid #60a5fa;background:#eff6ff;padding:10px 14px;border-radius:0 10px 10px 0}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#0f172a;color:#bbf7d0;border-radius:13px;padding:16px;margin:9px 0;font-size:14px;line-height:1.55}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}.tiny{font-size:12px}
+.figure{max-width:100%;width:100%;height:auto;border-radius:11px;background:#f8fafc}
+.bitrow{display:flex;gap:7px;flex-wrap:nowrap;margin:15px 0}.bit{display:grid;place-items:center;flex:1;min-width:0;min-height:66px;border:2px solid #93c5fd;border-radius:12px;background:#dbeafe;color:#1d4ed8;font-size:30px;font-weight:800;cursor:pointer}.bit.sign{border-color:#fb923c;background:#ffedd5;color:#9a3412}.bit:active{transform:scale(.95)}
+.values{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.number{background:#eff6ff;border-radius:15px;text-align:center;padding:17px 7px}.number.signed{background:#fff7ed}.number b{display:block;font-size:35px;font-variant-numeric:tabular-nums}.number small{color:#334155}
+.regs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.reg{background:#eff6ff;border:1px solid #bfdbfe;border-radius:12px;padding:13px;text-align:center}.reg b{display:block;font-size:29px}.reg span{font-size:13px;color:#475569}
+.instr{padding:8px 11px;border-left:4px solid #e2e8f0;background:#f8fafc;font-family:ui-monospace,monospace;margin:5px 0}.instr.on{border-color:#f59e0b;background:#fffbeb;font-weight:bold}
+input[type=number]{width:90px;border:1px solid #94a3b8;border-radius:9px;padding:6px 8px;background:#fff;color:#0f172a}
+a{color:#1d4ed8}footer{margin:20px 0;color:#52627a;font-size:14px}
+@media(max-width:660px){.wrap{padding:12px 11px 52px}.hero{padding:20px}.card{padding:15px}.columns{grid-template-columns:1fr}.bitrow{gap:4px}.bit{font-size:21px;min-height:54px;border-radius:8px}.stage{min-width:112px}h2{font-size:21px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="hero"><h1>先玩再学 · 计算机系统实验室</h1><p>先通过点击、预测和单步认识一个现象，再回到 WSL 亲手运行 C 程序。这里的动画与寄存器是<strong>教学模拟</strong>，不替代真实计算机运行证据。</p><p class="tiny">无需网络 · 无外部依赖 · 不保存/上传你的输入</p></header>
+<nav class="tabs" role="tablist" aria-label="选择实验">
+<button class="tab" type="button" role="tab" aria-selected="true" aria-controls="p0" id="t0" data-tab="p0">00 · 程序运行</button>
+<button class="tab" type="button" role="tab" aria-selected="false" aria-controls="p1" id="t1" data-tab="p1">01 · 二进制解释</button>
+<button class="tab" type="button" role="tab" aria-selected="false" aria-controls="p2" id="t2" data-tab="p2">02 · 寄存器加法</button>
+</nav>
+
+<section class="panel active" id="p0" role="tabpanel" aria-labelledby="t0">
+<div class="card"><h2>00 · 从 C 文件到屏幕上的一句话</h2>
+<img class="figure" src="从源代码到运行.svg" alt="C 文件经过 GCC 生成可执行文件，再运行打印文字">
+<p class="note"><strong>先预测：</strong>生成可执行文件后，终端就会自动打印 Hello 吗？</p>
+<div class="bar"><button class="choice" data-q0="no">不会，还要运行它</button><button class="choice" data-q0="yes">会，编译后直接打印</button></div>
+<div id="q0answer" class="response" role="status">先选择一个答案。</div></div>
+<div class="card"><h3>点“下一步”拆开构建流水线</h3>
+<div class="stage-row" id="stage-row"></div>
+<div id="stage-explain" class="response" aria-live="polite"></div>
+<div class="bar"><button id="prev-build" class="btn secondary">上一步</button><button id="next-build" class="btn">下一步</button><button id="reset-build" class="btn secondary">回到开始</button></div>
+<p class="small">这里将 GCC 分成预处理、编译、汇编、链接和运行：每步都能停下来观察。<strong>运行</strong>是构建后的另一个动作。</p></div>
+<div class="card"><h3>拿到真正的 WSL 输出</h3><pre>mkdir -p ~/cs-system/tiny0 &amp;&amp; cd ~/cs-system/tiny0
+cat &gt; hello.c &lt;&lt;'EOF'
+#include &lt;stdio.h&gt;
+int main(void) {
+    puts("Hello, system!");
+    return 0;
+}
+EOF
+gcc hello.c -o hello &amp;&amp; ./hello</pre>
+<p><strong>观察目标：</strong>最后出现 <code>Hello, system!</code>。改一句文字以后再编译，比较新旧执行文件的输出。</p>
+<p><a href="../微实验/00-源代码第一次运行.md">打开本实验的入门指导（Markdown）</a></p></div>
+</section>
+
+<section class="panel" id="p1" role="tabpanel" aria-labelledby="t1">
+<div class="card"><h2>01 · 一个字节里的 8 个开关</h2>
+<p>点击任何一个方格，就会在 0 和 1 之间切换。<strong>左边第一格</strong>是最高位；位没有“自带”正负数含义，含义来自你选的解释规则。</p>
+<img class="figure" src="位模式的两种解释.svg" alt="11111111：无符号为255，八位补码为负1">
+<div class="bitrow" id="bits" aria-label="8 个可操作的二进制位"></div>
+<div class="bar"><button class="choice" data-preset="127">预设 0x7F</button><button class="choice" data-preset="128">预设 0x80</button><button class="choice" data-preset="255">预设 0xFF</button><button class="choice" data-preset="0">预设 0x00</button></div>
+<p id="bitlabel" class="small"></p>
+<div class="values"><div class="number"><small>按 8 位无符号读</small><b id="unsigned">255</b><small>位权 128, 64, …, 1</small></div><div class="number signed"><small>按 8 位补码读</small><b id="signed">-1</b><small>最高位权 -128</small></div></div>
+<p id="explain-bits" class="note" aria-live="polite"></p>
+</div>
+<div class="card"><h3>先猜，再自己改</h3><p>把位模式改为 <code>10000000</code>，补码值会是几？</p>
+<div class="bar"><button class="choice" data-q1="-128">−128</button><button class="choice" data-q1="128">128</button><button class="choice" data-q1="-0">0</button></div>
+<div id="q1answer" class="response" role="status">先猜一个，再点 0x80 验证。</div>
+<p class="small">现实 C 程序里类型与转换有更详细的约束，本图只演示数学意义上的 8 位补码。继续到 <a href="../微实验/01-一串位两种数值.md">真实 C 微实验</a>。</p></div>
+</section>
+
+<section class="panel" id="p2" role="tabpanel" aria-labelledby="t2">
+<div class="card"><h2>02 · 观察一次 add(a, b) 的寄存器状态</h2>
+<img class="figure" src="函数调用的旅程.svg" alt="main 函数传入两个参数调用 add，并接收结果">
+<p>在 Linux x86-64 常见的 System V ABI 下，前两个整数参数常经 <code>rdi</code> / <code>rsi</code> 传入，整数返回值通常放 <code>rax</code>。这里仅用 3 条<strong>简化的示意指令</strong>展示计算过程。</p>
+<div class="bar"><label for="av">参数 a</label><input id="av" type="number" value="2" min="-99" max="99" step="1"><label for="bv">参数 b</label><input id="bv" type="number" value="3" min="-99" max="99" step="1"><button id="setup-cpu" class="btn secondary">重新载入参数</button></div>
+<div class="regs" style="margin:15px 0"><div class="reg"><span>rdi · 第一个参数</span><b id="rdi">2</b></div><div class="reg"><span>rsi · 第二个参数</span><b id="rsi">3</b></div><div class="reg"><span>rax · 返回值</span><b id="rax">—</b></div></div>
+<div id="i0" class="instr">① mov rax, rdi　（把 a 放到 rax）</div>
+<div id="i1" class="instr">② add rax, rsi　（把 b 加到 rax）</div>
+<div id="i2" class="instr">③ ret　　　　 （返回调用者）</div>
+<div class="response" id="cpu-explain" aria-live="polite"></div>
+<div class="bar"><button id="next-cpu" class="btn">执行下一条</button><button id="reset-cpu" class="btn secondary">重来</button></div>
+</div>
+<div class="card"><h3>在真实 WSL 中验证</h3><pre>cat &gt; add.c &lt;&lt;'EOF'
+#include &lt;stdio.h&gt;
+long add(long a, long b) { return a + b; }
+int main(void) {
+    printf("%ld\n", add(2, 3));
+    return 0;
+}
+EOF
+gcc -O0 -g add.c -o add &amp;&amp; ./add</pre>
+<p>预期得到 <code>5</code>。这里的模拟指令<strong>不保证</strong>与你本机 GCC 生成的实际汇编一字不差；进阶再运行 GDB/objdump 观察真实机器代码。</p><p><a href="../微实验/02-函数调用与寄存器.md">打开函数调用入门指导（Markdown）</a></p>
+</div>
+</section>
+<footer>路径：操作系统基础 / visuals / 先玩再学-系统实验室.html。建议配合 <a href="../00-先玩再学-直观实验入口.md">先玩再学课程入口</a>。你不用一次完成全部项目。</footer>
+</main>
+<script>
+(function(){
+'use strict';
+var tabs=document.querySelectorAll('[data-tab]');
+tabs.forEach(function(btn){btn.addEventListener('click',function(){
+tabs.forEach(function(b){b.setAttribute('aria-selected',b===btn?'true':'false')});
+document.querySelectorAll('.panel').forEach(function(p){p.classList.toggle('active',p.id===btn.dataset.tab)});
+});});
+var stages=[
+['源文件 hello.c','人写好的 C 文本。此时还没有生成机器可以启动的程序。'],
+['预处理 .i','处理 #include 和宏，主要还是文本。示例命令：gcc -E hello.c -o hello.i'],
+['编译 .s','把预处理后的 C 翻成目标机器的汇编。示例命令：gcc -S hello.c -o hello.s'],
+['汇编 .o','把汇编转成目标文件，机器码已出现，但还不是完整可执行程序。示例命令：gcc -c hello.c -o hello.o'],
+['链接 hello','把目标文件与所需启动代码/库等组织成可执行文件。示例命令：gcc hello.c -o hello'],
+['运行 ./hello','操作系统加载并执行程序；程序调用 puts，终端才看见 Hello, system!']
+];
+var build=0;
+function renderBuild(){
+var root=document.getElementById('stage-row');root.textContent='';
+stages.forEach(function(s,i){var d=document.createElement('div');d.className='stage'+(i===build?' current':'');var a=document.createElement('strong');a.textContent=(i+1)+' · '+s[0];var b=document.createElement('span');b.textContent=i<build?'已经过':i===build?'正在看':'尚未展开';d.appendChild(a);d.appendChild(b);root.appendChild(d);});
+document.getElementById('stage-explain').textContent=stages[build][1];
+document.getElementById('prev-build').disabled=build===0;document.getElementById('next-build').disabled=build===stages.length-1;
+}
+document.getElementById('next-build').addEventListener('click',function(){build=Math.min(build+1,stages.length-1);renderBuild()});
+document.getElementById('prev-build').addEventListener('click',function(){build=Math.max(build-1,0);renderBuild()});
+document.getElementById('reset-build').addEventListener('click',function(){build=0;renderBuild()});
+document.querySelectorAll('[data-q0]').forEach(function(b){b.addEventListener('click',function(){var good=b.dataset.q0==='no',el=document.getElementById('q0answer');el.className='response '+(good?'ok':'');el.textContent=good?'正确。编译只是生成文件；运行 ./hello 才触发程序的 puts。':'这里需要再区分一步：gcc 生成可执行文件，除非显式运行，否则并不会执行其中的 puts。';})});
+renderBuild();
+var current=255;
+function renderBits(){
+var root=document.getElementById('bits');root.textContent='';
+for(var i=7;i>=0;i--){(function(pos){
+var val=(current>>pos)&1;var b=document.createElement('button');b.type='button';b.className='bit'+(pos===7?' sign':'');b.textContent=String(val);b.setAttribute('aria-label','第 '+(8-pos)+' 位，权重 '+(pos===7?'正数128或补码负128':(1<<pos))+'，当前 '+val+'；点击切换');b.setAttribute('aria-pressed',val?'true':'false');b.addEventListener('click',function(){current ^= (1<<pos);renderBits()});root.appendChild(b);
+})(i);}
+var s=current>=128?current-256:current;
+document.getElementById('bitlabel').textContent='位模式：'+current.toString(2).padStart(8,'0')+'　十六进制：0x'+current.toString(16).toUpperCase().padStart(2,'0');
+document.getElementById('unsigned').textContent=String(current);document.getElementById('signed').textContent=String(s);
+document.getElementById('explain-bits').textContent=current>=128?'最高位是 1：无符号读 '+current+'；8 位补码读 '+current+' - 256 = '+s+'。':'最高位是 0：两种解释都是 '+current+'。';
+}
+document.querySelectorAll('[data-preset]').forEach(function(b){b.addEventListener('click',function(){current=Number(b.dataset.preset);renderBits()})});
+document.querySelectorAll('[data-q1]').forEach(function(b){b.addEventListener('click',function(){
+var correct=b.dataset.q1==='-128';var e=document.getElementById('q1answer');e.className='response '+(correct?'ok':'');e.textContent=correct?'答对了：0x80 无符号是 128，补码是 -128。':'再看一次：8 位补码把最高位的权重算作 -128，其他位都为 0。';
+})});
+renderBits();
+var a=2,b=3,step=0;
+function load(){
+function intVal(id,fallback){var n=Number(document.getElementById(id).value);return Number.isFinite(n)?Math.max(-99,Math.min(99,Math.trunc(n))):fallback;}
+a=intVal('av',2);b=intVal('bv',3);document.getElementById('av').value=a;document.getElementById('bv').value=b;step=0;renderCpu();
+}
+function renderCpu(){
+document.getElementById('rdi').textContent=a;document.getElementById('rsi').textContent=b;document.getElementById('rax').textContent=step===0?'—':step===1?String(a):String(a+b);
+var desc=['参数已经准备好。先预测：第一条指令后 rax 会是多少？','已经执行 mov rax, rdi，所以 rax='+a+'。','已经执行 add rax, rsi，所以 rax='+a+'+'+b+'='+(a+b)+'。','ret 已返回调用者，结果 '+(a+b)+' 可被调用者读取。'];
+document.getElementById('cpu-explain').textContent=desc[step];
+for(var i=0;i<3;i++){document.getElementById('i'+i).classList.toggle('on',step===i);}
+document.getElementById('next-cpu').disabled=step===3;
+}
+document.getElementById('next-cpu').addEventListener('click',function(){step=Math.min(3,step+1);renderCpu()});
+document.getElementById('reset-cpu').addEventListener('click',load);
+document.getElementById('setup-cpu').addEventListener('click',load);
+load();
+})();
+</script>
+</body></html>
