@@ -1,0 +1,42 @@
+
+/* Code & Terminal Workbench — code is the lesson, model is the explanation. */
+.code-workbench{margin:22px 0 29px;border:1px solid #b5cbc8;background:#fff;border-radius:9px;overflow:hidden;box-shadow:inset 0 5px 0 #e78a54}
+.cw-header{padding:22px 24px 18px;border-bottom:1px solid #cbdad7;background:#f8faf9}
+.cw-overline{font-size:12px;font-weight:800;color:#186b65}
+.cw-header h2{font-size:clamp(23px,2.6vw,31px);margin:7px 0 5px;letter-spacing:-.04em;color:#233e45}
+.cw-header p{font-size:13px;color:#4b6b72;line-height:1.7;margin:5px 0}
+.cw-actionpath{display:flex;flex-wrap:wrap;gap:8px;margin:13px 0 0}
+.cw-actionpath span{border-radius:4px;background:#e5efeb;padding:6px 10px;color:#315e57;font-size:12px}
+.cw-content{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:0}
+.cw-codecol{min-width:0;border-right:1px solid #cbdad7;padding:20px}
+.cw-terminalcol{min-width:0;padding:20px;background:#f0f5f2}
+.cw-sectionhead{display:flex;justify-content:space-between;gap:8px;align-items:center;margin:0 0 13px}
+.cw-sectionhead b{font-size:15px;color:#254751}.cw-sectionhead small{font-size:11px;color:#537d78}
+.cw-task{background:#f6f9f5;border-left:3px solid #e78a54;padding:11px 13px;color:#355c60;font-size:13px;line-height:1.7;margin-bottom:15px}
+.cw-file{margin:0 0 15px}.cw-file label{display:block;font-size:12px;color:#425e66;margin-bottom:8px;font-weight:800}
+.cw-source{width:100%;min-height:170px;resize:vertical;border:1px solid #42616e;background:#142937;color:#d3f3dc;padding:15px;border-radius:5px;outline-offset:2px;tab-size:4;font:13px/1.65 Consolas,"SFMono-Regular",Monaco,monospace;white-space:pre;overflow:auto}
+.cw-source:focus-visible{outline:3px solid #dc9b68}
+.cw-runner{width:100%;border:1px solid #aecac5;border-radius:5px;padding:10px;background:#fff;font:13px/1.4 Consolas,monospace;min-height:43px}
+.cw-label{display:block;margin:12px 0 8px;font-size:13px;font-weight:750;color:#3c6068}
+.cw-label strong{font-size:12px}
+.cw-prediction,.cw-actual{width:100%;border:1px solid #acc7c2;border-radius:5px;background:white;color:#193641;padding:11px;line-height:1.6;resize:vertical;font-size:13px;min-height:76px}
+.cw-actual{min-height:100px;font-family:Consolas,monospace}
+.cw-shell{font:12px/1.65 Consolas,Monaco,monospace;padding:14px 16px;background:#172d3c;color:#d6f7e5;border-radius:5px;white-space:pre-wrap;overflow-wrap:anywhere;margin:9px 0;max-height:300px;overflow:auto;border-left:4px solid #e78a54;user-select:text}
+.cw-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin:11px 0}
+.cw-toolbar[hidden]{display:none}
+.cw-button{border:1px solid #195f58;background:#1b625a;color:#fff;padding:10px 13px;font-size:13px;font-weight:800;min-height:43px;border-radius:5px;cursor:pointer}
+.cw-button:hover{background:#2f8175}.cw-button.alt{background:white;color:#205c56;border-color:#accac0}.cw-button.alt:hover{background:#e6f2ed}
+.cw-note{font-size:12px;color:#536b70;line-height:1.7;margin:8px 0}
+.cw-status{font-size:12px;line-height:1.7;color:#24584f;padding:10px 11px;background:#dcefe7;border-radius:5px;margin:8px 0 12px;min-height:40px;overflow-wrap:anywhere}
+.cw-result{border-top:1px solid #bacfc8;padding-top:13px;margin-top:16px}
+.cw-hint{border:1px solid #c7d7d3;border-radius:4px;padding:10px 12px;font-size:13px;color:#3a6164;margin-top:11px}
+.cw-hint p{margin:7px 0 0;line-height:1.7}
+.cw-details{font-size:12px;color:#385a61;margin-top:13px}
+.cw-actual-status{font-size:13px;line-height:1.65;color:#2c625f}
+.cw-secondary{margin:15px 0;padding-top:14px;border-top:1px dashed #b6c9c4}
+.cw-secondary[hidden],.cw-reference[hidden]{display:none}
+.cw-workspace-subtitle{font-size:14px;font-weight:800;margin:0 0 8px}
+.cw-diff{font-size:12px;line-height:1.5;color:#486d6a;margin:8px 0}
+@media(max-width:1120px){.cw-content{grid-template-columns:1fr}.cw-codecol{border-right:0;border-bottom:1px solid #cbdad7}.cw-codecol,.cw-terminalcol{padding:16px}.cw-header{padding:18px 16px}}
+@media(max-width:600px){.cw-header h2{font-size:23px}.cw-source{font-size:12px}.cw-shell{font-size:11px}.cw-codecol,.cw-terminalcol{padding:13px}.cw-actionpath span{font-size:11px}.cw-runner{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.cw-button{transition:none}}
