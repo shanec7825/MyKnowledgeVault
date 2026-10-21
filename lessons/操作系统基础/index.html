@@ -38,9 +38,150 @@
 @media(max-width:780px){.shell{display:block}.sidebar{position:relative;height:auto;padding:13px 15px 12px}.brand{padding:0 0 10px}.sidebar .navlabel,.sidebar .divider,.sidebar .sidefoot,.sidebar .navitem.full{display:none}.sidequick{display:flex;gap:5px;overflow-x:auto}.navitem{width:auto;white-space:nowrap;min-height:35px;padding:8px 12px}.navitem .arr{display:none}.topbar{padding:14px 18px}.content{padding:26px 17px 65px}.heading{display:block}.heading h1{font-size:34px}.lessoncount{display:inline-block;margin-top:15px}.aside{grid-template-columns:1fr 1fr}.real{display:block}.realcode{margin-top:14px}.stagebody{padding:16px}}
 @media(max-width:540px){.heading h1{font-size:31px}.aside{grid-template-columns:1fr}.stagehead{padding:13px}.editor{font-size:11px;padding:14px 10px}.editor input{width:55%}.pipeline{grid-template-columns:1fr 22px 1fr 22px 1fr}.pipe{padding:11px 2px}.pipe strong{font-size:11px}.pipe small{font-size:9px}.stagebody{padding:13px}.bit{font-size:23px;min-height:52px}.bitschips,.bitweights{gap:3px}.register b{font-size:23px}.topactions .offline{display:none}.catalogrow{grid-template-columns:29px 1fr auto;gap:9px}.catalogrow .go{font-size:11px}.tab{padding:9px 10px}}
 @media(prefers-reduced-motion:reduce){.pipe{transition:none}}
+
+/* System Lab / Interface Study 2 — instrument-panel language inspired by source code, buses and signal traces. */
+:root{
+  --navy:#162434;--navy2:#213345;--panel:#ffffff;--page:#eff2f1;
+  --line:#d1dbdc;--ink:#142436;--muted:#516875;
+  --aqua:#137e78;--aqua-deep:#12665f;--blue:#2c61b2;
+  --signal:#ec7b43;--signal-fade:#ffdfbb;--radius:12px;
+  font-family:"Noto Sans CJK SC","Source Han Sans SC","PingFang SC","Microsoft YaHei",ui-sans-serif,sans-serif
+}
+html{scroll-behavior:smooth}
+body{background:var(--page);background-image:linear-gradient(90deg,rgba(27,60,70,.018) 1px,transparent 1px);background-size:56px 56px}
+button{touch-action:manipulation;transition:background-color .15s,border-color .15s,box-shadow .15s}
+.skip{position:absolute;top:-90px;left:18px;background:#fff;color:#142436;padding:12px 18px;border:3px solid #ec7b43;z-index:100}
+.skip:focus{top:15px}
+.sidebar{background-color:#152839;background-image:radial-gradient(circle at 0% 0%,rgba(65,122,123,.22),transparent 65%),repeating-linear-gradient(90deg,transparent 0 39px,rgba(99,151,146,.042) 40px,transparent 41px)}
+.brand .mark{border-radius:5px;background:#ec7b43;color:#2c231f;box-shadow:4px 4px 0 #395064}
+.brand small{letter-spacing:.07em}.brand strong{font-weight:800}
+.navlabel{text-transform:none;letter-spacing:.06em}.navitem{border-radius:7px}
+.navitem[aria-current=true]{background:#2e494c;color:#fff;box-shadow:inset 3px 0 0 #ec7b43}
+.navitem[aria-current=true] .n{color:#ffc89b}
+.main{min-width:0}
+.topbar{background:#fff;border-bottom:2px solid #d4ddde}
+.crumb{font-size:13px}
+.content{max-width:1330px}
+.overline{text-transform:none;letter-spacing:.05em;color:#2d7775;font-size:12px}
+.heading{margin-bottom:20px}
+.heading h1{font-size:clamp(34px,4.2vw,58px);line-height:1.17;letter-spacing:-.055em;font-weight:800}
+.heading p{font-size:16px;max-width:610px}
+.heading h1 code{font-family:"SFMono-Regular",Consolas,monospace;font-size:.84em;font-weight:700;background:#fff;border:1px solid #d4dfdb;padding:1px 9px;border-radius:5px;white-space:nowrap}
+.lessoncount{background:#fff;color:#53716f;border-color:#c8dad7;border-radius:6px}
+.signal-deck{color:#effcf6;background:#132737;position:relative;overflow:hidden;margin:0 0 26px;padding:22px 26px 20px;border:1px solid #24394b;border-radius:12px;box-shadow:0 8px 0 #d7e1dd}
+.signal-deck:before{content:"";position:absolute;inset:0;opacity:.11;pointer-events:none;background-image:linear-gradient(#78b9b5 1px,transparent 1px),linear-gradient(90deg,#78b9b5 1px,transparent 1px);background-size:32px 32px;mask-image:linear-gradient(90deg,black,transparent 95%)}
+.signal-head{position:relative;display:flex;gap:16px;align-items:baseline;justify-content:space-between;padding:0 0 16px;border-bottom:1px solid #375362}
+.signal-head strong{font-size:13px;letter-spacing:.02em}
+.signal-status{font-size:13px;color:#9edcca;font-weight:600;text-align:right;line-height:1.5}
+.signal-chain{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 38px minmax(0,1fr) 38px minmax(0,1fr) 38px minmax(0,1fr);align-items:center;gap:6px;padding:22px 0 4px}
+.signal-node{min-width:0;min-height:93px;padding:14px 9px;background:#213747;border:1px solid #486172;border-radius:6px;position:relative}
+.signal-node:after{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:#527183}
+.signal-node.live{background:#253f46;border-color:#82b6aa}
+.signal-node.live:after{background:#57dec0}
+.signal-node.output.live:after{background:#ffb16d}
+.signal-node .stepno{display:block;color:#8fabb6;font:11px/1.1 Consolas,monospace;margin-bottom:9px}
+.signal-node strong{font:600 clamp(12px,1.4vw,17px)/1.2 Consolas,monospace;display:block;word-break:break-word;letter-spacing:-.035em}
+.signal-node small{display:block;color:#a3b7bc;font-size:11px;margin-top:8px;line-height:1.45}
+.signal-bus{height:2px;background:#557182;position:relative}
+.signal-bus:before,.signal-bus:after{content:"";position:absolute;top:50%;transform:translateY(-50%);border-radius:50%}
+.signal-bus:before{width:7px;height:7px;background:#516c7a;left:0}
+.signal-bus:after{right:-1px;width:0;height:0;border-left:7px solid #718c9a;border-top:4px solid transparent;border-bottom:4px solid transparent;border-radius:0}
+.signal-deck[data-state="built"] .compile,.signal-deck[data-state="executed"] .compile,.signal-deck[data-state="stale"] .compile,.signal-deck[data-state="stale-run"] .compile,.signal-deck[data-state="executed"] .execute,.signal-deck[data-state="stale-run"] .execute{background:#386658}
+.signal-deck[data-state="built"] .node-compiled,.signal-deck[data-state="executed"] .node-compiled,.signal-deck[data-state="stale"] .node-compiled,.signal-deck[data-state="stale-run"] .node-compiled,.signal-deck[data-state="executed"] .node-execute,.signal-deck[data-state="stale-run"] .node-execute,.signal-deck[data-state="executed"] .node-output,.signal-deck[data-state="stale-run"] .node-output{background:#284b48;border-color:#6aaba0}
+.signal-deck[data-state="built"] .node-compiled:after,.signal-deck[data-state="executed"] .node-compiled:after,.signal-deck[data-state="stale"] .node-compiled:after,.signal-deck[data-state="stale-run"] .node-compiled:after,.signal-deck[data-state="executed"] .node-execute:after,.signal-deck[data-state="stale-run"] .node-execute:after{background:#65d7b5}
+.signal-deck[data-state="executed"] .node-output:after,.signal-deck[data-state="stale-run"] .node-output:after{background:#ffa46e}
+.signal-deck[data-state="stale"] .node-source:after,.signal-deck[data-state="stale-run"] .node-source:after{background:#ffad64}
+.signal-deck[data-state="stale"] .node-compiled small,.signal-deck[data-state="stale-run"] .node-compiled small{color:#ffba93}
+.signal-legend{position:relative;color:#9bb2be;font-size:12px;line-height:1.6;margin-top:10px}
+.signal-legend strong{color:#ffca9c}
+.track{margin:24px 0 22px;gap:7px}.track span{height:4px;background:#d5dddd}.track span.on{background:#ec7b43}
+.tabbar{gap:7px}.tab{border-radius:6px;font-size:13px;min-height:44px}.tab[aria-selected=true]{background:#224a4a;border-color:#224a4a}
+.lessonheader .indexflag{border-radius:6px;background:#e2eceb;color:#145e5d}
+.lessonheader h2{font-size:clamp(21px,2.1vw,28px)}
+.lessonheader p{font-size:14px;line-height:1.6}
+.stage{border-radius:11px;box-shadow:none;border:1px solid #cad8dc;background:#fff}
+.stagehead{background:#edf3f2;border-bottom:1px solid #cbdadc}
+.stagehead strong{font-size:14px}
+.tag{border-radius:4px;background:#dce9e6;color:#326d61;font-size:11px;letter-spacing:0}
+.stagebody{padding:24px}
+.editor{background:#152836;color:#d9e6ed;border-radius:7px;border-left:5px solid #ec7b43;box-shadow:none;font-size:14px}
+.editor input{border-radius:3px;background:#375250;border:1px solid #8ce8cb;min-height:34px;color:#f5fdf9}
+.pipe{border-radius:6px}
+.pipe.done{background:#d8f0e6;border-color:#3d9d83}
+.controls{gap:8px}
+.button{min-height:44px;border-radius:6px}
+.button.blue{background:#205da6;border-color:#205da6}
+.button.light{color:#17584d;background:#e9f3ee;border-color:#b7d2c7}
+.button.pale{background:white;color:#52606a}
+.terminal{background:#152633;border:1px solid #365b5b;border-radius:7px;font-size:13px;min-height:126px}
+.termbar{letter-spacing:.02em}
+.aside{align-content:start}
+.prompt{background:#193949;border-radius:9px;border-top:4px solid #ec7b43;padding:23px}
+.prompt:before{display:none}
+.prompt .qhead{color:#b6dcdb;font-size:12px;letter-spacing:0}
+.prompt h3{font-size:21px}
+.choice{min-height:47px;border-radius:6px;background:#275068;border-color:#69838b;font-size:14px}
+.choice.chosen{background:#225f50;border-color:#8bedd4}
+.feedback{font-size:14px}
+.explainer{border-radius:9px;background:#e9f0ee;border:1px solid #ccdcda}
+.explainer strong{font-size:14px}
+.explainer p{font-size:14px;line-height:1.75;color:#405b5f}
+.smallnote{font-size:13px;color:#536b78}
+.real{border-radius:9px;box-shadow:inset 4px 0 0 #e99a63;background:#fff}
+.realcopy h3{font-size:17px}.realcopy p{font-size:13px}
+.realcode{background:#f0f5f3;color:#264940;border-radius:6px;font-size:12px}
+.bitschips{gap:8px}
+.bit{border-radius:5px;min-height:64px;border-color:#a8c0d8}
+.bit[aria-pressed=true]{background:#244c78;border-color:#244c78}
+.val{border-radius:8px}
+.register{border-radius:7px}
+.instructions{border-radius:7px}
+.simulation-note{border-radius:5px}
+.catalog{margin-top:55px;border-top:2px solid #aebfbf;padding-top:30px}
+.catalog h2{font-size:28px}
+.catalogrow{padding:18px 9px;transition:background .1s}
+.catalogrow:hover{background:#e4edeb}
+.ending{border-top-color:#cbd8d7}
+@media(min-width:781px){.tabbar{display:none}}
+@media(max-width:780px){
+  .sidebar{padding:15px 18px 10px}.sidebar .sidequick{display:none}
+  .brand{padding:0}.brand .mark{width:32px;height:32px;font-size:17px}
+  .topbar{padding:11px 17px}
+  .heading h1{font-size:clamp(29px,7vw,42px)}
+  .signal-deck{padding:16px 14px 14px;margin-bottom:20px}
+  .signal-head{display:block}.signal-status{display:block;text-align:left;margin-top:7px}
+  .signal-chain{grid-template-columns:minmax(0,1fr) 17px minmax(0,1fr) 17px minmax(0,1fr) 17px minmax(0,1fr);gap:3px;padding:16px 0 4px}
+  .signal-node{padding:9px 5px;min-height:88px}
+  .signal-node strong{font-size:11px}.signal-node small{font-size:10px}
+  .signal-bus:after{border-left-width:5px;border-top-width:3px;border-bottom-width:3px}
+}
+@media(max-width:540px){
+  .content{padding:21px 14px 60px}
+  .heading h1{font-size:30px}
+  .heading p{font-size:15px}
+  .heading h1 code{padding:1px 4px}
+  .stagebody{padding:15px}
+  .editor{font-size:12px}
+  .editor input{font-size:16px}
+  .numinput{font-size:16px;min-height:44px}
+  .signal-node .stepno{font-size:10px}
+  .signal-node strong{font-size:10px}
+  .signal-node small{font-size:9px}
+  .signal-legend{font-size:12px}
+  .bit{min-height:54px}
+  .catalogrow small{font-size:12px}
+  .topbar .crumb{font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}button,.catalogrow{transition:none}}
+/* With scripting unavailable, show all three labs and their normal resource links. */
+.lesson{display:block}
+html.js .lesson{display:none}
+html.js .lesson.active{display:block}
+
 </style>
 </head>
 <body>
+<a class="skip" href="#learning-main">跳转到实验内容</a>
 <div class="shell">
 <aside class="sidebar" aria-label="课程导航">
   <a class="brand" href="#top"><span class="mark">S</span><span><strong>System Lab</strong><small>LEARN BY RUNNING</small></span></a>
@@ -58,10 +199,24 @@
   <div class="sidefoot">先看得见，再问为什么。<br>这里的结果是 <strong>教学模拟</strong>，真实证据来自 Ubuntu。<br><a href="README.md">返回 Obsidian 导航</a></div>
 </aside>
 <div class="main" id="top">
-<header class="topbar"><div class="crumb">学习知识库 / <strong>计算机系统基础</strong> / 交互工作台</div><div class="topactions"><span class="offline"><i class="dot"></i>无需联网的教学模拟</span><a class="textlink" href="README.md">课程文档 ↗</a></div></header>
-<main class="content">
-  <div class="overline">01 / THINK · TOUCH · UNDERSTAND</div>
-  <div class="heading"><div><h1>看见程序的<br>每一步。</h1><p>不用先读一章教材。先猜一次、动手改变一个值、观察它如何影响系统，再决定要不要打开 Ubuntu。</p></div><span class="lessoncount" id="progress" aria-live="polite">互动探索 0 / 3</span></div>
+<header class="topbar"><div class="crumb">学习知识库 / <strong>计算机系统基础</strong> / 交互工作台</div><div class="topactions"><span class="offline"><i class="dot" aria-hidden="true"></i>无需联网的教学模拟</span><a class="textlink" href="README.md">课程文档 ↗</a></div></header>
+<main class="content" id="learning-main" tabindex="-1">
+  <div class="overline">System Lab · 从真实问题开始</div>
+  <div class="heading"><div><h1>从 <code>hello.c</code><br>到屏幕上的一句话。</h1><p>把系统想象成一条看得见的信号链：修改源码、编译、运行，观察每个动作让什么发生变化。先操作，再解释。</p></div><span class="lessoncount" id="progress" aria-live="polite">互动探索 0 / 3</span></div>
+<section class="signal-deck" id="signal-deck" data-state="source-only" aria-label="源代码到运行输出的实时状态图">
+  <div class="signal-head"><strong>程序执行观察窗</strong><output id="signal-status" aria-live="polite">你写好了源文件，但还没有编译</output></div>
+  <div class="signal-chain" aria-hidden="true">
+    <div class="signal-node node-source live"><span class="stepno">01 / 输入</span><strong>hello.c</strong><small>源代码</small></div>
+    <span class="signal-bus compile"></span>
+    <div class="signal-node node-compiled"><span class="stepno">02 / 构建</span><strong>hello</strong><small id="deck-binary">等待编译</small></div>
+    <span class="signal-bus execute"></span>
+    <div class="signal-node node-execute"><span class="stepno">03 / 执行</span><strong>./hello</strong><small id="deck-run">尚未运行</small></div>
+    <span class="signal-bus output"></span>
+    <div class="signal-node node-output"><span class="stepno">04 / 结果</span><strong>stdout</strong><small id="deck-output">等待输出</small></div>
+  </div>
+  <p class="signal-legend">信号路径会随着下面的实验变化：<strong>修改源码不会自动修改已生成的可执行文件。</strong></p>
+</section>
+<noscript><p style="padding:14px;background:white;border-left:4px solid #ec7b43">当前浏览器没有开启 JavaScript：所有课程和阅读链接仍可访问，但点击模拟需要启用 JavaScript。</p></noscript>
   <div class="track" aria-hidden="true"><span id="track0"></span><span id="track1"></span><span id="track2"></span></div>
   <div class="tabbar" role="tablist" aria-label="切换实验">
     <button class="tab" role="tab" id="tab0" aria-controls="lesson0" aria-selected="true" data-go="0">00 · 编译与运行</button>
@@ -72,7 +227,7 @@
     <div class="lessonheader"><span class="indexflag">00</span><div><h2>代码写好了，就会自动运行吗？</h2><p>目标：亲眼区分源代码、可执行文件与正在运行的程序。</p></div></div>
     <div class="workspace">
       <div class="stage">
-        <div class="stagehead"><strong>可操作实验台</strong><span class="tag">LIVE MODEL · 不是真实 GCC</span></div>
+        <div class="stagehead"><strong>可操作实验台</strong><span class="tag">教学模拟 · 不运行 GCC</span></div>
         <div class="stagebody">
           <div class="editorhead"><span>① 修改源文件</span><span class="filetag">hello.c · 可编辑字符串</span></div>
           <div class="editor" aria-label="C 程序源码">#include <span class="kw">&lt;stdio.h&gt;</span><br>int main(void) {<br>&nbsp;&nbsp;puts(<span class="str">"</span><input id="source-text" value="Hello, system!" maxlength="80" aria-label="修改 puts 输出的字符串"><span class="str">"</span>);<br>&nbsp;&nbsp;return 0;<br>}</div>
@@ -87,7 +242,7 @@
         </div>
       </div>
       <div class="aside">
-        <div class="prompt"><div class="qhead">PREDICT FIRST / 先预测</div><h3>只点击「编译」，终端就会打印 Hello 吗？</h3><div class="choices" id="q0-choices"><button class="choice" data-answer0="yes">A · 会，编译就是执行</button><button class="choice" data-answer0="no">B · 不会，还需要运行</button></div><p class="feedback" id="feedback0" role="status">选一个答案，再亲手操作验证。</p></div>
+        <div class="prompt"><div class="qhead">先猜，再试</div><h3>只点击「编译」，终端就会打印 Hello 吗？</h3><div class="choices" id="q0-choices"><button class="choice" data-answer0="yes">A · 会，编译就是执行</button><button class="choice" data-answer0="no">B · 不会，还需要运行</button></div><p class="feedback" id="feedback0" role="status">选一个答案，再亲手操作验证。</p></div>
         <div class="explainer"><strong>你正在操纵什么？</strong><p>源码像一份配方；编译器生成可执行文件；操作系统启动它，CPU 才实际执行。<strong>修改源码并不会自动更新旧程序。</strong>试着改掉一句话，却不重新编译，直接点运行。</p></div>
       </div>
     </div>
@@ -97,7 +252,7 @@
   <section class="lesson" id="lesson1" role="tabpanel" aria-labelledby="tab1">
     <div class="lessonheader"><span class="indexflag">01</span><div><h2>八个开关，为什么能代表负数？</h2><p>目标：区别位模式本身与它的解释规则；先点位，再解释补码。</p></div></div>
     <div class="workspace">
-      <div class="stage"><div class="stagehead"><strong>交互式 8 位观察器</strong><span class="tag">8-BIT MODEL · 数学规则</span></div><div class="stagebody">
+      <div class="stage"><div class="stagehead"><strong>交互式 8 位观察器</strong><span class="tag">8 位数学解释器</span></div><div class="stagebody">
         <p class="smallnote">点击任意一位切换 0/1。左起第一位在<strong>按补码解释时</strong>具有 −128 的权重。</p>
         <div class="bitschips" id="bits" aria-label="八个可点击的二进制位"></div>
         <div class="bitweights"><span>128 / −128</span><span>64</span><span>32</span><span>16</span><span>8</span><span>4</span><span>2</span><span>1</span></div>
@@ -106,7 +261,7 @@
         <div class="simulation-note" id="bitnote">11111111：八位没有变，只是读取规则不同。</div>
       </div></div>
       <div class="aside">
-        <div class="prompt"><div class="qhead">PREDICT FIRST / 先预测</div><h3>10000000 按八位补码解释，结果是多少？</h3><div class="choices" id="q1-choices"><button class="choice" data-answer1="128">A · 128</button><button class="choice" data-answer1="-128">B · −128</button><button class="choice" data-answer1="0">C · 0</button></div><p class="feedback" id="feedback1" role="status">做出预测后，再按 0x80 来核对。</p></div>
+        <div class="prompt"><div class="qhead">先猜，再试</div><h3>10000000 按八位补码解释，结果是多少？</h3><div class="choices" id="q1-choices"><button class="choice" data-answer1="128">A · 128</button><button class="choice" data-answer1="-128">B · −128</button><button class="choice" data-answer1="0">C · 0</button></div><p class="feedback" id="feedback1" role="status">做出预测后，再按 0x80 来核对。</p></div>
         <div class="explainer"><strong>并非「二进制减去位数」</strong><p>对八位模式，先算无符号值 u。若最高位为 1，八位补码的值为 <strong>u − 2⁸</strong>。例如 255 − 256 = −1。只有规则变化，位本身没有变化。</p></div>
       </div>
     </div>
@@ -115,7 +270,7 @@
   <section class="lesson" id="lesson2" role="tabpanel" aria-labelledby="tab2">
     <div class="lessonheader"><span class="indexflag">02</span><div><h2>CPU 怎样一步一步算出 2 + 3？</h2><p>目标：看到函数参数进入寄存器，执行加法，并留下返回值。</p></div></div>
     <div class="workspace">
-      <div class="stage"><div class="stagehead"><strong>三条简化指令 · 单步实验</strong><span class="tag">X86-64 · 教学示意</span></div><div class="stagebody">
+      <div class="stage"><div class="stagehead"><strong>三条简化指令 · 单步实验</strong><span class="tag">x86-64 · 简化指令</span></div><div class="stagebody">
         <div class="formrow"><label for="arg-a">参数 a</label><input class="numinput" id="arg-a" type="number" min="-99" max="99" step="1" value="2"><label for="arg-b">参数 b</label><input class="numinput" id="arg-b" type="number" min="-99" max="99" step="1" value="3"><button class="button light" id="reload2">重新载入</button></div>
         <div class="registers"><div class="register"><small>rdi · 参数 a</small><b id="rdi">2</b></div><div class="register"><small>rsi · 参数 b</small><b id="rsi">3</b></div><div class="register"><small>rax · 返回值</small><b id="rax">—</b></div></div>
         <div class="instructions" id="instructions"><div class="instr" data-instr="0">① mov rax, rdi <span style="color:#779bad">; 复制 a</span></div><div class="instr" data-instr="1">② add rax, rsi <span style="color:#779bad">; 加上 b</span></div><div class="instr" data-instr="2">③ ret <span style="color:#779bad">; 返回调用者</span></div></div>
@@ -123,7 +278,7 @@
         <div class="simulation-note" id="cpu-note" role="status">PC → ① 。先猜：第 ① 条执行后，rax 会是多少？</div>
       </div></div>
       <div class="aside">
-        <div class="prompt"><div class="qhead">PREDICT FIRST / 先预测</div><h3>第一条 mov 指令会让 rax 变成什么？</h3><div class="choices" id="q2-choices"><button class="choice" data-answer2="a">A · 参数 a 的值</button><button class="choice" data-answer2="sum">B · a+b 的和</button><button class="choice" data-answer2="b">C · 参数 b 的值</button></div><p class="feedback" id="feedback2" role="status">预测后单步执行，观察寄存器。</p></div>
+        <div class="prompt"><div class="qhead">先猜，再试</div><h3>第一条 mov 指令会让 rax 变成什么？</h3><div class="choices" id="q2-choices"><button class="choice" data-answer2="a">A · 参数 a 的值</button><button class="choice" data-answer2="sum">B · a+b 的和</button><button class="choice" data-answer2="b">C · 参数 b 的值</button></div><p class="feedback" id="feedback2" role="status">预测后单步执行，观察寄存器。</p></div>
         <div class="explainer"><strong>寄存器是什么？</strong><p>它是 CPU 内部速度很快的少量存储位置。这里以 Linux x86-64 常见 System V ABI 为背景，用简化代码展示 rdi / rsi 传参、rax 返回结果。<strong>真实编译器产生的指令可能不同。</strong></p></div>
       </div>
     </div>
@@ -148,6 +303,7 @@
   <footer class="ending">System Lab · CS:APP 3e 对照学习 · 当前页面只是交互学习辅助，不执行本地系统命令。探索记录仅保存在本浏览器 localStorage，不同步到 GitHub / Google Drive，也不代表已经独立掌握。<br><a class="textlink" href="实验参考指南与可视化索引.md">阅读教材映射</a>　·　<a class="textlink" href="计算机系统基础课程大纲与前言.md">课程目标</a>　·　<a class="textlink" href="README.md">Obsidian 文字首页</a></footer>
 </main></div></div>
 <script>
+document.documentElement.classList.add('js');
 (function(){
 'use strict';
 function $(id){return document.getElementById(id)}
@@ -170,17 +326,32 @@ function go(n){
    if(el.classList.contains('navitem'))el.setAttribute('aria-current',String(active));
  });
  saved.lesson=n;remember();
+ all('.tab').forEach(function(t){t.tabIndex=Number(t.getAttribute('data-go'))===n?0:-1});
+ try{history.replaceState(null,'','#lab-'+n)}catch(e){}
 }
 all('[data-go]').forEach(function(el){el.addEventListener('click',function(ev){ev.preventDefault();go(Number(el.getAttribute('data-go')));if(el.classList.contains('catalogrow'))window.scrollTo({top:0,behavior:'smooth'})})});
-go([0,1,2].includes(saved.lesson)?saved.lesson:0);
+var hashMatch=location.hash.match(/^#lab-(0|1|2)$/);
+go(hashMatch?Number(hashMatch[1]):([0,1,2].includes(saved.lesson)?saved.lesson:0));
+window.addEventListener('hashchange',function(){var m=location.hash.match(/^#lab-(0|1|2)$/);if(m)go(Number(m[1]))});
+all('.tab').forEach(function(t){t.addEventListener('keydown',function(e){
+ var index=Number(t.getAttribute('data-go')),next=index;
+ if(e.key==='ArrowRight')next=(index+1)%3;
+ else if(e.key==='ArrowLeft')next=(index+2)%3;
+ else if(e.key==='Home')next=0;
+ else if(e.key==='End')next=2;
+ else return;
+ e.preventDefault();go(next);$('tab'+next).focus();
+})});
 function quiz(num,answer,correct,feedback){
+ function paint(code){
+  all('[data-answer'+num+']').forEach(function(btn){btn.classList.toggle('chosen',btn.getAttribute('data-answer'+num)===code)});
+  $(feedback).textContent=code===correct?answer.yes:answer.no;
+ }
+ if(saved['answer'+num])paint(saved['answer'+num]);
  all('[data-answer'+num+']').forEach(function(btn){btn.addEventListener('click',function(){
-   all('[data-answer'+num+']').forEach(function(x){x.classList.remove('chosen')});
-   btn.classList.add('chosen');
-   var yes=btn.getAttribute('data-answer'+num)===correct;
-   $(feedback).textContent=yes?answer.yes:answer.no;
-   mark('pred'+num);
- })})
+  var code=btn.getAttribute('data-answer'+num);
+  saved['answer'+num]=code;paint(code);mark('pred'+num);
+ })});
 }
 quiz(0,{yes:'✓ 正确：编译只生成 hello；运行 ./hello 才能得到程序输出。',no:'再观察一下：gcc 的工作是生成可执行文件，不是运行这个程序。试点右侧运行。'},'no','feedback0');
 quiz(1,{yes:'✓ 正确！最高位贡献 −128，其余位都是 0。',no:'试把 8 位设置为 10000000：补码最高位的权重是 −128，其他位都是 0。'},'-128','feedback1');
@@ -188,6 +359,24 @@ quiz(2,{yes:'✓ 正确。mov 只是复制 a，下一条 add 才会计算 a+b。
 var source=$('source-text'),binary=null,hasRun=false;
 function escapeC(s){return s.replace(/\\/g,'\\\\').replace(/"/g,'\\"').replace(/\r/g,'').replace(/\n/g,'\\n')}
 function bashText(){return "mkdir -p ~/cs-system/tiny0 && cd ~/cs-system/tiny0\ncat > hello.c <<'EOF'\n#include <stdio.h>\nint main(void) {\n    puts(\""+escapeC(source.value)+"\");\n    return 0;\n}\nEOF\ngcc hello.c -o hello && ./hello"}
+
+function drawSignal(){
+ var state=binary===null?'source-only':(binary===source.value?'built':'stale');
+ if(hasRun)state=binary===source.value?'executed':'stale-run';
+ $('signal-deck').setAttribute('data-state',state);
+ $('deck-binary').textContent=binary===null?'等待编译':(binary===source.value?'当前版本':'旧版本');
+ $('deck-run').textContent=hasRun?'运行完毕':'尚未运行';
+ $('deck-output').textContent=hasRun?'已产生输出':'等待输出';
+ var messages={
+  'source-only':'你写好了源文件，但还没有编译',
+  'built':'已经编译成可执行文件，还没有运行',
+  'stale':'修改了源文件，当前 hello 仍然是旧版本',
+  'executed':'程序已经运行，并向终端输出',
+  'stale-run':'运行的是旧程序：修改源码不等于重新编译'
+ };
+ $('signal-status').textContent=messages[state];
+}
+
 function render0(){
  $('bash0').textContent=bashText();
  $('binarypipe').classList.toggle('done',binary!==null);
@@ -195,6 +384,7 @@ function render0(){
  $('binary-label').textContent=binary===null?'尚未编译':binary===source.value?'已编译':'旧版本';
  $('run-label').textContent=hasRun?'已运行':'尚未运行';
  $('run').disabled=binary===null;
+ drawSignal();
 }
 source.addEventListener('input',function(){
  if(binary!==null){$('build-feedback').textContent=binary===source.value?'源代码与当前可执行文件一致。':'源码变了，旧 hello 还没有更新：可以直接运行旧版对比。'}
