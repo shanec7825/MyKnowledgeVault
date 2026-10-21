@@ -41,6 +41,7 @@
 @media(max-width:500px){.hero h1{font-size:30px}.cells{gap:2px}.cell{padding:9px 1px;font-size:13px}.kv b{font-size:24px}.iozones,.twosources{grid-template-columns:1fr}.signal{display:none}.stagebar>div{font-size:9px}.prompt{padding:17px}.controlrow input[type=text]{width:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
+<link rel="stylesheet" href="code-terminal-workbench.css">
 </head>
 <body>
 <a class="skip" href="#content">跳转到当前实验</a>
@@ -55,11 +56,55 @@
 <div class="page">
 <header class="top"><div class="crumb">系统基础 / 交互实验 / <strong id="breadcrumb">03</strong></div><div><a href="../index.html">课程总览</a>　<a href="../实验参考指南与可视化索引.md">教材索引</a></div></header>
 <main class="layout" id="content" tabindex="-1">
-<div class="hero"><div><div class="kicker">03—10 / 先预测 · 再操作 · 看证据</div><h1>从机器指令，<br>走到操作系统与网络。</h1><p>每个概念都有自己的观察仪器。选择一个现象，改变条件并观察系统状态；原课程和教材在需要深入时再打开。</p></div><span class="modulecount" id="progress">已观察 0 / 8</span></div>
+<div class="hero"><div><div class="kicker">03—10 / 先预测 · 再操作 · 看证据</div><h1>从机器指令，<br>走到操作系统与网络。</h1><p>先改动真实的 C 源代码并在 Ubuntu 终端运行；看过输出后，再使用下方的教学模拟理解 CPU、进程、内存与网络为何这样工作。</p></div><span class="modulecount" id="progress">已观察 0 / 8</span></div>
 <div class="mobile-nav"><label for="lab-select">选择实验</label><select id="lab-select"></select></div>
 <div class="stagebar" aria-label="课程分段"><div id="stage3">03—05 · 机器内部</div><div id="stage6">06—08 · 系统接口</div><div id="stage9">09—10 · 通信协作</div></div>
 <div class="lessonintro"><div><div class="kicker" id="chapter">03 · CPU</div><h2 id="lesson-title">CPU 怎样执行下一条指令？</h2><p id="lesson-description"></p></div><span class="chip" id="chapter-chip">CS:APP Ch.4</span></div>
-<div class="columns">
+<section class="code-workbench" id="code-workbench" data-scope="advanced" aria-labelledby="cw-title">
+<header class="cw-header">
+ <div class="cw-overline" id="cw-lab-name">编程与终端 · 实验工作台</div>
+ <h2 id="cw-title">写一小段代码，观察真实输出。</h2>
+ <p>不再只看示意动画。这里编辑真实的 C（或本机 HTTP 示例），复制命令到你的 Ubuntu 终端执行，再把观察结果带回来对照。<strong>本网页不会执行 GCC、Bash 或网络请求。</strong></p>
+ <div class="cw-actionpath" aria-label="本实验操作顺序"><span>1 · 先预测</span><span>2 · 修改代码</span><span>3 · 复制命令运行</span><span>4 · 粘贴输出核对</span></div>
+</header>
+<div class="cw-content">
+ <div class="cw-codecol">
+  <div class="cw-sectionhead"><b>源代码 / 你来修改</b><small>编辑器会保留本地草稿</small></div>
+  <div class="cw-task" id="cw-task"></div>
+  <div id="cw-editors"></div>
+  <label class="cw-label" for="cw-runner">构建 / 执行命令（可编辑）</label>
+  <input class="cw-runner" id="cw-runner" spellcheck="false" aria-label="需要在 Ubuntu 执行的构建命令">
+  <p class="cw-diff" id="cw-visual-diff" role="status"></p>
+  <div class="cw-toolbar"><button class="cw-button alt" id="cw-reset" type="button">恢复原始代码</button></div>
+  <details class="cw-hint" id="cw-hint-wrap"><summary>需要一点提示？</summary><p id="cw-hint"></p></details>
+ </div>
+ <div class="cw-terminalcol">
+  <div class="cw-sectionhead"><b>真实 Ubuntu / 终端</b><small>命令预览，尚未执行</small></div>
+  <label class="cw-label" for="cw-prediction">运行前，写下你预计会看到什么</label>
+  <textarea id="cw-prediction" class="cw-prediction" placeholder="例如：改成 0x80 后会输出……"></textarea>
+  <div class="cw-toolbar"><button class="cw-button" id="cw-copy" type="button">复制 Ubuntu 命令</button></div>
+  <pre class="cw-shell" id="cw-command" aria-label="根据你编辑的代码生成的终端命令"></pre>
+  <p class="cw-status" id="cw-copy-status" role="status">只复制命令。请在 Ubuntu 中亲手粘贴执行，并检查命令内容。</p>
+  <div class="cw-secondary" id="cw-second" hidden>
+   <h3 class="cw-workspace-subtitle">终端 B / 保持终端 A 的服务器运行</h3>
+   <div class="cw-toolbar"><button class="cw-button alt" id="cw-copy-second" type="button">复制 curl 验证命令</button></div>
+   <pre class="cw-shell" id="cw-second-command"></pre>
+   <p class="cw-note">执行请求后回到终端 A，按 Ctrl+C 结束本地服务器。</p>
+  </div>
+  <div class="cw-result">
+   <label class="cw-label" for="cw-actual">将真实终端输出或错误信息粘贴到这里</label>
+   <textarea id="cw-actual" class="cw-actual" placeholder="这里显示的是你自己复制的输出，不是网页模拟执行的结果。"></textarea>
+   <div class="cw-toolbar"><button class="cw-button alt" id="cw-compare" type="button">对照观察</button><button class="cw-button alt" id="cw-reference-toggle" type="button">查看原始示例输出</button></div>
+   <p id="cw-actual-status" class="cw-actual-status" role="status">完成真实运行后再核对。</p>
+   <div id="cw-reference-wrap" class="cw-reference" hidden><p class="cw-label">原始教材微实验给出的参考特征（修改代码后不一定相同）：</p><pre class="cw-shell" id="cw-reference"></pre></div>
+   <p class="cw-note" id="cw-local">编辑内容仅存在本地浏览器；不会同步到知识库，也不会自动判定学习已通过。</p>
+   <div class="cw-details" id="cw-details">读到报错时，不急于复制答案：先区分编译错误、链接错误和运行输出，再检查修改了哪个条件。</div>
+   <p class="cw-note" id="cw-info" role="status"></p>
+  </div>
+ </div>
+</div>
+</section>
+<div class="columns" aria-label="机制可视化：代码与终端实验之后再观察">
   <section class="surface" aria-label="可操作的教学模拟"><div class="panelhead"><strong id="instrument-title">CPU 状态观察器</strong><span>可操作的教学模拟</span></div><div class="demo" id="instrument"></div></section>
   <aside class="sidecol">
     <section class="prompt" aria-label="先预测"><div class="promptheader">第一步 / 预测一个结果</div><h3 id="question"></h3><div class="choices" id="choices"></div><p class="answer" role="status" id="answer">选择一个预测，再通过左侧操作核对。</p></section>
@@ -287,5 +332,6 @@ window.addEventListener('hashchange',()=>{const m=location.hash.match(/^#lab-(\d
 const fragment=location.hash.match(/^#lab-(\d{1,2})$/);open(fragment&&Number(fragment[1])>=3&&Number(fragment[1])<=10?Number(fragment[1]):current);if(prefs.observed)$('progress').textContent='已观察 '+Object.keys(prefs.observed).filter(k=>prefs.observed[k]&&Number(k)>=3&&Number(k)<=10).length+' / 8';
 })();
 </script>
+<script defer src="code-terminal-workbench.js"></script>
 </body>
 </html>
