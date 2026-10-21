@@ -1,85 +1,287 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>项目 3–10 · 先玩再学交互观察板</title>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#152839">
+<meta name="description" content="CS:APP 03–10 八个可操作的计算机系统微实验：预测、修改输入、观察机制、验证。">
+<title>System Lab · 系统内部实验室 03–10</title>
 <style>
-:root{font-family:system-ui,-apple-system,"Microsoft YaHei",sans-serif;color:#111827;background:#f7f8fc;line-height:1.6}
-*{box-sizing:border-box}body{margin:0}.shell{max-width:1080px;margin:auto;padding:19px 16px 65px}
-header{border-radius:20px;padding:28px;color:white;background:linear-gradient(115deg,#0f172a,#0f766e)}h1{font-size:clamp(23px,4vw,34px);margin:0}header p{margin:8px 0;color:#d1fae5}
-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:17px 0}
-nav button{border:1px solid #cbd5e1;border-radius:12px;background:white;text-align:left;padding:12px;cursor:pointer;color:#334155;font-weight:bold}nav button[aria-pressed=true]{background:#134e4a;color:white;border-color:#134e4a}
-section{border:1px solid #dbe3f1;background:white;border-radius:18px;padding:23px;margin:15px 0}h2{margin:0 0 9px;font-size:24px}p{margin:8px 0}.muted{color:#64748b}.notice{background:#ecfeff;border-left:4px solid #14b8a6;padding:12px;border-radius:0 9px 9px 0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:20px 0}.node{border:2px solid #cbd5e1;border-radius:12px;padding:12px;background:#f8fafc;min-height:92px}.node.now{border-color:#0d9488;background:#ccfbf1}.node.done{background:#f0fdf4;border-color:#bbf7d0}.node .num{font-size:12px;color:#64748b}.node b{display:block}
-button.action{border:0;background:#0f766e;color:white;border-radius:9px;padding:10px 16px;cursor:pointer;font-weight:bold}button.action.secondary{background:white;border:1px solid #0f766e;color:#115e59}button:disabled{opacity:.5;cursor:not-allowed}
-button:focus-visible,select:focus-visible{outline:3px solid #f59e0b;outline-offset:2px}select{border:1px solid #94a3b8;border-radius:9px;padding:9px;max-width:100%;background:white;color:#0f172a}
-.controls{display:flex;gap:11px;align-items:center;flex-wrap:wrap;margin:16px 0}
-.readout{background:#0f172a;color:#d1fae5;padding:17px;border-radius:13px;min-height:140px;white-space:pre-wrap;overflow-wrap:anywhere;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:15px;line-height:1.75}
-.mini{font-size:13px}.stepnote{background:#f1f5f9;padding:13px;border-radius:11px;margin-top:12px;min-height:64px}
-a{color:#0369a1}
-@media(max-width:650px){nav{grid-template-columns:repeat(2,minmax(0,1fr))}section{padding:15px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.shell{padding:12px 10px 40px}}
-</style></head><body><main class="shell">
-<header><h1>项目 3–10 · 交互观察板</h1><p>不先背术语。换个条件 → 猜结果 → 按“下一步”观察状态 → 回 WSL 做真的小实验。</p><p class="mini">此页是离线教学模拟。地址、时间顺序、HTTP 内容等使用说明性示例，不冒充真实运行数据。</p></header>
-<nav id="nav" aria-label="选择一个计算机系统项目"></nav>
-<section><h2 id="topic">选一个项目</h2><p id="intro"></p><p class="notice" id="predict"></p>
-<div class="controls"><label for="mode">改变一个条件：</label><select id="mode"></select><button id="restart" class="action secondary">重置观察</button></div>
-<div class="grid" id="flow" aria-label="分步状态流程"></div>
-<div class="readout" id="readout" role="status"></div>
-<div class="stepnote" id="why"></div>
-<div class="controls"><button id="back" class="action secondary">上一步</button><button id="next" class="action">下一步</button><span class="muted" id="position"></span></div>
-<p class="mini muted">观察板回答的是“先看到什么”；解释与证据要到实际实验获取。<a id="deep" href="#">打开对应的最小 WSL 微实验</a>，完成后再由微实验进入 CS:APP 长文档。</p>
-</section>
-<footer class="muted mini">返回 <a href="先玩再学-系统实验室.html">0–2 交互实验室</a> · <a href="../00-先玩再学-直观实验入口.md">所有项目导航</a>。所有操作都在浏览器内完成，无需联网。</footer>
-</main><script>
+:root{--night:#14293a;--night2:#233d4b;--signal:#e78a54;--mint:#0e827c;--paper:#f0f3f1;--ink:#182e38;--muted:#506b75;--line:#cddad9;--bg:#fff;font-family:"Noto Sans CJK SC","Source Han Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;color:var(--ink);background:var(--paper)}
+*{box-sizing:border-box}body{margin:0}a{color:inherit}button,input,select{font:inherit}button{cursor:pointer;touch-action:manipulation}button:disabled{opacity:.43;cursor:not-allowed}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--signal);outline-offset:3px}
+.skip{position:absolute;top:-80px;left:15px;background:white;padding:10px 14px;z-index:20}.skip:focus{top:10px}
+.shell{display:grid;grid-template-columns:252px minmax(0,1fr);min-height:100vh}.rail{position:sticky;top:0;align-self:start;height:100vh;overflow:auto;background:var(--night);color:#d4e7eb;padding:24px 17px;display:flex;flex-direction:column}.brand{font-size:18px;font-weight:800;display:flex;align-items:center;gap:10px;text-decoration:none;color:white;margin-bottom:26px}.brandicon{height:35px;width:35px;display:grid;place-items:center;border-radius:5px;background:var(--signal);color:#17293a;font:800 22px Consolas,monospace}.brand small{display:block;font-size:11px;color:#9eb6bf;font-weight:500}
+.railtitle{font-size:11px;color:#a9c0c8;letter-spacing:.04em;padding:15px 11px 7px;font-weight:750;border-top:1px solid #385260;margin-top:13px}.railgroup:first-of-type .railtitle{border-top:0;margin-top:0}.railbutton{width:100%;min-height:43px;padding:9px 11px;text-align:left;display:flex;gap:10px;align-items:center;border:0;border-left:3px solid transparent;background:transparent;color:#e0e9e9;font-size:13px;border-radius:4px}.railbutton:hover{background:#2d4855}.railbutton[aria-current=true]{border-left-color:#ffab70;background:#294b52;color:white}.railnum{font:12px Consolas,monospace;color:#acbfc9;min-width:23px}.railbutton[aria-current=true] .railnum{color:#ffb882}.railbottom{margin-top:auto;font-size:12px;line-height:1.7;color:#a4c2c8;padding:16px 11px}.railbottom a{color:#b9ebe2}.railbottom p{margin:8px 0}
+.page{min-width:0}.top{background:white;border-bottom:2px solid #d5e1de;display:flex;align-items:center;justify-content:space-between;gap:15px;padding:17px clamp(17px,4vw,58px)}.top a{color:#255f77;text-decoration:none;font-size:13px}.top a:hover{text-decoration:underline}.crumb{font-size:12px;color:#627b84}.layout{max-width:1320px;margin:auto;padding:29px clamp(17px,4vw,58px) 68px}
+.hero{display:flex;justify-content:space-between;align-items:end;gap:24px;border-bottom:1px solid #bfcecb;padding-bottom:21px;margin-bottom:24px}.kicker{color:#207d77;font-size:12px;font-weight:800}.hero h1{font-size:clamp(29px,4.2vw,48px);letter-spacing:-.055em;line-height:1.17;margin:9px 0 10px;font-weight:850}.hero p{font-size:14px;color:var(--muted);line-height:1.65;max-width:660px;margin:0}.modulecount{font:600 12px Consolas,monospace;color:#2f716e;border:1px solid #bbd2cb;background:white;padding:10px 12px;border-radius:5px;white-space:nowrap}
+.stagebar{display:flex;gap:3px;margin:0 0 21px}.stagebar>div{min-width:0;flex:1;border-bottom:3px solid #cad6d4;padding:0 2px 10px;font-size:11px;color:#59727d}.stagebar>div.on{border-color:#da8250;color:#244b4c;font-weight:750}
+.lessonintro{display:flex;align-items:start;justify-content:space-between;gap:13px;margin-bottom:18px}.lessonintro h2{font-size:clamp(22px,2.3vw,29px);letter-spacing:-.045em;margin:4px 0 7px}.lessonintro p{font-size:14px;color:#526b76;margin:0;line-height:1.7}.chip{border:1px solid #bdd9d2;background:#e3f2ec;color:#196f64;border-radius:4px;padding:7px 9px;font-size:11px;font-weight:750;white-space:nowrap}
+.columns{display:grid;grid-template-columns:minmax(0,1.52fr) minmax(280px,.82fr);gap:20px;align-items:start}
+.surface{background:white;border:1px solid #cbd8d6;border-radius:10px;overflow:hidden}.panelhead{display:flex;justify-content:space-between;align-items:center;gap:9px;padding:14px 18px;border-bottom:1px solid #d7e3df;background:#f8faf8}.panelhead strong{font-size:14px}.panelhead span{font-size:11px;color:#527872}
+.demo{padding:21px}.controlrow{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin:5px 0 16px}.controlrow label{font-size:13px;font-weight:750;color:#3c5f65}.controlrow input,.controlrow select{padding:9px 10px;color:#1b3c42;border:1px solid #acbfc3;border-radius:6px;background:white;min-height:43px;max-width:100%}input[type=number]{width:90px}input[type=text]{min-width:160px;flex:1}.controlrow input[type=checkbox]{width:18px;height:18px;min-height:18px;accent-color:#156e6a}.controlrow .field{display:flex;align-items:center;gap:8px}
+.action{min-height:43px;border:1px solid #204f4d;border-radius:6px;padding:9px 15px;font-size:13px;font-weight:750;background:#205b57;color:white}.action:hover:not(:disabled){background:#31756c}.action.secondary{background:white;color:#265b58;border-color:#acccc5}.action.secondary:hover:not(:disabled){background:#edf7f2}.action.soft{background:#edf3f0;color:#2c5c56;border-color:#ccdcd8}.buttons{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin-top:15px}
+.console{background:#162c39;color:#b8f1d8;border-left:4px solid var(--signal);font:13px/1.7 Consolas,"SFMono-Regular",monospace;padding:16px;border-radius:4px;white-space:pre-wrap;overflow-wrap:anywhere;min-height:83px;margin:14px 0 0}
+.tiny{font-size:12px;color:var(--muted);line-height:1.65}.status{font-size:13px;line-height:1.7;color:#28645c;background:#eaf3f0;border-left:3px solid #35a28d;padding:11px 12px;margin:12px 0 0;min-height:46px}
+.prompt{background:#153b48;color:#eff9fa;border-top:4px solid #e9996a;padding:22px;border-radius:7px}.promptheader{font-size:12px;color:#b6d8d3}.prompt h3{font-size:21px;line-height:1.45;margin:12px 0 17px}.choices{display:grid;gap:9px}.choice{border:1px solid #698c95;background:#25546a;color:white;text-align:left;min-height:45px;border-radius:5px;padding:11px 12px;font-size:13px}.choice:hover{background:#316a73}.choice[aria-pressed=true]{border-color:#ffc99b;background:#346e60}.answer{font-size:13px;line-height:1.65;min-height:43px;color:#d4e9e4;margin:14px 0 0}
+.sidebarhelp{margin-top:14px;padding:20px 18px;background:#e5eeea;border:1px solid #ccdbd6;border-radius:7px}.sidebarhelp h3{font-size:15px;margin:0 0 8px}.sidebarhelp p{color:#44646b;font-size:13px;line-height:1.75;margin:0}.sidebarhelp a{color:#246ca5}
+.kv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin:13px 0}.kv>div{padding:13px 9px;border:1px solid #bfd7d0;background:#e9f3ef;text-align:center;border-radius:5px}.kv small{color:#4e7675;font-size:12px;display:block}.kv b{display:block;font:700 29px Consolas,monospace;color:#164d56;margin-top:7px}
+.ops{display:grid;gap:7px}.op{display:flex;justify-content:space-between;gap:15px;padding:10px 12px;border:1px solid #cad9d9;border-radius:5px;font:13px Consolas,monospace}.op.current{border:2px solid #e39360;background:#fff2e6}.op.done{background:#e1f1eb;border-color:#80bda9}.op strong{font:700 13px Consolas,monospace}
+.twosources{display:grid;grid-template-columns:1fr 1fr;gap:9px}.sourcefile{padding:12px;background:#192f3e;color:#d1eee8;border-radius:5px;min-width:0}.sourcefile h4{margin:0 0 7px;font-size:13px;color:#93d6c6}.sourcefile pre{font:12px/1.7 Consolas,monospace;white-space:pre-wrap;margin:0}.sourcefile.disabled{opacity:.4}.bridge{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:10px}.bridgebox{padding:12px;border:1px solid #bad2cd;background:#eef4f1;border-radius:5px;font-size:13px;text-align:center}.bridgebox b{display:block}
+.cells{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:5px;margin:13px 0}.cell{padding:10px 2px;border:1px solid #bfccc9;border-radius:4px;text-align:center;font:700 15px Consolas,monospace;background:#eef4f1}.cell.hit{background:#c5ebd9;border-color:#36a57d}.cell.miss{background:#fbd3ab;border-color:#e58d56}.caches{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin:15px 0}.slot{padding:12px;border:1px solid #adc8c2;background:#e5f1ef;border-radius:5px;font-size:12px}.slot b{display:block;font:700 19px Consolas,monospace;color:#22534e;margin-top:5px}
+.timeline{display:grid;gap:9px;padding:12px 0}.event{border-left:4px solid #cad8d6;padding:10px 13px;background:#f1f5f3;font-size:13px;line-height:1.65}.event.now{border-color:#df8d58;background:#fff0e1}.event.done{border-color:#50a691;background:#e7f2ed}.event small{display:block;color:#64818a;font-size:11px}
+.pages{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:16px 0}.pagecell{padding:12px 4px;text-align:center;border:1px solid #b5cfcb;border-radius:5px;background:#edf4f2;font:12px/1.7 Consolas,monospace}.pagecell.active{border:2px solid #e88f51;background:#fff0df}.pagecell.unmapped{background:#eff0f0;border-style:dashed}.pagecell b{display:block;font-size:15px}
+.iozones{display:grid;grid-template-columns:1fr 1fr;gap:12px}.zone{border:1px solid #bacfcc;padding:12px;border-radius:5px;background:#f1f6f4;min-height:92px}.zone h4{font-size:13px;margin:0 0 10px}.zone pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px Consolas,monospace;color:#274d52;margin:0}
+.requestline{background:#182e40;color:#d3f5e3;padding:12px;border-radius:5px;font:13px/1.7 Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere}
+.threadlanes{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:14px 0}.lane{padding:12px;border:1px solid #bdcfcb;border-radius:5px}.lane h4{font-size:13px;margin:0 0 10px}.lane .events{font:12px/1.7 Consolas,monospace;min-height:75px;white-space:pre-wrap}
+.nextbar{display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin:27px 0 0;border-top:1px solid #cad7d6;padding-top:18px}.nextbar a{color:#266c81;font-size:13px;font-weight:700}.nextbar button{border:1px solid #abbfbe;padding:10px 12px;border-radius:5px;background:white;color:#30575a}
+.references{display:flex;gap:11px;flex-wrap:wrap;margin-top:19px;border-top:1px solid #e0e8e5;padding-top:15px}.references a{font-size:13px;color:#236a91}.disclaimer{border-top:1px solid #cbd9d6;font-size:12px;line-height:1.7;color:#647b7f;margin-top:38px;padding-top:18px}
+@media(max-width:1060px){.shell{grid-template-columns:215px minmax(0,1fr)}.columns{grid-template-columns:minmax(0,1fr)}.sidecol{display:grid;grid-template-columns:1fr 1fr;gap:12px}.sidebarhelp{margin:0}}
+@media(max-width:760px){.shell{display:block}.rail{position:relative;height:auto;padding:13px 15px}.brand{margin:0}.railgroup,.railbottom{display:none}.top{padding:12px 16px}.layout{padding:23px 15px 65px}.hero{display:block}.modulecount{display:inline-block;margin-top:12px}.sidecol{grid-template-columns:1fr}.stagebar>div{font-size:10px}.lessonintro{display:block}.chip{display:inline-block;margin-top:9px}.demo{padding:15px}.sourcefile pre{font-size:11px}}
+@media(max-width:500px){.hero h1{font-size:30px}.cells{gap:2px}.cell{padding:9px 1px;font-size:13px}.kv b{font-size:24px}.iozones,.twosources{grid-template-columns:1fr}.signal{display:none}.stagebar>div{font-size:9px}.prompt{padding:17px}.controlrow input[type=text]{width:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#content">跳转到当前实验</a>
+<div class="shell">
+<aside class="rail" aria-label="课程中的位置">
+<a class="brand" href="../index.html"><span class="brandicon">S</span><span>System Lab<small>系统内部 · 03—10</small></span></a>
+<div class="railgroup"><div class="railtitle">第三阶段 · 机器如何执行</div><nav id="rail-mach"></nav></div>
+<div class="railgroup"><div class="railtitle">第四阶段 · 操作系统如何管理</div><nav id="rail-os"></nav></div>
+<div class="railgroup"><div class="railtitle">第五阶段 · 程序如何协作</div><nav id="rail-net"></nav></div>
+<div class="railbottom"><p>每次只做一小步。模拟器帮助形成直觉，真实证据需要回到 Ubuntu。</p><a href="../index.html">返回学习总览</a></div>
+</aside>
+<div class="page">
+<header class="top"><div class="crumb">系统基础 / 交互实验 / <strong id="breadcrumb">03</strong></div><div><a href="../index.html">课程总览</a>　<a href="../实验参考指南与可视化索引.md">教材索引</a></div></header>
+<main class="layout" id="content" tabindex="-1">
+<div class="hero"><div><div class="kicker">03—10 / 先预测 · 再操作 · 看证据</div><h1>从机器指令，<br>走到操作系统与网络。</h1><p>每个概念都有自己的观察仪器。选择一个现象，改变条件并观察系统状态；原课程和教材在需要深入时再打开。</p></div><span class="modulecount" id="progress">已观察 0 / 8</span></div>
+<div class="stagebar" aria-label="课程分段"><div id="stage3">03—05 · 机器内部</div><div id="stage6">06—08 · 系统接口</div><div id="stage9">09—10 · 通信协作</div></div>
+<div class="lessonintro"><div><div class="kicker" id="chapter">03 · CPU</div><h2 id="lesson-title">CPU 怎样执行下一条指令？</h2><p id="lesson-description"></p></div><span class="chip" id="chapter-chip">CS:APP Ch.4</span></div>
+<div class="columns">
+  <section class="surface" aria-label="可操作的教学模拟"><div class="panelhead"><strong id="instrument-title">CPU 状态观察器</strong><span>可操作的教学模拟</span></div><div class="demo" id="instrument"></div></section>
+  <aside class="sidecol">
+    <section class="prompt" aria-label="先预测"><div class="promptheader">第一步 / 预测一个结果</div><h3 id="question"></h3><div class="choices" id="choices"></div><p class="answer" role="status" id="answer">选择一个预测，再通过左侧操作核对。</p></section>
+    <section class="sidebarhelp"><h3>这个实验说明了什么？</h3><p id="concept"></p><div class="references"><a id="micro" href="#">Ubuntu 微实验</a><a id="deep" href="#">深入文档</a></div><p class="tiny" id="chapter-note"></p></section>
+  </aside>
+</div>
+<div class="nextbar"><button id="prev-lab">← 上一个实验</button><a href="../README.md">查看课程结构与学习方式</a><button id="next-lab">下一个实验 →</button></div>
+<footer class="disclaimer">本页全部是浏览器内的<strong>教学模型</strong>：寄存器、Cache、调度、页表、文件、HTTP 都是简化示意，不会访问你的系统、运行 C 程序、进行真实网络请求或测量性能。探索记录仅保存在本浏览器，不代表已完成独立实验。返回对应微实验，在 Ubuntu 中获得证据。</footer>
+</main></div></div>
+<script>
 (function(){
 'use strict';
-var list=[
-{id:3,title:'03 · 三条指令的小 CPU',intro:'PC 指向下一步，寄存器 r0 保存加法结果。真实 CPU 远比它复杂。',predict:'先猜：三条加法执行完，r0 是多少？',file:'03-三条指令的小CPU.md',modes:[
-{label:'依次加 3、加 5、减 2',steps:[['开始','PC=0  r0=0','还没有执行指令。'],['ADD +3','PC=1  r0=3','执行指令0后 r0 改变，PC 前进。'],['ADD +5','PC=2  r0=8','执行指令1后累计为 8。'],['ADD -2','PC=3  r0=6','执行指令2后得到 6。']]},
-{label:'改成加 3、加 10、减 2',steps:[['开始','PC=0  r0=0','只改变第二条指令的立即数。'],['ADD +3','PC=1  r0=3','第一条结果不变。'],['ADD +10','PC=2  r0=13','新的第二条使中间状态不同。'],['ADD -2','PC=3  r0=11','最终值也随之改变。']]}]},
-{id:4,title:'04 · 链接：多个文件合作',intro:'main.c 调用 add；add.c 定义 add。编译器和链接器负责把它们连接起来。',predict:'先猜：如果忘记把 add.c 一起链接，会在哪个环节出错？',file:'04-两个文件拼成程序.md',modes:[
-{label:'同时给出 main.c 和 add.c',steps:[['两个源文件','main.c：调用 add(2,3)\nadd.c：定义 add','文件彼此独立。'],['各自编译','main.o：引用 add\nadd.o：提供 add','目标文件里有对符号的引用和定义。'],['链接','引用 add → 找到 add 的定义','链接成功，建立可执行程序。'],['运行','stdout: 5','主程序现在可以调用函数。']]},
-{label:'只给出 main.c',steps:[['源文件','main.c：调用 add(2,3)','调用存在，但定义未提供。'],['编译','main.o：引用 add','C 代码本身可以通过编译。'],['链接失败','undefined reference to add','链接器找不到定义，因而无法生成可执行文件。']]}]},
-{id:5,title:'05 · 连续访问与跳步访问',intro:'先看数组访问次序，而不是立刻测速度。你实际读的是数组的哪个元素？',predict:'先猜：先读偶数下标、再读奇数下标，观察到的序列和连续访问一样吗？',file:'05-按顺序还是跳着访问.md',modes:[
-{label:'连续下标 0 → 7',steps:Array.from({length:8},function(_,i){return ['读 a['+i+']','访问序列：'+Array.from({length:i+1},function(_,k){return k}).join(' → '),'当前指向下标 '+i+'。这里只显示顺序，不测 Cache 延迟。'];})},
-{label:'偶数下标，再奇数下标',steps:[0,2,4,6,1,3,5,7].map(function(v,i,arr){return ['读 a['+v+']','访问序列：'+arr.slice(0,i+1).join(' → '),'当前指向下标 '+v+'。跳步不等于已经证明 Cache miss。'];})}]},
-{id:6,title:'06 · 一个 fork 产生两条执行路线',intro:'fork 之后父子进程分别继续。waitpid 是让父进程等待子进程结束。',predict:'先猜：去掉 waitpid 时，“child”一定比“parent”先显示吗？',file:'06-一个程序两个进程.md',modes:[
-{label:'父进程调用 waitpid',steps:[['fork','父进程：P\n子进程：C','两个进程各自从 fork 返回。'],['子进程打印','屏幕：child\n父进程：等待 C','父进程还没打印。'],['子进程退出','C：退出\nP：waitpid 返回','现在可以确定子进程已结束。'],['父进程打印','屏幕：child\nparent','因为等待，打印顺序有保证。']]},
-{label:'不等待子进程（只看可能情况）',steps:[['fork','父进程：P\n子进程：C','两个进程都可以继续执行。'],['调度不确定','可能：parent → child\n也可能：child → parent','这是可能的执行顺序，不是每次实际测得的轨迹。'],['结论','输出先后不保证','不能凭一次运行推断固定顺序。']]}]},
-{id:7,title:'07 · 虚拟地址中的两种对象',intro:'C 程序里的局部变量和动态分配对象都有地址，但打印它们无法直接得知物理内存。',predict:'先猜：malloc 返回的指针和局部变量地址有什么共同点？',file:'07-变量住在哪里.md',modes:[
-{label:'观察局部变量 &x',steps:[['声明 int x','对象：x = 7','本地变量在其生命周期内具有一个对象存储位置（可能被优化影响）。'],['取地址 &x','&x = 某个虚拟地址','示意：只知道它在进程虚拟地址空间。'],['先不下结论','不是直接得到物理地址','不同环境地址数字可能改变。']]},
-{label:'观察 malloc 指针 p',steps:[['请求 malloc','p = malloc(sizeof(int))','向运行时申请一块可用空间。'],['写入数据','*p = 9','使用返回的地址访问对象。'],['释放','free(p)','释放动态分配对象；不要再解引用已释放的指针。']]}]},
-{id:8,title:'08 · 文件写入与关闭',intro:'fopen 打开文件、fputs 写内容、fclose 关闭流。这里只模拟一个文件。',predict:'先猜：打开模式 w 和 a 对已有文件内容的影响有什么区别？',file:'08-亲手写出一个文件.md',modes:[
-{label:'以 w 模式打开已有文件',steps:[['初始文件','note.txt: OLD','假设它原先有 OLD。'],['fopen("w")','note.txt: （清空）','w 模式会截断已有文件。'],['fputs','缓冲中的新内容：NEW','库可能先缓冲，不必把每次函数调用等同于一个内核写入。'],['fclose','note.txt: NEW','刷新并关闭成功时，文件内容变成 NEW。']]},
-{label:'以 a 模式追加',steps:[['初始文件','note.txt: OLD','同样假设已有 OLD。'],['fopen("a")','note.txt: OLD','追加模式不先截断旧内容。'],['fputs','准备追加 NEW','可能有标准 I/O 缓冲。'],['fclose','note.txt: OLDNEW','写入成功时追加到文件尾。']]}]},
-{id:9,title:'09 · 浏览器和服务器的一次对话',intro:'浏览器发送 HTTP 请求，本机服务器给出状态与页面内容。',predict:'先猜：访问不存在的 /missing 时，HTTP 状态通常怎样变化？',file:'09-本机第一个HTTP回复.md',modes:[
-{label:'访问 /index.html（存在）',steps:[['浏览器请求','GET /index.html HTTP/1.1','浏览器先建立连接并发送请求。'],['服务器找文件','index.html：存在','服务器读取目标内容。'],['HTTP 响应','HTTP/1.0 200 OK\nContent-Type: text/html','这里展示简化响应，不保证每个实际服务器完全同样的版本/头部。'],['浏览器显示','Hello HTTP','浏览器根据响应内容显示页面。']]},
-{label:'访问 /missing（不存在）',steps:[['浏览器请求','GET /missing HTTP/1.1','请求路径改变了。'],['查找资源','文件 missing 不存在','本机服务找不到这个路径对应的文件。'],['HTTP 响应','HTTP/1.0 404 File not found','404 表示资源不存在，具体响应格式由服务器实现决定。']]}]},
-{id:10,title:'10 · 两个线程怎么会合',intro:'工作线程和主线程都执行代码；join 让主线程等工作线程结束。',predict:'先猜：没有 join 的话，worker 一定有机会在主程序退出前输出吗？',file:'10-两个线程会合.md',modes:[
-{label:'有 pthread_join',steps:[['创建工作线程','main → pthread_create','产生新的执行路线。'],['执行 worker','worker: 打印 worker','工作线程独立运行。'],['join 等待','main: 等待 worker 结束','主线程不早于工作线程结束继续下去。'],['主线程完成','屏幕：worker\nmain done','在这个程序中输出次序受 join 约束。']]},
-{label:'无 join（仅说明不确定性）',steps:[['创建工作线程','main 与 worker 都可运行','调度时机不受主线程直接控制。'],['可能的调度','可能先看到 main done\n可能先看到 worker','此处不是一次确定的运行轨迹。'],['主进程退出','worker 可能还未完成','进程退出时不能保证 worker 打印已经发生。']]}]}
+const specs=[
+{id:3,name:'三条指令的小 CPU',short:'简化 CPU',description:'一步一步观察：程序计数器 PC 选择指令，寄存器 r0 随指令变化。',instrument:'指令执行轨迹',question:'从 0 开始，加 3、加 5、减 2，结果是多少？',options:['6','8','10'],correct:0,feedback:'0 → 3 → 8 → 6；PC 指向即将执行的指令，执行后向后移动。',concept:'这个三指令模拟只有一个寄存器，不是真实 x86。它让“取指 → 修改状态 → PC 前进”第一次变得可见。',chapter:'CS:APP 第 4 章',file:'03-三条指令的小CPU.md',deep:'自学文档3-项目3-简化CPU模拟.md'},
+{id:4,name:'两个文件为什么能链接',short:'链接与符号',description:'拆开 main.c 与 add.c，尝试只保留一个文件，观察为什么链接器无法生成程序。',instrument:'目标文件与符号解析',question:'main.c 调用了 add，却没有提供 add 的定义，哪一步通常失败？',options:['预处理','链接','运行时才报错'],correct:1,feedback:'调用声明可以通过编译；若最终没有 add 的定义，链接器通常报告 undefined reference。',concept:'“在另一个文件中定义函数”和“能找到该函数”是两件事。编译把源文件变成目标文件，链接负责解析跨文件的符号引用。',chapter:'CS:APP 第 7 章',file:'04-两个文件拼成程序.md',deep:'自学文档4-项目4-链接与装载.md'},
+{id:5,name:'为什么访问顺序重要',short:'数组与 Cache',description:'访问相同的 16 个元素，只改变顺序，观察一个两槽、每槽四元素的教学缓存。',instrument:'数组与两槽 Cache',question:'相同 16 个元素依次访问与交错访问，模拟缓存未命中次数一定相等吗？',options:['不一定','一定相等'],correct:0,feedback:'在本页这个容量与映射规则下，访问顺序会改变替换次数；但这不是实际 CPU 性能测量。',concept:'教学缓存采用“每行四个元素、两个直接映射槽”，仅演示命中、未命中和替换。真实 Cache 还有更多因素，不能从这个模型推断实际运行时间。',chapter:'CS:APP 第 6 章',file:'05-按顺序还是跳着访问.md',deep:'自学文档5-项目5-程序优化与Cache.md'},
+{id:6,name:'一个 fork，两个进程',short:'进程与等待',description:'调整父子执行先后，再打开或关闭 waitpid，观察哪个输出次序可以保证。',instrument:'父子进程执行时间线',question:'不使用 waitpid 时，child 一定先于 parent 打印吗？',options:['一定','不一定'],correct:1,feedback:'父子进程能由系统调度交替执行；没有等待关系，程序本身不保证谁先打印。',concept:'fork 后父子分别继续；waitpid 使父进程等待子进程结束。图中的调度顺序是选定的可能情形，不是测出的 Linux 轨迹。',chapter:'CS:APP 第 8 章',file:'06-一个程序两个进程.md',deep:'自学文档6-项目6-进程与异常控制流.md'},
+{id:7,name:'虚拟地址怎样变成物理位置',short:'虚拟内存',description:'给一个虚拟地址，拆成页号和页内偏移，沿着简化页表找到物理位置。',instrument:'虚拟页到物理页映射',question:'虚拟地址转换到物理地址时，同样大小的页内偏移会怎样？',options:['保持不变','总变成 0','随机变化'],correct:0,feedback:'在本模型固定页面大小、正常映射的情况下，VPN 变为物理页号，页内偏移保留。',concept:'现实 printf("%p") 给出的是程序可见的指针值，不能直接看到物理页。这里的页表映射是人工设置的教学例子。',chapter:'CS:APP 第 9 章',file:'07-变量住在哪里.md',deep:'自学文档7-项目7-虚拟内存与动态分配.md'},
+{id:8,name:'为什么文件有时还没更新',short:'文件与缓冲区',description:'分别在 w / a 模式打开已有文件，写入流缓冲，再刷新并观察文件内容。',instrument:'文件流与缓冲区',question:'已有文件内容为 OLD，以 w 模式打开后会发生什么？',options:['保留 OLD','打开成功时截断内容','仅把文件改名'],correct:1,feedback:'w 模式成功打开已有文件时会将其截断；a 模式通常保留旧内容并追加。',concept:'fputs 写入 C 标准 I/O 流；数据可能暂留在用户态缓冲区。fflush / fclose 会尝试将其写出，但不等同于保证物理持久化。',chapter:'CS:APP 第 10 章',file:'08-亲手写出一个文件.md',deep:'自学文档8-项目8-文件与系统IO.md'},
+{id:9,name:'HTTP 请求怎样得到响应',short:'HTTP 对话',description:'编辑本地路径，依次观察浏览器请求、服务器查找资源和 HTTP 响应。',instrument:'客户端 ↔ 本地服务器',question:'请求服务器上不存在的 /missing，常见 HTTP 状态是什么？',options:['200','404','302'],correct:1,feedback:'404 表示请求的资源未找到。这里仅模拟请求与响应，不发出真实网络流量。',concept:'浏览器是客户端，服务器监听并回应。入门微实验使用 Python 的本机 http.server，不等于已实现 C Socket 服务器。',chapter:'CS:APP 第 11 章',file:'09-本机第一个HTTP回复.md',deep:'自学文档9-项目9-Socket与HTTP.md'},
+{id:10,name:'线程为什么需要等待',short:'线程与 join',description:'挑选不同调度顺序，开启或关闭 join，观察哪条输出先后关系受到保证。',instrument:'主线程 / 工作线程时间线',question:'pthread_join 正常返回时，可以保证什么？',options:['worker 已结束','总是 main 先打印','两个线程永远同时运行'],correct:0,feedback:'join 成功等待目标线程终止，之后主线程才能继续执行 join 后的代码。',concept:'线程共享一个进程的大部分内存，但调度顺序不可简单预测。join 是等待终止，不是保护共享变量的数据竞争。',chapter:'CS:APP 第 12 章',file:'10-两个线程会合.md',deep:'自学文档10-项目10-并发与同步.md'}
 ];
-var which=0,mode=0,step=0;
-var nav=document.getElementById('nav'),select=document.getElementById('mode');
-list.forEach(function(d,i){var b=document.createElement('button');b.type='button';b.textContent=d.title;b.addEventListener('click',function(){which=i;mode=0;step=0;draw()});nav.appendChild(b);});
-function draw(){
-var d=list[which],sc=d.modes[mode];var buttons=nav.querySelectorAll('button');
-buttons.forEach(function(b,i){b.setAttribute('aria-pressed',String(i===which));});
-document.getElementById('topic').textContent=d.title;
-document.getElementById('intro').textContent=d.intro;
-document.getElementById('predict').textContent='先预测 → '+d.predict;
-select.textContent='';
-d.modes.forEach(function(m,i){var o=document.createElement('option');o.value=i;o.textContent=m.label;select.appendChild(o)});
-select.value=mode;
-var flow=document.getElementById('flow');flow.textContent='';
-sc.steps.forEach(function(st,i){var box=document.createElement('div');box.className='node '+(i===step?'now':i<step?'done':'');var small=document.createElement('div');small.className='num';small.textContent='第 '+(i+1)+' 步';var strong=document.createElement('b');strong.textContent=st[0];box.appendChild(small);box.appendChild(strong);flow.appendChild(box)});
-document.getElementById('readout').textContent=sc.steps[step][1];
-document.getElementById('why').textContent=sc.steps[step][2];
-document.getElementById('position').textContent=(step+1)+' / '+sc.steps.length;
-document.getElementById('back').disabled=step===0;
-document.getElementById('next').disabled=step>=sc.steps.length-1;
-document.getElementById('deep').href='../微实验/'+d.file;
+const groups={mach:[3,4,5],os:[6,7,8],net:[9,10]};
+const $=id=>document.getElementById(id);
+const el=(tag,cls,txt)=>{const a=document.createElement(tag);if(cls)a.className=cls;if(txt!==undefined)a.textContent=String(txt);return a};
+function button(label,fn,kind=''){const b=el('button','action '+kind,label);b.type='button';b.addEventListener('click',fn);return b}
+function select(items,id){const s=el('select');s.id=id;items.forEach((v,i)=>{const o=el('option','',v);o.value=String(i);s.append(o)});return s}
+function controlLabel(txt,id){const l=el('label','',txt);l.htmlFor=id;return l}
+function makeText(node,txt){node.textContent=String(txt)}
+function wrap(tag,cls,...children){const d=el(tag,cls);children.forEach(x=>{if(typeof x==='string')d.append(document.createTextNode(x));else if(x)d.append(x)});return d}
+function announce(msg){makeText($('result-status'),msg)}
+function track(){let saved={};try{saved=JSON.parse(localStorage.getItem('csapp-advanced-lab-v2')||'{}')}catch(e){}return saved&&typeof saved==='object'?saved:{}}
+let prefs=track(),current=Number.isInteger(prefs.current)&&prefs.current>=3&&prefs.current<=10?prefs.current:3;
+function save(){try{localStorage.setItem('csapp-advanced-lab-v2',JSON.stringify(prefs))}catch(e){}}
+function explored(){prefs.observed=prefs.observed||{};prefs.observed[current]=true;save();$('progress').textContent='已观察 '+Object.keys(prefs.observed).filter(k=>prefs.observed[k]&&Number(k)>=3&&Number(k)<=10).length+' / 8'}
+function attachConsole(to,initial){const box=el('div','console',initial);box.setAttribute('aria-live','polite');to.append(box);return box}
+function makeStatus(to,message){const n=el('p','status',message);n.id='result-status';n.setAttribute('role','status');to.append(n);return n}
+function row(to,...children){const c=wrap('div','controlrow',...children);to.append(c);return c}
+function controls(to,...children){const c=wrap('div','buttons',...children);to.append(c);return c}
+function instruction(to,code,active,done){const n=el('div','op'+(active?' current':done?' done':''));n.append(el('strong','',code));to.append(n)}
+function renderCPU(root){
+ const nums=[3,5,-2],input=el('input');input.type='number';input.min='-20';input.max='20';input.step='1';input.id='cpu-middle';input.value='5';
+ const actions=el('div','ops'),board=el('div','kv'),out=attachConsole(root,'PC=0  r0=0');
+ let pc=0,r0=0;
+ const calc=()=>{
+  actions.replaceChildren();nums.forEach((n,i)=>instruction(actions,'['+i+'] ADD '+(n>=0?'+':'')+n,pc===i,pc>i));
+  board.replaceChildren(...[['PC（下一指令）',pc],['r0（当前值）',r0],['剩余指令',3-pc]].map(v=>wrap('div','',el('small','',v[0]),el('b','',v[1]))));
+  out.textContent='PC='+pc+'  r0='+r0+(pc===3?'\nHALT：三条指令完成':'\n下一条：ADD '+nums[pc]);
+  next.disabled=pc>=3
+ };
+ const next=button('执行下一条指令',()=>{if(pc<3){r0+=nums[pc];pc++;explored();calc();announce('指令执行后 r0 被写回，PC 前进到 '+pc+'。') }});
+ const reset=button('重置寄存器','' ,'secondary');
+ reset.onclick=()=>{pc=0;r0=0;calc();announce('重新从 r0=0 开始。')};
+ input.addEventListener('change',()=>{const v=Number(input.value);if(!Number.isInteger(v)||v< -20||v>20){announce('请输入 −20 到 20 之间的整数。');return}nums[1]=v;pc=0;r0=0;calc();announce('第二条 ADD 已改变，寄存器重置。试着预测最终结果。')});
+ const r=el('div','controlrow');r.append(controlLabel('第二条指令的加数','cpu-middle'),input);root.prepend(r);root.append(board,actions);
+ controls(root,next,reset);makeStatus(root,'调整第二条指令或单步执行，观察状态变化。');calc();
 }
-select.addEventListener('change',function(){mode=Number(select.value);step=0;draw()});
-document.getElementById('back').addEventListener('click',function(){step=Math.max(0,step-1);draw()});
-document.getElementById('next').addEventListener('click',function(){step=Math.min(list[which].modes[mode].steps.length-1,step+1);draw()});
-document.getElementById('restart').addEventListener('click',function(){step=0;draw()});
-draw();
+function renderLinker(root){
+ const checkbox=el('input');checkbox.type='checkbox';checkbox.id='include-add';checkbox.checked=true;
+ const label=controlLabel('链接时包含 add.c','include-add');row(root,checkbox,label);
+ const left=wrap('div','sourcefile',el('h4','','main.c'),el('pre','','int add(int,int);\nint main(void) {\n  return add(2,3);\n}'));
+ const right=wrap('div','sourcefile',el('h4','','add.c'),el('pre','','int add(int a,int b)\n{ return a+b; }'));
+ const src=wrap('div','twosources',left,right),binary=el('div','console','目标文件：main.o 引用 add；add.o 定义 add。');
+ root.append(src,binary);
+ const attempt=button('尝试链接',()=>{
+  const ok=checkbox.checked;
+  binary.textContent=ok?'main.o [引用 add]\n        ↓ 符号解析成功\nadd.o [定义 add]\n        ↓\njoined：构建成功（模拟）':'main.o [引用 add]\n        ↓\n链接器：undefined reference to add\njoined：未生成（模拟）';
+  explored();announce(ok?'找到了 add 的定义，因此可以生成可执行文件。':'缺少 add 的定义，编译阶段可能成功，但链接无法完成。')
+ });
+ checkbox.addEventListener('change',()=>{right.classList.toggle('disabled',!checkbox.checked);binary.textContent='链接条件已改变。请重新尝试链接。'});
+ controls(root,attempt,button('重置',()=>{checkbox.checked=true;right.classList.remove('disabled');binary.textContent='目标文件：main.o 引用 add；add.o 定义 add。';announce('已恢复两个源文件。')},'secondary'));
+ makeStatus(root,'去掉 add.c 后，试试还能否找到符号定义。');
+}
+function renderCache(root){
+ const mode=select(['连续访问 0,1,2,…,15','先 0,4,8,12，再 1,5,…'], 'cache-mode');
+ row(root,controlLabel('访问顺序','cache-mode'),mode);
+ let seq=[],i=0,slots=[null,null],hits=0,misses=0,last=-1;
+ const cells=el('div','cells'),bars=el('div','caches'),stats=el('div','kv');
+ root.append(el('p','tiny','教学缓存：2 个直接映射槽，每行装 4 个相邻元素；只模拟元素访问的命中与替换，不模拟真实耗时。'),cells,bars,stats);
+ const output=attachConsole(root,'');
+ const update=()=>{
+  cells.replaceChildren(...Array.from({length:16},(_,k)=>{const c=el('div','cell'+(k===last?(lastHit?' hit':' miss'):''),k);c.title='数组元素 a['+k+']';return c}));
+  bars.replaceChildren(...slots.map((v,k)=>wrap('div','slot',el('span','', '缓存槽 '+k),el('b','',v===null?'空':'a['+(v*4)+'…'+(v*4+3)+']'))));
+  stats.replaceChildren(...[['已访问',i+' / 16'],['命中',hits],['未命中',misses]].map(v=>wrap('div','',el('small','',v[0]),el('b','',v[1]))));
+  output.textContent=i===0?'下一步读 a['+seq[0]+']':('第 '+i+' 次访问 a['+last+'] → '+(lastHit?'命中':'未命中')+'\n缓存行长度=4，映射槽=(下标÷4) mod 2');
+  next.disabled=i===16
+ };
+ let lastHit=false;
+ const load=()=>{seq=Number(mode.value)===0?Array.from({length:16},(_,k)=>k):Array.from({length:4},(_,j)=>Array.from({length:4},(_,k)=>k*4+j)).flat();i=0;slots=[null,null];hits=0;misses=0;last=-1;lastHit=false;update();announce('切换了访问次序；缓存状态也已重置。')};
+ const step=()=>{if(i>=seq.length)return;const x=seq[i++],block=Math.floor(x/4),slot=block%2;last=x;lastHit=slots[slot]===block;if(lastHit)hits++;else{misses++;slots[slot]=block}explored();update();announce('访问 a['+x+']：'+(lastHit?'命中，已缓存所需的数据行。':'未命中，需要装入数据行并可能替换原有行。'))};
+ const next=button('访问下一个元素',step);
+ controls(root,next,button('运行全部访问',()=>{while(i<16)step()},'secondary'),button('重新开始',load,'soft'));
+ makeStatus(root,'先预测：两种顺序在这个简化缓存中，哪一种未命中更少？');
+ mode.addEventListener('change',load);load();
+}
+function renderFork(root){
+ const wait=el('input');wait.type='checkbox';wait.checked=true;wait.id='waitpid';
+ const mode=select(['父进程先得到 CPU','子进程先得到 CPU'],'fork-schedule');
+ row(root,wait,controlLabel('父进程调用 waitpid','waitpid'));
+ row(root,controlLabel('选择一种可能的调度','fork-schedule'),mode);
+ const timeline=el('div','timeline'),output=attachConsole(root,'');
+ root.append(timeline);
+ let states=[],pos=0;
+ const load=()=>{
+  const parentFirst=mode.value==='0',w=wait.checked;
+  states=[['公共','fork() → 分出父、子两条路线']];
+  if(w){
+   if(parentFirst)states.push(['父进程','进入 waitpid，暂停等待子进程结束']);
+   states.push(['子进程','输出 child'],['子进程','子进程结束']);
+   if(!parentFirst)states.push(['父进程','waitpid 返回：子进程已结束']);
+   else states.push(['父进程','waitpid 被唤醒']);
+   states.push(['父进程','输出 parent']);
+  }else{
+   if(parentFirst)states.push(['父进程','输出 parent'],['子进程','输出 child']);
+   else states.push(['子进程','输出 child'],['父进程','输出 parent']);
+   states.push(['共同结论','不等待时，此顺序只是可能情形，不是保证']);
+  }
+  pos=0;draw();announce('调度路线已改变。逐步观察哪一条路线先执行。');
+ };
+ const draw=()=>{
+  timeline.replaceChildren(...states.map((v,k)=>{const e=el('div','event'+(k===pos?' now':k<pos?' done':''));e.append(el('small','',v[0]),el('strong','',v[1]));return e}));
+  const messages=states.slice(0,pos+1).filter(v=>v[1].startsWith('输出 ')).map(v=>v[1].slice(3));
+  output.textContent='模拟 stdout:\n'+(messages.join('\n')||'（尚无输出）')+'\n\n已观察步骤 '+(pos+1)+' / '+states.length;
+  next.disabled=pos>=states.length-1
+ };
+ const next=button('推进调度一步',()=>{if(pos<states.length-1){pos++;explored();draw();announce(states[pos][0]+'：'+states[pos][1]);}});
+ root.append(output);controls(root,next,button('从 fork 开始',load,'secondary'));makeStatus(root,'waitpid 约束了父进程接下来的打印动作，试着关闭等待。');
+ wait.addEventListener('change',load);mode.addEventListener('change',load);load();
+}
+function renderMemory(root){
+ const table=[3,7,null,1],address=el('input');address.type='number';address.id='vaddr';address.min='0';address.max='63';address.step='1';address.value='19';
+ row(root,controlLabel('虚拟地址（0—63）','vaddr'),address);
+ const pages=el('div','pages'),kv=el('div','kv'),output=attachConsole(root,'');
+ root.append(el('p','tiny','简化模型：每页 16 字节，四个虚拟页；VPN=2 故意设置为未映射，以观察缺页/访问错误的区别。'),pages,kv);
+ const update=()=>{
+  const v=Number(address.value);if(!Number.isInteger(v)||v<0||v>63){announce('请输入 0 至 63 的整数虚拟地址。');return}
+  const vpn=Math.floor(v/16),offset=v%16,frame=table[vpn];
+  pages.replaceChildren(...table.map((f,i)=>{const c=el('div','pagecell'+(f===null?' unmapped':'')+(vpn===i?' active':''));c.append(el('span','', 'VPN '+i),el('b','',f===null?'未映射':'→ PFN '+f));return c}));
+  kv.replaceChildren(...[['虚拟页号',vpn],['页内偏移',offset],['物理地址',frame===null?'×':frame*16+offset]].map(a=>wrap('div','',el('small','',a[0]),el('b','',a[1]))));
+  output.textContent=frame===null?('VA '+v+' → VPN '+vpn+' / offset '+offset+'\n本页表无映射：无法翻译（示意地址访问错误）'):('VA '+v+' → VPN '+vpn+' + offset '+offset+'\nPFN '+frame+' × 16 + '+offset+' = PA '+(frame*16+offset));
+  explored();announce(frame===null?'这个模型中该 VPN 未映射；不等于真实系统一次正常缺页就一定是错误。':'转换了页号，保留了页内偏移 '+offset+'。');
+ };
+ address.addEventListener('input',update);
+ controls(root,button('试试跨页地址 32',()=>{address.value='32';update()},'secondary'),button('回到地址 19',()=>{address.value='19';update()},'soft'));
+ makeStatus(root,'改变虚拟地址，看页号与页内偏移如何一起决定映射结果。');update();
+}
+function renderFiles(root){
+ const mode=select(['w（覆盖）','a（追加）'],'filemode');const msg=el('input');msg.type='text';msg.id='filecontent';msg.value='NEW';msg.maxLength=45;
+ row(root,controlLabel('打开方式','filemode'),mode);row(root,controlLabel('待写入内容','filecontent'),msg);
+ const file=el('pre'),buffer=el('pre');root.append(wrap('div','iozones',wrap('div','zone',el('h4','','note.txt · 文件可见内容'),file),wrap('div','zone',el('h4','','FILE* · 教学流缓冲'),buffer)));
+ const output=attachConsole(root,'');
+ let opened=false,pending='',actual='OLD',ever=false;
+ function update(){file.textContent=actual||'（空）';buffer.textContent=pending||'（空）';output.textContent=opened?'流状态：已打开（'+(mode.value==='0'?'w':'a')+'）':'流状态：已关闭';openBtn.disabled=opened;writeBtn.disabled=!opened;flushBtn.disabled=!opened;closeBtn.disabled=!opened;}
+ function reset(){actual='OLD';pending='';opened=false;ever=false;update();announce('文件重置为 OLD；你可以比较 w 与 a 的区别。')}
+ const openBtn=button('① fopen',()=>{if(opened)return;opened=true;ever=true;if(mode.value==='0')actual='';update();explored();announce(mode.value==='0'?'w 模式：已有文件在成功打开时被截断。':'a 模式：打开后，原有文件 OLD 保留。')});
+ const writeBtn=button('② fputs',()=>{if(!opened)return;pending+=msg.value;update();explored();announce('教学流缓冲现在保存 '+JSON.stringify(pending)+'。这里刻意延迟写出。')});
+ const flushBtn=button('③ fflush',()=>{if(!opened)return;actual+=pending;pending='';update();explored();announce('模拟刷新成功：将缓冲数据写出。真实的 fflush 不等于 fsync 的持久化保证。')});
+ const closeBtn=button('④ fclose',()=>{if(!opened)return;actual+=pending;pending='';opened=false;update();explored();announce('模拟关闭成功，并在关闭前刷新流缓冲。')});
+ controls(root,openBtn,writeBtn,flushBtn,closeBtn,button('重置文件',reset,'secondary'));
+ makeStatus(root,'先打开文件，再执行 fputs；观察用户态缓冲区与文件模型的区别。');
+ mode.addEventListener('change',reset);reset();
+}
+function renderHTTP(root){
+ const path=el('input');path.type='text';path.id='http-path';path.value='/';path.maxLength=90;
+ row(root,controlLabel('请求路径','http-path'),path);
+ const request=el('div','requestline','GET / HTTP/1.1'),response=el('div','console','（尚未发送）');
+ root.append(wrap('div','iozones',wrap('div','zone',el('h4','','客户端发出的请求'),request),wrap('div','zone',el('h4','','本地服务器的响应'),response)));
+ let index=0,steps=[];
+ const report=el('p','tiny','这个演示不发送真实网络请求。');root.append(report);
+ function build(){const target=path.value.startsWith('/')?path.value:'/'+path.value,found=(target==='/'||target==='/index.html');steps=[['客户端','建立到 127.0.0.1 的连接（示意）'],['客户端','发送 GET '+target+' HTTP/1.1'],['服务器',found?'定位 index.html':'找不到 '+target],['服务器',found?'HTTP/1.0 200 OK\nContent-Type: text/html\n\n<h1>Hello HTTP</h1>':'HTTP/1.0 404 Not Found\nContent-Type: text/plain\n\nNot Found']];index=0;request.textContent='GET '+target+' HTTP/1.1\nHost: 127.0.0.1';response.textContent='（尚未收到）';next.disabled=false;announce('路线已更新。每次只推进一个网络交互阶段。') }
+ const next=button('推进一次请求',()=>{if(index>=steps.length)return;const event=steps[index++];if(index===steps.length)response.textContent=event[1];else response.textContent='['+index+'/'+steps.length+'] '+event[0]+'：'+event[1];next.disabled=index>=steps.length;explored();announce(event[0]+'：'+event[1].split('\n')[0]);});
+ controls(root,next,button('重新发起请求',build,'secondary'),button('请求 /missing',()=>{path.value='/missing';build()},'soft'));
+ makeStatus(root,'先预测 / 和 /missing 的不同，再模拟响应。');path.addEventListener('change',build);build();
+}
+function renderThreads(root){
+ const join=el('input');join.type='checkbox';join.checked=true;join.id='threadjoin';
+ const schedule=select(['主线程先执行','工作线程先执行'],'threadsched');
+ row(root,join,controlLabel('使用 pthread_join','threadjoin'));row(root,controlLabel('选择一种可能的调度','threadsched'),schedule);
+ const main=el('div','events'),worker=el('div','events'),output=attachConsole(root,'');
+ root.append(wrap('div','threadlanes',wrap('div','lane',el('h4','','main · 主线程'),main),wrap('div','lane',el('h4','','worker · 工作线程'),worker)));
+ let flow=[],pc=0;
+ function load(){
+  const w=join.checked,mainFirst=schedule.value==='0';flow=[['main','pthread_create(worker)']];
+  if(w)flow.push(...(mainFirst?[['main','pthread_join → 等待'],['worker','puts("worker")'],['worker','return'],['main','pthread_join 返回'],['main','puts("main done")']]:[['worker','puts("worker")'],['worker','return'],['main','pthread_join 返回'],['main','puts("main done")']]));
+  else flow.push(...(mainFirst?[['main','puts("main done")'],['main','main 返回，进程可能结束'],['worker','此时 worker 未必执行']]:[['worker','puts("worker")'],['main','puts("main done")'],['main','main 返回']]));
+  pc=0;render();announce('调度情形已重置。这里仅展示一种可能路线，不预测真实操作系统调度。')
+ }
+ function render(){
+  const slice=flow.slice(0,pc+1);
+  main.textContent=slice.filter(v=>v[0]==='main').map(v=>v[1]).join('\n')||'（未执行）';
+  worker.textContent=slice.filter(v=>v[0]==='worker').map(v=>v[1]).join('\n')||'（未执行）';
+  output.textContent='模拟 stdout:\n'+(slice.filter(v=>v[1].startsWith('puts(')).map(v=>v[1].includes('worker')?'worker':'main done').join('\n')||'（尚未打印）');
+  next.disabled=pc>=flow.length-1
+ }
+ const next=button('推进调度一步',()=>{if(pc<flow.length-1){pc++;render();explored();announce(flow[pc][0]+'：'+flow[pc][1]);}});
+ root.append(output);controls(root,next,button('从头运行',load,'secondary'));
+ makeStatus(root,'尝试有 join / 无 join，再比较两种调度路线。');
+ join.addEventListener('change',load);schedule.addEventListener('change',load);load();
+}
+const renderers={3:renderCPU,4:renderLinker,5:renderCache,6:renderFork,7:renderMemory,8:renderFiles,9:renderHTTP,10:renderThreads};
+Object.entries(groups).forEach(([k,nums])=>nums.forEach(n=>{const s=specs[n-3];const b=el('button','railbutton');b.type='button';b.dataset.lab=String(n);b.append(el('span','railnum',String(n).padStart(2,'0')),el('span','',s.short));b.addEventListener('click',()=>open(n));$('rail-'+k).append(b)}));
+function open(n){
+ const s=specs[n-3];if(!s)return;current=n;prefs.current=n;save();
+ document.querySelectorAll('.railbutton').forEach(x=>x.setAttribute('aria-current',String(Number(x.dataset.lab)===n)));
+ ['stage3','stage6','stage9'].forEach(id=>$(id).classList.toggle('on',n<6?id==='stage3':n<9?id==='stage6':id==='stage9'));
+ $('breadcrumb').textContent=String(n).padStart(2,'0');$('chapter').textContent=String(n).padStart(2,'0')+' / '+s.short;
+ $('lesson-title').textContent=s.name;$('lesson-description').textContent=s.description;$('chapter-chip').textContent=s.chapter;$('instrument-title').textContent=s.instrument;
+ $('question').textContent=s.question;$('concept').textContent=s.concept;$('chapter-note').textContent='读书只需查到 '+s.chapter+' 对应节，先完成左侧观察。';
+ $('micro').href='../微实验/'+s.file;$('deep').href='../'+s.deep;
+ const choices=$('choices');choices.replaceChildren();$('answer').textContent='选择一个预测，再通过左侧操作核对。';
+ s.options.forEach((opt,i)=>{const b=el('button','choice',opt);b.type='button';b.setAttribute('aria-pressed','false');b.addEventListener('click',()=>{
+  Array.from(choices.children).forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+  $('answer').textContent=i===s.correct?'✓ '+s.feedback:'再试着操作左侧模型核对。提示：'+(n===5?'只在本教学缓存配置下比较访问结果。':'先看实验状态变化，再重新选择。');
+ });choices.append(b)});
+ const area=$('instrument');area.replaceChildren();renderers[n](area);
+ $('prev-lab').disabled=n===3;$('next-lab').disabled=n===10;
+ try{history.replaceState(null,'','#lab-'+n)}catch(e){}
+}
+$('prev-lab').addEventListener('click',()=>{if(current>3){open(current-1);$('lesson-title').scrollIntoView({block:'start',behavior:'auto'})}});
+$('next-lab').addEventListener('click',()=>{if(current<10){open(current+1);$('lesson-title').scrollIntoView({block:'start',behavior:'auto'})}});
+window.addEventListener('hashchange',()=>{const m=location.hash.match(/^#lab-(\d{1,2})$/);if(m){const n=Number(m[1]);if(n>=3&&n<=10)open(n)}});
+const fragment=location.hash.match(/^#lab-(\d{1,2})$/);open(fragment&&Number(fragment[1])>=3&&Number(fragment[1])<=10?Number(fragment[1]):current);explored=explored;
+if(prefs.observed)$('progress').textContent='已观察 '+Object.keys(prefs.observed).filter(k=>prefs.observed[k]&&Number(k)>=3&&Number(k)<=10).length+' / 8';
 })();
-</script></body></html>
+</script>
+</body>
+</html>
