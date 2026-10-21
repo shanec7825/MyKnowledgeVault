@@ -83,7 +83,7 @@ const specs=[
 const groups={mach:[3,4,5],os:[6,7,8],net:[9,10]};
 const $=id=>document.getElementById(id);
 const el=(tag,cls,txt)=>{const a=document.createElement(tag);if(cls)a.className=cls;if(txt!==undefined)a.textContent=String(txt);return a};
-function button(label,fn,kind=''){const b=el('button','action '+kind,label);b.type='button';b.addEventListener('click',fn);return b}
+function button(label,fn,kind=''){const b=el('button','action '+kind,label);b.type='button';if(typeof fn==='function')b.addEventListener('click',fn);return b}
 function select(items,id){const s=el('select');s.id=id;items.forEach((v,i)=>{const o=el('option','',v);o.value=String(i);s.append(o)});return s}
 function controlLabel(txt,id){const l=el('label','',txt);l.htmlFor=id;return l}
 function makeText(node,txt){node.textContent=String(txt)}
@@ -109,7 +109,7 @@ function renderCPU(root){
   next.disabled=pc>=3
  };
  const next=button('执行下一条指令',()=>{if(pc<3){r0+=nums[pc];pc++;explored();calc();announce('指令执行后 r0 被写回，PC 前进到 '+pc+'。') }});
- const reset=button('重置寄存器','' ,'secondary');
+ const reset=button('重置寄存器',null,'secondary');
  reset.onclick=()=>{pc=0;r0=0;calc();announce('重新从 r0=0 开始。')};
  input.addEventListener('change',()=>{const v=Number(input.value);if(!Number.isInteger(v)||v< -20||v>20){announce('请输入 −20 到 20 之间的整数。');return}nums[1]=v;pc=0;r0=0;calc();announce('第二条 ADD 已改变，寄存器重置。试着预测最终结果。')});
  const r=el('div','controlrow');r.append(controlLabel('第二条指令的加数','cpu-middle'),input);root.prepend(r);root.append(board,actions);
@@ -192,16 +192,16 @@ function renderMemory(root){
  row(root,controlLabel('虚拟地址（0—63）','vaddr'),address);
  const pages=el('div','pages'),kv=el('div','kv'),output=attachConsole(root,'');
  root.append(el('p','tiny','简化模型：每页 16 字节，四个虚拟页；VPN=2 故意设置为未映射，以观察缺页/访问错误的区别。'),pages,kv);
- const update=()=>{
+ const update=(userAction=false)=>{
   const v=Number(address.value);if(!Number.isInteger(v)||v<0||v>63){announce('请输入 0 至 63 的整数虚拟地址。');return}
   const vpn=Math.floor(v/16),offset=v%16,frame=table[vpn];
   pages.replaceChildren(...table.map((f,i)=>{const c=el('div','pagecell'+(f===null?' unmapped':'')+(vpn===i?' active':''));c.append(el('span','', 'VPN '+i),el('b','',f===null?'未映射':'→ PFN '+f));return c}));
   kv.replaceChildren(...[['虚拟页号',vpn],['页内偏移',offset],['物理地址',frame===null?'×':frame*16+offset]].map(a=>wrap('div','',el('small','',a[0]),el('b','',a[1]))));
   output.textContent=frame===null?('VA '+v+' → VPN '+vpn+' / offset '+offset+'\n本页表无映射：无法翻译（示意地址访问错误）'):('VA '+v+' → VPN '+vpn+' + offset '+offset+'\nPFN '+frame+' × 16 + '+offset+' = PA '+(frame*16+offset));
-  explored();announce(frame===null?'这个模型中该 VPN 未映射；不等于真实系统一次正常缺页就一定是错误。':'转换了页号，保留了页内偏移 '+offset+'。');
+  if(userAction)explored();announce(frame===null?'这个模型中该 VPN 未映射；不等于真实系统一次正常缺页就一定是错误。':'转换了页号，保留了页内偏移 '+offset+'。');
  };
- address.addEventListener('input',update);
- controls(root,button('试试跨页地址 32',()=>{address.value='32';update()},'secondary'),button('回到地址 19',()=>{address.value='19';update()},'soft'));
+ address.addEventListener('input',()=>update(true));
+ controls(root,button('试试跨页地址 32',()=>{address.value='32';update(true)},'secondary'),button('回到地址 19',()=>{address.value='19';update(true)},'soft'));
  makeStatus(root,'改变虚拟地址，看页号与页内偏移如何一起决定映射结果。');update();
 }
 function renderFiles(root){
@@ -279,8 +279,7 @@ function open(n){
 $('prev-lab').addEventListener('click',()=>{if(current>3){open(current-1);$('lesson-title').scrollIntoView({block:'start',behavior:'auto'})}});
 $('next-lab').addEventListener('click',()=>{if(current<10){open(current+1);$('lesson-title').scrollIntoView({block:'start',behavior:'auto'})}});
 window.addEventListener('hashchange',()=>{const m=location.hash.match(/^#lab-(\d{1,2})$/);if(m){const n=Number(m[1]);if(n>=3&&n<=10)open(n)}});
-const fragment=location.hash.match(/^#lab-(\d{1,2})$/);open(fragment&&Number(fragment[1])>=3&&Number(fragment[1])<=10?Number(fragment[1]):current);explored=explored;
-if(prefs.observed)$('progress').textContent='已观察 '+Object.keys(prefs.observed).filter(k=>prefs.observed[k]&&Number(k)>=3&&Number(k)<=10).length+' / 8';
+const fragment=location.hash.match(/^#lab-(\d{1,2})$/);open(fragment&&Number(fragment[1])>=3&&Number(fragment[1])<=10?Number(fragment[1]):current);if(prefs.observed)$('progress').textContent='已观察 '+Object.keys(prefs.observed).filter(k=>prefs.observed[k]&&Number(k)>=3&&Number(k)<=10).length+' / 8';
 })();
 </script>
 </body>
