@@ -83,6 +83,8 @@
   <label class="cw-label" for="cw-prediction">运行前，写下你预计会看到什么</label>
   <textarea id="cw-prediction" class="cw-prediction" placeholder="例如：改成 0x80 后会输出……"></textarea>
   <div class="cw-toolbar"><button class="cw-button" id="cw-copy" type="button">复制 Ubuntu 命令</button></div>
+  <div class="cw-toolbar" id="cw-split" hidden><button class="cw-button alt" id="cw-compile-only" type="button">只复制编译命令</button><button class="cw-button alt" id="cw-run-only" type="button">只复制运行命令</button></div>
+  <p class="cw-note">可以故意只修改源码，却仅执行旧程序：观察为什么需要重新编译。以上按钮只是复制命令，不会在网页里执行。</p>
   <pre class="cw-shell" id="cw-command" aria-label="根据你编辑的代码生成的终端命令"></pre>
   <p class="cw-status" id="cw-copy-status" role="status">只复制命令。请在 Ubuntu 中亲手粘贴执行，并检查命令内容。</p>
   <div class="cw-secondary" id="cw-second" hidden>
