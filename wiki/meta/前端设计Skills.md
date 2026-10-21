@@ -24,9 +24,9 @@ status: reproducible-setup
 ## 官方来源
 
 - Frontend Design: https://github.com/anthropics/skills/tree/main/skills/frontend-design  
-  本库镜像来源：\`dbd4588f9e1033efb41dad4bef2f7947c8993d44\`（保留原始 SKILL.md 和 LICENSE.txt，未改写）。
+  本库镜像来源：`dbd4588f9e1033efb41dad4bef2f7947c8993d44`（保留原始 SKILL.md 和 LICENSE.txt，未改写）。
 - UI UX Pro Max: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill  
-  安装器：\`ui-ux-pro-max-cli@2.15.0\`；仅在本地明确执行时下载、生成所需 Skill 文件。生成内容及其许可证按上游发行包为准。
+  安装器：`ui-ux-pro-max-cli@2.15.0`；仅在本地明确执行时下载、生成所需 Skill 文件。生成内容及其许可证按上游发行包为准。
 
 外部 Skill 属于第三方说明和代码；使用前以当前用户要求、仓库 [AGENTS.md](../../AGENTS.md) 及安全规范为优先，不盲目执行来源不明的命令。
 
@@ -34,16 +34,16 @@ status: reproducible-setup
 
 在电脑上打开**已经克隆好的 MyKnowledgeVault 根目录**：
 
-\`\`\`powershell
+```powershell
 git status --short
 git pull --ff-only origin main
 powershell -NoProfile -File .\tools\design-skills\Install-DesignSkills.ps1 -RefreshQMD
-\`\`\`
+```
 
 - 若 git pull 因本地未提交修改或冲突而停止，**先处理本地修改**；不要强制覆盖或 reset。
 - 需要 Node.js / npx；UI UX Pro Max 的本地搜索还需要 Python 3。
 - 安装脚本不会覆写已有 UI UX Pro Max Skill。如果发现残缺目录，会报错并要求人工检查。
-- \`-RefreshQMD\` 按本仓库 AGENTS.md 约定顺序运行 update → embed → status。只有看到 \`Pending: 0\` 才算索引更新完成；脚本不会假设已经成功。
+- `-RefreshQMD` 按本仓库 AGENTS.md 约定顺序运行 update → embed → status。只有看到 `Pending: 0` 才算索引更新完成；脚本不会假设已经成功。
 - 安装器生成的 UI UX Pro Max 文件是**本地工作区新文件**。不会自动 git commit/push，以免未经检查把第三方生成文件写回仓库。
 
 ## 在 Codex 中怎样用
