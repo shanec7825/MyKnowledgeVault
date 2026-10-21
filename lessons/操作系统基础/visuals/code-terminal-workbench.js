@@ -24,7 +24,7 @@ function countChanges(){
  markText(changed===0&&!runnerChanged?"还没有改代码。试着完成上方的小任务。":"你修改了 "+changed+" 个文件"+(runnerChanged?"，也修改了构建命令":"")+"。复制并到 Ubuntu 中执行，观察变化。");
 }
 function bashMarker(source){let marker="CSAPP_CODE_END";while(source.split("\n").some(l=>l===marker))marker+="_X";return marker}
-function makeCommands(){
+function makeCommands(includeRunner=true){
  if(id<0)return null;const l=model[id];
  let lines=["mkdir -p ~/cs-system/tiny"+id+" && cd ~/cs-system/tiny"+id];
  root.querySelectorAll("[data-source]").forEach(box=>{
@@ -32,7 +32,7 @@ function makeCommands(){
   const marker=bashMarker(code);
   lines.push("cat > "+name+" <<'"+marker+"'\n"+code.replace(/\n$/,"")+"\n"+marker);
  });
- lines.push(byId("cw-runner").value);
+ if(includeRunner)lines.push(byId("cw-runner").value);
  return lines.join("\n");
 }
 function splitBuildRun(){
@@ -108,6 +108,7 @@ function compare(){
  ):("目前没有匹配原示例的关键特征。"+(changed?"你改动了代码，因此结果不同可能正是预期；请对照预测检查。":"检查是否粘贴了程序 stdout，或者编译/运行命令有没有失败。"));
 }
 byId("cw-copy").addEventListener("click",()=>copy(makeCommands(),byId("cw-copy-status")));
+byId("cw-save-source").addEventListener("click",()=>copy(makeCommands(false),byId("cw-copy-status")));
 byId("cw-compile-only").addEventListener("click",()=>{const x=splitBuildRun();if(x)copy(x.compile,byId("cw-copy-status"))});
 byId("cw-run-only").addEventListener("click",()=>{const x=splitBuildRun();if(x)copy(x.run,byId("cw-copy-status"))});
 
