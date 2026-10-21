@@ -89,6 +89,12 @@ function compare(){
  const value=byId("cw-actual").value;
  if(!value.trim()){byId("cw-actual-status").textContent="请先在真实 Ubuntu 运行，再粘贴输出或错误信息。";return}
  const l=model[id],text=value.replace(/\r\n/g,"\n");
+ if(id===4&&/undefined reference to ['`]?add/i.test(text)){
+  byId("cw-actual-status").textContent="你观察到了链接阶段的 undefined reference：main.c 中调用了 add，但最终链接命令缺少它的定义。把 add.c 加回构建命令并重新链接，观察能否恢复。";return
+ }
+ if(id===9&&/HTTP\/1\.[01] 404/i.test(text)&&!/HTTP\/1\.[01] 200/i.test(text)){
+  byId("cw-actual-status").textContent="这份响应显示 404：如果你请求的是 /missing，这正是有意义的观察。再请求 / 看看 200 响应，并比较请求路径。";return
+ }
  if(/command not found|No such file or directory|undefined reference|error:|Permission denied|Traceback|Address already in use/i.test(text)){
   byId("cw-actual-status").textContent="检测到可能的命令、编译或运行错误。先看错误信息对应的行：确认 gcc/python3 是否安装、工作目录是否正确，或缺少了哪个 .c 文件。这里不自动修复你的代码。";
   return;
