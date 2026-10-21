@@ -23,6 +23,7 @@
 .cw-actual{min-height:100px;font-family:Consolas,monospace}
 .cw-shell{font:12px/1.65 Consolas,Monaco,monospace;padding:14px 16px;background:#172d3c;color:#d6f7e5;border-radius:5px;white-space:pre-wrap;overflow-wrap:anywhere;margin:9px 0;max-height:300px;overflow:auto;border-left:4px solid #e78a54;user-select:text}
 .cw-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin:11px 0}
+.cw-toolbar[hidden]{display:none}
 .cw-button{border:1px solid #195f58;background:#1b625a;color:#fff;padding:10px 13px;font-size:13px;font-weight:800;min-height:43px;border-radius:5px;cursor:pointer}
 .cw-button:hover{background:#2f8175}.cw-button.alt{background:white;color:#205c56;border-color:#accac0}.cw-button.alt:hover{background:#e6f2ed}
 .cw-note{font-size:12px;color:#536b70;line-height:1.7;margin:8px 0}
