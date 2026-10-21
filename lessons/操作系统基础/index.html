@@ -178,6 +178,26 @@ button{touch-action:manipulation;transition:background-color .15s,border-color .
 html.js .lesson{display:none}
 html.js .lesson.active{display:block}
 
+
+/* Five linked learning stages: a map, not a pile of course cards */
+.pathway{border-top:2px solid #aabbb7;padding-top:29px;margin-top:50px}
+.pathway h2{font-size:clamp(24px,3vw,33px);margin:7px 0;letter-spacing:-.045em}
+.pathway p{color:#597179;font-size:14px;margin:0 0 20px;line-height:1.7}
+.pathsteps{border-top:1px solid #cbd8d6}
+.pathrow{display:grid;grid-template-columns:82px minmax(0,1.15fr) minmax(180px,.7fr);gap:19px;align-items:center;border-bottom:1px solid #cbd8d6;padding:18px 12px;text-decoration:none}
+.pathrow:hover{background:#e7f0ec;text-decoration:none}
+.pathid{font:700 13px Consolas,monospace;color:#427970}
+.pathcopy strong{font-size:17px;display:block;color:#203d43;letter-spacing:-.025em}
+.pathcopy small{font-size:13px;display:block;color:#607985;margin-top:5px}
+.pathaction{text-align:right;color:#226b6c;font-size:13px;font-weight:750}
+.learninglevels{display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:#e7eeeb;border:1px solid #cbd8d6;margin:20px 0 0;border-radius:6px}
+.learninglevels>div{border-right:1px solid #c4d2cc;padding:17px 16px}
+.learninglevels>div:last-child{border:0}
+.learninglevels b{font-size:14px;color:#27594f;display:block;margin-bottom:7px}
+.learninglevels span{font-size:12px;color:#4e6c72;line-height:1.65}
+.pathnote{margin-top:14px!important;font-size:12px!important}
+@media(max-width:700px){.pathrow{grid-template-columns:48px 1fr;gap:9px;padding:15px 4px}.pathaction{grid-column:2;text-align:left}.learninglevels{grid-template-columns:1fr}.learninglevels>div{border-right:0;border-bottom:1px solid #c4d2cc}.learninglevels>div:last-child{border:0}}
+
 </style>
 </head>
 <body>
@@ -193,8 +213,9 @@ html.js .lesson.active{display:block}
   </nav>
   <div class="divider"></div>
   <div class="navlabel">继续探索</div>
+  <a class="navitem full" href="#pathway"><span class="n">◎</span> 五阶段路线与学习方式 <span class="arr">↓</span></a>
   <a class="navitem full" href="#catalog"><span class="n">↗</span> 全部 11 个微实验 <span class="arr">↓</span></a>
-  <a class="navitem full" href="visuals/进阶前的交互观察板.html"><span class="n">03+</span> 进阶观察板 <span class="arr">↗</span></a>
+  <a class="navitem full" href="visuals/进阶前的交互观察板.html#lab-3"><span class="n">03+</span> 八个进阶互动实验 <span class="arr">↗</span></a>
   <a class="navitem full" href="实验参考指南与可视化索引.md"><span class="n">📖</span> 教材与资料索引 <span class="arr">↗</span></a>
   <div class="sidefoot">先看得见，再问为什么。<br>这里的结果是 <strong>教学模拟</strong>，真实证据来自 Ubuntu。<br><a href="README.md">返回 Obsidian 导航</a></div>
 </aside>
@@ -282,22 +303,42 @@ html.js .lesson.active{display:block}
         <div class="explainer"><strong>寄存器是什么？</strong><p>它是 CPU 内部速度很快的少量存储位置。这里以 Linux x86-64 常见 System V ABI 为背景，用简化代码展示 rdi / rsi 传参、rax 返回结果。<strong>真实编译器产生的指令可能不同。</strong></p></div>
       </div>
     </div>
-    <div class="footlinks"><a href="微实验/02-函数调用与寄存器.md">用 GCC / GDB 观察真实函数 ↗</a><a href="自学文档2-项目2-机器级程序与函数栈.md">深入 CS:APP 第 3 章 ↗</a></div>
+    <div class="footlinks"><a href="visuals/进阶前的交互观察板.html#lab-3">继续：03 · 三条指令的小 CPU</a><a href="微实验/02-函数调用与寄存器.md">用 GCC / GDB 观察真实函数 ↗</a><a href="自学文档2-项目2-机器级程序与函数栈.md">深入 CS:APP 第 3 章 ↗</a></div>
   </section>
-  <section class="catalog" id="catalog">
-    <div class="catalogtop"><div><div class="overline">EXPLORE · 不必按顺序读完</div><h2>整门课其实有 11 个小问题。</h2><p>0–2 直接在此页玩。3–10 保留原有微实验和进阶观察板；需要时再打开。</p></div><a class="textlink" href="visuals/进阶前的交互观察板.html">探索 3–10 的交互观察板 ↗</a></div>
+  
+<section class="pathway" id="pathway" aria-labelledby="pathway-heading">
+  <div class="overline">完整课程结构 · 从一个程序出发</div>
+  <h2 id="pathway-heading">五个阶段，回答一条连续的问题。</h2>
+  <p>一段 C 程序究竟怎样在计算机里运行、使用资源，再通过网络与其他程序协作？不必按编号刷题，按你现在最想弄懂的问题进入。</p>
+  <div class="pathsteps">
+    <a class="pathrow" href="#lab-0" data-go="0"><span class="pathid">阶段 1<br>00</span><span class="pathcopy"><strong>程序从哪里来？</strong><small>源代码 → 编译器 → 可执行文件 → 运行</small></span><span class="pathaction">先玩编译与运行</span></a>
+    <a class="pathrow" href="#lab-1" data-go="1"><span class="pathid">阶段 2<br>01</span><span class="pathcopy"><strong>机器里存的究竟是什么？</strong><small>位模式、无符号整数和八位补码</small></span><span class="pathaction">操作八个位</span></a>
+    <a class="pathrow" href="visuals/进阶前的交互观察板.html#lab-3"><span class="pathid">阶段 3<br>02–05</span><span class="pathcopy"><strong>CPU 怎样真正执行一个程序？</strong><small>寄存器 → PC → 链接 → Cache；02 在本页</small></span><span class="pathaction">探索 CPU / 链接 / Cache</span></a>
+    <a class="pathrow" href="visuals/进阶前的交互观察板.html#lab-6"><span class="pathid">阶段 4<br>06–08</span><span class="pathcopy"><strong>操作系统怎样管理程序和资源？</strong><small>进程、虚拟内存、文件与 I/O</small></span><span class="pathaction">探索进程 / 内存 / 文件</span></a>
+    <a class="pathrow" href="visuals/进阶前的交互观察板.html#lab-9"><span class="pathid">阶段 5<br>09–10</span><span class="pathcopy"><strong>程序怎样通信、怎样同时工作？</strong><small>HTTP、线程与同步；最终走向小型 Web Server</small></span><span class="pathaction">探索 HTTP / 线程</span></a>
+  </div>
+  <div class="learninglevels" aria-label="每个实验的三个学习深度">
+    <div><b>① 浏览器先看懂</b><span>预测一次，修改一个条件，看看哪项状态改变。</span></div>
+    <div><b>② Ubuntu 亲手验证</b><span>进入该实验的微实验文档，运行最小 C 程序或命令并保存证据。</span></div>
+    <div><b>③ 想深入再学</b><span>需要进一步解释时，再查 CS:APP 和完整项目；不要求预先读完。</span></div>
+  </div>
+  <p class="pathnote">注意：交互进度表示“浏览器中探索过”，不是独立通过验收。知识库的真实学习进展仍应依据你亲自完成的实验与日记证据。</p>
+</section>
+
+<section class="catalog" id="catalog">
+    <div class="catalogtop"><div><div class="overline">所有入口 · 按问题检索</div><h2>11 个问题，都可以直接操作。</h2><p>00–02 在本页操作；03–10 在进阶实验室中操作。每个实验都有独立的 Ubuntu 微实验和教材链接。</p></div><a class="textlink" href="visuals/进阶前的交互观察板.html">进入 03–10 交互实验室 ↗</a></div>
     <div class="cataloglist">
       <a class="catalogrow" href="#top" data-go="0"><span class="catalognum">00</span><span><strong>一段 C 代码如何运行</strong><small>源代码 / 编译 / 可执行文件</small></span><span class="go">互动体验 ↗</span></a>
       <a class="catalogrow" href="#top" data-go="1"><span class="catalognum">01</span><span><strong>一串位为什么能表示负数</strong><small>数据表示 / 补码</small></span><span class="go">互动体验 ↗</span></a>
       <a class="catalogrow" href="#top" data-go="2"><span class="catalognum">02</span><span><strong>函数调用如何返回结果</strong><small>寄存器 / 机器指令 / 函数</small></span><span class="go">互动体验 ↗</span></a>
-      <a class="catalogrow" href="微实验/03-三条指令的小CPU.md"><span class="catalognum">03</span><span><strong>CPU 的下一条指令在哪里</strong><small>PC / 取指 / 执行</small></span><span class="go muted">微实验 ↗</span></a>
-      <a class="catalogrow" href="微实验/04-两个文件拼成程序.md"><span class="catalognum">04</span><span><strong>两个源文件怎样组成一个程序</strong><small>链接 / 符号 / 可执行文件</small></span><span class="go muted">微实验 ↗</span></a>
-      <a class="catalogrow" href="微实验/05-按顺序还是跳着访问.md"><span class="catalognum">05</span><span><strong>为什么访问顺序会影响速度</strong><small>局部性 / Cache</small></span><span class="go muted">微实验 ↗</span></a>
-      <a class="catalogrow" href="微实验/06-一个程序两个进程.md"><span class="catalognum">06</span><span><strong>一个程序如何分成两个进程</strong><small>fork / 进程管理</small></span><span class="go muted">微实验 ↗</span></a>
-      <a class="catalogrow" href="微实验/07-变量住在哪里.md"><span class="catalognum">07</span><span><strong>变量的地址到底在哪里</strong><small>虚拟地址 / 内存映射</small></span><span class="go muted">微实验 ↗</span></a>
-      <a class="catalogrow" href="微实验/08-亲手写出一个文件.md"><span class="catalognum">08</span><span><strong>一串字节如何保存到文件</strong><small>文件描述符 / I/O</small></span><span class="go muted">微实验 ↗</span></a>
-      <a class="catalogrow" href="微实验/09-本机第一个HTTP回复.md"><span class="catalognum">09</span><span><strong>浏览器怎样收到 HTTP 响应</strong><small>Socket / 网络</small></span><span class="go muted">微实验 ↗</span></a>
-      <a class="catalogrow" href="微实验/10-两个线程会合.md"><span class="catalognum">10</span><span><strong>两个线程怎样协作与等待</strong><small>并发 / 同步</small></span><span class="go muted">微实验 ↗</span></a>
+      <a class="catalogrow" href="visuals/进阶前的交互观察板.html#lab-3"><span class="catalognum">03</span><span><strong>CPU 的下一条指令在哪里</strong><small>PC / 取指 / 执行</small></span><span class="go">交互实验 ↗</span></a>
+      <a class="catalogrow" href="visuals/进阶前的交互观察板.html#lab-4"><span class="catalognum">04</span><span><strong>两个源文件怎样组成一个程序</strong><small>链接 / 符号 / 可执行文件</small></span><span class="go">交互实验 ↗</span></a>
+      <a class="catalogrow" href="visuals/进阶前的交互观察板.html#lab-5"><span class="catalognum">05</span><span><strong>为什么访问顺序会影响速度</strong><small>局部性 / Cache</small></span><span class="go">交互实验 ↗</span></a>
+      <a class="catalogrow" href="visuals/进阶前的交互观察板.html#lab-6"><span class="catalognum">06</span><span><strong>一个程序如何分成两个进程</strong><small>fork / 进程管理</small></span><span class="go">交互实验 ↗</span></a>
+      <a class="catalogrow" href="visuals/进阶前的交互观察板.html#lab-7"><span class="catalognum">07</span><span><strong>变量的地址到底在哪里</strong><small>虚拟地址 / 内存映射</small></span><span class="go">交互实验 ↗</span></a>
+      <a class="catalogrow" href="visuals/进阶前的交互观察板.html#lab-8"><span class="catalognum">08</span><span><strong>一串字节如何保存到文件</strong><small>文件描述符 / I/O</small></span><span class="go">交互实验 ↗</span></a>
+      <a class="catalogrow" href="visuals/进阶前的交互观察板.html#lab-9"><span class="catalognum">09</span><span><strong>浏览器怎样收到 HTTP 响应</strong><small>Socket / 网络</small></span><span class="go">交互实验 ↗</span></a>
+      <a class="catalogrow" href="visuals/进阶前的交互观察板.html#lab-10"><span class="catalognum">10</span><span><strong>两个线程怎样协作与等待</strong><small>并发 / 同步</small></span><span class="go">交互实验 ↗</span></a>
     </div>
   </section>
   <footer class="ending">System Lab · CS:APP 3e 对照学习 · 当前页面只是交互学习辅助，不执行本地系统命令。探索记录仅保存在本浏览器 localStorage，不同步到 GitHub / Google Drive，也不代表已经独立掌握。<br><a class="textlink" href="实验参考指南与可视化索引.md">阅读教材映射</a>　·　<a class="textlink" href="计算机系统基础课程大纲与前言.md">课程目标</a>　·　<a class="textlink" href="README.md">Obsidian 文字首页</a></footer>
@@ -329,7 +370,7 @@ function go(n){
  all('.tab').forEach(function(t){t.tabIndex=Number(t.getAttribute('data-go'))===n?0:-1});
  try{history.replaceState(null,'','#lab-'+n)}catch(e){}
 }
-all('[data-go]').forEach(function(el){el.addEventListener('click',function(ev){ev.preventDefault();go(Number(el.getAttribute('data-go')));if(el.classList.contains('catalogrow'))window.scrollTo({top:0,behavior:'smooth'})})});
+all('[data-go]').forEach(function(el){el.addEventListener('click',function(ev){ev.preventDefault();go(Number(el.getAttribute('data-go')));if(el.classList.contains('catalogrow')||el.classList.contains('pathrow'))window.scrollTo({top:0,behavior:window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})})});
 var hashMatch=location.hash.match(/^#lab-(0|1|2)$/);
 go(hashMatch?Number(hashMatch[1]):([0,1,2].includes(saved.lesson)?saved.lesson:0));
 window.addEventListener('hashchange',function(){var m=location.hash.match(/^#lab-(0|1|2)$/);if(m)go(Number(m[1]))});
