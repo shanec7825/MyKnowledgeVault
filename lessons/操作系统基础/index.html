@@ -225,19 +225,7 @@ html.js .lesson.active{display:block}
 <main class="content" id="learning-main" tabindex="-1">
   <div class="overline">System Lab · 从真实问题开始</div>
   <div class="heading"><div><h1>从 <code>hello.c</code><br>到屏幕上的一句话。</h1><p>亲手改写 C 代码，在 Ubuntu 中编译、运行、核对真实输出。看过结果，再用信号链模拟解释发生了什么。</p></div><span class="lessoncount" id="progress" aria-live="polite">互动探索 0 / 3</span></div>
-<section class="signal-deck" id="signal-deck" data-state="source-only" aria-label="源代码到运行输出的实时状态图">
-  <div class="signal-head"><strong>程序执行观察窗</strong><output id="signal-status" aria-live="polite">你写好了源文件，但还没有编译</output></div>
-  <div class="signal-chain" aria-hidden="true">
-    <div class="signal-node node-source live"><span class="stepno">01 / 输入</span><strong>hello.c</strong><small>源代码</small></div>
-    <span class="signal-bus compile"></span>
-    <div class="signal-node node-compiled"><span class="stepno">02 / 构建</span><strong>hello</strong><small id="deck-binary">等待编译</small></div>
-    <span class="signal-bus execute"></span>
-    <div class="signal-node node-execute"><span class="stepno">03 / 执行</span><strong>./hello</strong><small id="deck-run">尚未运行</small></div>
-    <span class="signal-bus output"></span>
-    <div class="signal-node node-output"><span class="stepno">04 / 结果</span><strong>stdout</strong><small id="deck-output">等待输出</small></div>
-  </div>
-  <p class="signal-legend">信号路径会随着下面的实验变化：<strong>修改源码不会自动修改已生成的可执行文件。</strong></p>
-</section>
+
 <noscript><p style="padding:14px;background:white;border-left:4px solid #ec7b43">当前浏览器没有开启 JavaScript：所有课程和阅读链接仍可访问，但点击模拟需要启用 JavaScript。</p></noscript>
   <div class="track" aria-hidden="true"><span id="track0"></span><span id="track1"></span><span id="track2"></span></div>
   <div class="tabbar" role="tablist" aria-label="切换实验">
@@ -293,6 +281,19 @@ html.js .lesson.active{display:block}
 </section>
   <section class="lesson active" id="lesson0" role="tabpanel" aria-labelledby="tab0">
     <div class="lessonheader"><span class="indexflag">00</span><div><h2>代码写好了，就会自动运行吗？</h2><p>目标：亲眼区分源代码、可执行文件与正在运行的程序。</p></div></div>
+    <section class="signal-deck" id="signal-deck" data-state="source-only" aria-label="源代码到运行输出的实时状态图">
+  <div class="signal-head"><strong>程序执行观察窗</strong><output id="signal-status" aria-live="polite">你写好了源文件，但还没有编译</output></div>
+  <div class="signal-chain" aria-hidden="true">
+    <div class="signal-node node-source live"><span class="stepno">01 / 输入</span><strong>hello.c</strong><small>源代码</small></div>
+    <span class="signal-bus compile"></span>
+    <div class="signal-node node-compiled"><span class="stepno">02 / 构建</span><strong>hello</strong><small id="deck-binary">等待编译</small></div>
+    <span class="signal-bus execute"></span>
+    <div class="signal-node node-execute"><span class="stepno">03 / 执行</span><strong>./hello</strong><small id="deck-run">尚未运行</small></div>
+    <span class="signal-bus output"></span>
+    <div class="signal-node node-output"><span class="stepno">04 / 结果</span><strong>stdout</strong><small id="deck-output">等待输出</small></div>
+  </div>
+  <p class="signal-legend">信号路径会随着下面的实验变化：<strong>修改源码不会自动修改已生成的可执行文件。</strong></p>
+</section>
     <div class="workspace">
       <div class="stage">
         <div class="stagehead"><strong>可操作实验台</strong><span class="tag">教学模拟 · 不运行 GCC</span></div>
