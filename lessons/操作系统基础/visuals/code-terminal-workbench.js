@@ -35,9 +35,16 @@ function makeCommands(){
  lines.push(byId("cw-runner").value);
  return lines.join("\n");
 }
+function splitBuildRun(){
+ const command=byId("cw-runner").value,parts=command.split(/\s*&&\s*/);
+ if(model[id].type==="server"||parts.length<2)return null;
+ const folder="cd ~/cs-system/tiny"+id+" && ";
+ return {compile:folder+parts[0],run:folder+parts.slice(1).join(" && ")};
+}
 function renderCommands(){
  const str=makeCommands();byId("cw-command").textContent=str||"";countChanges();
  const l=model[id];
+ const split=splitBuildRun();byId("cw-split").hidden=!split;
  byId("cw-second").hidden=l.type!=="server";
  if(l.type==="server"){byId("cw-second-command").textContent="curl -i http://127.0.0.1:8765/\ncurl -i http://127.0.0.1:8765/missing";}
 }
@@ -101,6 +108,9 @@ function compare(){
  ):("目前没有匹配原示例的关键特征。"+(changed?"你改动了代码，因此结果不同可能正是预期；请对照预测检查。":"检查是否粘贴了程序 stdout，或者编译/运行命令有没有失败。"));
 }
 byId("cw-copy").addEventListener("click",()=>copy(makeCommands(),byId("cw-copy-status")));
+byId("cw-compile-only").addEventListener("click",()=>{const x=splitBuildRun();if(x)copy(x.compile,byId("cw-copy-status"))});
+byId("cw-run-only").addEventListener("click",()=>{const x=splitBuildRun();if(x)copy(x.run,byId("cw-copy-status"))});
+
 byId("cw-copy-second").addEventListener("click",()=>copy(byId("cw-second-command").textContent,byId("cw-copy-status")));
 byId("cw-compare").addEventListener("click",compare);
 byId("cw-reference-toggle").addEventListener("click",()=>{byId("cw-reference-wrap").hidden=!byId("cw-reference-wrap").hidden});
