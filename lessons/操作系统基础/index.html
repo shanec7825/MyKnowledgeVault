@@ -370,7 +370,7 @@ function go(n){
  all('.tab').forEach(function(t){t.tabIndex=Number(t.getAttribute('data-go'))===n?0:-1});
  try{history.replaceState(null,'','#lab-'+n)}catch(e){}
 }
-all('[data-go]').forEach(function(el){el.addEventListener('click',function(ev){ev.preventDefault();go(Number(el.getAttribute('data-go')));if(el.classList.contains('catalogrow'))window.scrollTo({top:0,behavior:'smooth'})})});
+all('[data-go]').forEach(function(el){el.addEventListener('click',function(ev){ev.preventDefault();go(Number(el.getAttribute('data-go')));if(el.classList.contains('catalogrow')||el.classList.contains('pathrow'))window.scrollTo({top:0,behavior:window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})})});
 var hashMatch=location.hash.match(/^#lab-(0|1|2)$/);
 go(hashMatch?Number(hashMatch[1]):([0,1,2].includes(saved.lesson)?saved.lesson:0));
 window.addEventListener('hashchange',function(){var m=location.hash.match(/^#lab-(0|1|2)$/);if(m)go(Number(m[1]))});
