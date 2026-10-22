@@ -59,3 +59,87 @@ Summarise the whole argument in one 25–35-word English sentence.
 Adequate = enough for the purpose; relevant = connected to the purpose; limited = no unnecessary extras. The text warns about both collecting too much and collecting too little.
 
 </details>
+
+## Active Expressions · 4 min
+
+### [[words/opt-out-of|opt out of]]
+
+**Meaning → English:** “选择不参与某种数据使用” → ___ ___ ___ optional data use.  
+**Retrieve:** Some users want to **opt out of** using conversations for model training.  
+**Transfer:** Explain how students can decline an optional university survey.  
+**Precision:** This phrase does **not** automatically mean all past records are deleted.
+
+### [[words/by-default|by default]]
+
+**Meaning → English:** “默认情况下” → ___ ___.  
+**Retrieve:** A feature may be enabled **by default**, even if a user can change it.  
+**Transfer:** Describe the default of a campus app.  
+**Pronunciation:** Listen for the stress pattern in a dictionary model; link **by‿default** in a natural sentence.
+
+### [[words/limit-to|limit ... to ...]]
+
+**Meaning → English:** “把数据收集限制在必要范围” → ___ data collection ___ what is necessary.  
+**Retrieve:** A notice bot should **limit** collection **to** what is needed to send notices.  
+**Transfer:** Make a new sentence about an AI study assistant.  
+**Syntax:** *limit + object + to + noun/gerund*; **only necessary** is not **nothing**.
+
+**Closed-book test:** Translate all three prompts from Chinese without peeking; combine two in a new sentence. Optional older expression: [[drafts/words/rather-than|rather than]].
+
+## Speaking · 4 min
+
+**Topic: What should an AI assistant remember?** Speak for 20–35 seconds per question, then retry your first stalled answer.
+
+1. What information might a student assistant need for a single task?
+2. What information should it avoid keeping **by default**, and why?
+3. How could students **opt out of** optional features without losing the core service?
+4. How would you **limit data collection to** necessary details in a QQ group-notice bot?
+5. What trade-off between personalisation and privacy would you accept? Qualify your view.
+
+> First retrieval stall: ___ · Repaired phrase: ___ · New-context retry: ___
+
+## Writing · 5 min
+
+**Write 80–120 original English words:** **Should a university AI study assistant remember students' conversations by default?** State a position, one practical benefit, one privacy risk, a specific design choice, and a qualified conclusion. Use at least two active expressions accurately. **Do not copy a model essay.**
+
+<details><summary>Minimal structure hint — only if stuck</summary>
+
+Position → concrete example → benefit → risk → user choice / retention rule → qualified conclusion.
+
+</details>
+
+**Your actual draft (blank until you write):**
+
+<!-- Student's original 80–120 English words go here. No prefilled evidence. -->
+
+## Retrieval/Reflection · 2 min
+
+Close both sources. Retrieve **VOA: problem → choices → caveat** and **ICO: purpose → three tests → too much / too little**. Retrieve three expressions from Chinese meanings and transfer one to a new campus situation.
+
+> Exact listening breakdown / timestamp: ___  
+> Repaired sentence relation: ___  
+> Whole-text model recalled: ___  
+> Expressions retrieved without looking: ___  
+> New-context sentence: ___  
+> Writing draft / location: ___  
+> Next review cue: ___
+
+### 8-minute Busy Version
+
+1. **2 min:** listen to VOA's first two minutes; explain problem → choice → caveat.
+2. **2 min:** read ICO's At a glance and What is...; recall its three tests.
+3. **1 min:** retrieve *opt out of* and *by default* from Chinese.
+4. **1 min:** speak about what a study bot should keep by default.
+5. **1 min micro-writing:** write two English sentences: a sensible default and its limitation. Include *limit ... to ...*.
+6. **1 min:** name one exact comprehension break, its repair, and a transfer sentence.
+
+## Connections
+
+- [[EnglishLearning/2026-10-22-English-Music-Across-Cultures|Music Across Cultures]]: *tends to* and *some tools* require careful attention to scope.
+- [[EnglishLearning/2026-10-19-English-Offline-Knowledge|Offline Knowledge]]: distinguish core service function from optional personalisation.
+- [[EnglishLearning/2026-10-12-English-When-AI-Misses-Not|When AI Misses 'Not']]: small qualifiers (*some*, *only*, *not*) change the global conclusion.
+- [[EnglishLearning/Connections|Connections map]] · [[words/opt-out-of|opt out of]] · [[words/by-default|by default]] · [[words/limit-to|limit ... to ...]].
+
+## Previous / Next
+
+- Previous: [[EnglishLearning/2026-10-22-English-Music-Across-Cultures|2026-10-22 · Music Across Cultures]]
+- Next: pending next topic-named lesson.
