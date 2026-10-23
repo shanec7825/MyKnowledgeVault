@@ -2,11 +2,32 @@
 type: map
 title: English Learning Connections
 created: 2026-10-10
-updated: 2026-10-14
+updated: 2026-10-24
 tags: [english, connections, review]
 ---
 
 # English Learning Connections
+
+## 2026-10-24 · Listening Beyond Repetition
+
+- [[EnglishLearning/2026-10-24-English-Listening-Beyond-Repetition|2026-10-24 · Listening Beyond Repetition]]: **listener's problem → qualified advice → listen first → pinpoint a local break → transcript repair → unfamiliar-audio transfer**. Memorizing a recording is not the same as understanding a new one.
+- Cornell's model: **retrieval** changes the action (recall rather than recognize); **interleaving** changes the topic order; **spacing** changes the interval. These are complementary, not mutually exclusive.
+- Compare with [[EnglishLearning/2026-10-23-English-AI-Privacy-Choices|AI Privacy Choices]]: small connectors (*but*, *instead*, *first*, *then*) and scope words alter the global model. Compare with [[drafts/EnglishLearning/2026-10-07-English-Practice-Consolidation-Lasting-Learning|Practice and Consolidation]]: familiarity is not durable learning.
+- Active: [[words/pinpoint-a-gap-in|pinpoint a gap in]], [[words/test-yourself-on|test yourself on]], [[drafts/words/rather-than|rather than]].
+
+## Weekly Synthesis · 2026-10-18 to 2026-10-24
+
+**Topic rotation:** [[EnglishLearning/2026-10-18-English-Talent-and-Teamwork|teamwork in sport]] → [[EnglishLearning/2026-10-19-English-Offline-Knowledge|offline education]] → [[EnglishLearning/2026-10-20-English-Science-of-Fall-Colors|plant science]] → [[EnglishLearning/2026-10-21-English-Small-Talk-Real-Connection|social conversation]] → [[EnglishLearning/2026-10-22-English-Music-Across-Cultures|music and culture]] → [[EnglishLearning/2026-10-23-English-AI-Privacy-Choices|AI privacy]] → [[EnglishLearning/2026-10-24-English-Listening-Beyond-Repetition|2026-10-24 · Listening Beyond Repetition]].
+
+**Models to retrieve:** problem → response → limitation; observation → mechanism → qualified inference; claim → evidence → scope; definition → contrast → practical transfer.
+
+**Seven-day challenge (uncompleted until the learner responds):**
+1. Reconstruct two unrelated articles from **3–5 functional labels**, without reopening them.
+2. Explain the difference between *some / all*, *may / must*, and *but / therefore* with a new example.
+3. Retrieve **up to a point**, **by default**, **rather than**, and **pinpoint a gap in** from Chinese cues; use two in one new situation.
+4. Listen to an unfamiliar 45-second clip; record one exact breakdown and repair only that span.
+5. Compare your first and second 30-second spoken explanations, not just your recognition of the transcript.
+
 
 ## 2026-10-14 · Repair or Replace
 
