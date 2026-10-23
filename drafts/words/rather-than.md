@@ -2,7 +2,7 @@
 type: resource
 title: rather than
 created: 2026-10-09
-updated: 2026-10-14
+updated: 2026-10-24
 tags: [english, vocabulary]
 ---
 
@@ -29,3 +29,11 @@ Rather than assume every old device must be replaced, compare the available opti
 Retrieval: “与其立刻购买新的，不如先权衡成本和收益。” → ______ buy a new one immediately, weigh the costs against the benefits.
 
 Backlink: [[EnglishLearning/2026-10-14-English-Repair-or-Replace|2026-10-14 · Repair or Replace]]
+
+## 2026-10-24 · Listening Beyond Repetition
+
+Rather than memorize the same recording, reconstruct its argument and then test your understanding on unfamiliar audio.
+
+Retrieval: “与其重复播放录音，不如准确找出一个理解缺口。” → ______ replay the recording, pinpoint a gap in your understanding.
+
+Backlink: [[EnglishLearning/2026-10-24-English-Listening-Beyond-Repetition|2026-10-24 · Listening Beyond Repetition]]
