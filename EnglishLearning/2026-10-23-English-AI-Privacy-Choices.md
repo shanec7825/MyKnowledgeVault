@@ -3,7 +3,7 @@ type: daily-english
 title: "2026-10-23 · AI Privacy Choices"
 topic: "AI Privacy Choices"
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-24
 tags: [english, daily-learning, technology, privacy, structure, retrieval]
 ---
 
@@ -142,4 +142,4 @@ Close both sources. Retrieve **VOA: problem → choices → caveat** and **ICO: 
 ## Previous / Next
 
 - Previous: [[EnglishLearning/2026-10-22-English-Music-Across-Cultures|2026-10-22 · Music Across Cultures]]
-- Next: pending next topic-named lesson.
+- Next: [[EnglishLearning/2026-10-24-English-Listening-Beyond-Repetition|2026-10-24 · Listening Beyond Repetition]]
