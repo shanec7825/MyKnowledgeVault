@@ -2,7 +2,7 @@
 type: resource
 title: bridge the gap
 created: 2026-10-19
-updated: 2026-10-19
+updated: 2026-10-25
 tags: [english, vocabulary, education, active-expression]
 ---
 
@@ -17,3 +17,13 @@ tags: [english, vocabulary, education, active-expression]
 **Transfer:** A student AI team can bridge the gap between theory and practice through small projects.
 
 **Related:** [[EnglishLearning/2026-10-19-English-Offline-Knowledge|Offline Knowledge]]
+
+## 2026-10-25 · Libraries Beyond Books
+
+A public library may **bridge the gap** in digital access by lending devices and offering learning support. This describes a possible role, not proof that the gap disappears.
+
+**Retrieval:** “图书馆帮助缩小数字鸿沟” → A library can ___ the ___ in digital access.
+
+**Transfer:** Peer mentoring can bridge the gap between reading about algorithms and implementing them.
+
+**Backlink:** [[EnglishLearning/2026-10-25-English-Libraries-Beyond-Books|2026-10-25 · Libraries Beyond Books]].
