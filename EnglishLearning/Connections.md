@@ -2,11 +2,19 @@
 type: map
 title: English Learning Connections
 created: 2026-10-10
-updated: 2026-10-24
+updated: 2026-10-25
 tags: [english, connections, review]
 ---
 
 # English Learning Connections
+
+## 2026-10-25 · Libraries Beyond Books
+
+- [[EnglishLearning/2026-10-25-English-Libraries-Beyond-Books|2026-10-25 · Libraries Beyond Books]]: **traditional image → expanded social role → real examples** (VOA, 2021); **changing needs → service categories → survey evidence → sampling limits** (PLA, 2025 data released June 2026).
+- **Evidence boundary:** the PLA's 2025 survey describes which services responding libraries report. Percentages refer to libraries, not residents served; weighted survey data alone does **not** show that a service caused better outcomes. Compare with [[EnglishLearning/2026-10-20-English-Science-of-Fall-Colors|Science of Fall Colors]]: observation ≠ complete causal explanation.
+- **Transfer:** [[EnglishLearning/2026-10-19-English-Offline-Knowledge|Offline Knowledge]] focuses on access; [[EnglishLearning/2026-10-21-English-Small-Talk-Real-Connection|Small Talk]] focuses on conversation. A library may support both without guaranteeing either result.
+- **Retrieval bridge:** yesterday's [[EnglishLearning/2026-10-24-English-Listening-Beyond-Repetition|local audio-break repair]] → today's global model and cross-source comparison.
+- Active: [[words/respond-to-a-need|respond to a need]], [[words/serve-as-a-hub-for|serve as a hub for]], review [[words/bridge-the-gap|bridge the gap]].
 
 ## 2026-10-24 · Listening Beyond Repetition
 
