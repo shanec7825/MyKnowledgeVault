@@ -138,4 +138,4 @@ Close both sources. Rebuild **VOA: learner's problem → teacher's nuance → se
 ## Previous / Next
 
 - Previous: [[EnglishLearning/2026-10-23-English-AI-Privacy-Choices|2026-10-23 · AI Privacy Choices]]
-- Next: pending next topic-named lesson.
+- Next: [[EnglishLearning/2026-10-25-English-Libraries-Beyond-Books|2026-10-25 · Libraries Beyond Books]]
