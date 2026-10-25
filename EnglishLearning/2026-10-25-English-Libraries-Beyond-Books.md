@@ -135,4 +135,4 @@ Close both pages. Rebuild **VOA: traditional image → expanded role → emergen
 ## Previous / Next
 
 - Previous: [[EnglishLearning/2026-10-24-English-Listening-Beyond-Repetition|2026-10-24 · Listening Beyond Repetition]]
-- Next: pending next topic-named lesson.
+- Next: [[EnglishLearning/2026-10-26-English-AI-and-Accessibility|2026-10-26 · AI and Accessibility]]
