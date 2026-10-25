@@ -2,7 +2,7 @@
 type: resource
 title: bridge the gap
 created: 2026-10-19
-updated: 2026-10-25
+updated: 2026-10-26
 tags: [english, vocabulary, education, active-expression]
 ---
 
@@ -27,3 +27,13 @@ A public library may **bridge the gap** in digital access by lending devices and
 **Transfer:** Peer mentoring can bridge the gap between reading about algorithms and implementing them.
 
 **Backlink:** [[EnglishLearning/2026-10-25-English-Libraries-Beyond-Books|2026-10-25 · Libraries Beyond Books]].
+
+## 2026-10-26 · AI and Accessibility
+
+Accessible course design can **bridge the gap** between learners with different access needs, but it does not guarantee identical outcomes.
+
+**Retrieval:** “缩小不同学生使用课程资料的差距” → bridge the gap in access to course materials.
+
+**Transfer:** A beginner-friendly API tutorial can bridge the gap between knowing syntax and building an app.
+
+**Backlink:** [[EnglishLearning/2026-10-26-English-AI-and-Accessibility|2026-10-26 · AI and Accessibility]].
