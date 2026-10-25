@@ -2,11 +2,20 @@
 type: map
 title: English Learning Connections
 created: 2026-10-10
-updated: 2026-10-25
+updated: 2026-10-26
 tags: [english, connections, review]
 ---
 
 # English Learning Connections
+
+## 2026-10-26 · AI and Accessibility
+
+- [[EnglishLearning/2026-10-26-English-AI-and-Accessibility|2026-10-26 · AI and Accessibility]]: **learner barrier → assistive AI → autonomy concern** (VOA report, 2025) alongside **definition → accessible design → examples → human evaluation** (W3C WAI, updated 2026-02-03).
+- **Scope:** AI support can improve access, but an example does not prove a learning gain; an automated accessibility check does not guarantee usability for every person.
+- **Cross-day transfer:** [[EnglishLearning/2026-10-25-English-Libraries-Beyond-Books|Libraries Beyond Books]] asks what access services exist; today's lesson asks whether a digital service is actually usable. [[EnglishLearning/2026-10-23-English-AI-Privacy-Choices|AI Privacy Choices]] adds a default-setting trade-off.
+- **Retrieval bridge:** [[EnglishLearning/2026-10-24-English-Listening-Beyond-Repetition|local listening repair]] → global text model → unrelated-context transfer.
+- **Active:** [[words/make-accessible-to|make ... accessible to ...]], [[words/remove-barriers-to|remove barriers to ...]], review [[words/bridge-the-gap|bridge the gap]].
+
 
 ## 2026-10-25 · Libraries Beyond Books
 
