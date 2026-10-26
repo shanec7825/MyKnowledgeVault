@@ -2,7 +2,7 @@
 type: index
 title: English Learning Hub
 created: 2026-10-10
-updated: 2026-10-26
+updated: 2026-10-27
 tags: [english, learning, index]
 ---
 
@@ -15,6 +15,8 @@ Daily lessons focus on **complete → identify breakdown → repair → transfer
 - [[EnglishLearning/2026-10-14-Knicks-Raptors-Writing-Reference|2026-10-14 · Knicks vs Raptors — AI model essay, grammar and vocabulary]] · [[calendar/2026-10-14#英语写作练习｜Knicks @ Raptors｜三轮独立写作|Original drafts and feedback (diary)]]
 
 ## Daily Notes
+
+- [[EnglishLearning/2026-10-27-English-Sleep-and-Study|2026-10-27 · Sleep and Study]]
 
 - [[EnglishLearning/2026-10-26-English-AI-and-Accessibility|2026-10-26 · AI and Accessibility]]
 

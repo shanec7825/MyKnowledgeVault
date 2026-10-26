@@ -2,11 +2,18 @@
 type: map
 title: English Learning Connections
 created: 2026-10-10
-updated: 2026-10-26
+updated: 2026-10-27
 tags: [english, connections, review]
 ---
 
 # English Learning Connections
+
+## 2026-10-27 · Sleep and Study
+
+- [[EnglishLearning/2026-10-27-English-Sleep-and-Study|2026-10-27 · Sleep and Study]]: **VOA (2019): student sleep problem → small classroom incentive → observed test results → non-randomized-design caveat**; **Baylor (2026-09-01): research question → survey measure → 2000–2023 trend → possible explanations → campus response**.
+- **Evidence boundary:** nearly 1.6 million self-reports help describe a trend; **39% → 60%** refers to the share reporting **only two sufficiently rested days per week**, not hours slept. Neither the survey nor the small classroom comparison alone proves that one specific factor caused outcomes.
+- **Cross-day transfer:** [[EnglishLearning/2026-10-24-English-Listening-Beyond-Repetition|Listening Beyond Repetition]]: pinpoint a 20-second audio break, then reconstruct the whole claim. [[EnglishLearning/2026-10-26-English-AI-and-Accessibility|AI and Accessibility]]: possible benefit ≠ guaranteed improvement. [[EnglishLearning/2026-10-18-English-Talent-and-Teamwork|Talent and Teamwork]]: beware causal overreach.
+- **Active:** [[words/cut-into|cut into]], [[words/be-associated-with|be associated with]], review [[words/pinpoint-a-gap-in|pinpoint a gap in]].
 
 ## 2026-10-26 · AI and Accessibility
 

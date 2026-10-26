@@ -3,7 +3,7 @@ type: daily-english
 title: "2026-10-26 · AI and Accessibility"
 topic: "AI and Accessibility"
 created: 2026-10-26
-updated: 2026-10-26
+updated: 2026-10-27
 tags: [english, daily-learning, ai, accessibility, computer-science, reading-structure, retrieval]
 ---
 
@@ -132,4 +132,4 @@ Close the sources. Rebuild **VOA: learner barrier → AI assistance → concern 
 ## Previous / Next
 
 - Previous: [[EnglishLearning/2026-10-25-English-Libraries-Beyond-Books|2026-10-25 · Libraries Beyond Books]]
-- Next: pending next topic-named lesson.
+- Next: [[EnglishLearning/2026-10-27-English-Sleep-and-Study|2026-10-27 · Sleep and Study]]

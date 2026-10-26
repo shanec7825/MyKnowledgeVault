@@ -2,7 +2,7 @@
 type: resource
 title: "pinpoint a gap in"
 created: 2026-10-24
-updated: 2026-10-24
+updated: 2026-10-27
 tags: [english, vocabulary, active-expression, diagnosis]
 ---
 
@@ -21,3 +21,13 @@ tags: [english, vocabulary, active-expression, diagnosis]
 **Pronunciation:** primary stress on **PIN** in **PIN-point**.
 
 **First used:** [[EnglishLearning/2026-10-24-English-Listening-Beyond-Repetition|2026-10-24 · Listening Beyond Repetition]].
+
+## 2026-10-27 · Sleep and Study
+
+I pinpointed a gap in my understanding of what the sleep survey actually measured: **days feeling rested**, not **hours slept**.
+
+**Retrieval:** “准确找出我对调查指标理解的缺口” → ___ a ___ in my understanding of the survey measure.
+
+**Transfer:** Pinpoint a gap in an AI benchmark interpretation, then test it against the original metric definition.
+
+**Backlink:** [[EnglishLearning/2026-10-27-English-Sleep-and-Study|2026-10-27 · Sleep and Study]].
