@@ -124,4 +124,4 @@ Close both source pages. Without notes, say **one sentence about the 2019 classr
 ## Previous / Next
 
 - Previous: [[EnglishLearning/2026-10-26-English-AI-and-Accessibility|2026-10-26 · AI and Accessibility]]
-- Next: pending next topic-named lesson.
+- Next: [[EnglishLearning/2026-10-28-English-Roots-Below-Ground|2026-10-28 · Roots Below Ground]]
