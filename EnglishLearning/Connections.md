@@ -2,11 +2,19 @@
 type: map
 title: English Learning Connections
 created: 2026-10-10
-updated: 2026-10-27
+updated: 2026-10-28
 tags: [english, connections, review]
 ---
 
 # English Learning Connections
+
+## 2026-10-28 · Roots Below Ground
+
+- [[EnglishLearning/2026-10-28-English-Roots-Below-Ground|2026-10-28 · Roots Below Ground]]: **VOA (2015) report: invisible roots → exhibition → root functions → soybean nodule example**; **USDA ARS: limited usable nitrogen → atmospheric nitrogen's abundance → microbial exception → legume nodule mechanism**; **US Botanic Garden (2015 archive): hidden importance → exhibit methods → soil conservation**.
+- **Scope repair:** atmospheric nitrogen is about **78% of air**, not a form all plants can directly use. Roots absorb water and minerals; rhizobia in **certain legume root nodules** convert nitrogen gas into usable compounds. An exhibit is public science communication, not a causal experiment.
+- **Cross-day:** [[EnglishLearning/2026-10-27-English-Sleep-and-Study|Sleep and Study]] distinguished survey association from causation; today compare a mechanistic explainer with an exhibition narrative. [[EnglishLearning/2026-10-20-English-Science-of-Fall-Colors|Fall Colors]] likewise moves from visible change to hidden biological process.
+- **Active retrieval:** [[words/play-a-role-in|play a role in]], [[words/in-turn|in turn]], review [[words/rely-on|rely on]]. New-context transfer: a dependency chain in software development.
+
 
 ## 2026-10-27 · Sleep and Study
 
