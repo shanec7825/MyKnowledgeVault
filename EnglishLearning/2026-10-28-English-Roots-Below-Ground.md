@@ -3,7 +3,7 @@ type: daily-english
 title: "2026-10-28 · Roots Below Ground"
 topic: "Roots Below Ground"
 created: 2026-10-28
-updated: 2026-10-28
+updated: 2026-10-29
 tags: [english, daily-learning, plant-science, ecology, reading-structure, mechanism, retrieval]
 ---
 
@@ -127,4 +127,4 @@ Close the source pages. Say aloud **one role of roots**, **one role of rhizobia 
 ## Previous / Next
 
 - Previous: [[EnglishLearning/2026-10-27-English-Sleep-and-Study|2026-10-27 · Sleep and Study]]
-- Next: pending next topic-named lesson.
+- Next: [[EnglishLearning/2026-10-29-English-Beyond-the-Box-Score|2026-10-29 · Beyond the Box Score]]
