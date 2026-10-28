@@ -2,11 +2,18 @@
 type: map
 title: English Learning Connections
 created: 2026-10-10
-updated: 2026-10-28
+updated: 2026-10-29
 tags: [english, connections, review]
 ---
 
 # English Learning Connections
+
+## 2026-10-29 · Beyond the Box Score
+
+- [[EnglishLearning/2026-10-29-English-Beyond-the-Box-Score|2026-10-29 · Beyond the Box Score]]: **VOA (2018) Bill Russell interview: recognition problem → team-winning standard → off-ball work → adjust to actual teammates**; **NBA (2025) Hustle Award report: invisible efforts → observable categories → per-minute comparison → interpretation and limits**.
+- **Evidence boundary:** Russell's time-on-the-ball estimate is a personal illustration, **not a universal verified measurement**. NBA hustle categories record some actions; a per-minute rate adjusts for playing time, **not for every context or causal factor**. High hustle numbers alone do not prove an individual caused a victory.
+- **Cross-day:** [[EnglishLearning/2026-10-28-English-Roots-Below-Ground|Roots Below Ground]] explores hidden biological mechanisms; today's question is how to **observe and value hidden work**. [[EnglishLearning/2026-10-18-English-Talent-and-Teamwork|Talent and Teamwork]] examined star talent versus coordination; this lesson examines the limits of contribution metrics. [[EnglishLearning/2026-10-27-English-Sleep-and-Study|Sleep and Study]] reinforces description ≠ causation.
+- **Active retrieval:** [[words/do-your-part|do your part]], [[words/make-an-impact|make an impact]], review [[words/play-a-role-in|play a role in]]. Transfer: invisible contributions to a software project (testing, documentation, review).
 
 ## 2026-10-28 · Roots Below Ground
 
