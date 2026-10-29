@@ -128,4 +128,4 @@ Close the sources. Retrieve: **Russell's standard → two off-ball actions → o
 ## Previous / Next
 
 - Previous: [[EnglishLearning/2026-10-28-English-Roots-Below-Ground|2026-10-28 · Roots Below Ground]]
-- Next: pending next topic-named lesson.
+- Next: [[EnglishLearning/2026-10-30-English-Singing-and-Recall|2026-10-30 · Singing and Recall]]
