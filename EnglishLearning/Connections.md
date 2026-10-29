@@ -2,11 +2,18 @@
 type: map
 title: English Learning Connections
 created: 2026-10-10
-updated: 2026-10-29
+updated: 2026-10-30
 tags: [english, connections, review]
 ---
 
 # English Learning Connections
+
+## 2026-10-30 · Singing and Recall
+
+- [[EnglishLearning/2026-10-30-English-Singing-and-Recall|2026-10-30 · Singing and Recall]]: **VOA 2015: familiar tune → memory question → three-group Hungarian experiment → reported advantage → classroom example**; **Ludke et al. 2014 original study: randomized conditions → 15-minute phrase learning → five tests → stronger spoken verbatim recall → limits**.
+- **Evidence boundary:** The singing group had the highest performance on **four of five** measures, but between-group differences were **statistically significant on the two spoken verbatim-recall tests**. Sixty adults and short-term phrase learning do **not** establish improved general fluency, long-term retention, or benefits for all learners. Distinguish the VOA's classroom illustration from the randomized experiment.
+- **Cross-day:** [[EnglishLearning/2026-10-24-English-Listening-Beyond-Repetition|Listening Beyond Repetition]] distinguishes recognition from retrieval; today the strongest evidence is on **spoken recall**. [[EnglishLearning/2026-10-22-English-Music-Across-Cultures|Music Across Cultures]] connects music to communication, while today it acts as a possible **retrieval cue**. [[EnglishLearning/2026-10-29-English-Beyond-the-Box-Score|Beyond the Box Score]] asks which actions a measurement captures; today asks which outcomes show a statistically supported difference.
+- **Active retrieval:** [[words/jog-someones-memory|jog someone's memory]], [[words/be-more-likely-to|be more likely to]], review [[drafts/words/rather-than|rather than]]. Transfer to recalling a command-line shortcut **versus** explaining what the command does.
 
 ## 2026-10-29 · Beyond the Box Score
 
