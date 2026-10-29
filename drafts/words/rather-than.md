@@ -2,7 +2,7 @@
 type: resource
 title: rather than
 created: 2026-10-09
-updated: 2026-10-24
+updated: 2026-10-30
 tags: [english, vocabulary]
 ---
 
@@ -37,3 +37,11 @@ Rather than memorize the same recording, reconstruct its argument and then test 
 Retrieval: “与其重复播放录音，不如准确找出一个理解缺口。” → ______ replay the recording, pinpoint a gap in your understanding.
 
 Backlink: [[EnglishLearning/2026-10-24-English-Listening-Beyond-Repetition|2026-10-24 · Listening Beyond Repetition]]
+
+## 2026-10-30 · Singing and Recall
+
+Rather than only recognizing a phrase when you hear a song, try recalling and speaking it without the melody.
+
+Retrieval: “与其只听熟悉的旋律，不如在新情境里独立说出短语。” → ______ only listen to the familiar melody, produce the phrase independently in a new situation.
+
+Backlink: [[EnglishLearning/2026-10-30-English-Singing-and-Recall|2026-10-30 · Singing and Recall]]
