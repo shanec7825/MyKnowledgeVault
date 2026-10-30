@@ -88,6 +88,8 @@ Full-article model (without looking) ___ · English sounds recognized without tr
 
 ## Connections
 
+- **Active word:** [[words/extend-the-lifespan-of|extend the lifespan of]] — recall once from meaning and transfer to a new context.
+
 - [[EnglishLearning/Connections|Connections map]] · [[EnglishLearning/README|Daily Notes]]. Next-day retrieval matters more than reciting the source from memory.
 
 ## Previous / Next

@@ -17,3 +17,6 @@ tags: [english, vocabulary, retrieval]
 **New-context transfer:** Use the phrase in a university club, class or programming-project scenario.
 
 **Backlink:** [[EnglishLearning/2026-10-22-English-Music-Across-Cultures|2026-10-22 · Music Across Cultures]].
+
+
+**Cross-context retrieval:** [[drafts/EnglishLearning/2026-10-09-English-Food-Heritage-and-Reinvention|2026-10-09 · Food Heritage and Reinvention]] — explain how an experienced baker may pass down a skill; then transfer to student mentoring.
