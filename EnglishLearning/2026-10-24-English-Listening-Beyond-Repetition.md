@@ -3,141 +3,92 @@ type: daily-english
 title: "2026-10-24 · Listening Beyond Repetition"
 topic: "Listening Beyond Repetition"
 created: 2026-10-24
-updated: 2026-10-24
+updated: 2026-10-30
 tags: [english, daily-learning, university-life, listening, retrieval, learning-strategies]
 ---
 
 # 2026-10-24 · Listening Beyond Repetition
 
-![Topic illustration](assets/art/2026-10-24-Listening-Beyond-Repetition.svg)
+![Listening Beyond Repetition learning map](assets/art/2026-10-24-Listening-Beyond-Repetition.svg)
 
-> Visual companion: illustration and icon navigation are available in the HTML lesson.
-
-**Big question:** How can you tell whether you really understand spoken English, rather than simply remember a recording?
+**One complete article:** [Practice Your Listening](https://learningenglish.voanews.com/a/practice-your-listening/7847923.html). Its audio, transcript, reading, selected paragraphs and all output tasks form one learning journey. **No memorizing the whole article.**
 
 **30 minutes:** Listening 6 · Reading 9 · Active Expressions 4 · Speaking 4 · Writing 5 · Retrieval/Reflection 2.
 
-**Learning loop:** complete → pinpoint one exact breakdown → repair only that gap → transfer to a different context → retrieve without looking.
-
 ## Multimedia Companion
 
-- **Direct audio:** [VOA publisher-hosted 128 kbps MP3](https://voa-audio.voanews.eu/vle/2024/11/04/beb84ebc-7030-461e-ac0c-a554ca633b07_hq.mp3?download=1) — original audio **4:58**; VOA displays a downloadable MP3 link. **The link was found on the publisher's page; end-to-end playback was not independently verified.**
-- **Transcript:** [VOA Learning English · Practice Your Listening](https://learningenglish.voanews.com/a/practice-your-listening/7847923.html) — published **2024-11-08**, full written transcript on the same page.
-- **Source page / player:** [VOA article and player](https://learningenglish.voanews.com/a/practice-your-listening/7847923.html) — the embedded player may show “No media source currently available”; use the separately linked MP3 when it works.
-- **Reading:** [Cornell Learning Strategies Center · Effective Study Strategies](https://lsc.cornell.edu/how-to-study/studying-for-and-taking-exams/effective-study-strategies/) — read the opening and the three sections **Retrieval practice / Interleaving / Spaced practice**, plus the closing study-planning advice.
-- **HTML companion:** [Reader](./2026-10-24-English-Listening-Beyond-Repetition.html).
-- **Source check:** both publisher pages were publicly accessible on **2026-10-24**. They are teaching resources, not a claim that one method works identically for everyone.
+- **Direct audio:** [VOA publisher MP3](https://voa-audio.voanews.eu/vle/2024/11/04/beb84ebc-7030-461e-ac0c-a554ca633b07_hq.mp3?download=1) (complete playback not newly verified).
+- **Transcript / full article:** [Practice Your Listening](https://learningenglish.voanews.com/a/practice-your-listening/7847923.html).
+- **Source page:** [VOA Learning English](https://learningenglish.voanews.com/a/practice-your-listening/7847923.html).
+- **HTML companion:** [Illustrated reader](./2026-10-24-English-Listening-Beyond-Repetition.html).
 
 ## Listening · 6 min
 
-**Complete (3 min):** Listen to VOA's opening through the first listening-method recommendations, without the transcript. Say the listener's **problem**, the teacher's **qualified answer**, and the **first suggested sequence**. Aim for meaning, not verbatim recall.
+Listen once for overall meaning (2 min). If lost, open this hint *after* attempting: <details><summary>中文语境</summary>文章回答如何练习英语听力；重复播放可能有帮助，但熟悉某段录音不等于能理解陌生材料。</details>
 
-**Find the break (2 min):** Replay one **15–25-second** segment that you misunderstood. Decide whether the speaker says repetition is **useless**, or **useful but insufficient**. Check just that transcript span. If this was easy, test the contrast between listening **before** reading and listening **while** reading.
+Choose **one 20–40-second section** you want to understand or reuse. Note timestamp ___. Match its English transcript to the sounds (2 min), focusing on a single unclear word boundary, referent or contrast. Hide the transcript and listen again (2 min). Do not confuse learning the plot from Chinese with recognizing the English sounds.
 
-**Transfer (1 min):** Without looking, explain how you would listen to a new science podcast tomorrow without memorizing its words.
-
-> Actual timestamp / phrase: ___  
-> My first interpretation: ___  
-> Corrected relationship (contrast / sequence / condition): ___  
-> Transfer sentence: ___
+**Actual evidence:** first understanding ___; timestamp ___; words recognized without text ___; corrected relation ___.
 
 ## Reading · 9 min
 
-**Material:** Cornell's [Effective Study Strategies](https://lsc.cornell.edu/how-to-study/studying-for-and-taking-exams/effective-study-strategies/). The author groups several methods; do not treat the page as an experiment measuring your own performance.
+**Read this same [complete VOA article](https://learningenglish.voanews.com/a/practice-your-listening/7847923.html), not another reading source.** Spend 4 min labeling paragraph functions; reconstruct the full model:
 
-1. **Structure (3 min):** Skim and label the text: **goal → retrieval practice (what/why) → interleaving (how) → spacing (when) → supporting habits**. For each, write one function, not a translated sentence.
-2. **Local sentence (2 min):** Focus on the retrieval paragraph. Separate **actively recall from memory** from **rereading or recognizing**. Why does a blank-page attempt reveal what you *do not* yet understand?
-3. **Compare (2 min):** Which strategy changes **the act of remembering**, which changes **the order of topics**, and which changes **the interval between sessions**? Explain why these can be combined rather than treated as competing alternatives.
-4. **Retrieval (2 min):** Close the article and fill this map from memory:
+1. 听众提出练习听力的问题
+2. 教师回应重复播放的作用
+3. 区分熟悉录音与理解新内容
+4. 提出可操作的练习顺序
 
-> Long-term learning goal → **RETRIEVAL:** do ___ without ___ → **INTERLEAVING:** switch between ___ → **SPACING:** revisit after ___ → **CHECK:** pinpoint ___ → **TRANSFER:** apply to ___.
+**1–3 selected paragraphs (3 min):**
 
-Write a **25–35-word** English model of the article. It should describe how the parts fit together, not merely list definitions.
+1. **问题/语境：**提问者描述听力困难的段落。去原文定位，不虚构引文；判断主语、转折与段落功能。
+2. **例子/机制：**解释为什么仅仅反复听不够的回答。去原文定位，不虚构引文；判断主语、转折与段落功能。
+3. **结果/限定：**建议怎样安排听音、阅读和复测的段落。去原文定位，不虚构引文；判断主语、转折与段落功能。
 
-<details><summary>Repair hint — open only after an attempt</summary>
-
-Retrieval changes what you do with knowledge; interleaving changes the sequence of related skills; spacing changes when you revisit material. A hard recall attempt can expose a gap even when rereading feels familiar.
-
-</details>
+Close the page and reconstruct the full article in 3–4 links (2 min). Check one precise misunderstanding. **Scope:** 这是教学建议，而非一项直接证明某个固定训练比例最优的实验。
 
 ## Active Expressions · 4 min
 
-### [[words/pinpoint-a-gap-in|pinpoint a gap in ...]]
+**Only one target expression:** First retrieve from the Chinese meaning: “精确找出我听力理解中断的地方。”
 
-- **Meaning → English:** “准确找出我对句子逻辑理解中的缺口” → ___ a ___ in my understanding of the sentence.
-- **Retrieve:** I can **pinpoint a gap in** my understanding of the speaker's contrast.
-- **Transfer:** Describe a precise gap in your understanding of a Git command or a lecture.
-- **Syntax:** *pinpoint + a gap in + noun / -ing phrase*. Stress **PIN**-point; link “gap in” smoothly.
+<details><summary>Reveal after trying</summary>**pinpoint a gap in**. Use it to describe the article or your own experience; do not assume this is a verbatim source quote.</details>
 
-### [[words/test-yourself-on|test yourself on ...]]
-
-- **Meaning → English:** “在不看答案的情况下，用一个概念自测” → ___ yourself ___ a concept without looking at the answer.
-- **Retrieve:** **Test yourself on** the article's structure before reopening it.
-- **Transfer:** Explain how you would self-test on a data-structures topic.
-- **Syntax:** *test yourself on + topic*; *test yourself with + questions*.
-
-### [[drafts/words/rather-than|rather than]] · review
-
-- **Meaning → English:** “与其死记录音，不如先重建逻辑” → ___ memorize the recording, rebuild its argument.
-- **Transfer:** Make a sentence contrasting rereading notes with explaining an algorithm from memory.
-
-**Closed-book challenge:** Say all three expressions from Chinese cues, then combine **two** in one fresh sentence about a sports interview or science lecture. Record the first hesitation, not a guessed success score.
+**New context:** 把听力换成你读 CS:APP 或调试代码时遇到的具体断点。 Practise pronunciation with the original clip if the phrase occurs there; otherwise speak your original transfer sentence, using your configured Obsidian TTS if desired.
 
 ## Speaking · 4 min
 
-**Topic: Does repeating an audio clip prove you understand it?** Speak for about 25–35 seconds per question; if you stall, repair one phrase and retry.
+Respond aloud and progressively, without reading a script:
 
-1. What happens when you listen to the same English recording many times?
-2. How can you tell whether you understood the speaker's **main argument**, not just individual words?
-3. When is repeating a short segment helpful, and when might it become unproductive?
-4. How would you design a 10-minute listening session using **one precise gap** and **one new context**?
-5. How could the same approach help you understand a programming lecture or a basketball interview?
+1. What problem does the listener ask about?
+2. What is useful about repeating a recording?
+3. Why can familiarity with one recording be misleading?
+4. How would you test comprehension with a different speaker or sentence?
 
-> First spoken stall: ___ · Repaired expression: ___ · New-context retry: ___
+**One breakdown, one repair:** ___
 
 ## Writing · 5 min
 
-**Write 80–120 original English words:** **Should university English classes spend less time repeating recordings and more time testing understanding with unfamiliar audio?**
+**80–120 words, original response:** Should an English learner spend more time repeating one recording or checking understanding with new audio? Explain a balanced method using the article.
 
-Take a position; describe one benefit of repetition, one limitation, a practical classroom activity, and a qualified conclusion. Use **pinpoint a gap in**, **test yourself on**, or **rather than** naturally (at least two). **No model essay is provided.**
+<details><summary>Minimal structure hint</summary>Position → article detail → personal example → limitation → conclusion.</details>
 
-<details><summary>Minimal structure hint — open only if needed</summary>
+**Your real draft:**
 
-Position → what repetition can do → what it cannot prove → an unfamiliar-audio test → qualified conclusion.
-
-</details>
-
-**Your actual draft (fill after writing):**
-
-<!-- Student's original 80–120 English words go here; do not prefill with an AI answer. -->
+<!-- Write your own draft here after completing the task; no model essay. -->
 
 ## Retrieval/Reflection · 2 min
 
-Close both sources. Rebuild **VOA: learner's problem → teacher's nuance → sequence of listening methods** and **Cornell: retrieval → interleaving → spacing**. Retrieve all three expressions from Chinese, then apply one to a **new topic**.
+Full-article model (without looking) ___ · English sounds recognized without transcript ___ · one transfer sentence ___ · one gap to repair ___
 
-> Exact listening timestamp / gap: ___  
-> Corrected local relation: ___  
-> Whole-text model from memory: ___  
-> Expressions retrieved unaided: ___  
-> Transfer example (new context): ___  
-> Writing evidence / draft location: ___  
-> Next review cue: ___
+**Tomorrow (30–60 sec):** replay the selected audio with no text; retrieve **pinpoint a gap in** from meaning, then use a genuinely different situation. Leave blank until you actually do it: ___.
 
 ### 8-minute Busy Version
 
-1. **2 min listening:** play VOA's first two minutes; say problem → qualified response.
-2. **2 min reading:** scan Cornell's three strategy headings; close the page and explain how they differ.
-3. **1 min active language:** retrieve *pinpoint a gap in* and *test yourself on* from Chinese.
-4. **1 min speaking:** explain how you would check a new, unfamiliar audio clip.
-5. **1 min micro-writing:** write **two sentences** contrasting repeating a clip with testing understanding; include *rather than*.
-6. **1 min review:** record one actual comprehension gap, its repair, and a new-context test.
+2 min audio · 2 min whole-article skim and one selected paragraph · 1 min match transcript to 20–40s clip · 1 min listen without text · 1 min transfer speaking · **1 min micro-writing** (claim + reason).
 
 ## Connections
 
-- [[EnglishLearning/2026-10-23-English-AI-Privacy-Choices|AI Privacy Choices]]: scope words such as **some** or **only** can change the entire claim; today track **but / instead / first / next**.
-- [[drafts/EnglishLearning/2026-10-07-English-Practice-Consolidation-Lasting-Learning|Practice and Consolidation]]: immediate familiarity is not proof of durable recall.
-- [[EnglishLearning/2026-10-21-English-Small-Talk-Real-Connection|Small Talk, Real Connection]]: use a follow-up question to test whether you understood a speaker.
-- [[EnglishLearning/Connections|Connections map]] · [[words/pinpoint-a-gap-in|pinpoint a gap in]] · [[words/test-yourself-on|test yourself on]] · [[drafts/words/rather-than|rather than]].
+- [[EnglishLearning/Connections|Connections map]] · [[EnglishLearning/README|Daily Notes]]. Next-day retrieval matters more than reciting the source from memory.
 
 ## Previous / Next
 
