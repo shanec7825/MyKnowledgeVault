@@ -9,6 +9,10 @@ tags: [english, daily-learning, culture, reading, writing]
 
 # Food Heritage and Reinvention · 2026-10-09
 
+![Topic illustration](../../EnglishLearning/assets/art/2026-10-09-Food-Heritage-and-Reinvention.svg)
+
+> Visual companion: shared icons, reading journey and interactive recall are in the HTML page.
+
 ## Multimedia Companion
 
 - Direct audio (VOA original MP3, 3:14): https://voa-audio.voanews.eu/vle/2022/11/30/09410000-0a00-0242-2f85-08dad31a177d_hq.mp3?download=1

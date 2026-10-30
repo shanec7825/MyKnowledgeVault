@@ -14,9 +14,9 @@ button{font:inherit;cursor:pointer;background:white;border:1px solid #d5dce5;col
 textarea{width:100%;min-height:190px;padding:14px;border:1px solid #d5dce5;border-radius:8px;font:inherit;resize:vertical;background:#fff;color:inherit}.writerline{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-top:8px}.writerline button{font-size:12px;padding:6px 10px}
 .review{font-size:14px}.foot{font-size:12px;color:#9aa6b4;text-align:center;padding-top:28px}
 @media(max-width:620px){main{padding:22px 15px 45px}h1{font-size:26px}.picture{font-size:28px}}
-</style></head>
+</style><link rel="stylesheet" href="assets/daily-lesson.css"></head>
 <body><main>
-<header><div class="date">OCTOBER 12, 2026 · 30 MIN</div><h1>When AI Misses “Not”</h1><p>Why can AI recognize an object but misunderstand that it is <em>not</em> there?</p></header>
+<header><div class="date">OCTOBER 12, 2026 · 30 MIN</div><h1>When AI Misses “Not”</h1><figure class="lesson-art"><img src="assets/art/2026-10-12-When-AI-Misses-Not.svg" alt="Storybook visual: When AI Misses Not" loading="lazy"><figcaption>One learning journey · listen, read, retrieve, speak, write</figcaption></figure><p>Why can AI recognize an object but misunderstand that it is <em>not</em> there?</p></header>
 <section><h2>Listening <small>· 6 min</small></h2>
 <div class="source">VOA Learning English · How to Find AI “Deepfake” Images</div>
 <p class="note">Original audio: 5:42 (2024 historical reporting). Listen to the first ~3:40; detection clues may be outdated.</p>
@@ -71,4 +71,4 @@ textarea{width:100%;min-height:190px;padding:14px;border:1px solid #d5dce5;borde
   copy.addEventListener("click",function(){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(draft.value).then(function(){copy.textContent="Copied";setTimeout(function(){copy.textContent="Copy writing"},1200)}).catch(function(){draft.select();document.execCommand("copy")})}else{draft.select();document.execCommand("copy")}});
   document.querySelectorAll("[data-correct]").forEach(function(button){button.addEventListener("click",function(){var yes=button.getAttribute("data-correct")==="true";document.getElementById("sceneFeedback").textContent=yes?"Fits the scene. Now explain what is present and what is excluded.":"Not quite. The dog IS present. Notice how “no” reverses the meaning.";})});
 })();
-</script></body></html>
+</script><script defer src="https://cdn.jsdelivr.net/npm/react@18/umd/react.production.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.production.min.js"></script><script defer src="assets/daily-lesson.js"></script></body></html>

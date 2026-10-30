@@ -9,6 +9,10 @@ tags: [english, daily-learning, sports, university-life, reading-structure, retr
 
 # Focus Under Pressure
 
+![Topic illustration](assets/art/2026-10-13-Focus-Under-Pressure.svg)
+
+> Visual companion: shared icons, reading journey and interactive recall are in the HTML page.
+
 **Guiding question:** When a performance matters, how can people shift attention from worrying about the outcome to doing the next useful action?
 
 **30 minutes:** Listening **6** · Reading **9** · Active Expressions **4** · Speaking **4** · Writing **5** · Retrieval/Reflection **2**.

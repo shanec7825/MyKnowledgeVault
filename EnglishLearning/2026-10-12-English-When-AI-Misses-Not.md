@@ -9,6 +9,10 @@ tags: [english, daily-learning, ai, reading-structure, listening, retrieval]
 
 # When AI Misses 'Not'
 
+![Topic illustration](assets/art/2026-10-12-When-AI-Misses-Not.svg)
+
+> Visual companion: shared icons, reading journey and interactive recall are in the HTML page.
+
 **Guiding question:** Why can an AI system recognize objects yet misunderstand a sentence saying an object is *not* there?
 
 **30 minutes:** Listening **6** · Reading **9** · Active Expressions **4** · Speaking **4** · Writing **5** · Retrieval/Reflection **2**.

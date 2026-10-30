@@ -9,6 +9,10 @@ tags: [english, daily-learning, science, listening, writing]
 
 # Whale Songs and Ocean Noise
 
+![Topic illustration](assets/art/2026-10-10-Whale-Songs-and-Ocean-Noise.svg)
+
+> Visual companion: shared icons, reading journey and interactive recall are in the HTML page.
+
 **Question:** Why does background noise make communication harder?
 
 **30-minute plan:** Listening 6 min · Reading 9 min · Active Expressions 4 min · Speaking 4 min · Writing 5 min · Retrieval/Reflection 2 min.

@@ -21,6 +21,10 @@ related:
 
 # 2026-10-08 · Cycling Infrastructure × Evidence and Choice
 
+![Topic illustration](../../EnglishLearning/assets/art/2026-10-08-Cycling-Infrastructure-Evidence-and-Choice.svg)
+
+> Visual companion: shared icons, reading journey and interactive recall are in the HTML page.
+
 ← [[drafts/EnglishLearning/README|English Learning Hub]]
 
 ## Today's Focus
