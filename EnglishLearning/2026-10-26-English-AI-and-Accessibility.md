@@ -3,135 +3,104 @@ type: daily-english
 title: "2026-10-26 · AI and Accessibility"
 topic: "AI and Accessibility"
 created: 2026-10-26
-updated: 2026-10-27
+updated: 2026-10-30
 tags: [english, daily-learning, ai, accessibility, computer-science, reading-structure, retrieval]
 ---
 
-# 2026-10-26 · AI and Accessibility
+# 2026-10-26 · English AI and Accessibility
 
-![Topic illustration — English AI and Accessibility](assets/art/2026-10-26-AI-and-Accessibility.svg)
+![English AI and Accessibility — visual theme](assets/art/2026-10-26-AI-and-Accessibility.svg)
 
-> Visual companion: thematic storybook illustration. Open the linked HTML for icon navigation and interactive recall.
+**One article, multiple skills.** Today's only article is [Students with Disabilities Praise Assistive Technology Using AI](https://learningenglish.voanews.com/a/students-with-disabilities-praise-assistive-technology-using-ai/7926297.html). Listening, reading, selected paragraphs, expression practice, speaking and writing all use this article. Do not memorize the entire text.
 
-**Big question:** How can AI help people access learning without replacing the learning itself?
-
-**30-minute plan:** Listening 6 · Reading 9 · Active Expressions 4 · Speaking 4 · Writing 5 · Retrieval/Reflection 2 = **30 min**.
-
-**Method:** Complete a task → pinpoint a local misunderstanding → repair only that point → transfer to a new situation → retrieve without looking. Tasks are plans, **not** evidence of completion.
+**Time:** Listening 6 · Reading 9 · Active Expressions 4 · Speaking 4 · Writing 5 · Retrieval/Reflection 2 = 30 minutes.
 
 ## Multimedia Companion
 
-- **Direct audio:** [VOA publisher's 128 kbps MP3](https://voa-audio.voanews.eu/vle/2025/01/06/1c68a19c-d59b-4be0-9166-44773b33b387_hq.mp3?download=1) — original recording **6:45**; listen to approximately **0:00–3:30** today. The publisher provides a real MP3 endpoint; link was reached by following the official MP3 control, but full playback was **not independently tested**.
-- **Transcript:** [VOA Learning English · Students with Disabilities Praise Assistive Technology Using AI](https://learningenglish.voanews.com/a/students-with-disabilities-praise-assistive-technology-using-ai/7926297.html) — transcript appears under the audio player; article dated **2025-01-14**.
-- **Source page / player:** [VOA article](https://learningenglish.voanews.com/a/students-with-disabilities-praise-assistive-technology-using-ai/7926297.html) — if its embedded player says media unavailable, try the direct MP3.
-- **Reading source:** [W3C WAI · Introduction to Web Accessibility](https://www.w3.org/WAI/fundamentals/accessibility-intro/) — public English explainer, last updated **2026-02-03**. Read the named sections, not the entire site.
-- **HTML companion:** [Reader-like interactive companion](./2026-10-26-English-AI-and-Accessibility.html).
-- **Access check:** both original English pages were accessible on **2026-10-26**. No long passages from either source are reproduced here.
+- **Complete article + English transcript:** [Students with Disabilities Praise Assistive Technology Using AI](https://learningenglish.voanews.com/a/students-with-disabilities-praise-assistive-technology-using-ai/7926297.html) — original VOA Learning English page.
+- **Direct audio:** [Publisher-hosted MP3](https://voa-audio.voanews.eu/vle/2025/01/06/1c68a19c-d59b-4be0-9166-44773b33b387_hq.mp3?download=1)
+- **Source page / player:** [VOA Learning English](https://learningenglish.voanews.com/a/students-with-disabilities-praise-assistive-technology-using-ai/7926297.html).
+- **HTML illustrated companion:** [Open interactive reader](./2026-10-26-English-AI-and-Accessibility.html).
+- **Audio status:** Publisher MP3 address comes from the earlier lesson; full playback has not been retested in this revision. Never treat synthesized voice as the original recording.
 
 ## Listening · 6 min
 
-**Material:** The VOA report describes how AI-based assistive tools may support students with different learning and communication needs, while raising questions about whether students still do their own thinking.
+**0–2 min · Comprehend:** Listen to the opening/assigned segment without text. Capture the main situation, not every word. If the topic is unfamiliar, open the Chinese context hint only **after** trying once.
 
-1. **Complete (2 min):** Listen to **0:00–3:30 without the transcript**. Name the **problem → two types of assistance → one concern** in English.
-2. **Locate a break (2 min):** Replay a **15–25-second span** where your interpretation failed. Was the obstacle an unfamiliar term, the contrast introduced by *although / however*, or a specific example? Check **only that span** against the transcript.
-3. **Transfer (2 min):** Close the transcript. Explain how a text-to-speech or outlining tool might help someone learn a programming concept **without writing the assignment for them**.
+<details><summary>Optional Chinese context — open if you lose the story</summary>VOA 报道学生怎样使用 AI 辅助技术；个人经验说明需求，但不代表工具适合所有学生。</details>
 
-> Actual timestamp / first interpretation: ___  
-> Exact word or relationship repaired: ___  
-> Whole-audio model (one sentence): ___  
-> New-context transfer (your own sentence): ___
+**2–4 min · Pinpoint:** Choose **one 20–40-second clip** whose meaning interests you or contains the first broken relation. Note the timestamp: ___. Look at only the matching English transcript sentence(s); identify word boundaries, stress, referents or a contrast. Listen again while checking the words. Do not try to repair the whole recording.
+
+**4–6 min · Retrieve:** Close the transcript and replay the same clip. State what you actually heard in English, then explain the message in one sentence. Distinguish **I know the story from Chinese** from **I recognized the English sounds without text**.
+
+**Evidence to fill:** timestamp ___; first interpretation ___; matched English words ___; what I could hear without text ___.
 
 ## Reading · 9 min
 
-**Material:** [W3C WAI · Introduction to Web Accessibility](https://www.w3.org/WAI/fundamentals/accessibility-intro/). Read **Summary → What is Web Accessibility → Making Your Website Accessible → Evaluating Accessibility → Examples**. Skim rather than read every sidebar link.
+**Only source:** [Read the entire VOA article](https://learningenglish.voanews.com/a/students-with-disabilities-praise-assistive-technology-using-ai/7926297.html) (4 min). Mark each paragraph's role and reconstruct this global model **without copying the source**:
 
-1. **Structure (3 min):** Assign each selected section a function: **problem/definition → who benefits → design response → how to test → concrete examples**. Why does the article move from *definition* to *evaluation*?
-2. **Local-to-global (2 min):** The W3C distinguishes **perceive, understand, navigate, interact**. Pick one action and explain one interface barrier that blocks it. Then place your example in the article's overall argument.
-3. **Scope (2 min):** W3C says automated evaluation tools cannot establish full accessibility on their own. Does a successful automatic test prove a page is accessible to every user? Explain the difference between **technical checks** and **human experience**.
-4. **Retrieval (2 min):** Close the page. Rebuild a **30–40-word English paragraph** from these labels: **barrier → accessible design → examples → testing → limitation**. Do not translate each original sentence.
+1. 学生面临不同的学习障碍
+2. AI 辅助工具的具体使用
+3. 学习者报告的便利
+4. 使用边界与自主学习
 
-<details><summary>Repair hint — open only after trying</summary>
+**Selected paragraphs (3 min):** In that **same article**, locate these 1–3 parts by topic/function, not by invented quotes:
 
-An accessibility guideline tells developers what to aim for; passing one automated check does not guarantee that every person can use the result. Distinguish **can support** from **guarantees**.
+1. **Paragraph 1 — context / question:** 介绍学生困难或日常任务的开头段落。找出一句关键关系，检查其主语、转折或限定词；说出这段在全文中的作用。
+2. **Paragraph 2 — example / mechanism:** 具体说明辅助工具如何起作用的例子。找出一句关键关系，检查其主语、转折或限定词；说出这段在全文中的作用。
+3. **Paragraph 3 — outcome / limitation:** 谈到学生体验、担忧或学习自主性的段落。找出一句关键关系，检查其主语、转折或限定词；说出这段在全文中的作用。
 
-</details>
+**Whole-text retrieval (2 min):** Hide the page. Retell the full argument in 3–4 nodes, using your own English. Then check one source sentence you misinterpreted. **Accuracy boundary:** 不要由个别使用者的积极体验推出所有技术都必然改善学习成果。
 
 ## Active Expressions · 4 min
 
-### [[words/make-accessible-to|make ... accessible to ...]]
+**One useful expression only:** Cover the English before retrieval, then answer the cue.
 
-- **Meaning → English:** “让课程资料对更多学生可获取” → Make course materials ___ ___ more students.
-- **Pattern:** *make + thing + accessible to + people*; keep **to** after *accessible*. Say: “Captions make video lessons accessible to more learners.”
-- **Transfer:** Explain how an open-source project could make its documentation accessible to beginners.
+- **Meaning → English:** “字幕让课程视频对更多学生可获取。”先独立组句。
+- **Reveal after trying:** **make ... accessible to ...**
+- **Pronunciation:** Listen to the original 20–40-second clip (if it contains this expression); otherwise use an approved voice fallback to practise a **self-authored sentence** with this pattern. Do not pretend this is a verbatim quote from the VOA article.
+- **Transfer:** 将大学课程换成开源项目文档或校园活动。
 
-### [[words/remove-barriers-to|remove barriers to ...]]
-
-- **Meaning → English:** “消除参与讨论的障碍” → remove ___ ___ participation.
-- **Pattern:** *remove barriers to + noun / -ing*; **to** is a preposition: *barriers to learning*, not *barriers to learn*.
-- **Transfer:** Name one interface feature that removes barriers to using your QQ bot.
-
-### [[words/bridge-the-gap|bridge the gap]] · review
-
-- **Retrieve without looking:** “缩小新手与熟练开发者之间的差距” → ___ the ___ between beginners and experienced developers.
-- **Precision:** Reducing a gap is **not** the same as eliminating it. Apply it to a sports team or music class, not to accessibility again.
-
-**Pronunciation micro-drill:** Say **ac-CESS-i-ble** (stress the second syllable) and link *accessible to* naturally. Close this section; retrieve all three expressions from Chinese cues and use two in a **new** setting.
+**Recognition ≠ retrieval:** Knowing what it means when shown is step one; producing it from your own situation is step two.
 
 ## Speaking · 4 min
 
-**Topic:** How should an AI learning assistant support students? Answer progressively (20–35 seconds per question).
+Answer aloud without reading a script (about 30–45 sec per question):
 
-1. What is one barrier students face when reading technical materials?
-2. How could AI make a lesson accessible to more learners?
-3. When does helpful assistance begin to replace a student's own thinking?
-4. If you designed a QQ bot for a course group, what **one** accessibility feature would you build first, and how would you test it with real users?
+1. What difficulty does a student in the report face?
+2. How does the assistive tool change that specific task?
+3. What is the difference between access and independent understanding?
+4. What feature would you add to an AI study assistant after reading the report?
 
-> First speaking stall: ___ · Phrase repaired: ___ · Unprompted retry in another context: ___
+**First sticking point:** ___ · **One corrected answer after a short repair:** ___.
 
 ## Writing · 5 min
 
-**Write 80–120 original English words:** **Should university AI learning assistants offer automatic summaries by default, or should students request them only when needed?**
+**80–120 words, your own draft.** Based on the students' experiences in the VOA report, should university AI study assistants offer accessibility tools by default or let students enable them as needed?
 
-Take a position, give **one concrete accessibility benefit**, explain **one possible learning cost**, propose **one safeguard**, and end with a qualified recommendation. Use **two** active expressions if natural; do not copy a model essay.
+Keep the argument tied to today's VOA article; include one specific detail, a limitation, and (if natural) your one new expression. No model answer.
 
-<details><summary>Minimal structure hint — only if needed</summary>
+<details><summary>Minimal structure — open only after first draft</summary>Position → article detail → your own example or transfer → limitation → conclusion.</details>
 
-Position → barrier → benefit → possible cost → safeguard / qualified conclusion.
+**Your actual writing:**
 
-</details>
-
-**Your actual draft (fill in only after writing):**
-
-<!-- Student's own 80–120-word English paragraph goes here. Leave empty until written. -->
+<!-- Fill in your actual 80–120 words here after writing; planned tasks are not evidence. -->
 
 ## Retrieval/Reflection · 2 min
 
-Close the sources. Rebuild **VOA: learner barrier → AI assistance → concern / example** and **W3C: definition → design → examples → evaluation limit**. Retrieve the three expressions without looking, then test one in an unrelated situation.
-
-> Exact audio break and timestamp: ___  
-> My first (incorrect/incomplete) interpretation: ___  
-> Repaired local relationship: ___  
-> Whole-reading model recalled from memory: ___  
-> Expressions retrieved without prompts: ___  
-> New-context sentence / speaking evidence: ___  
-> Writing draft location and word count: ___  
-> One review target for tomorrow: ___
+- **Immediately, without the transcript:** The 3–4-step article model was ___.
+- **Audio:** I could / couldn't distinguish the chosen expression without text because ___.
+- **Independent transfer sentence:** ___.
+- **Tomorrow (30–60 sec, not marked done yet):** Listen to the clip with no English or Chinese text; reconstruct the expression, verify, and use it in one *different* situation.
 
 ### 8-minute Busy Version
 
-1. **2 min listening:** Hear the VOA opening; recall **one barrier and one aid**.
-2. **2 min reading:** Skim W3C's definition and two examples; close it and reconstruct **problem → design response**.
-3. **1 min active:** Retrieve *make ... accessible to* and *remove barriers to* from meaning.
-4. **1 min speaking:** Explain an accessibility improvement for a student app.
-5. **1 min micro-writing:** Write **two original sentences**: one design proposal and one limitation.
-6. **1 min review:** Name an exact breakdown, its repair, and a new-context test.
+2 min article audio + Chinese context only if needed · 2 min entire-article skim + 1 chosen paragraph · 1 min English transcript alignment of a 20–40s clip · 1 min replay without text · 1 min transfer-speaking with make ... accessible to ... · **1 min micro-writing** (your view + a reason grounded in the article).
 
 ## Connections
 
-- [[EnglishLearning/2026-10-25-English-Libraries-Beyond-Books|Libraries Beyond Books]]: libraries **offer** access and services; today's W3C guidance asks whether digital tools are **usable**. Neither fact alone proves better learning outcomes.
-- [[EnglishLearning/2026-10-23-English-AI-Privacy-Choices|AI Privacy Choices]]: default settings may be convenient but require thought about consent and control.
-- [[EnglishLearning/2026-10-24-English-Listening-Beyond-Repetition|Listening Beyond Repetition]]: a transcript repairs a **local** misunderstanding; a new-context explanation tests whether a **global model** was built.
-- [[EnglishLearning/Connections|Connections map]] · [[words/make-accessible-to|make ... accessible to ...]] · [[words/remove-barriers-to|remove barriers to ...]] · [[words/bridge-the-gap|bridge the gap]].
+- Review this lesson again tomorrow by recognizing **sounds first**, then generating a sentence with make ... accessible to ... from meaning.
+- [[EnglishLearning/Connections|English Learning Connections]] · [[EnglishLearning/README|Daily English Index]].
 
 ## Previous / Next
 

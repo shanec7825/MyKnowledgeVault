@@ -3,131 +3,104 @@ type: daily-english
 title: "2026-10-29 · Beyond the Box Score"
 topic: "Beyond the Box Score"
 created: 2026-10-29
-updated: 2026-10-29
+updated: 2026-10-30
 tags: [english, daily-learning, basketball, sports, evidence-literacy, reading-structure, active-retrieval]
 ---
 
-# 2026-10-29 · Beyond the Box Score
+# 2026-10-29 · English Beyond the Box Score
 
-![Topic illustration — English Beyond the Box Score](assets/art/2026-10-29-Beyond-the-Box-Score.svg)
+![English Beyond the Box Score — visual theme](assets/art/2026-10-29-Beyond-the-Box-Score.svg)
 
-> Visual companion: thematic storybook illustration. Open the linked HTML for icon navigation and interactive recall.
+**One article, multiple skills.** Today's only article is [What It Takes — Bill Russell](https://learningenglish.voanews.com/a/what-it-takes---bill-russell/4448610.html). Listening, reading, selected paragraphs, expression practice, speaking and writing all use this article. Do not memorize the entire text.
 
-**Big question:** How can a player help a team without scoring?
-
-**30-minute plan:** Listening **6** · Reading **9** · Active Expressions **4** · Speaking **4** · Writing **5** · Retrieval/Reflection **2** = **30 minutes**.
-
-**Method:** complete → locate one exact comprehension break → repair only that link → transfer to a new context → retrieve without looking. Tasks below are **plans**, not records of actual completion.
+**Time:** Listening 6 · Reading 9 · Active Expressions 4 · Speaking 4 · Writing 5 · Retrieval/Reflection 2 = 30 minutes.
 
 ## Multimedia Companion
 
-- **Direct audio:** [VOA publisher MP3, 128 kbps](https://voa-audio.voanews.eu/vle/2018/06/21/c55a0910-d129-4f3e-b4a0-e20804b0161a_hq.mp3?download=1) — full recording **32:48**; **listen only to 06:49–08:42 and 15:25–17:55** (~4m23s). Publisher's MP3 URL was exposed by the official player on **2026-10-29**; direct file playback was **not independently verified**. The embedded page may say “No media source currently available.”
-- **Transcript:** [VOA Learning English · What It Takes — Bill Russell](https://learningenglish.voanews.com/a/what-it-takes---bill-russell/4448610.html), published **2018-06-29**. Timestamped transcript is on the page; use only **06:49–08:42** and **15:25–17:55**.
-- **Source page / player:** [VOA interview and player](https://learningenglish.voanews.com/a/what-it-takes---bill-russell/4448610.html).
-- **Reading 2:** [NBA · Draymond Green Wins 2024–25 Hustle Award](https://www.nba.com/news/draymond-green-2024-25-nba-hustle-award), updated **2025-04-25**. Focus on the opening, the list of hustle categories, the per-minute explanation, and the paragraph interpreting Green's rankings.
-- **HTML companion:** [Quiet reader and writing workspace](./2026-10-29-English-Beyond-the-Box-Score.html).
-- **Source check (2026-10-29):** VOA transcript and NBA article were accessible. The older sources are **not** claims about today's games; no long copyrighted passages are copied here.
+- **Complete article + English transcript:** [What It Takes — Bill Russell](https://learningenglish.voanews.com/a/what-it-takes---bill-russell/4448610.html) — original VOA Learning English page.
+- **Direct audio:** [Publisher-hosted MP3](https://voa-audio.voanews.eu/vle/2018/06/21/c55a0910-d129-4f3e-b4a0-e20804b0161a_hq.mp3?download=1)
+- **Source page / player:** [VOA Learning English](https://learningenglish.voanews.com/a/what-it-takes---bill-russell/4448610.html).
+- **HTML illustrated companion:** [Open interactive reader](./2026-10-29-English-Beyond-the-Box-Score.html).
+- **Audio status:** Publisher MP3 address comes from the earlier lesson; full playback has not been retested in this revision. Never treat synthesized voice as the original recording.
 
 ## Listening · 6 min
 
-**Material:** A 2018 interview with basketball great Bill Russell. The excerpt contrasts winning with personal recognition, then explains work done away from the ball.
+**0–2 min · Comprehend:** Listen to the opening/assigned segment without text. Capture the main situation, not every word. If the topic is unfamiliar, open the Chinese context hint only **after** trying once.
 
-1. **Complete (4m25):** Listen to **06:49–08:42** and **15:25–17:55**, without reading. Record four labels: **personal awards → chosen standard → actions without the ball → adjust to teammates**.
-2. **Find a break (45 sec):** Choose one 15–20-second stretch you could not explain. Was it the phrase *final judges*, the contrast *without ... the ball*, or a pronoun referring to a teammate? Check **only that timestamp** in the transcript.
-3. **Repair → transfer (50 sec):** Explain the point in one sentence, then change the situation: How could a programmer contribute to a team without writing the most lines of code?
+<details><summary>Optional Chinese context — open if you lose the story</summary>拉塞尔谈到如何看待个人荣誉、团队目标以及不持球时的贡献；这是受访者经验，不是球队统计实验。</details>
 
-> **Actual listening evidence (fill in after):** timestamp ___ · what I first thought ___ · repaired meaning ___ · global model ___ · transfer sentence ___.
+**2–4 min · Pinpoint:** Choose **one 20–40-second clip** whose meaning interests you or contains the first broken relation. Note the timestamp: ___. Look at only the matching English transcript sentence(s); identify word boundaries, stress, referents or a contrast. Listen again while checking the words. Do not try to repair the whole recording.
 
-<details><summary>Check only after listening</summary>
+**4–6 min · Retrieve:** Close the transcript and replay the same clip. State what you actually heard in English, then explain the message in one sentence. Distinguish **I know the story from Chinese** from **I recognized the English sounds without text**.
 
-Russell says that he chose team wins as a standard instead of relying solely on other people's judgments of his individual worth. He also argues that actions away from the ball matter, and a team must adjust to its members' actual abilities. His estimate about minutes spent shooting is a **speaker's illustration**, not a verified universal statistic.
-
-</details>
+**Evidence to fill:** timestamp ___; first interpretation ___; matched English words ___; what I could hear without text ___.
 
 ## Reading · 9 min
 
-**Read the selected VOA transcript passages and the linked NBA article in their original pages.** Read for **function**, not just basketball vocabulary.
+**Only source:** [Read the entire VOA article](https://learningenglish.voanews.com/a/what-it-takes---bill-russell/4448610.html) (4 min). Mark each paragraph's role and reconstruct this global model **without copying the source**:
 
-1. **Structure (3 min):** Label the Russell passages **personal experience → change of standard → hidden contributions → team-specific adjustment**. Label the NBA article **award claim → measurement categories → rankings → interpretation**. Which text argues from personal experience, and which describes measured events?
-2. **Local sentence repair (2 min):** In Russell's 16:07 passage, identify the main idea before unpacking the condition *without having ... the ball*. Then find the NBA sentence explaining why hustle statistics are reported **per minute**. Who is being compared, and what difference is the normalization intended to address?
-3. **Evidence boundary (2 min):** A screen assist or deflection is **recordable**; “this player made the team win” is a broader **causal claim**. Does a hustle ranking by itself prove that one player caused a team's success? What useful actions might even hustle statistics miss?
-4. **Retrieval (2 min):** Close both pages and give a **45–60-word explanation** with **problem → hidden actions → measurement → limitation → takeaway**. Do not peek until you finish.
+1. 谈个人奖项与评判标准
+2. 把获胜和团队表现放在中心
+3. 解释无球时的贡献
+4. 根据队友调整自己的行动
 
-<details><summary>After-attempt evidence check</summary>
+**Selected paragraphs (3 min):** In that **same article**, locate these 1–3 parts by topic/function, not by invented quotes:
 
-The NBA article explains that per-minute figures help compare players with different playing time. Recorded hustle plays broaden what can be measured, but no single statistic captures every off-ball action or proves causality. Russell's perspective and the NBA's measurements can complement each other without being identical types of evidence.
+1. **Paragraph 1 — context / question:** 访谈中谈个人奖项或评判标准的位置。找出一句关键关系，检查其主语、转折或限定词；说出这段在全文中的作用。
+2. **Paragraph 2 — example / mechanism:** 约 06:49–08:42 的听力对应文字段落。找出一句关键关系，检查其主语、转折或限定词；说出这段在全文中的作用。
+3. **Paragraph 3 — outcome / limitation:** 约 15:25–17:55 中解释团队配合和无球贡献的段落。找出一句关键关系，检查其主语、转折或限定词；说出这段在全文中的作用。
 
-</details>
+**Whole-text retrieval (2 min):** Hide the page. Retell the full argument in 3–4 nodes, using your own English. Then check one source sentence you misinterpreted. **Accuracy boundary:** 个人访谈提供思考框架，不等于所有团队表现都有同一种原因。
 
 ## Active Expressions · 4 min
 
-### [[words/do-your-part|do your part]] — carry out your share of a collective task
+**One useful expression only:** Cover the English before retrieval, then answer the cue.
 
-- **Chinese → English (hide the cue first):** “即使不持球，你也应该尽自己的一份力。” → Even without the ball, you should ___ ___ ___.
-- **Pattern:** *do your part in / to help + verb*. Stress **PART**; compare *play your part* in a shared project.
-- **Transfer:** Explain how someone does their part in a GitHub group project without being the main coder.
+- **Meaning → English:** “团队里不只有得分者才是在尽自己的责任。”用英文表达。
+- **Reveal after trying:** **do your part**
+- **Pronunciation:** Listen to the original 20–40-second clip (if it contains this expression); otherwise use an approved voice fallback to practise a **self-authored sentence** with this pattern. Do not pretend this is a verbatim quote from the VOA article.
+- **Transfer:** 将场景换成 GitHub 小组项目中的测试、文档或代码审查。
 
-### [[words/make-an-impact|make an impact]] — have a meaningful effect
-
-- **Chinese → English:** “一次关键防守也能产生影响。” → A timely defensive play can ___ ___ ___.
-- **Pattern:** *make an impact on + noun*; **IM**-pact is a noun here. Contrast with *have an effect on*.
-- **Transfer:** Describe one small habit that makes an impact on your study routine.
-
-### Review [[words/play-a-role-in|play a role in]] — contribute to an outcome
-
-- **No-peeking retrieval:** “清晰的沟通有助于团队成功。” → Clear communication ___ ___ ___ ___ team success.
-- **Contrast:** *play a role in* names a contributing factor; *do your part* highlights personal responsibility; *make an impact* emphasizes effect.
-
-**Quick transfer:** Use **two** of these in a new sentence about a music ensemble or a student software project.
+**Recognition ≠ retrieval:** Knowing what it means when shown is step one; producing it from your own situation is step two.
 
 ## Speaking · 4 min
 
-**Theme: What should count as a contribution?** Answer aloud, in order, without a prepared script.
+Answer aloud without reading a script (about 30–45 sec per question):
 
-1. What can a basketball player do when they are not holding the ball?
-2. Why did Russell choose team results as his own standard?
-3. Which invisible contributions do the NBA's hustle categories help make visible?
-4. Why is measuring an action different from proving it caused a win?
-5. In a student software team, how would you recognize work that is hard to count?
+1. How does Russell describe personal recognition?
+2. What can a player contribute without holding the ball?
+3. Why might a player's role change with different teammates?
+4. What could doing your part mean in a student software project?
 
-**Evidence (after speaking):** first explanation ___ · exact missing connector ___ · revised explanation with one limitation ___.
+**First sticking point:** ___ · **One corrected answer after a short repair:** ___.
 
 ## Writing · 5 min
 
-**Write an original 80–120-word English paragraph. No model essay is provided.**
+**80–120 words, your own draft.** Using Russell's interview, explain whether a student project team should recognize less visible contributions such as testing and documentation.
 
-**Prompt:** *Should university project teams reward less visible contributions—such as testing, documentation, and helping teammates—as much as visible outputs like features and presentations?*
+Keep the argument tied to today's VOA article; include one specific detail, a limitation, and (if natural) your one new expression. No model answer.
 
-Use **position → concrete project example → how to recognize the contribution → trade-off / limitation**. Try *do your part* and *make an impact*. Do not assume a basketball metric automatically transfers to software.
+<details><summary>Minimal structure — open only after first draft</summary>Position → article detail → your own example or transfer → limitation → conclusion.</details>
 
-**Your actual draft (leave blank until written):**
+**Your actual writing:**
 
-> [Write your own 80–120 words here.]
-
-**Revision evidence:** sentence changed ___ · reason ___.
+<!-- Fill in your actual 80–120 words here after writing; planned tasks are not evidence. -->
 
 ## Retrieval/Reflection · 2 min
 
-Close the sources. Retrieve: **Russell's standard → two off-ball actions → one hustle metric → one limit of measurement**. Then retrieve the three expressions from Chinese meanings without looking.
+- **Immediately, without the transcript:** The 3–4-step article model was ___.
+- **Audio:** I could / couldn't distinguish the chosen expression without text because ___.
+- **Independent transfer sentence:** ___.
+- **Tomorrow (30–60 sec, not marked done yet):** Listen to the clip with no English or Chinese text; reconstruct the expression, verify, and use it in one *different* situation.
 
-> Completed? ___  
-> Exact listening/reading break (timestamp or clause): ___  
-> Repair: ___  
-> Global model from memory: ___  
-> New-context transfer: ___  
-> Expressions actually retrieved: ___  
-> Next small practice: ___
+### 8-minute Busy Version
 
-### 8-minute busy version
-
-**2 min** listen to VOA **15:25–17:25** without transcript; **2 min** read the NBA article's introduction + hustle categories + per-minute note and label **claim → measurement → limit**; **1 min** retrieve *do your part* and *make an impact* from Chinese; **1 min** speak one off-ball example and one software analogy; **1 min micro-writing**: write two original sentences arguing whether testing work deserves credit; **1 min** locate one exact misunderstanding, repair it, and restate the idea in a different context.
+2 min article audio + Chinese context only if needed · 2 min entire-article skim + 1 chosen paragraph · 1 min English transcript alignment of a 20–40s clip · 1 min replay without text · 1 min transfer-speaking with do your part · **1 min micro-writing** (your view + a reason grounded in the article).
 
 ## Connections
 
-- [[EnglishLearning/2026-10-28-English-Roots-Below-Ground|Roots Below Ground]]: yesterday's **hidden biological processes** → today's **less visible contributions**. In both, what is easy to see is not the whole system.
-- [[EnglishLearning/2026-10-18-English-Talent-and-Teamwork|Talent and Teamwork]]: earlier research asked whether more star talent improves coordination; today we examine **how contribution is defined and measured**.
-- [[EnglishLearning/2026-10-27-English-Sleep-and-Study|Sleep and Study]]: a descriptive measure is not itself proof of causation.
-- [[EnglishLearning/Connections|Cross-day map]] · [[words/do-your-part|do your part]] · [[words/make-an-impact|make an impact]] · [[words/play-a-role-in|play a role in]].
+- Review this lesson again tomorrow by recognizing **sounds first**, then generating a sentence with do your part from meaning.
+- [[EnglishLearning/Connections|English Learning Connections]] · [[EnglishLearning/README|Daily English Index]].
 
 ## Previous / Next
 

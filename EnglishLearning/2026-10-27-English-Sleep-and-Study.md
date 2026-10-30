@@ -3,127 +3,104 @@ type: daily-english
 title: "2026-10-27 · Sleep and Study"
 topic: "Sleep and Study"
 created: 2026-10-27
-updated: 2026-10-27
+updated: 2026-10-30
 tags: [english, daily-learning, university-life, sleep-science, reading-structure, evidence, retrieval]
 ---
 
-# 2026-10-27 · Sleep and Study
+# 2026-10-27 · English Sleep and Study
 
-![Topic illustration — English Sleep and Study](assets/art/2026-10-27-Sleep-and-Study.svg)
+![English Sleep and Study — visual theme](assets/art/2026-10-27-Sleep-and-Study.svg)
 
-> Visual companion: thematic storybook illustration. Open the linked HTML for icon navigation and interactive recall.
+**One article, multiple skills.** Today's only article is [Sleeping More May Help College Students in the Classroom](https://learningenglish.voanews.com/a/sleeping-more-may-help-college-students-in-the-classroom/4739055.html). Listening, reading, selected paragraphs, expression practice, speaking and writing all use this article. Do not memorize the entire text.
 
-**Big question:** Does staying up late to study always help you learn more?
-
-**30-minute plan:** Listening 6 · Reading 9 · Active Expressions 4 · Speaking 4 · Writing 5 · Retrieval/Reflection 2 = **30 minutes**.
-
-**Cycle:** complete → pinpoint one exact breakdown → repair → transfer to a new context → retrieve without looking. Prompts below are **plans**, not evidence that you completed them.
+**Time:** Listening 6 · Reading 9 · Active Expressions 4 · Speaking 4 · Writing 5 · Retrieval/Reflection 2 = 30 minutes.
 
 ## Multimedia Companion
 
-- **Direct audio:** [VOA publisher MP3, 128 kbps](https://voa-audio.voanews.eu/vle/2019/01/11/8d07c849-cc61-41ed-b6a7-36368e0adf6d_hq.mp3?download=1). The official VOA audio control exposes this MP3 URL; the link was identified on **2026-10-27**, but end-to-end playback could **not** be independently tested. Original recording: **7:34**; today listen to about **0:00–3:00**.
-- **Transcript:** [VOA Learning English · Sleeping More May Help College Students in the Classroom](https://learningenglish.voanews.com/a/sleeping-more-may-help-college-students-in-the-classroom/4739055.html), dated **2019-01-12**; transcript appears below the audio player.
-- **Source page / player:** [VOA original article and player](https://learningenglish.voanews.com/a/sleeping-more-may-help-college-students-in-the-classroom/4739055.html). If the embedded player reports unavailable media, try Direct audio; do not assume the player is functional.
-- **Reading source:** [Baylor University · College Students Are Getting Less Restful Sleep Than They Did 20 Years Ago](https://news.web.baylor.edu/news/story/2026/college-students-are-getting-less-restful-sleep-they-did-20-years-ago), published **2026-09-01**. Read only the opening, trend, weekend-rest and campus-response sections.
-- **HTML companion:** [Quiet reader and writing space](./2026-10-27-English-Sleep-and-Study.html).
-- **Access check:** both English source pages were publicly accessible on **2026-10-27**. No long passages are copied here.
+- **Complete article + English transcript:** [Sleeping More May Help College Students in the Classroom](https://learningenglish.voanews.com/a/sleeping-more-may-help-college-students-in-the-classroom/4739055.html) — original VOA Learning English page.
+- **Direct audio:** [Publisher-hosted MP3](https://voa-audio.voanews.eu/vle/2019/01/11/8d07c849-cc61-41ed-b6a7-36368e0adf6d_hq.mp3?download=1)
+- **Source page / player:** [VOA Learning English](https://learningenglish.voanews.com/a/sleeping-more-may-help-college-students-in-the-classroom/4739055.html).
+- **HTML illustrated companion:** [Open interactive reader](./2026-10-27-English-Sleep-and-Study.html).
+- **Audio status:** Publisher MP3 address comes from the earlier lesson; full playback has not been retested in this revision. Never treat synthesized voice as the original recording.
 
 ## Listening · 6 min
 
-**Material:** VOA reports a small university classroom sleep challenge and a researcher's criticism of its design.
+**0–2 min · Comprehend:** Listen to the opening/assigned segment without text. Capture the main situation, not every word. If the topic is unfamiliar, open the Chinese context hint only **after** trying once.
 
-1. **Complete · 2 min:** Listen to **0:00–3:00** with the transcript closed. Retrieve the story as **student problem → teacher's idea → reported result**. Write three keywords, not sentences.
-2. **Locate the break · 2 min:** Find one **15–25-second** span you did not understand. Was the issue a word (e.g. *sleep-deprived*), a causal claim, or the contrast between knowing sleep matters and actually sleeping? Re-listen, then inspect only that transcript span.
-3. **Transfer · 2 min:** Close the page. Explain in English how a late-night debugging session could **cut into** sleep, without claiming the VOA classroom study proves what will happen to every programmer.
+<details><summary>Optional Chinese context — open if you lose the story</summary>文章报道一个课堂睡眠挑战及其局限；参与者的表现与因果证明不是同一回事。</details>
 
-> Actual listening evidence (fill in only after doing it):  
-> Timestamp / what I first thought: ___  
-> Exact word or relationship repaired: ___  
-> Whole-story model from memory: ___  
-> Transfer sentence about programming: ___
+**2–4 min · Pinpoint:** Choose **one 20–40-second clip** whose meaning interests you or contains the first broken relation. Note the timestamp: ___. Look at only the matching English transcript sentence(s); identify word boundaries, stress, referents or a contrast. Listen again while checking the words. Do not try to repair the whole recording.
+
+**4–6 min · Retrieve:** Close the transcript and replay the same clip. State what you actually heard in English, then explain the message in one sentence. Distinguish **I know the story from Chinese** from **I recognized the English sounds without text**.
+
+**Evidence to fill:** timestamp ___; first interpretation ___; matched English words ___; what I could hear without text ___.
 
 ## Reading · 9 min
 
-**Material:** [Baylor University research news, September 1, 2026](https://news.web.baylor.edu/news/story/2026/college-students-are-getting-less-restful-sleep-they-did-20-years-ago). The article describes a survey-based trend, **not** a randomized experiment.
+**Only source:** [Read the entire VOA article](https://learningenglish.voanews.com/a/sleeping-more-may-help-college-students-in-the-classroom/4739055.html) (4 min). Mark each paragraph's role and reconstruct this global model **without copying the source**:
 
-1. **Structure · 3 min:** Label the selected parts **research question → survey and population → time trend → possible explanations → campus response**. Which paragraph makes the shift from *finding* to *recommendation*?
-2. **Local → global · 2 min:** Locate the figures **about 39% (2000)** and **60% (2023)**. What exactly did students report: *sleeping only two hours*, *being rested on only two days a week*, or *sleeping two nights a week*? Explain why this single phrase changes the whole interpretation.
-3. **Evidence boundary · 2 min:** The data come from nearly **1.6 million** undergraduate survey responses collected **2000–2023**. Explain why a large sample strengthens a description of a trend but does not establish that phones, AI, or assignments **caused** it. Notice the phrase **could reflect**.
-4. **Retrieval · 2 min:** Close the article. Rebuild a 35–50-word explanation with **population → measure → change → uncertainty → response**. Use your own words.
+1. 学生睡眠不足的问题
+2. 教师提出课堂挑战
+3. 参与者的报告或表现
+4. 对研究设计的质疑
 
-<details><summary>Repair clue — only after your attempt</summary>
+**Selected paragraphs (3 min):** In that **same article**, locate these 1–3 parts by topic/function, not by invented quotes:
 
-The survey measure is how often students **felt sufficiently rested** during a week, not an objective record of their sleep duration. The 39% and 60% describe the share reporting only **two rested days per week**. The article discusses possible contributors but does not identify a single proven cause.
+1. **Paragraph 1 — context / question:** 开篇介绍大学生睡眠问题的段落。找出一句关键关系，检查其主语、转折或限定词；说出这段在全文中的作用。
+2. **Paragraph 2 — example / mechanism:** 描述老师给学生设定睡眠目标的段落。找出一句关键关系，检查其主语、转折或限定词；说出这段在全文中的作用。
+3. **Paragraph 3 — outcome / limitation:** 关于观察结果及批评意见的段落。找出一句关键关系，检查其主语、转折或限定词；说出这段在全文中的作用。
 
-</details>
+**Whole-text retrieval (2 min):** Hide the page. Retell the full argument in 3–4 nodes, using your own English. Then check one source sentence you misinterpreted. **Accuracy boundary:** 小型课堂活动和专家批评不能被简化为对所有学生的普遍因果证明。
 
 ## Active Expressions · 4 min
 
-### [[words/cut-into|cut into ...]] — take time away from something
+**One useful expression only:** Cover the English before retrieval, then answer the cue.
 
-- **Retrieve from Chinese:** “熬夜调试占用了我的睡眠时间。” → Late-night debugging ___ ___ my sleep time.
-- **Pattern:** *cut into + time / budget / sleep / free time*; the verb is **cut–cut–cut**.
-- **Transfer:** Say how one campus activity can cut into time for another.
+- **Meaning → English:** “熬夜调试挤占了我的睡眠时间。”先试着说出完整英文。
+- **Reveal after trying:** **cut into**
+- **Pronunciation:** Listen to the original 20–40-second clip (if it contains this expression); otherwise use an approved voice fallback to practise a **self-authored sentence** with this pattern. Do not pretend this is a verbatim quote from the VOA article.
+- **Transfer:** 换成篮球训练、玩游戏、赶作业挤占另一件事的时间。
 
-### [[words/be-associated-with|be associated with ...]] — linked, not automatically caused
-
-- **Retrieve from Chinese:** “在该研究中，睡眠时间与考试成绩有关联。” → In that study, sleep duration was ___ ___ exam results.
-- **Pattern:** *X is associated with Y* ≠ *X causes Y*. Stress **SO** in *associated*.
-- **Transfer:** Describe an association in sports or programming without claiming causation.
-
-### Review: [[words/pinpoint-a-gap-in|pinpoint a gap in ...]]
-
-- **Meaning → English:** “准确找出我对调查指标理解的缺口” → ___ a ___ in my understanding of the survey measure.
-- **Pronunciation:** **PIN**-point a **GAP** in. Say the phrase, then explain what you repaired today.
-
-**No-peeking check:** In 20 seconds, use *cut into* and *be associated with* in a single sentence about a completely different situation (e.g. a sports team).
+**Recognition ≠ retrieval:** Knowing what it means when shown is step one; producing it from your own situation is step two.
 
 ## Speaking · 4 min
 
-**Theme:** Should universities help students protect sleep during exam weeks? Answer progressively, aloud, with no script.
+Answer aloud without reading a script (about 30–45 sec per question):
 
-1. What usually takes time away from a student's sleep during exam week?
-2. What is one difference between **staying up longer** and **learning more effectively**?
-3. What did the 2026 survey actually measure, and what did it **not** prove?
-4. If you could change one university policy, what would it be? Give a trade-off or limitation.
+1. Why do some students sleep less than they need?
+2. What change did the teacher ask students to try?
+3. What did the report observe, and what remains uncertain?
+4. What small change could protect your own study time without making a universal claim?
 
-> Real speaking evidence (optional): first 30-second explanation / missing connector: ___; second attempt in a new context: ___
+**First sticking point:** ___ · **One corrected answer after a short repair:** ___.
 
 ## Writing · 5 min
 
-**80–120 words. Do not read a model essay first.**
+**80–120 words, your own draft.** Should universities run optional sleep challenges to support learning? Discuss one possible benefit and one limitation of the reported classroom activity.
 
-**Prompt:** *Should universities move assignment deadlines earlier in the evening to protect students' sleep, even if some students prefer working late?*
+Keep the argument tied to today's VOA article; include one specific detail, a limitation, and (if natural) your one new expression. No model answer.
 
-Write your own **position → evidence/example → counterargument → qualified conclusion**. Use **at least one** of *cut into* / *be associated with*, and distinguish a survey **association** from a proven **cause**. Do not invent research findings.
+<details><summary>Minimal structure — open only after first draft</summary>Position → article detail → your own example or transfer → limitation → conclusion.</details>
 
-**Your original draft (fill after writing):**
+**Your actual writing:**
 
-> [Write 80–120 English words here. Leave this blank until you actually write.]
-
-**Revision evidence:** One specific sentence I changed: ___  
-**Why I changed it:** ___
+<!-- Fill in your actual 80–120 words here after writing; planned tasks are not evidence. -->
 
 ## Retrieval/Reflection · 2 min
 
-Close both source pages. Without notes, say **one sentence about the 2019 classroom challenge**, **one about the 2026 survey trend**, and **one explaining why they are different kinds of evidence**.
+- **Immediately, without the transcript:** The 3–4-step article model was ___.
+- **Audio:** I could / couldn't distinguish the chosen expression without text because ___.
+- **Independent transfer sentence:** ___.
+- **Tomorrow (30–60 sec, not marked done yet):** Listen to the clip with no English or Chinese text; reconstruct the expression, verify, and use it in one *different* situation.
 
-> Completed? (yes/no, only after doing it): ___  
-> First exact comprehension gap and repair: ___  
-> Transfer to a new situation: ___  
-> Expression retrieved without looking: ___  
-> Next small practice: ___
+### 8-minute Busy Version
 
-### 8-minute busy version
-
-**2 min** listen to the first ~90 seconds of VOA without transcript; **2 min** read Baylor's first four substantive paragraphs and label *measure → trend*; **1 min** retrieve *cut into* / *associated with* from Chinese; **1 min** speak one qualified comparison; **1 min micro-writing**: write **two English sentences** arguing for or against an earlier deadline, one using *although*; **1 min** log one precise breakdown and a new-context repair.
+2 min article audio + Chinese context only if needed · 2 min entire-article skim + 1 chosen paragraph · 1 min English transcript alignment of a 20–40s clip · 1 min replay without text · 1 min transfer-speaking with cut into · **1 min micro-writing** (your view + a reason grounded in the article).
 
 ## Connections
 
-- [[EnglishLearning/2026-10-24-English-Listening-Beyond-Repetition|Listening Beyond Repetition]]: don't equate transcript familiarity with comprehension; isolate one audio break, then rebuild the article model.
-- [[EnglishLearning/2026-10-26-English-AI-and-Accessibility|AI and Accessibility]]: a helpful intervention is not automatically proof of better outcomes.
-- [[EnglishLearning/2026-10-18-English-Talent-and-Teamwork|Talent and Teamwork]]: both require distinguishing an observed association from a causal claim.
-- [[EnglishLearning/Connections|Cross-day map]] · [[words/cut-into|cut into]] · [[words/be-associated-with|be associated with]] · [[words/pinpoint-a-gap-in|pinpoint a gap in]].
+- Review this lesson again tomorrow by recognizing **sounds first**, then generating a sentence with cut into from meaning.
+- [[EnglishLearning/Connections|English Learning Connections]] · [[EnglishLearning/README|Daily English Index]].
 
 ## Previous / Next
 
