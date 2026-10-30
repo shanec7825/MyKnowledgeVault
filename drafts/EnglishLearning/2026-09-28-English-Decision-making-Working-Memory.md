@@ -3,7 +3,7 @@ type: daily-english
 title: 2026-09-28 · Decision-making × Working Memory
 topic: Decision-making × Working Memory
 created: 2026-09-28
-updated: 2026-10-02
+updated: 2026-10-30
 tags:
   - english
   - daily-learning
@@ -14,92 +14,96 @@ related:
   - "[[Connections|Connections]]"
 ---
 
-# 2026-09-28 · Decision-making × Working Memory
+# 2026-09-28 · Decision making Working Memory
 
-← [[drafts/EnglishLearning/README|English Learning Hub]]
+![原创主题学习地图](../../EnglishLearning/assets/art/2026-09-28-Decision-making-Working-Memory.svg)
 
-## Today's Focus
+**Only one article:** [How the brain keeps its options straight at decision time](https://news.mit.edu/2026/how-brain-keeps-its-options-straight-at-decision-time-0922) · MIT News. 本次听读写说全部围绕这篇文章，不再使用另外一篇作为精读材料；全文请在原文网站阅读，不复制版权文章。
 
-**把连续信息压缩成几个意义节点，再从节点恢复整体。**
+**30 minutes:** Listening 6 · Reading 9 · Active Expressions 4 · Speaking 4 · Writing 5 · Retrieval/Reflection 2.
 
-## 1. Extensive Listening · 7 min
+## Multimedia Companion
 
-**Source:** [VOA Learning English](https://learningenglish.voanews.com/)
+- **Full article / source page:** [How the brain keeps its options straight at decision time](https://news.mit.edu/2026/how-brain-keeps-its-options-straight-at-decision-time-0922).
+- **Direct publisher audio:** 未找到与这篇文章完全对应且已核实的出版社音频，不伪造下载链接。
+- **Study audio fallback:** 本页附有**原创英语摘要朗读稿**（不是原文章逐字稿）。打开 [HTML 交互伴侣](./2026-09-28-English-Decision-making-Working-Memory.html)，可使用 Obsidian MiMo TTS 或浏览器语音合成朗读该摘要。不要将摘要朗读当作作者原音。
+- **Study transcript (original paraphrase):**
 
-听 2–3 分钟，只留 3–5 个英文关键词。
+<details><summary>Open only when aligning audio</summary>
 
-区分：
-- **sound recognition**：词本身没认出来
-- **working-memory / chunking**：听懂了，但前面的意义消失了
+Making a decision may involve holding several possibilities in mind at once. The brain needs to keep these options separate while comparing them. MIT researchers studied how neural activity represents choices during this process. When information competes for attention, it can become harder to maintain a clear picture of each possibility. The findings suggest ways that the brain may organize information before a decision. They do not mean that every human choice follows one simple rule. Working memory and decision-making remain complex and connected.
 
-## 2. Intensive Reading · 9 min
+</details>
 
-**Source:** [MIT News — How the brain keeps its options straight at decision time](https://news.mit.edu/2026/how-brain-keeps-its-options-straight-at-decision-time-0922)
+## Listening · 6 min
 
-### Article model
+- **2 min | Understand:** 先听原网站可用的音频；如果没有与原文匹配的音频，播放上面原创英文摘要朗读。只抓全文主题，暂不看文字。
+- **2 min | Pinpoint:** 找一个 **20–40 秒**的摘要片段，记录时间；对照这段**摘要逐字文本**辨认连读、切分和逻辑词。该摘要是根据**同一篇文章**制作，并不等于外部原文音频。
+- **2 min | Transfer:** 关闭文字再听，先说你真实听到的英文，再用自己的话解释。遇到不懂才展开中文语境：
 
-```text
-MULTIPLE OPTIONS
-        ↓
-RISK OF INTERFERENCE
-        ↓
-DISTINCT NEURAL PATTERNS
-        ↓
-BEFORE decision: presentation order
-        ↓
-AFTER decision: chosen vs unchosen
-        ↓
-FLEXIBLE REORGANIZATION
-```
+<details><summary>Optional Chinese context</summary>多个选项需要在工作记忆中保持区分；研究探索神经活动如何组织这些信息。</details>
 
-阅读时抓 **What changed?**，而不是保存所有实验细节。
+**实际完成证据：** 时间戳 ___ · 原理解 ___ · 查对的英文声音 ___ · 关文字再听结果 ___。
 
-## 3. Active Expressions
+## Reading · 9 min
 
-- **keep track of**
-- **interfere with**
-- **distinguish A from B**
+**Read the [entire linked original article](https://news.mit.edu/2026/how-brain-keeps-its-options-straight-at-decision-time-0922)** (4 min), do not recite it. Build your own article model:
 
-Retrieval:
-> A program needs to keep track of ______.  
-> ______ interferes with my concentration.
+1. 决策需要保持不同选择
+2. 选择之间可能相互干扰
+3. 研究者研究神经活动表征
+4. 解释对工作记忆的启示
 
-## 4. Sentence Frame
+**Deep read 1–3 selected paragraphs in this SAME article** (3 min):
 
-**in a way that + result**
+1. **Problem / context** — 描述多个选项问题的开头；说明这段在全文中的作用。
+2. **Approach / evidence** — 研究方法或神经表征段落；说明这段在全文中的作用。
+3. **Result / boundary** — 讨论结果与可能解释的段落；说明这段在全文中的作用。
 
-> A hash table stores data in a way that ______.
+**Retrieve** (2 min): close the page and rebuild the 4-step argument from memory. **Evidence boundary:** 神经机制启发设计，但不能被当作特定 UI 的效果验证。
 
-重点：把句法记成“功能模块”。
+## Active Expressions · 4 min
 
-## 5. Speaking
+**Meaning → English:** 大脑需要持续跟踪多个候选选项。
 
-**How do people make decisions when several options seem reasonable?**
+<details><summary>Reveal after trying</summary>**keep track of**</details>
 
-1. What makes a decision difficult?
-2. How do you keep track of several options?
-3. Can too many options interfere with good decisions?
-4. Compare careful comparison vs quick elimination.
-5. How might a computer represent choices differently from a brain?
+**New context:** Explain how a bot keeps track of several conversations. This is an active expression for your own sentence, not an asserted verbatim quote from the source. Speak your sentence using the browser voice or MiMo plugin as needed.
 
-## Reflection
+## Speaking · 4 min
 
-> Listening: I lost track when ______.  
-> Speaking: I started struggling at Q___ because ______.
+1. What makes several options hard to compare?
+2. What did the researchers study about neural activity?
+3. What is the difference between tracking options and choosing one?
+4. How would you help a user manage many options?
+
+Answer independently, find ONE actual breakdown and retry: ___
+
+## Writing · 5 min
+
+**80–120 original English words:** What can designers learn from the limits of working memory when building software that presents many options?
+
+<details><summary>Minimal structure hint, open after drafting</summary>Position → source detail → your transfer example → counterargument / limitation → conclusion.</details>
+
+**Your own draft (leave blank until completed):**
+
+<!-- Write the actual draft here. Planned tasks do not count as evidence. -->
+
+## Retrieval/Reflection · 2 min
+
+- **Whole article model** (no notes): ___
+- **Could I identify sounds without the transcript?** ___
+- **My new situation using keep track of:** ___
+- **Tomorrow:** first replay without written text, then check and use the expression in another context. (Do not mark done yet.)
+
+### 8-minute Busy Version
+
+2 min audio or honest summary TTS → 2 min whole-article skim + one selected paragraph → 1 min transcript alignment → 1 min listen without text → 1 min new-context speaking → **1 min micro-writing**.
 
 ## Connections
 
-- [[2026-09-27-English-REM-Sleep-Evidence-and-Interpretation|REM Sleep]]：延续“神经科学文章的结构识别”。
-- [[2026-10-01-English-Strategic-AI-Hidden-Information|Stratego]]：human decision-making ↔ AI decision-making under uncertainty。
-
-
-## 8-minute Busy Version
-
-1. **2 min** — 泛听，只保留 3–4 个意义节点。
-2. **3 min** — 精读，识别文章关系/框架。
-3. **1 min** — 关闭文章复述 main idea。
-4. **1 min** — 反向调用一个主动表达。
-5. **1 min** — 把今天的表达换到生活或计算机场景。
+- [[drafts/EnglishLearning/Connections|Cross-day map]] · [[drafts/EnglishLearning/README|Draft lesson index]] · [[EnglishLearning/README|Main learning index]].
+- Move from sound → context → retrieval → independent transfer. Do not treat being familiar with the text as proof of listening mastery.
 
 ## Previous / Next
 
