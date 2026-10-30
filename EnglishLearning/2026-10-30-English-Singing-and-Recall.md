@@ -107,4 +107,4 @@ Keep the argument tied to today's VOA article; include one specific detail, a li
 ## Previous / Next
 
 - Previous: [[EnglishLearning/2026-10-29-English-Beyond-the-Box-Score|2026-10-29 · Beyond the Box Score]]
-- Next: pending next topic-named lesson.
+- Next: [[EnglishLearning/2026-10-31-English-Halloween-Traditions|2026-10-31 · Halloween Traditions]]
