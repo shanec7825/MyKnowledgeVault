@@ -9,6 +9,10 @@ tags: [english, daily-learning, basketball, sports, evidence-literacy, reading-s
 
 # 2026-10-29 · Beyond the Box Score
 
+![Topic illustration — English Beyond the Box Score](assets/art/2026-10-29-Beyond-the-Box-Score.svg)
+
+> Visual companion: thematic storybook illustration. Open the linked HTML for icon navigation and interactive recall.
+
 **Big question:** How can a player help a team without scoring?
 
 **30-minute plan:** Listening **6** · Reading **9** · Active Expressions **4** · Speaking **4** · Writing **5** · Retrieval/Reflection **2** = **30 minutes**.

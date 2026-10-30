@@ -9,6 +9,10 @@ tags: [english, daily-learning, plant-science, ecology, reading-structure, mecha
 
 # 2026-10-28 · Roots Below Ground
 
+![Topic illustration — English Roots Below Ground](assets/art/2026-10-28-Roots-Below-Ground.svg)
+
+> Visual companion: thematic storybook illustration. Open the linked HTML for icon navigation and interactive recall.
+
 **Big question:** What makes plant roots more than just anchors?
 
 **30-minute plan:** Listening 6 · Reading 9 · Active Expressions 4 · Speaking 4 · Writing 5 · Retrieval/Reflection 2 = **30 min**.

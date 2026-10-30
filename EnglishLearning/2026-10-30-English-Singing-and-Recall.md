@@ -9,6 +9,10 @@ tags: [english, daily-learning, music, language-learning, cognitive-science, res
 
 # 2026-10-30 · Singing and Recall
 
+![Topic illustration — English Singing and Recall](assets/art/2026-10-30-Singing-and-Recall.svg)
+
+> Visual companion: thematic storybook illustration. Open the linked HTML for icon navigation and interactive recall.
+
 **Big question:** Can singing help you remember foreign-language phrases—and what does the evidence actually show?
 
 **30-minute plan:** Listening **6** · Reading **9** · Active Expressions **4** · Speaking **4** · Writing **5** · Retrieval/Reflection **2** = **30 minutes**.

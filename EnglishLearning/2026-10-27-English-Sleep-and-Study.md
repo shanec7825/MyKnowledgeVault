@@ -9,6 +9,10 @@ tags: [english, daily-learning, university-life, sleep-science, reading-structur
 
 # 2026-10-27 · Sleep and Study
 
+![Topic illustration — English Sleep and Study](assets/art/2026-10-27-Sleep-and-Study.svg)
+
+> Visual companion: thematic storybook illustration. Open the linked HTML for icon navigation and interactive recall.
+
 **Big question:** Does staying up late to study always help you learn more?
 
 **30-minute plan:** Listening 6 · Reading 9 · Active Expressions 4 · Speaking 4 · Writing 5 · Retrieval/Reflection 2 = **30 minutes**.

@@ -9,6 +9,10 @@ tags: [english, daily-learning, ai, accessibility, computer-science, reading-str
 
 # 2026-10-26 · AI and Accessibility
 
+![Topic illustration — English AI and Accessibility](assets/art/2026-10-26-AI-and-Accessibility.svg)
+
+> Visual companion: thematic storybook illustration. Open the linked HTML for icon navigation and interactive recall.
+
 **Big question:** How can AI help people access learning without replacing the learning itself?
 
 **30-minute plan:** Listening 6 · Reading 9 · Active Expressions 4 · Speaking 4 · Writing 5 · Retrieval/Reflection 2 = **30 min**.
