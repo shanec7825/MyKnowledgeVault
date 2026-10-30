@@ -7,9 +7,9 @@ updated: 2026-10-30
 tags: [english, daily-learning, ai, accessibility, computer-science, reading-structure, retrieval]
 ---
 
-# 2026-10-26 · English AI and Accessibility
+# 2026-10-26 · AI and Accessibility
 
-![English AI and Accessibility — visual theme](assets/art/2026-10-26-AI-and-Accessibility.svg)
+![AI and Accessibility — visual theme](assets/art/2026-10-26-AI-and-Accessibility.svg)
 
 **One article, multiple skills.** Today's only article is [Students with Disabilities Praise Assistive Technology Using AI](https://learningenglish.voanews.com/a/students-with-disabilities-praise-assistive-technology-using-ai/7926297.html). Listening, reading, selected paragraphs, expression practice, speaking and writing all use this article. Do not memorize the entire text.
 

@@ -7,9 +7,9 @@ updated: 2026-10-30
 tags: [english, daily-learning, plant-science, ecology, reading-structure, mechanism, retrieval]
 ---
 
-# 2026-10-28 · English Roots Below Ground
+# 2026-10-28 · Roots Below Ground
 
-![English Roots Below Ground — visual theme](assets/art/2026-10-28-Roots-Below-Ground.svg)
+![Roots Below Ground — visual theme](assets/art/2026-10-28-Roots-Below-Ground.svg)
 
 **One article, multiple skills.** Today's only article is [The Secret Life of Roots](https://learningenglish.voanews.com/a/secrets-life-of-roots/2941221.html). Listening, reading, selected paragraphs, expression practice, speaking and writing all use this article. Do not memorize the entire text.
 

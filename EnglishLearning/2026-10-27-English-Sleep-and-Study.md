@@ -7,9 +7,9 @@ updated: 2026-10-30
 tags: [english, daily-learning, university-life, sleep-science, reading-structure, evidence, retrieval]
 ---
 
-# 2026-10-27 · English Sleep and Study
+# 2026-10-27 · Sleep and Study
 
-![English Sleep and Study — visual theme](assets/art/2026-10-27-Sleep-and-Study.svg)
+![Sleep and Study — visual theme](assets/art/2026-10-27-Sleep-and-Study.svg)
 
 **One article, multiple skills.** Today's only article is [Sleeping More May Help College Students in the Classroom](https://learningenglish.voanews.com/a/sleeping-more-may-help-college-students-in-the-classroom/4739055.html). Listening, reading, selected paragraphs, expression practice, speaking and writing all use this article. Do not memorize the entire text.
 

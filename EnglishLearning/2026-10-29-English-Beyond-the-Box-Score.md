@@ -7,9 +7,9 @@ updated: 2026-10-30
 tags: [english, daily-learning, basketball, sports, evidence-literacy, reading-structure, active-retrieval]
 ---
 
-# 2026-10-29 · English Beyond the Box Score
+# 2026-10-29 · Beyond the Box Score
 
-![English Beyond the Box Score — visual theme](assets/art/2026-10-29-Beyond-the-Box-Score.svg)
+![Beyond the Box Score — visual theme](assets/art/2026-10-29-Beyond-the-Box-Score.svg)
 
 **One article, multiple skills.** Today's only article is [What It Takes — Bill Russell](https://learningenglish.voanews.com/a/what-it-takes---bill-russell/4448610.html). Listening, reading, selected paragraphs, expression practice, speaking and writing all use this article. Do not memorize the entire text.
 

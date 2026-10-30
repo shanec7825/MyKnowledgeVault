@@ -7,9 +7,9 @@ updated: 2026-10-30
 tags: [english, daily-learning, music, language-learning, cognitive-science, research-literacy, retrieval]
 ---
 
-# 2026-10-30 · English Singing and Recall
+# 2026-10-30 · Singing and Recall
 
-![English Singing and Recall — visual theme](assets/art/2026-10-30-Singing-and-Recall.svg)
+![Singing and Recall — visual theme](assets/art/2026-10-30-Singing-and-Recall.svg)
 
 **One article, multiple skills.** Today's only article is [Brain Remembers Language Better If You Sing It](https://learningenglish.voanews.com/a/brain-remembers-language-sing/2776476.html). Listening, reading, selected paragraphs, expression practice, speaking and writing all use this article. Do not memorize the entire text.
 
