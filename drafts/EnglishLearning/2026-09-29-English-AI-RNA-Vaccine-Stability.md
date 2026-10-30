@@ -102,6 +102,8 @@ Answer independently, find ONE actual breakdown and retry: ___
 
 ## Connections
 
+- **Active word:** [[drafts/words/withstand|withstand]] — one meaning-to-English retrieval and one new-context transfer.
+
 - [[drafts/EnglishLearning/Connections|Cross-day map]] · [[drafts/EnglishLearning/README|Draft lesson index]] · [[EnglishLearning/README|Main learning index]].
 - Move from sound → context → retrieval → independent transfer. Do not treat being familiar with the text as proof of listening mastery.
 
