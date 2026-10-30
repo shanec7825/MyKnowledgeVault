@@ -2,11 +2,26 @@
 type: map
 title: English Learning Connections
 created: 2026-10-10
-updated: 2026-10-30
+updated: 2026-10-31
 tags: [english, connections, review]
 ---
 
 # English Learning Connections
+
+## 2026-10-31 · Halloween Traditions
+
+- [[EnglishLearning/2026-10-31-English-Halloween-Traditions|2026-10-31 · Halloween Traditions]] — **one VOA article and its matching 5:41 publisher audio:** Halloween vocabulary and customs → trick-or-treat → *possible* Celtic background → scary/afraid/spooky and candy → Irish turnip legend and pumpkin adaptation → modern conversation.
+- **Reading structure:** modern practice → reported historical origin (not certainty) → language and objects → cultural adaptation → dialogue. Deep-reading selections: the **“Some people believe…”** paragraph (hedge, referent, *in which*) and the **“The custom of carving…”** paragraph (passive attribution, *When*, *So*, pronoun reference).
+- **One active expression:** [[words/go-back-to|go back to]] = have origins in. The surrounding **Some people believe** limits how strongly we can state a historical claim. New-context transfer: origins of a student custom or a software convention.
+- **Cross-day retrieval:** [[EnglishLearning/2026-10-30-English-Singing-and-Recall|Singing and Recall]] → [[words/jog-someones-memory|jog someone's memory]] (a cue can revive a memory without proving a historical explanation). [[EnglishLearning/2026-10-22-English-Music-Across-Cultures|Music Across Cultures]] → how practices move between cultures; [[EnglishLearning/2026-10-20-English-Science-of-Fall-Colors|Science of Fall Colors]] → observation versus explanation. These are retrieval links, **not** second articles for today.
+
+## Weekly Synthesis · 2026-10-25 to 2026-10-31
+
+**Topic rotation:** libraries and community → AI accessibility → student sleep → hidden plant roots → basketball contributions → singing and recall → Halloween customs.
+
+**Three transferable text models:** (1) **problem → proposed response → limits** (libraries / accessibility / sleep); (2) **hidden mechanism → observable example → scope** (roots / basketball / memory); (3) **current practice → attributed origin → adaptation → modern use** (Halloween). These are ways to organize *one* article, not evidence that all topics have the same cause.
+
+**Retrieval challenge (2 minutes, optional):** From Chinese meanings, retrieve **jog someone's memory**, **go back to**, and **play a role in**; use any two in a new campus-life explanation. Then state one difference between **some people believe**, **is associated with**, and **causes**. Check the original notes only after trying.
 
 ## 2026-10-30 · Singing and Recall
 
