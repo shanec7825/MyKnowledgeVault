@@ -102,3 +102,8 @@ Daily English pages use the Obsidian plugin `.obsidian/plugins/mimo-english-coac
 ## Revised 2026-10-30 · Source boundaries
 
 旧版 Listening 与 Reading 有时使用两篇不相关的来源；现已统一为每篇**一个原文链接**。原音不可确认的情况下，用自撰英语摘要与其对应朗读进行 20–40 秒辨音测试，然后阅读同一篇文章。历史目录保留，方便旧 Obsidian 链接继续工作。正式系列索引：[[EnglishLearning/README|English Learning Hub]]。
+
+
+## Vocabulary retrieval index
+
+- [[EnglishLearning/Vocabulary|One daily expression and all vocabulary notes]] — reuse in new contexts; not a second reading source.
