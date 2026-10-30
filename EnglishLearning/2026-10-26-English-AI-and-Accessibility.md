@@ -46,9 +46,9 @@ tags: [english, daily-learning, ai, accessibility, computer-science, reading-str
 
 **Selected paragraphs (3 min):** In that **same article**, locate these 1–3 parts by topic/function, not by invented quotes:
 
-1. **Paragraph 1 — context / question:** 介绍学生困难或日常任务的开头段落。找出一句关键关系，检查其主语、转折或限定词；说出这段在全文中的作用。
-2. **Paragraph 2 — example / mechanism:** 具体说明辅助工具如何起作用的例子。找出一句关键关系，检查其主语、转折或限定词；说出这段在全文中的作用。
-3. **Paragraph 3 — outcome / limitation:** 谈到学生体验、担忧或学习自主性的段落。找出一句关键关系，检查其主语、转折或限定词；说出这段在全文中的作用。
+1. **Selection 1 — context / question:** 介绍学生困难或日常任务的开头段落。找出一句关键关系，检查其主语、转折或限定词；说出这段在全文中的作用。
+2. **Selection 2 — example / mechanism:** 具体说明辅助工具如何起作用的例子。找出一句关键关系，检查其主语、转折或限定词；说出这段在全文中的作用。
+3. **Selection 3 — outcome / limitation:** 谈到学生体验、担忧或学习自主性的段落。找出一句关键关系，检查其主语、转折或限定词；说出这段在全文中的作用。
 
 **Whole-text retrieval (2 min):** Hide the page. Retell the full argument in 3–4 nodes, using your own English. Then check one source sentence you misinterpreted. **Accuracy boundary:** 不要由个别使用者的积极体验推出所有技术都必然改善学习成果。
 

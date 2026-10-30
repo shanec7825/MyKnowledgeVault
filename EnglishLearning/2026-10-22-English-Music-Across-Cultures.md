@@ -24,6 +24,8 @@ tags: [english, daily-learning, music, culture, science, comparative-reasoning, 
 
 ## Listening · 6 min
 
+**Suggested entry point:** Use the VOAs recorded segment near **00:20–03:20** to find one 20–40-second clip; the complete audio is longer than the initial exercise.
+
 Listen once for overall meaning (2 min). If lost, open this hint *after* attempting: <details><summary>中文语境</summary>文章聚焦一种区域音乐传统：音乐会被代代相传，也会随着文化交流变化；不是关于世界全部音乐的跨文化实验。</details>
 
 Choose **one 20–40-second section** you want to understand or reuse. Note timestamp ___. Match its English transcript to the sounds (2 min), focusing on a single unclear word boundary, referent or contrast. Hide the transcript and listen again (2 min). Do not confuse learning the plot from Chinese with recognizing the English sounds.

@@ -25,6 +25,8 @@ tags: [english, daily-learning, basketball, sports, evidence-literacy, reading-s
 
 ## Listening · 6 min
 
+**Long interview:** For this lesson focus on the excerpts at **06:49–08:42** and **15:25–17:55**; choose one meaningful 20–40-second clip. Skim the entire linked transcript rather than trying to listen to every minute within this session.
+
 **0–2 min · Comprehend:** Listen to the opening/assigned segment without text. Capture the main situation, not every word. If the topic is unfamiliar, open the Chinese context hint only **after** trying once.
 
 <details><summary>Optional Chinese context — open if you lose the story</summary>拉塞尔谈到如何看待个人荣誉、团队目标以及不持球时的贡献；这是受访者经验，不是球队统计实验。</details>
@@ -37,7 +39,7 @@ tags: [english, daily-learning, basketball, sports, evidence-literacy, reading-s
 
 ## Reading · 9 min
 
-**Only source:** [Read the entire VOA article](https://learningenglish.voanews.com/a/what-it-takes---bill-russell/4448610.html) (4 min). Mark each paragraph's role and reconstruct this global model **without copying the source**:
+**Only source:** [Skim the full VOA interview transcript](https://learningenglish.voanews.com/a/what-it-takes---bill-russell/4448610.html) (4 min). Mark each paragraph's role and reconstruct this global model **without copying the source**:
 
 1. 谈个人奖项与评判标准
 2. 把获胜和团队表现放在中心
@@ -46,9 +48,9 @@ tags: [english, daily-learning, basketball, sports, evidence-literacy, reading-s
 
 **Selected paragraphs (3 min):** In that **same article**, locate these 1–3 parts by topic/function, not by invented quotes:
 
-1. **Paragraph 1 — context / question:** 访谈中谈个人奖项或评判标准的位置。找出一句关键关系，检查其主语、转折或限定词；说出这段在全文中的作用。
-2. **Paragraph 2 — example / mechanism:** 约 06:49–08:42 的听力对应文字段落。找出一句关键关系，检查其主语、转折或限定词；说出这段在全文中的作用。
-3. **Paragraph 3 — outcome / limitation:** 约 15:25–17:55 中解释团队配合和无球贡献的段落。找出一句关键关系，检查其主语、转折或限定词；说出这段在全文中的作用。
+1. **Selection 1 — context / question:** 访谈中谈个人奖项或评判标准的位置。找出一句关键关系，检查其主语、转折或限定词；说出这段在全文中的作用。
+2. **Selection 2 — example / mechanism:** 约 06:49–08:42 的听力对应文字段落。找出一句关键关系，检查其主语、转折或限定词；说出这段在全文中的作用。
+3. **Selection 3 — outcome / limitation:** 约 15:25–17:55 中解释团队配合和无球贡献的段落。找出一句关键关系，检查其主语、转折或限定词；说出这段在全文中的作用。
 
 **Whole-text retrieval (2 min):** Hide the page. Retell the full argument in 3–4 nodes, using your own English. Then check one source sentence you misinterpreted. **Accuracy boundary:** 个人访谈提供思考框架，不等于所有团队表现都有同一种原因。
 

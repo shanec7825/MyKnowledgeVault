@@ -46,9 +46,9 @@ tags: [english, daily-learning, university-life, sleep-science, reading-structur
 
 **Selected paragraphs (3 min):** In that **same article**, locate these 1–3 parts by topic/function, not by invented quotes:
 
-1. **Paragraph 1 — context / question:** 开篇介绍大学生睡眠问题的段落。找出一句关键关系，检查其主语、转折或限定词；说出这段在全文中的作用。
-2. **Paragraph 2 — example / mechanism:** 描述老师给学生设定睡眠目标的段落。找出一句关键关系，检查其主语、转折或限定词；说出这段在全文中的作用。
-3. **Paragraph 3 — outcome / limitation:** 关于观察结果及批评意见的段落。找出一句关键关系，检查其主语、转折或限定词；说出这段在全文中的作用。
+1. **Selection 1 — context / question:** 开篇介绍大学生睡眠问题的段落。找出一句关键关系，检查其主语、转折或限定词；说出这段在全文中的作用。
+2. **Selection 2 — example / mechanism:** 描述老师给学生设定睡眠目标的段落。找出一句关键关系，检查其主语、转折或限定词；说出这段在全文中的作用。
+3. **Selection 3 — outcome / limitation:** 关于观察结果及批评意见的段落。找出一句关键关系，检查其主语、转折或限定词；说出这段在全文中的作用。
 
 **Whole-text retrieval (2 min):** Hide the page. Retell the full argument in 3–4 nodes, using your own English. Then check one source sentence you misinterpreted. **Accuracy boundary:** 小型课堂活动和专家批评不能被简化为对所有学生的普遍因果证明。
 
