@@ -95,5 +95,5 @@ Close the sources; explain **problem → mechanisms → evidence → unequal acc
 
 ## Previous / Next
 
-- Previous: [[drafts/EnglishLearning/2026-10-09-English-Food-Heritage-and-Reinvention|2026-10-09 · Food Heritage and Reinvention]] (earlier available note)
+- Previous: [[EnglishLearning/2026-10-14-English-Repair-or-Replace|2026-10-14 · Repair or Replace]] (closest earlier published daily lesson)
 - Next: [[EnglishLearning/2026-10-18-English-Talent-and-Teamwork|2026-10-18 · Talent and Teamwork]]
