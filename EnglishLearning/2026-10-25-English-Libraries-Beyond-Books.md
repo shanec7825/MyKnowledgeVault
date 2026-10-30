@@ -9,6 +9,10 @@ tags: [english, daily-learning, society, libraries, reading-structure, retrieval
 
 # 2026-10-25 · Libraries Beyond Books
 
+![Topic illustration](assets/art/2026-10-25-Libraries-Beyond-Books.svg)
+
+> Visual companion: illustration and icon navigation are available in the HTML lesson.
+
 **Big question:** What can a library offer beyond books—and what can evidence really tell us about its impact?
 
 **30-minute plan:** Listening 6 · Reading 9 · Active Expressions 4 · Speaking 4 · Writing 5 · Retrieval/Reflection 2 = **30 min**.

@@ -9,6 +9,10 @@ tags: [english, daily-learning, music, culture, science, comparative-reasoning, 
 
 # 2026-10-22 · Music Across Cultures
 
+![Topic illustration](assets/art/2026-10-22-Music-Across-Cultures.svg)
+
+> Visual companion: illustration and icon navigation are available in the HTML lesson.
+
 **Big question:** How can music preserve a local identity while sharing features with music elsewhere?
 
 **30 minutes:** Listening **6** · Reading **9** · Active Expressions **4** · Speaking **4** · Writing **5** · Retrieval/Reflection **2**.

@@ -9,6 +9,10 @@ tags: [english, daily-learning, society, university-life, social-connection, rea
 
 # 2026-10-21 · Small Talk, Real Connection
 
+![Topic illustration](assets/art/2026-10-21-Small-Talk-Real-Connection.svg)
+
+> Visual companion: illustration and icon navigation are available in the HTML lesson.
+
 **Question:** Can a short conversation change how connected we feel?
 
 **30 minutes:** Listening 6 · Reading 9 · Active Expressions 4 · Speaking 4 · Writing 5 · Retrieval/Reflection 2.

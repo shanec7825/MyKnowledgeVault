@@ -9,6 +9,10 @@ tags: [english, daily-learning, university-life, listening, retrieval, learning-
 
 # 2026-10-24 · Listening Beyond Repetition
 
+![Topic illustration](assets/art/2026-10-24-Listening-Beyond-Repetition.svg)
+
+> Visual companion: illustration and icon navigation are available in the HTML lesson.
+
 **Big question:** How can you tell whether you really understand spoken English, rather than simply remember a recording?
 
 **30 minutes:** Listening 6 · Reading 9 · Active Expressions 4 · Speaking 4 · Writing 5 · Retrieval/Reflection 2.
