@@ -3,147 +3,95 @@ type: daily-english
 title: "2026-10-12 · When AI Misses 'Not'"
 topic: "When AI Misses 'Not'"
 created: 2026-10-12
-updated: 2026-10-13
+updated: 2026-10-30
 tags: [english, daily-learning, ai, reading-structure, listening, retrieval]
 ---
 
-# When AI Misses 'Not'
+# 2026-10-12 · When AI Misses Not
 
-![Topic illustration](assets/art/2026-10-12-When-AI-Misses-Not.svg)
+![When AI Misses Not learning map](assets/art/2026-10-12-Libraries-Beyond-Books.svg)
 
-> Visual companion: shared icons, reading journey and interactive recall are in the HTML page.
+**One complete article:** [How to Find AI 'Deepfake' Images](https://learningenglish.voanews.com/a/how-to-find-ai-deepfake-images/7537253.html). Its audio, transcript, reading, selected paragraphs and all output tasks form one learning journey. **No memorizing the whole article.**
 
-**Guiding question:** Why can an AI system recognize objects yet misunderstand a sentence saying an object is *not* there?
-
-**30 minutes:** Listening **6** · Reading **9** · Active Expressions **4** · Speaking **4** · Writing **5** · Retrieval/Reflection **2**.
-
-**Method:** Complete → pinpoint a breakdown → repair only that part → transfer → retrieve again. Today's target is to keep **negation and contrast** in your whole-text model, rather than understanding isolated words and missing the argument.
+**30 minutes:** Listening 6 · Reading 9 · Active Expressions 4 · Speaking 4 · Writing 5 · Retrieval/Reflection 2.
 
 ## Multimedia Companion
 
-- **Direct audio (official VOA MP3, 128 kbps):** [Open original recording](https://voa-audio.voanews.eu/vle/2024/03/21/01000000-0aff-0242-7c40-08dc49ee181d_hq.mp3?download=1). VOA player lists a **5:42** recording; today's task uses about the first 3:30–4:00.
-- **Transcript:** [VOA — How to Find AI 'Deepfake' Images](https://learningenglish.voanews.com/a/how-to-find-ai-deepfake-images/7537253.html) (article text below the player).
-- **Source page:** [VOA Learning English, 2024-03-27](https://learningenglish.voanews.com/a/how-to-find-ai-deepfake-images/7537253.html).
-- **Reading source:** [MIT News — Study shows vision-language models can't handle queries with negation words](https://news.mit.edu/2025/study-shows-vision-language-models-cant-handle-negation-words-queries-0514) (2025-05-14).
-- **Original research (optional):** [MIT article's linked paper](https://arxiv.org/abs/2501.09425) (linked from MIT; optional, not required).
-- **HTML learning companion:** [Open the interactive reader](./2026-10-12-English-When-AI-Misses-Not.html).
-
-> The VOA story was published in **2024**. Its visual clues for detecting synthetic images may become unreliable as technology changes. Treat them as historical reporting, not a definitive detection method.
+- **Direct audio:** [VOA publisher MP3](https://voa-audio.voanews.eu/vle/2024/03/21/01000000-0aff-0242-7c40-08dc49ee181d_hq.mp3?download=1) (complete playback not newly verified).
+- **Transcript / full article:** [How to Find AI 'Deepfake' Images](https://learningenglish.voanews.com/a/how-to-find-ai-deepfake-images/7537253.html).
+- **Source page:** [VOA Learning English](https://learningenglish.voanews.com/a/how-to-find-ai-deepfake-images/7537253.html).
+- **HTML companion:** [Illustrated reader](./2026-10-12-English-When-AI-Misses-Not.html).
 
 ## Listening · 6 min
 
-**Material:** [VOA — How to Find AI 'Deepfake' Images](https://learningenglish.voanews.com/a/how-to-find-ai-deepfake-images/7537253.html). Listen to approximately **0:00–3:40** without the transcript.
+Listen once for overall meaning (2 min). If lost, open this hint *after* attempting: <details><summary>中文语境</summary>这篇保留的是 VOA《如何辨别深度伪造图像》，而不是旧版另一个 MIT 否定词实验；视觉线索只能提供提示，不能单凭一项排除伪造。</details>
 
-**First pass (3:40):** Catch the structure **PROBLEM → POSSIBLE CLUES → WHY CLUES CAN FAIL**. Don't chase every noun. Answer from memory: Why is it harder to judge whether an image is real?
+Choose **one 20–40-second section** you want to understand or reuse. Note timestamp ___. Match its English transcript to the sounds (2 min), focusing on a single unclear word boundary, referent or contrast. Hide the transcript and listen again (2 min). Do not confuse learning the plot from Chinese with recognizing the English sounds.
 
-**Repair (1:20):** Find the *first* point where you lost a relationship. Was it a contrast (*but / however*), a warning, an example, or a reference word (*they / it*)? Check just that sentence in the transcript, then replay its audio.
-
-**Retrieval (1 min):** Without the transcript, say two sentences: “One clue mentioned was …” and “However, that clue is not always reliable because …”. **Do not** claim a visual sign proves an image is AI-generated.
+**Actual evidence:** first understanding ___; timestamp ___; words recognized without text ___; corrected relation ___.
 
 ## Reading · 9 min
 
-**Material:** [MIT News — Study shows vision-language models can't handle queries with negation words](https://news.mit.edu/2025/study-shows-vision-language-models-cant-handle-negation-words-queries-0514).
+**Read this same [complete VOA article](https://learningenglish.voanews.com/a/how-to-find-ai-deepfake-images/7537253.html), not another reading source.** Spend 4 min labeling paragraph functions; reconstruct the full model:
 
-**Read these parts, not the entire long article:** opening explanation (from the first example through the research warning), the section **“Neglecting negation”** (focus on training captions and the two benchmark tasks), and the paragraph in **“A solvable problem”** describing improved results after fine-tuning.
+1. 人们越来越难判断图像真假
+2. 报道介绍可能的图像线索
+3. 图像线索本身也可能不可靠
+4. 需要多方核查而不是只看一个特征
 
-**Pass 1 (4 min):** Give each section a function label, not a translation:
+**1–3 selected paragraphs (3 min):**
 
-**REAL-WORLD RISK → WHY IT HAPPENS → HOW TESTED → WHAT FAILED → PARTIAL REPAIR → REMAINING LIMITATION**
+1. **问题/语境：**文章开篇解释人工合成图像问题的段落。去原文定位，不虚构引文；判断主语、转折与段落功能。
+2. **例子/机制：**举例说明如何检查视觉细节的段落。去原文定位，不虚构引文；判断主语、转折与段落功能。
+3. **结果/限定：**对判断方法作出限制的段落。去原文定位，不虚构引文；判断主语、转折与段落功能。
 
-**Global model (2 min):** Close the article and complete the chain:
-
-```text
-IMAGE–TEXT TRAINING
-  └─ captions usually say what IS present
-       ↓
-MODEL MAY IGNORE WHAT IS NOT present
-       ↓
-TEST: retrieve an image WITHOUT a specified object
-       ↓
-RESULT: negation can lead to incorrect matches
-       ↓
-REPAIR: add captions that mention excluded objects
-       ↓
-CAUTION: improvement ≠ complete understanding
-```
-
-**Precision check (2 min):** Distinguish:
-- *A model recognized a dog* vs *a model correctly understood “no dog”*.
-- *Performance improved after training* vs *the underlying problem was solved*.
-- *The study's tested models* vs *all AI systems today*. Do not generalize beyond the reported experiments.
-
-**Compression (1 min):** Without looking, finish: “Although the models could ______, they often failed to ______. The researchers improved ______ by ______, but ______.”
-
-### Visual retrieval
-
-Imagine a scene containing **a dog, a bicycle and a tree, but no car**. Which captions are true? “There is a dog near the bicycle.” / “There is no dog near the bicycle.” / “There is no car in the scene.” In the HTML companion, select captions before revealing the explanation. Then explain in English why *not* changes the target of a search.
+Close the page and reconstruct the full article in 3–4 links (2 min). Check one precise misunderstanding. **Scope:** 单一视觉异常或没有异常都不能单独证明图像是真是假。
 
 ## Active Expressions · 4 min
 
-1. **[[words/fail-to-account-for|fail to account for]]** — overlook a relevant condition or factor. **Retrieval:** “模型没有考虑否定信息。” → The model ______ negation. **Transfer:** A study of study habits might ______ students' sleep schedules.
-2. **[[words/rule-out|rule out]]** — exclude a possibility, often after checking evidence. **Retrieval:** “仅凭一张图，不能排除它是合成的可能性。” → One visual clue cannot ______ the possibility that an image is synthetic. **Transfer:** What evidence would rule out a bug in your code?
-3. **Review [[words/back-up-a-claim-with-evidence|back up a claim with evidence]]** — don't just repeat the definition; use it to explain how you would verify an AI-generated summary.
+**Only one target expression:** First retrieve from the Chinese meaning: “仅凭一个细节，不能排除它是人工合成的可能性。”
 
-**Sentence rhythm (30 sec within 4 min):** “The MODEL recognized the OBJECT / but FAILED to account for / the word NOT.” Say it in chunks twice; then make a fresh sentence about a university assignment.
+<details><summary>Reveal after trying</summary>**rule out**. Use it to describe the article or your own experience; do not assume this is a verbatim source quote.</details>
+
+**New context:** 换成调试时排除某个错误来源，或核查一则转发新闻。 Practise pronunciation with the original clip if the phrase occurs there; otherwise speak your original transfer sentence, using your configured Obsidian TTS if desired.
 
 ## Speaking · 4 min
 
-**Topic: When should we trust an AI description of an image?**
+Respond aloud and progressively, without reading a script:
 
-1. What can a vision-language model do well?
-2. How does “a dog is present” differ from “a dog is not present”?
-3. Why might training captions cause a model to miss negation?
-4. What would you test before trusting an AI tool that searches photos?
-5. Transfer: How would you check whether an AI assistant correctly understood “Do **not** move my notes”?
+1. Why is recognizing a deepfake image difficult?
+2. Which visual clue might a person check?
+3. Why could the clue fail even in a convincing picture?
+4. What would you do before sharing an uncertain image with classmates?
 
-Answer from memory. Include a **contrast** (*although / however*) and one active expression.
+**One breakdown, one repair:** ___
 
 ## Writing · 5 min
 
-**80–120 words:** **Should a university let students use AI tools to organize their research notes automatically?** Take a position, give a concrete example of a mistake involving *not* or an excluded condition, and explain one test that would change your confidence.
+**80–120 words, original response:** Should students be taught to verify potentially AI-generated images before sharing them? Use the VOA suggestions and their limits.
 
-Write independently first. Reuse **fail to account for** or **rule out**, and **back up a claim with evidence** if natural.
+<details><summary>Minimal structure hint</summary>Position → article detail → personal example → limitation → conclusion.</details>
 
-<details><summary>Minimal structure hint — open after your first draft</summary>
+**Your real draft:**
 
-Position → Concrete benefit → Negation-related risk → Verification method → Qualified conclusion.
-
-</details>
-
-**Your own draft (fill in after writing):**
-
-<!-- Your actual 80–120 words belong here; no model answer is prefilled. -->
+<!-- Write your own draft here after completing the task; no model essay. -->
 
 ## Retrieval/Reflection · 2 min
 
-Close the sources. Rebuild the **risk → cause → test → result → repair → limitation** chain in 20–40 seconds. Then retrieve today's two new expressions **from Chinese meaning**. Reuse one in a new context.
+Full-article model (without looking) ___ · English sounds recognized without transcript ___ · one transfer sentence ___ · one gap to repair ___
 
-**Actual evidence (fill in only after doing the tasks):**
+**Tomorrow (30–60 sec):** replay the selected audio with no text; retrieve **rule out** from meaning, then use a genuinely different situation. Leave blank until you actually do it: ___.
 
-> Listening breakdown (exact phrase/relationship): ______  
-> Repair attempted and result: ______  
-> Reading global model (without source): ______  
-> Expressions retrieved without English cue: ______  
-> Transfer sentence: ______  
-> Writing draft / location: ______  
-> One question to revisit tomorrow: ______
+### 8-minute Busy Version
 
-## 8-minute Busy Version
-
-- **2 min Listening:** VOA opening; catch **problem → warning**.
-- **3 min Reading:** MIT opening + first part of “Neglecting negation”; explain **cause → consequence**.
-- **1 min Speaking:** Explain why “no dog” is not the same as “dog”.
-- **1 min Retrieval:** From Chinese, say **fail to account for** and **rule out**.
-- **1 min Micro-writing:** Write **two original sentences**: one risk of AI note-taking, one way to test it.
+2 min audio · 2 min whole-article skim and one selected paragraph · 1 min match transcript to 20–40s clip · 1 min listen without text · 1 min transfer speaking · **1 min micro-writing** (claim + reason).
 
 ## Connections
 
-- [[EnglishLearning/2026-10-10-English-Whale-Songs-and-Ocean-Noise|2026-10-10 · Whale Songs and Ocean Noise]]: a noisy signal can hide information; today an overlooked word reverses the meaning. Compare **physical masking** and **semantic omission**.
-- [[words/back-up-a-claim-with-evidence|back up a claim with evidence]]: reuse the 10-11 expression for checking whether a model's interpretation matches the source.
-- [[drafts/EnglishLearning/2026-10-08-English-Cycling-Infrastructure-Evidence-and-Choice|2026-10-08 · Cycling Evidence]]: **association is not causation** parallels **improved accuracy is not complete understanding**.
-- [[words/fail-to-account-for|fail to account for]] · [[words/rule-out|rule out]].
+- [[EnglishLearning/Connections|Connections map]] · [[EnglishLearning/README|Daily Notes]]. Next-day retrieval matters more than reciting the source from memory.
 
 ## Previous / Next
+
 
 - Previous (most recent published lesson): [[EnglishLearning/2026-10-10-English-Whale-Songs-and-Ocean-Noise|2026-10-10 · Whale Songs and Ocean Noise]].
 - 2026-10-11: no published Daily Note found at the expected path when preparing this lesson.

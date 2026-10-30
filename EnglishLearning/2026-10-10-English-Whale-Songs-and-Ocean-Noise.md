@@ -3,111 +3,95 @@ type: daily-english
 title: "2026-10-10 · Whale Songs and Ocean Noise"
 topic: "Whale Songs and Ocean Noise"
 created: 2026-10-10
-updated: 2026-10-10
+updated: 2026-10-30
 tags: [english, daily-learning, science, listening, writing]
 ---
 
-# Whale Songs and Ocean Noise
+# 2026-10-10 · Whale Songs and Ocean Noise
 
-![Topic illustration](assets/art/2026-10-10-Whale-Songs-and-Ocean-Noise.svg)
+![Whale Songs and Ocean Noise learning map](assets/art/2026-10-10-Libraries-Beyond-Books.svg)
 
-> Visual companion: shared icons, reading journey and interactive recall are in the HTML page.
+**One complete article:** [How Do Whales 'Sing?'](https://learningenglish.voanews.com/a/how-do-whales-sing-/7498692.html). Its audio, transcript, reading, selected paragraphs and all output tasks form one learning journey. **No memorizing the whole article.**
 
-**Question:** Why does background noise make communication harder?
-
-**30-minute plan:** Listening 6 min · Reading 9 min · Active Expressions 4 min · Speaking 4 min · Writing 5 min · Retrieval/Reflection 2 min.
+**30 minutes:** Listening 6 · Reading 9 · Active Expressions 4 · Speaking 4 · Writing 5 · Retrieval/Reflection 2.
 
 ## Multimedia Companion
 
-- **Direct audio:** [VOA original MP3](https://voa-audio.voanews.eu/vle/2024/02/23/01000000-0a00-0242-edf7-08dc34886528_hq.mp3?download=1). The full audio lasts 6:30; today's listening covers the first four minutes.
-- **Transcript:** [VOA — How Do Whales 'Sing?'](https://learningenglish.voanews.com/a/how-do-whales-sing-/7498692.html).
-- **Source page:** [VOA Learning English (2024-02-25)](https://learningenglish.voanews.com/a/how-do-whales-sing-/7498692.html).
-- **Reading:** [NOAA Fisheries — Understanding Sound in the Ocean](https://www.fisheries.noaa.gov/insight/understanding-sound-ocean).
-- **Optional real animal sounds:** [NOAA audio examples](https://www.fisheries.noaa.gov/national/science-data/sounds-ocean-mammals).
-- **Interactive HTML companion:** [Open lesson](2026-10-10-English-Whale-Songs-and-Ocean-Noise.html).
+- **Direct audio:** [VOA publisher MP3](https://voa-audio.voanews.eu/vle/2024/02/23/01000000-0a00-0242-edf7-08dc34886528_hq.mp3?download=1) (complete playback not newly verified).
+- **Transcript / full article:** [How Do Whales 'Sing?'](https://learningenglish.voanews.com/a/how-do-whales-sing-/7498692.html).
+- **Source page:** [VOA Learning English](https://learningenglish.voanews.com/a/how-do-whales-sing-/7498692.html).
+- **HTML companion:** [Illustrated reader](./2026-10-10-English-Whale-Songs-and-Ocean-Noise.html).
 
 ## Listening · 6 min
 
-Listen to the first four minutes without reading. Track **question → method → explanation**. Close the audio and reconstruct those three steps aloud. Identify your first misunderstanding, consult only the relevant transcript passage, replay it, and explain the corrected relationship. Transfer: explain how a scientist could study an unfamiliar instrument.
+Listen once for overall meaning (2 min). If lost, open this hint *after* attempting: <details><summary>中文语境</summary>VOA 报道研究者如何解释鲸类的歌声机制；今天只使用这篇文章，不再把 NOAA 海洋噪声文章当第二篇精读。</details>
+
+Choose **one 20–40-second section** you want to understand or reuse. Note timestamp ___. Match its English transcript to the sounds (2 min), focusing on a single unclear word boundary, referent or contrast. Hide the transcript and listen again (2 min). Do not confuse learning the plot from Chinese with recognizing the English sounds.
+
+**Actual evidence:** first understanding ___; timestamp ___; words recognized without text ___; corrected relation ___.
 
 ## Reading · 9 min
 
-Read four sections of the NOAA article: **Why is sound important to marine animals?**, **Does sound behave differently underwater than in air?**, **What kinds of underwater sounds do people produce?**, and **How does the sound we produce affect marine species?**
+**Read this same [complete VOA article](https://learningenglish.voanews.com/a/how-do-whales-sing-/7498692.html), not another reading source.** Spend 4 min labeling paragraph functions; reconstruct the full model:
 
-Label the structure **function → physical reason → human sources → possible consequences**. Close the page and rebuild the whole argument in four phrases. Distinguish what is generally true from what depends on the type and duration of noise. Explain why a possibility is not the same as an inevitable outcome.
+1. 鲸鱼的歌声引出科学问题
+2. 科学家研究声音如何产生
+3. 报道描述发声结构或研究方法
+4. 结论仍受样本和物种范围限制
 
-**Concept map:**
+**1–3 selected paragraphs (3 min):**
 
-```text
-ANIMAL COMMUNICATION → UNDERWATER SOUND
-                              ↑
-                       HUMAN-MADE NOISE
-                              ↓
-                 POSSIBLE COMMUNICATION DIFFICULTY
-```
+1. **问题/语境：**开篇提出鲸为什么能发声的段落。去原文定位，不虚构引文；判断主语、转折与段落功能。
+2. **例子/机制：**描述科学家研究方式和声学机制的段落。去原文定位，不虚构引文；判断主语、转折与段落功能。
+3. **结果/限定：**解释研究结果与仍有疑问的段落。去原文定位，不虚构引文；判断主语、转折与段落功能。
 
-Look at the map, hide it, and explain it in English. Transfer to a noisy cafeteria.
+Close the page and reconstruct the full article in 3–4 links (2 min). Check one precise misunderstanding. **Scope:** 一个关于发声机制的研究不能被直接扩大到所有鲸类的所有行为。
 
 ## Active Expressions · 4 min
 
-- **[[words/rely-on|rely on]]**: depend on something. Chinese-to-English cue: “鲸依靠声音交流。” Transfer to students relying on feedback.
-- **[[words/interfere-with|interfere with]]**: disrupt an activity. Cue: “背景噪声可能干扰交流。” Transfer to phone notifications interrupting reading.
-- **[[words/mask-a-signal|mask a signal]]**: make a message difficult to hear. Cue: “噪声可能盖过较弱的声音。” Transfer to conversation in a cafeteria.
+**Only one target expression:** First retrieve from the Chinese meaning: “鲸类在交流中依靠声音。”
 
-Pronunciation: **WHALES rely on SOUND / to COMmunicate / but SHIPping noise / may interFERE with CALLS.** Read in chunks, then reproduce without looking.
+<details><summary>Reveal after trying</summary>**rely on**. Use it to describe the article or your own experience; do not assume this is a verbatim source quote.</details>
 
-Review yesterday's **[[drafts/words/rather-than|rather than]]**.
+**New context:** 换成学生依靠反馈提高发音，或者团队依靠日志排查故障。 Practise pronunciation with the original clip if the phrase occurs there; otherwise speak your original transfer sentence, using your configured Obsidian TTS if desired.
 
 ## Speaking · 4 min
 
-**Topic:** Should people reduce underwater noise?
+Respond aloud and progressively, without reading a script:
 
-1. Why is sound important underwater?
-2. What human activities add noise?
-3. How could noise change animal communication?
-4. What trade-offs might quieter shipping involve?
-5. How is this similar to distractions while studying?
+1. What question about whale songs does the reporter ask?
+2. How did researchers investigate sound production?
+3. Which part is direct evidence and which part is interpretation?
+4. What should an aquarium exhibit explain rather than only playing whale recordings?
 
-Use two expressions without reading.
+**One breakdown, one repair:** ___
 
 ## Writing · 5 min
 
-**80–120 words:** Should a busy university library add more quiet zones, even if this reduces space for group discussion? Explain your choice, acknowledge a trade-off, and propose a way to evaluate the result.
+**80–120 words, original response:** Should marine-science exhibitions explain how scientists study whale songs instead of only playing recordings? Ground your view in the VOA report.
 
-<details><summary>Optional structure hint</summary>
+<details><summary>Minimal structure hint</summary>Position → article detail → personal example → limitation → conclusion.</details>
 
-Position → Reason → Example → Trade-off → Evidence.
+**Your real draft:**
 
-</details>
-
-**Your own draft:**
-
-<!-- Write your own response here; do not paste a model answer. -->
+<!-- Write your own draft here after completing the task; no model essay. -->
 
 ## Retrieval/Reflection · 2 min
 
-Without notes, recall the article's **condition → need → source of noise → consequence** chain and today's expressions.
+Full-article model (without looking) ___ · English sounds recognized without transcript ___ · one transfer sentence ___ · one gap to repair ___
 
-**Your evidence:**
+**Tomorrow (30–60 sec):** replay the selected audio with no text; retrieve **rely on** from meaning, then use a genuinely different situation. Leave blank until you actually do it: ___.
 
-> Listening breakdown: ______  
-> Reading global model: ______  
-> Retrieved expressions: ______  
-> New-context sentence: ______  
-> Writing draft: ______
+### 8-minute Busy Version
 
-## 8-minute Busy Version
-
-2 min listening → 3 min reading → 1 min speaking → 1 min expression retrieval → **1 min micro-writing** (your choice and one reason).
+2 min audio · 2 min whole-article skim and one selected paragraph · 1 min match transcript to 20–40s clip · 1 min listen without text · 1 min transfer speaking · **1 min micro-writing** (claim + reason).
 
 ## Connections
 
-- [[drafts/EnglishLearning/2026-10-09-English-Food-Heritage-and-Reinvention|2026-10-09 · Food Heritage and Reinvention]]: both lessons distinguish evidence and interpretation.
-- [[drafts/EnglishLearning/2026-10-05-English-Music-Meaning-Making|2026-10-05 · Music and Meaning-Making]]: sounds carry information.
-- [[drafts/EnglishLearning/2026-10-08-English-Cycling-Infrastructure-Evidence-and-Choice|2026-10-08 · Cycling and Evidence]]: observed relationships require careful language.
-- [[words/rely-on|rely on]] · [[words/interfere-with|interfere with]] · [[words/mask-a-signal|mask a signal]].
+- [[EnglishLearning/Connections|Connections map]] · [[EnglishLearning/README|Daily Notes]]. Next-day retrieval matters more than reciting the source from memory.
 
 ## Previous / Next
+
 
 - Previous: [[drafts/EnglishLearning/2026-10-09-English-Food-Heritage-and-Reinvention|2026-10-09 · Food Heritage and Reinvention]]
 - Next (next published note; 2026-10-11 is not published): [[EnglishLearning/2026-10-12-English-When-AI-Misses-Not|2026-10-12 · When AI Misses 'Not']]
