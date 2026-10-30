@@ -9,6 +9,10 @@ tags: [english, daily-learning, technology, education, digital-inclusion, readin
 
 # 2026-10-19 · Offline Knowledge
 
+![Topic illustration](assets/art/2026-10-19-Offline-Knowledge.svg)
+
+> Visual companion: illustrated navigation is available in the linked HTML page.
+
 **Core question:** Can students keep learning when the internet is unreliable?
 
 **30 minutes:** Listening 6 · Reading 9 · Active Expressions 4 · Speaking 4 · Writing 5 · Retrieval/Reflection 2.

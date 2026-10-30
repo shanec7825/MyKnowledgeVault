@@ -9,6 +9,10 @@ tags: [english, daily-learning, sports, teamwork, research-literacy, retrieval, 
 
 # 2026-10-18 · Talent and Teamwork
 
+![Topic illustration](assets/art/2026-10-18-Talent-and-Teamwork.svg)
+
+> Visual companion: illustrated navigation is available in the linked HTML page.
+
 **Core question:** Can a team become less effective when it has more star performers?
 
 **30 minutes:** Listening 6 · Reading 9 · Active Expressions 4 · Speaking 4 · Writing 5 · Retrieval/Reflection 2.

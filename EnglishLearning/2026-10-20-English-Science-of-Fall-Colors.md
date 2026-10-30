@@ -9,6 +9,10 @@ tags: [english, daily-learning, science, nature, reading-structure, causal-reaso
 
 # 2026-10-20 · Science of Fall Colors
 
+![Topic illustration](assets/art/2026-10-20-Science-of-Fall-Colors.svg)
+
+> Visual companion: illustrated navigation is available in the linked HTML page.
+
 **Core question:** Why do leaves change color, and why do autumn colors vary?
 
 **30 minutes:** Listening 6 · Reading 9 · Active Expressions 4 · Speaking 4 · Writing 5 · Retrieval/Reflection 2.

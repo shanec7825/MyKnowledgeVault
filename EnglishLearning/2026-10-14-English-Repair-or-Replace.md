@@ -9,6 +9,10 @@ tags: [english, daily-learning, technology, society, reading-structure, retrieva
 
 # Repair or Replace
 
+![Topic illustration](assets/art/2026-10-14-Repair-or-Replace.svg)
+
+> Visual companion: illustrated navigation is available in the linked HTML page.
+
 **Question:** How should we decide whether to keep, repair, or replace an old electronic device?
 
 **30 min:** Listening 6 · Reading 9 · Active Expressions 4 · Speaking 4 · Writing 5 · Retrieval/Reflection 2.
