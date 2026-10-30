@@ -3,7 +3,7 @@ type: daily-english
 title: 2026-10-07 · Practice × Consolidation × Lasting Learning
 topic: Practice × Consolidation × Lasting Learning
 created: 2026-10-07
-updated: 2026-10-08
+updated: 2026-10-30
 tags:
   - english
   - daily-learning
@@ -18,287 +18,96 @@ related:
   - "[[words/retain|retain]]"
 ---
 
-# 2026-10-07 · Practice × Consolidation × Lasting Learning
+# 2026-10-07 · Practice Consolidation Lasting Learning
 
-← [[drafts/EnglishLearning/README|English Learning Hub]]
+![Original learning landscape](../../EnglishLearning/assets/art/2026-10-07-Practice-Consolidation-Lasting-Learning.svg)
+
+**One complete article + selected paragraphs:** [Vagus Nerve Stimulation Could Help New Skills Stick](https://www.sciencedaily.com/releases/2026/10/261002080034.htm) (ScienceDaily / Tohoku University). It is the ONLY source for reading, listening summary, active expression, speaking and writing. Do not memorize the entire article or treat the summary as a publisher transcript.
+
+**Time:** Listening 6 · Reading 9 · Active Expressions 4 · Speaking 4 · Writing 5 · Retrieval/Reflection 2.
 
 ## Multimedia Companion
 
-- 🎧 **Direct listening audio (MP3, 128 kbps):** [Open / play original VOA audio](https://voa-audio.voanews.eu/vle/2016/08/10/839c21d5-9d72-459a-bea7-cb6b6e0b00c5_hq.mp3?download=1)
-- 📝 **Listening transcript / source page:** [VOA — Review of Lessons 20–24](https://learningenglish.voanews.com/a/review-lesson-20-24/3450511.html)
-- 📖 **Reading source:** [ScienceDaily — Vagus Nerve Stimulation Could Help New Skills Stick](https://www.sciencedaily.com/releases/2026/10/261002080034.htm)
-- 🧩 **Interactive HTML lesson:** [Open today's interactive lesson](2026-10-07-English-Practice-Consolidation-Lasting-Learning.html)
+- **Full original article / source page:** [Vagus Nerve Stimulation Could Help New Skills Stick](https://www.sciencedaily.com/releases/2026/10/261002080034.htm).
+- **Publisher direct audio:** Not verified for this specific article. The formerly linked unrelated audio has been removed from today's lesson.
+- **Synthesized study listening (NOT original publisher recording):** [HTML companion](./2026-10-07-English-Practice-Consolidation-Lasting-Learning.html) supports Obsidian MiMo TTS through the configured plugin, or browser speech synthesis of an original article-summary script.
+- **Transcript for the synthesized study summary** (not a transcript of the publisher's article):
 
-> HTML 版本提供原音播放器、词汇点击朗读、隐藏/显示提示、篇章结构展开，以及 retrieval 自测。若 Obsidian 的浏览器插件接管本地 HTML 链接，可直接在 Obsidian 内打开；否则会由系统浏览器打开。
+<details><summary>Reveal for sound-to-text matching only</summary>
 
-## Today's Focus
+A skill can improve during practice without becoming permanent. Researchers studying lasting learning tested whether stimulation of the vagus nerve after training could influence later performance. Their experiment involved mice learning a motor task. The team reported stronger learning on following days under certain conditions. They also investigated changes in blood-vessel activity that might relate to consolidation. These results do not prove a safe method for improving human language learning. The study helps scientists ask how the brain processes newly learned skills after practice has ended.
 
-今天从昨天的工程实验切换到 **learning / neuroscience**。核心不是“多学一点”，而是区分：
+</details>
 
-**PRACTICE → POST-PRACTICE PROCESS → CONSOLIDATION → LATER RETENTION**
+## Listening · 6 min
 
-全文训练问题：
+First listen to the original study summary without text (2 min). If a publisher-hosted audio clip later becomes verifiable, prefer that original recording instead. Identify **one 20–40-second segment**, match the sounds to the corresponding short summary transcript (2 min), hide the words and listen again (2 min). This exercise remains about the SAME article; it does not claim the summary is read verbatim from the article.
 
-> **What happens after practice, and why might that matter for lasting learning?**
+<details><summary>Optional Chinese context (use after first listening)</summary>小鼠实验发现训练后迷走神经刺激可能改善后续动作学习表现，但并不证明对人类英语学习有效。</details>
 
-注意：今天精读涉及小鼠实验。练习重点是读懂研究证据，**不要把动物实验直接改写成人类学习建议**。
+**Your actual timestamp:** ___ · **First interpretation:** ___ · **Repaired sound / phrase:** ___ · **What I could hear without words:** ___.
 
-## 1. Extensive Listening · 6 min
+## Reading · 9 min
 
-**Source:** [VOA Learning English — Review of Lessons 20–24](https://learningenglish.voanews.com/a/review-lesson-20-24/3450511.html)
+Read the [complete source article](https://www.sciencedaily.com/releases/2026/10/261002080034.htm) for 4 minutes. Label the roles of paragraphs and reconstruct this global model:
 
-页面同时提供约 3 分钟音频和 transcript。今天不要边听边逐词对应。
+1. 练习时的表现与长期保持不同
+2. 科学家在小鼠训练后施加刺激
+3. 后续的学习保持表现出现变化
+4. 提出可能的巩固机制与限制
 
-### Round 1 · No transcript
+**Selected 1–3 paragraphs from this very same article (3 min):**
 
-只维护三个槽位：
+1. **Context / question**: 解释为何技能难以保持的开头；定位后解释段落作用、代词指向及一个逻辑关系。
+2. **Method / evidence**: 描述刺激安排及结果的段落；定位后解释段落作用、代词指向及一个逻辑关系。
+3. **Result / limits**: 对脑血流机制与外推限制的段落；定位后解释段落作用、代词指向及一个逻辑关系。
 
-**LEARNER PROBLEM → VOA ADVICE → PRACTICE METHOD**
+**Without source (2 min):** rebuild the 4-step model in your own English. **Do not overstate the source:** 这是小鼠动作学习实验，不能声称已证明适用于人类英语学习。
 
-听完回答：
+## Active Expressions · 4 min
 
-> Why is regular practice different from simply understanding a lesson?
+**Meaning → English:** 练习之后，我们还需要巩固学到的技能。
 
-### Round 2 · Diagnose one breakdown
+<details><summary>Reveal after an independent attempt</summary>**consolidate**</details>
 
-重听一次，只定位第一个明显断点：
+**New context:** Explain how next-day review consolidates your Git or English learning. Practise the sentence aloud. It is a reusable pattern, not an asserted verbatim quotation from the original report.
 
-- sound recognition
-- vocabulary
-- chunk boundary
-- previous idea disappeared
-- understood details but missed the speaker's purpose
+## Speaking · 4 min
 
-然后只打开 transcript 修复这一处。
+1. Why is immediate performance not proof of lasting learning?
+2. When did the researchers apply stimulation?
+3. What changed in the mice during later tests?
+4. Why is this not proof of a language-learning treatment for people?
 
-### Round 3 · Reconstruct
+Speak independently, locate one specific stuck point, repair it, and retry. **Actual hesitation:** ___
 
-关掉 transcript，用 4 个词复述。建议自己选词，不照抄：
+## Writing · 5 min
 
-**routine · speaking · feedback · reuse**
+**Your own 80–120 English words:** Why should learners distinguish immediate performance from durable learning? Use the mouse experiment as an example and explain its limits.
 
-最后说 30 秒：
+<details><summary>Minimal structure hint after your own draft</summary>Position → detail from this one article → personal / computing example → limitation → conclusion.</details>
 
-> One idea from the audio that I could actually use is ...
+**Actual draft (fill after completing):**
 
-## 2. Intensive Reading · 9 min
+<!-- No pre-filled model answer. -->
 
-**Source:** [ScienceDaily — Vagus Nerve Stimulation Could Help New Skills Stick](https://www.sciencedaily.com/releases/2026/10/261002080034.htm)  
-**Published:** October 5, 2026. Story source: Tohoku University.
+## Retrieval/Reflection · 2 min
 
-这项研究报告：研究者在小鼠完成训练后进行迷走神经刺激，并观察到更强的长期运动学习表现；他们还测量到与学习表现相关的脑血容量节律变化。研究者把这些结果解释为“训练结束之后仍可能存在影响学习巩固的窗口”。
+- Global article model from memory: ___
+- Audio sound-to-meaning after hiding the transcript: ___
+- My own transferred sentence using consolidate: ___
+- Tomorrow's 30–60 sec check: replay without text; retrieve the expression; say it in a DIFFERENT situation. Not completed yet: ___.
 
-### First pass · Paragraph function
+### 8-minute Busy Version
 
-不要先记术语。每读一段写一句：
-
-> The writer is ______.
-
-可用但不限于：
-
-**QUESTION / TIMING / RESULT / MEASUREMENT / ASSOCIATION / INTERPRETATION / NEXT STEP**
-
-### Build the global model
-
-关闭文章，补全：
-
-```text
-QUESTION
-Why do some practiced skills last?
-        ↓
-INTERVENTION
-stimulation ______ training
-        ↓
-BEHAVIORAL RESULT
-stronger ______ learning
-        ↓
-PHYSIOLOGICAL OBSERVATION
-rhythmic changes in ______
-        ↓
-ASSOCIATION
-larger oscillations ↔ ______
-        ↓
-INTERPRETATION
-post-practice state may matter for ______
-        ↓
-LIMITATION
-animal study ≠ direct human learning prescription
-```
-
-### Evidence vs explanation
-
-把文章信息分成三层：
-
-**Observed:** What did researchers directly measure?  
-**Associated:** What two things varied together?  
-**Interpreted:** What mechanism might explain the result?
-
-然后完成：
-
-> The study **found that** ______.  
-> The pattern **was associated with** ______.  
-> This **may suggest that** ______.
-
-这三句不要合并。目标是防止把“相关”读成“已经证明机制”。
-
-## 3. Active Expressions · 3 min
-
-### [[words/consolidate|consolidate]]
-
-核心关系：
-
-**new / fragile learning → becomes more stable**
-
-常见搭配：
-
-- consolidate a memory
-- consolidate learning
-- consolidate knowledge
-- consolidate gains
-
-Retrieval cue：
-
-> “刚学会还不稳定，需要让它真正固定下来。”
-
-完成：
-
-> Retrieval practice may help me ______ what I learned.
-
-### [[words/retain|retain]]
-
-核心关系：
-
-**information / ability acquired earlier → still available later**
-
-常见搭配：
-
-- retain information
-- retain a skill
-- retain knowledge
-
-Retrieval cue：
-
-> “不是当下会，而是过一段时间还保留着。”
-
-完成：
-
-> I understood the article today, but how much will I ______ tomorrow?
-
-### Old expression · validate
-
-昨天是“实验数据检验模型”。今天迁移：
-
-> A later test can help validate whether learning was actually retained.
-
-区分：
-
-**perform now ≠ retain later**
-
-## 4. Sentence & Pronunciation · 2 min
-
-### even after = persistence beyond an expected endpoint
-
-> Learning processes may continue **even after** practice ends.
-
-遇到 **even after** 时，不只翻译“即使在……之后”，而要识别：
-
-**expected endpoint → effect continues beyond it**
-
-迁移：
-
-> I kept thinking about the problem even after ______.
-
-朗读三遍，突出信息重音：
-
-> The KEY point / is what happens AFTER practice / when new learning is still being CONSOLIDATED.
-
-## 5. Speaking · 3 min
-
-**Core topic: When can we say that we have really learned something?**
-
-1. What is the difference between performing well immediately and retaining a skill?
-2. Why might the period after practice matter?
-3. What evidence in the study is direct, and what is interpretation?
-4. Why should we be cautious when applying a mouse study to human studying?
-5. In programming or mathematics, how could you test whether knowledge was consolidated rather than merely recognized?
-
-第 5 题尝试使用：
-
-> I would test retention by ______ rather than ______.
-
-## 6. Writing · 5 min
-
-**Prompt:**  
-**What is the difference between understanding something today and truly learning it for the long term?**
-
-先不看结构提示，写 **80–120 words**。要求：
-
-- 至少主动使用一个今天的表达：**consolidate / retain**
-- 至少复用一个旧表达：**validate / account for / rather than**
-- 至少写出一个 **claim → reason → example** 的关系
-- 不要求复杂词汇，重点是把观点组织清楚
-
-写完后再检查这个最小结构：
-
-```text
-CLAIM
-What counts as real learning?
-        ↓
-REASON
-Why is immediate performance not enough?
-        ↓
-EXAMPLE
-Programming / mathematics / language learning
-        ↓
-TEST
-How could you validate lasting retention?
-```
-
-Self-check:
-
-- [ ] I stated one clear main claim.
-- [ ] I used at least one active expression from today.
-- [ ] I reused one older expression.
-- [ ] I connected sentences with meaning, not just with “and”.
-- [ ] I can still explain the paragraph without rereading it.
-
-## 7. Transfer & Retrieval · 1 min
-
-不看上文，反向调用：
-
-- “让刚学到的知识变得稳定” → **?**
-- “过一段时间仍然保留信息/技能” → **?**
-- “用证据检验一个模型/判断” → **?**
-- “解释时把一个重要因素考虑进去” → **?**
-
-核对：
-
-[[words/consolidate|consolidate]] · [[words/retain|retain]] · [[validate|validate]] · [[account-for|account for]]
-
-## 8. Reflection · 1 min
-
-> Listening breakdown: ______.  
-> Global model: I lost the argument at ______ → ______.  
-> Evidence/interpretation: The easiest distinction was ______.  
-> Retrieval: I could produce ______ without seeing the English word.  
-> Tomorrow test: One idea I want to see if I can still retain is ______.
-
-## 8-minute Busy Version
-
-1. **2 min** — VOA：听一遍，只留 PROBLEM → ADVICE → PRACTICE。
-2. **3 min** — ScienceDaily：只抓 TIMING → RESULT → ASSOCIATION → INTERPRETATION。
-3. **1 min** — 说出一条 direct evidence 和一条 interpretation。
-4. **1 min** — 反向调用 **consolidate / retain**。
-5. **1 min** — 回答：How would I know tomorrow whether today's learning lasted?
+2 min synthesized summary listening → 2 min full article scan and one paragraph → 1 min transcript alignment → 1 min replay without text → 1 min new-context speaking → **1 min micro-writing** (one viewpoint + reason).
 
 ## Connections
 
-- [[2026-10-06-English-Wind-Farms-Scaling-Evidence|2026-10-06 · Wind Farms × Scaling Evidence]]：昨天训练 **validate a model against evidence**；今天把同一思路迁移到“如何判断学习是否真正保留”。
-- [[2026-09-27-English-REM-Sleep-Evidence-and-Interpretation|2026-09-27 · REM Sleep × Evidence and Interpretation]]：再次训练 **observation / association / interpretation**，并保持动物研究到人类结论之间的边界。
-- [[validate|validate]]：旧表达迁移到学习检测。
-- **New concept — immediate performance vs durable learning**：当下能答出来并不自动意味着之后还能独立提取；这正好连接你一直训练的 **recognition → retrieval**。
+- [[drafts/EnglishLearning/Connections|Archived connections]] · [[EnglishLearning/Connections|Main connections]] · [[EnglishLearning/README|Main learning index]].
+- Keep content comprehension distinct from decoding English sounds and from independently generating English expressions.
 
 ## Previous / Next
 
-- Previous: [[2026-10-06-English-Wind-Farms-Scaling-Evidence|2026-10-06 · Wind Farms × Scaling Evidence]]
-- Next: [[2026-10-08-English-Cycling-Infrastructure-Evidence-and-Choice|2026-10-08 · Cycling Infrastructure × Evidence and Choice]]
+- Previous: [[2026-10-06-English-Wind-Farms-Scaling-Evidence|2026-10-06]]
+- Next: [[2026-10-08-English-Cycling-Infrastructure-Evidence-and-Choice|2026-10-08]]

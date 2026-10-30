@@ -3,7 +3,7 @@ type: daily-english
 title: 2026-10-01 · Strategic AI × Hidden Information
 topic: Strategic AI × Hidden Information
 created: 2026-10-01
-updated: 2026-10-02
+updated: 2026-10-30
 tags:
   - english
   - daily-learning
@@ -14,106 +14,94 @@ related:
   - "[[Connections|Connections]]"
 ---
 
-# 2026-10-01 · Strategic AI × Hidden Information
+# 2026-10-01 · Strategic AI Hidden Information
 
-← [[drafts/EnglishLearning/README|English Learning Hub]]
+![Original learning landscape](../../EnglishLearning/assets/art/2026-10-01-Strategic-AI-Hidden-Information.svg)
 
-## Today's Focus
+**One complete article + selected paragraphs:** [This game-playing AI is the new champ at Stratego](https://news.mit.edu/2026/game-playing-ai-stratego-new-champ-0930) (MIT News). It is the ONLY source for reading, listening summary, active expression, speaking and writing. Do not memorize the entire article or treat the summary as a publisher transcript.
 
-**从固定标签进一步升级到：用简单英语描述“作者这一段正在做什么”。**
+**Time:** Listening 6 · Reading 9 · Active Expressions 4 · Speaking 4 · Writing 5 · Retrieval/Reflection 2.
 
-## 1. Extensive Listening · 6 min
+## Multimedia Companion
 
-**Source:** [VOA Learning English](https://learningenglish.voanews.com/)
+- **Full original article / source page:** [This game-playing AI is the new champ at Stratego](https://news.mit.edu/2026/game-playing-ai-stratego-new-champ-0930).
+- **Publisher direct audio:** Not verified for this specific article. The formerly linked unrelated audio has been removed from today's lesson.
+- **Synthesized study listening (NOT original publisher recording):** [HTML companion](./2026-10-01-English-Strategic-AI-Hidden-Information.html) supports Obsidian MiMo TTS through the configured plugin, or browser speech synthesis of an original article-summary script.
+- **Transcript for the synthesized study summary** (not a transcript of the publisher's article):
 
-听一段带 transcript 的报道，维护三个槽位：
-**MISSION / WHY / NEXT STEP**
+<details><summary>Reveal for sound-to-text matching only</summary>
 
-每出现新信息，问：
-> Does this update one of my slots?
+In Stratego, players cannot see every important detail about their opponents' pieces. An artificial intelligence agent must therefore make decisions under uncertainty. MIT researchers reported a system that performed strongly at this challenging game. To succeed, the agent needs strategies for choosing actions even when it lacks complete information. Strong performance is a meaningful achievement within the game. It does not automatically show that the same system will solve every problem involving uncertainty. Evaluating an AI model always depends on the environment and the task.
 
-## 2. Intensive Reading · 11 min
+</details>
 
-**Source:** [MIT News — This game-playing AI is the new champ at Stratego](https://news.mit.edu/2026/game-playing-ai-stratego-new-champ-0930)
+## Listening · 6 min
 
-### First pass
+First listen to the original study summary without text (2 min). If a publisher-hosted audio clip later becomes verifiable, prefer that original recording instead. Identify **one 20–40-second segment**, match the sounds to the corresponding short summary transcript (2 min), hide the words and listen again (2 min). This exercise remains about the SAME article; it does not claim the summary is read verbatim from the article.
 
-每读一段不用 B/Q/M/R，而写：
-> The writer is explaining why the game is difficult.  
-> The writer is comparing this system with previous systems.  
-> The writer is reporting a result.
+<details><summary>Optional Chinese context (use after first listening)</summary>Stratego 有隐藏信息，因此模型需在不确定对手棋子身份时进行决策；比赛胜利不代表万用智能。</details>
 
-### Article model
+**Your actual timestamp:** ___ · **First interpretation:** ___ · **Repaired sound / phrase:** ___ · **What I could hear without words:** ___.
 
-```text
-TASK
-AI plays Stratego
-        ↓
-DIFFICULTY
-hidden information + huge state space
-        ↓
-PREVIOUS LIMITATION
-expensive / demanding methods
-        ↓
-GOAL
-strong performance at lower cost
-        ↓
-NEW SYSTEM
-Ataraxos
-        ↓
-RESULT
-beats strong humans + generalizes
-        ↓
-APPLICATION
-real decisions with incomplete information
-```
+## Reading · 9 min
 
-## 3. Active Expressions
+Read the [complete source article](https://news.mit.edu/2026/game-playing-ai-stratego-new-champ-0930) for 4 minutes. Label the roles of paragraphs and reconstruct this global model:
 
-- **deal with** — handle a problem or situation.
-- **rely on** — need something in order to work.
-- **scale** — continue to work when problem size/load becomes much larger.
+1. Stratego 包含隐藏棋子信息
+2. AI 要估计不完整局面
+3. 系统寻找可行动策略
+4. 用竞技表现评价并讨论边界
 
-Technical retrieval:
-> It works for 100 users, but does it scale to one million?
+**Selected 1–3 paragraphs from this very same article (3 min):**
 
-## 4. Sentence / Trade-off
+1. **Context / question**: 解释为何是 hidden-information game 的开头；定位后解释段落作用、代词指向及一个逻辑关系。
+2. **Method / evidence**: 研究者方法和推理思路的段落；定位后解释段落作用、代词指向及一个逻辑关系。
+3. **Result / limits**: 比较结果与适用限制的段落；定位后解释段落作用、代词指向及一个逻辑关系。
 
-**while + clause / -ing**
+**Without source (2 min):** rebuild the 4-step model in your own English. **Do not overstate the source:** 策略博弈中的结果不是所有开放世界任务的普适保证。
 
-> improve performance **while using less computation**
+## Active Expressions · 4 min
 
-识别为：两个指标同时变化，而不只是“当……时候”。
+**Meaning → English:** 智能体必须在不确定条件下选择行动。
 
-## 5. Speaking
+<details><summary>Reveal after an independent attempt</summary>**under uncertainty**</details>
 
-**How should we make decisions when we don't have all the information?**
+**New context:** Explain how a program selects a fallback when a network request might fail. Practise the sentence aloud. It is a reusable pattern, not an asserted verbatim quotation from the original report.
 
-1. Why is Stratego difficult for AI?
-2. What limitation did earlier approaches have?
-3. Why is scale important?
-4. When do students make decisions with incomplete information?
-5. Is waiting for more information always better?
+## Speaking · 4 min
 
-## Reflection
+1. What makes Stratego different from chess?
+2. What information is hidden from a player?
+3. What does winning at Stratego demonstrate?
+4. Where do developers make decisions under uncertainty?
 
-> Global model: I lost the structure at ______ → ______.  
-> Retrieval: I could actively retrieve ______.  
-> Speaking: I first got stuck at Q___ because ______.
+Speak independently, locate one specific stuck point, repair it, and retry. **Actual hesitation:** ___
+
+## Writing · 5 min
+
+**Your own 80–120 English words:** What can games with hidden information teach us about real-world AI, and which lessons might not transfer?
+
+<details><summary>Minimal structure hint after your own draft</summary>Position → detail from this one article → personal / computing example → limitation → conclusion.</details>
+
+**Actual draft (fill after completing):**
+
+<!-- No pre-filled model answer. -->
+
+## Retrieval/Reflection · 2 min
+
+- Global article model from memory: ___
+- Audio sound-to-meaning after hiding the transcript: ___
+- My own transferred sentence using under uncertainty: ___
+- Tomorrow's 30–60 sec check: replay without text; retrieve the expression; say it in a DIFFERENT situation. Not completed yet: ___.
+
+### 8-minute Busy Version
+
+2 min synthesized summary listening → 2 min full article scan and one paragraph → 1 min transcript alignment → 1 min replay without text → 1 min new-context speaking → **1 min micro-writing** (one viewpoint + reason).
 
 ## Connections
 
-- [[2026-09-28-English-Decision-making-Working-Memory|Decision-making Brain]]：brain options ↔ AI options under uncertainty。
-- [[2026-10-02-English-AI-3D-Models-Appearance-vs-Function|Appearance vs Function]]：技术系统不仅要“表现好”，还要真正可用、可扩展。
-
-
-## 8-minute Busy Version
-
-1. **2 min** — 泛听，只保留 3–4 个意义节点。
-2. **3 min** — 精读，识别文章关系/框架。
-3. **1 min** — 关闭文章复述 main idea。
-4. **1 min** — 反向调用一个主动表达。
-5. **1 min** — 把今天的表达换到生活或计算机场景。
+- [[drafts/EnglishLearning/Connections|Archived connections]] · [[EnglishLearning/Connections|Main connections]] · [[EnglishLearning/README|Main learning index]].
+- Keep content comprehension distinct from decoding English sounds and from independently generating English expressions.
 
 ## Previous / Next
 

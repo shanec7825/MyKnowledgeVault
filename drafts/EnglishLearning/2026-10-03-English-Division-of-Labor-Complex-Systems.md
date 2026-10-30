@@ -3,7 +3,7 @@ type: daily-english
 title: 2026-10-03 · Division of Labor × Complex Systems
 topic: Division of Labor × Complex Systems
 created: 2026-10-03
-updated: 2026-10-03
+updated: 2026-10-30
 tags:
   - english
   - daily-learning
@@ -18,208 +18,96 @@ related:
   - "**division of labor**"
 ---
 
-# 2026-10-03 · Division of Labor × Complex Systems
+# 2026-10-03 · Division of Labor Complex Systems
 
-← [[drafts/EnglishLearning/README|English Learning Hub]]
+![Original learning landscape](../../EnglishLearning/assets/art/2026-10-03-Division-of-Labor-Complex-Systems.svg)
 
-## Today's Focus
+**One complete article + selected paragraphs:** [Marine bacteria team up to break down one of the ocean's toughest carbon-storing molecules](https://news.mit.edu/2026/marine-bacteria-team-up-to-break-down-carbon-storing-molecules-0914) (MIT News). It is the ONLY source for reading, listening summary, active expression, speaking and writing. Do not memorize the entire article or treat the summary as a publisher transcript.
 
-今天从连续几天的 AI 主题切到 **biology × systems thinking**。
+**Time:** Listening 6 · Reading 9 · Active Expressions 4 · Speaking 4 · Writing 5 · Retrieval/Reflection 2.
 
-1. **Complex details → simple model**：面对大量细节时，主动寻找更高层的组织方式。
-2. **Recognition → Retrieval**：把新表达从“认识”推进到能在编程、学习和团队场景中主动调用。
-3. 每读完一段，不保存原句，而回答 **What changed in my model?**
+## Multimedia Companion
 
-## 1. Extensive Listening · 7 min
+- **Full original article / source page:** [Marine bacteria team up to break down one of the ocean's toughest carbon-storing molecules](https://news.mit.edu/2026/marine-bacteria-team-up-to-break-down-carbon-storing-molecules-0914).
+- **Publisher direct audio:** Not verified for this specific article. The formerly linked unrelated audio has been removed from today's lesson.
+- **Synthesized study listening (NOT original publisher recording):** [HTML companion](./2026-10-03-English-Division-of-Labor-Complex-Systems.html) supports Obsidian MiMo TTS through the configured plugin, or browser speech synthesis of an original article-summary script.
+- **Transcript for the synthesized study summary** (not a transcript of the publisher's article):
 
-**Source:** [VOA Learning English — Radio / Learning English Podcast](https://learningenglish.voanews.com/radio/schedule/122)
+<details><summary>Reveal for sound-to-text matching only</summary>
 
-选择一段 Learning English Podcast，听前 3–4 分钟。
+Some molecules in the ocean are difficult for a single bacterial strain to break down. Scientists studied communities that work together on a complex molecule called fucoidan. Different bacteria specialize in different structural parts of this material. Some act on the main backbone while others target branches. When complementary roles are combined, the system can perform better than the strains alone. Researchers also found that focusing on functional roles could help predict activity in more complex communities. This is an example of division of labor and cooperation under specific conditions.
 
-### Round 1
+</details>
 
-不看文字、不暂停，只保留三个槽位：
+## Listening · 6 min
 
-```text
-TOPIC → WHAT HAPPENED → WHY IT MATTERS
-```
+First listen to the original study summary without text (2 min). If a publisher-hosted audio clip later becomes verifiable, prefer that original recording instead. Identify **one 20–40-second segment**, match the sounds to the corresponding short summary transcript (2 min), hide the words and listen again (2 min). This exercise remains about the SAME article; it does not claim the summary is read verbatim from the article.
 
-听完立刻用 20–30 秒英语复述，不追求完整。
+<details><summary>Optional Chinese context (use after first listening)</summary>不同的海洋细菌处理 fucoidan 分子的不同部分，通过功能互补形成协同；不是每种细菌都可以独自完成任务。</details>
 
-### Round 2
+**Your actual timestamp:** ___ · **First interpretation:** ___ · **Repaired sound / phrase:** ___ · **What I could hear without words:** ___.
 
-再听一次，只找第一次真正掉线的位置：
+## Reading · 9 min
 
-- **sound recognition** — 单词本来认识，但声音没认出来
-- **vocabulary** — 词本身不知道
-- **chunking** — 单词都懂，但没组成意义块
-- **retention** — 当前句懂了，前一句的意义消失
-- **relationship** — 两句都懂，但不知道它们是什么关系
+Read the [complete source article](https://news.mit.edu/2026/marine-bacteria-team-up-to-break-down-carbon-storing-molecules-0914) for 4 minutes. Label the roles of paragraphs and reconstruct this global model:
 
-只修这个断点，不逐句精听。
+1. 复杂碳分子难以分解
+2. 研究者研究多个细菌菌株
+3. 一些处理主链，另一些处理侧链
+4. 通过分工提高效率及模型预测
 
-## 2. Intensive Reading · 11 min
+**Selected 1–3 paragraphs from this very same article (3 min):**
 
-**Source:** [MIT News — Marine bacteria team up to process one of the ocean's toughest carbon-storing molecules](https://news.mit.edu/2026/marine-bacteria-team-up-to-break-down-carbon-storing-molecules-0914)
+1. **Context / question**: 介绍复杂分子难题的开头；定位后解释段落作用、代词指向及一个逻辑关系。
+2. **Method / evidence**: 说明不同菌株分解不同部分的段落；定位后解释段落作用、代词指向及一个逻辑关系。
+3. **Result / limits**: 协同与可预测性结果的段落；定位后解释段落作用、代词指向及一个逻辑关系。
 
-文章包含很多底层细节。今天的任务是**不试图同时记住全部细节**。
+**Without source (2 min):** rebuild the 4-step model in your own English. **Do not overstate the source:** 协同结果来自特定的细菌组合与实验，不能直接推广到任何团队。
 
-每读 2–3 段，在纸上只允许写一句：
+## Active Expressions · 4 min
 
-> **The writer is now showing that ...**
+**Meaning → English:** 不同的细菌之间存在分工。
 
-如果一句写不出来，说明你可能只有 local comprehension，还没有更新 global model。
+<details><summary>Reveal after an independent attempt</summary>**division of labor**</details>
 
-### Global model
+**New context:** Describe dividing coding, tests and documentation in a team. Practise the sentence aloud. It is a reusable pattern, not an asserted verbatim quotation from the original report.
 
-先自己画，再对照：
+## Speaking · 4 min
 
-```text
-COMPLEX MOLECULE
-one bacterium cannot finish the whole task
-        ↓
-SPECIALIZATION
-different bacteria handle different parts
-        ↓
-COMBINATION
-complementary roles work together
-        ↓
-SYNERGY
-combined effect becomes stronger
-        ↓
-SIMPLIFICATION
-many details → two broad functional roles
-        ↓
-PREDICTION
-a simpler model predicts larger communities
-```
+1. Why is fucoidan difficult to degrade?
+2. What are the two complementary roles?
+3. What happened when complementary bacteria were combined?
+4. How can division of labor help your software team?
 
-### Reading framework
+Speak independently, locate one specific stuck point, repair it, and retry. **Actual hesitation:** ___
 
-**COMPLEXITY → SPECIALIZATION → INTERACTION → EMERGENT RESULT → SIMPLIFICATION**
+## Writing · 5 min
 
-重点问题：
+**Your own 80–120 English words:** How can division of labor help a complex system become easier to manage? Explain with marine bacteria and a software example.
 
-> **At what level should I describe the system?**
+<details><summary>Minimal structure hint after your own draft</summary>Position → detail from this one article → personal / computing example → limitation → conclusion.</details>
 
-文章的关键不只是“细菌合作”，而是：一个底层非常复杂的系统，可能在更高层出现更简单、可预测的结构。
+**Actual draft (fill after completing):**
 
-## 3. Active Expressions · 4 min
+<!-- No pre-filled model answer. -->
 
-### [[complementary|complementary]]
+## Retrieval/Reflection · 2 min
 
-不是简单的 similar。
+- Global article model from memory: ___
+- Audio sound-to-meaning after hiding the transcript: ___
+- My own transferred sentence using division of labor: ___
+- Tomorrow's 30–60 sec check: replay without text; retrieve the expression; say it in a DIFFERENT situation. Not completed yet: ___.
 
-```text
-A has one useful ability
-B has a different useful ability
-        ↓
-A + B fit together
-```
+### 8-minute Busy Version
 
-Examples:
-- complementary skills
-- complementary roles
-- complementary approaches
-
-**Retrieval cue：**“两个东西能力不同，但组合起来刚好互补。”
-
-> Frontend and backend development require ______ skills.
-
-### **division of labor**
-
-```text
-one complex task
-        ↓
-split into specialized roles
-        ↓
-each part handles a different function
-```
-
-Transfer:
-- cells in biology
-- modules in software
-- members of a project team
-
-> A large software system depends on a clear ______.
-
-### Old expression retrieval
-
-昨天的 [[refine|refine]]：
-
-> Scientists can ______ a simple model as they collect more evidence.
-
-先自己说，再点链接核对。
-
-## 4. Sentence Skill · 2 min
-
-### not A, but B = replace the explanation
-
-> The key unit is **not** the individual component, **but** the functional role.
-
-不要只翻译。脑中执行：
-
-```text
-OLD MODEL: focus on A
-        ↓
-REPLACE
-        ↓
-NEW MODEL: focus on B
-```
-
-自己造一句：
-
-> My problem is not ______, but ______.
-
-## 5. Speaking · 4 min
-
-**Core topic: Why can a team outperform its individual members?**
-
-1. Why couldn't one bacterial strain finish the whole task?
-2. What does **complementary** mean in this system?
-3. Why can specialization make a complex system easier to understand?
-4. Can you find a similar division of labor in a computer system?
-5. When can dividing work become inefficient?
-
-最后一题尝试给出：**condition → consequence → example**。
-
-## 6. Transfer & Retrieval · 1 min
-
-不看上文，反向调用：
-
-- “两个能力不同但能互相补足” → **?**
-- “把复杂任务分给不同专门角色” → **?**
-- “已有模型继续打磨得更准确” → **?**
-- “规模变大后仍然有效” → **scale**
-- “需要另一个东西才能工作” → **rely on**
-
-前三个答案：[[complementary|complementary]] · **division of labor** · [[refine|refine]]
-
-## 7. Reflection · 1 min
-
-> **Global model:** Which detail almost pulled me away from the main structure? ______
-
-> **Breakdown:** My first real breakdown was sound / vocabulary / chunking / retention / relationship.
-
-> **Retrieval:** Without looking, I could retrieve ______.
-
-> **Transfer:** The closest computer-science analogy I found was ______.
-
-## 8-minute Busy Version
-
-1. **2 min** — VOA：只留下 TOPIC → EVENT → WHY IT MATTERS。
-2. **3 min** — MIT：重建 **complexity → specialization → synergy → simplification**。
-3. **1 min** — 用英语解释为什么 complementary 不等于 similar。
-4. **1 min** — 从中文情境反向调用 **division of labor**。
-5. **1 min** — 用 `not A, but B` 修正一个你对学习问题的旧判断。
+2 min synthesized summary listening → 2 min full article scan and one paragraph → 1 min transcript alignment → 1 min replay without text → 1 min new-context speaking → **1 min micro-writing** (one viewpoint + reason).
 
 ## Connections
 
-- [[2026-10-02-English-AI-3D-Models-Appearance-vs-Function|2026-10-02 · Appearance vs Function]]：昨天从表面输出追到 underlying organization；今天继续训练从底层细节提升到合适的抽象层级。
-- [[refine|refine]]：今天迁移到 **refine a simplified model**。
-- **New concept — abstraction level**：大量底层对象并不意味着理解时必须同时维护全部对象；找到合适的 functional roles，类似计算机系统中用模块、接口和层次隐藏复杂度。
+- [[drafts/EnglishLearning/Connections|Archived connections]] · [[EnglishLearning/Connections|Main connections]] · [[EnglishLearning/README|Main learning index]].
+- Keep content comprehension distinct from decoding English sounds and from independently generating English expressions.
 
 ## Previous / Next
 
-- Previous: [[2026-10-02-English-AI-3D-Models-Appearance-vs-Function|2026-10-02 · AI 3D Models · Appearance vs Function]]
-- Next: [[2026-10-04-English-Worker-Voice-Tech-Responsibility|2026-10-04 · Worker Voice × Tech Responsibility]]
+- Previous: [[2026-10-02-English-AI-3D-Models-Appearance-vs-Function|2026-10-02]]
+- Next: [[2026-10-04-English-Worker-Voice-Tech-Responsibility|2026-10-04]]

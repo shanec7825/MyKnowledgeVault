@@ -3,7 +3,7 @@ type: daily-english
 title: 2026-10-02 · AI 3D Models · Appearance vs Function
 topic: AI 3D Models · Appearance vs Function
 created: 2026-10-02
-updated: 2026-10-02
+updated: 2026-10-30
 tags:
   - english
   - daily-learning
@@ -17,228 +17,96 @@ related:
   - "[[undermine|undermine]]"
 ---
 
-# 2026-10-02 · AI 3D Models · Appearance vs Function
+# 2026-10-02 · AI 3D Models Appearance vs Function
 
-← [[drafts/EnglishLearning/README|English Learning Hub]]
+![Original learning landscape](../../EnglishLearning/assets/art/2026-10-02-AI-3D-Models-Appearance-vs-Function.svg)
 
-## Today's Focus
+**One complete article + selected paragraphs:** [New tool lets users repair AI-generated 3D models, then fabricate them just the way they want](https://news.mit.edu/2026/instructmesh-tool-lets-users-repair-ai-3d-models-then-fabricate-them-1001) (MIT News). It is the ONLY source for reading, listening summary, active expression, speaking and writing. Do not memorize the entire article or treat the summary as a publisher transcript.
 
-训练两个核心能力：
+**Time:** Listening 6 · Reading 9 · Active Expressions 4 · Speaking 4 · Writing 5 · Retrieval/Reflection 2.
 
-1. **Local comprehension → Global model**：句子能看懂后，持续维护“这段为什么在这里”。
-2. **Recognition → Retrieval**：把新表达从“看到认识”推进到“有情境时能主动调用”。
+## Multimedia Companion
 
----
+- **Full original article / source page:** [New tool lets users repair AI-generated 3D models, then fabricate them just the way they want](https://news.mit.edu/2026/instructmesh-tool-lets-users-repair-ai-3d-models-then-fabricate-them-1001).
+- **Publisher direct audio:** Not verified for this specific article. The formerly linked unrelated audio has been removed from today's lesson.
+- **Synthesized study listening (NOT original publisher recording):** [HTML companion](./2026-10-02-English-AI-3D-Models-Appearance-vs-Function.html) supports Obsidian MiMo TTS through the configured plugin, or browser speech synthesis of an original article-summary script.
+- **Transcript for the synthesized study summary** (not a transcript of the publisher's article):
 
-## 1. Extensive Listening · 6 min
+<details><summary>Reveal for sound-to-text matching only</summary>
 
-**Source:** [VOA Learning English](https://learningenglish.voanews.com/)
+An artificial intelligence tool can generate a three-dimensional object that looks convincing but does not work well. For example, a cup must hold liquid, not simply resemble a cup. A team of researchers developed InstructMesh to make generated designs easier to edit. Users can select particular areas and request changes before fabrication. This helps connect appearance to practical requirements. The examples show possibilities for interactive design, but every physical object still needs appropriate testing. A good-looking output is not the same as a reliable product.
 
-选择当天一篇带音频与 transcript 的中等难度报道，只听前 2–3 分钟。
+</details>
 
-### Round 1 · No transcript
+## Listening · 6 min
 
-只维护三个槽位：
+First listen to the original study summary without text (2 min). If a publisher-hosted audio clip later becomes verifiable, prefer that original recording instead. Identify **one 20–40-second segment**, match the sounds to the corresponding short summary transcript (2 min), hide the words and listen again (2 min). This exercise remains about the SAME article; it does not claim the summary is read verbatim from the article.
 
-**NEED → PROBLEM → POSSIBLE SOLUTION**
+<details><summary>Optional Chinese context (use after first listening)</summary>AI 生成的三维物体外观看起来合理，也可能无法正常使用；InstructMesh 可以对模型的局部进行修改和制造。</details>
 
-听完用一句话回答：
+**Your actual timestamp:** ___ · **First interpretation:** ___ · **Repaired sound / phrase:** ___ · **What I could hear without words:** ___.
 
-> The main issue is that ...
+## Reading · 9 min
 
-### Round 2 · Listen for relationships
+Read the [complete source article](https://news.mit.edu/2026/instructmesh-tool-lets-users-repair-ai-3d-models-then-fabricate-them-1001) for 4 minutes. Label the roles of paragraphs and reconstruct this global model:
 
-重点捕捉：
+1. 好看的 AI 物体可能不具备功能
+2. 用户需要细化和修复模型
+3. 系统提供交互式局部编辑
+4. 制造结果仍需检查
 
-- but
-- however
-- because
-- so
-- if
+**Selected 1–3 paragraphs from this very same article (3 min):**
 
-每遇到一个关系词问：
+1. **Context / question**: 介绍外观与实际功能冲突的开头；定位后解释段落作用、代词指向及一个逻辑关系。
+2. **Method / evidence**: 说明选择局部再修改的办法；定位后解释段落作用、代词指向及一个逻辑关系。
+3. **Result / limits**: 具体制造案例和测试边界的段落；定位后解释段落作用、代词指向及一个逻辑关系。
 
-> **What relationship just changed?**
+**Without source (2 min):** rebuild the 4-step model in your own English. **Do not overstate the source:** 研究中的演示成品不表示所有自动生成物体都已达到工程标准。
 
-### Round 3 · Diagnose
+## Active Expressions · 4 min
 
-只检查两个掉线位置：
+**Meaning → English:** 设计人员可以持续改进一个已经生成的模型。
 
-- sound recognition
-- vocabulary
-- sentence structure
-- previous meaning disappeared
+<details><summary>Reveal after an independent attempt</summary>**refine**</details>
 
----
+**New context:** Describe how you refine your React interface after user feedback. Practise the sentence aloud. It is a reusable pattern, not an asserted verbatim quotation from the original report.
 
-## 2. Intensive Reading · 11 min
+## Speaking · 4 min
 
-**Source:** [MIT News — New tool lets users repair AI-generated 3D models, then fabricate them just the way they want](https://news.mit.edu/2026/instructmesh-tool-lets-users-repair-ai-3d-models-then-fabricate-them-1001)
+1. What can go wrong with an attractive AI-generated 3D object?
+2. What kinds of changes does InstructMesh enable?
+3. How is refinement different from restarting a design?
+4. How would you test an object before fabrication?
 
-### First pass
+Speak independently, locate one specific stuck point, repair it, and retry. **Actual hesitation:** ___
 
-先读文章开头到 InstructMesh 基本功能出现的位置。
+## Writing · 5 min
 
-每读完一段，用一句简单英语描述：
+**Your own 80–120 English words:** Should AI 3D design tools be evaluated by appearance or practical editability and function? Explain using InstructMesh.
 
-> **The writer is ...**
+<details><summary>Minimal structure hint after your own draft</summary>Position → detail from this one article → personal / computing example → limitation → conclusion.</details>
 
-不要急着套固定标签。核心问题：
+**Actual draft (fill after completing):**
 
-> **Why is this paragraph here?**
+<!-- No pre-filled model answer. -->
 
-### Global model
+## Retrieval/Reflection · 2 min
 
-读完后关闭文章，自己先画箭头，再对照：
+- Global article model from memory: ___
+- Audio sound-to-meaning after hiding the transcript: ___
+- My own transferred sentence using refine: ___
+- Tomorrow's 30–60 sec check: replay without text; retrieve the expression; say it in a DIFFERENT situation. Not completed yet: ___.
 
-```text
-AI knows
-HOW AN OBJECT LOOKS
-        ↓
-but not necessarily
-HOW IT WORKS
-        ↓
-generated object
-LOOKS RIGHT BUT FAILS FUNCTIONALLY
-        ↓
-users need
-TO REPAIR SPECIFIC PARTS
-        ↓
-InstructMesh
-EDIT → FABRICATE
-```
+### 8-minute Busy Version
 
-这篇文章的主要局部框架是：
-
-**EXPECTATION → FAILURE → CAUSE → SOLUTION**
-
-而不是机械套用 Question → Method → Result。
-
----
-
-## 3. Sentence / Discourse Signal · 3 min
-
-### but = model update
-
-不要只把 `but` 记成“但是”。
-
-遇到：
-
-> A, **but** B
-
-脑中执行：
-
-> **Update my current model. Something important differs from my expectation.**
-
-同理：
-
-- **because** → find the cause
-- **therefore / so** → find the consequence
-- **for example** → detail, not necessarily the main idea
-- **however** → revise the previous model
-
----
-
-## 4. Active Expressions · 4 min
-
-### [[undermine|undermine]]
-
-核心关系：
-
-```text
-something is supposed to work
-        ↓
-another factor makes it
-less effective / less successful
-```
-
-Context:
-- Poor cooling can undermine system performance.
-- ______ can undermine my concentration.
-
-**Retrieval cue:**  
-“一个因素让原本应该有效的东西变差。”
-
-### [[refine|refine]]
-
-核心关系：
-
-```text
-something already exists
-        ↓
-make it more precise / better
-```
-
-Context:
-- refine a design
-- refine an argument
-- refine a model
-- I need to refine my understanding of ______.
-
-**Retrieval cue:**  
-“已经有一个东西，但还需要让它更准确、更完善。”
-
----
-
-## 5. Speaking · 4 min
-
-**Core topic:**  
-**When is appearance not enough to tell whether something works?**
-
-1. Why can an AI-generated mug fail even if it looks correct?
-2. What problem is InstructMesh trying to solve?
-3. What is the difference between knowing what something looks like and knowing how it works?
-4. Can you find the same distinction in programming?
-5. Can something appear correct but have a bad underlying design? Give your own example.
-
-Keywords:
-
-**appearance · function · refine · undermine · underlying · intended use · work in practice**
-
----
-
-## 6. Transfer & Retrieval · 1 min
-
-不看英文，尝试反向调用：
-
-- “事情推进不下去了” → **get stuck**
-- “系统需要另一个东西才能工作” → **rely on**
-- “规模变大后方法仍然有效” → **scale**
-- “一个因素削弱原本效果” → **?**
-- “已有东西继续打磨完善” → **?**
-
-今天的新答案最后才核对：[[undermine|undermine]] / [[refine|refine]]
-
----
-
-## 7. Reflection · 1 min
-
-> **Global model:** I lost the structure when ______.
-
-> **Relationship:** The easiest signal for me to notice was ______.
-
-> **Retrieval:** I could actively retrieve ______.
-
----
-
-## 8-minute Busy Version
-
-1. **2 min** — VOA：只留下 NEED → PROBLEM → SOLUTION。
-2. **3 min** — MIT：每段回答 *What is the writer doing here?*
-3. **1 min** — 回答 *Why can something look right but not work?*
-4. **1 min** — 从“已有东西 → 继续打磨”反向调用 [[refine|refine]]。
-5. **1 min** — 回忆一个旧表达并放到新情境。
-
----
+2 min synthesized summary listening → 2 min full article scan and one paragraph → 1 min transcript alignment → 1 min replay without text → 1 min new-context speaking → **1 min micro-writing** (one viewpoint + reason).
 
 ## Connections
 
-- [[Connections#Appearance vs Function|Appearance vs Function]]
-- [[refine|refine]]
-- [[undermine|undermine]]
-- [[threshold|threshold]] — 都可以用“跨过一个状态边界/达到可用程度”的概念做联想，但意义不同。
+- [[drafts/EnglishLearning/Connections|Archived connections]] · [[EnglishLearning/Connections|Main connections]] · [[EnglishLearning/README|Main learning index]].
+- Keep content comprehension distinct from decoding English sounds and from independently generating English expressions.
 
 ## Previous / Next
 
 - Previous: [[2026-10-01-English-Strategic-AI-Hidden-Information|2026-10-01]]
-- Next: 明日文档创建后自动补链
+- Next: [[2026-10-03-English-Division-of-Labor-Complex-Systems|2026-10-03]]

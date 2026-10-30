@@ -3,7 +3,7 @@ type: daily-english
 title: 2026-10-06 · Wind Farms × Scaling Evidence
 topic: Wind Farms × Scaling Evidence
 created: 2026-10-06
-updated: 2026-10-06
+updated: 2026-10-30
 tags:
   - english
   - daily-learning
@@ -18,162 +18,96 @@ related:
   - "[[account-for|account for]]"
 ---
 
-# 2026-10-06 · Wind Farms × Scaling Evidence
+# 2026-10-06 · Wind Farms Scaling Evidence
 
-← [[drafts/EnglishLearning/README|English Learning Hub]]
+![Original learning landscape](../../EnglishLearning/assets/art/2026-10-06-Wind-Farms-Scaling-Evidence.svg)
 
-## Today's Focus
+**One complete article + selected paragraphs:** [Pressurized experiments could help wind farms generate more power](https://energy.mit.edu/news-events/news/pressurized-experiments-could-help-wind-farms-generate-more-power) (MIT Energy Initiative). It is the ONLY source for reading, listening summary, active expression, speaking and writing. Do not memorize the entire article or treat the summary as a publisher transcript.
 
-今天从音乐切换到 renewable energy，训练工程文章的全文模型：
+**Time:** Listening 6 · Reading 9 · Active Expressions 4 · Speaking 4 · Writing 5 · Retrieval/Reflection 2.
 
-**REAL-WORLD PROBLEM → LAB LIMITATION → NEW METHOD → VALIDATION → RESULT → APPLICATION**
+## Multimedia Companion
 
-每读一段都问：**What problem does this paragraph solve in the argument?**
+- **Full original article / source page:** [Pressurized experiments could help wind farms generate more power](https://energy.mit.edu/news-events/news/pressurized-experiments-could-help-wind-farms-generate-more-power).
+- **Publisher direct audio:** Not verified for this specific article. The formerly linked unrelated audio has been removed from today's lesson.
+- **Synthesized study listening (NOT original publisher recording):** [HTML companion](./2026-10-06-English-Wind-Farms-Scaling-Evidence.html) supports Obsidian MiMo TTS through the configured plugin, or browser speech synthesis of an original article-summary script.
+- **Transcript for the synthesized study summary** (not a transcript of the publisher's article):
 
-## 1. Extensive Listening · 8 min
+<details><summary>Reveal for sound-to-text matching only</summary>
 
-**Source:** [NASA — Understanding Cosmic Dawn](https://svs.gsfc.nasa.gov/14523/)
+Wind turbines experience complicated conditions in the atmosphere. Testing a small model in an ordinary wind tunnel can be misleading because its behavior may differ from that of a full-sized machine. Researchers reported experiments that use extra pressure to reproduce important aspects of field conditions. This approach can help scientists validate predictive models and investigate better ways to operate turbines. But even an improved laboratory model cannot represent every change in real weather. Careful scaling and verification matter whenever engineers move from a prototype to an operating system.
 
-页面提供约 15 分钟音频和完整 transcript。今天只听前约 5–6 分钟。
+</details>
 
-第一遍不看稿，只维护：
+## Listening · 6 min
 
-**EARLY UNIVERSE → DARK AGES → FIRST LIGHT → CLEARER UNIVERSE**
+First listen to the original study summary without text (2 min). If a publisher-hosted audio clip later becomes verifiable, prefer that original recording instead. Identify **one 20–40-second segment**, match the sounds to the corresponding short summary transcript (2 min), hide the words and listen again (2 min). This exercise remains about the SAME article; it does not claim the summary is read verbatim from the article.
 
-听完用 30 秒回答：
+<details><summary>Optional Chinese context (use after first listening)</summary>小型风洞中的涡轮不一定像真实风场中的大型风机；研究者尝试通过加压实验提高可比性并验证模型。</details>
 
-> Why did the early universe change over time?
+**Your actual timestamp:** ___ · **First interpretation:** ___ · **Repaired sound / phrase:** ___ · **What I could hear without words:** ___.
 
-第二遍打开 transcript，只定位第一个断点：sound / chunking / sequence / relationship / retention。只修这一处，然后重听附近约 30 秒。
+## Reading · 9 min
 
-最后不用 transcript 完成：
+Read the [complete source article](https://energy.mit.edu/news-events/news/pressurized-experiments-could-help-wind-farms-generate-more-power) for 4 minutes. Label the roles of paragraphs and reconstruct this global model:
 
-> At first ______. Over time ______, which led to ______.
+1. 风机真实环境难以控制
+2. 普通缩尺风洞存在偏差
+3. 加压风洞帮助模拟关键条件
+4. 用实验验证预测并认识局限
 
-## 2. Intensive Reading · 11 min
+**Selected 1–3 paragraphs from this very same article (3 min):**
 
-**Source:** [MIT Energy Initiative — Pressurized experiments could help wind farms generate more power](https://energy.mit.edu/news-events/news/pressurized-experiments-could-help-wind-farms-generate-more-power)
+1. **Context / question**: 解释传统实验问题的开头；定位后解释段落作用、代词指向及一个逻辑关系。
+2. **Method / evidence**: 描述加压技术的段落；定位后解释段落作用、代词指向及一个逻辑关系。
+3. **Result / limits**: 模型验证结果及限制的段落；定位后解释段落作用、代词指向及一个逻辑关系。
 
-文章讨论一个工程难题：缩小的风机实验与真实风场条件并不天然等价。研究者使用加压风洞更好地模拟实际流动物理，并用实验检验预测模型。
+**Without source (2 min):** rebuild the 4-step model in your own English. **Do not overstate the source:** 实验更接近真实条件不等于完全复现所有天气和工程风险。
 
-### First pass
+## Active Expressions · 4 min
 
-每段只标一个功能：
+**Meaning → English:** 科学家需要用实验验证预测模型。
 
-**PROBLEM / WHY LAB DIFFERS / METHOD / VALIDATION / RESULT / APPLICATION**
+<details><summary>Reveal after an independent attempt</summary>**validate**</details>
 
-### Global model
+**New context:** Explain how you validate a program before a large release. Practise the sentence aloud. It is a reusable pattern, not an asserted verbatim quotation from the original report.
 
-关闭文章后自己补：
+## Speaking · 4 min
 
-**full-size system → small-model limitation → changed test conditions → measurements → model validation → practical use**
+1. Why are full-size wind turbines hard to test?
+2. How can scaling down create misleading conditions?
+3. How does pressure help make experiments more realistic?
+4. How do you validate a software design under realistic load?
 
-再打开文章核对。不要为了一个名词从头重读。
+Speak independently, locate one specific stuck point, repair it, and retry. **Actual hesitation:** ___
 
-### Evidence ladder
+## Writing · 5 min
 
-写三句：
+**Your own 80–120 English words:** Why should engineers validate results in realistic conditions before scaling up? Use the wind-farm report and a computing analogy.
 
-> Problem: Ordinary scaled experiments may not represent ______.  
-> Method: The researchers changed ______ so that ______.  
-> Evidence: Their measurements helped validate ______.
+<details><summary>Minimal structure hint after your own draft</summary>Position → detail from this one article → personal / computing example → limitation → conclusion.</details>
 
-再加边界：
+**Actual draft (fill after completing):**
 
-> This supports the model under the tested conditions, but it does not mean ______.
+<!-- No pre-filled model answer. -->
 
-## 3. Active Expressions · 4 min
+## Retrieval/Reflection · 2 min
 
-### [[validate|validate]]
+- Global article model from memory: ___
+- Audio sound-to-meaning after hiding the transcript: ___
+- My own transferred sentence using validate: ___
+- Tomorrow's 30–60 sec check: replay without text; retrieve the expression; say it in a DIFFERENT situation. Not completed yet: ___.
 
-核心关系：**model / idea → test against evidence → stronger support**
+### 8-minute Busy Version
 
-常见搭配：validate a model · validate an assumption · experimentally validate
-
-Retrieval cue：**“不是觉得模型合理，而是拿证据去检验它。”**
-
-> We should ______ the simulation against real measurements.
-
-### [[account-for|account for]]
-
-今天练“把重要因素纳入解释或模型”：
-
-> A useful model needs to account for changes in real-world conditions.
-
-Retrieval cue：**“解释或计算时不能漏掉这个因素。”**
-
-### Old expression: scale
-
-> A method that works in a small experiment may not scale directly to a full-size system.
-
-连起来说：
-
-> Before a model can scale, we need to validate it and account for important real-world factors.
-
-## 4. Sentence & Pronunciation · 2 min
-
-### so that = method → purpose
-
-> Researchers changed the test conditions **so that** the experiment better represented the field.
-
-看到 **so that** 就问：**What purpose does this action serve?**
-
-迁移：
-
-> I summarize each paragraph so that ______.
-
-朗读三遍：
-
-> The RESEARCHERS changed the CONDITIONS / so that the MODEL / could better represent the REAL WORLD.
-
-## 5. Speaking · 4 min
-
-**Core topic: When can a small experiment represent a large real system?**
-
-1. Why can a scaled-down experiment behave differently from the real system?
-2. What does it mean to validate a model?
-3. Why should a model account for real-world conditions?
-4. Is an imperfect model still useful if it predicts important behavior?
-5. Give a computing example where something works in a small test but does not scale well.
-
-第 5 题尝试使用：
-
-> It worked in the small test, but when the system scaled to ______, ______ became important.
-
-## 6. Transfer & Retrieval · 1 min
-
-不看上文，反向调用：
-
-- “用证据检验模型是否可靠” → **?**
-- “模型必须把某个重要因素考虑进去” → **?**
-- “规模变大后仍然有效” → **?**
-- “把复杂信息组织起来理解” → **?**
-
-核对：[[validate|validate]] · [[account-for|account for]] · **scale** · [[make-sense-of|make sense of]]
-
-## 7. Reflection · 1 min
-
-> Listening: My first breakdown was ______.  
-> Reading: The key problem → method link was ______ → ______.  
-> Model: One real-world factor to account for was ______.  
-> Retrieval: I could produce ______ without seeing the English cue.
-
-## 8-minute Busy Version
-
-1. **2 min** — NASA：只留下 EARLY → DARK → LIGHT → CLEAR。
-2. **3 min** — MIT：只抓 PROBLEM → METHOD → VALIDATION → APPLICATION。
-3. **1 min** — 关文章回答：Why are small tests not automatically equivalent to field conditions?
-4. **1 min** — 反向调用 **validate / account for**。
-5. **1 min** — 用 **so that** 解释研究方法的目的。
+2 min synthesized summary listening → 2 min full article scan and one paragraph → 1 min transcript alignment → 1 min replay without text → 1 min new-context speaking → **1 min micro-writing** (one viewpoint + reason).
 
 ## Connections
 
-- [[2026-10-05-English-Music-Meaning-Making|2026-10-05 · Music × Meaning-Making]]：昨天问“证据支持什么解释”；今天进一步问“实验条件是否足以支持模型”。
-- [[2026-09-25-English-Rhythm-AI-Reliability|2026-09-25 · Rhythm × AI Reliability]]：重新连接 reliability 与 constraint，但从 AI 转到工程实验。
-- **scale**：从计算系统的规模扩展迁移到物理实验的尺度问题。
-- **New concept — model validity across scales**：小尺度成立不代表自动适用于真实尺度；这与软件在小负载下正常、在大负载下出现新瓶颈的结构相似。
+- [[drafts/EnglishLearning/Connections|Archived connections]] · [[EnglishLearning/Connections|Main connections]] · [[EnglishLearning/README|Main learning index]].
+- Keep content comprehension distinct from decoding English sounds and from independently generating English expressions.
 
 ## Previous / Next
 
-- Previous: [[2026-10-05-English-Music-Meaning-Making|2026-10-05 · Music × Meaning-Making]]
-- Next: [[2026-10-07-English-Practice-Consolidation-Lasting-Learning|2026-10-07 · Practice × Consolidation × Lasting Learning]]
+- Previous: [[2026-10-05-English-Music-Meaning-Making|2026-10-05]]
+- Next: [[2026-10-07-English-Practice-Consolidation-Lasting-Learning|2026-10-07]]

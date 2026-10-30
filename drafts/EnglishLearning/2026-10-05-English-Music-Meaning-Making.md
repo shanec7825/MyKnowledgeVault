@@ -3,7 +3,7 @@ type: daily-english
 title: 2026-10-05 · Music × Meaning-Making
 topic: Music × Meaning-Making
 created: 2026-10-05
-updated: 2026-10-05
+updated: 2026-10-30
 tags:
   - english
   - daily-learning
@@ -18,238 +18,96 @@ related:
   - "[[make-sense-of|make sense of]]"
 ---
 
-# 2026-10-05 · Music × Meaning-Making
+# 2026-10-05 · Music Meaning Making
 
-← [[drafts/EnglishLearning/README|English Learning Hub]]
+![Original learning landscape](../../EnglishLearning/assets/art/2026-10-05-Music-Meaning-Making.svg)
 
-## Today's Focus
+**One complete article + selected paragraphs:** [Brain imaging shows music evokes emotion, imaginings, and high-level meaning comparable to spoken narratives](https://pni.princeton.edu/news/2026/brain-imaging-shows-music-evokes-emotion-imaginings-and-high-level-meaning-comparable) (Princeton Neuroscience Institute). It is the ONLY source for reading, listening summary, active expression, speaking and writing. Do not memorize the entire article or treat the summary as a publisher transcript.
 
-前两天分别训练了复杂系统和技术社会议题；今天换到 **music × neuroscience**。重点不是记住实验细节，而是把“听到声音”到“形成意义”的过程压缩成一个可保持的全文模型。
+**Time:** Listening 6 · Reading 9 · Active Expressions 4 · Speaking 4 · Writing 5 · Retrieval/Reflection 2.
 
-今天的核心模型：
+## Multimedia Companion
 
-```text
-STIMULUS → EXPERIENCE → MEASUREMENT → SHARED PATTERN → INTERPRETATION → LIMITATION
-```
+- **Full original article / source page:** [Brain imaging shows music evokes emotion, imaginings, and high-level meaning comparable to spoken narratives](https://pni.princeton.edu/news/2026/brain-imaging-shows-music-evokes-emotion-imaginings-and-high-level-meaning-comparable).
+- **Publisher direct audio:** Not verified for this specific article. The formerly linked unrelated audio has been removed from today's lesson.
+- **Synthesized study listening (NOT original publisher recording):** [HTML companion](./2026-10-05-English-Music-Meaning-Making.html) supports Obsidian MiMo TTS through the configured plugin, or browser speech synthesis of an original article-summary script.
+- **Transcript for the synthesized study summary** (not a transcript of the publisher's article):
 
-每读完一段都问：**What did this paragraph add to my model?**
+<details><summary>Reveal for sound-to-text matching only</summary>
 
-## 1. Extensive Listening · 8 min
+Music can affect how we feel and what we imagine, even without words. Researchers described in a Princeton report studied brain responses while people listened to music. The results suggest that musical listening may evoke emotions, imagined scenes, and forms of meaning comparable in some ways to processing spoken stories. Yet people do not have to imagine exactly the same thing. Similar neural responses can support an interesting hypothesis, but they are not complete access to another person's private experience. Listening is both shared and personal.
 
-**Source:** [WBUR On Point — The 'universal language' of rhythm](https://www.wbur.org/onpoint/2026/03/20/universal-language-of-rhythm-brain)
+</details>
 
-页面同时提供音频与 transcript。今天只听 **Part I 的前约 6–8 分钟**，不需要完成 42 分钟整期节目。
+## Listening · 6 min
 
-### Round 1 · audio only
+First listen to the original study summary without text (2 min). If a publisher-hosted audio clip later becomes verifiable, prefer that original recording instead. Identify **one 20–40-second segment**, match the sounds to the corresponding short summary transcript (2 min), hide the words and listen again (2 min). This exercise remains about the SAME article; it does not claim the summary is read verbatim from the article.
 
-只维护四个意义节点：
+<details><summary>Optional Chinese context (use after first listening)</summary>脑成像研究发现音乐能引起情绪、想象和高层意义加工；神经活动相似不意味着个人体验完全相同。</details>
 
-```text
-RHYTHM
-  ↓
-BODY / MOVEMENT
-  ↓
-GROUP COORDINATION
-  ↓
-FEELING
-```
+**Your actual timestamp:** ___ · **First interpretation:** ___ · **Repaired sound / phrase:** ___ · **What I could hear without words:** ___.
 
-听完立刻用 30 秒回答：
+## Reading · 9 min
 
-> Why is rhythm more than just counting beats?
+Read the [complete source article](https://pni.princeton.edu/news/2026/brain-imaging-shows-music-evokes-emotion-imaginings-and-high-level-meaning-comparable) for 4 minutes. Label the roles of paragraphs and reconstruct this global model:
 
-不要回忆原句。只允许保留 4 个英文关键词。
+1. 音乐可承载超出音符的意义
+2. 研究者观察听音乐时的大脑活动
+3. 发现情绪和意义有关的反应
+4. 解释神经模式与主观体验差别
 
-### Round 2 · locate the breakdown
+**Selected 1–3 paragraphs from this very same article (3 min):**
 
-打开 transcript，对照你第一次失去整体模型的位置。给断点分类：
+1. **Context / question**: 文章如何提出音乐意义的问题；定位后解释段落作用、代词指向及一个逻辑关系。
+2. **Method / evidence**: 脑成像方法及对照的段落；定位后解释段落作用、代词指向及一个逻辑关系。
+3. **Result / limits**: 结果与推论边界的段落；定位后解释段落作用、代词指向及一个逻辑关系。
 
-- **sound** — 单词没听出来
-- **chunking** — 词都认识，但没有形成意群
-- **reference** — 不知道 it / this / that 指什么
-- **relationship** — 没抓住 but / because / so 等关系
-- **retention** — 当前句懂了，上一节点已经消失
+**Without source (2 min):** rebuild the 4-step model in your own English. **Do not overstate the source:** 神经层面的相关模式不等于证明个人主观情绪完全一致。
 
-只修最早的一个断点，然后重新听前后约 30 秒。
+## Active Expressions · 4 min
 
-### Transfer
+**Meaning → English:** 一段旋律可以唤起某种情绪或画面。
 
-不用 transcript，说一句：
+<details><summary>Reveal after an independent attempt</summary>**evoke**</details>
 
-> Rhythm helps a group ______ because ______.
+**New context:** Describe what one of your favorite songs evokes for you. Practise the sentence aloud. It is a reusable pattern, not an asserted verbatim quotation from the original report.
 
-如果你能表达关系而不是复述原话，说明你保住的是意义模型。
+## Speaking · 4 min
 
-## 2. Intensive Reading · 10 min
+1. What question about meaning does the article explore?
+2. What does brain imaging measure?
+3. Why might similar signals not imply identical personal experiences?
+4. What does a familiar song evoke in your own life?
 
-**Source:** [Princeton Neuroscience Institute — Brain imaging shows music evokes emotion, imaginings, and high-level meaning comparable to spoken narratives](https://pni.princeton.edu/news/2026/brain-imaging-shows-music-evokes-emotion-imaginings-and-high-level-meaning-comparable)
+Speak independently, locate one specific stuck point, repair it, and retry. **Actual hesitation:** ___
 
-这篇 2026-08-18 的研究报道介绍：参与者听陌生器乐或故事后描述自己的想象，研究者再比较主观报告与脑成像模式。
+## Writing · 5 min
 
-### First pass · paragraph function
+**Your own 80–120 English words:** Can instrumental music communicate meaning without words? Use the Princeton research and one personal example.
 
-每读一段，只写一个动词短语：
+<details><summary>Minimal structure hint after your own draft</summary>Position → detail from this one article → personal / computing example → limitation → conclusion.</details>
 
-- introduces the question
-- describes the experiment
-- reports a pattern
-- interprets the result
-- suggests an implication
+**Actual draft (fill after completing):**
 
-不要抄名词细节。
+<!-- No pre-filled model answer. -->
 
-### Build the global model
+## Retrieval/Reflection · 2 min
 
-关闭文章，先自己补：
+- Global article model from memory: ___
+- Audio sound-to-meaning after hiding the transcript: ___
+- My own transferred sentence using evoke: ___
+- Tomorrow's 30–60 sec check: replay without text; retrieve the expression; say it in a DIFFERENT situation. Not completed yet: ___.
 
-```text
-QUESTION
-Can instrumental music carry ______?
-        ↓
-METHOD
-same unfamiliar music + listener reports + ______
-        ↓
-RESULT 1
-different listeners show some ______ associations
-        ↓
-RESULT 2
-matched music / speech narratives show similar ______
-        ↓
-INTERPRETATION
-music can trigger high-level ______
-        ↓
-LIMITATION
-shared patterns do not mean every listener imagines ______
-```
+### 8-minute Busy Version
 
-然后再打开文章核对。
-
-### Compression test
-
-把全文压缩成两句英语：
-
-> The researchers wanted to know whether ______.  
-> Their results suggest that ______, although ______.
-
-第二句里的 **although** 很重要：它迫使你同时保留结论和边界。
-
-## 3. Active Expressions · 4 min
-
-### [[evoke|evoke]]
-
-核心关系：
-
-```text
-stimulus / event
-      ↓
-brings out
-emotion / memory / image / response
-```
-
-常见搭配：
-- evoke a memory
-- evoke an emotional response
-- evoke an image
-- evoke a sense of ...
-
-**Retrieval cue:** “某个声音、场景或经历把一种记忆/感受唤了出来。”
-
-> This melody ______ a vivid image in my mind.
-
-### [[make-sense-of|make sense of]]
-
-不是“有意义”的 **make sense**，而是：
-
-```text
-complex / confusing information
-        ↓
-organize + understand it
-```
-
-> I can understand individual sentences, but I still need to make sense of the article as a whole.
-
-**Retrieval cue:** “信息很多、很乱，我要把它组织起来理解。”
-
-### Old-expression retrieval
-
-昨天的 [[have-a-say|have a say]]：
-
-> Should listeners have a say in how an AI music system adapts to their preferences?
-
-先从中文意义主动调用，再核对链接。
-
-## 4. Sentence & Pronunciation · 2 min
-
-### not just A — it also B
-
-今天把“局部现象 → 更高层功能”说出来：
-
-> Music does not just produce sound; it can also evoke images and narratives.
-
-自己迁移：
-
-> Reading does not just ______; it also ______.
-
-### Rhythm
-
-朗读时不要逐词等重：
-
-> MUSIC can EVOKE / surprisingly SIMilar IMAGES / across different LISTENERS.
-
-每个意群只保留 1–2 个信息重音。读三遍：慢速 → 正常 → 不看文字复述意思。
-
-## 5. Speaking · 4 min
-
-**Core topic: Can music communicate meaning without words?**
-
-1. Can instrumental music make you imagine a scene? Give a simple example.
-2. Why might different listeners imagine similar things from the same music?
-3. What is the difference between emotion and narrative meaning in music?
-4. If two people show similar brain responses, does that prove they experienced exactly the same thing?
-5. How could music communicate meaning differently from spoken language?
-
-第 4 题强制使用：
-
-> **The evidence suggests ..., but it does not necessarily prove ...**
-
-## 6. Transfer & Retrieval · 1 min
-
-不看上文，反向调用：
-
-- “唤起一种记忆、画面或情绪” → **?**
-- “把复杂信息组织起来并理解” → **?**
-- “对影响自己的决定有参与权” → **?**
-- “两个能力不同但互相补足” → **?**
-- “一个结果可能表明……但并未证明” → **suggest that**
-
-答案最后核对：[[evoke|evoke]] · [[make-sense-of|make sense of]] · [[have-a-say|have a say]] · [[complementary|complementary]]
-
-## 7. Reflection · 1 min
-
-> **Listening:** My first breakdown was ______, not simply “I didn't understand.”
-
-> **Reading:** My six-node model is ______.
-
-> **Retrieval:** I could produce ______ before seeing the English cue.
-
-> **Transfer:** A piece of music can evoke ______ for me because ______.
-
-## 8-minute Busy Version
-
-1. **2 min** — WBUR：听一小段，只留 RHYTHM → BODY → GROUP → FEELING。
-2. **3 min** — Princeton：只读研究问题、方法、主要结果，写 QUESTION → METHOD → RESULT。
-3. **1 min** — 关文档，用一句话回答 *Can music carry meaning without words?*
-4. **1 min** — 从中文情境反向调用 **evoke / make sense of**。
-5. **1 min** — 用 **suggest ..., but not prove ...** 给研究结论加边界。
+2 min synthesized summary listening → 2 min full article scan and one paragraph → 1 min transcript alignment → 1 min replay without text → 1 min new-context speaking → **1 min micro-writing** (one viewpoint + reason).
 
 ## Connections
 
-- [[2026-10-04-English-Worker-Voice-Tech-Responsibility|2026-10-04 · Worker Voice × Tech Responsibility]]：昨天追踪社会过程中的角色与行动；今天从时间过程切换到 **evidence → interpretation**，避免连续使用同一种文章框架。
-- [[2026-09-27-English-REM-Sleep-Evidence-and-Interpretation|2026-09-27 · REM Sleep × Evidence and Interpretation]]：再次训练 **observation / evidence ≠ interpretation**。
-- [[have-a-say|have a say]]：从组织决策迁移到“用户是否应参与个性化系统的设计”。
-- **New concept — shared meaning without identical experience**：多人出现相似模式，不代表每个人拥有完全相同的主观体验；可以把它类比为不同程序执行路径产生相同接口输出。
+- [[drafts/EnglishLearning/Connections|Archived connections]] · [[EnglishLearning/Connections|Main connections]] · [[EnglishLearning/README|Main learning index]].
+- Keep content comprehension distinct from decoding English sounds and from independently generating English expressions.
 
 ## Previous / Next
 
-- Previous: [[2026-10-04-English-Worker-Voice-Tech-Responsibility|2026-10-04 · Worker Voice × Tech Responsibility]]
-- Next: [[2026-10-06-English-Wind-Farms-Scaling-Evidence|2026-10-06 · Wind Farms × Scaling Evidence]]
+- Previous: [[2026-10-04-English-Worker-Voice-Tech-Responsibility|2026-10-04]]
+- Next: [[2026-10-06-English-Wind-Farms-Scaling-Evidence|2026-10-06]]
