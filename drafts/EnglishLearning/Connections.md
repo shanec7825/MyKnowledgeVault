@@ -2,7 +2,7 @@
 type: map
 title: English Learning Connections
 created: 2026-10-02
-updated: 2026-10-08
+updated: 2026-10-30
 tags:
   - english
   - connections
@@ -173,3 +173,27 @@ New expressions: **be associated with**, **lower the barrier to**. Reuse **valid
 - expressions that can be actively retrieved
 - reading frameworks that are becoming automatic
 - themes that appeared across different domains
+
+
+## One-article archive retrofit · 2026-10-30
+
+Each of the 16 archived lessons now contains an article outline, 1–3 paragraph targets, one active expression, an original study narration when publisher audio is missing, independent speaking and writing, and next-day retrieval. The single article is authoritative; other historical links here are optional connections.
+
+**Evidence chain:** context supported understanding → sound identification without text → delayed recognition → self-generated expression in another context.
+
+- [[2026-10-09-English-Food-Heritage-and-Reinvention|2026-10-09 ·  Food Heritage and Reinvention]]
+- [[2026-10-08-English-Cycling-Infrastructure-Evidence-and-Choice|2026-10-08 ·  Cycling Infrastructure Evidence and Choice]]
+- [[2026-10-07-English-Practice-Consolidation-Lasting-Learning|2026-10-07 ·  Practice Consolidation Lasting Learning]]
+- [[2026-10-06-English-Wind-Farms-Scaling-Evidence|2026-10-06 ·  Wind Farms Scaling Evidence]]
+- [[2026-10-05-English-Music-Meaning-Making|2026-10-05 ·  Music Meaning Making]]
+- [[2026-10-04-English-Worker-Voice-Tech-Responsibility|2026-10-04 ·  Worker Voice Tech Responsibility]]
+- [[2026-10-03-English-Division-of-Labor-Complex-Systems|2026-10-03 ·  Division of Labor Complex Systems]]
+- [[2026-10-02-English-AI-3D-Models-Appearance-vs-Function|2026-10-02 ·  AI 3D Models Appearance vs Function]]
+- [[2026-10-01-English-Strategic-AI-Hidden-Information|2026-10-01 ·  Strategic AI Hidden Information]]
+- [[2026-09-30-English-Biohybrid-Robot-Mechanism|2026-09-30 ·  Biohybrid Robot Mechanism]]
+- [[2026-09-29-English-AI-RNA-Vaccine-Stability|2026-09-29 ·  AI RNA Vaccine Stability]]
+- [[2026-09-28-English-Decision-making-Working-Memory|2026-09-28 ·  Decision making Working Memory]]
+- [[2026-09-27-English-REM-Sleep-Evidence-and-Interpretation|2026-09-27 ·  REM Sleep Evidence and Interpretation]]
+- [[2026-09-26-English-Explainable-AI-Self-driving-Cars|2026-09-26 ·  Explainable AI Self driving Cars]]
+- [[2026-09-25-English-Rhythm-AI-Reliability|2026-09-25 ·  Rhythm AI Reliability]]
+- [[2026-09-24-English-Spider-Webs-Brain-inspired-Computing|2026-09-24 ·  Spider Webs Brain inspired Computing]]

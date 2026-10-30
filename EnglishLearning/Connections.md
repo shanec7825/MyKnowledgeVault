@@ -131,3 +131,28 @@ tags: [english, connections, review]
 ## Cross-day principle
 
 Use **meaning or situation → English**, not just **English → Chinese**. Return to the original source only to repair a specific gap; then test the repaired understanding in a different context.
+
+
+## Unified article / short-clip retrieval · 2026-10-30
+
+- **Single source:** 34 daily notes, 16 historical notes and 18 formal notes. Listening → full article → selected paragraphs → one expression → speaking / writing all concern the same source.
+- **Audio distinction:** no-text original clip where available; otherwise clearly labeled **original-study-summary TTS** with its own matching transcript. Never conflate source audio and synthesized synopsis.
+- **Evidence ladder:** Chinese context comprehension → identify actual English sound boundaries → next-day no-text recognition → new-context expression. An easier first listen does not equal durable transfer.
+- **Weekly synthesis:** choose 2–3 expressions from previous days, hide English and recall from life situations. Next, use different sentences and, where possible, different voices to check recognition outside the practiced recording.
+
+- [[drafts/EnglishLearning/2026-10-09-English-Food-Heritage-and-Reinvention|2026-10-09 ·  Food Heritage and Reinvention]]
+- [[drafts/EnglishLearning/2026-10-08-English-Cycling-Infrastructure-Evidence-and-Choice|2026-10-08 ·  Cycling Infrastructure Evidence and Choice]]
+- [[drafts/EnglishLearning/2026-10-07-English-Practice-Consolidation-Lasting-Learning|2026-10-07 ·  Practice Consolidation Lasting Learning]]
+- [[drafts/EnglishLearning/2026-10-06-English-Wind-Farms-Scaling-Evidence|2026-10-06 ·  Wind Farms Scaling Evidence]]
+- [[drafts/EnglishLearning/2026-10-05-English-Music-Meaning-Making|2026-10-05 ·  Music Meaning Making]]
+- [[drafts/EnglishLearning/2026-10-04-English-Worker-Voice-Tech-Responsibility|2026-10-04 ·  Worker Voice Tech Responsibility]]
+- [[drafts/EnglishLearning/2026-10-03-English-Division-of-Labor-Complex-Systems|2026-10-03 ·  Division of Labor Complex Systems]]
+- [[drafts/EnglishLearning/2026-10-02-English-AI-3D-Models-Appearance-vs-Function|2026-10-02 ·  AI 3D Models Appearance vs Function]]
+- [[drafts/EnglishLearning/2026-10-01-English-Strategic-AI-Hidden-Information|2026-10-01 ·  Strategic AI Hidden Information]]
+- [[drafts/EnglishLearning/2026-09-30-English-Biohybrid-Robot-Mechanism|2026-09-30 ·  Biohybrid Robot Mechanism]]
+- [[drafts/EnglishLearning/2026-09-29-English-AI-RNA-Vaccine-Stability|2026-09-29 ·  AI RNA Vaccine Stability]]
+- [[drafts/EnglishLearning/2026-09-28-English-Decision-making-Working-Memory|2026-09-28 ·  Decision making Working Memory]]
+- [[drafts/EnglishLearning/2026-09-27-English-REM-Sleep-Evidence-and-Interpretation|2026-09-27 ·  REM Sleep Evidence and Interpretation]]
+- [[drafts/EnglishLearning/2026-09-26-English-Explainable-AI-Self-driving-Cars|2026-09-26 ·  Explainable AI Self driving Cars]]
+- [[drafts/EnglishLearning/2026-09-25-English-Rhythm-AI-Reliability|2026-09-25 ·  Rhythm AI Reliability]]
+- [[drafts/EnglishLearning/2026-09-24-English-Spider-Webs-Brain-inspired-Computing|2026-09-24 ·  Spider Webs Brain inspired Computing]]

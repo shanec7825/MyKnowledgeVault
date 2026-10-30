@@ -2,7 +2,7 @@
 type: index
 title: English Learning Hub
 created: 2026-10-02
-updated: 2026-10-06
+updated: 2026-10-30
 tags:
   - english
   - learning
@@ -13,22 +13,27 @@ tags:
 
 这是每日英语训练资源的总入口。目标不是积累孤立材料，而是把每天的输入、表达、篇章结构和主动调用逐步连接成一个可复习的知识网络。
 
-## Daily Notes
+## Daily Notes · archived series (16 single-article lessons)
 
-- [[2026-09-24-English-Spider-Webs-Brain-inspired-Computing|2026-09-24 · Spider Webs × Brain-inspired Computing]]
-- [[2026-09-25-English-Rhythm-AI-Reliability|2026-09-25 · Rhythm × AI Reliability]]
-- [[2026-09-26-English-Explainable-AI-Self-driving-Cars|2026-09-26 · Explainable AI × Self-driving Cars]]
-- [[2026-09-27-English-REM-Sleep-Evidence-and-Interpretation|2026-09-27 · REM Sleep × Evidence and Interpretation]]
-- [[2026-09-28-English-Decision-making-Working-Memory|2026-09-28 · Decision-making × Working Memory]]
-- [[2026-09-29-English-AI-RNA-Vaccine-Stability|2026-09-29 · AI × RNA Vaccine Stability]]
-- [[2026-09-30-English-Biohybrid-Robot-Mechanism|2026-09-30 · Biohybrid Robot × Mechanism]]
-- [[2026-10-01-English-Strategic-AI-Hidden-Information|2026-10-01 · Strategic AI × Hidden Information]]
-- [[2026-10-02-English-AI-3D-Models-Appearance-vs-Function|2026-10-02 · AI 3D Models · Appearance vs Function]]
-- [[2026-10-03-English-Division-of-Labor-Complex-Systems|2026-10-03 · Division of Labor × Complex Systems]]
-- [[2026-10-04-English-Worker-Voice-Tech-Responsibility|2026-10-04 · Worker Voice × Tech Responsibility]]
-- [[2026-10-05-English-Music-Meaning-Making|2026-10-05 · Music × Meaning-Making]]
+每篇现配有同名 HTML 和原创主题插图。**一篇文章贯穿阅读、听力摘要、表达、口语和写作。** 2026-09-24–10-07 许多报道本身没有核实原音，因此使用明确标注的**原创摘要 TTS**作为听力替代，不冒充来源原音。
 
-- [[2026-10-06-English-Wind-Farms-Scaling-Evidence|2026-10-06 · Wind Farms × Scaling Evidence]]
+- [[2026-09-24-English-Spider-Webs-Brain-inspired-Computing|2026-09-24 ·  Spider Webs Brain inspired Computing]] · [HTML](2026-09-24-English-Spider-Webs-Brain-inspired-Computing.html)
+- [[2026-09-25-English-Rhythm-AI-Reliability|2026-09-25 ·  Rhythm AI Reliability]] · [HTML](2026-09-25-English-Rhythm-AI-Reliability.html)
+- [[2026-09-26-English-Explainable-AI-Self-driving-Cars|2026-09-26 ·  Explainable AI Self driving Cars]] · [HTML](2026-09-26-English-Explainable-AI-Self-driving-Cars.html)
+- [[2026-09-27-English-REM-Sleep-Evidence-and-Interpretation|2026-09-27 ·  REM Sleep Evidence and Interpretation]] · [HTML](2026-09-27-English-REM-Sleep-Evidence-and-Interpretation.html)
+- [[2026-09-28-English-Decision-making-Working-Memory|2026-09-28 ·  Decision making Working Memory]] · [HTML](2026-09-28-English-Decision-making-Working-Memory.html)
+- [[2026-09-29-English-AI-RNA-Vaccine-Stability|2026-09-29 ·  AI RNA Vaccine Stability]] · [HTML](2026-09-29-English-AI-RNA-Vaccine-Stability.html)
+- [[2026-09-30-English-Biohybrid-Robot-Mechanism|2026-09-30 ·  Biohybrid Robot Mechanism]] · [HTML](2026-09-30-English-Biohybrid-Robot-Mechanism.html)
+- [[2026-10-01-English-Strategic-AI-Hidden-Information|2026-10-01 ·  Strategic AI Hidden Information]] · [HTML](2026-10-01-English-Strategic-AI-Hidden-Information.html)
+- [[2026-10-02-English-AI-3D-Models-Appearance-vs-Function|2026-10-02 ·  AI 3D Models Appearance vs Function]] · [HTML](2026-10-02-English-AI-3D-Models-Appearance-vs-Function.html)
+- [[2026-10-03-English-Division-of-Labor-Complex-Systems|2026-10-03 ·  Division of Labor Complex Systems]] · [HTML](2026-10-03-English-Division-of-Labor-Complex-Systems.html)
+- [[2026-10-04-English-Worker-Voice-Tech-Responsibility|2026-10-04 ·  Worker Voice Tech Responsibility]] · [HTML](2026-10-04-English-Worker-Voice-Tech-Responsibility.html)
+- [[2026-10-05-English-Music-Meaning-Making|2026-10-05 ·  Music Meaning Making]] · [HTML](2026-10-05-English-Music-Meaning-Making.html)
+- [[2026-10-06-English-Wind-Farms-Scaling-Evidence|2026-10-06 ·  Wind Farms Scaling Evidence]] · [HTML](2026-10-06-English-Wind-Farms-Scaling-Evidence.html)
+- [[2026-10-07-English-Practice-Consolidation-Lasting-Learning|2026-10-07 ·  Practice Consolidation Lasting Learning]] · [HTML](2026-10-07-English-Practice-Consolidation-Lasting-Learning.html)
+- [[2026-10-08-English-Cycling-Infrastructure-Evidence-and-Choice|2026-10-08 ·  Cycling Infrastructure Evidence and Choice]] · [HTML](2026-10-08-English-Cycling-Infrastructure-Evidence-and-Choice.html)
+- [[2026-10-09-English-Food-Heritage-and-Reinvention|2026-10-09 ·  Food Heritage and Reinvention]] · [HTML](2026-10-09-English-Food-Heritage-and-Reinvention.html)
+
 
 ## Core Training Loop
 
@@ -37,7 +42,7 @@ tags:
 每篇 Daily Note 固定包含：
 - Listening：泛听 + 全局模型
 - Reading：精读 + 篇章结构识别
-- Active Expressions：只保留少量高价值表达
+- Active Expressions：优先只主动调用一个高价值表达
 - Speaking：从复述到迁移
 - Connections：与旧词、旧结构、旧主题建立链接
 - Reflection：记录真正的断点，而不是“学了多久”
@@ -92,3 +97,8 @@ Daily English pages use the Obsidian plugin `.obsidian/plugins/mimo-english-coac
 - Do not store API keys in Markdown or HTML.
 - Do not pre-generate audio for ordinary words or sentences; generate speech on demand. Preserve original source audio separately for listening practice.
 - Keep the TTS control visually unobtrusive: no permanent audio toolbar and no repeated speaker icons cluttering the content.
+
+
+## Revised 2026-10-30 · Source boundaries
+
+旧版 Listening 与 Reading 有时使用两篇不相关的来源；现已统一为每篇**一个原文链接**。原音不可确认的情况下，用自撰英语摘要与其对应朗读进行 20–40 秒辨音测试，然后阅读同一篇文章。历史目录保留，方便旧 Obsidian 链接继续工作。正式系列索引：[[EnglishLearning/README|English Learning Hub]]。
