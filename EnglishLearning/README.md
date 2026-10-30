@@ -2,7 +2,7 @@
 type: index
 title: English Learning Hub
 created: 2026-10-10
-updated: 2026-10-30
+updated: 2026-10-31
 tags: [english, learning, index]
 ---
 
@@ -14,10 +14,11 @@ Daily lessons focus on **complete → identify breakdown → repair → transfer
 
 - [[EnglishLearning/2026-10-14-Knicks-Raptors-Writing-Reference|2026-10-14 · Knicks vs Raptors — reference, not a daily lesson]] · [Companion HTML](./2026-10-14-Knicks-Raptors-Writing-Reference.html) · [[calendar/2026-10-14#英语写作练习｜Knicks @ Raptors｜三轮独立写作|Original drafts and feedback (diary)]]
 
-## Daily Notes · 34 single-article lessons
+## Daily Notes · 35 single-article lessons
 
 每篇仅选**一篇主文章**，阅读全文 + 1–3 个精选段落，听力与朗读材料也只针对同一篇；每次只定位一个20–40秒片段、主动调用一个表达，并在隔天检索。没有已核实原音的历史课用明确标注的**原创摘要 TTS**代替，不伪造 MP3。
 
+- [[EnglishLearning/2026-10-31-English-Halloween-Traditions|2026-10-31 · Halloween Traditions]] · [HTML 交互伴侣](./2026-10-31-English-Halloween-Traditions.html)
 - [[EnglishLearning/2026-10-30-English-Singing-and-Recall|2026-10-30 · Singing and Recall]] · [HTML 交互伴侣](./2026-10-30-English-Singing-and-Recall.html)
 - [[EnglishLearning/2026-10-29-English-Beyond-the-Box-Score|2026-10-29 · Beyond the Box Score]] · [HTML 交互伴侣](./2026-10-29-English-Beyond-the-Box-Score.html)
 - [[EnglishLearning/2026-10-28-English-Roots-Below-Ground|2026-10-28 · Roots Below Ground]] · [HTML 交互伴侣](./2026-10-28-English-Roots-Below-Ground.html)
