@@ -9,7 +9,7 @@ tags: [english, daily-learning, technology, education, digital-inclusion, readin
 
 # 2026-10-19 · Offline Knowledge
 
-![Offline Knowledge learning map](assets/art/2026-10-19-Libraries-Beyond-Books.svg)
+![Offline Knowledge learning map](assets/art/2026-10-19-Offline-Knowledge.svg)
 
 **One complete article:** [Bringing the Internet Closer Helps Students](https://learningenglish.voanews.com/a/bringing-internet-closer-helps-students/2842454.html). Its audio, transcript, reading, selected paragraphs and all output tasks form one learning journey. **No memorizing the whole article.**
 

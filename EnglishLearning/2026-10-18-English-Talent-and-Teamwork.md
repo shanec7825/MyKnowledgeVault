@@ -9,7 +9,7 @@ tags: [english, daily-learning, sports, teamwork, research-literacy, retrieval, 
 
 # 2026-10-18 · Talent and Teamwork
 
-![Talent and Teamwork learning map](assets/art/2026-10-18-Libraries-Beyond-Books.svg)
+![Talent and Teamwork learning map](assets/art/2026-10-18-Talent-and-Teamwork.svg)
 
 **One complete article:** [Team Sports Teach Life Lessons](https://learningenglish.voanews.com/a/team-sports-teach-life-lessons/4998076.html). Its audio, transcript, reading, selected paragraphs and all output tasks form one learning journey. **No memorizing the whole article.**
 

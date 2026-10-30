@@ -9,7 +9,7 @@ tags: [english, daily-learning, science, cities, evidence, retrieval]
 
 # 2026-10-17 · Shade and City Heat
 
-![Shade and City Heat learning map](assets/art/2026-10-17-Libraries-Beyond-Books.svg)
+![Shade and City Heat learning map](assets/art/2026-10-17-Shade-and-City-Heat.svg)
 
 **One complete article:** [Communities Work to Cool City Neighborhoods with Plants](https://learningenglish.voanews.com/a/communities-work-to-cool-city-neighborhoods-with-plants/6786164.html). Its audio, transcript, reading, selected paragraphs and all output tasks form one learning journey. **No memorizing the whole article.**
 

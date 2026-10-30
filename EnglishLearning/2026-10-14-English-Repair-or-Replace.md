@@ -9,7 +9,7 @@ tags: [english, daily-learning, technology, society, reading-structure, retrieva
 
 # 2026-10-14 · Repair or Replace
 
-![Repair or Replace learning map](assets/art/2026-10-14-Libraries-Beyond-Books.svg)
+![Repair or Replace learning map](assets/art/2026-10-14-Repair-or-Replace.svg)
 
 **One complete article:** [Tech Tip: How to Make Your Smartphone Last Longer](https://learningenglish.voanews.com/a/tech-tip-how-to-make-your-smartphone-last-longer/7765975.html). Its audio, transcript, reading, selected paragraphs and all output tasks form one learning journey. **No memorizing the whole article.**
 

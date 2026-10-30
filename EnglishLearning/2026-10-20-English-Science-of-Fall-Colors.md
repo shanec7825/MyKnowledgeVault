@@ -9,7 +9,7 @@ tags: [english, daily-learning, science, nature, reading-structure, causal-reaso
 
 # 2026-10-20 · Science of Fall Colors
 
-![Science of Fall Colors learning map](assets/art/2026-10-20-Libraries-Beyond-Books.svg)
+![Science of Fall Colors learning map](assets/art/2026-10-20-Science-of-Fall-Colors.svg)
 
 **One complete article:** [Climate Change Affecting Autumn’s Colors](https://learningenglish.voanews.com/a/climate-change-affecting-autumn-s-colors/6252465.html). Its audio, transcript, reading, selected paragraphs and all output tasks form one learning journey. **No memorizing the whole article.**
 
