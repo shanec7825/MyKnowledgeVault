@@ -2,7 +2,7 @@
 type: resource
 title: validate
 created: 2026-10-06
-updated: 2026-10-08
+updated: 2026-10-30
 related:
   - "[[2026-10-06-English-Wind-Farms-Scaling-Evidence|2026-10-06 · Wind Farms × Scaling Evidence]]"
 tags:
@@ -27,3 +27,14 @@ Related：[[2026-10-06-English-Wind-Farms-Scaling-Evidence|2026-10-06 · Wind Fa
 Before claiming a policy works, we need to validate the claim against real evidence. A reported association is not the same as proof of causation.
 
 Related: [[2026-10-08-English-Cycling-Infrastructure-Evidence-and-Choice|2026-10-08 · Cycling Infrastructure × Evidence and Choice]]
+
+
+## Article-based retrieval · 2026-10-30
+
+**Source:** [[drafts/EnglishLearning/2026-10-06-English-Wind-Farms-Scaling-Evidence|2026-10-06 · Wind Farms Scaling Evidence]]
+
+**Meaning → English without a hint:** 用实验验证模型。
+
+**Independent new context:** Validate your service under realistic load.
+
+**Tomorrow:** recognize in speech with no written text, then form a different sentence. Do not mark completed before trying.

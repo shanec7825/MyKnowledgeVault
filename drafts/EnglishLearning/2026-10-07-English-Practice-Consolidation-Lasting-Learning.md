@@ -104,6 +104,8 @@ Speak independently, locate one specific stuck point, repair it, and retry. **Ac
 
 ## Connections
 
+- **Active word:** [[drafts/words/consolidate|consolidate]] — one meaning-to-English recall and one transfer sentence.
+
 - [[drafts/EnglishLearning/Connections|Archived connections]] · [[EnglishLearning/Connections|Main connections]] · [[EnglishLearning/README|Main learning index]].
 - Keep content comprehension distinct from decoding English sounds and from independently generating English expressions.
 

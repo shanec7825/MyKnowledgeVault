@@ -2,7 +2,7 @@
 type: resource
 title: refine
 created: 2026-10-02
-updated: 2026-10-02
+updated: 2026-10-30
 related:
   - "[[2026-10-02-English-AI-3D-Models-Appearance-vs-Function|2026-10-02 · AI 3D Models]]"
 tags:
@@ -21,3 +21,14 @@ tags:
 > I need to refine my understanding of ______.
 
 Related：[[2026-10-02-English-AI-3D-Models-Appearance-vs-Function|2026-10-02 · AI 3D Models]]
+
+
+## Article-based retrieval · 2026-10-30
+
+**Source:** [[drafts/EnglishLearning/2026-10-02-English-AI-3D-Models-Appearance-vs-Function|2026-10-02 · AI 3D Models Appearance vs Function]]
+
+**Meaning → English without a hint:** 改进已有设计。
+
+**Independent new context:** Refine your React interface after user feedback.
+
+**Tomorrow:** recognize in speech with no written text, then form a different sentence. Do not mark completed before trying.

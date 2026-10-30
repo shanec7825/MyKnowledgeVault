@@ -2,7 +2,7 @@
 type: resource
 title: evoke
 created: 2026-10-05
-updated: 2026-10-05
+updated: 2026-10-30
 related:
   - "[[2026-10-05-English-Music-Meaning-Making|2026-10-05 · Music × Meaning-Making]]"
 tags:
@@ -21,3 +21,14 @@ tags:
 > This melody evokes a vivid image in my mind.
 
 Related：[[2026-10-05-English-Music-Meaning-Making|2026-10-05 · Music × Meaning-Making]]
+
+
+## Article-based retrieval · 2026-10-30
+
+**Source:** [[drafts/EnglishLearning/2026-10-05-English-Music-Meaning-Making|2026-10-05 · Music Meaning Making]]
+
+**Meaning → English without a hint:** 音乐唤起记忆与情绪。
+
+**Independent new context:** Explain what a favorite song evokes.
+
+**Tomorrow:** recognize in speech with no written text, then form a different sentence. Do not mark completed before trying.

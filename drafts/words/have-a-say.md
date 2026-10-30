@@ -2,7 +2,7 @@
 type: resource
 title: have a say
 created: 2026-10-04
-updated: 2026-10-04
+updated: 2026-10-30
 related:
   - "[[2026-10-04-English-Worker-Voice-Tech-Responsibility|2026-10-04 · Worker Voice × Tech Responsibility]]"
 tags:
@@ -19,3 +19,14 @@ tags:
 > Team members should have a say in major design decisions.
 
 Related：[[2026-10-04-English-Worker-Voice-Tech-Responsibility|2026-10-04 · Worker Voice × Tech Responsibility]]
+
+
+## Article-based retrieval · 2026-10-30
+
+**Source:** [[drafts/EnglishLearning/2026-10-04-English-Worker-Voice-Tech-Responsibility|2026-10-04 · Worker Voice Tech Responsibility]]
+
+**Meaning → English without a hint:** 对技术使用有发言权。
+
+**Independent new context:** Who should have a say in product policy?
+
+**Tomorrow:** recognize in speech with no written text, then form a different sentence. Do not mark completed before trying.
