@@ -2,7 +2,7 @@
 type: writing-reference
 title: "2026-10-14 · Knicks vs Raptors — Writing Reference"
 created: 2026-10-14
-updated: 2026-10-14
+updated: 2026-10-30
 tags: [english, writing, basketball, nba, review]
 ---
 
@@ -66,3 +66,9 @@ Even so, I would be careful about judging Toronto's future from a single preseas
 - [原视频：KNICKS at RAPTORS](https://www.youtube.com/watch?v=EyQytP1xKiY)
 
 返回 [[EnglishLearning/README|英语学习入口]] · [[EnglishLearning/Connections|跨天知识连接]]
+
+
+## Multimedia reference companion · 2026-10-30
+
+- [Interactive illustrated HTML writing practice](./2026-10-14-Knicks-Raptors-Writing-Reference.html).
+- This reference is **not** a daily one-article course; it stores an AI sample and grammar feedback for actual independent drafts elsewhere. The HTML collapses the model essay until you choose to inspect it, and saves your new attempt locally.
