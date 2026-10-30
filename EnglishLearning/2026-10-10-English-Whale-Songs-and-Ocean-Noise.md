@@ -9,7 +9,7 @@ tags: [english, daily-learning, science, listening, writing]
 
 # 2026-10-10 · Whale Songs and Ocean Noise
 
-![Whale Songs and Ocean Noise learning map](assets/art/2026-10-10-Libraries-Beyond-Books.svg)
+![Whale Songs and Ocean Noise learning map](assets/art/2026-10-10-Whale-Songs-and-Ocean-Noise.svg)
 
 **One complete article:** [How Do Whales 'Sing?'](https://learningenglish.voanews.com/a/how-do-whales-sing-/7498692.html). Its audio, transcript, reading, selected paragraphs and all output tasks form one learning journey. **No memorizing the whole article.**
 

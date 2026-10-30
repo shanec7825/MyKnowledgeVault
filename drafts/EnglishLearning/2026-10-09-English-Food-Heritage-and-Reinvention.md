@@ -9,7 +9,7 @@ tags: [english, daily-learning, culture, reading, writing]
 
 # 2026-10-09 · Food Heritage and Reinvention
 
-![Food Heritage and Reinvention learning map ](../../EnglishLearning/assets/art/2026-10-09-Libraries-Beyond-Books.svg)
+![Food Heritage and Reinvention learning map](../../EnglishLearning/assets/art/2026-10-09-Food-Heritage-and-Reinvention.svg)
 
 **One complete article:** [French Baguette Gets UNESCO Recognition](https://learningenglish.voanews.com/a/french-baguette-gets-unesco-recognition/6856934.html). Its audio, transcript, reading, selected paragraphs and all output tasks form one learning journey. **No memorizing the whole article.**
 

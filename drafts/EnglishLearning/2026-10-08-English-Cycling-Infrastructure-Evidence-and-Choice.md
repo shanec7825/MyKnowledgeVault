@@ -21,7 +21,7 @@ related:
 
 # 2026-10-08 · Cycling Infrastructure Evidence and Choice
 
-![Cycling Infrastructure Evidence and Choice learning map ](../../EnglishLearning/assets/art/2026-10-08-Libraries-Beyond-Books.svg)
+![Cycling Infrastructure Evidence and Choice learning map](../../EnglishLearning/assets/art/2026-10-08-Cycling-Infrastructure-Evidence-and-Choice.svg)
 
 **One complete article:** [Bicycles Mean Less Demand for Fuel in East Asia](https://learningenglish.voanews.com/a/bicycles-mean-less-demand-for-fuel-in-east-asia/4048547.html). Its audio, transcript, reading, selected paragraphs and all output tasks form one learning journey. **No memorizing the whole article.**
 

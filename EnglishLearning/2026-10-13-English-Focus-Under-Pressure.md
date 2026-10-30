@@ -9,7 +9,7 @@ tags: [english, daily-learning, sports, university-life, reading-structure, retr
 
 # 2026-10-13 · Focus Under Pressure
 
-![Focus Under Pressure learning map](assets/art/2026-10-13-Libraries-Beyond-Books.svg)
+![Focus Under Pressure learning map](assets/art/2026-10-13-Focus-Under-Pressure.svg)
 
 **One complete article:** [Negative Self-Talk Can Hurt You](https://learningenglish.voanews.com/a/negative-self-talk-can-hurt-you/4873512.html). Its audio, transcript, reading, selected paragraphs and all output tasks form one learning journey. **No memorizing the whole article.**
 

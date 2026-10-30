@@ -9,7 +9,7 @@ tags: [english, daily-learning, ai, reading-structure, listening, retrieval]
 
 # 2026-10-12 · When AI Misses Not
 
-![When AI Misses Not learning map](assets/art/2026-10-12-Libraries-Beyond-Books.svg)
+![When AI Misses Not learning map](assets/art/2026-10-12-When-AI-Misses-Not.svg)
 
 **One complete article:** [How to Find AI 'Deepfake' Images](https://learningenglish.voanews.com/a/how-to-find-ai-deepfake-images/7537253.html). Its audio, transcript, reading, selected paragraphs and all output tasks form one learning journey. **No memorizing the whole article.**
 
