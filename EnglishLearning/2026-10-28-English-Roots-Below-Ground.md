@@ -99,6 +99,8 @@ Keep the argument tied to today's VOA article; include one specific detail, a li
 
 ## Connections
 
+- **Active word:** [[words/play-a-role-in|play a role in]] — meaning → expression → a new situation.
+
 - Review this lesson again tomorrow by recognizing **sounds first**, then generating a sentence with play a role in from meaning.
 - [[EnglishLearning/Connections|English Learning Connections]] · [[EnglishLearning/README|Daily English Index]].
 

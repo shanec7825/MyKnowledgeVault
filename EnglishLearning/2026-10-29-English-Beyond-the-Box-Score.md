@@ -101,6 +101,8 @@ Keep the argument tied to today's VOA article; include one specific detail, a li
 
 ## Connections
 
+- **Active word:** [[words/do-your-part|do your part]] — meaning → expression → a new situation.
+
 - Review this lesson again tomorrow by recognizing **sounds first**, then generating a sentence with do your part from meaning.
 - [[EnglishLearning/Connections|English Learning Connections]] · [[EnglishLearning/README|Daily English Index]].
 

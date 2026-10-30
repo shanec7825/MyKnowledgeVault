@@ -88,6 +88,8 @@ Full-article model (without looking) ___ · English sounds recognized without tr
 
 ## Connections
 
+- **Active word:** [[words/opt-out-of|opt out of]] — meaning → expression → a new situation.
+
 - [[EnglishLearning/Connections|Connections map]] · [[EnglishLearning/README|Daily Notes]]. Next-day retrieval matters more than reciting the source from memory.
 
 ## Previous / Next
