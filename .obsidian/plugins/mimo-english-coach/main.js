@@ -158,6 +158,24 @@ class EnglishCoachPlugin extends Plugin {
       }
     });
     this.addCommand({
+      id: "open-active-html",
+      name: "Open HTML companion for the active English note",
+      checkCallback: checking => {
+        const source = this.app.workspace.getActiveFile();
+        if (!(source instanceof TFile) || source.extension !== "md") return false;
+        if (!/^20[0-9]{2}-[0-9]{2}-[0-9]{2}-English-/.test(source.basename)) return false;
+        const html = this.app.vault.getAbstractFileByPath(source.path.slice(0, -3) + ".html");
+        if (!checking) {
+          if (!(html instanceof TFile)) {
+            new Notice("未找到同名 HTML 伴侣，请先从 GitHub 同步。", 7000);
+            return;
+          }
+          this.openLesson(html).catch(e => new Notice(e.message, 7000));
+        }
+        return true;
+      }
+    });
+    this.addCommand({
       id: "analyze-today",
       name: "Analyze today's English learning",
       callback: async () => {
@@ -459,7 +477,7 @@ class EnglishCoachPlugin extends Plugin {
       new Notice("没有找到 HTML 学习伴侣。请先检查 Git/Obsidian 同步。", 7000);
       return;
     }
-    const viewer = this.app.plugins?.plugins?.["vault-html-webviewer"];
+    const viewer = this.app.plugins?.plugins?.["vault-html-webviewer"] || this.app.plugins?.getPlugin?.("vault-html-webviewer");
     if (viewer && typeof viewer.openHtml === "function") {
       await viewer.openHtml(file, this.app.workspace.getLeaf("tab"));
       return;
