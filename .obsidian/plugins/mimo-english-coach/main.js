@@ -146,6 +146,18 @@ class EnglishCoachPlugin extends Plugin {
       callback: () => this.openView()
     });
     this.addCommand({
+      id: "open-today-html",
+      name: "Open today's interactive English HTML lesson",
+      callback: async () => {
+        const n = this.todayNote();
+        if (!n?.htmlFile) {
+          new Notice("今日 HTML 课程尚未同步到本地文件库。", 7000);
+          return;
+        }
+        await this.openLesson(n.htmlFile);
+      }
+    });
+    this.addCommand({
       id: "analyze-today",
       name: "Analyze today's English learning",
       callback: async () => {
@@ -441,6 +453,20 @@ class EnglishCoachPlugin extends Plugin {
     await this.app.workspace.getLeaf("tab").openFile(file);
   }
 
+  // Open the HTML companion with the specialized local viewer, not generic file.openFile().
+  async openLesson(file) {
+    if (!(file instanceof TFile)) {
+      new Notice("没有找到 HTML 学习伴侣。请先检查 Git/Obsidian 同步。", 7000);
+      return;
+    }
+    const viewer = this.app.plugins?.plugins?.["vault-html-webviewer"];
+    if (viewer && typeof viewer.openHtml === "function") {
+      await viewer.openHtml(file, this.app.workspace.getLeaf("tab"));
+      return;
+    }
+    new Notice("请先启用社区插件 Vault HTML Web Viewer，然后重新打开 Obsidian。", 7000);
+  }
+
   async buildContext(mode, notePath) {
     const notes = this.dailyNotes();
     if (!notes.length) return "No EnglishLearning daily notes were found.";
@@ -620,7 +646,7 @@ class EnglishCoachView extends ItemView {
     this.button(actions, "Open note", () => this.plugin.openFile(note.file), true);
 
     if (note.htmlFile) {
-      this.button(actions, "Open lesson", () => this.plugin.openFile(note.htmlFile));
+      this.button(actions, "Open lesson", () => this.plugin.openLesson(note.htmlFile));
     }
 
     this.button(actions, "Analyze today", () => this.analyzeToday());
