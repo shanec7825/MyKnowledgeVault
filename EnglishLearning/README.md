@@ -81,3 +81,12 @@ HTML is a quiet content companion, not an AI dashboard. Obsidian's MiMo English 
 - Publisher original audio is preferred. An untested MP3 link is identified as unverified rather than guaranteed playback.
 - Older articles without corresponding audio have a clearly labelled, independently authored study-summary narration. Its text is **not** the article's original transcript. Browser speech synthesis or the configured MiMo Obsidian plugin can read it; credentials are never put in HTML.
 - Daily source reading uses only the one linked article; cross-day notes remain valid memory links but not a second reading task. HTML is a reader companion, not an AI dashboard.
+
+## 在 Obsidian 中打开交互式 HTML（2026-10-31）
+
+1. 同步 GitHub 仓库的最新 `main` 到本地 Vault；检查 `.obsidian/plugins/vault-html-webviewer/` 和 `EnglishLearning/assets/` 目录都已同步。
+2. 重启 Obsidian，或禁用后重新启用 **Vault HTML Web Viewer** 和 **MiMo English Coach** 两个社区插件。
+3. 在 MiMo English Coach 的 Today 页面点击 **Open lesson**；或者打开某篇每日 Markdown，命令面板运行 **Open HTML companion for the active English note**。也可以直接在文件列表点击同名 `.html`。
+4. 页面空白时在本地 HTML 页顶部点 **网页查看器**，仍有问题则点击 **外部浏览器**；两者仍使用本地同一套 CSS、JavaScript 和 SVG 图片资源。首次操作需确保 Obsidian 核心插件 Web viewer 已启用。
+
+注意：HTML 里 `localStorage` 自动保存的是当前浏览器/网页查看器存储的数据，不会自动写回 Markdown；重要作文请复制到 MD 的 Writing 实际完成位置。图片已改为每篇不同主题场景，而不是固定背景仅换图标。
